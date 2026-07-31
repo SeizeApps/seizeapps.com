@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seize — Tools that empower people to take control</title>
+<meta name="description" content="Seize builds focused iOS apps that put you in control: household timers, work tracking, expense splitting, and more.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230077FF'/%3E%3Ctext x='32' y='44' font-family='-apple-system,Helvetica' font-size='36' font-weight='700' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+<style>
+  :root {
+    --bg: #0A0F1E; --surface: #141B2D; --surface-2: #1C2540;
+    --blue: #0077FF; --blue-light: #00BBFF;
+    --text: #FFFFFF; --text-2: #8899B0; --text-3: #556677;
+    --hairline: rgba(136,153,176,.16);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased; line-height: 1.5;
+  }
+  main { max-width: 880px; margin: 0 auto; padding: 0 24px 64px; }
+  header.site { display: flex; align-items: center; gap: 10px; padding: 28px 0; }
+  .mark { width: 34px; height: 34px; border-radius: 8px; background: var(--blue);
+          display: grid; place-items: center; font-weight: 700; font-size: 19px; }
+  .wordmark { font-size: 17px; font-weight: 600; letter-spacing: .01em; }
+
+  .hero { padding: 56px 0 48px; }
+  .hero h1 { font-size: 40px; font-weight: 700; letter-spacing: -0.02em; line-height: 1.12;
+             margin: 0 0 14px; max-width: 18ch; text-wrap: balance; }
+  .hero h1 em { font-style: normal; color: var(--blue-light); }
+  .hero p { font-size: 17px; color: var(--text-2); margin: 0; max-width: 52ch; }
+
+  .apps h2 { font-size: 13px; font-weight: 600; text-transform: uppercase;
+             letter-spacing: .08em; color: var(--text-3); margin: 0 0 18px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 14px; }
+  .card {
+    background: var(--surface); border: 1px solid var(--hairline);
+    border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 10px;
+  }
+  .card.flagship { grid-column: 1 / -1; flex-direction: row; align-items: center; gap: 22px;
+                   background: linear-gradient(135deg, var(--surface) 0%, var(--surface-2) 100%); }
+  .card .icon { width: 56px; height: 56px; border-radius: 13px; flex: 0 0 auto; }
+  .card.flagship .icon { width: 84px; height: 84px; border-radius: 19px; }
+  .card h3 { font-size: 17px; font-weight: 600; margin: 0; }
+  .card p { font-size: 14px; color: var(--text-2); margin: 0; }
+  .badge { display: inline-block; font-size: 11px; font-weight: 600; letter-spacing: .05em;
+           text-transform: uppercase; color: var(--blue-light); }
+  .glyph { width: 56px; height: 56px; border-radius: 13px; background: var(--surface-2);
+           display: grid; place-items: center; font-size: 26px; flex: 0 0 auto; }
+
+  footer { border-top: 1px solid var(--hairline); margin-top: 56px; padding-top: 24px;
+           display: flex; flex-wrap: wrap; gap: 8px 22px; align-items: baseline;
+           font-size: 13px; color: var(--text-3); }
+  footer a { color: var(--text-2); text-decoration: none; }
+  footer a:hover, footer a:focus-visible { color: var(--text); text-decoration: underline; }
+  a.mail { color: var(--blue-light); text-decoration: none; }
+  a.mail:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<main>
+  <header class="site">
+    <div class="mark" aria-hidden="true">S</div>
+    <span class="wordmark">Seize</span>
+  </header>
+
+  <section class="hero">
+    <h1>Tools that put <em>you</em> in control.</h1>
+    <p>Seize builds small, focused iOS apps — each one takes a thing you keep
+    forgetting or losing track of, and makes it glanceable, effortless, and yours.
+    Designed and built in the Basque Country.</p>
+  </section>
+
+  <section class="apps">
+    <h2>Apps</h2>
+    <div class="grid">
+      <div class="card flagship">
+        <svg class="icon" viewBox="0 0 1024 1024" role="img" aria-label="Cycle Timers icon">
+          <rect width="1024" height="1024" rx="229" fill="#007AFF"/>
+          <circle cx="512" cy="512" r="310" fill="none" stroke="#FFFFFF" stroke-opacity="0.28" stroke-width="130"/>
+          <path d="M 512 202 A 310 310 0 1 1 207 458" fill="none" stroke="#FFFFFF" stroke-width="130" stroke-linecap="round"/>
+        </svg>
+        <div>
+          <span class="badge">Coming to the App Store</span>
+          <h3>Cycle Timers</h3>
+          <p>Widget-first recurring household timers. Food that expires, the litter box,
+          the sheets — each one is a countdown ring that turns red when it's due, and
+          restarts with one tap, straight from your Home Screen.</p>
+        </div>
+      </div>
+
+      <div class="card"><div class="glyph" aria-hidden="true">⏱️</div>
+        <h3>Tempo</h3><p>A work companion that tracks your office and home sessions
+        automatically, logs achievements, and keeps your day honest.</p>
+        <span class="badge">In TestFlight</span></div>
+
+      <div class="card"><div class="glyph" aria-hidden="true">💧</div>
+        <h3>Drip</h3><p>Every recurring service you pay for, in one place — with the
+        analytics to spot what's quietly draining your money.</p>
+        <span class="badge">In TestFlight</span></div>
+
+      <div class="card"><div class="glyph" aria-hidden="true">🤝</div>
+        <h3>Tandem</h3><p>Fair, proportional expense splitting for couples — because
+        50/50 isn't always fair.</p>
+        <span class="badge">In TestFlight</span></div>
+
+      <div class="card"><div class="glyph" aria-hidden="true">🎁</div>
+        <h3>Kado</h3><p>A gift organizer built around the people you love — ideas,
+        wishlists, and what you spent, per person.</p>
+        <span class="badge">In TestFlight</span></div>
+
+      <div class="card"><div class="glyph" aria-hidden="true">🧾</div>
+        <h3>Kover</h3><p>Warranties and receipts, scanned once and remembered forever —
+        with an alert before any of them expire.</p>
+        <span class="badge">In TestFlight</span></div>
+
+      <div class="card"><div class="glyph" aria-hidden="true">⚓️</div>
+        <h3>Anchor</h3><p>Una herramienta de apoyo para TCAs: rutinas diarias como
+        prevención de recaídas, hecha con cuidado.</p>
+        <span class="badge">In TestFlight</span></div>
+    </div>
+  </section>
+
+  <footer>
+    <span>© 2026 Seize Apps · Izotz Cristobal Mota</span>
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="terms.html">Terms of Use</a>
+    <a class="mail" href="mailto:hello@seizeapps.com">hello@seizeapps.com</a>
+  </footer>
+</main>
+</body>
+</html>
