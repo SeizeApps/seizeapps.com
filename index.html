@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#0A0F1E">
-<meta name="description" content="Seize is an independent iOS studio. Meet Cycle Timers: widget-first recurring household timers.">
+<meta name="description" content="Seize is an independent iOS studio. Meet Cycle Timers, widget-first recurring household timers, and Drip, the free tracker that shows what your subscriptions really cost a year.">
 <title>Seize — Small rituals, better rhythms</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230077FF'/%3E%3Cpath d='M32 15a17 17 0 1 1-16.7 14' fill='none' stroke='white' stroke-width='6' stroke-linecap='round'/%3E%3C/svg%3E">
 <style>
@@ -344,6 +344,8 @@
   .tap-glyph::before { position: absolute; inset: 13px; border: 2px solid var(--cyan); border-radius: 50%; content: "✓"; color: var(--white); display: grid; place-items: center; }
   .tap-glyph::after { position: absolute; inset: -9px; border: 1px solid rgba(0,187,255,.12); border-radius: 25px; content: ""; }
   .private-glyph { display: grid; width: 66px; height: 66px; place-items: center; border-radius: 50%; background: rgba(49,209,88,.1); color: var(--green); font-size: 27px; }
+  .cost-glyph { display: grid; height: 66px; padding: 0 16px; place-items: center; border-radius: 18px; border: 1px solid rgba(0,119,255,.35); background: rgba(0,119,255,.1); color: var(--cyan); font-size: 22px; font-weight: 800; letter-spacing: -.03em; font-variant-numeric: tabular-nums; }
+  .cost-glyph small { margin-left: 5px; color: var(--muted); font-size: 12px; font-weight: 650; letter-spacing: .08em; text-transform: uppercase; }
   .feature h3 { margin: 0 0 9px; font-size: 20px; letter-spacing: -.025em; }
   .feature p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.6; }
 
@@ -489,7 +491,7 @@
       <p class="eyebrow">Made in the Basque Country</p>
       <h1 id="hero-title">Small rituals. <span>Better rhythms.</span></h1>
       <p class="hero-intro"><strong>Seize makes focused tools for everyday life.</strong> No accounts, no noise — just thoughtful iOS apps that keep the important things moving.</p>
-      <a class="scroll-cue" href="#cycle"><span aria-hidden="true">↓</span>Meet the first app</a>
+      <a class="scroll-cue" href="#cycle"><span aria-hidden="true">↓</span>Meet the apps</a>
     </div>
 
     <div class="product-stage" aria-label="Cycle Timers preview">
@@ -556,8 +558,36 @@
     </div>
   </section>
 
+  <section class="product-section shell" id="drip" aria-labelledby="drip-title">
+    <p class="section-index"><span>02</span> The second release</p>
+    <div class="product-heading">
+      <h2 id="drip-title">Monthly hides <em>the pain.</em></h2>
+      <p>Drip tracks every recurring service — subscriptions, bills, memberships — and shows the <strong>true yearly cost</strong> next to what you pay each month. Free, in English and Spanish. <strong>No account, no ads, no premium tier</strong>: just the number, and what to do about it.</p>
+    </div>
+    <div class="feature-grid">
+      <article class="feature">
+        <span class="feature-number">01 / REVEAL</span>
+        <div class="feature-visual" aria-hidden="true"><span class="cost-glyph">€120<small>/ year</small></span></div>
+        <h3>Annual cost, always</h3>
+        <p>That "just €9.99 a month" is €120 a year. Drip shows both, for every service, all the time — with a dashboard by category and billing cycle.</p>
+      </article>
+      <article class="feature">
+        <span class="feature-number">02 / CONTROL</span>
+        <div class="feature-visual" aria-hidden="true"><span class="tap-glyph"></span></div>
+        <h3>Know what's next</h3>
+        <p>The next 14 days of charges at a glance, free-trial alerts, a monthly budget, and a swipe to mark a charge as paid. Pause a service instead of deleting it.</p>
+      </article>
+      <article class="feature">
+        <span class="feature-number">03 / KEEP</span>
+        <div class="feature-visual" aria-hidden="true"><span class="private-glyph">●</span></div>
+        <h3>Yours, not ours</h3>
+        <p>No account and no tracking. Your services stay on your device — and in your own iCloud only if you turn sync on.</p>
+      </article>
+    </div>
+  </section>
+
   <section class="under-wraps shell" aria-labelledby="wraps-title">
-    <p class="section-index"><span>02</span> From the studio</p>
+    <p class="section-index"><span>03</span> From the studio</p>
     <div class="wraps-head">
       <h2 id="wraps-title">More to come.</h2>
       <p>There are more useful little ideas taking shape. For now, they stay under wraps.</p>
