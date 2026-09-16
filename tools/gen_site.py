@@ -29,7 +29,7 @@ def head(title, desc, root, canonical, og_title=None):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="{root}assets/site.css">
+<link rel="stylesheet" href="{root}assets/site.css?v=2026-09-16b">
 </head>
 <body>
 '''
@@ -40,7 +40,7 @@ def header(root, current=None):
         return f'<a href="{root}{href}"{cur}>{label}</a>'
     return f'''<header class="site-header shell">
   <a class="brand" href="{root}index.html" aria-label="Seize home">
-    <img class="brand-mark" src="{root}assets/seize-mark.png" alt="" width="36" height="36">
+    <img class="brand-mark" src="{root}assets/seize-mark.png?v=1" alt="" width="36" height="36">
     <span class="wordmark">SEIZE</span>
   </a>
   <nav class="site-nav" aria-label="Main">
@@ -56,7 +56,7 @@ def footer(root):
     return f'''<footer class="site-footer">
   <div class="footer-inner shell">
     <div class="footer-brand">
-      <img src="{root}assets/seize-mark.png" alt="" width="28" height="28">
+      <img src="{root}assets/seize-mark.png?v=1" alt="" width="28" height="28">
       <div>
         <p class="footer-signoff">Apps for a brighter tomorrow.</p>
         <p class="copyright">© 2026 Seize Apps · Izotz Cristobal Mota &amp; Sendoa Sola · Basque Country, Spain</p>
