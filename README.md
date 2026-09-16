@@ -19,7 +19,7 @@ assets/icons/*.png    app icons, 256 px, from each app's AppIcon.png
 assets/shots/*.jpg    real screenshots, 600 px wide, JPEG 70, English simulator
 ```
 
-The HTML is **generated**: `gen_site.py` (index + app pages) and `gen_legal.py` (legal pages) in the SeizeRepo scratchpad / tooling. Edit the generators, run them, commit the output. Don't hand-edit the HTML.
+The HTML is **generated**: `tools/gen_site.py` (index + app pages) and `tools/gen_legal.py` (legal pages). Edit the generators, run `python3 tools/gen_site.py && python3 tools/gen_legal.py` from the repo root, commit the output. Don't hand-edit the HTML.
 
 ## Adding an app
 
