@@ -3,89 +3,147 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#0A0F1E">
-<meta name="description" content="Seize Apps is an independent iOS studio run by Izotz Cristobal Mota and Sendoa Sola. Small, native, private-by-design apps that do one thing well: Cycle Timers, Drip and Anchor.">
+<meta name="theme-color" content="#060E1F">
+<meta name="description" content="Seize designs and builds exceptional iOS apps that make life better: Cycle Timers, Tempo, Drip, Anchor, Kover and Tandem. An independent studio from the Basque Country.">
 <link rel="canonical" href="https://seizeapps.com/">
-<title>Seize Apps — Independent iOS studio from the Basque Country</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230077FF'/%3E%3Cpath d='M32 15a17 17 0 1 1-16.7 14' fill='none' stroke='white' stroke-width='6' stroke-linecap='round'/%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Seize Apps">
+<meta property="og:title" content="Seize — Ideas into extraordinary.">
+<meta property="og:description" content="Seize designs and builds exceptional iOS apps that make life better: Cycle Timers, Tempo, Drip, Anchor, Kover and Tandem. An independent studio from the Basque Country.">
+<meta property="og:url" content="https://seizeapps.com/">
+<meta property="og:image" content="https://seizeapps.com/assets/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<title>Seize Apps — Extraordinary iOS apps for everyday life</title>
+<link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
 <header class="site-header shell">
   <a class="brand" href="index.html" aria-label="Seize home">
-    <span class="brand-mark" aria-hidden="true"></span>
-    <span>Seize</span>
+    <img class="brand-mark" src="assets/seize-mark.png" alt="" width="36" height="36">
+    <span class="wordmark">SEIZE</span>
   </a>
   <nav class="site-nav" aria-label="Main">
     <a href="index.html#apps">Apps</a>
+    <a href="index.html#philosophy">Philosophy</a>
     <a href="index.html#studio">Studio</a>
-    <a href="index.html#contact">Contact</a>
+    <a class="button small" href="mailto:hello@seizeapps.com">Get in touch</a>
   </nav>
 </header>
 <main>
-  <section class="hero shell" aria-labelledby="hero-title">
-    <p class="eyebrow">Independent iOS studio · Basque Country</p>
-    <h1 id="hero-title">We make iOS apps that do <span>one thing well.</span></h1>
-    <p class="lede">Small, native and private by design. Seize is two developers building focused apps for everyday life — <strong>no accounts, no ads, no noise</strong>. Each app has one job, and a name that says it.</p>
-    <a class="scroll-cue" href="#apps">See the apps <span aria-hidden="true">↓</span></a>
+  <section class="hero" aria-labelledby="hero-title">
+    <svg class="wave" viewBox="0 0 1440 420" preserveAspectRatio="none" aria-hidden="true">
+  <defs>
+    <linearGradient id="wg" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0" stop-color="#007AFF" stop-opacity="0"/>
+      <stop offset=".45" stop-color="#007AFF" stop-opacity=".55"/>
+      <stop offset=".75" stop-color="#22D3EE" stop-opacity=".7"/>
+      <stop offset="1" stop-color="#22D3EE" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <path d="M0 300 C 240 200, 420 380, 700 260 S 1120 120, 1440 240" fill="none" stroke="url(#wg)" stroke-width="2"/>
+  <path d="M0 340 C 260 240, 460 420, 760 300 S 1160 160, 1440 280" fill="none" stroke="url(#wg)" stroke-width="1.5" opacity=".6"/>
+  <path d="M0 260 C 220 160, 400 340, 660 220 S 1080 80, 1440 200" fill="none" stroke="url(#wg)" stroke-width="1" opacity=".4"/>
+</svg>
+    <div class="shell hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Apps for a brighter tomorrow</p>
+        <h1 id="hero-title">Ideas into <span>extraordinary.</span></h1>
+        <p class="lede">We design and build exceptional iOS apps that make life better. Small, native and private by design — each one does a single job, beautifully.</p>
+        <div class="cta-row">
+          <a class="button" href="#apps">Explore our apps</a>
+          <a class="button ghost" href="#philosophy">Our philosophy</a>
+        </div>
+      </div>
+      <div class="hero-phone" aria-hidden="true">
+        <div class="phone"><img src="assets/shots/anchor-01-home.jpg" alt="" width="552" height="1200"></div>
+      </div>
+    </div>
   </section>
 
   <section class="section shell" id="apps" aria-labelledby="apps-title">
     <div class="section-head">
-      <div><p class="eyebrow">Apps</p><h2 id="apps-title">Three apps, three jobs.</h2></div>
-      <p>Household rhythms, recurring money, and daily support in recovery. Different problems, the same way of building: one screen you understand at a glance, your data on your device, Spanish and English from day one.</p>
+      <div><p class="eyebrow">Apps</p><h2 id="apps-title">Six apps, <span>six jobs.</span></h2></div>
+      <p>Household rhythms, the working day, recurring money, recovery, warranties and the bills a couple shares. Different problems, one way of building: a screen you understand at a glance, your data on your device, Spanish and English from day one.</p>
     </div>
     <div class="app-grid">
     <a class="app-card" href="apps/cycle-timers.html">
-      <img src="assets/icons/cycle-timers.png" alt="" width="72" height="72">
+      <img src="assets/icons/cycle-timers.png" alt="" width="64" height="64">
       <h3>Cycle Timers</h3>
-      <p class="one-liner">Recurring household timers you can read at a glance — from the Home Screen widget, without opening the app.</p>
+      <p class="one-liner">Recurring household timers you read at a glance — from the Home Screen widget, without opening the app.</p>
       <div class="tags"><span>Household</span><span>Widgets</span><span>iOS</span></div>
-      <span class="card-more">Learn more →</span>
+      <span class="card-more">Learn more <span aria-hidden="true">→</span></span>
+    </a>
+    <a class="app-card" href="apps/tempo.html">
+      <img src="assets/icons/tempo.png" alt="" width="64" height="64">
+      <h3>Tempo</h3>
+      <p class="one-liner">A workday companion that remembers your hours for you — arrive, work, leave — and keeps the record yours to correct.</p>
+      <div class="tags"><span>Work</span><span>Time tracking</span><span>Calendar</span></div>
+      <span class="card-more">Learn more <span aria-hidden="true">→</span></span>
     </a>
     <a class="app-card" href="apps/drip.html">
-      <img src="assets/icons/drip.png" alt="" width="72" height="72">
+      <img src="assets/icons/drip.png" alt="" width="64" height="64">
       <h3>Drip</h3>
       <p class="one-liner">See exactly where your money drips: every subscription, bill and membership shown as what it really costs a year.</p>
       <div class="tags"><span>Subscriptions</span><span>Budget</span><span>ES · EN</span></div>
-      <span class="card-more">Learn more →</span>
+      <span class="card-more">Learn more <span aria-hidden="true">→</span></span>
     </a>
     <a class="app-card" href="apps/anchor.html">
-      <img src="assets/icons/anchor.png" alt="" width="72" height="72">
+      <img src="assets/icons/anchor.png" alt="" width="64" height="64">
       <h3>Anchor</h3>
       <p class="one-liner">Daily support for eating-disorder recovery: routines that hold you and tools for the hard moment — alongside professional treatment, never instead of it.</p>
       <div class="tags"><span>Recovery</span><span>Routines</span><span>ES · EN</span></div>
-      <span class="card-more">Learn more →</span>
+      <span class="card-more">Learn more <span aria-hidden="true">→</span></span>
+    </a>
+    <a class="app-card" href="apps/kover.html">
+      <img src="assets/icons/kover.png" alt="" width="64" height="64">
+      <h3>Kover</h3>
+      <p class="one-liner">Snap the receipt, and Kover watches the warranty: what is covered, until when, and a nudge before it runs out.</p>
+      <div class="tags"><span>Warranties</span><span>Receipts</span><span>ES · EN</span></div>
+      <span class="card-more">Learn more <span aria-hidden="true">→</span></span>
+    </a>
+    <a class="app-card" href="apps/tandem.html">
+      <img src="assets/icons/tandem.png" alt="" width="64" height="64">
+      <h3>Tandem</h3>
+      <p class="one-liner">Fair expense splitting for couples: each pays in proportion to what they earn, and the month settles with one number.</p>
+      <div class="tags"><span>Couples</span><span>Expenses</span><span>ES · EN</span></div>
+      <span class="card-more">Learn more <span aria-hidden="true">→</span></span>
     </a>
     </div>
   </section>
 
-  <section class="section shell" id="how" aria-labelledby="how-title">
+  <section class="section shell" id="philosophy" aria-labelledby="philosophy-title">
     <div class="section-head">
-      <div><p class="eyebrow">How we build</p><h2 id="how-title">Native, focused, <span>private by design.</span></h2></div>
-      <p>Building apps is what we do well, and we do it the boring way: Swift and SwiftUI, the platform's own frameworks, and a lot of time spent on the one screen people will actually look at.</p>
+      <div><p class="eyebrow">Philosophy</p><h2 id="philosophy-title">Beautiful. Useful. <span>Human. Possible.</span></h2></div>
+      <p>Four words we hold every screen against. If a feature fails one of them, it doesn't ship — however clever it is.</p>
     </div>
-    <div class="principles">
-      <div class="principle"><span class="num">01</span><h3>Native first</h3><p>SwiftUI end to end. Widgets, Live Activities, Siri Shortcuts and Apple Health when they earn their place — never a web view pretending to be an app.</p></div>
-      <div class="principle"><span class="num">02</span><h3>One job per app</h3><p>Each app answers one question. If a feature doesn't serve that question, it doesn't ship, however clever it is.</p></div>
-      <div class="principle"><span class="num">03</span><h3>Private by design</h3><p>No accounts, no analytics, no advertising. Your content lives on your device and in your own iCloud — we never see it.</p></div>
-      <div class="principle"><span class="num">04</span><h3>Two languages from day one</h3><p>English and Spanish are written together, not translated afterwards. Copy is part of the design, and tone is part of the copy.</p></div>
+    <div class="values">
+      <div class="value"><span class="num">01</span><h3>Beautiful</h3><p>Design with an opinion: one dominant colour, weight before size, motion that means something. The kind of care you notice without being told.</p></div>
+      <div class="value"><span class="num">02</span><h3>Useful</h3><p>Every app answers one real question people ask every day, and answers it on the first screen. No dashboards for their own sake.</p></div>
+      <div class="value"><span class="num">03</span><h3>Human</h3><p>No accounts, no analytics, no advertising, no dark patterns. Your data lives on your iPhone and in your own iCloud — we never see it. Copy written for people, in two languages.</p></div>
+      <div class="value"><span class="num">04</span><h3>Possible</h3><p>Native all the way: SwiftUI, widgets, Live Activities, Siri and Apple Health when they earn their place. Small teams can build things that feel first-party.</p></div>
     </div>
   </section>
 
   <section class="section shell" id="studio" aria-labelledby="studio-title">
     <div class="section-head">
       <div><p class="eyebrow">Studio</p><h2 id="studio-title">Two developers, <span>one bar.</span></h2></div>
-      <p>Seize Apps is Izotz and Sendoa. Every app has one of us as its lead — the person who decides what ships and who answers for it — and both of us behind the same standard of craft.</p>
+      <p>Seize Apps is Izotz and Sendoa, from the Basque Country. Every app has one of us as its lead — the person who decides what ships and who answers for it — and both of us behind the same standard of craft.</p>
     </div>
     <div class="studio">
       <div class="person">
         <div class="initials a" aria-hidden="true">IC</div>
-        <div><h3>Izotz Cristobal Mota</h3><p class="role">Co-founder · Developer</p><p class="bio">Builds Cycle Timers and the studio's shared foundations. Basque Country, Spain.</p></div>
+        <div><h3>Izotz Cristobal Mota</h3><p class="role">Co-founder · Developer</p><p class="bio">Leads Cycle Timers and Tempo, and the studio's shared foundations.</p></div>
       </div>
       <div class="person">
         <div class="initials b" aria-hidden="true">SS</div>
-        <div><h3>Sendoa Sola</h3><p class="role">Co-founder · Developer</p><p class="bio">Builds Drip and Anchor, and the apps in the works after them. Basque Country, Spain.</p></div>
+        <div><h3>Sendoa Sola</h3><p class="role">Co-founder · Developer</p><p class="bio">Leads Drip, Anchor, Kover and Tandem.</p></div>
       </div>
       <p class="studio-note">We are not an agency and we don't take client work: we make our own apps, ship them ourselves, and stay small enough that the person who wrote the code is the one reading your email.</p>
     </div>
@@ -93,21 +151,25 @@
 
   <section class="shell" id="contact" aria-labelledby="contact-title">
     <div class="contact">
-      <div><p class="eyebrow">Contact</p><h2 id="contact-title">Say hello.</h2><p class="note" style="margin-top:10px">Questions, ideas, a bug you found — one address, read by us.</p></div>
+      <div><p class="eyebrow">Contact</p><h2 id="contact-title">Say hello.</h2><p class="note" style="margin-top:10px">Questions, ideas, a bug you found — one address, and we read everything.</p></div>
       <a class="button" href="mailto:hello@seizeapps.com">hello@seizeapps.com</a>
     </div>
   </section>
 </main>
 <footer class="site-footer">
   <div class="footer-inner shell">
-    <div>
-      <p class="footer-signoff">Make time count.</p>
-      <p class="copyright">© 2026 Seize Apps · Izotz Cristobal Mota &amp; Sendoa Sola</p>
+    <div class="footer-brand">
+      <img src="assets/seize-mark.png" alt="" width="28" height="28">
+      <div>
+        <p class="footer-signoff">Apps for a brighter tomorrow.</p>
+        <p class="copyright">© 2026 Seize Apps · Izotz Cristobal Mota &amp; Sendoa Sola · Basque Country, Spain</p>
+      </div>
     </div>
     <nav class="footer-links" aria-label="Footer">
       <a href="index.html#apps">Apps</a>
       <a href="privacy.html">Privacy</a>
       <a href="terms.html">Terms</a>
+      <a href="https://github.com/SeizeApps" rel="noopener">GitHub</a>
       <a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a>
     </nav>
   </div>
