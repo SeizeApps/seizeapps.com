@@ -9,23 +9,24 @@ SEIZE 2026 (locked 2026-09-16): ribbon-S mark, Electric Blue `#007AFF`, Cyan `#2
 ## Structure
 
 ```
-index.html            studio home: hero · Apps · Philosophy · Studio · Contact
+index.html            studio home: hero · Apps · Philosophy · Work with us · Studio · Contact
 apps/<slug>.html      one page per app (six): icon, lede, screenshots, what it does, privacy
 privacy.html          privacy policy, one section per app (#cycle-timers … #tandem)
 terms.html            terms of use
+es/…                  the same four kinds of page in Spanish (same paths under es/; hreflang both ways)
 assets/site.css       the whole visual system (dark only)
 assets/seize-mark.png · assets/og.jpg · favicon*.png · apple-touch-icon.png
 assets/icons/*.png    app icons, 256 px, from each app's AppIcon.png
 assets/shots/*.jpg    real screenshots, 600 px wide, JPEG 70, English simulator
 ```
 
-The HTML is **generated**: `tools/gen_site.py` (index + app pages) and `tools/gen_legal.py` (legal pages). Edit the generators, run `python3 tools/gen_site.py && python3 tools/gen_legal.py` from the repo root, commit the output. Don't hand-edit the HTML.
+The HTML is **generated** by `tools/gen_site.py` (UI strings and app copy in both languages) with the legal bodies in `tools/gen_legal_copy.py` (EN) and `tools/gen_legal_es.py` (ES). Edit the generators, run `python3 tools/gen_site.py`, commit the output. Don't hand-edit the HTML. Bump `CSS_V` in `gen_site.py` whenever `site.css` changes (cache-busting: the path is shared with the previous site).
 
 ## Adding an app
 
-1. Add an entry to `APPS` in `gen_site.py` (slug, name, icon, lead developer, one-liner, tags, lede, meta, three features, privacy paragraph, screenshots).
+1. Add an entry to `APPS` in `gen_site.py` (slug, name, icon, lead developer, screenshots, and the copy block in English and Spanish: one-liner, tags, lede, meta, three features, privacy paragraph, captions).
 2. Drop the icon in `assets/icons/` (256 px) and 2–4 screenshots in `assets/shots/` (600 px wide, English).
-3. Add its section to `PRIVACY` in `gen_legal.py` with the same id as the slug and the "Published on the App Store by …" line.
+3. Add its section to the privacy policy in both `gen_legal_copy.py` and `gen_legal_es.py`, with the same id as the slug and the "Published on the App Store by …" line.
 4. Regenerate, check links, commit.
 
 ## App Store badge

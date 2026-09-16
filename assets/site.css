@@ -41,6 +41,7 @@ p { margin: 0; }
 .site-nav { display: flex; align-items: center; gap: 28px; }
 .site-nav a { color: var(--text-2); font-size: 15px; font-weight: 500; text-decoration: none; }
 .site-nav a:hover, .site-nav a[aria-current="page"] { color: var(--white); }
+.site-nav .lang { padding: 6px 10px; border: 1px solid var(--line); border-radius: 999px; font-size: 13px; }
 
 /* Type helpers */
 .eyebrow { margin: 0 0 22px; color: var(--cyan); font-size: 12px; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; }
@@ -93,6 +94,14 @@ p { margin: 0; }
 .value { padding: 26px; border: 1px solid var(--line-soft); border-radius: var(--radius); background: var(--navy-2); }
 .value h3 { font-size: 15px; letter-spacing: .2em; text-transform: uppercase; }
 .value p { margin-top: 14px; color: var(--text-2); font-size: 15px; line-height: 1.6; }
+
+/* Work with us */
+.work-how { margin-top: 44px; padding: 32px; border: 1px solid var(--line-soft); border-radius: var(--radius); background: var(--navy-2); }
+.work-how-head { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 24px; }
+.work-how-head h3 { font-size: 22px; }
+.steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; }
+.step h4 { margin: 0; font-size: 13px; letter-spacing: .18em; text-transform: uppercase; color: var(--cyan); font-weight: 600; }
+.step p { margin-top: 10px; color: var(--text-2); font-size: 15px; line-height: 1.6; }
 
 /* Studio */
 .studio { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px; }
@@ -157,6 +166,7 @@ p { margin: 0; }
   .hero-copy { padding: 8px 0 16px; }
   .app-grid, .features { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .values { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .steps { grid-template-columns: 1fr; gap: 18px; }
   .section-head, .studio, .privacy-box { grid-template-columns: 1fr; }
   .privacy-box .links { justify-content: flex-start; }
   .shots, .shots-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -166,6 +176,7 @@ p { margin: 0; }
   .site-nav { gap: 18px; flex-wrap: wrap; }
   .site-nav .button.small { padding: 8px 14px; }
   .app-grid, .features, .values { grid-template-columns: 1fr; }
+  .work-how { padding: 24px; }
   .contact, .privacy-box { padding: 26px; }
   .hero .wave { height: 180px; }
 }
