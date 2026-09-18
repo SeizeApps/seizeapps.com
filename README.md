@@ -31,7 +31,16 @@ The HTML is **generated** by `tools/gen_site.py` (UI strings and app copy in bot
 
 ## App Store badge
 
-Each app page carries `<a class="store-badge button" href="#" hidden>`. When the app is live, remove `hidden` and set `href="https://apps.apple.com/app/id<ASC id>"`. Nothing on the site mentions review, TestFlight or launch dates on purpose.
+El badge lo decide un dato, no una edición a mano del HTML: cada entrada de
+`APPS` en `tools/gen_site.py` admite `appstore='<id de ASC>'`. Con id, la
+página saca el badge; sin id, no hay badge. La URL va sin país (`https://apps.apple.com/app/id<id>`)
+porque Apple redirige a la tienda del visitante.
+
+**Solo se pone el id cuando la app está viva de verdad**, comprobado con
+`curl -s "https://itunes.apple.com/lookup?id=<id>"` (resultCount 1). El sitio
+no menciona revisión, TestFlight ni fechas de lanzamiento, a propósito.
+
+Vivas a 18/09/2026: Drip (6812332005) y Kover (6812714562).
 
 ## Redirector
 

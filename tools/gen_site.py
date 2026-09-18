@@ -87,8 +87,12 @@ UI={
 }
 
 # ---------------------------------------------------------------- apps
-def app(slug, name, icon, lead, privacy_id, shots, en, es):
-    return dict(slug=slug, name=name, icon=icon, lead=lead, privacy_id=privacy_id, shots=shots, copy={'en':en,'es':es})
+def app(slug, name, icon, lead, privacy_id, shots, en, es, appstore=None):
+    # `appstore`: el id numérico de App Store Connect, solo cuando la app está
+    # publicada de verdad. Si está, la página saca el badge; si no, no hay
+    # badge. Nunca se escribe el href a mano en el HTML.
+    return dict(slug=slug, name=name, icon=icon, lead=lead, privacy_id=privacy_id,
+                shots=shots, appstore=appstore, copy={'en':en,'es':es})
 
 APPS=[
  app('cycle-timers','Cycle Timers','cycle-timers.png','Izotz Cristobal Mota','cycle-timers',
@@ -150,7 +154,7 @@ APPS=[
                     ('02 / CONTROLAR','Saber qué viene','Los cobros de los próximos 14 días de un vistazo, avisos de fin de prueba, un presupuesto mensual y un gesto para marcar un cobro como pagado. Pausa un servicio en vez de borrarlo.'),
                     ('03 / GUARDAR','Tuyo, no nuestro','Sin cuenta y sin rastreo. Tus servicios viven en tu dispositivo y en tu propio iCloud, nunca en un servidor nuestro.')],
           privacy='Drip guarda tus servicios en tu dispositivo, en un contenedor privado compartido solo con sus widgets y atajos de Siri, y en tu propia cuenta de iCloud; nunca en ningún sitio que podamos ver.',
-          captions=['Panel: la cifra anual primero','Cada servicio, al mes y al año','Un servicio en detalle','Por categoría —también las tuyas— y por ciclo'])),
+          captions=['Panel: la cifra anual primero','Cada servicio, al mes y al año','Un servicio en detalle','Por categoría —también las tuyas— y por ciclo']), appstore='6812332005'),
  app('anchor','Anchor','anchor.png','Sendoa Sola','anchor',
      ['anchor-01-home.jpg','anchor-02-now.jpg','anchor-05-checkin.jpg','anchor-06-strategies.jpg'],
      dict(one='Daily support for eating-disorder recovery: routines that hold you and tools for the hard moment — alongside professional treatment, never instead of it.',
@@ -192,7 +196,7 @@ APPS=[
                     ('02 / VIGILAR','Cubierto hasta, en palabras','Garantía legal según el país —36 meses en España— más la extendida si la hay. «Quedan 3 años», no una cuenta atrás de días, en un sello que se gasta con el tiempo. Avisos un mes antes, una semana antes y el mismo día.'),
                     ('03 / RECLAMAR','Todo para el día que lo necesites','Número de serie, teléfono o web de soporte a un toque, la foto del ticket y un PDF para compartir. Reclamado, sustituido o ya no es tuyo: archivar en vez de borrar.')],
           privacy='Kover guarda tus productos y las fotos de los tickets en tu dispositivo y en tu propia cuenta de iCloud. Los tickets se leen en el propio teléfono con el framework Vision de Apple: no se sube nada, sin cuenta, sin analítica.',
-          captions=['La próxima en caducar, y toda la estantería','Tres preguntas: qué, cuándo, cuánto','Guardado y sellado: cubierto hasta 2029','El sello sigue vivo: cubierto hasta, en papel'])),
+          captions=['La próxima en caducar, y toda la estantería','Tres preguntas: qué, cuándo, cuánto','Guardado y sellado: cubierto hasta 2029','El sello sigue vivo: cubierto hasta, en papel']), appstore='6812714562'),
  app('tandem','Tandem','tandem.png','Sendoa Sola','tandem',
      ['tandem-01-dashboard.jpg','tandem-02-expenses.jpg','tandem-04-settle.jpg','tandem-03-reports.jpg'],
      dict(one='Fair expense splitting for couples: each pays in proportion to what they earn, and the month settles with one number.',
@@ -416,6 +420,11 @@ def build_app(lang, a):
     shots=''.join(f'<figure><div class="phone"><img src="{root}assets/shots/{f}" alt="{t["shot_alt"].format(name=a["name"], cap=cap)}" loading="lazy" width="552" height="1200"></div><figcaption>{cap}</figcaption></figure>' for f,cap in zip(a['shots'], c['captions']))
     feats=''.join(f'<div class="feature"><span class="num">{n}</span><h3>{h}</h3><p>{p}</p></div>' for n,h,p in c['features'])
     extra=f'<p class="note" style="margin-top:20px">{c["extra"]}</p>' if c.get('extra') else ''
+    # Sin id de App Store no hay badge: el sitio nunca enlaza a una ficha que
+    # todavía no existe, ni menciona revisión, TestFlight ni fechas.
+    # La URL va sin país a propósito: Apple redirige a la tienda del visitante.
+    badge=(f'<a class="store-badge button" href="https://apps.apple.com/app/id{a["appstore"]}">{t["store_badge"]}</a>'
+           if a.get('appstore') else '')
     html=head(lang, f'{a["name"]} — Seize Apps', c['one'].replace('"','&quot;'), root, f'apps/{a["slug"]}.html')+header(lang, root, f'apps/{a["slug"]}.html', 'apps')+f'''<main>
   <section class="app-hero shell" aria-labelledby="app-title">
     <div class="app-hero-copy">
@@ -424,8 +433,7 @@ def build_app(lang, a):
       <h1 id="app-title">{a['name']}</h1>
       <p class="lede">{c['lede']}</p>
       <div class="app-meta">{''.join(f'<span>{m}</span>' for m in c['meta'])}</div>
-      <!-- App Store badge: remove `hidden` and set the href when the app is live (see README). -->
-      <a class="store-badge button" href="#" hidden>{t['store_badge']}</a>
+      {badge}
       {extra}
     </div>
   </section>
