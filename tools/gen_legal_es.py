@@ -108,7 +108,7 @@ TERMS_ES='''
   <p>Las apps de pago y las compras dentro de la app las factura Apple al precio que se muestra en la App Store antes de confirmar. Los reembolsos los gestiona Apple según las políticas de reembolso de la App Store; nosotros no podemos emitirlos directamente.</p>
 
   <h2>4. Tu contenido es tuyo</h2>
-  <p>Todo lo que creas en una app de Seize (temporizadores, registros de trabajo, gastos, rutinas, tickets) es tuyo. Como se describe en nuestra <a href="privacy.html">Política de privacidad</a>, se guarda en tu dispositivo y en tu propio iCloud y no tenemos acceso a ello, lo que también significa que <strong>las copias de seguridad son cosa tuya</strong>. Borrar una app borra sus datos.</p>
+  <p>Todo lo que creas en una app de Seize (temporizadores, registros de trabajo, gastos, rutinas, tickets, registros de entrenamiento) es tuyo. Como se describe en nuestra <a href="privacy.html">Política de privacidad</a>, se guarda en tu dispositivo y en tu propio iCloud y no tenemos acceso a ello, lo que también significa que <strong>las copias de seguridad son cosa tuya</strong>. Borrar una app borra sus datos.</p>
 
   <h2>5. No es asesoramiento profesional</h2>
   <p>Nuestras apps son herramientas de organización. No son asesoramiento médico, nutricional, psicológico, financiero ni legal. Cualquier app nuestra que toque el bienestar es un acompañamiento y <strong>no sustituye al tratamiento profesional</strong>; si lo estás pasando mal, busca ayuda cualificada. Los plazos de garantía que muestra Kover son valores orientativos por defecto; tus derechos dependen de la ley y de las condiciones del vendedor que apliquen a cada compra.</p>

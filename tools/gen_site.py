@@ -16,13 +16,13 @@ UI={
    footer_tag='Apps for a brighter tomorrow.', footer_privacy='Privacy', footer_terms='Terms',
    copyright='© 2026 Seize Apps · Izotz Cristobal Mota &amp; Sendoa Sola · Basque Country, Spain',
    site_title='Seize Apps — Extraordinary iOS apps for everyday life',
-   site_desc='Seize designs and builds exceptional iOS apps that make life better: Cycle Timers, Tempo, Drip, Anchor, Kover and Tandem. An independent studio from the Basque Country that also builds apps and websites for clients.',
+   site_desc='Seize designs and builds exceptional iOS apps that make life better: {apps}. An independent studio from the Basque Country that also builds apps and websites for clients.',
    og_title='Seize — Ideas into extraordinary.',
    hero_eyebrow='Apps for a brighter tomorrow', hero_h1='Ideas into <span>extraordinary.</span>',
    hero_lede='We design and build exceptional iOS apps that make life better. Small, native and private by design — each one does a single job, beautifully. And we build the same way for others.',
    hero_cta='Explore our apps', hero_cta2='Work with us',
-   apps_eyebrow='Apps', apps_h2='Six apps, <span>six jobs.</span>',
-   apps_p='Household rhythms, the working day, recurring money, recovery, warranties and the bills a couple shares. Different problems, one way of building: a screen you understand at a glance, your data on your device, Spanish and English from day one.',
+   apps_eyebrow='Apps', apps_h2='{Count} apps, <span>{count} jobs.</span>',
+   apps_p='Household rhythms, the working day, recurring money, recovery, warranties, the bills a couple shares and the training block. Different problems, one way of building: a screen you understand at a glance, your data on your device, Spanish and English from day one.',
    learn_more='Learn more',
    phil_eyebrow='Philosophy', phil_h2='Beautiful. Useful. <span>Human. Possible.</span>',
    phil_p='Four words we hold every screen against. If a feature fails one of them, it doesn\'t ship — however clever it is.',
@@ -53,13 +53,13 @@ UI={
    footer_tag='Apps para un mañana mejor.', footer_privacy='Privacidad', footer_terms='Términos',
    copyright='© 2026 Seize Apps · Izotz Cristobal Mota y Sendoa Sola · País Vasco',
    site_title='Seize Apps — Apps iOS extraordinarias para el día a día',
-   site_desc='Seize diseña y construye apps iOS excepcionales que mejoran la vida: Cycle Timers, Tempo, Drip, Anchor, Kover y Tandem. Un estudio independiente del País Vasco que también desarrolla apps y webs para clientes.',
+   site_desc='Seize diseña y construye apps iOS excepcionales que mejoran la vida: {apps}. Un estudio independiente del País Vasco que también desarrolla apps y webs para clientes.',
    og_title='Seize — Ideas hechas extraordinarias.',
    hero_eyebrow='Apps para un mañana mejor', hero_h1='Ideas hechas <span>extraordinarias.</span>',
    hero_lede='Diseñamos y construimos apps iOS excepcionales que mejoran la vida. Pequeñas, nativas y privadas por diseño: cada una hace una sola cosa, y la hace bien. Y construimos igual para otros.',
    hero_cta='Ver las apps', hero_cta2='Trabaja con nosotros',
-   apps_eyebrow='Apps', apps_h2='Seis apps, <span>seis tareas.</span>',
-   apps_p='Los ritmos de casa, la jornada de trabajo, el dinero que se va cada mes, la recuperación, las garantías y las cuentas de una pareja. Problemas distintos, una sola forma de construir: una pantalla que se entiende de un vistazo, tus datos en tu dispositivo, castellano e inglés desde el primer día.',
+   apps_eyebrow='Apps', apps_h2='{Count} apps, <span>{count} tareas.</span>',
+   apps_p='Los ritmos de casa, la jornada de trabajo, el dinero que se va cada mes, la recuperación, las garantías, las cuentas de una pareja y el bloque de entrenamiento. Problemas distintos, una sola forma de construir: una pantalla que se entiende de un vistazo, tus datos en tu dispositivo, castellano e inglés desde el primer día.',
    learn_more='Ver más',
    phil_eyebrow='Filosofía', phil_h2='Bonito. Útil. <span>Humano. Posible.</span>',
    phil_p='Cuatro palabras contra las que medimos cada pantalla. Si una función falla en una de ellas, no sale, por ingeniosa que sea.',
@@ -342,6 +342,21 @@ WAVE='''<svg class="wave" viewBox="0 0 1440 420" preserveAspectRatio="none" aria
 def write(path, html):
     full=os.path.join(SITE,path); os.makedirs(os.path.dirname(full), exist_ok=True)
     open(full,'w').write(html)
+
+# The app count and the app list in the copy come from APPS, so adding an
+# app never leaves a «six apps» behind (it did, 20/09/2026).
+NUMBERS={'en':['zero','one','two','three','four','five','six','seven','eight','nine','ten'],
+         'es':['cero','una','dos','tres','cuatro','cinco','seis','siete','ocho','nueve','diez']}
+def fill_counts():
+    n=len(APPS)
+    for lang in LANGS:
+        names=[a['name'] for a in APPS]
+        joiner=' and ' if lang=='en' else ' y '
+        apps=', '.join(names[:-1])+joiner+names[-1]
+        word=NUMBERS[lang][n]
+        UI[lang]['site_desc']=UI[lang]['site_desc'].format(apps=apps)
+        UI[lang]['apps_h2']=UI[lang]['apps_h2'].format(Count=word.capitalize(), count=word)
+fill_counts()
 
 # ---------------------------------------------------------------- index
 def build_index(lang):

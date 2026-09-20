@@ -10,8 +10,8 @@ SEIZE 2026 (locked 2026-09-16): ribbon-S mark, Electric Blue `#007AFF`, Cyan `#2
 
 ```
 index.html            studio home: hero · Apps · Philosophy · Work with us · Studio · Contact
-apps/<slug>.html      one page per app (six): icon, lede, screenshots, what it does, privacy
-privacy.html          privacy policy, one section per app (#cycle-timers … #tandem)
+apps/<slug>.html      one page per app (one per entry in `APPS`): icon, lede, screenshots, what it does, privacy
+privacy.html          privacy policy, one section per app (#cycle-timers … #meso)
 terms.html            terms of use
 es/…                  the same four kinds of page in Spanish (same paths under es/; hreflang both ways)
 assets/site.css       the whole visual system (dark only)
@@ -40,7 +40,7 @@ porque Apple redirige a la tienda del visitante.
 `curl -s "https://itunes.apple.com/lookup?id=<id>"` (resultCount 1). El sitio
 no menciona revisión, TestFlight ni fechas de lanzamiento, a propósito.
 
-Vivas a 18/09/2026: Drip (6812332005) y Kover (6812714562).
+Vivas a 20/09/2026: Drip (6812332005) y Kover (6812714562). Anchor, Tandem y Meso, sin id hasta que `lookup` devuelva 1.
 
 ## Redirector
 
