@@ -63,7 +63,7 @@
   <h2>Dónde viven tus datos</h2>
   <ul>
     <li><strong>En tu dispositivo.</strong> El contenido de la app se guarda en local, en el contenedor privado de la app (y, en las apps con widgets, en un contenedor de App Group compartido que solo pueden leer la app y su propio widget).</li>
-    <li><strong>En tu iCloud.</strong> Nuestras apps sincronizan a través de tu cuenta personal de iCloud, bajo las condiciones de Apple, salvo que lo desactives en Ajustes; nosotros nunca tenemos acceso.</li>
+    <li><strong>En tu iCloud.</strong> Nuestras apps sincronizan a través de tu cuenta personal de iCloud, bajo las condiciones de Apple, salvo que lo desactives en Ajustes o que la sección de esa app diga otra cosa; nosotros nunca tenemos acceso.</li>
   </ul>
 
   <h2>Detalle por app</h2>
@@ -76,10 +76,13 @@
 
   <section id="tempo">
   <h3>Tempo</h3>
-  <p>Tempo guarda tus sesiones de trabajo, el objetivo diario, las zonas de trabajo, los logros y las notas de comidas <strong>en tu dispositivo</strong>, en un contenedor de App Group privado compartido solo con los widgets y la Live Activity de la propia app. Tempo no tiene sistema de cuentas, ni analítica, ni código de terceros que reciba tus datos.</p>
-  <p><strong>Ubicación.</strong> Tempo funciona por completo en modo manual sin ningún permiso de ubicación. Si decides dibujar una zona de trabajo, Tempo pide acceso a la ubicación y usa las geocercas de Apple, en el propio dispositivo, para notar cuándo llegas a esa zona y cuándo sales. La ubicación se procesa en el teléfono, nunca se sube a ningún sitio y no se usa para nada más que empezar y terminar tus sesiones de trabajo. Puedes quitar la zona y el permiso cuando quieras.</p>
-  <p><strong>La sincronización con iCloud</strong> viene activada para que tus registros te sigan entre tus dispositivos a través de tu cuenta personal de iCloud, bajo las condiciones de Apple; nosotros nunca tenemos acceso. Si la desactivas en Ajustes, tus datos se quedan solo en el dispositivo. La exportación al calendario escribe en un calendario que tú eliges, en tu dispositivo, y solo cuando lo pides. Los recordatorios son notificaciones locales.</p>
-  <p><em>Publicada en la App Store por Izotz Cristobal Mota.</em></p>
+  <p>Tempo guarda en tu dispositivo las sesiones de trabajo, los horarios, las preferencias de días laborables, las zonas de trabajo y el historial de correcciones. Un grupo de apps local comparte la información necesaria con los propios widgets de Tempo. Tempo no tiene cuentas, SDK de publicidad, SDK de analítica ni un servicio del desarrollador que reciba tus registros de trabajo o tu historial de ubicación.</p>
+  <p><strong>Almacenamiento y copias de seguridad.</strong> Esta versión de Tempo no implementa sincronización propia mediante iCloud. Las copias del dispositivo y los servicios del sistema pueden depender de tu cuenta de Apple y de los ajustes del dispositivo; son distintos de una sincronización implementada por Tempo.</p>
+  <p><strong>Ubicación y mapas.</strong> Puedes usar el seguimiento manual sin conceder permiso de ubicación. Al activar el seguimiento automático, Tempo utiliza Core Location de Apple y señales locales para evaluar entradas, salidas y rutinas de trabajo en casa. Controlas los permisos de ubicación en los ajustes de iOS. La búsqueda de lugares, los mapas y las estimaciones de rutas utilizan Apple MapKit; Apple puede procesar solicitudes y coordenadas relevantes de acuerdo con sus condiciones. Que el desarrollador no recopile tu ubicación no significa que los servicios de Apple nunca la procesen.</p>
+  <p><strong>Compras.</strong> Apple gestiona las compras de Tempo Pro y las renovaciones de las suscripciones. Tempo determina el acceso en el dispositivo mediante transacciones verificadas de StoreKit. El desarrollador no recibe los datos de tu tarjeta de pago a través de Tempo.</p>
+  <p><strong>Exportaciones y tarjetas de resumen.</strong> Puedes exportar tus registros o crear una imagen de resumen. Revisa las exportaciones antes de compartirlas, ya que los archivos de registros y diagnóstico pueden contener información sensible de trabajo o ubicación. Las imágenes de resumen se componen a partir de datos limitados, sin coordenadas precisas, nombres de lugares de trabajo ni horas precisas de inicio y fin; los totales se muestran por defecto y el reparto por categorías generales de ubicación es opcional. Compartir y Copiar no requieren acceso a Fotos. Guardar solicita permiso solo para añadir a Fotos cuando es necesario. El destino elegido, el portapapeles, la imagen guardada o una copia externa tienen sus propias condiciones de conservación y tratamiento; borrar los datos locales de Tempo no elimina las copias que ya has exportado o compartido.</p>
+  <p><strong>Tus controles.</strong> Puedes editar o eliminar lugares, corregir registros, exportar datos y borrar los datos locales de Tempo desde la app. También puedes revocar los permisos de ubicación, notificaciones o Fotos en los ajustes de iOS. Restringir un permiso puede limitar la automatización o el guardado, pero el seguimiento manual y las correcciones siguen disponibles.</p>
+  <p><em>Publicada por Izotz Cristobal Mota. Para consultas sobre el tratamiento de datos de Tempo, escribe a <a href="mailto:izotz@seizeapps.com">izotz@seizeapps.com</a>.</em></p>
   </section>
 
   <section id="drip">

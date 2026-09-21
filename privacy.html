@@ -63,7 +63,7 @@
   <h2>Where your data lives</h2>
   <ul>
     <li><strong>On your device.</strong> App content is stored locally, in the app's private container (and, for apps with widgets, a shared App Group container that only the app and its own widget can read).</li>
-    <li><strong>In your iCloud.</strong> Our apps sync through your personal iCloud account under Apple's terms, unless you turn it off in Settings — we never have access to it.</li>
+    <li><strong>In your iCloud.</strong> Our apps sync through your personal iCloud account under Apple's terms, unless you turn it off in Settings or the app's own section below says otherwise — we never have access to it.</li>
   </ul>
 
   <h2>Per-app details</h2>
@@ -76,10 +76,13 @@
 
   <section id="tempo">
   <h3>Tempo</h3>
-  <p>Tempo stores your work sessions, daily target, work zones, achievements and meal notes <strong>on your device</strong>, in a private App Group container shared only with Tempo's own widgets and Live Activity. Tempo has no account system, no analytics and no third-party code that receives your data.</p>
-  <p><strong>Location.</strong> Tempo works fully in manual mode without any location permission. If you choose to draw a work zone, Tempo asks for location access and uses Apple's on-device geofencing to notice when you arrive at and leave that zone. Location is processed on the phone, is never uploaded anywhere and is never used for anything other than starting and ending your work sessions. You can remove the zone and the permission at any time.</p>
-  <p><strong>iCloud sync</strong> is on by default so your records follow you between your devices through your personal iCloud account, under Apple's terms — we never have access to it. Turning it off in Settings keeps your data on the device only. Calendar export writes to a calendar you choose, on your device, only when you ask for it. Reminders are local notifications.</p>
-  <p><em>Published on the App Store by Izotz Cristobal Mota.</em></p>
+  <p>Tempo stores work sessions, schedules, working-day preferences, work-zone definitions and correction history on your device. A local App Group shares the information needed by Tempo's own widgets. Tempo has no account system, advertising SDK, analytics SDK or developer-operated service that receives your work records or location history.</p>
+  <p><strong>Storage and backups.</strong> This version of Tempo does not implement app-managed iCloud synchronization. Device backups and system services may be governed by your Apple account and device settings; they are separate from synchronization implemented by Tempo.</p>
+  <p><strong>Location and maps.</strong> Manual tracking is available without location permission. When you enable automatic tracking, Tempo uses Apple's Core Location services and local evidence to evaluate arrivals, departures and home-work routines. You control location permissions in iOS Settings. Place search, map display and route estimates use Apple MapKit; requests and relevant coordinates may be processed by Apple under its terms. Saying that the developer does not collect location does not mean that Apple platform services never process it.</p>
+  <p><strong>Purchases.</strong> Apple processes Tempo Pro purchases and subscription renewals. Tempo uses StoreKit's verified transactions to determine access on the device. The developer does not receive your payment-card details through Tempo.</p>
+  <p><strong>Exports and recap cards.</strong> You can export your records or create a recap image. Review exports before sharing them because record and diagnostic files may contain sensitive work or location information. Recap images are composed from a limited snapshot that excludes precise coordinates, workplace names and precise start/finish routines; totals are shown by default and broad location-category breakdowns are optional. Share and Copy do not require Photos access. Save requests add-only Photos permission when needed. A chosen share destination, clipboard service, saved image or external backup has its own handling and retention; erasing Tempo's local data does not delete copies you have already exported or shared.</p>
+  <p><strong>Your controls.</strong> You can edit or remove workplaces, correct records, export data and erase local Tempo data in the app. You can revoke location, notification or Photos permissions in iOS Settings. Restricting a permission may limit automation or saving, while manual tracking and record correction remain available.</p>
+  <p><em>Published by Izotz Cristobal Mota. For questions about Tempo's data handling, contact <a href="mailto:izotz@seizeapps.com">izotz@seizeapps.com</a>.</em></p>
   </section>
 
   <section id="drip">
