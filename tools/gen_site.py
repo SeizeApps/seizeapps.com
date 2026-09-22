@@ -5,7 +5,7 @@
 import os, sys
 SITE=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-CSS_V='2026-09-16c'
+CSS_V='2026-09-22'
 LANGS=['en','es']
 
 # ---------------------------------------------------------------- UI strings
@@ -44,7 +44,7 @@ UI={
    contact_eyebrow='Contact', contact_h2='Say hello.', contact_p='Questions, ideas, a project, a bug you found — one address, and we read everything.',
    app_eyebrow='Seize Apps · iOS', shots_aria='Screenshots', what_eyebrow='What it does', what_h2='One job, <span>done well.</span>',
    privacy_eyebrow='Privacy', privacy_h3='Yours, not ours.', published_by='A Seize Apps app.',
-   privacy_policy='Privacy policy', contact='Contact', store_badge='Download on the App Store',
+   privacy_policy='Privacy policy', contact='Contact', store_badge='Download on the App Store', store_icon='{name} on the App Store',
    shot_alt='{name} screenshot: {cap}',
  ),
  'es': dict(
@@ -81,7 +81,7 @@ UI={
    contact_eyebrow='Contacto', contact_h2='Escríbenos.', contact_p='Preguntas, ideas, un proyecto, un fallo que has visto: una sola dirección, y lo leemos todo.',
    app_eyebrow='Seize Apps · iOS', shots_aria='Capturas', what_eyebrow='Qué hace', what_h2='Una sola cosa, <span>bien hecha.</span>',
    privacy_eyebrow='Privacidad', privacy_h3='Tuyo, no nuestro.', published_by='Una app de Seize Apps.',
-   privacy_policy='Política de privacidad', contact='Contacto', store_badge='Descargar en la App Store',
+   privacy_policy='Política de privacidad', contact='Contacto', store_badge='Descargar en la App Store', store_icon='{name} en la App Store',
    shot_alt='Captura de {name}: {cap}',
  ),
 }
@@ -114,7 +114,7 @@ APPS=[
                     ('02 / TOCAR','Hecho significa reiniciado','Un toque marca la tarea como hecha y empieza el siguiente ciclo, directamente desde el widget si quieres.'),
                     ('03 / GUARDAR','Tuyo, no nuestro','Sin cuenta y sin rastreo. Tus temporizadores se quedan en tu dispositivo, donde debe estar una herramienta de casa.')],
           privacy='Cycle Timers no recoge ningún dato. Los temporizadores viven en tu dispositivo, en un contenedor privado compartido solo con los widgets de la propia app; los recordatorios se programan en local.',
-          captions=['Seis anillos, un vistazo','Un temporizador es un nombre, un icono y un ciclo'])),
+          captions=['Seis anillos, un vistazo','Un temporizador es un nombre, un icono y un ciclo']), appstore='6796827400'),
  app('tempo','Tempo','tempo.png','Izotz Cristobal Mota','tempo',
      ['tempo-01-welcome.jpg','tempo-02-today.jpg','tempo-03-calendar.jpg'],
      dict(one='A workday companion that remembers your hours for you — arrive, work, leave — and keeps the record yours to correct.',
@@ -176,7 +176,7 @@ APPS=[
                     ('03 / VER','Sin números','Un registro emocional sin puntuaciones, estrategias basadas en DBT, TCC, ACT y autocompasión con su evidencia a la vista, y el progreso como la forma de tu semana, no como una nota.')],
           privacy='Todo lo que introduces se queda en tu dispositivo y en tu propio iCloud privado. Apple Health es opcional y de solo lectura (sueño, actividad), nunca peso ni nutrición, y nunca sale del teléfono. Sin analítica, sin anuncios, sin chat de IA.',
           captions=['Inicio: la siguiente rutina, y «Ahora»','«¿Qué está pasando?» lleva a la herramienta adecuada','Registro sin números','Estrategias, con su evidencia'],
-          extra='Anchor no es un producto sanitario y no sustituye al tratamiento profesional. Si estás en peligro o tus propios pensamientos te asustan, llama al número de emergencias de tu zona.')),
+          extra='Anchor no es un producto sanitario y no sustituye al tratamiento profesional. Si estás en peligro o tus propios pensamientos te asustan, llama al número de emergencias de tu zona.'), appstore='6812615752'),
  app('kover','Kover','kover.png','Sendoa Sola','kover',
      ['kover-01-products.jpg','kover-02-add.jpg','kover-03-seal.jpg','kover-04-detail.jpg'],
      dict(one='Snap the receipt, and Kover watches the warranty: what is covered, until when, and a nudge before it runs out.',
@@ -358,17 +358,29 @@ def fill_counts():
         UI[lang]['apps_h2']=UI[lang]['apps_h2'].format(Count=word.capitalize(), count=word)
 fill_counts()
 
+APPLE_GLYPH='<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16.37 12.72c-.02-2.3 1.88-3.41 1.97-3.46-1.07-1.57-2.74-1.79-3.34-1.81-1.42-.14-2.77.84-3.49.84-.72 0-1.83-.82-3.01-.8-1.55.02-2.98.9-3.77 2.29-1.61 2.79-.41 6.92 1.16 9.18.77 1.11 1.68 2.35 2.87 2.31 1.15-.05 1.59-.75 2.98-.75 1.39 0 1.78.75 3 .72 1.24-.02 2.03-1.13 2.79-2.24.88-1.29 1.24-2.53 1.26-2.6-.03-.01-2.41-.93-2.42-3.68zM14.07 5.94c.63-.77 1.06-1.83.94-2.9-.91.04-2.02.61-2.67 1.37-.58.67-1.1 1.76-.96 2.8 1.02.08 2.05-.52 2.69-1.27z"/></svg>'
+
+def store_icon(a, t):
+    if not a.get('appstore'): return ''
+    label=t['store_icon'].format(name=a['name'])
+    return (f'<a class="store-icon" href="https://apps.apple.com/app/id{a["appstore"]}" '
+            f'aria-label="{label}" title="{label}">{APPLE_GLYPH}</a>')
+
 # ---------------------------------------------------------------- index
 def build_index(lang):
     t=UI[lang]; root='../' if lang=='es' else ''; home=root+prefix(lang)
+    # El icono de la Store es un enlace hermano de la tarjeta (un <a> no puede
+    # ir dentro de otro) y solo sale con `appstore`, como el badge de la página.
     cards=''.join(f'''
+    <div class="app-card-wrap">
     <a class="app-card" href="{home}apps/{a['slug']}.html">
       <img src="{root}assets/icons/{a['icon']}" alt="" width="64" height="64">
       <h3>{a['name']}</h3>
       <p class="one-liner">{a['copy'][lang]['one']}</p>
       <div class="tags">{''.join(f'<span>{x}</span>' for x in a['copy'][lang]['tags'])}</div>
       <span class="card-more">{t['learn_more']} <span aria-hidden="true">→</span></span>
-    </a>''' for a in APPS)
+    </a>{store_icon(a, t)}
+    </div>''' for a in APPS)
     values=''.join(f'<div class="value"><span class="num">0{i+1}</span><h3>{h}</h3><p>{p}</p></div>' for i,(h,p) in enumerate(t['values']))
     work=''.join(f'<div class="feature"><span class="num">0{i+1}</span><h3>{h}</h3><p>{p}</p></div>' for i,(h,p) in enumerate(t['work_items']))
     how=''.join(f'<div class="step"><h4>{h}</h4><p>{p}</p></div>' for h,p in t['work_how'])

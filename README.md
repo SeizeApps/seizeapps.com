@@ -40,7 +40,15 @@ porque Apple redirige a la tienda del visitante.
 `curl -s "https://itunes.apple.com/lookup?id=<id>"` (resultCount 1). El sitio
 no menciona revisión, TestFlight ni fechas de lanzamiento, a propósito.
 
-Vivas a 20/09/2026: Drip (6812332005) y Kover (6812714562). Anchor, Tandem y Meso, sin id hasta que `lookup` devuelva 1.
+Vivas a 22/09/2026: Cycle Timers (6796827400), Drip (6812332005), Kover (6812714562)
+y Anchor (6812615752). Tempo y Meso, sin id hasta que `lookup` devuelva 1. Tandem
+está aprobada pero **retirada de la venta** desde el 22/09/2026 (decisión de Sendoa):
+sin id mientras siga retirada.
+
+En la portada, cada tarjeta con `appstore` lleva además un icono redondo de la
+Store (`.store-icon`, arriba a la derecha) que enlaza a la ficha sin pasar por la
+página de la app. Es un `<a>` hermano de la tarjeta dentro de `.app-card-wrap`,
+porque un enlace no puede ir dentro de otro.
 
 ## Redirector
 
