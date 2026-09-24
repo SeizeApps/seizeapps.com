@@ -2,7 +2,7 @@
 PRIVACY_ES='''
   <p class="eyebrow">Legal</p>
   <h1>Política de privacidad</h1>
-  <p class="effective">En vigor desde el 20 de septiembre de 2026</p>
+  <p class="effective">En vigor desde el 24 de septiembre de 2026</p>
   <nav class="toc" aria-label="Apps">
     <a href="#cycle-timers">Cycle Timers</a><a href="#tempo">Tempo</a><a href="#drip">Drip</a><a href="#anchor">Anchor</a><a href="#kover">Kover</a><a href="#tandem">Tandem</a><a href="#meso">Meso</a>
   </nav>
@@ -76,7 +76,7 @@ PRIVACY_ES='''
   <h3>Meso</h3>
   <p>Meso guarda tus programas de entrenamiento (bloques, sesiones, ejercicios y sus prescripciones), cada sesión registrada (cargas, repeticiones, repeticiones en reserva, notas, el gimnasio que usaste) y tus propios ejercicios y gimnasios <strong>en tu dispositivo</strong>, en el contenedor privado de la app. Meso no tiene sistema de cuentas, ni analítica, ni código de terceros que reciba tus datos. Tiene dos compras opcionales: un desbloqueo «Meso Pro» de pago único que abre las funciones extra de la app (Apple comprueba el derecho en tu dispositivo, incluido En familia; la app solo guarda si está activo) y un bote de propinas de compras sueltas que no desbloquean nada ni cambian nada de la app. Las procesa Apple las dos; nosotros no vemos tus datos de pago y no guardamos nada de ellas más allá de esa marca local y una cuenta local de cuántas veces has dejado propina.</p>
   <p><strong>Apple Salud.</strong> Apagado por defecto. Si lo activas en Ajustes, cada sesión terminada se escribe en Salud como un entrenamiento de fuerza (inicio, fin y nombre) para que cuente en tu actividad. Meso nunca lee nada de Salud ni sube datos de Salud a ningún sitio; el permiso y la preferencia viven solo en ese dispositivo.</p>
-  <p><strong>La sincronización con iCloud</strong> viene activada para que tus programas y sesiones te sigan entre tus dispositivos a través de tu cuenta personal de iCloud, bajo las condiciones de Apple; nosotros nunca tenemos acceso. Si la desactivas en Ajustes, tus datos se quedan solo en el dispositivo. Los temporizadores de descanso, si los usas, son notificaciones locales. El texto de la semana y el CSV del bloque que envías a un entrenador son archivos que creas y compartes tú.</p>
+  <p><strong>La sincronización con iCloud</strong> viene activada para que tus programas y sesiones te sigan entre tus dispositivos a través de tu cuenta personal de iCloud, bajo las condiciones de Apple; nosotros nunca tenemos acceso. Si la desactivas en Ajustes, tus datos se quedan solo en el dispositivo. Meso no tiene temporizador de descanso ni envía notificaciones. Mientras hay una sesión abierta, una Actividad en Directo muestra el ejercicio en curso y la siguiente serie en la pantalla de bloqueo; se dibuja en el dispositivo con lo que le pasa la app y termina con la sesión. El texto de la semana y el CSV del bloque que envías a un entrenador son archivos que creas y compartes tú.</p>
   <p><em>Publicada en la App Store por Sendoa Sola.</em></p>
   </section>
 
