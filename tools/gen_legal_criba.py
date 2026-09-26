@@ -26,6 +26,7 @@ PRIVACY = {
     <li><strong>Tus Guardados</strong> viven en tu dispositivo y en tu propia cuenta de iCloud (puedes apagar la sincronización en Ajustes). No los vemos.</li>
     <li><strong>Tu ubicación</strong> se usa solo en el iPhone, cuando tocas «Cerca de mí», para centrar el mapa. No se envía a Criba.</li>
     <li><strong>Si entras con Apple:</strong> Apple nos da un identificador de cuenta. Criba no pide tu nombre ni tu correo. Guardamos ese identificador, tu <strong>perfil</strong> (nombre de usuario, nombre y, si los pones, foto, bio y un enlace) y lo que aportas: sitios que propones, respaldos (motivos y comentario), notas si eres Curator, a quién sigues, a quién bloqueas y las denuncias que envías.</li>
+    <li><strong>Si activas los avisos:</strong> el identificador de avisos que Apple da a tu iPhone (para enviártelos a través del servicio de avisos de Apple) y qué tipos de aviso quieres recibir. Se borra al cerrar sesión o borrar la cuenta. Los avisos solo tratan de ti (tus propuestas, tus fotos, quién te sigue, tu papel) y nunca son publicidad.</li>
     <li><strong>Registros técnicos:</strong> el servidor anota durante poco tiempo datos técnicos de las peticiones (como la dirección IP) para funcionar y protegerse de abusos.</li>
   </ul>
 
@@ -48,7 +49,7 @@ PRIVACY = {
   <p>No hay SDK de publicidad ni de analítica, y no vendemos ni cedemos datos a nadie.</p>
 
   <h2>Cuánto tiempo</h2>
-  <p>Mientras tengas la cuenta. <strong>Puedes borrarla desde la app</strong> (Ajustes › Tu cuenta › Borrar la cuenta): se eliminan tu perfil, tus respaldos, tus notas, tus seguidos y tus bloqueos, y las propuestas tuyas que nadie más respalde. Las denuncias que enviaste se conservan sin autor, y el registro de las decisiones de moderación que te afectaron se guarda el tiempo que exige la ley. Las copias de seguridad desaparecen en 30 días.</p>
+  <p>Mientras tengas la cuenta. <strong>Puedes borrarla desde la app</strong> (Ajustes › Tu cuenta › Borrar la cuenta): se eliminan tu perfil, tus respaldos, tus notas, tus seguidos y tus bloqueos, y las propuestas tuyas que nadie más respalde. Las denuncias que enviaste se conservan sin autor, y el registro de las decisiones de moderación que te afectaron se guarda el tiempo que exige la ley. Al borrarla, la app te pide confirmar con Apple y <strong>Criba revoca su acceso a tu cuenta de Apple</strong>. Las copias de seguridad desaparecen en 30 días.</p>
 
   <h2>Tus derechos</h2>
   <p>Puedes acceder a tus datos, corregirlos (tu perfil se edita en la app), suprimirlos (borrando la cuenta), llevártelos u oponerte a su tratamiento escribiendo a <a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a>. Si no te respondemos bien, puedes reclamar ante la Agencia Española de Protección de Datos (<a href="https://www.aepd.es" rel="noopener">aepd.es</a>).</p>
@@ -74,6 +75,7 @@ PRIVACY = {
     <li><strong>Your Saved places</strong> live on your device and in your own iCloud account (you can turn sync off in Settings). We can't see them.</li>
     <li><strong>Your location</strong> is used only on the iPhone, when you tap «Near me», to centre the map. It is not sent to Criba.</li>
     <li><strong>If you sign in with Apple:</strong> Apple gives us an account identifier. Criba doesn't ask for your name or email. We keep that identifier, your <strong>profile</strong> (username, name and, if you add them, photo, bio and a link) and what you contribute: places you propose, backings (reasons and comment), notes if you are a Curator, who you follow, who you block and the reports you send.</li>
+    <li><strong>If you turn on notifications:</strong> the notification identifier Apple gives your iPhone (to send them through Apple's push service) and which kinds you want. It's deleted when you sign out or delete the account. Notifications are only about you (your proposals, your photos, who follows you, your role) and never ads.</li>
     <li><strong>Technical logs:</strong> the server briefly records technical request data (such as the IP address) to run and to protect itself from abuse.</li>
   </ul>
 
@@ -96,7 +98,7 @@ PRIVACY = {
   <p>No advertising or analytics SDKs, and we don't sell or share data with anyone.</p>
 
   <h2>How long</h2>
-  <p>As long as you keep the account. <strong>You can delete it in the app</strong> (Settings › Your account › Delete account): your profile, backings, notes, follows and blocks are removed, along with your proposals nobody else backs. Reports you sent are kept without an author, and the record of moderation decisions that affected you is kept as long as the law requires. Backups expire within 30 days.</p>
+  <p>As long as you keep the account. <strong>You can delete it in the app</strong> (Settings › Your account › Delete account): your profile, backings, notes, follows and blocks are removed, along with your proposals nobody else backs. Reports you sent are kept without an author, and the record of moderation decisions that affected you is kept as long as the law requires. When you delete it, the app asks you to confirm with Apple and <strong>Criba revokes its access to your Apple account</strong>. Backups expire within 30 days.</p>
 
   <h2>Your rights</h2>
   <p>You can access, correct (your profile is edited in the app), erase (by deleting the account), port or object to the processing of your data by writing to <a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a>. You can also complain to the Spanish Data Protection Agency (<a href="https://www.aepd.es" rel="noopener">aepd.es</a>).</p>
