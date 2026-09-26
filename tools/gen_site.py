@@ -136,7 +136,7 @@ APPS=[
                     ('02 / VER','Hoy, claro','Tiempo trabajado, tu objetivo diario, llegada y salida en una pantalla, y una vista mensual que enseña de un vistazo los días en hora, cortos y con horas de más.'),
                     ('03 / TUYO','Tu registro, editable','Revisa, corrige, parte, fusiona o exporta. Si un límite no estaba claro, Tempo pregunta en vez de adivinar.')],
           privacy='Tempo guarda tus sesiones, zonas y objetivos en tu dispositivo. La ubicación se usa solo para detectar la zona de trabajo que dibujaste, en el propio teléfono, y nunca se envía a ningún sitio. Sin cuenta, sin analítica.',
-          captions=['Tu jornada, recordada','Hoy: tiempo trabajado frente a tu objetivo','Un mes de días, coloreados según cómo fueron'])),
+          captions=['Tu jornada, recordada','Hoy: tiempo trabajado frente a tu objetivo','Un mes de días, coloreados según cómo fueron']), appstore='6761499275'),
  app('drip','Drip','drip.png','Sendoa Sola','drip',
      ['drip-01-dashboard.jpg','drip-03-services.jpg','drip-04-detail.jpg','drip-02-dashboard-2.jpg'],
      dict(one='See exactly where your money drips: every subscription, bill and membership shown as what it really costs a year.',
