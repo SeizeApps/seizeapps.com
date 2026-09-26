@@ -87,12 +87,14 @@ UI={
 }
 
 # ---------------------------------------------------------------- apps
-def app(slug, name, icon, lead, privacy_id, shots, en, es, appstore=None):
+def app(slug, name, icon, lead, privacy_id, shots, en, es, appstore=None, privacy_path=None):
     # `appstore`: el id numérico de App Store Connect, solo cuando la app está
     # publicada de verdad. Si está, la página saca el badge; si no, no hay
     # badge. Nunca se escribe el href a mano en el HTML.
+    # `privacy_path`: {'en': ..., 'es': ...} relativo a la raíz, para una app con
+    # política propia (Criba), relativo a la portada de cada idioma (la de es está en /es/).
     return dict(slug=slug, name=name, icon=icon, lead=lead, privacy_id=privacy_id,
-                shots=shots, appstore=appstore, copy={'en':en,'es':es})
+                shots=shots, appstore=appstore, privacy_path=privacy_path, copy={'en':en,'es':es})
 
 APPS=[
  app('cycle-timers','Cycle Timers','cycle-timers.png','Izotz Cristobal Mota','cycle-timers',
@@ -237,6 +239,47 @@ APPS=[
                     ('03 / APRENDER','Cada regla con su fuente','Por qué RIR, por qué una descarga, por qué la banda: cada principio de la app lleva su evidencia y lo sólida que es, con referencias que puedes comprobar. Honesta con lo que está claro y lo que no.')],
           privacy='Meso guarda tus programas y sesiones en tu dispositivo y en tu propia cuenta de iCloud. Apple Salud solo se escribe si lo activas, y nunca se lee. Sin cuenta, sin analítica.',
           captions=['Hoy: la sesión que toca, con la semana pasada al lado','Una serie es un ✓; el resto viene relleno','Tonelaje por ejercicio, semana a semana','Series por músculo frente a la banda de la evidencia'])),
+ app('grain','Grain','grain.png','Sendoa Sola','grain',
+     ['grain-01-today.jpg','grain-02-meal.jpg','grain-03-label.jpg','grain-04-history.jpg'],
+     dict(one='A macro diary with no diet talk: energy, protein, carbs and fat against the targets you set, and what is left.',
+          tags=['Nutrition','Macros','ES · EN'],
+          lede='Building muscle, losing fat or following your dietitian\'s numbers: <strong>Grain</strong> works the same for all of them. You set the targets; Grain logs what you eat and compares, without suggesting or judging. Going over is not painted red and hitting it is not green — the bar fills in its colour and the figure says "+12 g". Over 4,000 foods from the CIQUAL and BEDCA tables ship inside the app and work offline.',
+          meta=['iOS 26+','Apple Health','English · Spanish'],
+          features=[('01 / LOG','The way you would say it','Type "2 eggs, 60 g toast, 10 g olive oil" and Grain splits the foods and suggests the grams, with the values from the tables; you check it before it is logged. Or search, scan a barcode (Open Food Facts) or add the macros by hand. Usual servings are already set.'),
+                    ('02 / READ','The label, on your iPhone','Point the camera at the nutrition table, or pick a photo, and the per-100 g values fill themselves in. It is read on the device; nothing leaves the phone.'),
+                    ('03 / REVIEW','How your weeks add up','Seven, thirty or ninety days, averaging only the days you logged — and saying so. Each meal adds up next to its name, and the day shows what is left of the energy and each macro. No streaks, no weight.')],
+          privacy='Grain keeps your diary on your device and in your own iCloud account. From a barcode only the number leaves, to Open Food Facts. Apple Health is written only if you switch it on, and never read. No account, no analytics.',
+          captions=['Today: what you ate against your targets, and what is left','Write a meal the way you would say it','A nutrition label, read on the iPhone','How the weeks add up, by macro']),
+     dict(one='Un diario de macros sin tono de dieta: energía, proteína, hidratos y grasa frente a las metas que pones tú, y lo que queda.',
+          tags=['Nutrición','Macros','ES · EN'],
+          lede='Ganar músculo, perder grasa o seguir lo que te ha pautado tu nutricionista: <strong>Grain</strong> sirve igual para todo. Las metas las pones tú; Grain anota lo que comes y lo compara, sin proponer ni juzgar. Pasarte no se pinta de rojo ni cumplir de verde: la barra se llena en su color y la cifra dice «+12 g». Más de 4.000 alimentos de las tablas CIQUAL y BEDCA van dentro de la app y funcionan sin conexión.',
+          meta=['iOS 26+','Apple Salud','Castellano · Inglés'],
+          features=[('01 / ANOTAR','Como lo dirías','Escribe «2 huevos, 60 g de pan tostado, 10 g de aceite» y Grain separa los alimentos y propone los gramos, con los valores de las tablas; tú lo revisas antes de anotar. O busca, escanea un código de barras (Open Food Facts) o mete los macros a mano. Las raciones habituales ya vienen puestas.'),
+                    ('02 / LEER','La etiqueta, en tu iPhone','Apunta la cámara a la tabla nutricional, o elige una foto, y los valores por 100 g se rellenan solos. Se lee en el dispositivo; nada sale del teléfono.'),
+                    ('03 / REPASAR','Cómo suman tus semanas','Siete, treinta o noventa días, con la media de los días anotados, y diciéndolo. Cada comida suma junto a su nombre y el día enseña lo que queda de energía y de cada macro. Sin rachas, sin peso.')],
+          privacy='Grain guarda tu diario en tu dispositivo y en tu propia cuenta de iCloud. Del código de barras solo sale el número, a Open Food Facts. Apple Salud solo se escribe si lo activas, y nunca se lee. Sin cuenta, sin analítica.',
+          captions=['Hoy: lo que has comido frente a tus metas, y lo que queda','Escribe una comida como lo dirías','Una etiqueta nutricional, leída en el iPhone','Cómo suman las semanas, por macro'])),
+ app('criba','Criba','criba.png','Sendoa Sola','criba',
+     ['criba-01-map.jpg','criba-02-why.jpg','criba-03-detail.jpg','criba-04-signed.jpg'],
+     dict(one='A map of places that are there for a reason: classics and new places with a point of view, each with its why, everything signed.',
+          tags=['Food &amp; drink','Curated map','ES · EN'],
+          lede='<strong>Criba</strong> is a map where places get in on merit, not on stars or ads. Classics that have proved something over the years and new places with a point of view, each one with the reasons it is there and notes signed by whoever stands behind it. It starts in Bilbao, with places from elsewhere from day one. Anyone can propose a place; a Curator signs it or it does not get in.',
+          meta=['iOS 26+','Apple Maps','English · Spanish'],
+          features=[('01 / WHY','Every place, with its why','A closed list of reasons — a classic, the product, the price, the room — and signed notes, never a score. Opening hours, phone and directions come live from Apple Maps.'),
+                    ('02 / FIND','What you fancy, now','Filter by kind of place, food, price and moment, or see what is open right now. What to order and whether to book are on the card.'),
+                    ('03 / SIGNED','Everything is signed','See who backs each place and follow people with your taste. Propose what is missing; a Curator decides, and tells you why if it does not get in.')],
+          privacy='Criba has accounts (Sign in with Apple, no name or email asked) and a server in the EU for places, notes and profiles. Browsing the map needs no account. It has its own privacy policy and terms.',
+          captions=['The map: classics and new places with a point of view','Each place with its reasons and signed notes','What to order, when to go, whether to book','Everything signed: who backs what']),
+     dict(one='Un mapa de sitios que están por algo: clásicos y nuevos con criterio, cada uno con su porqué, todo firmado.',
+          tags=['Comer y beber','Mapa con criterio','ES · EN'],
+          lede='<strong>Criba</strong> es un mapa donde los sitios entran por mérito, no por estrellas ni anuncios. Clásicos que han demostrado algo con los años y nuevos con criterio, cada uno con los motivos por los que está y notas firmadas por quien lo respalda. Empieza en Bilbao, con sitios de otros lados desde el primer día. Cualquiera puede proponer un sitio; lo firma un Curator o no entra.',
+          meta=['iOS 26+','Apple Maps','Castellano · Inglés'],
+          features=[('01 / PORQUÉ','Cada sitio, con su porqué','Una lista cerrada de motivos —un clásico, el producto, el precio, el local— y notas firmadas, nunca una puntuación. Horario, teléfono y cómo llegar, en vivo desde Apple Maps.'),
+                    ('02 / ENCONTRAR','Lo que te apetece, ahora','Filtra por tipo de sitio, cocina, precio y momento, o mira lo que está abierto ahora. Qué pedir y si hay que reservar, en la ficha.'),
+                    ('03 / FIRMADO','Todo va firmado','Mira quién respalda cada sitio y sigue a gente con tu gusto. Propón lo que falta; decide un Curator y, si no entra, te dice por qué.')],
+          privacy='Criba tiene cuentas (Sign in with Apple, sin pedir nombre ni correo) y un servidor en la UE para sitios, notas y perfiles. Mirar el mapa no necesita cuenta. Tiene su propia política de privacidad y sus condiciones.',
+          captions=['El mapa: clásicos y nuevos con criterio','Cada sitio con sus motivos y notas firmadas','Qué pedir, cuándo ir, si hay que reservar','Todo firmado: quién respalda qué']),
+     privacy_path={'en': 'criba/privacy/', 'es': '../criba/privacidad/'}),
 ]
 
 # ---------------------------------------------------------------- chrome
@@ -496,7 +539,7 @@ def build_app(lang, a):
   <section class="shell" aria-labelledby="privacy-title">
     <div class="privacy-box">
       <div><p class="eyebrow">{t['privacy_eyebrow']}</p><h3 id="privacy-title" style="margin-bottom:10px">{t['privacy_h3']}</h3><p>{c['privacy']}</p><p class="note" style="margin-top:14px">{t['published_by'].format(lead=a['lead'])}</p></div>
-      <div class="links"><a class="button ghost" href="{home}privacy.html#{a['privacy_id']}">{t['privacy_policy']}</a><a class="button ghost" href="mailto:hello@seizeapps.com?subject={a['name']}">{t['contact']}</a></div>
+      <div class="links"><a class="button ghost" href="{home}{a['privacy_path'][lang] if a.get('privacy_path') else 'privacy.html#' + a['privacy_id']}">{t['privacy_policy']}</a><a class="button ghost" href="mailto:hello@seizeapps.com?subject={a['name']}">{t['contact']}</a></div>
     </div>
   </section>
 </main>
