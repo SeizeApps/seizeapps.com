@@ -516,4 +516,6 @@ if __name__=='__main__':
         build_index(lang)
         for a in APPS: build_app(lang, a)
         build_legal(lang,'privacy'); build_legal(lang,'terms')
-    print('ok', len(APPS), 'apps ×', len(LANGS), 'languages')
+    from gen_legal_criba import build_criba
+    build_criba()
+    print('ok', len(APPS), 'apps ×', len(LANGS), 'languages · Criba legal')
