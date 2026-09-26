@@ -15,7 +15,7 @@ PRIVACY = {
   <p class="eyebrow">Criba · Legal</p>
   <h1>Privacidad de Criba</h1>
   <p class="effective">{updated}</p>
-  <p><strong>La versión corta:</strong> mirar el mapa no pide nada. Si decides aportar (proponer, respaldar, comentar, seguir a gente), entras con Apple, eliges un nombre público y lo que aportas se publica con ese nombre. Tu ubicación no sale del iPhone. Sin publicidad, sin analítica y sin vender nada.</p>
+  <p><strong>La versión corta:</strong> mirar el mapa no pide nada. Si decides aportar (proponer, respaldar, comentar, seguir a gente), entras con Apple, eliges un nombre de usuario y un nombre, y lo que aportas se publica con ellos. Tu ubicación no sale del iPhone. Sin publicidad, sin analítica y sin vender nada.</p>
 
   <h2>Quién es el responsable</h2>
   <p>Criba la publica en el App Store <strong>Sendoa Sola</strong> (Seize Apps, País Vasco, España), que es el responsable del tratamiento. Contacto para todo lo relativo a tus datos: <a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a>.</p>
@@ -25,12 +25,12 @@ PRIVACY = {
     <li><strong>Sin cuenta:</strong> nada tuyo. La app descarga los sitios publicados y los guarda en el iPhone para abrir al instante.</li>
     <li><strong>Tus Guardados</strong> viven en tu dispositivo y en tu propia cuenta de iCloud (puedes apagar la sincronización en Ajustes). No los vemos.</li>
     <li><strong>Tu ubicación</strong> se usa solo en el iPhone, cuando tocas «Cerca de mí», para centrar el mapa. No se envía a Criba.</li>
-    <li><strong>Si entras con Apple:</strong> Apple nos da un identificador de cuenta. Criba no pide tu nombre ni tu correo. Guardamos ese identificador, el <strong>nombre público</strong> que elijas y lo que aportas: sitios que propones, respaldos (motivos y comentario), notas si eres Curator, a quién sigues, a quién bloqueas y las denuncias que envías.</li>
+    <li><strong>Si entras con Apple:</strong> Apple nos da un identificador de cuenta. Criba no pide tu nombre ni tu correo. Guardamos ese identificador, tu <strong>perfil</strong> (nombre de usuario, nombre y, si los pones, foto, bio y un enlace) y lo que aportas: sitios que propones, respaldos (motivos y comentario), notas si eres Curator, a quién sigues, a quién bloqueas y las denuncias que envías.</li>
     <li><strong>Registros técnicos:</strong> el servidor anota durante poco tiempo datos técnicos de las peticiones (como la dirección IP) para funcionar y protegerse de abusos.</li>
   </ul>
 
   <h2>Qué es público</h2>
-  <p>Criba es también una red de gustos: <strong>tu nombre público, tus respaldos, tus comentarios, tus notas y los sitios que respaldas son visibles para cualquiera</strong>, y a partir de ellos la app sugiere gente con gustos parecidos. El número de seguidores solo se muestra por tramos (10+, 50+…). Son privados: tu identificador de Apple, a quién bloqueas, las denuncias que envías y las propuestas que aún no han entrado en el mapa.</p>
+  <p>Criba es también una red de gustos: <strong>tu perfil (nombre de usuario, nombre, foto, bio y enlace), tus respaldos, tus comentarios, tus notas y los sitios que propones y respaldas son visibles para cualquiera</strong>, y a partir de ellos la app sugiere gente con gustos parecidos. El número de seguidores solo se muestra por tramos (10+, 50+…). Son privados: tu identificador de Apple, a quién bloqueas, las denuncias que envías y las propuestas que aún no han entrado en el mapa.</p>
 
   <h2>Para qué y con qué base</h2>
   <ul>
@@ -51,7 +51,7 @@ PRIVACY = {
   <p>Mientras tengas la cuenta. <strong>Puedes borrarla desde la app</strong> (Ajustes › Tu cuenta › Borrar la cuenta): se eliminan tu perfil, tus respaldos, tus notas, tus seguidos y tus bloqueos, y las propuestas tuyas que nadie más respalde. Las denuncias que enviaste se conservan sin autor, y el registro de las decisiones de moderación que te afectaron se guarda el tiempo que exige la ley. Las copias de seguridad desaparecen en 30 días.</p>
 
   <h2>Tus derechos</h2>
-  <p>Puedes acceder a tus datos, corregirlos (tu nombre se cambia en la app), suprimirlos (borrando la cuenta), llevártelos u oponerte a su tratamiento escribiendo a <a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a>. Si no te respondemos bien, puedes reclamar ante la Agencia Española de Protección de Datos (<a href="https://www.aepd.es" rel="noopener">aepd.es</a>).</p>
+  <p>Puedes acceder a tus datos, corregirlos (tu perfil se edita en la app), suprimirlos (borrando la cuenta), llevártelos u oponerte a su tratamiento escribiendo a <a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a>. Si no te respondemos bien, puedes reclamar ante la Agencia Española de Protección de Datos (<a href="https://www.aepd.es" rel="noopener">aepd.es</a>).</p>
 
   <h2>Menores</h2>
   <p>Para crear una cuenta hay que tener al menos 14 años. Mirar el mapa no pide nada a nadie.</p>
@@ -63,7 +63,7 @@ PRIVACY = {
   <p class="eyebrow">Criba · Legal</p>
   <h1>Criba privacy</h1>
   <p class="effective">{updated}</p>
-  <p><strong>The short version:</strong> looking at the map asks for nothing. If you choose to contribute (propose, back, comment, follow people), you sign in with Apple, pick a public name, and what you contribute is published under that name. Your location never leaves your iPhone. No ads, no analytics, nothing sold.</p>
+  <p><strong>The short version:</strong> looking at the map asks for nothing. If you choose to contribute (propose, back, comment, follow people), you sign in with Apple, pick a username and a name, and what you contribute is published under them. Your location never leaves your iPhone. No ads, no analytics, nothing sold.</p>
 
   <h2>Who is responsible</h2>
   <p>Criba is published on the App Store by <strong>Sendoa Sola</strong> (Seize Apps, Basque Country, Spain), the data controller. Contact for anything about your data: <a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a>.</p>
@@ -73,12 +73,12 @@ PRIVACY = {
     <li><strong>Without an account:</strong> nothing of yours. The app downloads the published places and keeps them on the iPhone so it opens at once.</li>
     <li><strong>Your Saved places</strong> live on your device and in your own iCloud account (you can turn sync off in Settings). We can't see them.</li>
     <li><strong>Your location</strong> is used only on the iPhone, when you tap «Near me», to centre the map. It is not sent to Criba.</li>
-    <li><strong>If you sign in with Apple:</strong> Apple gives us an account identifier. Criba doesn't ask for your name or email. We keep that identifier, the <strong>public name</strong> you choose, and what you contribute: places you propose, backings (reasons and comment), notes if you are a Curator, who you follow, who you block and the reports you send.</li>
+    <li><strong>If you sign in with Apple:</strong> Apple gives us an account identifier. Criba doesn't ask for your name or email. We keep that identifier, your <strong>profile</strong> (username, name and, if you add them, photo, bio and a link) and what you contribute: places you propose, backings (reasons and comment), notes if you are a Curator, who you follow, who you block and the reports you send.</li>
     <li><strong>Technical logs:</strong> the server briefly records technical request data (such as the IP address) to run and to protect itself from abuse.</li>
   </ul>
 
   <h2>What is public</h2>
-  <p>Criba is also a taste network: <strong>your public name, your backings, comments and notes, and the places you back are visible to anyone</strong>, and the app suggests people with similar taste from them. Follower numbers are only shown in bands (10+, 50+…). Private: your Apple identifier, who you block, the reports you send, and proposals that haven't made it onto the map.</p>
+  <p>Criba is also a taste network: <strong>your profile (username, name, photo, bio and link), your backings, comments and notes, and the places you propose and back are visible to anyone</strong>, and the app suggests people with similar taste from them. Follower numbers are only shown in bands (10+, 50+…). Private: your Apple identifier, who you block, the reports you send, and proposals that haven't made it onto the map.</p>
 
   <h2>Why, and on what basis</h2>
   <ul>
@@ -99,7 +99,7 @@ PRIVACY = {
   <p>As long as you keep the account. <strong>You can delete it in the app</strong> (Settings › Your account › Delete account): your profile, backings, notes, follows and blocks are removed, along with your proposals nobody else backs. Reports you sent are kept without an author, and the record of moderation decisions that affected you is kept as long as the law requires. Backups expire within 30 days.</p>
 
   <h2>Your rights</h2>
-  <p>You can access, correct (your name is changed in the app), erase (by deleting the account), port or object to the processing of your data by writing to <a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a>. You can also complain to the Spanish Data Protection Agency (<a href="https://www.aepd.es" rel="noopener">aepd.es</a>).</p>
+  <p>You can access, correct (your profile is edited in the app), erase (by deleting the account), port or object to the processing of your data by writing to <a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a>. You can also complain to the Spanish Data Protection Agency (<a href="https://www.aepd.es" rel="noopener">aepd.es</a>).</p>
 
   <h2>Children</h2>
   <p>You must be at least 14 to create an account. Looking at the map asks nothing of anyone.</p>
@@ -117,10 +117,10 @@ TERMS = {
   <p>Criba es un mapa de sitios que están por algo: entran por mérito, cada uno con su porqué. Al entrar con tu cuenta para aportar, aceptas estas condiciones. Mirar el mapa no requiere cuenta.</p>
 
   <h2>Tu cuenta</h2>
-  <p>Entras con Apple y eliges un nombre público; no tiene por qué ser el real, pero no puede suplantar a nadie ni ser ofensivo, y algunos nombres (como «Criba») están reservados. Debes tener al menos 14 años. Puedes borrar la cuenta cuando quieras desde la app.</p>
+  <p>Entras con Apple y eliges un nombre de usuario (único; se puede cambiar una vez cada 30 días) y un nombre; no tienen por qué ser los reales, pero no pueden suplantar a nadie ni ser ofensivos, y algunos (como «Criba») están reservados. Lo mismo vale para la foto, la bio y el enlace del perfil: la moderación puede retirarlos, y te dirá por qué. Debes tener al menos 14 años. Puedes borrar la cuenta cuando quieras desde la app.</p>
 
   <h2>Lo que aportas</h2>
-  <p>Propuestas, respaldos, comentarios y notas se publican con tu nombre. Te comprometes a que sean:</p>
+  <p>Propuestas, respaldos, comentarios, notas y lo que pones en tu perfil se publican con tu nombre. Te comprometes a que sean:</p>
   <ul>
     <li><strong>Honestos:</strong> sobre sitios que conoces, y sin conflicto de interés — no se respalda ni se firma un sitio propio, de tu familia o donde trabajas.</li>
     <li><strong>Gratuitos:</strong> nada a cambio de dinero, invitaciones ni favores. No se compran ni se venden respaldos.</li>
@@ -148,10 +148,10 @@ TERMS = {
   <p>Criba is a map of places that are there for a reason: they get in on merit, each with its why. By signing in to contribute, you accept these terms. Looking at the map needs no account.</p>
 
   <h2>Your account</h2>
-  <p>You sign in with Apple and choose a public name; it needn't be your real one, but it can't impersonate anyone or be offensive, and some names (such as «Criba») are reserved. You must be at least 14. You can delete the account at any time in the app.</p>
+  <p>You sign in with Apple and choose a username (unique; it can change once every 30 days) and a name; they needn't be your real ones, but they can't impersonate anyone or be offensive, and some (such as «Criba») are reserved. The same goes for your profile photo, bio and link: moderation can remove them, and will tell you why. You must be at least 14. You can delete the account at any time in the app.</p>
 
   <h2>What you contribute</h2>
-  <p>Proposals, backings, comments and notes are published under your name. You agree they are:</p>
+  <p>Proposals, backings, comments, notes and what you put on your profile are published under your name. You agree they are:</p>
   <ul>
     <li><strong>Honest:</strong> about places you know, with no conflict of interest — nobody backs or signs their own place, their family's or where they work.</li>
     <li><strong>Free:</strong> nothing in exchange for money, invitations or favours. Backings are never bought or sold.</li>
