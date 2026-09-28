@@ -9,7 +9,7 @@ PRIVACY_ES='''
 
   <p><strong>La versión corta:</strong> las apps de Seize están hechas para funcionar sin tus datos. No tenemos cuentas de usuario, no usamos SDK de analítica ni de publicidad, y no vendemos ni compartimos nada. Lo que metes en una app se queda en tu dispositivo y en tu propio iCloud, salvo que la sección de esa app diga otra cosa.</p>
 
-  <p><strong>Criba es la excepción:</strong> tiene cuentas, un servidor en la UE y contenido de usuarios, así que tiene <a href="../criba/privacidad/">su propia política de privacidad</a> y <a href="../criba/condiciones/">condiciones de uso</a>.</p>
+  <p><strong>Garum es la excepción:</strong> tiene cuentas, un servidor en la UE y contenido de usuarios, así que tiene <a href="../garum/privacidad/">su propia política de privacidad</a> y <a href="../garum/condiciones/">condiciones de uso</a>.</p>
 
   <h2>Quiénes somos</h2>
   <p>Seize Apps es un estudio independiente de aplicaciones que llevan <strong>Izotz Cristobal Mota</strong> y <strong>Sendoa Sola</strong> desde el País Vasco (España) («nosotros»). Esta política cubre todas las apps de Seize distribuidas a través de la App Store de Apple y TestFlight: actualmente <a href="#cycle-timers">Cycle Timers</a>, <a href="#tempo">Tempo</a>, <a href="#drip">Drip</a>, <a href="#anchor">Anchor</a>, <a href="#kover">Kover</a>, <a href="#tandem">Tandem</a>, <a href="#meso">Meso</a> y <a href="#grain">Grain</a>. Cada app la publica en la App Store uno de los dos: el vendedor que figura en su ficha es el responsable del tratamiento de esa app, y se nombra en su sección. Si una app difiere en algo, su sección es la que manda.</p>
@@ -115,7 +115,7 @@ TERMS_ES='''
   <p class="effective">En vigor desde el 27 de septiembre de 2026</p>
 
   <h2>1. Acuerdo</h2>
-  <p>Estas condiciones regulan el uso de las apps publicadas bajo el nombre Seize Apps por Izotz Cristobal Mota y Sendoa Sola (País Vasco, España; «nosotros»). El vendedor de cada app es el desarrollador que figura en su ficha de la App Store. Las apps se distribuyen a través de la App Store de Apple y TestFlight. Al descargar o usar una app de Seize aceptas estas condiciones y el <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Contrato de licencia de usuario final de aplicaciones</a> estándar de Apple, que se aplica en todo lo que estas condiciones no cubran. Criba tiene cuentas y contenido de usuarios, así que tiene <a href="../criba/condiciones/">sus propias condiciones de uso</a>, que se le aplican en lugar de estas.</p>
+  <p>Estas condiciones regulan el uso de las apps publicadas bajo el nombre Seize Apps por Izotz Cristobal Mota y Sendoa Sola (País Vasco, España; «nosotros»). El vendedor de cada app es el desarrollador que figura en su ficha de la App Store. Las apps se distribuyen a través de la App Store de Apple y TestFlight. Al descargar o usar una app de Seize aceptas estas condiciones y el <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Contrato de licencia de usuario final de aplicaciones</a> estándar de Apple, que se aplica en todo lo que estas condiciones no cubran. Garum tiene cuentas y contenido de usuarios, así que tiene <a href="../garum/condiciones/">sus propias condiciones de uso</a>, que se le aplican en lugar de estas.</p>
 
   <h2>2. Licencia</h2>
   <p>Te concedemos una licencia personal, no exclusiva e intransferible para usar nuestras apps en dispositivos Apple que poseas o controles, según permiten las condiciones de la App Store. Las apps, su diseño y su código siguen siendo nuestros.</p>

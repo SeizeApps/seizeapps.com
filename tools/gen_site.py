@@ -28,7 +28,7 @@ UI={
    phil_p='Four words we hold every screen against. If a feature fails one of them, it doesn\'t ship — however clever it is.',
    values=[('Beautiful','Design with an opinion: one dominant colour, weight before size, motion that means something. The kind of care you notice without being told.'),
            ('Useful','Every app answers one real question people ask every day, and answers it on the first screen. No dashboards for their own sake.'),
-           ('Human','No analytics, no advertising, no dark patterns. No accounts either, except where the app is a community — Criba is the only one. Everything else lives on your iPhone and in your own iCloud, and we never see it. Copy written for people, in two languages.'),
+           ('Human','No analytics, no advertising, no dark patterns. No accounts either, except where the app is a community — Garum is the only one. Everything else lives on your iPhone and in your own iCloud, and we never see it. Copy written for people, in two languages.'),
            ('Possible','Native all the way: SwiftUI, widgets, Live Activities, Siri and Apple Health when they earn their place. Small teams can build things that feel first-party.')],
    work_eyebrow='Work with us', work_h2='The same craft, <span>for your project.</span>',
    work_p='We take on a small number of client projects a year — the ones where we can bring the same standard we hold our own apps to. If you need something built well, talk to us.',
@@ -65,7 +65,7 @@ UI={
    phil_p='Cuatro palabras contra las que medimos cada pantalla. Si una función falla en una de ellas, no sale, por ingeniosa que sea.',
    values=[('Bonito','Diseño con criterio: un color dominante, peso antes que tamaño, movimiento que significa algo. Ese cuidado que se nota sin que nadie te lo diga.'),
            ('Útil','Cada app responde a una pregunta real que la gente se hace a diario, y la responde en la primera pantalla. Nada de paneles por el gusto de tenerlos.'),
-           ('Humano','Sin analítica, sin publicidad, sin trucos. Tampoco cuentas, salvo donde la app es una comunidad: Criba es la única. Todo lo demás vive en tu iPhone y en tu propio iCloud, y nosotros nunca lo vemos. Textos escritos para personas, en dos idiomas.'),
+           ('Humano','Sin analítica, sin publicidad, sin trucos. Tampoco cuentas, salvo donde la app es una comunidad: Garum es la única. Todo lo demás vive en tu iPhone y en tu propio iCloud, y nosotros nunca lo vemos. Textos escritos para personas, en dos idiomas.'),
            ('Posible','Nativo de principio a fin: SwiftUI, widgets, Live Activities, Siri y Apple Health cuando aportan algo. Un equipo pequeño puede construir cosas que parecen de Apple.')],
    work_eyebrow='Trabaja con nosotros', work_h2='El mismo oficio, <span>para tu proyecto.</span>',
    work_p='Aceptamos unos pocos proyectos de clientes al año: los que nos permiten trabajar con el mismo nivel que exigimos a nuestras propias apps. Si necesitas algo bien hecho, hablemos.',
@@ -92,7 +92,7 @@ def app(slug, name, icon, lead, privacy_id, shots, en, es, appstore=None, privac
     # publicada de verdad. Si está, la página saca el badge; si no, no hay
     # badge. Nunca se escribe el href a mano en el HTML.
     # `privacy_path`: {'en': ..., 'es': ...} relativo a la raíz, para una app con
-    # política propia (Criba), relativo a la portada de cada idioma (la de es está en /es/).
+    # política propia (Garum), relativo a la portada de cada idioma (la de es está en /es/).
     return dict(slug=slug, name=name, icon=icon, lead=lead, privacy_id=privacy_id,
                 shots=shots, appstore=appstore, privacy_path=privacy_path, copy={'en':en,'es':es})
 
@@ -259,27 +259,27 @@ APPS=[
                     ('03 / REPASAR','Cómo suman tus semanas','Cada comida suma junto a su nombre y el día enseña lo que queda de energía y de cada macro. Grain Pro añade el historial de siete, treinta o noventa días, con la media de los días anotados (y diciéndolo), además de widgets y Apple Salud: una compra única, con 30 días de prueba gratis. Sin rachas, sin peso.')],
           privacy='Grain guarda tu diario en tu dispositivo y en tu propia cuenta de iCloud. Del código de barras solo sale el número, a Open Food Facts, salvo que elijas enviarle un producto. Apple Salud solo se escribe si lo activas, y nunca se lee. Sin cuenta, sin analítica.',
           captions=['Hoy: lo que has comido frente a tus metas, y lo que queda','Escribe una comida como lo dirías','Una etiqueta nutricional, leída en el iPhone (Pro)','Cómo suman las semanas, por macro (Pro)'])),
- app('criba','Criba','criba.png','Sendoa Sola','criba',
-     ['criba-01-map.jpg','criba-02-why.jpg','criba-03-detail.jpg','criba-04-signed.jpg'],
+ app('garum','Garum','garum.png','Sendoa Sola','garum',
+     ['garum-01-map.jpg','garum-02-why.jpg','garum-03-detail.jpg','garum-04-signed.jpg'],
      dict(one='A map of places that are there for a reason: classics, established places and new ones with a point of view, each with its why, everything signed.',
           tags=['Food &amp; drink','Curated map','ES · EN'],
-          lede='<strong>Criba</strong> is a map where places get in on merit, not on stars or ads. Three lists by age — classics open for more than 25 years, established places between 3 and 25, and new ones under 3 with a point of view — and places move from one to the next on their own as the years go by. Each one carries the reasons it is there and notes signed by whoever stands behind it. Anyone can propose a place; it gets in when a Curator signs it or enough trusted people back it.',
+          lede='<strong>Garum</strong> is a map where places get in on merit, not on stars or ads. Three lists by age — classics open for more than 25 years, established places between 3 and 25, and new ones under 3 with a point of view — and places move from one to the next on their own as the years go by. Each one carries the reasons it is there and notes signed by whoever stands behind it. Anyone can propose a place; it gets in when a Curator signs it or enough trusted people back it.',
           meta=['iOS 26+','Free','Apple Maps','English · Spanish'],
           features=[('01 / WHY','Every place, with its why','A closed list of reasons — a classic, the product, the price, the room — and signed notes, never a score. Opening hours, phone and directions come live from Apple Maps.'),
                     ('02 / FIND','What you fancy, now','Filter by list, kind of place, food, price and moment, or by what fits right now. What to order and whether to book are on the card.'),
                     ('03 / SIGNED','Everything is signed','See who backs each place and follow people with your taste. Propose what is missing; if it does not get in, you are told why. Curators can also suggest removing a place that has closed or lost its way, and moderation decides, with its reason.')],
-          privacy='Browsing the map needs no account. To see why each place is there and to contribute, you sign in with Apple — no name or email asked — and what you contribute is published under your username, on a server in the EU. No ads, no analytics. Criba has its own privacy policy and terms.',
+          privacy='Browsing the map needs no account. To see why each place is there and to contribute, you sign in with Apple — no name or email asked — and what you contribute is published under your username, on a server in the EU. No ads, no analytics. Garum has its own privacy policy and terms.',
           captions=['The map: classics, established places and new ones','Each place with its reasons and signed notes','What to order, when to go, whether to book','Everything signed: who backs what']),
      dict(one='Un mapa de sitios que están por algo: clásicos, establecidos y nuevos con criterio, cada uno con su porqué, todo firmado.',
           tags=['Comer y beber','Mapa con criterio','ES · EN'],
-          lede='<strong>Criba</strong> es un mapa donde los sitios entran por mérito, no por estrellas ni anuncios. Tres listas por antigüedad —clásicos con más de 25 años abiertos, establecidos entre 3 y 25 y nuevos de menos de 3 con criterio—, y los sitios pasan de una a la siguiente solos con los años. Cada uno lleva los motivos por los que está y notas firmadas por quien lo respalda. Cualquiera puede proponer un sitio; entra cuando lo firma un Curator o lo respaldan suficientes personas de confianza.',
+          lede='<strong>Garum</strong> es un mapa donde los sitios entran por mérito, no por estrellas ni anuncios. Tres listas por antigüedad —clásicos con más de 25 años abiertos, establecidos entre 3 y 25 y nuevos de menos de 3 con criterio—, y los sitios pasan de una a la siguiente solos con los años. Cada uno lleva los motivos por los que está y notas firmadas por quien lo respalda. Cualquiera puede proponer un sitio; entra cuando lo firma un Curator o lo respaldan suficientes personas de confianza.',
           meta=['iOS 26+','Gratis','Apple Maps','Castellano · Inglés'],
           features=[('01 / PORQUÉ','Cada sitio, con su porqué','Una lista cerrada de motivos —un clásico, el producto, el precio, el local— y notas firmadas, nunca una puntuación. Horario, teléfono y cómo llegar, en vivo desde Apple Maps.'),
                     ('02 / ENCONTRAR','Lo que te apetece, ahora','Filtra por lista, tipo de sitio, cocina, precio y momento, o por lo que encaja ahora mismo. Qué pedir y si hay que reservar, en la ficha.'),
                     ('03 / FIRMADO','Todo va firmado','Mira quién respalda cada sitio y sigue a gente con tu gusto. Propón lo que falta; si no entra, te decimos por qué. Los Curators también pueden sugerir quitar un sitio que ha cerrado o ya no es lo que era, y la moderación decide, con su motivo.')],
-          privacy='Mirar el mapa no necesita cuenta. Para ver por qué está cada sitio y para aportar, entras con Apple, sin dar tu nombre ni tu correo, y lo que aportas se publica con tu nombre de usuario, en un servidor en la UE. Sin anuncios ni analítica. Criba tiene su propia política de privacidad y sus condiciones.',
+          privacy='Mirar el mapa no necesita cuenta. Para ver por qué está cada sitio y para aportar, entras con Apple, sin dar tu nombre ni tu correo, y lo que aportas se publica con tu nombre de usuario, en un servidor en la UE. Sin anuncios ni analítica. Garum tiene su propia política de privacidad y sus condiciones.',
           captions=['El mapa: clásicos, establecidos y nuevos','Cada sitio con sus motivos y notas firmadas','Qué pedir, cuándo ir, si hay que reservar','Todo firmado: quién respalda qué']),
-     privacy_path={'en': 'criba/privacy/', 'es': '../criba/privacidad/'}),
+     privacy_path={'en': 'garum/privacy/', 'es': '../garum/privacidad/'}),
 ]
 
 # ---------------------------------------------------------------- chrome
@@ -385,6 +385,22 @@ WAVE='''<svg class="wave" viewBox="0 0 1440 420" preserveAspectRatio="none" aria
 def write(path, html):
     full=os.path.join(SITE,path); os.makedirs(os.path.dirname(full), exist_ok=True)
     open(full,'w').write(html)
+
+# URL viejas → nuevas (absolutas). Ver el final del fichero.
+REDIRECTS=[
+    ('criba/privacidad/index.html', 'https://seizeapps.com/garum/privacidad/'),
+    ('criba/condiciones/index.html', 'https://seizeapps.com/garum/condiciones/'),
+    ('criba/privacy/index.html', 'https://seizeapps.com/garum/privacy/'),
+    ('criba/terms/index.html', 'https://seizeapps.com/garum/terms/'),
+    ('apps/criba.html', 'https://seizeapps.com/apps/garum.html'),
+    ('es/apps/criba.html', 'https://seizeapps.com/es/apps/garum.html'),
+]
+
+def redirect_page(url):
+    return ('<!doctype html>\n<html><head><meta charset="utf-8">\n'
+            f'<title>Garum</title>\n<link rel="canonical" href="{url}">\n'
+            f'<meta http-equiv="refresh" content="0; url={url}">\n<meta name="robots" content="noindex">\n'
+            f'</head><body><p>Criba se llama ahora Garum · Criba is now Garum: <a href="{url}">{url}</a></p></body></html>\n')
 
 # The app count and the app list in the copy come from APPS, so adding an
 # app never leaves a «six apps» behind (it did, 20/09/2026).
@@ -561,4 +577,9 @@ if __name__=='__main__':
         build_legal(lang,'privacy'); build_legal(lang,'terms')
     from gen_legal_criba import build_criba
     build_criba()
-    print('ok', len(APPS), 'apps ×', len(LANGS), 'languages · Criba legal')
+    # Criba pasó a llamarse Garum (28/09/2026). Sus URL viejas siguen vivas (van dentro de builds ya
+    # subidas y de fichas de la Store): GitHub Pages no redirige en el servidor, así que cada una es una
+    # página mínima con meta refresh y canonical a la nueva.
+    for old, new in REDIRECTS:
+        write(old, redirect_page(new))
+    print('ok', len(APPS), 'apps ×', len(LANGS), 'languages · Garum legal ·', len(REDIRECTS), 'redirecciones')
