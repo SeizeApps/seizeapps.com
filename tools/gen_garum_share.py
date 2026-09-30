@@ -11,7 +11,9 @@ The site is static, so the code travels in the query (`?k7m2p9x3ab`): the page i
 code in the browser. It asks Garum's server (`shared_page`, Supabase, with the *publishable* key — the same one inside
 the app; the function only returns what the link already shows: public or «only with the link» collections, visible
 places) in the browser's language (en/es/fr; fr-CA → fr) and draws it read-only, the notes included (Sendoa's decision:
-notes are seen without an account). Nothing is indexed (`noindex`: a «link only» collection must not end up in a search
+notes are seen without an account). Since Garum 0.0.27 a collection's title, introduction and notes come translated by
+Garum's server when there is a translation, and the page says so with one switch, «Translated · See the original» (the
+same for a place's signed notes and «What to order»). Nothing is indexed (`noindex`: a «link only» collection must not end up in a search
 engine), no cookies, no analytics, no photos (data egress on the free plan). Everything written by people goes in with
 `textContent`, never as HTML. No city in the page's own texts.
 
@@ -29,7 +31,7 @@ TEAM_ID = '5487U4H5BK'
 BUNDLE_ID = 'com.seizeapps.criba'   # Garum's bundle id (the app was called Criba)
 BACKEND = 'https://rbiyqvizjwcysfhvdyox.supabase.co'
 PUBLISHABLE_KEY = 'sb_publishable_rTonGbzHP5mre-oHDfxcVQ_vJOmUaBa'
-ASSETS_V = '2026-09-30'
+ASSETS_V = '2026-09-30b'
 
 AASA = {
     'applinks': {
@@ -54,6 +56,7 @@ T = {
         'unvalidated_hint': 'Proposed by the author; not on Garum’s map yet.',
         'maps': 'Open in Maps',
         'why': 'Why it’s here', 'order': 'What to order', 'signed': 'Signed by {who}', 'translated': 'Translated',
+        'see_original': 'Translated · See the original', 'see_translation': 'See the translation',
         'season': 'Closed for the season', 'season_until': 'Closed for the season · back on {date}',
         'era': {'clasico': 'Classic · over 25 years', 'establecido': 'Established · 3 to 25 years', 'nuevo': 'New · under 3 years'},
         'gone_title': 'This link doesn’t lead anywhere now',
@@ -78,6 +81,7 @@ T = {
         'unvalidated_hint': 'Lo ha propuesto el autor; aún no está en el mapa de Garum.',
         'maps': 'Abrir en Mapas',
         'why': 'Por qué está aquí', 'order': 'Qué pedir', 'signed': 'Firmado por {who}', 'translated': 'Traducido',
+        'see_original': 'Traducido · Ver el original', 'see_translation': 'Ver la traducción',
         'season': 'Cerrado por temporada', 'season_until': 'Cerrado por temporada · vuelve el {date}',
         'era': {'clasico': 'Clásico · más de 25 años', 'establecido': 'Establecido · de 3 a 25 años', 'nuevo': 'Nuevo · menos de 3 años'},
         'gone_title': 'Este enlace ya no lleva a nada',
@@ -102,6 +106,7 @@ T = {
         'unvalidated_hint': 'Proposé par l’auteur ; pas encore sur la carte de Garum.',
         'maps': 'Ouvrir dans Plans',
         'why': 'Pourquoi il est là', 'order': 'Que commander', 'signed': 'Signé par {who}', 'translated': 'Traduit',
+        'see_original': 'Traduit · Voir l’original', 'see_translation': 'Voir la traduction',
         'season': 'Fermé pour la saison', 'season_until': 'Fermé pour la saison · retour le {date}',
         'era': {'clasico': 'Classique · plus de 25 ans', 'establecido': 'Établi · de 3 à 25 ans', 'nuevo': 'Nouveau · moins de 3 ans'},
         'gone_title': 'Ce lien ne mène plus nulle part',
@@ -170,6 +175,7 @@ blockquote{margin:8px 0 0;padding:0;font-size:16px;overflow-wrap:anywhere}
 .note p{margin:0;overflow-wrap:anywhere}
 .note .who{color:var(--sec);font-size:14px;margin-top:8px}
 .order{margin:0;padding-left:20px}
+.orig{font:inherit;font-size:15px;color:var(--blue);background:none;border:0;padding:0;min-height:44px;cursor:pointer;text-align:left}
 .season{display:inline-block;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:4px 10px;font-size:15px;font-weight:500;margin:0 0 4px}
 .cta{margin:28px 0 0;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px;display:flex;gap:14px;align-items:flex-start}
 .cta img{width:56px;height:56px;border-radius:13px;flex:none}
@@ -233,6 +239,17 @@ JS = r'''// Garum's share page (tools/gen_garum_share.py): reads the code from t
   function era(e) { return ERAS[e] ? e : 'clasico'; }
 
   var main = document.getElementById('main');
+  // Lo último que llegó y si se lee el original (Garum 0.0.27: títulos, introducciones y notas traducidos por el
+  // servidor; un solo interruptor, «Traducido · Ver el original», como en la app).
+  var data = null, original = false;
+  function render() { show(type === 'collection' ? collection(data) : place(data)); }
+  function toggle() {
+    var b = el('button', 'orig', original ? t.see_translation : t.see_original);
+    b.type = 'button';
+    b.setAttribute('aria-pressed', original ? 'true' : 'false');
+    b.onclick = function () { original = !original; render(); };
+    return b;
+  }
   function show(nodes) {
     main.textContent = '';
     var box = el('div', 'content');
@@ -242,14 +259,19 @@ JS = r'''// Garum's share page (tools/gen_garum_share.py): reads the code from t
   }
 
   function collection(d) {
-    document.title = d.title + ' · Garum';
+    var items = d.items || [];
+    var translated = !!(d.text_translated && d.title_local) || items.some(function (it) { return it.note_translated && it.note_local; });
+    var useLocal = translated && !original;
+    var title = useLocal && d.text_translated && d.title_local ? d.title_local : d.title;
+    var intro = useLocal && d.text_translated ? d.intro_local : d.intro;
+    document.title = title + ' · Garum';
     var nodes = [];
     var kind = d.kind === 'itinerario' ? 'itinerary' : 'list';
-    var items = d.items || [];
     nodes.push(el('p', 'eyebrow', t[kind] + ' · ' + plural(kind === 'itinerary' ? t.stops : t.places, items.length)));
-    nodes.push(el('h1', null, d.title));
+    nodes.push(el('h1', null, title));
     nodes.push(el('p', 'byline', fmt(t.by, { who: who(d.owner) })));
-    if (d.intro) nodes.push(el('p', 'intro', d.intro));
+    if (intro) nodes.push(el('p', 'intro', intro));
+    if (translated) nodes.push(toggle());
     var ol = el('ol', 'items');
     items.forEach(function (it, i) {
       var li = el('li', 'item');
@@ -268,7 +290,8 @@ JS = r'''// Garum's share page (tools/gen_garum_share.py): reads the code from t
       body.appendChild(h);
       var m = meta([labels(it.kind_labels)[0], price(it.price), it.neighborhood || it.city]);
       if (m) body.appendChild(el('p', 'meta', m));
-      if (it.note) body.appendChild(el('blockquote', null, quoted(it.note)));
+      var note = useLocal && it.note_translated && it.note_local ? it.note_local : it.note;
+      if (note) body.appendChild(el('blockquote', null, quoted(note)));
       var a = el('a', 'maps', t.maps); a.href = mapsURL(it.name, it.lat, it.lng); a.rel = 'noopener';
       body.appendChild(a);
       li.appendChild(body);
@@ -293,7 +316,10 @@ JS = r'''// Garum's share page (tools/gen_garum_share.py): reads the code from t
     }
     var a = el('a', 'maps', t.maps); a.href = mapsURL(d.name, d.lat, d.lng); a.rel = 'noopener';
     nodes.push(a);
-    if ((d.reasons || []).length || (d.notes || []).length) {
+    var notes = d.notes || [];
+    var translated = notes.some(function (n) { return n.translated && n.original; });
+    var useLocal = !original;
+    if ((d.reasons || []).length || notes.length) {
       var why = el('section', 'section');
       why.appendChild(el('h2', null, t.why));
       if ((d.reasons || []).length) {
@@ -301,20 +327,22 @@ JS = r'''// Garum's share page (tools/gen_garum_share.py): reads the code from t
         d.reasons.forEach(function (r) { ul.appendChild(el('li', null, r.label)); });
         why.appendChild(ul);
       }
-      (d.notes || []).forEach(function (n) {
+      notes.forEach(function (n) {
         var box = el('div', 'note');
-        box.appendChild(el('p', null, n.note));
+        box.appendChild(el('p', null, !useLocal && n.original ? n.original : n.note));
         var by = fmt(t.signed, { who: n.username ? n.alias + ' · @' + n.username : n.alias });
-        box.appendChild(el('p', 'who', n.translated ? by + ' · ' + t.translated : by));
+        box.appendChild(el('p', 'who', n.translated && !n.original && useLocal ? by + ' · ' + t.translated : by));
         why.appendChild(box);
       });
+      if (translated) why.appendChild(toggle());
       nodes.push(why);
     }
-    if ((d.order_this || []).length) {
+    var order = !useLocal && (d.order_this_original || []).length ? d.order_this_original : (d.order_this || []);
+    if (order.length) {
       var sec = el('section', 'section');
       sec.appendChild(el('h2', null, t.order));
       var ol = el('ul', 'order');
-      d.order_this.forEach(function (o) { ol.appendChild(el('li', null, o)); });
+      order.forEach(function (o) { ol.appendChild(el('li', null, o)); });
       sec.appendChild(ol);
       nodes.push(sec);
     }
@@ -342,7 +370,8 @@ JS = r'''// Garum's share page (tools/gen_garum_share.py): reads the code from t
       return r.json();
     }).then(function (d) {
       if (!d || d.type !== type) { state(t.gone_title, type === 'collection' ? t.gone_c : t.gone_p); return; }
-      show(type === 'collection' ? collection(d) : place(d));
+      data = d; original = false;
+      render();
     }).catch(function () { state(t.error_title, t.error_body, true); });
   }
 
