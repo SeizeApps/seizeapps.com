@@ -1,0 +1,21 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": [
+          "5487U4H5BK.com.seizeapps.criba"
+        ],
+        "components": [
+          {
+            "/": "/garum/c/*",
+            "comment": "Garum: a shared collection"
+          },
+          {
+            "/": "/garum/p/*",
+            "comment": "Garum: a shared place"
+          }
+        ]
+      }
+    ]
+  }
+}

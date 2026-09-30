@@ -1,0 +1,67 @@
+/* Garum's share page (tools/gen_garum_share.py). The app's paper and ink («Cedazo»), light and dark. */
+:root{
+  --paper:#F3EFE6;--card:#FBF9F4;--ink:#151412;--sec:#5D574C;--line:#DDD6C8;--blue:#0062CC;
+  --clasico:#A2461F;--establecido:#5F6F2A;--nuevo:#A37D00;--on-nuevo:#151412;--on-era:#FFFFFF;
+  --radius:16px;
+}
+@media (prefers-color-scheme:dark){:root{
+  --paper:#151412;--card:#201E1B;--ink:#EDE8DD;--sec:#B3AB9C;--line:#35312B;--blue:#5AA9FF;
+  --clasico:#E0764B;--establecido:#A9B96A;--nuevo:#E8BE55;--on-nuevo:#151412;--on-era:#151412;
+}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.5 -apple-system,BlinkMacSystemFont,"SF Pro Text",Inter,system-ui,sans-serif}
+a{color:var(--blue)}
+[hidden]{display:none !important}
+.sr{position:absolute;left:-9999px}
+.wrap{max-width:640px;margin:0 auto;padding:20px 16px 40px}
+header.top{display:flex;align-items:center;gap:10px;padding:4px 0 18px}
+header.top img{width:36px;height:36px;border-radius:9px}
+header.top .name{font-weight:700;letter-spacing:.2px}
+header.top .by{color:var(--sec);font-size:13px;margin-left:auto}
+.eyebrow{color:var(--sec);font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.6px;margin:0 0 6px}
+h1{font-size:30px;line-height:1.2;margin:0 0 8px;font-weight:700;overflow-wrap:anywhere}
+.byline{color:var(--sec);margin:0 0 12px;font-weight:500}
+.intro{margin:0 0 18px;white-space:pre-line}
+ol.items{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.item{display:flex;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px}
+.item > div{min-width:0}
+.mark{flex:none;width:28px;height:28px;display:flex;align-items:center;justify-content:center}
+.num{border-radius:50%;font-weight:700;font-size:15px;font-variant-numeric:tabular-nums;color:var(--on-era)}
+.num.nuevo{color:var(--on-nuevo)}
+.num.unvalidated{background:transparent;border:1.5px dashed var(--sec);color:var(--sec)}
+.shape{width:12px;height:12px}
+.shape.clasico{border-radius:50%}
+.shape.establecido{border-radius:2px}
+.shape.nuevo{transform:rotate(45deg) scale(.85);border-radius:1px}
+.shape.unvalidated{border-radius:50%;background:transparent;border:1.5px dashed var(--sec)}
+.bg-clasico{background:var(--clasico)}.bg-establecido{background:var(--establecido)}.bg-nuevo{background:var(--nuevo)}
+.item h2{font-size:17px;margin:0;font-weight:600;overflow-wrap:anywhere}
+.meta{color:var(--sec);font-size:15px;margin:2px 0 0}
+.tag{display:inline-block;font-size:12px;font-weight:600;color:var(--sec);border:1px dashed var(--sec);border-radius:6px;padding:0 6px;margin-left:6px;vertical-align:2px}
+blockquote{margin:8px 0 0;padding:0;font-size:16px;overflow-wrap:anywhere}
+.maps{display:inline-block;margin-top:4px;font-size:15px;font-weight:600;text-decoration:none;min-height:44px;line-height:44px}
+.section{margin:22px 0 0}
+.section h2{font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.6px;color:var(--sec);margin:0 0 8px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:0;padding:0;list-style:none}
+.chips li{border:1px solid var(--line);background:var(--card);border-radius:10px;padding:5px 11px;font-size:15px}
+.note{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px;margin:10px 0 0}
+.note p{margin:0;overflow-wrap:anywhere}
+.note .who{color:var(--sec);font-size:14px;margin-top:8px}
+.order{margin:0;padding-left:20px}
+.season{display:inline-block;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:4px 10px;font-size:15px;font-weight:500;margin:0 0 4px}
+.cta{margin:28px 0 0;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px;display:flex;gap:14px;align-items:flex-start}
+.cta img{width:56px;height:56px;border-radius:13px;flex:none}
+.cta h2{font-size:17px;margin:0 0 2px}
+.cta p{margin:0 0 8px;color:var(--sec);font-size:15px}
+.cta p:last-child{margin-bottom:0}
+.cta .store{display:inline-block;background:var(--ink);color:var(--paper);text-decoration:none;font-weight:600;border-radius:12px;padding:0 16px;line-height:44px;margin:4px 0 8px}
+.state{padding:24px 0}
+.state h1{font-size:24px}
+.state button{font:inherit;font-weight:600;color:var(--blue);background:none;border:1px solid var(--line);border-radius:12px;padding:0 16px;min-height:44px;cursor:pointer}
+.skeleton div{background:var(--line);border-radius:8px;height:18px;margin:10px 0;opacity:.6}
+.skeleton .h{height:34px;width:70%}.skeleton .s{width:40%}.skeleton .b{height:72px}
+footer{margin-top:32px;color:var(--sec);font-size:14px;display:flex;flex-wrap:wrap;gap:4px 16px}
+footer a{color:var(--sec);min-height:44px;line-height:44px}
+footer span{line-height:44px}
+@media (prefers-reduced-motion:no-preference){.content{animation:in .25s ease-out}@keyframes in{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}}

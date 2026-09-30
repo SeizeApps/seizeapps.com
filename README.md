@@ -50,6 +50,24 @@ Store (`.store-icon`, arriba a la derecha) que enlaza a la ficha sin pasar por l
 página de la app. Es un `<a>` hermano de la tarjeta dentro de `.app-card-wrap`,
 porque un enlace no puede ir dentro de otro.
 
+## Garum: enlaces para compartir (30/09/2026, Garum 0.0.26)
+
+`tools/gen_garum_share.py` (lo llama `gen_site.py`) genera la página de una colección (`garum/c/`) y la de un sitio
+(`garum/p/`), su script y su hoja (`garum/share.js`, `garum/share.css`), el fichero de Universal Links
+(`.well-known/apple-app-site-association`) y `_config.yml`, que hace falta para que GitHub Pages (Jekyll) publique la
+carpeta `.well-known`. El enlace es `https://seizeapps.com/garum/c/?<código>`: el código va en la consulta porque el
+sitio es estático; la página lo lee en el navegador y pide la colección o el sitio al servidor de Garum (`shared_page`,
+Supabase, con la clave publicable, la misma que va dentro de la app) en el idioma del navegador (en/es/fr). Sin cookies,
+sin analítica, sin fotos y con `noindex`. Si Garum está instalada, iOS abre el enlace en la app y esta página no llega a
+verse. Mientras Garum no esté a la venta (`GARUM_ON_STORE = False`), la página dice que aún no está en el App Store en
+lugar de enseñar el botón; al salir, se cambia a `True` (y con eso entra también el Smart App Banner).
+
+**Tras publicar, comprobar:** `curl -sI https://seizeapps.com/.well-known/apple-app-site-association` (200, sin
+redirección) y la copia de Apple, que es la que usan los iPhone y tarda en refrescarse:
+`curl -s https://app-site-association.cdn-apple.com/a/v1/seizeapps.com`. GitHub Pages sirve el fichero sin extensión
+como `application/octet-stream`; si la copia de Apple no aparece o el enlace no abre la app, una regla de Cloudflare
+(Transform Rules › cabecera de respuesta) puede ponerle `Content-Type: application/json`.
+
 ## Redirector
 
 `Kasempiternal/seizeapps.com` (the old GitHub Pages URL) is a meta-refresh redirector to this domain, kept because its URL is baked into shipped builds. Don't move `index.html`, `privacy.html` or `terms.html`.

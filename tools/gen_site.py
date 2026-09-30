@@ -577,9 +577,12 @@ if __name__=='__main__':
         build_legal(lang,'privacy'); build_legal(lang,'terms')
     from gen_legal_criba import build_criba
     build_criba()
+    # Garum's share links (0.0.26): /garum/c/ and /garum/p/, and the Universal Links file.
+    from gen_garum_share import build_garum_share
+    build_garum_share()
     # Criba pasó a llamarse Garum (28/09/2026). Sus URL viejas siguen vivas (van dentro de builds ya
     # subidas y de fichas de la Store): GitHub Pages no redirige en el servidor, así que cada una es una
     # página mínima con meta refresh y canonical a la nueva.
     for old, new in REDIRECTS:
         write(old, redirect_page(new))
-    print('ok', len(APPS), 'apps ×', len(LANGS), 'languages · Garum legal ·', len(REDIRECTS), 'redirecciones')
+    print('ok', len(APPS), 'apps ×', len(LANGS), 'languages · Garum legal and share pages ·', len(REDIRECTS), 'redirecciones')
