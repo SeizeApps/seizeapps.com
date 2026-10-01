@@ -15,7 +15,7 @@ PRIVACIDAD = '''
   <p class="eyebrow">Sacapuntas · Legal</p>
   <h1>Privacidad de Sacapuntas</h1>
   <p class="effective">{updated}</p>
-  <p><strong>La versión corta:</strong> Sacapuntas no recoge datos de tu hijo o hija ni de nadie. No hay cuentas, ni anuncios, ni analítica, ni seguimiento. El progreso se guarda en el dispositivo y, solo si una persona adulta lo activa, en vuestro propio iCloud, que nosotros no podemos ver. Lo único que sale del dispositivo es la petición con la que la app descarga listas de palabras nuevas, y no lleva nada vuestro. <a href="ninos/">Aquí está la versión para niños</a>.</p>
+  <p><strong>La versión corta:</strong> Sacapuntas no recoge datos de tu hijo o hija ni de nadie. No hay cuentas, ni anuncios, ni analítica, ni seguimiento. El progreso se guarda en el dispositivo y en vuestro propio iCloud, que nosotros no podemos ver (viene activado y se puede apagar en la zona de familias). Lo único que sale del dispositivo es la petición con la que la app descarga listas de palabras nuevas, y no lleva nada vuestro. <a href="ninos/">Aquí está la versión para niños</a>.</p>
 
   <h2>Quién es el responsable</h2>
   <p>Sacapuntas la publica en el App Store <strong>Sendoa Sola</strong> (Seize Apps, País Vasco, España). Para cualquier cosa sobre privacidad: <a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a>. Respondemos en un plazo máximo de un mes.</p>
@@ -31,7 +31,7 @@ PRIVACIDAD = '''
 
   <h2>Dónde vive el progreso</h2>
   <p>Los perfiles (un alias, que no tiene por qué ser el nombre real, el curso y un color), las páginas hechas, las virutas, el pueblo, las pegatinas, los ajustes de clase y de método, y el informe de la zona de familias se guardan <strong>en el dispositivo</strong>.</p>
-  <p><strong>iCloud viene desactivado.</strong> Si una persona adulta lo activa en la zona de familias, el progreso se sincroniza entre vuestros dispositivos a través de <strong>vuestra cuenta de iCloud</strong>, en su base de datos privada. Ese servicio lo presta Apple según sus condiciones, y Seize no puede ver lo que hay en ella.</p>
+  <p><strong>iCloud viene activado.</strong> El progreso se sincroniza entre vuestros dispositivos a través de <strong>vuestra cuenta de iCloud</strong>, en su base de datos privada. Ese servicio lo presta Apple según sus condiciones, y Seize no puede ver lo que hay en ella. Se puede apagar en la zona de familias: entonces todo se queda en el dispositivo. Si el niño o la niña usa su propia cuenta de Apple dentro de En Familia, su dispositivo y el de una persona adulta no comparten iCloud y no se sincronizan.</p>
   <p><strong>Cómo borrarlo:</strong> en la zona de familias, cada perfil tiene «Borrar progreso» y «Borrar perfil». También se borra todo al borrar la app y, si usáis iCloud, desde los ajustes de iCloud del dispositivo.</p>
   <p>La app solo guarda en el dispositivo lo estrictamente necesario para funcionar (como qué perfil está practicando). No usa cookies ni rastreadores.</p>
 
@@ -60,7 +60,7 @@ PRIVACIDAD = '''
 
   <h2>Familias en Estados Unidos y en el Reino Unido</h2>
   <p><strong>COPPA (Estados Unidos).</strong> Sacapuntas no recoge información personal de niños menores de 13 años: ni en la app, ni a través de terceros. Si creéis que nos ha llegado información de un niño (por ejemplo, en un correo), escribidnos y la borraremos.</p>
-  <p><strong>Reino Unido.</strong> Seguimos el espíritu del Children's Code de la ICO: privacidad alta por defecto (iCloud desactivado, nada sale del dispositivo), sin rastreo, sin notificaciones y sin trucos para alargar el uso. Podéis consultar a la <a href="https://ico.org.uk" rel="noopener">ICO</a>.</p>
+  <p><strong>Reino Unido.</strong> Seguimos el espíritu del Children's Code de la ICO: privacidad alta por defecto (nada nos llega: el progreso se queda en el dispositivo y en vuestro propio iCloud, que se puede apagar), sin rastreo, sin notificaciones y sin trucos para alargar el uso. Podéis consultar a la <a href="https://ico.org.uk" rel="noopener">ICO</a>.</p>
 
   <h2>Cambios</h2>
   <p>Si cambia algo de lo anterior, lo cambiaremos aquí, con su fecha, y en la ficha de privacidad del App Store antes de que llegue a la app.</p>
@@ -71,7 +71,7 @@ NINOS = '''
   <h1>Tus datos en Sacapuntas</h1>
   <p class="effective">{updated}</p>
   <ul>
-    <li>📒 Tu progreso se guarda en tu tablet o en tu móvil, para que no lo pierdas.</li>
+    <li>📒 Tu progreso se guarda en tu tablet o en tu móvil y en el iCloud de tu familia, para que no lo pierdas. Tu familia puede apagar iCloud.</li>
     <li>🙈 Nosotros no vemos tus respuestas, ni tu pueblo, ni tus pegatinas.</li>
     <li>🚫 Aquí no hay anuncios, y nadie te sigue por internet.</li>
     <li>✏️ No hace falta tu nombre: puedes usar un mote.</li>
