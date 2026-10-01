@@ -577,6 +577,9 @@ if __name__=='__main__':
         build_legal(lang,'privacy'); build_legal(lang,'terms')
     from gen_legal_criba import build_criba
     build_criba()
+    # Sacapuntas (Kids, 01/10/2026): su propia política, en castellano, con versión para niños.
+    from gen_legal_sacapuntas import build_sacapuntas
+    build_sacapuntas()
     # Garum's share links (0.0.26): /garum/c/ and /garum/p/, and the Universal Links file.
     from gen_garum_share import build_garum_share
     build_garum_share()
