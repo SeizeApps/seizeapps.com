@@ -4,10 +4,10 @@ PRIVACY_ES='''
   <h1>Política de privacidad</h1>
   <p class="effective">En vigor desde el 2 de octubre de 2026</p>
   <nav class="toc" aria-label="Apps">
-    <a href="#cycle-timers">Cycle Timers</a><a href="#tempo">Tempo</a><a href="#drip">Drip</a><a href="#anchor">Anchor</a><a href="#kover">Kover</a><a href="#tandem">Tandem</a><a href="#meso">Meso</a><a href="#grain">Grain</a>
+    <a href="#cycle-timers">Cycle Timers</a><a href="#tempo">Tempo</a><a href="#drip">Drip</a><a href="#anchor">Anchor</a><a href="#kover">Kover</a><a href="#tandem">Tandem</a><a href="#meso">Meso</a><a href="#grain">Grain</a><a href="#gaminghub">GamingHub</a>
   </nav>
 
-  <p><strong>La versión corta:</strong> las apps de Seize están hechas para funcionar sin tus datos. No tenemos cuentas de usuario, no usamos SDK de analítica ni de publicidad, y no vendemos ni compartimos nada. Lo que metes en una app se queda en tu dispositivo y en tu propio iCloud, salvo que la sección de esa app diga otra cosa.</p>
+  <p><strong>La versión corta:</strong> las apps de Seize están hechas para funcionar sin tus datos. No tenemos cuentas de usuario, no usamos SDK de analítica ni de publicidad, y no vendemos ni compartimos nada. Lo que metes en una app se queda en tu dispositivo y en tu propio iCloud, salvo que la sección de esa app diga otra cosa (véase <a href="#gaminghub">GamingHub</a>).</p>
 
   <p><strong>Garum es la excepción:</strong> tiene cuentas, un servidor en la UE y contenido de usuarios, así que tiene <a href="../garum/privacidad/">su propia política de privacidad</a> y <a href="../garum/condiciones/">condiciones de uso</a>.</p>
 
@@ -91,6 +91,18 @@ PRIVACY_ES='''
   <p><strong>Apple Salud.</strong> Apagado por defecto. Si lo activas en Ajustes, cada anotación se escribe en Salud como comida (energía, proteína, hidratos y grasa), y se cambia o se borra allí cuando la editas o la borras en Grain. Grain nunca lee nada de Salud ni sube datos de Salud a ningún sitio; el permiso y la preferencia viven solo en ese dispositivo.</p>
   <p><strong>La sincronización con iCloud</strong> viene activada para que tu diario, tus metas y tus alimentos te sigan entre tus dispositivos a través de tu cuenta personal de iCloud, bajo las condiciones de Apple; nosotros nunca tenemos acceso. Si la desactivas en Ajustes, tus datos se quedan solo en el dispositivo. Grain no envía notificaciones.</p>
   <p><em>Publicada en la App Store por Sendoa Sola.</em></p>
+  </section>
+
+  <section id="gaminghub">
+  <h3>GamingHub</h3>
+  <p>GamingHub es una app de juegos para jugar en una sala con otras personas. No tiene cuenta, ni correo, ni contraseña.</p>
+  <p>Para que una sala funcione, la app guarda el nombre que eliges, un avatar y un identificador anónimo creado en tu dispositivo. Esos datos, y el estado de la partida, se envían a nuestro servidor (Supabase) y se muestran a los demás jugadores de esa sala. Lo que escribes para el juego — pistas, papeles, canciones y cosas parecidas — forma parte de ese estado y se muestra a los demás jugadores. Los datos secretos de la partida (tu rol, la palabra o las cartas) se envían solo a tu dispositivo.</p>
+  <p>Las salas se borran cuando se vacían y, en cualquier caso, se purgan a las 12 horas. No guardamos un historial de partidas.</p>
+  <p>Esta versión no tiene publicidad, ni analítica, ni seguimiento. No vendemos tus datos.</p>
+  <p>Las compras las procesa Apple. Solo sabemos qué juegos ha desbloqueado este dispositivo, nunca tus datos de pago.</p>
+  <p>Si denuncias un problema o a un jugador, la app abre un mensaje a <a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a>. Esa denuncia es un correo que envías tú; no se guarda en el servidor del juego.</p>
+  <p>Borrar la app elimina el identificador anónimo y los datos que estaban en el dispositivo. Las salas en las que jugaste desaparecen cuando caducan.</p>
+  <p><em>Publicada en el App Store por Izotz Cristobal Mota.</em></p>
   </section>
 
   <h2>Notificaciones</h2>
