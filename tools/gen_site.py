@@ -280,6 +280,28 @@ APPS=[
           privacy='Mirar el mapa no necesita cuenta. Para ver por qué está cada sitio y para aportar, entras con Apple, sin dar tu nombre ni tu correo, y lo que aportas se publica con tu nombre de usuario, en un servidor en la UE. Sin anuncios ni analítica. Garum tiene su propia política de privacidad y sus condiciones.',
           captions=['El mapa: clásicos, establecidos y nuevos','Cada sitio con sus motivos y notas firmadas','Qué pedir, cuándo ir, si hay que reservar','Todo firmado: quién respalda qué']),
      privacy_path={'en': 'garum/privacy/', 'es': '../garum/privacidad/'}),
+ # Sacapuntas (Kids, 02/10/2026): solo en castellano y solo en España; su propia política, con versión para niños.
+ app('sacapuntas','Sacapuntas','sacapuntas.png','Sendoa Sola','sacapuntas',
+     ['sacapuntas-01-shelf.jpg','sacapuntas-02-sum.jpg','sacapuntas-03-village.jpg','sacapuntas-04-report.jpg'],
+     dict(one='Primary-school workbooks for children aged 9 to 11: column arithmetic, times tables and Spanish accents, with a village that grows with every page done well.',
+          tags=['Education','Kids 9–11','ES'],
+          lede='The workbooks every Spanish child knows, made digital and with a sense of humour. <strong>Sacapuntas</strong> ("pencil sharpener") covers column arithmetic with carrying and borrowing, long multiplication and division in the Spanish layout, number facts and times tables, and Spanish accentuation by the RAE rules. Short pages with a clear end; every page done well earns shavings to build the child\'s own village. In Spanish only.',
+          meta=['iOS 26+','iPhone &amp; iPad','Free · Pro, one-time purchase','Spanish only'],
+          features=[('01 / COLUMNS','Digit by digit','Each digit in its box and each carry where it goes. A mistake marks the box and the hint says which column to look at; a repeated slip is recognised and explained. A correct answer is never marked wrong for using another method.'),
+                    ('02 / ACCENTS','Agudas, llanas, esdrújulas','The stressed syllable, the three classes and "does it take an accent?", by the 2010 Spanish spelling rules, with real words of the child\'s year.'),
+                    ('03 / FAMILIES','Behind an adults\' gate','Profiles, a weekly report with what is hard and an activity to do together, the school year and its methods, printable worksheets with answers, and Sacapuntas Pro: a one-time purchase, with a free 30-day trial that ends on its own.')],
+          privacy='Sacapuntas collects no data from the child: no account, no ads, no analytics, no notifications. Progress stays on the device and, if the family leaves it on, in its own iCloud.',
+          captions=['The shelf: what to do next','Column sums, digit by digit','The village built with shavings','For the family: the weekly report']),
+     dict(one='Cuadernillos de primaria para niños de 9 a 11 años: cuentas en columna, tablas y tildes, con un pueblo que crece con cada página bien terminada.',
+          tags=['Educación','Niños 9–11','ES'],
+          lede='Los cuadernillos de toda la vida, digitales y con gracia. <strong>Sacapuntas</strong> trae las cuentas en columna con sus llevadas, multiplicar por dos cifras y dividir en la caja de siempre, sumas y tablas, y la acentuación con las reglas de la RAE. Páginas cortas con un final claro; cada página bien terminada da virutas para construir su propio pueblo. Para mentes afiladas.',
+          meta=['iOS 26+','iPhone y iPad','Gratis · Pro, pago único','Solo castellano'],
+          features=[('01 / CUENTAS','Cifra a cifra','Cada cifra en su casilla y cada llevada en su sitio. Un fallo marca la casilla y la pista dice qué columna mirar; si el mismo error se repite, se reconoce y se explica. Nunca se da por mal una cuenta bien hecha por otro método.'),
+                    ('02 / TILDES','Agudas, llanas y esdrújulas','La sílaba tónica, las tres clases y «¿lleva tilde?», con la Ortografía de 2010 y palabras de su curso.'),
+                    ('03 / FAMILIAS','Tras una puerta para adultos','Perfiles, el informe de la semana con lo que le cuesta y una actividad para hacer juntos, el curso y los métodos de su clase, fichas para imprimir con solucionario y Sacapuntas Pro: un pago único, con 30 días de prueba gratis que acaban solos.')],
+          privacy='Sacapuntas no recoge ningún dato del niño: sin cuenta, sin anuncios, sin analítica y sin notificaciones. El progreso se queda en el dispositivo y, si la familia lo deja activado, en su propio iCloud.',
+          captions=['La estantería: lo que toca','Sumas en columna, cifra a cifra','El pueblo hecho con virutas','Para la familia: el informe de la semana']),
+     privacy_path={'en': 'sacapuntas/privacidad/', 'es': '../sacapuntas/privacidad/'}),
 ]
 
 # ---------------------------------------------------------------- chrome
