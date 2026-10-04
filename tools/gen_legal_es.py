@@ -124,7 +124,7 @@ PRIVACY_ES='''
 TERMS_ES='''
   <p class="eyebrow">Legal</p>
   <h1>Condiciones de uso</h1>
-  <p class="effective">En vigor desde el 27 de septiembre de 2026</p>
+  <p class="effective">En vigor desde el 4 de octubre de 2026</p>
 
   <h2>1. Acuerdo</h2>
   <p>Estas condiciones regulan el uso de las apps publicadas bajo el nombre Seize Apps por Izotz Cristobal Mota y Sendoa Sola (País Vasco, España; «nosotros»). El vendedor de cada app es el desarrollador que figura en su ficha de la App Store. Las apps se distribuyen a través de la App Store de Apple y TestFlight. Al descargar o usar una app de Seize aceptas estas condiciones y el <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Contrato de licencia de usuario final de aplicaciones</a> estándar de Apple, que se aplica en todo lo que estas condiciones no cubran. Garum tiene cuentas y contenido de usuarios, así que tiene <a href="../garum/condiciones/">sus propias condiciones de uso</a>, que se le aplican en lugar de estas.</p>
@@ -133,7 +133,7 @@ TERMS_ES='''
   <p>Te concedemos una licencia personal, no exclusiva e intransferible para usar nuestras apps en dispositivos Apple que poseas o controles, según permiten las condiciones de la App Store. Las apps, su diseño y su código siguen siendo nuestros.</p>
 
   <h2>3. Compras</h2>
-  <p>Las apps de pago y las compras dentro de la app las factura Apple al precio que se muestra en la App Store antes de confirmar. Los reembolsos los gestiona Apple según las políticas de reembolso de la App Store; nosotros no podemos emitirlos directamente.</p>
+  <p>Las apps de pago y las compras dentro de la app las factura Apple al precio que se muestra en la App Store antes de confirmar. Las suscripciones se renuevan solas al final de cada periodo, al mismo precio, salvo que las canceles al menos 24 horas antes en los ajustes de tu cuenta de Apple, donde puedes gestionarlas cuando quieras. Los reembolsos los gestiona Apple según las políticas de reembolso de la App Store; nosotros no podemos emitirlos directamente.</p>
 
   <h2>4. Tu contenido es tuyo</h2>
   <p>Todo lo que creas en una app de Seize (temporizadores, registros de trabajo, gastos, rutinas, tickets, registros de entrenamiento, diarios de comida) es tuyo. Como se describe en nuestra <a href="privacy.html">Política de privacidad</a>, se guarda en tu dispositivo y en tu propio iCloud y no tenemos acceso a ello, lo que también significa que <strong>las copias de seguridad son cosa tuya</strong>. La única excepción es un producto que decidas enviar a Open Food Facts desde Grain, que se publica allí con la licencia Open Database License. Borrar una app borra sus datos en ese dispositivo; lo que haya en tu iCloud se queda hasta que lo borres allí.</p>
