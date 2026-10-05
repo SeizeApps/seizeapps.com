@@ -11,7 +11,7 @@ SEIZE 2026 (locked 2026-09-16): ribbon-S mark, Electric Blue `#007AFF`, Cyan `#2
 ```
 index.html            studio home: hero · Apps · Philosophy · Work with us · Studio · Contact
 apps/<slug>.html      one page per app (one per entry in `APPS`): icon, lede, screenshots, what it does, privacy
-privacy.html          privacy policy, one section per app (#cycle-timers … #meso)
+privacy.html          privacy policy, one section per app (#cycle-timers … #atino)
 terms.html            terms of use
 es/… · fr/…           the same four kinds of page in Spanish and French (same paths; hreflang between the three)
 assets/site.css       the whole visual system (dark only)
@@ -20,14 +20,14 @@ assets/icons/*.png    app icons, 256 px, from each app's AppIcon.png
 assets/shots/*.jpg    real screenshots, 600 px wide, JPEG 70, English simulator
 ```
 
-The HTML is **generated** by `tools/gen_site.py` (UI strings and app copy in English and Spanish; French in `tools/gen_site_fr.py`) with the legal bodies in `tools/gen_legal_copy.py` (EN), `tools/gen_legal_es.py` (ES) and `tools/gen_legal_fr.py` (FR); Garum's French legal pages (`/garum/confidentialite/`, `/garum/conditions/`) in `tools/gen_legal_criba_fr.py`. Sacapuntas' policy is Spanish only, like the app. French typography: a no-break space (U+00A0) before `: ; ! ?` and inside « ». Edit the generators, run `python3 tools/gen_site.py`, commit the output. Don't hand-edit the HTML. Bump `CSS_V` in `gen_site.py` whenever `site.css` changes (cache-busting: the path is shared with the previous site).
+The HTML is **generated** by `tools/gen_site.py` (UI strings and app copy in English and Spanish; French in `tools/gen_site_fr.py`) with the legal bodies in `tools/gen_legal_copy.py` (EN), `tools/gen_legal_es.py` (ES) and `tools/gen_legal_fr.py` (FR); Garum's French legal pages (`/garum/confidentialite/`, `/garum/conditions/`) in `tools/gen_legal_criba_fr.py`. Sacapuntas' policy is Spanish only, like the app; Atino's (`gen_legal_atino.py`, `/atino/privacy/` and `/atino/privacidad/`) is English and Spanish; Roomy's (`gen_legal_roomy.py`, `/roomy/privacy/`) is English only. French typography: a no-break space (U+00A0) before `: ; ! ?` and inside « ». Edit the generators, run `python3 tools/gen_site.py`, commit the output. Don't hand-edit the HTML. Bump `CSS_V` in `gen_site.py` whenever `site.css` changes (cache-busting: the path is shared with the previous site).
 
 ## Adding an app
 
 1. Add an entry to `APPS` in `gen_site.py` (slug, name, icon, lead developer, screenshots, and the copy block in English and Spanish: one-liner, tags, lede, meta, three features, privacy paragraph, captions), and its French block to `APPS_FR` in `gen_site_fr.py` (the build fails without it).
 2. Drop the icon in `assets/icons/` (256 px) and 2–4 screenshots in `assets/shots/` (600 px wide, English).
 3. Add its section to the privacy policy in `gen_legal_copy.py`, `gen_legal_es.py` and `gen_legal_fr.py`, with the same id as the slug and the "Published on the App Store by …" line.
-4. Regenerate, check links, commit.
+4. Regenerate, run `python3 tools/check_links.py`, commit.
 
 ## App Store badge
 
@@ -40,10 +40,11 @@ porque Apple redirige a la tienda del visitante.
 `curl -s "https://itunes.apple.com/lookup?id=<id>"` (resultCount 1). El sitio
 no menciona revisión, TestFlight ni fechas de lanzamiento, a propósito.
 
-Vivas a 22/09/2026: Cycle Timers (6796827400), Drip (6812332005), Kover (6812714562)
-y Anchor (6812615752). Tempo y Meso, sin id hasta que `lookup` devuelva 1. Tandem
-está aprobada pero **retirada de la venta** desde el 22/09/2026 (decisión de Sendoa):
-sin id mientras siga retirada.
+Vivas a 05/10/2026 según `lookup` (resultCount 1): Cycle Timers (6796827400), Tempo (6761499275),
+Drip (6812332005), Kover (6812714562), Anchor (6812615752), Tandem (6812734713, que estuvo
+retirada de la venta el 22/09 y ya vuelve a responder), Meso (6813842295), Grain (6816346843)
+y Garum (6816385891). Sin id porque `lookup` devuelve 0: Sacapuntas (6818098257), GamingHub
+(6761752010) y Atino (6818553139); Roomy no tiene id de ASC todavía.
 
 En la portada, cada tarjeta con `appstore` lleva además un icono redondo de la
 Store (`.store-icon`, arriba a la derecha) que enlaza a la ficha sin pasar por la
