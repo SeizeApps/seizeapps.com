@@ -231,7 +231,7 @@ APPS=[
                     ('02 / LIQUIDAR','Un número al mes','Quién pagó qué, quién debe a quién y la transferencia que lo cuadra. Márcalo como liquidado; deshazlo si te precipitaste.'),
                     ('03 / VER','A dónde va','Gastos recurrentes que se apuntan solos. Tandem Pro añade informes por categoría y por mes, recordatorios para apuntar y para liquidar, y widgets: una compra única, con 30 días de prueba gratis.')],
           privacy='Tandem guarda los nombres, los ingresos y los gastos en tu dispositivo y en tu propia cuenta de iCloud. No se comparte nada con nadie: ni con nosotros ni con un servidor.',
-          captions=['Este mes: compartido, pagado, por liquidar','Fijos y variables, por mes','Liquidar: las cuentas, a la vista','Informes: quién pagó, mes a mes (Pro)'])),
+          captions=['Este mes: compartido, pagado, por liquidar','Fijos y variables, por mes','Liquidar: las cuentas, a la vista','Informes: quién pagó, mes a mes (Pro)']), appstore='6812734713'),
  app('meso','Meso','meso.png','Sendoa Sola','meso',
      ['meso-01-today.jpg','meso-02-workout.jpg','meso-03-grid.jpg','meso-04-week.jpg'],
      dict(one='The gym version of your coach\'s spreadsheet: blocks of weeks, load and reps per set, effort as reps in reserve.',
@@ -251,7 +251,7 @@ APPS=[
                     ('02 / PROGRESAR','Bloques, no días','Una rejilla de tonelaje por ejercicio a lo largo de las semanas. Meso Pro añade las series por músculo frente a la banda de 10–20, el 1RM estimado de cada ejercicio a lo largo de los bloques, el siguiente paso antes de la primera serie y tus gimnasios con su barra y sus discos: una compra única, con 30 días de prueba gratis. Sin rachas ni confeti: la progresión se mide en bloques.'),
                     ('03 / APRENDER','Cada regla con su fuente','Por qué RIR, por qué una descarga, por qué la banda: cada principio de la app lleva su evidencia y lo sólida que es, con referencias que puedes comprobar. Honesta con lo que está claro y lo que no.')],
           privacy='Meso guarda tus programas y sesiones en tu dispositivo y en tu propia cuenta de iCloud. Apple Salud solo se escribe si lo activas, y nunca se lee. Sin cuenta, sin analítica.',
-          captions=['Hoy: la sesión que toca','Una serie es un ✓; el resto viene relleno','Tonelaje por ejercicio, semana a semana','Series por músculo frente a la banda de la evidencia (Pro)'])),
+          captions=['Hoy: la sesión que toca','Una serie es un ✓; el resto viene relleno','Tonelaje por ejercicio, semana a semana','Series por músculo frente a la banda de la evidencia (Pro)']), appstore='6813842295'),
  app('grain','Grain','grain.png','Sendoa Sola','grain',
      ['grain-01-today.jpg','grain-02-meal.jpg','grain-03-label.jpg','grain-04-history.jpg'],
      dict(one='A macro diary with no diet talk: energy, protein, carbs and fat against the targets you set, and what is left.',
@@ -271,7 +271,7 @@ APPS=[
                     ('02 / LEER','La etiqueta, en tu iPhone','Con Grain Pro, apunta la cámara a la tabla nutricional, o elige una foto, y los valores por 100 g se rellenan solos. Se lee en el dispositivo; nada sale del teléfono.'),
                     ('03 / REPASAR','Cómo suman tus semanas','Cada comida suma junto a su nombre y el día enseña lo que queda de energía y de cada macro. Grain Pro añade el historial de siete, treinta o noventa días, con la media de los días anotados (y diciéndolo), además de widgets y Apple Salud: una compra única, con 30 días de prueba gratis. Sin rachas, sin peso.')],
           privacy='Grain guarda tu diario en tu dispositivo y en tu propia cuenta de iCloud. Del código de barras solo sale el número, a Open Food Facts, salvo que elijas enviarle un producto. Apple Salud solo se escribe si lo activas, y nunca se lee. Sin cuenta, sin analítica.',
-          captions=['Hoy: lo que has comido frente a tus metas, y lo que queda','Escribe una comida como lo dirías','Una etiqueta nutricional, leída en el iPhone (Pro)','Cómo suman las semanas, por macro (Pro)'])),
+          captions=['Hoy: lo que has comido frente a tus metas, y lo que queda','Escribe una comida como lo dirías','Una etiqueta nutricional, leída en el iPhone (Pro)','Cómo suman las semanas, por macro (Pro)']), appstore='6816346843'),
  app('garum','Garum','garum.png','Sendoa Sola','garum',
      ['garum-01-map.jpg','garum-02-why.jpg','garum-03-detail.jpg','garum-04-signed.jpg'],
      dict(one='A map of places that are there for a reason: classics, established places and new ones with a point of view, each with its why, everything signed.',
@@ -292,7 +292,7 @@ APPS=[
                     ('03 / FIRMADO','Todo va firmado','Mira quién respalda cada sitio y sigue a gente con tu gusto. Propón lo que falta; si no entra, te decimos por qué. Los Curators también pueden sugerir quitar un sitio que ha cerrado o ya no es lo que era, y la moderación decide, con su motivo.')],
           privacy='Mirar el mapa no necesita cuenta. Para ver por qué está cada sitio y para aportar, entras con Apple, sin dar tu correo: apareces con el nombre que compartes con Apple (o el que pongas después) y un nombre de usuario, y lo que aportas se publica, en un servidor en la UE. Sin anuncios ni analítica. Garum tiene su propia política de privacidad y sus condiciones.',
           captions=['El mapa: clásicos, establecidos y nuevos','Cada sitio con sus motivos y notas firmadas','Qué pedir, cuándo ir, si hay que reservar','Todo firmado: quién respalda qué']),
-     privacy_path={'en': 'garum/privacy/', 'es': '../garum/privacidad/', 'fr': '../garum/confidentialite/'}),
+     privacy_path={'en': 'garum/privacy/', 'es': '../garum/privacidad/', 'fr': '../garum/confidentialite/'}, appstore='6816385891'),
  # Sacapuntas (Kids, 02/10/2026): solo en castellano y solo en España; su propia política, con versión para niños.
  app('sacapuntas','Sacapuntas','sacapuntas.png','Sendoa Sola','sacapuntas',
      ['sacapuntas-01-shelf.jpg','sacapuntas-02-sum.jpg','sacapuntas-03-village.jpg','sacapuntas-04-report.jpg'],
@@ -315,6 +315,49 @@ APPS=[
           privacy='Sacapuntas no recoge ningún dato del niño: sin cuenta, sin anuncios, sin analítica y sin notificaciones. El progreso se queda en el dispositivo y, si la familia lo deja activado, en su propio iCloud.',
           captions=['La estantería: lo que toca','Sumas en columna, cifra a cifra','El pueblo hecho con virutas','Para la familia: el informe de la semana']),
      privacy_path={'en': 'sacapuntas/privacidad/', 'es': '../sacapuntas/privacidad/', 'fr': '../sacapuntas/privacidad/'}),
+ # GamingHub (0.5.0, aún sin publicar en la Store): sin appstore hasta que `lookup` devuelva 1.
+ app('gaminghub','GamingHub','gaminghub.png','Izotz Cristobal Mota','gaminghub',
+     ['gaminghub-01-home.jpg','gaminghub-02-impostor.jpg','gaminghub-03-unison.jpg'],
+     dict(one='Party games for a game night, each friend on their own phone: create a room, share the code and play. Each device shows only what you are allowed to see.',
+          tags=['Games','Multiplayer','EN · ES'],
+          lede='Turn any evening into a game night. With <strong>GamingHub</strong> you create a room, share the code or the QR, and every friend joins from their own phone. Each device shows only what you are meant to see: your role, your word, your cards. Impostor at a masquerade ball, Vault, Unison, Rewind, Spot On and Fishbowl are original games built on classic mechanics, played live in the room.',
+          meta=['iOS 17+','iPhone','Unison free · the rest, one-time purchases','English · Spanish'],
+          features=[('01 / ROOM','One code, one table','Create a room, share a four-letter code or a QR, and friends appear in the lobby as they join. Resume your table after a call, a lock screen or a restart.'),
+                    ('02 / SECRET','Each phone knows its own secret','Your role, your word and your cards are sent only to your device. The room sees the game; nobody sees your hand.'),
+                    ('03 / PLAY','Free to try, yours to keep','Unison is free for everyone. The other games are one-time purchases, and your whole table plays free whenever the host owns the game; otherwise each player gets three free plays of each game. Purchases are shared with your family.')],
+          privacy='GamingHub has no account, no email and no password. To run a room it sends a display name you choose, an avatar, an anonymous identifier and the game state to our server (Supabase), where the other players in the room see it; rooms are deleted when they empty and purged after 12 hours. No ads, no analytics, no tracking.',
+          captions=['Home: create a room, join with a code or scan a QR','Impostor: break the seal to read your invitation','Unison: play your cards in order, in silence']),
+     dict(one='Juegos para una noche de juegos, cada uno con su móvil: crea una sala, comparte el código y a jugar. Cada dispositivo enseña solo lo que te toca ver.',
+          tags=['Juegos','Multijugador','EN · ES'],
+          lede='Convierte cualquier tarde en una noche de juegos. Con <strong>GamingHub</strong> creas una sala, compartes el código o el QR y cada amigo entra desde su móvil. Cada dispositivo enseña solo lo que te toca ver: tu rol, tu palabra, tus cartas. Impostor en un baile de máscaras, Bóveda, Sintonía, Rebobina, Diana y La Pecera son juegos originales sobre mecánicas clásicas, jugados en directo en la sala.',
+          meta=['iOS 17+','iPhone','Sintonía gratis · el resto, compras únicas','Castellano · Inglés'],
+          features=[('01 / SALA','Un código, una mesa','Crea una sala, comparte un código de cuatro letras o un QR y tus amigos aparecen en la sala de espera según entran. Retoma tu mesa tras una llamada, el bloqueo de pantalla o un reinicio.'),
+                    ('02 / SECRETO','Cada móvil guarda su secreto','Tu rol, tu palabra y tus cartas se envían solo a tu dispositivo. La sala ve la partida; nadie ve tu mano.'),
+                    ('03 / JUGAR','Gratis para probar, tuyo para quedártelo','Sintonía es gratis para todos. Los demás juegos son compras únicas, y toda tu mesa juega gratis siempre que el anfitrión tenga el juego; si no, cada jugador tiene tres partidas gratis de cada uno. Las compras se comparten con tu familia.')],
+          privacy='GamingHub no tiene cuenta, ni correo, ni contraseña. Para llevar una sala envía a nuestro servidor (Supabase) un nombre que eliges, un avatar, un identificador anónimo y el estado de la partida, que ven los demás jugadores de la sala; las salas se borran al vaciarse y se purgan a las 12 horas. Sin anuncios, sin analítica y sin seguimiento.',
+          captions=['Inicio: crea una sala, entra con un código o escanea un QR','Impostor: rompe el sello para leer tu invitación','Sintonía: jugad las cartas en orden y en silencio'])),
+ # Atino (0.1.0, aún sin publicar en la Store): sin appstore hasta que `lookup` devuelva 1. Política propia en /atino/.
+ app('atino','Atino','atino.png','Izotz Cristobal Mota','atino',
+     ['atino-01-matches.jpg','atino-02-job.jpg','atino-03-filters.jpg'],
+     dict(one='Import your CV and see current job ads across Europe ranked by how well they fit, each with a short reason. Your name and contact details are removed on your iPhone first.',
+          tags=['Jobs','Europe','CV'],
+          lede='<strong>Atino</strong> reads your CV on your iPhone, takes out your name and contact details and, with your permission, has an AI model score each job against what is left. About 60,000 current job ads from public company career pages and open employment data come with the app and update every day. Every result shows a fit percent and a short reason; the percent is an estimate, not a promise, and Apply takes you to the employer\'s own page.',
+          meta=['iOS 26+','iPhone','Free · Pro, subscription','24 languages'],
+          features=[('01 / IMPORT','Your CV stays yours','Import a PDF; scans work too. Atino removes your name, email, phone, address, date of birth and ID number on the phone, then shows you the exact text it would send. You can edit it, and nothing is sent until you allow it.'),
+                    ('02 / RANK','Best fit first','Choose where you want to work and how, then search. Jobs come back ranked, each with a fit percent and a breakdown of the work, skills, level and requirements. One search a day and your top 10 are free.'),
+                    ('03 / WATCH','Pro keeps watching','Atino Pro adds every match, all the filters, saved searches and as many searches as you need within fair use, plus one alert a day, at the time you pick, when a saved search has something new.')],
+          privacy='Your CV, results and saved searches stay on your iPhone. With your permission, the redacted CV text goes through the Seize relay to Command Code and TypeSafe AI (Jev) to rank jobs; they may keep it under their own terms. No account, no analytics, no tracking. Atino has its own privacy policy.',
+          captions=['Matches: current jobs ranked by fit','A job: why it fits, and where to apply','Filters: where and how you want to work']),
+     dict(one='Importa tu CV y mira las ofertas de empleo de toda Europa ordenadas por lo bien que encajan, con un motivo breve en cada una. Tu nombre y tus datos de contacto se quitan antes, en tu iPhone.',
+          tags=['Empleo','Europa','CV'],
+          lede='<strong>Atino</strong> lee tu CV en el iPhone, quita tu nombre y tus datos de contacto y, con tu permiso, pide a un modelo de IA que puntúe cada oferta con lo que queda. Unas 60.000 ofertas vigentes, de páginas de empleo públicas de empresas y de datos abiertos de empleo, vienen con la app y se actualizan cada día. Cada resultado trae un porcentaje de encaje y un motivo breve; el porcentaje es una estimación, no una promesa, y el botón para solicitar te lleva a la página del propio empleador.',
+          meta=['iOS 26+','iPhone','Gratis · Pro, suscripción','24 idiomas'],
+          features=[('01 / IMPORTAR','Tu CV sigue siendo tuyo','Importa un PDF; los escaneados también valen. Atino quita en el teléfono tu nombre, correo, teléfono, dirección, fecha de nacimiento y documento de identidad, y te enseña el texto exacto que enviaría. Puedes editarlo, y no se envía nada hasta que lo permitas.'),
+                    ('02 / ORDENAR','Primero, lo que mejor encaja','Elige dónde quieres trabajar y cómo, y busca. Las ofertas vuelven ordenadas, cada una con su porcentaje de encaje y un desglose de trabajo, habilidades, nivel y requisitos. Una búsqueda al día y tus 10 mejores resultados son gratis.'),
+                    ('03 / VIGILAR','Pro sigue buscando por ti','Atino Pro suma todos los resultados, todos los filtros, búsquedas guardadas y todas las búsquedas que necesites dentro de un uso razonable, además de un aviso al día, a la hora que elijas, cuando una búsqueda guardada tiene algo nuevo.')],
+          privacy='Tu CV, tus resultados y tus búsquedas guardadas se quedan en tu iPhone. Con tu permiso, el texto redactado del CV pasa por la pasarela de Seize hasta Command Code y TypeSafe AI (Jev) para ordenar las ofertas; pueden conservarlo según sus propias condiciones. Sin cuenta, sin analítica, sin seguimiento. Atino tiene su propia política de privacidad.',
+          captions=['Resultados: ofertas vigentes ordenadas por encaje','Una oferta: por qué encaja y dónde solicitarla','Filtros: dónde y cómo quieres trabajar']),
+     privacy_path={'en': 'atino/privacy/', 'es': '../atino/privacidad/', 'fr': '../atino/privacy/'}),
 ]
 
 from gen_site_fr import UI_FR, APPS_FR
@@ -450,9 +493,9 @@ def redirect_page(url):
 
 # The app count and the app list in the copy come from APPS, so adding an
 # app never leaves a «six apps» behind (it did, 20/09/2026).
-NUMBERS={'en':['zero','one','two','three','four','five','six','seven','eight','nine','ten'],
-         'es':['cero','una','dos','tres','cuatro','cinco','seis','siete','ocho','nueve','diez'],
-         'fr':['zéro','une','deux','trois','quatre','cinq','six','sept','huit','neuf','dix']}
+NUMBERS={'en':['zero','one','two','three','four','five','six','seven','eight','nine','ten','eleven','twelve'],
+         'es':['cero','una','dos','tres','cuatro','cinco','seis','siete','ocho','nueve','diez','once','doce'],
+         'fr':['zéro','une','deux','trois','quatre','cinq','six','sept','huit','neuf','dix','onze','douze']}
 def fill_counts():
     n=len(APPS)
     for lang in LANGS:
@@ -627,6 +670,9 @@ if __name__=='__main__':
     # Sacapuntas (Kids, 01/10/2026): su propia política, en castellano, con versión para niños.
     from gen_legal_sacapuntas import build_sacapuntas
     build_sacapuntas()
+    # Atino (05/10/2026): su propia política, en inglés y castellano.
+    from gen_legal_atino import build_atino
+    build_atino()
     # Garum's share links (0.0.26): /garum/c/ and /garum/p/, and the Universal Links file.
     from gen_garum_share import build_garum_share
     build_garum_share()
