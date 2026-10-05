@@ -3,10 +3,10 @@
 # The French copy lives in gen_site_fr.py (UI_FR, APPS_FR) and gen_legal_fr.py.
 # Run from anywhere: python3 tools/gen_site.py
 # Identity: SEIZE 2026 (brand/design-tokens.json v2.1, brand/sheets/02-web-ui-system.png).
-import os, sys
+import os, re, sys, unicodedata
 SITE=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-CSS_V='2026-10-05'
+CSS_V='2026-10-05.2'
 LANGS=['en','es','fr']
 # Language switch: short label and the link's accessible name, in the target language.
 LANG_LINK={'en':('EN','Read in English'),'es':('ES','Leer en castellano'),'fr':('FR','Lire en français')}
@@ -18,8 +18,6 @@ OG_LOCALE={'en':'en_US','es':'es_ES','fr':'fr_FR'}
 # redirected: someone who lands there asked for that language. A click on the switch is remembered
 # (localStorage) and wins over the browser. No IP geolocation: a country is not a language.
 LANG_PICK='''<script>(function(){try{var k='seize-lang',c=localStorage.getItem(k);var alt={};document.querySelectorAll('link[rel=alternate][hreflang]').forEach(function(l){alt[l.hreflang]=l.href});var want=null;if(c){want=c}else{var ls=navigator.languages||[navigator.language||''];for(var i=0;i<ls.length;i++){var b=(ls[i]||'').toLowerCase().split('-')[0];if(alt[b]){want=b;break}}}if(want&&want!=='en'&&alt[want]&&!/bot|crawl|spider/i.test(navigator.userAgent)){location.replace(alt[want]+location.hash)}}catch(e){}})();</script>
-'''
-LANG_REMEMBER='''<script>document.querySelectorAll('.site-nav .lang a[hreflang]').forEach(function(a){a.addEventListener('click',function(){try{localStorage.setItem('seize-lang',a.hreflang)}catch(e){}})});</script>
 '''
 
 # ---------------------------------------------------------------- UI strings
@@ -59,6 +57,8 @@ UI={
    privacy_eyebrow='Privacy', privacy_h3='Yours, not ours.', published_by='A Seize Apps app.',
    privacy_policy='Privacy policy', contact='Contact', store_badge='Download on the App Store', store_icon='{name} on the App Store',
    shot_alt='{name} screenshot: {cap}',
+   skip='Skip to content', lang_label='Language', soon='Coming soon', live_title='On the App Store', more_apps='More from Seize', toc_title='On this page',
+   hero_proof='{n} apps · {live} on the App Store · Made in the Basque Country',
  ),
  'es': dict(
    nav_apps='Apps', nav_phil='Filosofía', nav_work='Trabaja con nosotros', nav_studio='Estudio', nav_cta='Escríbenos',
@@ -95,6 +95,8 @@ UI={
    privacy_eyebrow='Privacidad', privacy_h3='Tuyo, no nuestro.', published_by='Una app de Seize Apps.',
    privacy_policy='Política de privacidad', contact='Contacto', store_badge='Descargar en la App Store', store_icon='{name} en la App Store',
    shot_alt='Captura de {name}: {cap}',
+   skip='Saltar al contenido', lang_label='Idioma', soon='Próximamente', live_title='En la App Store', more_apps='Más de Seize', toc_title='En esta página',
+   hero_proof='{n} apps · {live} en la App Store · Hechas en el País Vasco',
  ),
 }
 
@@ -231,7 +233,7 @@ APPS=[
                     ('02 / LIQUIDAR','Un número al mes','Quién pagó qué, quién debe a quién y la transferencia que lo cuadra. Márcalo como liquidado; deshazlo si te precipitaste.'),
                     ('03 / VER','A dónde va','Gastos recurrentes que se apuntan solos. Tandem Pro añade informes por categoría y por mes, recordatorios para apuntar y para liquidar, y widgets: una compra única, con 30 días de prueba gratis.')],
           privacy='Tandem guarda los nombres, los ingresos y los gastos en tu dispositivo y en tu propia cuenta de iCloud. No se comparte nada con nadie: ni con nosotros ni con un servidor.',
-          captions=['Este mes: compartido, pagado, por liquidar','Fijos y variables, por mes','Liquidar: las cuentas, a la vista','Informes: quién pagó, mes a mes (Pro)'])),
+          captions=['Este mes: compartido, pagado, por liquidar','Fijos y variables, por mes','Liquidar: las cuentas, a la vista','Informes: quién pagó, mes a mes (Pro)']), appstore='6812734713'),
  app('meso','Meso','meso.png','Sendoa Sola','meso',
      ['meso-01-today.jpg','meso-02-workout.jpg','meso-03-grid.jpg','meso-04-week.jpg'],
      dict(one='The gym version of your coach\'s spreadsheet: blocks of weeks, load and reps per set, effort as reps in reserve.',
@@ -251,7 +253,7 @@ APPS=[
                     ('02 / PROGRESAR','Bloques, no días','Una rejilla de tonelaje por ejercicio a lo largo de las semanas. Meso Pro añade las series por músculo frente a la banda de 10–20, el 1RM estimado de cada ejercicio a lo largo de los bloques, el siguiente paso antes de la primera serie y tus gimnasios con su barra y sus discos: una compra única, con 30 días de prueba gratis. Sin rachas ni confeti: la progresión se mide en bloques.'),
                     ('03 / APRENDER','Cada regla con su fuente','Por qué RIR, por qué una descarga, por qué la banda: cada principio de la app lleva su evidencia y lo sólida que es, con referencias que puedes comprobar. Honesta con lo que está claro y lo que no.')],
           privacy='Meso guarda tus programas y sesiones en tu dispositivo y en tu propia cuenta de iCloud. Apple Salud solo se escribe si lo activas, y nunca se lee. Sin cuenta, sin analítica.',
-          captions=['Hoy: la sesión que toca','Una serie es un ✓; el resto viene relleno','Tonelaje por ejercicio, semana a semana','Series por músculo frente a la banda de la evidencia (Pro)'])),
+          captions=['Hoy: la sesión que toca','Una serie es un ✓; el resto viene relleno','Tonelaje por ejercicio, semana a semana','Series por músculo frente a la banda de la evidencia (Pro)']), appstore='6813842295'),
  app('grain','Grain','grain.png','Sendoa Sola','grain',
      ['grain-01-today.jpg','grain-02-meal.jpg','grain-03-label.jpg','grain-04-history.jpg'],
      dict(one='A macro diary with no diet talk: energy, protein, carbs and fat against the targets you set, and what is left.',
@@ -271,7 +273,7 @@ APPS=[
                     ('02 / LEER','La etiqueta, en tu iPhone','Con Grain Pro, apunta la cámara a la tabla nutricional, o elige una foto, y los valores por 100 g se rellenan solos. Se lee en el dispositivo; nada sale del teléfono.'),
                     ('03 / REPASAR','Cómo suman tus semanas','Cada comida suma junto a su nombre y el día enseña lo que queda de energía y de cada macro. Grain Pro añade el historial de siete, treinta o noventa días, con la media de los días anotados (y diciéndolo), además de widgets y Apple Salud: una compra única, con 30 días de prueba gratis. Sin rachas, sin peso.')],
           privacy='Grain guarda tu diario en tu dispositivo y en tu propia cuenta de iCloud. Del código de barras solo sale el número, a Open Food Facts, salvo que elijas enviarle un producto. Apple Salud solo se escribe si lo activas, y nunca se lee. Sin cuenta, sin analítica.',
-          captions=['Hoy: lo que has comido frente a tus metas, y lo que queda','Escribe una comida como lo dirías','Una etiqueta nutricional, leída en el iPhone (Pro)','Cómo suman las semanas, por macro (Pro)'])),
+          captions=['Hoy: lo que has comido frente a tus metas, y lo que queda','Escribe una comida como lo dirías','Una etiqueta nutricional, leída en el iPhone (Pro)','Cómo suman las semanas, por macro (Pro)']), appstore='6816346843'),
  app('garum','Garum','garum.png','Sendoa Sola','garum',
      ['garum-01-map.jpg','garum-02-why.jpg','garum-03-detail.jpg','garum-04-signed.jpg'],
      dict(one='A map of places that are there for a reason: classics, established places and new ones with a point of view, each with its why, everything signed.',
@@ -292,7 +294,7 @@ APPS=[
                     ('03 / FIRMADO','Todo va firmado','Mira quién respalda cada sitio y sigue a gente con tu gusto. Propón lo que falta; si no entra, te decimos por qué. Los Curators también pueden sugerir quitar un sitio que ha cerrado o ya no es lo que era, y la moderación decide, con su motivo.')],
           privacy='Mirar el mapa no necesita cuenta. Para ver por qué está cada sitio y para aportar, entras con Apple, sin dar tu correo: apareces con el nombre que compartes con Apple (o el que pongas después) y un nombre de usuario, y lo que aportas se publica, en un servidor en la UE. Sin anuncios ni analítica. Garum tiene su propia política de privacidad y sus condiciones.',
           captions=['El mapa: clásicos, establecidos y nuevos','Cada sitio con sus motivos y notas firmadas','Qué pedir, cuándo ir, si hay que reservar','Todo firmado: quién respalda qué']),
-     privacy_path={'en': 'garum/privacy/', 'es': '../garum/privacidad/', 'fr': '../garum/confidentialite/'}),
+     privacy_path={'en': 'garum/privacy/', 'es': '../garum/privacidad/', 'fr': '../garum/confidentialite/'}, appstore='6816385891'),
  # Sacapuntas (Kids, 02/10/2026): solo en castellano y solo en España; su propia política, con versión para niños.
  app('sacapuntas','Sacapuntas','sacapuntas.png','Sendoa Sola','sacapuntas',
      ['sacapuntas-01-shelf.jpg','sacapuntas-02-sum.jpg','sacapuntas-03-village.jpg','sacapuntas-04-report.jpg'],
@@ -315,6 +317,71 @@ APPS=[
           privacy='Sacapuntas no recoge ningún dato del niño: sin cuenta, sin anuncios, sin analítica y sin notificaciones. El progreso se queda en el dispositivo y, si la familia lo deja activado, en su propio iCloud.',
           captions=['La estantería: lo que toca','Sumas en columna, cifra a cifra','El pueblo hecho con virutas','Para la familia: el informe de la semana']),
      privacy_path={'en': 'sacapuntas/privacidad/', 'es': '../sacapuntas/privacidad/', 'fr': '../sacapuntas/privacidad/'}),
+ # GamingHub (0.5.0, aún sin publicar en la Store): sin appstore hasta que `lookup` devuelva 1.
+ app('gaminghub','GamingHub','gaminghub.png','Izotz Cristobal Mota','gaminghub',
+     ['gaminghub-01-home.jpg','gaminghub-02-impostor.jpg','gaminghub-03-unison.jpg'],
+     dict(one='Party games for a game night, each friend on their own phone: create a room, share the code and play. Each device shows only what you are allowed to see.',
+          tags=['Games','Multiplayer','EN · ES'],
+          lede='Turn any evening into a game night. With <strong>GamingHub</strong> you create a room, share the code or the QR, and every friend joins from their own phone. Each device shows only what you are meant to see: your role, your word, your cards. Impostor at a masquerade ball, Vault, Unison, Rewind, Spot On and Fishbowl are original games built on classic mechanics, played live in the room.',
+          meta=['iOS 17+','iPhone','Unison free · the rest, one-time purchases','English · Spanish'],
+          features=[('01 / ROOM','One code, one table','Create a room, share a four-letter code or a QR, and friends appear in the lobby as they join. Resume your table after a call, a lock screen or a restart.'),
+                    ('02 / SECRET','Each phone knows its own secret','Your role, your word and your cards are sent only to your device. The room sees the game; nobody sees your hand.'),
+                    ('03 / PLAY','Free to try, yours to keep','Unison is free for everyone. The other games are one-time purchases, and your whole table plays free whenever the host owns the game; otherwise each player gets three free plays of each game. Purchases are shared with your family.')],
+          privacy='GamingHub has no account, no email and no password. To run a room it sends a display name you choose, an avatar, an anonymous identifier and the game state to our server (Supabase), where the other players in the room see it; rooms are deleted when they empty and purged after 12 hours. No ads, no analytics, no tracking.',
+          captions=['Home: create a room, join with a code or scan a QR','Impostor: break the seal to read your invitation','Unison: play your cards in order, in silence']),
+     dict(one='Juegos para una noche de juegos, cada uno con su móvil: crea una sala, comparte el código y a jugar. Cada dispositivo enseña solo lo que te toca ver.',
+          tags=['Juegos','Multijugador','EN · ES'],
+          lede='Convierte cualquier tarde en una noche de juegos. Con <strong>GamingHub</strong> creas una sala, compartes el código o el QR y cada amigo entra desde su móvil. Cada dispositivo enseña solo lo que te toca ver: tu rol, tu palabra, tus cartas. Impostor en un baile de máscaras, Bóveda, Sintonía, Rebobina, Diana y La Pecera son juegos originales sobre mecánicas clásicas, jugados en directo en la sala.',
+          meta=['iOS 17+','iPhone','Sintonía gratis · el resto, compras únicas','Castellano · Inglés'],
+          features=[('01 / SALA','Un código, una mesa','Crea una sala, comparte un código de cuatro letras o un QR y tus amigos aparecen en la sala de espera según entran. Retoma tu mesa tras una llamada, el bloqueo de pantalla o un reinicio.'),
+                    ('02 / SECRETO','Cada móvil guarda su secreto','Tu rol, tu palabra y tus cartas se envían solo a tu dispositivo. La sala ve la partida; nadie ve tu mano.'),
+                    ('03 / JUGAR','Gratis para probar, tuyo para quedártelo','Sintonía es gratis para todos. Los demás juegos son compras únicas, y toda tu mesa juega gratis siempre que el anfitrión tenga el juego; si no, cada jugador tiene tres partidas gratis de cada uno. Las compras se comparten con tu familia.')],
+          privacy='GamingHub no tiene cuenta, ni correo, ni contraseña. Para llevar una sala envía a nuestro servidor (Supabase) un nombre que eliges, un avatar, un identificador anónimo y el estado de la partida, que ven los demás jugadores de la sala; las salas se borran al vaciarse y se purgan a las 12 horas. Sin anuncios, sin analítica y sin seguimiento.',
+          captions=['Inicio: crea una sala, entra con un código o escanea un QR','Impostor: rompe el sello para leer tu invitación','Sintonía: jugad las cartas en orden y en silencio'])),
+ # Atino (0.1.0, aún sin publicar en la Store): sin appstore hasta que `lookup` devuelva 1. Política propia en /atino/.
+ app('atino','Atino','atino.png','Izotz Cristobal Mota','atino',
+     ['atino-01-matches.jpg','atino-02-job.jpg','atino-03-filters.jpg'],
+     dict(one='Import your CV and see current job ads across Europe ranked by how well they fit, each with a short reason. Your name and contact details are removed on your iPhone first.',
+          tags=['Jobs','Europe','CV'],
+          lede='<strong>Atino</strong> reads your CV on your iPhone, takes out your name and contact details and, with your permission, has an AI model score each job against what is left. More than 100,000 current job ads from public company career pages and open employment data come with the app and update every day. Every result shows a fit percent and a short reason; the percent is an estimate, not a promise, and Apply takes you to the employer\'s own page.',
+          meta=['iOS 26+','iPhone','Free · Pro, subscription','24 languages'],
+          features=[('01 / IMPORT','Your CV stays yours','Import a PDF; scans work too. Atino removes your name, email, phone, address, date of birth and ID number on the phone, then shows you the exact text it would send. You can edit it, and nothing is sent until you allow it.'),
+                    ('02 / RANK','Best fit first','Choose where you want to work and how, then search. Jobs come back ranked, each with a fit percent and a breakdown of the work, skills, level and requirements. One search a day and your top 10 are free.'),
+                    ('03 / WATCH','Pro keeps watching','Atino Pro adds every match, all the filters, saved searches and as many searches as you need within fair use, plus one alert a day, at the time you pick, when a saved search has something new.')],
+          privacy='Your CV, results and saved searches stay on your iPhone. With your permission, the redacted CV text goes through the Seize relay to Command Code and TypeSafe AI (Jev) to rank jobs; they may keep it under their own terms. No account, no analytics, no tracking. Atino has its own privacy policy.',
+          captions=['Matches: current jobs ranked by fit','A job: why it fits, and where to apply','Filters: where and how you want to work']),
+     dict(one='Importa tu CV y mira las ofertas de empleo de toda Europa ordenadas por lo bien que encajan, con un motivo breve en cada una. Tu nombre y tus datos de contacto se quitan antes, en tu iPhone.',
+          tags=['Empleo','Europa','CV'],
+          lede='<strong>Atino</strong> lee tu CV en el iPhone, quita tu nombre y tus datos de contacto y, con tu permiso, pide a un modelo de IA que puntúe cada oferta con lo que queda. Más de 100.000 ofertas vigentes, de páginas de empleo públicas de empresas y de datos abiertos de empleo, vienen con la app y se actualizan cada día. Cada resultado trae un porcentaje de encaje y un motivo breve; el porcentaje es una estimación, no una promesa, y el botón para solicitar te lleva a la página del propio empleador.',
+          meta=['iOS 26+','iPhone','Gratis · Pro, suscripción','24 idiomas'],
+          features=[('01 / IMPORTAR','Tu CV sigue siendo tuyo','Importa un PDF; los escaneados también valen. Atino quita en el teléfono tu nombre, correo, teléfono, dirección, fecha de nacimiento y documento de identidad, y te enseña el texto exacto que enviaría. Puedes editarlo, y no se envía nada hasta que lo permitas.'),
+                    ('02 / ORDENAR','Primero, lo que mejor encaja','Elige dónde quieres trabajar y cómo, y busca. Las ofertas vuelven ordenadas, cada una con su porcentaje de encaje y un desglose de trabajo, habilidades, nivel y requisitos. Una búsqueda al día y tus 10 mejores resultados son gratis.'),
+                    ('03 / VIGILAR','Pro sigue buscando por ti','Atino Pro suma todos los resultados, todos los filtros, búsquedas guardadas y todas las búsquedas que necesites dentro de un uso razonable, además de un aviso al día, a la hora que elijas, cuando una búsqueda guardada tiene algo nuevo.')],
+          privacy='Tu CV, tus resultados y tus búsquedas guardadas se quedan en tu iPhone. Con tu permiso, el texto redactado del CV pasa por la pasarela de Seize hasta Command Code y TypeSafe AI (Jev) para ordenar las ofertas; pueden conservarlo según sus propias condiciones. Sin cuenta, sin analítica, sin seguimiento. Atino tiene su propia política de privacidad.',
+          captions=['Resultados: ofertas vigentes ordenadas por encaje','Una oferta: por qué encaja y dónde solicitarla','Filtros: dónde y cómo quieres trabajar']),
+     privacy_path={'en': 'atino/privacy/', 'es': '../atino/privacidad/', 'fr': '../atino/privacy/'}),
+ # Roomy (0.0.2, aún sin publicar en la Store): sin appstore hasta que `lookup` devuelva 1 (sin id de ASC en SIGNING.yml). Privacidad: /roomy/privacy/ (solo inglés).
+ app('roomy','Roomy','roomy.png','Izotz Cristobal Mota','roomy',
+     ['roomy-01-home.jpg','roomy-02-swipe.jpg','roomy-03-similar.jpg'],
+     dict(one='Swipe left to delete, right to keep. Roomy also finds duplicates, similar shots and huge videos, all on your iPhone.',
+          tags=['Utilities','Photos','9 languages'],
+          lede='A full camera roll is a chore until it becomes a game. <strong>Roomy</strong> shows your photos one at a time: swipe left to delete, right to keep, undo any swipe, and nothing is deleted until you confirm in the Trash. Smart Cleanup finds exact duplicates, bursts and near-identical shots (with the best one picked for you), screenshots and the large videos that really eat your storage, which Roomy can compress while keeping the date and location.',
+          meta=['iOS 17+','iPhone','Free · Pro, subscription or lifetime','9 languages'],
+          features=[('01 / SWIPE','Clean a month in minutes','Swipe through your library month by month, by On This Day memories or at random. Every swipe is undoable, and deleted items wait in the Trash until you confirm. Free: 50 swipes a day.'),
+                    ('02 / FIND','The clutter, found for you','Duplicates, similar shots, screenshots and large videos each get their own queue. Similar photos arrive grouped with the best one marked, and what you swiped Keep is never pre-selected for deletion.'),
+                    ('03 / FREE UP','See what you got back','Roomy Pro adds unlimited swipes, one-tap cleanup of duplicates and similar shots, and video compression that saves up to 80% of the space. Track the storage you freed and keep a daily streak.')],
+          privacy='Roomy analyses your library on your iPhone only. Your photos, videos and metadata are never uploaded. No account, no analytics, no ads, no tracking: nothing leaves the phone. Purchases go through Apple.',
+          captions=['Home: free space, and the clutter Roomy found','Swipe left to delete, right to keep','Similar shots grouped, with the best one marked']),
+     dict(one='Desliza a la izquierda para borrar, a la derecha para quedarte. Roomy también encuentra duplicados, fotos parecidas y vídeos enormes, todo en tu iPhone.',
+          tags=['Utilidades','Fotos','9 idiomas'],
+          lede='Un carrete lleno es una tarea pesada hasta que se convierte en un juego. <strong>Roomy</strong> te enseña tus fotos de una en una: izquierda para borrar, derecha para quedarte, cada gesto se puede deshacer y no se borra nada hasta que lo confirmas en la Papelera. La limpieza inteligente encuentra duplicados exactos, ráfagas y fotos casi idénticas (con la mejor ya marcada), capturas de pantalla y los vídeos grandes que de verdad llenan el espacio, que Roomy puede comprimir conservando la fecha y la ubicación.',
+          meta=['iOS 17+','iPhone','Gratis · Pro, suscripción o de por vida','9 idiomas'],
+          features=[('01 / DESLIZAR','Un mes limpio en minutos','Recorre tu biblioteca mes a mes, por los recuerdos de «Tal día como hoy» o al azar. Cada gesto se puede deshacer y lo borrado espera en la Papelera hasta que confirmas. Gratis: 50 gestos al día.'),
+                    ('02 / ENCONTRAR','El desorden, encontrado por ti','Duplicados, fotos parecidas, capturas de pantalla y vídeos grandes tienen cada uno su cola. Las parecidas llegan agrupadas con la mejor marcada, y lo que marcaste como «quedarme» nunca se preselecciona para borrar.'),
+                    ('03 / LIBERAR','Mira lo que has recuperado','Roomy Pro suma gestos ilimitados, borrado de duplicados y parecidas con un toque y compresión de vídeo que ahorra hasta un 80 % del espacio. Sigue el espacio liberado y mantén una racha diaria.')],
+          privacy='Roomy analiza tu biblioteca solo en tu iPhone. Tus fotos, vídeos y metadatos nunca se suben. Sin cuenta, sin analítica, sin anuncios y sin seguimiento: nada sale del teléfono. Las compras pasan por Apple.',
+          captions=['Inicio: espacio libre y el desorden que ha encontrado Roomy','Izquierda para borrar, derecha para quedarte','Fotos parecidas agrupadas, con la mejor marcada']),
+     privacy_path={'en': 'roomy/privacy/', 'es': '../roomy/privacy/', 'fr': '../roomy/privacy/'}),
 ]
 
 from gen_site_fr import UI_FR, APPS_FR
@@ -325,7 +392,25 @@ for a in APPS: a['copy']['fr']=APPS_FR[a['slug']]
 def prefix(lang): return '' if lang=='en' else lang+'/'
 def up(lang, depth=1): return '../'*(depth + (lang!='en'))   # from a page `depth` folders deep in its language tree to the site root
 
-def head(lang, title, desc, root, canonical, og_title=None, alts=None):
+def jpeg_size(path):
+    # (width, height) from the JPEG's SOF marker, so every screenshot reserves its real box (most are
+    # 552×1304, a few 552×1200): no layout shift while they load.
+    d=open(path,'rb').read(); i=2
+    while i < len(d):
+        while d[i]!=0xFF: i+=1
+        while d[i]==0xFF: i+=1
+        marker=d[i]; seg=int.from_bytes(d[i+1:i+3],'big')
+        if marker in (0xC0,0xC1,0xC2): return int.from_bytes(d[i+6:i+8],'big'), int.from_bytes(d[i+4:i+6],'big')
+        i+=1+seg
+    raise ValueError(f'no SOF marker in {path}')
+
+def shot(root, f, alt='', lazy=True, priority=False):
+    w,h=jpeg_size(os.path.join(SITE,'assets','shots',f))
+    load=' loading="lazy"' if lazy else ''
+    prio=' fetchpriority="high"' if priority else ''
+    return f'<img src="{root}assets/shots/{f}" alt="{alt}" width="{w}" height="{h}"{load}{prio} decoding="async">'
+
+def head(lang, title, desc, root, canonical, og_title=None, alts=None, preload=()):
     # canonical is the path inside the language tree (e.g. 'apps/kover.html' or '').
     # `alts`: {lang: absolute URL} for pages outside the language trees (Garum, Sacapuntas legal);
     # a page with a single language gets no hreflang.
@@ -334,12 +419,14 @@ def head(lang, title, desc, root, canonical, og_title=None, alts=None):
     hreflang=''.join(f'<link rel="alternate" hreflang="{L}" href="{u}">\n' for L,u in alts.items())
     if len(alts)>1: hreflang+=f'<link rel="alternate" hreflang="x-default" href="{alts.get("en", self_url)}">\n'
     else: hreflang=''
+    preloads=''.join(f'<link rel="preload" as="image" href="{u}" fetchpriority="high">\n' for u in preload)
     return f'''<!DOCTYPE html>
 <html lang="{lang}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#060E1F">
+<meta name="color-scheme" content="dark">
 <meta name="description" content="{desc}">
 <link rel="canonical" href="{self_url}">
 {hreflang}<meta property="og:type" content="website">
@@ -356,10 +443,8 @@ def head(lang, title, desc, root, canonical, og_title=None, alts=None):
 <link rel="icon" type="image/png" sizes="32x32" href="{root}favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="{root}favicon-16.png">
 <link rel="apple-touch-icon" href="{root}apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="{root}assets/site.css?v={CSS_V}">
+{preloads}<link rel="stylesheet" href="{root}assets/site.css?v={CSS_V}">
+<script src="{root}assets/site.js?v={CSS_V}" defer></script>
 </head>
 <body>
 '''
@@ -374,19 +459,24 @@ def header(lang, root, canonical, current=None, switch=None):
     def nav(href, label, key):
         cur=' aria-current="page"' if current==key else ''
         return f'<a href="{home}{href}"{cur}>{label}</a>'
-    return f'''<header class="site-header shell">
-  <a class="brand" href="{home}index.html" aria-label="Seize">
-    <img class="brand-mark" src="{root}assets/seize-mark.png?v=1" alt="" width="36" height="36">
-    <span class="wordmark">SEIZE</span>
-  </a>
-  <nav class="site-nav" aria-label="Main">
-    {nav('index.html#apps',t['nav_apps'],'apps')}
-    {nav('index.html#philosophy',t['nav_phil'],'philosophy')}
-    {nav('index.html#work',t['nav_work'],'work')}
-    {nav('index.html#studio',t['nav_studio'],'studio')}
-    <span class="lang">{langs}</span>
-    <a class="button small" href="mailto:hello@seizeapps.com">{t['nav_cta']}</a>
-  </nav>
+    return f'''<a class="skip" href="#main">{t['skip']}</a>
+<header class="site-header">
+  <div class="shell header-inner">
+    <a class="brand" href="{home}index.html" aria-label="Seize">
+      <img class="brand-mark" src="{root}assets/seize-mark.png?v=1" alt="" width="32" height="32">
+      <span class="wordmark">SEIZE</span>
+    </a>
+    <nav class="site-nav" aria-label="Main">
+      {nav('index.html#apps',t['nav_apps'],'apps')}
+      {nav('index.html#philosophy',t['nav_phil'],'philosophy')}
+      {nav('index.html#work',t['nav_work'],'work')}
+      {nav('index.html#studio',t['nav_studio'],'studio')}
+    </nav>
+    <div class="header-tools">
+      <div class="lang" role="group" aria-label="{t['lang_label']}">{langs}</div>
+      <a class="button small" href="mailto:hello@seizeapps.com">{t['nav_cta']}</a>
+    </div>
+  </div>
 </header>
 '''
 
@@ -395,7 +485,7 @@ def footer(lang, root):
     return f'''<footer class="site-footer">
   <div class="footer-inner shell">
     <div class="footer-brand">
-      <img src="{root}assets/seize-mark.png?v=1" alt="" width="28" height="28">
+      <img src="{root}assets/seize-mark.png?v=1" alt="" width="32" height="32" loading="lazy" decoding="async">
       <div>
         <p class="footer-signoff">{t['footer_tag']}</p>
         <p class="copyright">{t['copyright']}</p>
@@ -403,6 +493,7 @@ def footer(lang, root):
     </div>
     <nav class="footer-links" aria-label="Footer">
       <a href="{home}index.html#apps">{t['nav_apps']}</a>
+      <a href="{home}index.html#studio">{t['nav_studio']}</a>
       <a href="{home}privacy.html">{t['footer_privacy']}</a>
       <a href="{home}terms.html">{t['footer_terms']}</a>
       <a href="https://github.com/SeizeApps" rel="noopener">GitHub</a>
@@ -410,23 +501,10 @@ def footer(lang, root):
     </nav>
   </div>
 </footer>
-{LANG_REMEMBER}</body>
+</body>
 </html>
 '''
 
-WAVE='''<svg class="wave" viewBox="0 0 1440 420" preserveAspectRatio="none" aria-hidden="true">
-  <defs>
-    <linearGradient id="wg" x1="0" x2="1" y1="0" y2="0">
-      <stop offset="0" stop-color="#007AFF" stop-opacity="0"/>
-      <stop offset=".45" stop-color="#007AFF" stop-opacity=".55"/>
-      <stop offset=".75" stop-color="#22D3EE" stop-opacity=".7"/>
-      <stop offset="1" stop-color="#22D3EE" stop-opacity="0"/>
-    </linearGradient>
-  </defs>
-  <path d="M0 300 C 240 200, 420 380, 700 260 S 1120 120, 1440 240" fill="none" stroke="url(#wg)" stroke-width="2"/>
-  <path d="M0 340 C 260 240, 460 420, 760 300 S 1160 160, 1440 280" fill="none" stroke="url(#wg)" stroke-width="1.5" opacity=".6"/>
-  <path d="M0 260 C 220 160, 400 340, 660 220 S 1080 80, 1440 200" fill="none" stroke="url(#wg)" stroke-width="1" opacity=".4"/>
-</svg>'''
 
 def write(path, html):
     full=os.path.join(SITE,path); os.makedirs(os.path.dirname(full), exist_ok=True)
@@ -450,9 +528,9 @@ def redirect_page(url):
 
 # The app count and the app list in the copy come from APPS, so adding an
 # app never leaves a «six apps» behind (it did, 20/09/2026).
-NUMBERS={'en':['zero','one','two','three','four','five','six','seven','eight','nine','ten'],
-         'es':['cero','una','dos','tres','cuatro','cinco','seis','siete','ocho','nueve','diez'],
-         'fr':['zéro','une','deux','trois','quatre','cinq','six','sept','huit','neuf','dix']}
+NUMBERS={'en':['zero','one','two','three','four','five','six','seven','eight','nine','ten','eleven','twelve','thirteen'],
+         'es':['cero','una','dos','tres','cuatro','cinco','seis','siete','ocho','nueve','diez','once','doce','trece'],
+         'fr':['zéro','une','deux','trois','quatre','cinq','six','sept','huit','neuf','dix','onze','douze','treize']}
 def fill_counts():
     n=len(APPS)
     for lang in LANGS:
@@ -462,105 +540,121 @@ def fill_counts():
         word=NUMBERS[lang][n]
         UI[lang]['site_desc']=UI[lang]['site_desc'].format(apps=apps)
         UI[lang]['apps_h2']=UI[lang]['apps_h2'].format(Count=word.capitalize(), count=word)
+        UI[lang]['hero_proof']=UI[lang]['hero_proof'].format(n=n, live=sum(1 for a in APPS if a.get('appstore')))
 fill_counts()
 
 APPLE_GLYPH='<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16.37 12.72c-.02-2.3 1.88-3.41 1.97-3.46-1.07-1.57-2.74-1.79-3.34-1.81-1.42-.14-2.77.84-3.49.84-.72 0-1.83-.82-3.01-.8-1.55.02-2.98.9-3.77 2.29-1.61 2.79-.41 6.92 1.16 9.18.77 1.11 1.68 2.35 2.87 2.31 1.15-.05 1.59-.75 2.98-.75 1.39 0 1.78.75 3 .72 1.24-.02 2.03-1.13 2.79-2.24.88-1.29 1.24-2.53 1.26-2.6-.03-.01-2.41-.93-2.42-3.68zM14.07 5.94c.63-.77 1.06-1.83.94-2.9-.91.04-2.02.61-2.67 1.37-.58.67-1.1 1.76-.96 2.8 1.02.08 2.05-.52 2.69-1.27z"/></svg>'
 
-def store_icon(a, t):
-    if not a.get('appstore'): return ''
+def store_status(a, t):
+    # Live apps carry an «App Store» pill that links straight to the listing (a sibling of the card's link:
+    # a link can't sit inside another); the rest say «Coming soon». Both come from `appstore`, never by hand.
+    if not a.get('appstore'): return f'<span class="status soon">{t["soon"]}</span>'
     label=t['store_icon'].format(name=a['name'])
-    return (f'<a class="store-icon" href="https://apps.apple.com/app/id{a["appstore"]}" '
-            f'aria-label="{label}" title="{label}">{APPLE_GLYPH}</a>')
+    return (f'<a class="status live" href="https://apps.apple.com/app/id{a["appstore"]}" '
+            f'aria-label="{label}" title="{label}">{APPLE_GLYPH}<span>App Store</span></a>')
+
+def icon_vt(a):
+    # Same name on the home card's icon and the app page's hero icon: the cross-page View Transition morphs one into the other.
+    return f'style="view-transition-name:icon-{a["slug"]}"'
 
 # ---------------------------------------------------------------- index
+HERO_SHOTS=(('left','drip-01-dashboard.jpg'),('right','garum-01-map.jpg'),('front','tempo-01-welcome.jpg'))
+SHIELD='<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M12 3 4.5 6v5.5c0 4.6 3.1 8.3 7.5 9.5 4.4-1.2 7.5-4.9 7.5-9.5V6L12 3Z"/><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="m8.8 12.2 2.3 2.3 4.3-4.6"/></svg>'
+
 def build_index(lang):
     t=UI[lang]; root=up(lang,0); home=root+prefix(lang)
-    # El icono de la Store es un enlace hermano de la tarjeta (un <a> no puede
-    # ir dentro de otro) y solo sale con `appstore`, como el badge de la página.
-    cards=''.join(f'''
-    <div class="app-card-wrap">
-    <a class="app-card" href="{home}apps/{a['slug']}.html">
-      <img src="{root}assets/icons/{a['icon']}" alt="" width="64" height="64">
-      <h3>{a['name']}</h3>
-      <p class="one-liner">{a['copy'][lang]['one']}</p>
-      <div class="tags">{''.join(f'<span>{x}</span>' for x in a['copy'][lang]['tags'])}</div>
-      <span class="card-more">{t['learn_more']} <span aria-hidden="true">→</span></span>
-    </a>{store_icon(a, t)}
-    </div>''' for a in APPS)
-    values=''.join(f'<div class="value"><span class="num">0{i+1}</span><h3>{h}</h3><p>{p}</p></div>' for i,(h,p) in enumerate(t['values']))
-    work=''.join(f'<div class="feature"><span class="num">0{i+1}</span><h3>{h}</h3><p>{p}</p></div>' for i,(h,p) in enumerate(t['work_items']))
-    how=''.join(f'<div class="step"><h4>{h}</h4><p>{p}</p></div>' for h,p in t['work_how'])
+    def cards(apps):
+        return ''.join(f'''
+        <li class="app-card-wrap reveal" style="--i:{k%3}">
+          <a class="app-card" href="{home}apps/{a['slug']}.html">
+            <img class="app-icon" src="{root}assets/icons/{a['icon']}" alt="" width="64" height="64" loading="lazy" decoding="async" {icon_vt(a)}>
+            <h3>{a['name']}</h3>
+            <p class="one-liner">{a['copy'][lang]['one']}</p>
+            <div class="tags">{''.join(f'<span>{x}</span>' for x in a['copy'][lang]['tags'])}</div>
+            <span class="card-more">{t['learn_more']} <span aria-hidden="true">→</span></span>
+          </a>{store_status(a, t) if a.get('appstore') else ''}
+        </li>''' for k,a in enumerate(apps))
+    # Live apps first, then the ones without an App Store id under «Coming soon»: the group says it, so their cards carry no pill.
+    groups=''.join(f'''
+    <p class="group-label" id="apps-{key}">{label}</p>
+    <ul class="app-grid app-grid-{key}" role="list" aria-labelledby="apps-{key}">{cards(apps)}
+    </ul>''' for key,label,apps in (('live', t['live_title'], [a for a in APPS if a.get('appstore')]),
+                                       ('soon', t['soon'], [a for a in APPS if not a.get('appstore')])) if apps)
+    strip=''.join(f'<li><img src="{root}assets/icons/{a["icon"]}" alt="" width="56" height="56" decoding="async"><span>{a["name"]}</span></li>' for a in APPS)
+    stage=''.join(f'<div class="device device-{pos}"><div class="phone">{shot(root, f, lazy=False, priority=(pos=="front"))}</div></div>' for pos,f in HERO_SHOTS)
+    values=''.join(f'<li class="value reveal" style="--i:{i}"><span class="num">0{i+1}</span><h3>{h}</h3><p>{p}</p></li>' for i,(h,p) in enumerate(t['values']))
+    work=''.join(f'<li class="feature reveal" style="--i:{i}"><span class="num">0{i+1}</span><h3>{h}</h3><p>{p}</p></li>' for i,(h,p) in enumerate(t['work_items']))
+    how=''.join(f'<li class="step"><span class="step-dot" aria-hidden="true"></span><h4>{h}</h4><p>{p}</p></li>' for h,p in t['work_how'])
     subject=t['work_subject'].replace(' ','%20')
-    html=head(lang, t['site_title'], t['site_desc'], root, '', og_title=t['og_title'])+header(lang, root, 'index.html')+f'''<main>
-  <section class="hero" aria-labelledby="hero-title">
-    {WAVE}
+    front=dict(HERO_SHOTS)['front']
+    html=head(lang, t['site_title'], t['site_desc'], root, '', og_title=t['og_title'], preload=[f'{root}assets/shots/{front}'])+header(lang, root, 'index.html')+f'''<main id="main">
+  <section class="hero" aria-labelledby="hero-title" data-tilt>
     <div class="shell hero-grid">
       <div class="hero-copy">
-        <p class="eyebrow">{t['hero_eyebrow']}</p>
-        <h1 id="hero-title">{t['hero_h1']}</h1>
-        <p class="lede">{t['hero_lede']}</p>
-        <div class="cta-row">
+        <p class="eyebrow" style="--i:0">{t['hero_eyebrow']}</p>
+        <h1 id="hero-title" style="--i:1">{t['hero_h1']}</h1>
+        <p class="lede" style="--i:2">{t['hero_lede']}</p>
+        <div class="cta-row" style="--i:3">
           <a class="button" href="#apps">{t['hero_cta']}</a>
           <a class="button ghost" href="#work">{t['hero_cta2']}</a>
         </div>
+        <p class="hero-proof" style="--i:4">{t['hero_proof']}</p>
       </div>
-      <div class="hero-phone" aria-hidden="true">
-        <div class="phone"><img src="{root}assets/shots/anchor-01-home.jpg" alt="" width="552" height="1200"></div>
-      </div>
+      <div class="hero-stage" aria-hidden="true">{stage}</div>
     </div>
+    <div class="marquee" aria-hidden="true"><div class="marquee-inner"><ul>{strip}</ul><ul>{strip}</ul></div></div>
   </section>
 
   <section class="section shell" id="apps" aria-labelledby="apps-title">
-    <div class="section-head">
+    <div class="section-head reveal">
       <div><p class="eyebrow">{t['apps_eyebrow']}</p><h2 id="apps-title">{t['apps_h2']}</h2></div>
       <p>{t['apps_p']}</p>
     </div>
-    <div class="app-grid">{cards}
-    </div>
+{groups}
   </section>
 
   <section class="section shell" id="philosophy" aria-labelledby="philosophy-title">
-    <div class="section-head">
+    <div class="section-head reveal">
       <div><p class="eyebrow">{t['phil_eyebrow']}</p><h2 id="philosophy-title">{t['phil_h2']}</h2></div>
       <p>{t['phil_p']}</p>
     </div>
-    <div class="values">{values}</div>
+    <ol class="values" role="list">{values}</ol>
   </section>
 
   <section class="section shell" id="work" aria-labelledby="work-title">
-    <div class="section-head">
+    <div class="section-head reveal">
       <div><p class="eyebrow">{t['work_eyebrow']}</p><h2 id="work-title">{t['work_h2']}</h2></div>
       <p>{t['work_p']}</p>
     </div>
-    <div class="features">{work}</div>
-    <div class="work-how">
+    <ul class="features" role="list">{work}</ul>
+    <div class="work-how reveal">
       <div class="work-how-head"><h3>{t['work_how_title']}</h3><a class="button" href="mailto:hello@seizeapps.com?subject={subject}">{t['work_cta']}</a></div>
-      <div class="steps">{how}</div>
+      <ol class="steps" role="list">{how}</ol>
     </div>
   </section>
 
   <section class="section shell" id="studio" aria-labelledby="studio-title">
-    <div class="section-head">
+    <div class="section-head reveal">
       <div><p class="eyebrow">{t['studio_eyebrow']}</p><h2 id="studio-title">{t['studio_h2']}</h2></div>
       <p>{t['studio_p']}</p>
     </div>
     <div class="studio">
-      <div class="person">
-        <div class="initials a" aria-hidden="true">IC</div>
+      <div class="person reveal" style="--i:0">
+        <div class="initials" aria-hidden="true">IC</div>
         <div><h3>Izotz Cristobal Mota</h3><p class="role">{t['role']}</p><p class="bio">{t['bio_izotz']}</p></div>
       </div>
-      <div class="person">
-        <div class="initials b" aria-hidden="true">SS</div>
+      <div class="person reveal" style="--i:1">
+        <div class="initials" aria-hidden="true">SS</div>
         <div><h3>Sendoa Sola</h3><p class="role">{t['role']}</p><p class="bio">{t['bio_sendoa']}</p></div>
       </div>
-      <p class="studio-note">{t['studio_note']}</p>
+      <p class="studio-note reveal">{t['studio_note']}</p>
     </div>
   </section>
 
-  <section class="shell" id="contact" aria-labelledby="contact-title">
-    <div class="contact">
-      <div><p class="eyebrow">{t['contact_eyebrow']}</p><h2 id="contact-title">{t['contact_h2']}</h2><p class="note" style="margin-top:10px">{t['contact_p']}</p></div>
-      <a class="button" href="mailto:hello@seizeapps.com">hello@seizeapps.com</a>
+  <section class="section shell" id="contact" aria-labelledby="contact-title">
+    <div class="contact reveal">
+      <div><p class="eyebrow">{t['contact_eyebrow']}</p><h2 id="contact-title">{t['contact_h2']}</h2><p class="contact-p">{t['contact_p']}</p></div>
+      <a class="button large" href="mailto:hello@seizeapps.com">hello@seizeapps.com</a>
     </div>
   </section>
 </main>
@@ -570,40 +664,56 @@ def build_index(lang):
 # ---------------------------------------------------------------- app pages
 def build_app(lang, a):
     t=UI[lang]; c=a['copy'][lang]; root=up(lang); home=root+prefix(lang)
-    shots=''.join(f'<figure><div class="phone"><img src="{root}assets/shots/{f}" alt="{t["shot_alt"].format(name=a["name"], cap=cap)}" loading="lazy" width="552" height="1200"></div><figcaption>{cap}</figcaption></figure>' for f,cap in zip(a['shots'], c['captions']))
-    feats=''.join(f'<div class="feature"><span class="num">{n}</span><h3>{h}</h3><p>{p}</p></div>' for n,h,p in c['features'])
-    extra=f'<p class="note" style="margin-top:20px">{c["extra"]}</p>' if c.get('extra') else ''
+    shots=''.join(f'''
+      <li class="shot reveal" style="--i:{k}"><figure><div class="phone" data-tilt>{shot(root, f, t["shot_alt"].format(name=a["name"], cap=cap))}</div><figcaption>{cap}</figcaption></figure></li>'''
+                  for k,(f,cap) in enumerate(zip(a['shots'], c['captions'])))
+    feats=''.join(f'<li class="feature reveal" style="--i:{k}"><span class="num">{n}</span><h3>{h}</h3><p>{p}</p></li>' for k,(n,h,p) in enumerate(c['features']))
+    extra=f'<p class="note app-extra">{c["extra"]}</p>' if c.get('extra') else ''
     # Sin id de App Store no hay badge: el sitio nunca enlaza a una ficha que
     # todavía no existe, ni menciona revisión, TestFlight ni fechas.
     # La URL va sin país a propósito: Apple redirige a la tienda del visitante.
-    badge=(f'<a class="store-badge button" href="https://apps.apple.com/app/id{a["appstore"]}">{t["store_badge"]}</a>'
-           if a.get('appstore') else '')
-    html=head(lang, f'{a["name"]} — Seize Apps', c['one'].replace('"','&quot;'), root, f'apps/{a["slug"]}.html')+header(lang, root, f'apps/{a["slug"]}.html', 'apps')+f'''<main>
+    badge=(f'<a class="store-badge button" href="https://apps.apple.com/app/id{a["appstore"]}">{APPLE_GLYPH}<span>{t["store_badge"]}</span></a>'
+           if a.get('appstore') else f'<span class="status soon">{t["soon"]}</span>')
+    more=''.join(f'<li><a href="{home}apps/{b["slug"]}.html"><img src="{root}assets/icons/{b["icon"]}" alt="" width="56" height="56" loading="lazy" decoding="async"><span>{b["name"]}</span></a></li>'
+                 for b in APPS if b is not a)
+    privacy_href=home+(a['privacy_path'][lang] if a.get('privacy_path') else 'privacy.html#'+a['privacy_id'])
+    html=head(lang, f'{a["name"]} — Seize Apps', c['one'].replace('"','&quot;'), root, f'apps/{a["slug"]}.html')+header(lang, root, f'apps/{a["slug"]}.html', 'apps')+f'''<main id="main">
   <section class="app-hero shell" aria-labelledby="app-title">
-    <div class="app-hero-copy">
-      <img class="icon" src="{root}assets/icons/{a['icon']}" alt="" width="96" height="96">
-      <p class="eyebrow">{t['app_eyebrow']}</p>
-      <h1 id="app-title">{a['name']}</h1>
+    <div class="app-hero-head">
+      <img class="icon" src="{root}assets/icons/{a['icon']}" alt="" width="128" height="128" fetchpriority="high" {icon_vt(a)}>
+      <div><p class="eyebrow">{t['app_eyebrow']}</p><h1 id="app-title">{a['name']}</h1></div>
+    </div>
+    <div class="app-hero-body">
       <p class="lede">{c['lede']}</p>
       <div class="app-meta">{''.join(f'<span>{m}</span>' for m in c['meta'])}</div>
-      {badge}
+      <div class="cta-row">{badge}</div>
       {extra}
     </div>
   </section>
-  <section class="shell" aria-label="{t['shots_aria']}"><div class="shots shots-{len(a['shots'])}">{shots}</div></section>
 
-  <section class="section shell" aria-labelledby="what-title">
-    <div class="section-head">
-      <div><p class="eyebrow">{t['what_eyebrow']}</p><h2 id="what-title">{t['what_h2']}</h2></div>
-    </div>
-    <div class="features">{feats}</div>
+  <section class="gallery" aria-label="{t['shots_aria']}">
+    <ul class="shots-rail" role="list">{shots}
+    </ul>
   </section>
 
-  <section class="shell" aria-labelledby="privacy-title">
-    <div class="privacy-box">
-      <div><p class="eyebrow">{t['privacy_eyebrow']}</p><h3 id="privacy-title" style="margin-bottom:10px">{t['privacy_h3']}</h3><p>{c['privacy']}</p><p class="note" style="margin-top:14px">{t['published_by'].format(lead=a['lead'])}</p></div>
-      <div class="links"><a class="button ghost" href="{home}{a['privacy_path'][lang] if a.get('privacy_path') else 'privacy.html#' + a['privacy_id']}">{t['privacy_policy']}</a><a class="button ghost" href="mailto:hello@seizeapps.com?subject={a['name']}">{t['contact']}</a></div>
+  <section class="section shell" aria-labelledby="what-title">
+    <div class="section-head reveal">
+      <div><p class="eyebrow">{t['what_eyebrow']}</p><h2 id="what-title">{t['what_h2']}</h2></div>
     </div>
+    <ul class="features" role="list">{feats}</ul>
+  </section>
+
+  <section class="section shell" aria-labelledby="privacy-title">
+    <div class="privacy-box reveal">
+      <div class="privacy-glyph" aria-hidden="true">{SHIELD}</div>
+      <div><p class="eyebrow">{t['privacy_eyebrow']}</p><h2 id="privacy-title">{t['privacy_h3']}</h2><p>{c['privacy']}</p><p class="note">{t['published_by'].format(lead=a['lead'])}</p></div>
+      <div class="links"><a class="button ghost" href="{privacy_href}">{t['privacy_policy']}</a><a class="button ghost" href="mailto:hello@seizeapps.com?subject={a['name']}">{t['contact']}</a></div>
+    </div>
+  </section>
+
+  <section class="section shell more-apps" aria-labelledby="more-title">
+    <h2 id="more-title" class="more-title">{t['more_apps']}</h2>
+    <ul class="more-list" role="list">{more}</ul>
   </section>
 </main>
 '''+footer(lang, root)
@@ -611,11 +721,39 @@ def build_app(lang, a):
 
 # ---------------------------------------------------------------- legal
 from gen_legal_copy import LEGAL
+LEGAL_H2=re.compile(r'<h2>(.*?)</h2>')
+LEGAL_TOC=re.compile(r'<nav class="toc" aria-label="([^"]*)">(.*?)</nav>', re.S)
+def plain(s): return re.sub(r'<[^>]+>','',s)
+def anchor(s):
+    s=unicodedata.normalize('NFKD', plain(s)).encode('ascii','ignore').decode().lower()
+    return re.sub(r'[^a-z0-9]+','-',s).strip('-') or 'section'
+
+def legal_main(lang, body):
+    # Every legal page goes through here (studio-wide, Garum, Sacapuntas, Atino, Roomy). The text is never
+    # touched: each bare <h2> gets an id, and on wide screens those headings (plus the app list, if the page
+    # has one) become a sticky table of contents beside a ~68ch column. Narrow screens keep the inline pills.
+    used=set(re.findall(r'\bid="([^"]+)"', body)); heads=[]
+    def add_id(m):
+        base=anchor(m.group(1)); s=base; k=2
+        while s in used: s=f'{base}-{k}'; k+=1
+        used.add(s); heads.append((s, plain(m.group(1))))
+        return f'<h2 id="{s}">{m.group(1)}</h2>'
+    body=LEGAL_H2.sub(add_id, body)
+    aside=''
+    if heads:
+        title=UI[lang]['toc_title']
+        links=''.join(f'<li><a href="#{s}">{h}</a></li>' for s,h in heads)
+        m=LEGAL_TOC.search(body)
+        apps=f'<p class="toc-label">{m.group(1)}</p><div class="toc-apps">{m.group(2).strip()}</div>' if m else ''
+        aside=f'<aside class="legal-aside"><nav aria-label="{title}"><p class="toc-label">{title}</p><ol role="list">{links}</ol>{apps}</nav></aside>'
+    return f'<main id="main" class="shell legal-page">\n<article class="legal">\n{body}\n</article>\n{aside}\n</main>\n'
+
 def build_legal(lang, kind):
     t=UI[lang]; root=up(lang,0)
     L=LEGAL[lang][kind]
-    html=head(lang, L['title'], L['desc'], root, f'{kind}.html')+header(lang, root, f'{kind}.html')+f'<main class="shell legal">\n{L["body"]}\n</main>\n'+footer(lang, root)
+    html=head(lang, L['title'], L['desc'], root, f'{kind}.html')+header(lang, root, f'{kind}.html')+legal_main(lang, L['body'])+footer(lang, root)
     write(prefix(lang)+f'{kind}.html', html)
+
 
 if __name__=='__main__':
     for lang in LANGS:
@@ -627,6 +765,12 @@ if __name__=='__main__':
     # Sacapuntas (Kids, 01/10/2026): su propia política, en castellano, con versión para niños.
     from gen_legal_sacapuntas import build_sacapuntas
     build_sacapuntas()
+    # Atino (05/10/2026): su propia política, en inglés y castellano.
+    from gen_legal_atino import build_atino
+    build_atino()
+    # Roomy (05/10/2026): su página de privacidad, en inglés como la app.
+    from gen_legal_roomy import build_roomy
+    build_roomy()
     # Garum's share links (0.0.26): /garum/c/ and /garum/p/, and the Universal Links file.
     from gen_garum_share import build_garum_share
     build_garum_share()

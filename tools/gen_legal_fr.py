@@ -4,15 +4,17 @@ PRIVACY_FR='''
   <h1>Politique de confidentialité</h1>
   <p class="effective">En vigueur depuis le 2 octobre 2026</p>
   <nav class="toc" aria-label="Apps">
-    <a href="#cycle-timers">Cycle Timers</a><a href="#tempo">Tempo</a><a href="#drip">Drip</a><a href="#anchor">Anchor</a><a href="#kover">Kover</a><a href="#tandem">Tandem</a><a href="#meso">Meso</a><a href="#grain">Grain</a><a href="#gaminghub">GamingHub</a>
+    <a href="#cycle-timers">Cycle Timers</a><a href="#tempo">Tempo</a><a href="#drip">Drip</a><a href="#anchor">Anchor</a><a href="#kover">Kover</a><a href="#tandem">Tandem</a><a href="#meso">Meso</a><a href="#grain">Grain</a><a href="#gaminghub">GamingHub</a><a href="#atino">Atino</a>
   </nav>
 
-  <p><strong>La version courte :</strong> les apps Seize sont conçues pour fonctionner sans tes données. Nous n’avons pas de comptes utilisateur, nous n’utilisons pas de SDK de mesure d’audience ni de publicité, et nous ne vendons ni ne partageons rien. Ce que tu mets dans une app reste sur ton appareil et dans ton propre iCloud, sauf si la section de cette app dit autre chose (voir <a href="#gaminghub">GamingHub</a>).</p>
+  <p><strong>La version courte :</strong> les apps Seize sont conçues pour fonctionner sans tes données. Nous n’avons pas de comptes utilisateur, nous n’utilisons pas de SDK de mesure d’audience ni de publicité, et nous ne vendons ni ne partageons rien. Ce que tu mets dans une app reste sur ton appareil et dans ton propre iCloud, sauf si la section de cette app dit autre chose (voir <a href="#gaminghub">GamingHub</a> et <a href="#atino">Atino</a>).</p>
 
   <p><strong>Garum est l’exception :</strong> elle a des comptes, un serveur dans l’UE et du contenu d’utilisateurs ; elle a donc <a href="../garum/confidentialite/">sa propre politique de confidentialité</a> et <a href="../garum/conditions/">ses propres conditions d’utilisation</a>.</p>
 
+  <p><strong>Atino est une autre exception :</strong> ton CV, expurgé sur ton iPhone, est envoyé à des services de classement tiers par un relais de Seize quand tu l’autorises ; elle a donc <a href="../atino/privacy/">sa propre politique de confidentialité</a> (en anglais et en espagnol).</p>
+
   <h2>Qui sommes-nous</h2>
-  <p>Seize Apps est un studio indépendant d’applications mené par <strong>Izotz Cristobal Mota</strong> et <strong>Sendoa Sola</strong> depuis le Pays basque (Espagne) (« nous »). Cette politique couvre toutes les apps Seize distribuées via l’App Store d’Apple et TestFlight : actuellement <a href="#cycle-timers">Cycle Timers</a>, <a href="#tempo">Tempo</a>, <a href="#drip">Drip</a>, <a href="#anchor">Anchor</a>, <a href="#kover">Kover</a>, <a href="#tandem">Tandem</a>, <a href="#meso">Meso</a> et <a href="#grain">Grain</a>. Chaque app est publiée sur l’App Store par l’un de nous deux : le vendeur indiqué sur sa fiche est le responsable du traitement pour cette app, et il est nommé dans sa section. Si une app diffère sur un point, c’est sa section qui fait foi.</p>
+  <p>Seize Apps est un studio indépendant d’applications mené par <strong>Izotz Cristobal Mota</strong> et <strong>Sendoa Sola</strong> depuis le Pays basque (Espagne) (« nous »). Cette politique couvre toutes les apps Seize distribuées via l’App Store d’Apple et TestFlight : actuellement <a href="#cycle-timers">Cycle Timers</a>, <a href="#tempo">Tempo</a>, <a href="#drip">Drip</a>, <a href="#anchor">Anchor</a>, <a href="#kover">Kover</a>, <a href="#tandem">Tandem</a>, <a href="#meso">Meso</a>, <a href="#grain">Grain</a>, <a href="#gaminghub">GamingHub</a> et <a href="#atino">Atino</a>. Chaque app est publiée sur l’App Store par l’un de nous deux : le vendeur indiqué sur sa fiche est le responsable du traitement pour cette app, et il est nommé dans sa section. Si une app diffère sur un point, c’est sa section qui fait foi.</p>
 
   <h2>Ce que nous collectons</h2>
   <p><strong>Rien, par défaut.</strong> Nos apps ne demandent pas de compte, n’intègrent aucun SDK tiers de mesure d’audience, de publicité ou de suivi, et ne nous transmettent pas le contenu que tu crées. Nous ne pouvons voir ni tes minuteurs, ni tes sessions de travail, ni tes dépenses, ni tes tickets de caisse, ni tes routines, ni aucun autre contenu que tu crées dans une app Seize.</p>
@@ -105,6 +107,13 @@ PRIVACY_FR='''
   <p><em>Publiée sur l’App Store par Izotz Cristobal Mota.</em></p>
   </section>
 
+  <section id="atino">
+  <h3>Atino</h3>
+  <p>Atino classe des offres d’emploi selon ton CV. Ton CV reste sur ton iPhone : Atino n’envoie jamais le PDF et retire ton nom et tes coordonnées sur le téléphone avant que le moindre texte ne le quitte. Seulement après ton autorisation, le texte expurgé est envoyé par le relais de Seize à Command Code et TypeSafe AI (Jev) pour classer les offres et expliquer la correspondance ; ils peuvent le conserver selon leurs propres conditions. Le relais, qui fonctionne sur Supabase dans l’UE (Francfort, Allemagne), conserve un petit enregistrement par installation — un identifiant aléatoire, une clé App Attest et les compteurs de recherches du jour — et le supprime après 60 jours sans activité. Il n’y a ni compte, ni publicité, ni suivi. Apple traite l’abonnement ; nous ne voyons jamais tes données de paiement.</p>
+  <p>Tous les détails — ce qui est envoyé, qui le reçoit, combien de temps c’est conservé et comment retirer ton autorisation — sont dans <a href="../atino/privacy/">la politique de confidentialité d’Atino</a> (en anglais et en espagnol).</p>
+  <p><em>Publiée sur l’App Store par Izotz Cristobal Mota.</em></p>
+  </section>
+
   <h2>Notifications</h2>
   <p>Les apps qui te rappellent des choses utilisent des notifications locales, programmées et délivrées sur ton appareil. Nous n’exploitons pas de serveurs de notifications push pour ces fonctions.</p>
 
@@ -159,7 +168,7 @@ TERMS_FR='''
 
 LEGAL_FR={
   'privacy': dict(title='Politique de confidentialité — Seize Apps',
-                  desc='Comment les apps Seize traitent tes données : pas de comptes, pas de mesure d’audience, tout sur ton appareil et dans ton propre iCloud. Détail par app : Cycle Timers, Tempo, Drip, Anchor, Kover, Tandem, Meso et Grain.',
+                  desc='Comment les apps Seize traitent tes données : pas de comptes, pas de mesure d’audience, tout sur ton appareil et dans ton propre iCloud. Détail par app : Cycle Timers, Tempo, Drip, Anchor, Kover, Tandem, Meso, Grain, GamingHub et Atino.',
                   body=PRIVACY_FR),
   'terms':   dict(title='Conditions d’utilisation — Seize Apps',
                   desc='Conditions d’utilisation des apps publiées par Seize Apps.',

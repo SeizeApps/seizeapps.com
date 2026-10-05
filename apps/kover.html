@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#060E1F">
+<meta name="color-scheme" content="dark">
 <meta name="description" content="Snap the receipt, and Kover watches the warranty: what is covered, until when, and a nudge before it runs out.">
 <link rel="canonical" href="https://seizeapps.com/apps/kover.html">
 <link rel="alternate" hreflang="en" href="https://seizeapps.com/apps/kover.html">
@@ -25,58 +26,76 @@
 <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16.png">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="../assets/site.css?v=2026-10-05">
+<link rel="stylesheet" href="../assets/site.css?v=2026-10-05.2">
+<script src="../assets/site.js?v=2026-10-05.2" defer></script>
 </head>
 <body>
-<header class="site-header shell">
-  <a class="brand" href="../index.html" aria-label="Seize">
-    <img class="brand-mark" src="../assets/seize-mark.png?v=1" alt="" width="36" height="36">
-    <span class="wordmark">SEIZE</span>
-  </a>
-  <nav class="site-nav" aria-label="Main">
-    <a href="../index.html#apps" aria-current="page">Apps</a>
-    <a href="../index.html#philosophy">Philosophy</a>
-    <a href="../index.html#work">Work with us</a>
-    <a href="../index.html#studio">Studio</a>
-    <span class="lang"><span aria-current="true">EN</span><a href="../es/apps/kover.html" hreflang="es" lang="es" aria-label="Leer en castellano">ES</a><a href="../fr/apps/kover.html" hreflang="fr" lang="fr" aria-label="Lire en français">FR</a></span>
-    <a class="button small" href="mailto:hello@seizeapps.com">Get in touch</a>
-  </nav>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="shell header-inner">
+    <a class="brand" href="../index.html" aria-label="Seize">
+      <img class="brand-mark" src="../assets/seize-mark.png?v=1" alt="" width="32" height="32">
+      <span class="wordmark">SEIZE</span>
+    </a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="../index.html#apps" aria-current="page">Apps</a>
+      <a href="../index.html#philosophy">Philosophy</a>
+      <a href="../index.html#work">Work with us</a>
+      <a href="../index.html#studio">Studio</a>
+    </nav>
+    <div class="header-tools">
+      <div class="lang" role="group" aria-label="Language"><span aria-current="true">EN</span><a href="../es/apps/kover.html" hreflang="es" lang="es" aria-label="Leer en castellano">ES</a><a href="../fr/apps/kover.html" hreflang="fr" lang="fr" aria-label="Lire en français">FR</a></div>
+      <a class="button small" href="mailto:hello@seizeapps.com">Get in touch</a>
+    </div>
+  </div>
 </header>
-<main>
+<main id="main">
   <section class="app-hero shell" aria-labelledby="app-title">
-    <div class="app-hero-copy">
-      <img class="icon" src="../assets/icons/kover.png" alt="" width="96" height="96">
-      <p class="eyebrow">Seize Apps · iOS</p>
-      <h1 id="app-title">Kover</h1>
+    <div class="app-hero-head">
+      <img class="icon" src="../assets/icons/kover.png" alt="" width="128" height="128" fetchpriority="high" style="view-transition-name:icon-kover">
+      <div><p class="eyebrow">Seize Apps · iOS</p><h1 id="app-title">Kover</h1></div>
+    </div>
+    <div class="app-hero-body">
       <p class="lede">Receipts fade, warranties expire quietly. <strong>Kover</strong> reads the date, store and amount from a photo or PDF of the receipt, works out the legal guarantee for your country, and keeps the photo, the serial number and the support contact in one place — with a reminder a month before, a week before and on the day it ends.</p>
       <div class="app-meta"><span>iOS 17+</span><span>Free · Pro, one-time purchase</span><span>Camera, Photos or PDF</span><span>English · Spanish · French</span></div>
-      <a class="store-badge button" href="https://apps.apple.com/app/id6812714562">Download on the App Store</a>
+      <div class="cta-row"><a class="store-badge button" href="https://apps.apple.com/app/id6812714562"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16.37 12.72c-.02-2.3 1.88-3.41 1.97-3.46-1.07-1.57-2.74-1.79-3.34-1.81-1.42-.14-2.77.84-3.49.84-.72 0-1.83-.82-3.01-.8-1.55.02-2.98.9-3.77 2.29-1.61 2.79-.41 6.92 1.16 9.18.77 1.11 1.68 2.35 2.87 2.31 1.15-.05 1.59-.75 2.98-.75 1.39 0 1.78.75 3 .72 1.24-.02 2.03-1.13 2.79-2.24.88-1.29 1.24-2.53 1.26-2.6-.03-.01-2.41-.93-2.42-3.68zM14.07 5.94c.63-.77 1.06-1.83.94-2.9-.91.04-2.02.61-2.67 1.37-.58.67-1.1 1.76-.96 2.8 1.02.08 2.05-.52 2.69-1.27z"/></svg><span>Download on the App Store</span></a></div>
       
     </div>
   </section>
-  <section class="shell" aria-label="Screenshots"><div class="shots shots-4"><figure><div class="phone"><img src="../assets/shots/kover-01-products.jpg" alt="Kover screenshot: Next to expire, and the whole shelf" loading="lazy" width="552" height="1200"></div><figcaption>Next to expire, and the whole shelf</figcaption></figure><figure><div class="phone"><img src="../assets/shots/kover-02-add.jpg" alt="Kover screenshot: Three questions: what, when, how much — or the receipt" loading="lazy" width="552" height="1200"></div><figcaption>Three questions: what, when, how much — or the receipt</figcaption></figure><figure><div class="phone"><img src="../assets/shots/kover-04-detail.jpg" alt="Kover screenshot: Covered until 2029, on its seal" loading="lazy" width="552" height="1200"></div><figcaption>Covered until 2029, on its seal</figcaption></figure><figure><div class="phone"><img src="../assets/shots/kover-05-alerts.jpg" alt="Kover screenshot: Reminders before it runs out" loading="lazy" width="552" height="1200"></div><figcaption>Reminders before it runs out</figcaption></figure></div></section>
 
-  <section class="section shell" aria-labelledby="what-title">
-    <div class="section-head">
-      <div><p class="eyebrow">What it does</p><h2 id="what-title">One job, <span>done well.</span></h2></div>
-    </div>
-    <div class="features"><div class="feature"><span class="num">01 / ADD</span><h3>Three questions, then the seal</h3><p>What did you buy, when and where, how much. Or let the receipt answer: camera, photo library or a PDF from your email, and the steps come prefilled. Saving ends on «Covered until».</p></div><div class="feature"><span class="num">02 / WATCH</span><h3>Covered until, in plain words</h3><p>Legal guarantee by country — 36 months in Spain — plus any extended warranty on top. «3 years left», not a countdown of days, on a seal that wears as time passes. Reminders at one month, one week and the day of.</p></div><div class="feature"><span class="num">03 / CLAIM</span><h3>Everything for the day you need it</h3><p>Serial number, support phone or website one tap away, and the receipt photo. Claimed, replaced or gone: archive instead of delete. Kover Pro adds more documents per product, a claim PDF, a CSV export and Siri — a one-time purchase, with a free 30-day trial.</p></div></div>
+  <section class="gallery" aria-label="Screenshots">
+    <ul class="shots-rail" role="list">
+      <li class="shot reveal" style="--i:0"><figure><div class="phone" data-tilt><img src="../assets/shots/kover-01-products.jpg" alt="Kover screenshot: Next to expire, and the whole shelf" width="600" height="1304" loading="lazy" decoding="async"></div><figcaption>Next to expire, and the whole shelf</figcaption></figure></li>
+      <li class="shot reveal" style="--i:1"><figure><div class="phone" data-tilt><img src="../assets/shots/kover-02-add.jpg" alt="Kover screenshot: Three questions: what, when, how much — or the receipt" width="600" height="1304" loading="lazy" decoding="async"></div><figcaption>Three questions: what, when, how much — or the receipt</figcaption></figure></li>
+      <li class="shot reveal" style="--i:2"><figure><div class="phone" data-tilt><img src="../assets/shots/kover-04-detail.jpg" alt="Kover screenshot: Covered until 2029, on its seal" width="600" height="1304" loading="lazy" decoding="async"></div><figcaption>Covered until 2029, on its seal</figcaption></figure></li>
+      <li class="shot reveal" style="--i:3"><figure><div class="phone" data-tilt><img src="../assets/shots/kover-05-alerts.jpg" alt="Kover screenshot: Reminders before it runs out" width="600" height="1304" loading="lazy" decoding="async"></div><figcaption>Reminders before it runs out</figcaption></figure></li>
+    </ul>
   </section>
 
-  <section class="shell" aria-labelledby="privacy-title">
-    <div class="privacy-box">
-      <div><p class="eyebrow">Privacy</p><h3 id="privacy-title" style="margin-bottom:10px">Yours, not ours.</h3><p>Kover keeps your products and receipt photos on your device and in your own iCloud account. Receipts are read on the phone with Apple's Vision framework — nothing is uploaded, no account, no analytics.</p><p class="note" style="margin-top:14px">A Seize Apps app.</p></div>
+  <section class="section shell" aria-labelledby="what-title">
+    <div class="section-head reveal">
+      <div><p class="eyebrow">What it does</p><h2 id="what-title">One job, <span>done well.</span></h2></div>
+    </div>
+    <ul class="features" role="list"><li class="feature reveal" style="--i:0"><span class="num">01 / ADD</span><h3>Three questions, then the seal</h3><p>What did you buy, when and where, how much. Or let the receipt answer: camera, photo library or a PDF from your email, and the steps come prefilled. Saving ends on «Covered until».</p></li><li class="feature reveal" style="--i:1"><span class="num">02 / WATCH</span><h3>Covered until, in plain words</h3><p>Legal guarantee by country — 36 months in Spain — plus any extended warranty on top. «3 years left», not a countdown of days, on a seal that wears as time passes. Reminders at one month, one week and the day of.</p></li><li class="feature reveal" style="--i:2"><span class="num">03 / CLAIM</span><h3>Everything for the day you need it</h3><p>Serial number, support phone or website one tap away, and the receipt photo. Claimed, replaced or gone: archive instead of delete. Kover Pro adds more documents per product, a claim PDF, a CSV export and Siri — a one-time purchase, with a free 30-day trial.</p></li></ul>
+  </section>
+
+  <section class="section shell" aria-labelledby="privacy-title">
+    <div class="privacy-box reveal">
+      <div class="privacy-glyph" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M12 3 4.5 6v5.5c0 4.6 3.1 8.3 7.5 9.5 4.4-1.2 7.5-4.9 7.5-9.5V6L12 3Z"/><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="m8.8 12.2 2.3 2.3 4.3-4.6"/></svg></div>
+      <div><p class="eyebrow">Privacy</p><h2 id="privacy-title">Yours, not ours.</h2><p>Kover keeps your products and receipt photos on your device and in your own iCloud account. Receipts are read on the phone with Apple's Vision framework — nothing is uploaded, no account, no analytics.</p><p class="note">A Seize Apps app.</p></div>
       <div class="links"><a class="button ghost" href="../privacy.html#kover">Privacy policy</a><a class="button ghost" href="mailto:hello@seizeapps.com?subject=Kover">Contact</a></div>
     </div>
+  </section>
+
+  <section class="section shell more-apps" aria-labelledby="more-title">
+    <h2 id="more-title" class="more-title">More from Seize</h2>
+    <ul class="more-list" role="list"><li><a href="../apps/cycle-timers.html"><img src="../assets/icons/cycle-timers.png" alt="" width="56" height="56" loading="lazy" decoding="async"><span>Cycle Timers</span></a></li><li><a href="../apps/tempo.html"><img src="../assets/icons/tempo.png" alt="" width="56" height="56" loading="lazy" decoding="async"><span>Tempo</span></a></li><li><a href="../apps/drip.html"><img src="../assets/icons/drip.png" alt="" width="56" height="56" loading="lazy" decoding="async"><span>Drip</span></a></li><li><a href="../apps/anchor.html"><img src="../assets/icons/anchor.png" alt="" width="56" height="56" loading="lazy" decoding="async"><span>Anchor</span></a></li><li><a href="../apps/tandem.html"><img src="../assets/icons/tandem.png" alt="" width="56" height="56" loading="lazy" decoding="async"><span>Tandem</span></a></li><li><a href="../apps/meso.html"><img src="../assets/icons/meso.png" alt="" width="56" height="56" loading="lazy" decoding="async"><span>Meso</span></a></li><li><a href="../apps/grain.html"><img src="../assets/icons/grain.png" alt="" width="56" height="56" loading="lazy" decoding="async"><span>Grain</span></a></li><li><a href="../apps/garum.html"><img src="../assets/icons/garum.png" alt="" width="56" height="56" loading="lazy" decoding="async"><span>Garum</span></a></li><li><a href="../apps/sacapuntas.html"><img src="../assets/icons/sacapuntas.png" alt="" width="56" height="56" loading="lazy" decoding="async"><span>Sacapuntas</span></a></li><li><a href="../apps/gaminghub.html"><img src="../assets/icons/gaminghub.png" alt="" width="56" height="56" loading="lazy" decoding="async"><span>GamingHub</span></a></li><li><a href="../apps/atino.html"><img src="../assets/icons/atino.png" alt="" width="56" height="56" loading="lazy" decoding="async"><span>Atino</span></a></li><li><a href="../apps/roomy.html"><img src="../assets/icons/roomy.png" alt="" width="56" height="56" loading="lazy" decoding="async"><span>Roomy</span></a></li></ul>
   </section>
 </main>
 <footer class="site-footer">
   <div class="footer-inner shell">
     <div class="footer-brand">
-      <img src="../assets/seize-mark.png?v=1" alt="" width="28" height="28">
+      <img src="../assets/seize-mark.png?v=1" alt="" width="32" height="32" loading="lazy" decoding="async">
       <div>
         <p class="footer-signoff">Apps for a brighter tomorrow.</p>
         <p class="copyright">© 2026 Seize Apps · Izotz Cristobal Mota &amp; Sendoa Sola · Basque Country, Spain</p>
@@ -84,6 +103,7 @@
     </div>
     <nav class="footer-links" aria-label="Footer">
       <a href="../index.html#apps">Apps</a>
+      <a href="../index.html#studio">Studio</a>
       <a href="../privacy.html">Privacy</a>
       <a href="../terms.html">Terms</a>
       <a href="https://github.com/SeizeApps" rel="noopener">GitHub</a>
@@ -91,6 +111,5 @@
     </nav>
   </div>
 </footer>
-<script>document.querySelectorAll('.site-nav .lang a[hreflang]').forEach(function(a){a.addEventListener('click',function(){try{localStorage.setItem('seize-lang',a.hreflang)}catch(e){}})});</script>
 </body>
 </html>
