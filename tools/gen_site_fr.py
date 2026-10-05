@@ -164,4 +164,15 @@ APPS_FR = {
              ('03 / SURVEILLER','Pro continue de chercher pour toi','Atino Pro ajoute tous les résultats, tous les filtres, les recherches enregistrées et autant de recherches que nécessaire dans la limite d’un usage raisonnable, plus une alerte par jour, à l’heure que tu choisis, quand une recherche enregistrée a du nouveau.')],
    privacy='Ton CV, tes résultats et tes recherches enregistrées restent sur ton iPhone. Avec ta permission, le texte expurgé du CV passe par le relais de Seize jusqu’à Command Code et TypeSafe AI (Jev) pour classer les offres ; ils peuvent le conserver selon leurs propres conditions. Sans compte, sans mesure d’audience, sans suivi. Atino a sa propre politique de confidentialité.',
    captions=['Résultats : les offres en cours classées par correspondance','Une offre : pourquoi elle correspond, et où postuler','Filtres : où et comment tu veux travailler']),
+
+ 'roomy': dict(
+   one='Glisse à gauche pour supprimer, à droite pour garder. Roomy trouve aussi les doublons, les photos similaires et les vidéos énormes, le tout sur ton iPhone.',
+   tags=['Utilitaires','Photos','9 langues'],
+   lede='Une pellicule pleine est une corvée, jusqu’à ce qu’elle devienne un jeu. <strong>Roomy</strong> te montre tes photos une à une : à gauche pour supprimer, à droite pour garder, chaque geste peut être annulé et rien n’est supprimé tant que tu ne confirmes pas dans la corbeille. Le nettoyage intelligent trouve les doublons exacts, les rafales et les photos quasi identiques (avec la meilleure déjà marquée), les captures d’écran et les grosses vidéos qui remplissent vraiment le stockage, que Roomy peut compresser en gardant la date et le lieu.',
+   meta=['iOS 17+','iPhone','Gratuit · Pro, abonnement ou à vie','9 langues'],
+   features=[('01 / GLISSER','Un mois nettoyé en quelques minutes','Parcours ta photothèque mois par mois, par souvenirs « Ce jour-là » ou au hasard. Chaque geste peut être annulé et ce qui est supprimé attend dans la corbeille jusqu’à ta confirmation. Gratuit : 50 gestes par jour.'),
+             ('02 / TROUVER','Le fouillis, trouvé pour toi','Doublons, photos similaires, captures d’écran et grosses vidéos ont chacun leur file. Les photos similaires arrivent groupées avec la meilleure marquée, et ce que tu as gardé n’est jamais présélectionné pour suppression.'),
+             ('03 / LIBÉRER','Vois ce que tu as récupéré','Roomy Pro ajoute des gestes illimités, la suppression des doublons et des similaires en un geste et la compression vidéo, qui économise jusqu’à 80 % de place. Suis l’espace libéré et garde une série quotidienne.')],
+   privacy='Roomy analyse ta photothèque uniquement sur ton iPhone. Tes photos, tes vidéos et leurs métadonnées ne sont jamais envoyées. Sans compte, sans mesure d’audience, sans publicité, sans suivi : rien ne quitte le téléphone. Les achats passent par Apple.',
+   captions=['Accueil : l’espace libre et le fouillis trouvé par Roomy','À gauche pour supprimer, à droite pour garder','Photos similaires groupées, la meilleure marquée']),
 }

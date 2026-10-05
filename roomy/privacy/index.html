@@ -6,8 +6,6 @@
 <meta name="theme-color" content="#060E1F">
 <meta name="description" content="Roomy privacy: photos stay on your iPhone. No accounts, no tracking, no personal data collected.">
 <link rel="canonical" href="https://seizeapps.com/roomy/privacy/">
-<link rel="alternate" hreflang="en" href="https://seizeapps.com/roomy/privacy/">
-<link rel="alternate" hreflang="x-default" href="https://seizeapps.com/roomy/privacy/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Seize Apps">
 <meta property="og:title" content="Roomy privacy — Seize Apps">
@@ -15,6 +13,7 @@
 <meta property="og:url" content="https://seizeapps.com/roomy/privacy/">
 <meta property="og:image" content="https://seizeapps.com/assets/og.jpg">
 <meta property="og:locale" content="en_US">
+
 <meta name="twitter:card" content="summary_large_image">
 <title>Roomy privacy — Seize Apps</title>
 <link rel="icon" type="image/png" sizes="64x64" href="../../favicon.png">
@@ -24,7 +23,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="../../assets/site.css?v=2026-09-22">
+<link rel="stylesheet" href="../../assets/site.css?v=2026-10-05">
 </head>
 <body>
 <header class="site-header shell">
@@ -37,10 +36,12 @@
     <a href="../../index.html#philosophy">Philosophy</a>
     <a href="../../index.html#work">Work with us</a>
     <a href="../../index.html#studio">Studio</a>
+    <span class="lang"><span aria-current="true">EN</span><a href="../../es/privacy.html" hreflang="es" lang="es" aria-label="Leer en castellano">ES</a><a href="../../fr/privacy.html" hreflang="fr" lang="fr" aria-label="Lire en français">FR</a></span>
     <a class="button small" href="mailto:hello@seizeapps.com">Get in touch</a>
   </nav>
 </header>
 <main class="shell legal">
+
 
   <p class="eyebrow">Roomy · Legal</p>
   <h1>Roomy privacy</h1>
@@ -76,6 +77,7 @@
 
   <p class="fineprint">This page is a product privacy notice adapted from Roomy’s in-repo draft for App Store listing. It is not a law-firm opinion; human counsel should review before relying on it for compliance.</p>
 
+
 </main>
 <footer class="site-footer">
   <div class="footer-inner shell">
@@ -95,5 +97,6 @@
     </nav>
   </div>
 </footer>
+<script>document.querySelectorAll('.site-nav .lang a[hreflang]').forEach(function(a){a.addEventListener('click',function(){try{localStorage.setItem('seize-lang',a.hreflang)}catch(e){}})});</script>
 </body>
 </html>

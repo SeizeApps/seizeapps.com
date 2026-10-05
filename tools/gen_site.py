@@ -358,6 +358,28 @@ APPS=[
           privacy='Tu CV, tus resultados y tus búsquedas guardadas se quedan en tu iPhone. Con tu permiso, el texto redactado del CV pasa por la pasarela de Seize hasta Command Code y TypeSafe AI (Jev) para ordenar las ofertas; pueden conservarlo según sus propias condiciones. Sin cuenta, sin analítica, sin seguimiento. Atino tiene su propia política de privacidad.',
           captions=['Resultados: ofertas vigentes ordenadas por encaje','Una oferta: por qué encaja y dónde solicitarla','Filtros: dónde y cómo quieres trabajar']),
      privacy_path={'en': 'atino/privacy/', 'es': '../atino/privacidad/', 'fr': '../atino/privacy/'}),
+ # Roomy (0.0.2, aún sin publicar en la Store): sin appstore hasta que `lookup` devuelva 1 (sin id de ASC en SIGNING.yml). Privacidad: /roomy/privacy/ (solo inglés).
+ app('roomy','Roomy','roomy.png','Izotz Cristobal Mota','roomy',
+     ['roomy-01-home.jpg','roomy-02-swipe.jpg','roomy-03-similar.jpg'],
+     dict(one='Swipe left to delete, right to keep. Roomy also finds duplicates, similar shots and huge videos, all on your iPhone.',
+          tags=['Utilities','Photos','9 languages'],
+          lede='A full camera roll is a chore until it becomes a game. <strong>Roomy</strong> shows your photos one at a time: swipe left to delete, right to keep, undo any swipe, and nothing is deleted until you confirm in the Trash. Smart Cleanup finds exact duplicates, bursts and near-identical shots (with the best one picked for you), screenshots and the large videos that really eat your storage, which Roomy can compress while keeping the date and location.',
+          meta=['iOS 17+','iPhone','Free · Pro, subscription or lifetime','9 languages'],
+          features=[('01 / SWIPE','Clean a month in minutes','Swipe through your library month by month, by On This Day memories or at random. Every swipe is undoable, and deleted items wait in the Trash until you confirm. Free: 50 swipes a day.'),
+                    ('02 / FIND','The clutter, found for you','Duplicates, similar shots, screenshots and large videos each get their own queue. Similar photos arrive grouped with the best one marked, and what you swiped Keep is never pre-selected for deletion.'),
+                    ('03 / FREE UP','See what you got back','Roomy Pro adds unlimited swipes, one-tap cleanup of duplicates and similar shots, and video compression that saves up to 80% of the space. Track the storage you freed and keep a daily streak.')],
+          privacy='Roomy analyses your library on your iPhone only. Your photos, videos and metadata are never uploaded. No account, no analytics, no ads, no tracking: nothing leaves the phone. Purchases go through Apple.',
+          captions=['Home: free space, and the clutter Roomy found','Swipe left to delete, right to keep','Similar shots grouped, with the best one marked']),
+     dict(one='Desliza a la izquierda para borrar, a la derecha para quedarte. Roomy también encuentra duplicados, fotos parecidas y vídeos enormes, todo en tu iPhone.',
+          tags=['Utilidades','Fotos','9 idiomas'],
+          lede='Un carrete lleno es una tarea pesada hasta que se convierte en un juego. <strong>Roomy</strong> te enseña tus fotos de una en una: izquierda para borrar, derecha para quedarte, cada gesto se puede deshacer y no se borra nada hasta que lo confirmas en la Papelera. La limpieza inteligente encuentra duplicados exactos, ráfagas y fotos casi idénticas (con la mejor ya marcada), capturas de pantalla y los vídeos grandes que de verdad llenan el espacio, que Roomy puede comprimir conservando la fecha y la ubicación.',
+          meta=['iOS 17+','iPhone','Gratis · Pro, suscripción o de por vida','9 idiomas'],
+          features=[('01 / DESLIZAR','Un mes limpio en minutos','Recorre tu biblioteca mes a mes, por los recuerdos de «Tal día como hoy» o al azar. Cada gesto se puede deshacer y lo borrado espera en la Papelera hasta que confirmas. Gratis: 50 gestos al día.'),
+                    ('02 / ENCONTRAR','El desorden, encontrado por ti','Duplicados, fotos parecidas, capturas de pantalla y vídeos grandes tienen cada uno su cola. Las parecidas llegan agrupadas con la mejor marcada, y lo que marcaste como «quedarme» nunca se preselecciona para borrar.'),
+                    ('03 / LIBERAR','Mira lo que has recuperado','Roomy Pro suma gestos ilimitados, borrado de duplicados y parecidas con un toque y compresión de vídeo que ahorra hasta un 80 % del espacio. Sigue el espacio liberado y mantén una racha diaria.')],
+          privacy='Roomy analiza tu biblioteca solo en tu iPhone. Tus fotos, vídeos y metadatos nunca se suben. Sin cuenta, sin analítica, sin anuncios y sin seguimiento: nada sale del teléfono. Las compras pasan por Apple.',
+          captions=['Inicio: espacio libre y el desorden que ha encontrado Roomy','Izquierda para borrar, derecha para quedarte','Fotos parecidas agrupadas, con la mejor marcada']),
+     privacy_path={'en': 'roomy/privacy/', 'es': '../roomy/privacy/', 'fr': '../roomy/privacy/'}),
 ]
 
 from gen_site_fr import UI_FR, APPS_FR
@@ -493,9 +515,9 @@ def redirect_page(url):
 
 # The app count and the app list in the copy come from APPS, so adding an
 # app never leaves a «six apps» behind (it did, 20/09/2026).
-NUMBERS={'en':['zero','one','two','three','four','five','six','seven','eight','nine','ten','eleven','twelve'],
-         'es':['cero','una','dos','tres','cuatro','cinco','seis','siete','ocho','nueve','diez','once','doce'],
-         'fr':['zéro','une','deux','trois','quatre','cinq','six','sept','huit','neuf','dix','onze','douze']}
+NUMBERS={'en':['zero','one','two','three','four','five','six','seven','eight','nine','ten','eleven','twelve','thirteen'],
+         'es':['cero','una','dos','tres','cuatro','cinco','seis','siete','ocho','nueve','diez','once','doce','trece'],
+         'fr':['zéro','une','deux','trois','quatre','cinq','six','sept','huit','neuf','dix','onze','douze','treize']}
 def fill_counts():
     n=len(APPS)
     for lang in LANGS:
@@ -673,6 +695,9 @@ if __name__=='__main__':
     # Atino (05/10/2026): su propia política, en inglés y castellano.
     from gen_legal_atino import build_atino
     build_atino()
+    # Roomy (05/10/2026): su página de privacidad, en inglés como la app.
+    from gen_legal_roomy import build_roomy
+    build_roomy()
     # Garum's share links (0.0.26): /garum/c/ and /garum/p/, and the Universal Links file.
     from gen_garum_share import build_garum_share
     build_garum_share()
