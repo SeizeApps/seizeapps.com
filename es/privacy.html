@@ -50,10 +50,10 @@
   <h1>Política de privacidad</h1>
   <p class="effective">En vigor desde el 2 de octubre de 2026</p>
   <nav class="toc" aria-label="Apps">
-    <a href="#cycle-timers">Cycle Timers</a><a href="#tempo">Tempo</a><a href="#drip">Drip</a><a href="#anchor">Anchor</a><a href="#kover">Kover</a><a href="#tandem">Tandem</a><a href="#meso">Meso</a><a href="#grain">Grain</a><a href="#gaminghub">GamingHub</a>
+    <a href="#cycle-timers">Cycle Timers</a><a href="#tempo">Tempo</a><a href="#drip">Drip</a><a href="#anchor">Anchor</a><a href="#kover">Kover</a><a href="#tandem">Tandem</a><a href="#meso">Meso</a><a href="#grain">Grain</a><a href="#gaminghub">GamingHub</a><a href="#overbit">Overbit</a>
   </nav>
 
-  <p><strong>La versión corta:</strong> las apps de Seize están hechas para funcionar sin tus datos. No tenemos cuentas de usuario, no usamos SDK de analítica ni de publicidad, y no vendemos ni compartimos nada. Lo que metes en una app se queda en tu dispositivo y en tu propio iCloud, salvo que la sección de esa app diga otra cosa (véase <a href="#gaminghub">GamingHub</a>).</p>
+  <p><strong>La versión corta:</strong> las apps de Seize están hechas para funcionar sin tus datos. No tenemos cuentas de usuario, no usamos SDK de analítica ni de publicidad, y no vendemos ni compartimos nada. Lo que metes en una app se queda en tu dispositivo y en tu propio iCloud, salvo que la sección de esa app diga otra cosa (véase <a href="#gaminghub">GamingHub</a> y <a href="#overbit">Overbit</a>).</p>
 
   <p><strong>Garum es la excepción:</strong> tiene cuentas, un servidor en la UE y contenido de usuarios, así que tiene <a href="../garum/privacidad/">su propia política de privacidad</a> y <a href="../garum/condiciones/">condiciones de uso</a>.</p>
 
@@ -151,8 +151,20 @@
   <p><em>Publicada en el App Store por Izotz Cristobal Mota.</em></p>
   </section>
 
+  <section id="overbit">
+  <h3>Overbit</h3>
+  <p>Overbit es una app de avisos de RSI de Bitcoin. No tiene cuenta, ni inicio de sesión, ni contraseña. No es un bróker y no opera.</p>
+  <p><strong>Qué recogemos para los avisos.</strong> Para enviarte notificaciones de cruce, la app registra un identificador de instalación aleatorio creado en tu dispositivo, el token de notificaciones APNs, tu configuración regional (locale), si Overbit Pro está desbloqueado en esa instalación, y los marcos de tiempo y ajustes de RSI que vigilas. Eso se guarda en nuestro proyecto de Supabase (Fráncfort) para que un trabajo programado evalúe las velas cerradas y envíe notificaciones push de Apple. Si Apple marca el token como inválido, lo borramos de esa fila; el código no elimina la fila completa del dispositivo al desinstalar. Los registros de envío de avisos en el servidor se recortan a los 90 días.</p>
+  <p><strong>Datos de mercado.</strong> Las peticiones de precio y velas van a endpoints HTTP públicos de exchanges (Binance, con Bitstamp y Kraken como alternativas). Esos servicios ven una petición de red normal (incluida tu IP), como cualquier web. No se añade nada que te identifique más allá de eso.</p>
+  <p><strong>Comentarios (Overbit Pro).</strong> Si usas el buzón de comentarios, el mensaje que escribes se envía al mismo proyecto de Supabase de Seize, junto con un correo de respuesta opcional (solo si lo pones tú), la versión y el build de la app, la versión de iOS, el modelo del dispositivo, el locale, el identificador de instalación, la marca Pro y los marcos de tiempo que tenías activados. Sirve para atención al cliente, no es un tablón público.</p>
+  <p><strong>Compras.</strong> Overbit Pro es una compra dentro de la app de pago único que procesa Apple (StoreKit). La app comprueba el derecho con Apple en tu dispositivo. Por separado, cuando hay una clave de API de RevenueCat configurada, los eventos de compra y de pantalla de pago pueden enviarse a RevenueCat bajo un identificador de usuario anónimo de RevenueCat, solo para analítica: sin paywalls de RevenueCat y sin identificador publicitario ni aviso de App Tracking Transparency en la app. No usamos esos datos para «seguimiento» en el sentido de Apple (no se enlazan con datos de terceros para publicidad ni se venden a intermediarios de datos).</p>
+  <p>Esta versión no tiene publicidad ni SDK de terceros de publicidad o de fallos. Los ajustes y el historial de avisos en el dispositivo se quedan en tu iPhone.</p>
+  <p>Borrar la app elimina los datos del contenedor de la app en ese dispositivo (incluido el identificador local de instalación). El registro de avisos en el servidor no se purga solo al desinstalar; si necesitas que borremos una fila, escríbenos a <a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a>.</p>
+  <p><em>Publicada en el App Store por Izotz Cristobal Mota.</em></p>
+  </section>
+
   <h2>Notificaciones</h2>
-  <p>Las apps que te recuerdan cosas usan notificaciones locales, programadas y entregadas en tu dispositivo. No operamos servidores de notificaciones push para estas funciones.</p>
+  <p>Las apps que te recuerdan cosas usan notificaciones locales, programadas y entregadas en tu dispositivo. No operamos servidores de notificaciones push para estas funciones. <a href="#overbit">Overbit</a> es la excepción: usa un servidor push de Seize para enviar avisos.</p>
 
   <h2>Tus derechos</h2>
   <p>Como tus datos viven en tu dispositivo, ejerces tus derechos directamente: borrar contenido en una app lo borra; borrar la app borra su contenedor; desactivar la sincronización con iCloud y borrar la app lo elimina también de iCloud (o gestiónalo en Ajustes › Cuenta de Apple › iCloud). Con arreglo al RGPD tienes además derechos de acceso, rectificación, supresión y portabilidad; como no tenemos datos personales tuyos, normalmente no hay nada que podamos entregarte, pero siempre puedes escribirnos con preguntas o solicitudes a <a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a>.</p>

@@ -51,10 +51,10 @@
   <h1>Privacy Policy</h1>
   <p class="effective">Effective October 2, 2026</p>
   <nav class="toc" aria-label="Apps">
-    <a href="#cycle-timers">Cycle Timers</a><a href="#tempo">Tempo</a><a href="#drip">Drip</a><a href="#anchor">Anchor</a><a href="#kover">Kover</a><a href="#tandem">Tandem</a><a href="#meso">Meso</a><a href="#grain">Grain</a><a href="#gaminghub">GamingHub</a>
+    <a href="#cycle-timers">Cycle Timers</a><a href="#tempo">Tempo</a><a href="#drip">Drip</a><a href="#anchor">Anchor</a><a href="#kover">Kover</a><a href="#tandem">Tandem</a><a href="#meso">Meso</a><a href="#grain">Grain</a><a href="#gaminghub">GamingHub</a><a href="#overbit">Overbit</a>
   </nav>
 
-  <p><strong>The short version:</strong> Seize apps are built to work without your data. We don't run accounts, we don't use analytics or advertising SDKs, and we don't sell or share anything. What you put into an app stays on your device and in your own iCloud unless the app's own section below says otherwise (see <a href="#gaminghub">GamingHub</a>).</p>
+  <p><strong>The short version:</strong> Seize apps are built to work without your data. We don't run accounts, we don't use analytics or advertising SDKs, and we don't sell or share anything. What you put into an app stays on your device and in your own iCloud unless the app's own section below says otherwise (see <a href="#gaminghub">GamingHub</a> and <a href="#overbit">Overbit</a>).</p>
 
   <p><strong>Garum is the exception:</strong> it has accounts, a server in the EU and user content, so it has <a href="garum/privacy/">its own privacy policy</a> and <a href="garum/terms/">terms of use</a>.</p>
 
@@ -152,8 +152,20 @@
   <p><em>Published on the App Store by Izotz Cristobal Mota.</em></p>
   </section>
 
+  <section id="overbit">
+  <h3>Overbit</h3>
+  <p>Overbit is a Bitcoin RSI alert app. It has no account, no sign-in and no password. It is not a broker and does not trade.</p>
+  <p><strong>What we collect for alerts.</strong> To send crossing notifications, the app registers a random install identifier created on your device, your APNs notification token, your locale, whether Overbit Pro is unlocked on that install, and the timeframes and RSI settings you watch. Those are stored in our Supabase project (Frankfurt) so a scheduled job can evaluate closed candles and deliver Apple Push Notifications. If Apple reports the token as dead, we clear the token on that row; the code does not delete the whole device row when you uninstall. Alert delivery logs on the server are trimmed after 90 days.</p>
+  <p><strong>Market data.</strong> Price and candle requests go to public exchange HTTP endpoints (Binance, with Bitstamp and Kraken as fallbacks). Those services see a normal network request (including your IP), like any website. Nothing that identifies you is added to those requests beyond that.</p>
+  <p><strong>Feedback (Overbit Pro).</strong> If you use the feedback box, the message you type is sent to the same Seize Supabase project, together with optional reply email (only if you enter one), app version and build, iOS version, device model, locale, the install identifier, the Pro flag, and which timeframes you had enabled. It is for customer support, not a public feed.</p>
+  <p><strong>Purchases.</strong> Overbit Pro is a one-time In-App Purchase processed by Apple (StoreKit). The app checks the entitlement with Apple on your device. Separately, when a RevenueCat API key is configured, purchase and paywall events may be sent to RevenueCat under an anonymous RevenueCat app user id for analytics only — no RevenueCat paywalls, and no advertising identifier / App Tracking Transparency prompt in the app. We do not use that data for tracking in Apple's sense (no linking with third-party data for ads, and no sale to data brokers).</p>
+  <p>This release has no advertising and no third-party advertising or crash SDKs. Settings and the on-device alert history stay on your iPhone.</p>
+  <p>Deleting the app removes the data kept in the app's container on that device (including the local install identifier). Server-side alert registration is not automatically purged on uninstall; you can ask us at <a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a> if you need a row removed.</p>
+  <p><em>Published on the App Store by Izotz Cristobal Mota.</em></p>
+  </section>
+
   <h2>Notifications</h2>
-  <p>Apps that remind you of things use local notifications, scheduled and delivered on your device. We do not operate push-notification servers for these features.</p>
+  <p>Apps that remind you of things use local notifications, scheduled and delivered on your device. We do not operate push-notification servers for these features. <a href="#overbit">Overbit</a> is the exception: it uses a Seize push server to send alerts.</p>
 
   <h2>Your rights</h2>
   <p>Because your data lives on your device, you exercise your rights directly: deleting content in an app deletes it; deleting the app deletes its container; turning iCloud sync off and deleting the app removes it from iCloud as well (or manage it under Settings › Apple Account › iCloud). Under the GDPR you also have rights of access, rectification, erasure, and portability — since we hold no personal data about you, there is typically nothing for us to produce, but you can always reach us with questions or requests at <a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a>.</p>
