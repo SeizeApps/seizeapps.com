@@ -13,20 +13,20 @@ index.html            studio home: hero · Apps · Philosophy · Work with us ·
 apps/<slug>.html      one page per app (one per entry in `APPS`): icon, lede, screenshots, what it does, privacy
 privacy.html          privacy policy, one section per app (#cycle-timers … #meso)
 terms.html            terms of use
-es/…                  the same four kinds of page in Spanish (same paths under es/; hreflang both ways)
+es/… · fr/…           the same four kinds of page in Spanish and French (same paths; hreflang between the three)
 assets/site.css       the whole visual system (dark only)
 assets/seize-mark.png · assets/og.jpg · favicon*.png · apple-touch-icon.png
 assets/icons/*.png    app icons, 256 px, from each app's AppIcon.png
 assets/shots/*.jpg    real screenshots, 600 px wide, JPEG 70, English simulator
 ```
 
-The HTML is **generated** by `tools/gen_site.py` (UI strings and app copy in both languages) with the legal bodies in `tools/gen_legal_copy.py` (EN) and `tools/gen_legal_es.py` (ES). Edit the generators, run `python3 tools/gen_site.py`, commit the output. Don't hand-edit the HTML. Bump `CSS_V` in `gen_site.py` whenever `site.css` changes (cache-busting: the path is shared with the previous site).
+The HTML is **generated** by `tools/gen_site.py` (UI strings and app copy in English and Spanish; French in `tools/gen_site_fr.py`) with the legal bodies in `tools/gen_legal_copy.py` (EN), `tools/gen_legal_es.py` (ES) and `tools/gen_legal_fr.py` (FR); Garum's French legal pages (`/garum/confidentialite/`, `/garum/conditions/`) in `tools/gen_legal_criba_fr.py`. Sacapuntas' policy is Spanish only, like the app. French typography: a no-break space (U+00A0) before `: ; ! ?` and inside « ». Edit the generators, run `python3 tools/gen_site.py`, commit the output. Don't hand-edit the HTML. Bump `CSS_V` in `gen_site.py` whenever `site.css` changes (cache-busting: the path is shared with the previous site).
 
 ## Adding an app
 
-1. Add an entry to `APPS` in `gen_site.py` (slug, name, icon, lead developer, screenshots, and the copy block in English and Spanish: one-liner, tags, lede, meta, three features, privacy paragraph, captions).
+1. Add an entry to `APPS` in `gen_site.py` (slug, name, icon, lead developer, screenshots, and the copy block in English and Spanish: one-liner, tags, lede, meta, three features, privacy paragraph, captions), and its French block to `APPS_FR` in `gen_site_fr.py` (the build fails without it).
 2. Drop the icon in `assets/icons/` (256 px) and 2–4 screenshots in `assets/shots/` (600 px wide, English).
-3. Add its section to the privacy policy in both `gen_legal_copy.py` and `gen_legal_es.py`, with the same id as the slug and the "Published on the App Store by …" line.
+3. Add its section to the privacy policy in `gen_legal_copy.py`, `gen_legal_es.py` and `gen_legal_fr.py`, with the same id as the slug and the "Published on the App Store by …" line.
 4. Regenerate, check links, commit.
 
 ## App Store badge

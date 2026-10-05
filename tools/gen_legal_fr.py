@@ -1,0 +1,167 @@
+# French legal copy (translated from gen_legal_es.py / gen_legal_copy.py). Typography: U+00A0 before ':' and inside « », U+202F before ';' '!' '?'.
+PRIVACY_FR='''
+  <p class="eyebrow">Informations légales</p>
+  <h1>Politique de confidentialité</h1>
+  <p class="effective">En vigueur depuis le 2 octobre 2026</p>
+  <nav class="toc" aria-label="Apps">
+    <a href="#cycle-timers">Cycle Timers</a><a href="#tempo">Tempo</a><a href="#drip">Drip</a><a href="#anchor">Anchor</a><a href="#kover">Kover</a><a href="#tandem">Tandem</a><a href="#meso">Meso</a><a href="#grain">Grain</a><a href="#gaminghub">GamingHub</a>
+  </nav>
+
+  <p><strong>La version courte :</strong> les apps Seize sont conçues pour fonctionner sans tes données. Nous n’avons pas de comptes utilisateur, nous n’utilisons pas de SDK de mesure d’audience ni de publicité, et nous ne vendons ni ne partageons rien. Ce que tu mets dans une app reste sur ton appareil et dans ton propre iCloud, sauf si la section de cette app dit autre chose (voir <a href="#gaminghub">GamingHub</a>).</p>
+
+  <p><strong>Garum est l’exception :</strong> elle a des comptes, un serveur dans l’UE et du contenu d’utilisateurs ; elle a donc <a href="../garum/confidentialite/">sa propre politique de confidentialité</a> et <a href="../garum/conditions/">ses propres conditions d’utilisation</a>.</p>
+
+  <h2>Qui sommes-nous</h2>
+  <p>Seize Apps est un studio indépendant d’applications mené par <strong>Izotz Cristobal Mota</strong> et <strong>Sendoa Sola</strong> depuis le Pays basque (Espagne) (« nous »). Cette politique couvre toutes les apps Seize distribuées via l’App Store d’Apple et TestFlight : actuellement <a href="#cycle-timers">Cycle Timers</a>, <a href="#tempo">Tempo</a>, <a href="#drip">Drip</a>, <a href="#anchor">Anchor</a>, <a href="#kover">Kover</a>, <a href="#tandem">Tandem</a>, <a href="#meso">Meso</a> et <a href="#grain">Grain</a>. Chaque app est publiée sur l’App Store par l’un de nous deux : le vendeur indiqué sur sa fiche est le responsable du traitement pour cette app, et il est nommé dans sa section. Si une app diffère sur un point, c’est sa section qui fait foi.</p>
+
+  <h2>Ce que nous collectons</h2>
+  <p><strong>Rien, par défaut.</strong> Nos apps ne demandent pas de compte, n’intègrent aucun SDK tiers de mesure d’audience, de publicité ou de suivi, et ne nous transmettent pas le contenu que tu crées. Nous ne pouvons voir ni tes minuteurs, ni tes sessions de travail, ni tes dépenses, ni tes tickets de caisse, ni tes routines, ni aucun autre contenu que tu crées dans une app Seize.</p>
+  <p>Les achats sont entièrement traités par Apple. Quand une app vend un déblocage « Pro » en achat unique, l’app vérifie cet achat avec StoreKit d’Apple sur ton appareil et retient seulement s’il est actif ; nous ne voyons jamais qui l’a acheté. Nous recevons d’App Store Connect des statistiques de ventes et de plantages agrégées et anonymes (par exemple, le nombre de téléchargements par pays). Ces statistiques ne contiennent aucun identifiant personnel.</p>
+
+  <h2>Où vivent tes données</h2>
+  <ul>
+    <li><strong>Sur ton appareil.</strong> Le contenu de l’app est stocké en local, dans le conteneur privé de l’app (et, pour les apps avec widgets, dans un conteneur App Group partagé que seuls l’app et son propre widget peuvent lire).</li>
+    <li><strong>Dans ton iCloud.</strong> Nos apps se synchronisent via ton compte iCloud personnel, selon les conditions d’Apple, sauf si tu désactives la synchronisation dans Réglages ou si la section de cette app dit autre chose ; nous n’y avons jamais accès.</li>
+  </ul>
+
+  <h2>Détail par app</h2>
+
+  <section id="cycle-timers">
+  <h3>Cycle Timers</h3>
+  <p>Cycle Timers <strong>ne collecte aucune donnée</strong>. Tes minuteurs sont stockés sur l’appareil, dans un conteneur App Group privé partagé uniquement avec les widgets de l’écran d’accueil et de l’écran verrouillé de l’app elle-même. Les notifications sont programmées en local. L’app n’établit aucune connexion réseau, n’a pas de système de comptes et n’intègre aucun code tiers qui reçoive tes données.</p>
+  <p><em>Publiée sur l’App Store par Izotz Cristobal Mota.</em></p>
+  </section>
+
+  <section id="tempo">
+  <h3>Tempo</h3>
+  <p>Tempo enregistre sur ton appareil les sessions de travail, les horaires, les préférences de jours ouvrés, les zones de travail et l’historique des corrections. Un groupe d’apps local partage les informations nécessaires avec les propres widgets de Tempo. Tempo n’a ni comptes, ni SDK publicitaire, ni SDK de mesure d’audience, ni service du développeur qui reçoive tes relevés de travail ou ton historique de localisation.</p>
+  <p><strong>Stockage et sauvegardes.</strong> Cette version de Tempo n’implémente pas de synchronisation propre via iCloud. Les sauvegardes de l’appareil et les services du système peuvent dépendre de ton compte Apple et des réglages de l’appareil ; ils sont distincts d’une synchronisation implémentée par Tempo.</p>
+  <p><strong>Localisation et cartes.</strong> Tu peux utiliser le suivi manuel sans accorder l’autorisation de localisation. Lorsque tu actives le suivi automatique, Tempo utilise Core Location d’Apple et des signaux locaux pour évaluer les arrivées, les départs et les routines de travail à domicile. Tu contrôles les autorisations de localisation dans les réglages d’iOS. La recherche de lieux, les cartes et les estimations d’itinéraires utilisent Apple MapKit ; Apple peut traiter les requêtes et les coordonnées pertinentes conformément à ses conditions. Que le développeur ne collecte pas ta localisation ne signifie pas que les services d’Apple ne la traitent jamais.</p>
+  <p><strong>Achats.</strong> Apple gère les achats de Tempo Pro et les renouvellements des abonnements. Tempo détermine l’accès sur l’appareil au moyen de transactions StoreKit vérifiées. Le développeur ne reçoit pas les données de ta carte de paiement par l’intermédiaire de Tempo.</p>
+  <p><strong>Exports et cartes récapitulatives.</strong> Tu peux exporter tes relevés ou créer une image récapitulative. Vérifie les exports avant de les partager, car les fichiers de relevés et de diagnostic peuvent contenir des informations sensibles sur ton travail ou ta localisation. Les images récapitulatives sont composées à partir de données limitées, sans coordonnées précises, ni noms de lieux de travail, ni heures précises de début et de fin ; les totaux sont affichés par défaut et la répartition par grandes catégories de lieux est facultative. Partager et Copier ne nécessitent pas d’accès à Photos. Enregistrer demande l’autorisation d’ajouter à Photos uniquement, et seulement quand c’est nécessaire. La destination choisie, le presse-papiers, l’image enregistrée ou une copie externe ont leurs propres conditions de conservation et de traitement ; effacer les données locales de Tempo ne supprime pas les copies que tu as déjà exportées ou partagées.</p>
+  <p><strong>Tes contrôles.</strong> Tu peux modifier ou supprimer des lieux, corriger des relevés, exporter des données et effacer les données locales de Tempo depuis l’app. Tu peux aussi révoquer les autorisations de localisation, de notifications ou de Photos dans les réglages d’iOS. Restreindre une autorisation peut limiter l’automatisation ou l’enregistrement, mais le suivi manuel et les corrections restent disponibles.</p>
+  <p><em>Publiée par Izotz Cristobal Mota. Pour toute question sur le traitement des données de Tempo, écris à <a href="mailto:izotz@seizeapps.com">izotz@seizeapps.com</a>.</em></p>
+  </section>
+
+  <section id="drip">
+  <h3>Drip</h3>
+  <p>Drip enregistre les services que tu suis — nom, coût, cycle de facturation, dates de paiement, catégorie, étiquettes, notes et libellé du moyen de paiement — <strong>sur ton appareil</strong>, dans un conteneur App Group privé partagé uniquement avec les widgets de l’écran d’accueil et de l’écran verrouillé de Drip et ses raccourcis Siri. Drip n’a ni système de comptes, ni mesure d’audience, ni code tiers qui reçoive tes données. Elle propose deux achats facultatifs : un déblocage « Drip Pro » en achat unique qui ouvre les fonctions supplémentaires de l’app (Apple vérifie le droit d’accès sur ton appareil, Partage familial compris ; l’app enregistre seulement s’il est actif) et une cagnotte d’achats ponctuels qui ne débloquent rien et ne changent rien à l’app. Apple traite les deux ; nous ne voyons pas tes données de paiement et nous n’en conservons rien au-delà de cet indicateur local et d’un compteur local du nombre de pourboires que tu as laissés.</p>
+  <p><strong>La synchronisation iCloud</strong> est activée par défaut : tes services se synchronisent entre tes appareils via ton compte iCloud personnel, selon les conditions d’Apple ; nous n’y avons jamais accès. Si tu la désactives dans Réglages, tes données restent uniquement sur l’appareil. Les rappels de paiement et le résumé hebdomadaire sont des notifications locales, programmées sur ton appareil.</p>
+  <p><em>Publiée sur l’App Store par Sendoa Sola.</em></p>
+  </section>
+
+  <section id="anchor">
+  <h3>Anchor</h3>
+  <p>Anchor est un outil de soutien au quotidien pour les personnes qui se rétablissent d’un trouble des conduites alimentaires, conçu pour accompagner un traitement professionnel. Tout ce que tu saisis — blocs de routine et leurs confirmations, points du jour sur tes émotions et leurs notes facultatives, séances pour surfer sur l’envie et de respiration, utilisation des stratégies, ton plan de sécurité (contacts, stratégies, signaux d’alerte) et plans pour les jours difficiles — est enregistré <strong>sur ton appareil</strong>, dans le conteneur privé de l’app. L’Activité en direct de « Surfer sur l’envie » n’affiche que son minuteur sur l’écran verrouillé ; elle est dessinée sur l’appareil et ne contient rien de ce que tu saisis. Anchor n’a ni système de comptes, ni mesure d’audience, ni publicité, ni chat d’IA, ni code tiers qui reçoive tes données. Elle a en revanche une cagnotte facultative : des achats ponctuels qui ne changent aucun outil de l’app — aucune fonction d’Anchor n’est jamais derrière un paiement. En remerciement, tout pourboire ouvre en plus trois thèmes de couleur facultatifs. Les achats sont traités par Apple ; nous ne voyons pas tes données de paiement. Pour savoir si tu as laissé un pourboire, Anchor lit sur ton appareil, avec StoreKit d’Apple, ses propres pourboires dans ton historique d’achats de l’App Store, et ne conserve que ce fait et un compteur local du nombre de pourboires que tu as laissés ; rien de tout cela ne nous est envoyé. Le nom que tu peux écrire dans « À propos de toi » sert uniquement dans des messages affichés sur l’appareil.</p>
+  <p><strong>Données de santé.</strong> Anchor peut lire, de façon facultative, l’analyse du sommeil, la variabilité de la fréquence cardiaque, les pas et le temps d’exercice de l’app Santé d’Apple, uniquement après que tu as accordé l’autorisation (Réglages › Données de santé ; désactivé par défaut). Anchor lit ces données pour te montrer un contexte qualitatif sur le repos et le mouvement ; elle n’écrit jamais dans Santé, ne lit jamais le poids, la masse corporelle, la graisse corporelle ni la nutrition, n’envoie jamais de données de santé nulle part, ne les utilise jamais à des fins publicitaires et ne les partage jamais avec des tiers. Les données de santé restent sur ton appareil et sont exclues de la synchronisation iCloud.</p>
+  <p><strong>La synchronisation iCloud</strong> est activée par défaut pour que tes routines, tes points du jour et tes plans te suivent d’un appareil à l’autre via ton compte iCloud personnel (la base de données privée CloudKit d’Apple), selon les conditions d’Apple ; nous n’y avons jamais accès. Tu peux la désactiver dans Réglages ; tes données restent alors uniquement sur l’appareil. Les rappels de routine, le rappel du point du jour et les Activités en direct sont programmés et affichés en local. Les numéros d’urgence du plan de sécurité sont des lignes d’aide publiques de ta région ; en toucher un passe un appel téléphonique normal.</p>
+  <p>Anchor n’est pas un dispositif médical et ne remplace pas le traitement professionnel. Elle ne contient volontairement aucun suivi des calories, du poids ni des mensurations.</p>
+  <p><em>Publiée sur l’App Store par Sendoa Sola.</em></p>
+  </section>
+
+  <section id="kover">
+  <h3>Kover</h3>
+  <p>Kover enregistre les produits que tu ajoutes — nom, catégorie, magasin, date et montant d’achat, pays, dates de garantie, numéro de série, contact du support, notes et photo du ticket de caisse — <strong>sur ton appareil</strong>, dans le conteneur privé de l’app. Kover n’a ni système de comptes, ni mesure d’audience, ni code tiers qui reçoive tes données. Elle propose deux achats facultatifs : un déblocage « Kover Pro » en achat unique qui ouvre les fonctions supplémentaires de l’app (Apple vérifie le droit d’accès sur ton appareil, Partage familial compris ; l’app enregistre seulement s’il est actif) et une cagnotte d’achats ponctuels qui ne débloquent rien et ne changent rien à l’app. Apple traite les deux ; nous ne voyons pas tes données de paiement et nous n’en conservons rien au-delà de cet indicateur local et d’un compteur local du nombre de pourboires que tu as laissés.</p>
+  <p><strong>Tickets et appareil photo.</strong> Quand tu scannes un ticket, Kover utilise l’appareil photo (ou une photo ou un PDF que tu choisis) et lit le texte avec le framework Vision d’Apple, sur l’appareil lui-même. L’image et le texte reconnu ne quittent jamais le téléphone ; la photo n’est conservée que parce qu’elle est ta preuve d’achat. L’accès à l’appareil photo et à la photothèque n’est demandé que lorsque tu utilises ces fonctions.</p>
+  <p><strong>La synchronisation iCloud</strong> est activée par défaut pour que tes produits et les photos des tickets te suivent d’un appareil à l’autre via ton compte iCloud personnel, selon les conditions d’Apple ; nous n’y avons jamais accès. Si tu la désactives dans Réglages, tes données restent uniquement sur l’appareil. Les alertes de garantie sont des notifications locales, programmées sur ton appareil. L’export CSV et le PDF par produit sont des fichiers que tu crées et partages toi-même.</p>
+  <p><em>Publiée sur l’App Store par Sendoa Sola.</em></p>
+  </section>
+
+  <section id="tandem">
+  <h3>Tandem</h3>
+  <p>Tandem enregistre les noms des deux personnes, leurs revenus mensuels, chaque dépense commune (montant, catégorie, date, qui a payé, comment elle a été répartie, nom facultatif) et chaque règlement <strong>sur ton appareil</strong>, dans un conteneur App Group privé partagé uniquement avec les widgets de l’app elle-même. Tandem n’a ni système de comptes, ni mesure d’audience, ni code tiers qui reçoive tes données. Elle propose deux achats facultatifs : un déblocage « Tandem Pro » en achat unique qui ouvre les fonctions supplémentaires de l’app (Apple vérifie le droit d’accès sur ton appareil, Partage familial compris ; l’app enregistre seulement s’il est actif) et une cagnotte d’achats ponctuels qui ne débloquent rien et ne changent rien à l’app. Apple traite les deux ; nous ne voyons pas tes données de paiement et nous n’en conservons rien au-delà de cet indicateur local et d’un compteur local du nombre de pourboires que tu as laissés. Un seul téléphone tient les comptes des deux ; rien n’est envoyé à l’appareil de l’autre personne ni à qui que ce soit d’autre.</p>
+  <p><strong>La synchronisation iCloud</strong> est activée par défaut pour que tes dépenses te suivent entre tes propres appareils via ton compte iCloud personnel, selon les conditions d’Apple ; nous n’y avons jamais accès. Si tu la désactives dans Réglages, tes données restent uniquement sur l’appareil. Les rappels hebdomadaire et de fin de mois sont des notifications locales.</p>
+  <p><em>Publiée sur l’App Store par Sendoa Sola.</em></p>
+  </section>
+
+  <section id="meso">
+  <h3>Meso</h3>
+  <p>Meso enregistre tes programmes d’entraînement (blocs, séances, exercices et leurs prescriptions), chaque séance consignée (charges, répétitions, répétitions en réserve, notes, la salle que tu as utilisée) ainsi que tes propres exercices et salles <strong>sur ton appareil</strong>, dans le conteneur privé de l’app. Meso n’a ni système de comptes, ni mesure d’audience, ni code tiers qui reçoive tes données. Elle propose deux achats facultatifs : un déblocage « Meso Pro » en achat unique qui ouvre les fonctions supplémentaires de l’app (Apple vérifie le droit d’accès sur ton appareil, Partage familial compris ; l’app enregistre seulement s’il est actif) et une cagnotte d’achats ponctuels qui ne débloquent rien et ne changent rien à l’app. Apple traite les deux ; nous ne voyons pas tes données de paiement et nous n’en conservons rien au-delà de cet indicateur local et d’un compteur local du nombre de pourboires que tu as laissés.</p>
+  <p><strong>L’app Santé d’Apple.</strong> Désactivé par défaut. Si tu l’actives dans Réglages, chaque séance terminée est écrite dans Santé comme un entraînement de musculation (début, fin et nom) pour qu’elle compte dans ton activité. Meso ne lit jamais rien dans Santé et n’envoie jamais de données de Santé nulle part ; l’autorisation et la préférence ne vivent que sur cet appareil.</p>
+  <p><strong>La synchronisation iCloud</strong> est activée par défaut pour que tes programmes et tes séances te suivent d’un appareil à l’autre via ton compte iCloud personnel, selon les conditions d’Apple ; nous n’y avons jamais accès. Si tu la désactives dans Réglages, tes données restent uniquement sur l’appareil. Meso n’a pas de minuteur de repos et n’envoie aucune notification. Pendant qu’une séance est ouverte, une Activité en direct affiche l’exercice en cours et la série suivante sur l’écran verrouillé ; elle est dessinée sur l’appareil à partir de ce que l’app lui transmet et se termine avec la séance. Le texte de la semaine et le CSV du bloc que tu envoies à un coach sont des fichiers que tu crées et partages toi-même.</p>
+  <p><em>Publiée sur l’App Store par Sendoa Sola.</em></p>
+  </section>
+
+  <section id="grain">
+  <h3>Grain</h3>
+  <p>Grain enregistre ce que tu notes — chaque aliment avec son repas, son jour, ses grammes et les valeurs nutritionnelles copiées de sa source —, tes objectifs quotidiens, ainsi que les aliments et recettes que tu crées, corriges ou scannes <strong>sur ton appareil</strong>, dans le conteneur privé de l’app et dans un conteneur App Group privé partagé uniquement avec les widgets de l’app elle-même. Grain n’a ni système de comptes, ni mesure d’audience, ni code tiers qui reçoive tes données. Elle propose des achats facultatifs : un déblocage « Grain Pro » en achat unique qui ouvre les fonctions supplémentaires de l’app, avec un essai gratuit de 30 jours possible une seule fois par compte Apple (Apple vérifie le droit d’accès sur ton appareil, Partage familial compris ; l’app enregistre seulement s’il est actif et, pendant l’essai, quand celui-ci se termine), et une cagnotte d’achats ponctuels qui ne débloquent rien et ne changent rien à l’app. Apple les traite ; nous ne voyons pas tes données de paiement et nous n’en conservons rien au-delà de cet indicateur local et d’un compteur local du nombre de pourboires que tu as laissés.</p>
+  <p><strong>Codes-barres et Open Food Facts.</strong> Le catalogue d’aliments (CIQUAL et BEDCA) est intégré à l’app et la recherche s’y fait sur l’appareil. Quand tu scannes ou saisis un code-barres qui ne fait pas partie de tes aliments, Grain envoie uniquement ce numéro à Open Food Facts (openfoodfacts.org, une base de données alimentaire ouverte et à but non lucratif) pour rechercher le produit ; la requête nomme l’app, pas toi, et rien de ton journal n’est envoyé. Open Food Facts traite cette requête selon ses propres conditions.</p>
+  <p><strong>Envoyer un produit à Open Food Facts.</strong> Uniquement si tu coches « Envoyer aussi à Open Food Facts » en enregistrant un aliment avec code-barres, Grain envoie ce produit — le code et ses valeurs pour 100 g, ainsi que son nom et sa marque s’il est nouveau pour Open Food Facts — via le compte de Grain sur Open Food Facts, avec un identifiant aléatoire créé pour cette installation afin que ses modérateurs puissent distinguer les contributions. Rien de ton journal, de tes objectifs ni de ton compte Apple n’est envoyé. Ce que tu envoies y est publié sous la licence Open Database License, pour que chacun puisse l’utiliser, et Grain ne peut pas le retirer ; Open Food Facts le traite selon ses propres conditions.</p>
+  <p><strong>Appareil photo, étiquettes et texte.</strong> L’appareil photo n’est utilisé que pendant que tu scannes un code-barres ou photographies une étiquette nutritionnelle, et rien n’est enregistré. Les étiquettes, prises avec l’appareil photo ou issues d’une photo que tu choisis, sont lues avec le framework Vision d’Apple sur l’appareil lui-même ; un repas que tu décris avec des mots est interprété sur l’iPhone (avec Apple Intelligence là où elle est disponible). Ni l’image ni le texte ne quittent le téléphone.</p>
+  <p><strong>L’app Santé d’Apple.</strong> Désactivé par défaut. Si tu l’actives dans Réglages, chaque entrée est écrite dans Santé comme aliment (énergie, protéines, glucides et lipides), et elle y est modifiée ou supprimée quand tu la modifies ou la supprimes dans Grain. Grain ne lit jamais rien dans Santé et n’envoie jamais de données de Santé nulle part ; l’autorisation et la préférence ne vivent que sur cet appareil.</p>
+  <p><strong>La synchronisation iCloud</strong> est activée par défaut pour que ton journal, tes objectifs et tes aliments te suivent d’un appareil à l’autre via ton compte iCloud personnel, selon les conditions d’Apple ; nous n’y avons jamais accès. Si tu la désactives dans Réglages, tes données restent uniquement sur l’appareil. Grain n’envoie aucune notification.</p>
+  <p><em>Publiée sur l’App Store par Sendoa Sola.</em></p>
+  </section>
+
+  <section id="gaminghub">
+  <h3>GamingHub</h3>
+  <p>GamingHub est une app de jeux pour jouer dans un salon avec d’autres personnes. Elle n’a ni compte, ni e-mail, ni mot de passe.</p>
+  <p>Pour qu’un salon fonctionne, l’app enregistre le nom que tu choisis, un avatar et un identifiant anonyme créé sur ton appareil. Ces données, ainsi que l’état de la partie, sont envoyées à notre serveur (Supabase) et affichées aux autres joueurs de ce salon. Ce que tu écris pour le jeu — indices, papiers, chansons et choses similaires — fait partie de cet état et est affiché aux autres joueurs. Les données secrètes de la partie (ton rôle, le mot ou les cartes) sont envoyées uniquement à ton appareil.</p>
+  <p>Les salons sont supprimés lorsqu’ils se vident et, dans tous les cas, purgés au bout de 12 heures. Nous ne conservons pas d’historique des parties.</p>
+  <p>Cette version n’a ni publicité, ni mesure d’audience, ni suivi. Nous ne vendons pas tes données.</p>
+  <p>Les achats sont traités par Apple. Nous savons seulement quels jeux cet appareil a débloqués, jamais tes données de paiement.</p>
+  <p>Si tu signales un problème ou un joueur, l’app ouvre un message à <a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a>. Ce signalement est un e-mail que tu envoies toi-même ; il n’est pas conservé sur le serveur du jeu.</p>
+  <p>Supprimer l’app efface l’identifiant anonyme et les données qui se trouvaient sur l’appareil. Les salons où tu as joué disparaissent à leur expiration.</p>
+  <p><em>Publiée sur l’App Store par Izotz Cristobal Mota.</em></p>
+  </section>
+
+  <h2>Notifications</h2>
+  <p>Les apps qui te rappellent des choses utilisent des notifications locales, programmées et délivrées sur ton appareil. Nous n’exploitons pas de serveurs de notifications push pour ces fonctions.</p>
+
+  <h2>Tes droits</h2>
+  <p>Comme tes données vivent sur ton appareil, tu exerces tes droits directement : supprimer un contenu dans une app le supprime ; supprimer l’app supprime son conteneur ; désactiver la synchronisation iCloud et supprimer l’app l’efface aussi d’iCloud (ou gère-le dans Réglages › Compte Apple › iCloud). En vertu du RGPD, tu disposes en outre des droits d’accès, de rectification, d’effacement et de portabilité ; comme nous ne détenons aucune donnée personnelle te concernant, il n’y a normalement rien que nous puissions te remettre, mais tu peux toujours nous écrire pour toute question ou demande à <a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a>.</p>
+
+  <h2>Mineurs</h2>
+  <p>Nos apps sont des utilitaires destinés au grand public et ne collectent sciemment aucune information personnelle de qui que ce soit, y compris de mineurs.</p>
+
+  <h2>Modifications</h2>
+  <p>Si une app ou une fonction future change quoi que ce soit à ce qui précède (par exemple, une app qui ajoute un service en ligne), nous mettrons à jour cette politique et l’étiquette de confidentialité de l’app sur l’App Store avant la sortie de cette fonction.</p>
+
+  <h2>Contact</h2>
+  <p>Seize Apps · Izotz Cristobal Mota et Sendoa Sola<br><a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a></p>
+'''
+
+TERMS_FR='''
+  <p class="eyebrow">Informations légales</p>
+  <h1>Conditions d’utilisation</h1>
+  <p class="effective">En vigueur depuis le 4 octobre 2026</p>
+
+  <h2>1. Accord</h2>
+  <p>Ces conditions régissent l’utilisation des apps publiées sous le nom Seize Apps par Izotz Cristobal Mota et Sendoa Sola (Pays basque, Espagne ; « nous »). Le vendeur de chaque app est le développeur indiqué sur sa fiche de l’App Store. Les apps sont distribuées via l’App Store d’Apple et TestFlight. En téléchargeant ou en utilisant une app Seize, tu acceptes ces conditions et le <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Contrat de licence d’utilisateur final des applications sous licence</a> standard d’Apple, qui s’applique pour tout ce que ces conditions ne couvrent pas. Garum a des comptes et du contenu d’utilisateurs ; elle a donc <a href="../garum/conditions/">ses propres conditions d’utilisation</a>, qui s’appliquent à elle à la place de celles-ci.</p>
+
+  <h2>2. Licence</h2>
+  <p>Nous t’accordons une licence personnelle, non exclusive et non transférable pour utiliser nos apps sur les appareils Apple que tu possèdes ou contrôles, dans la mesure permise par les conditions de l’App Store. Les apps, leur design et leur code restent notre propriété.</p>
+
+  <h2>3. Achats</h2>
+  <p>Les apps payantes et les achats intégrés sont facturés par Apple au prix affiché dans l’App Store avant que tu confirmes. Les abonnements se renouvellent automatiquement à la fin de chaque période, au même prix, sauf si tu les résilies au moins 24 heures avant la fin de la période en cours dans les réglages de ton compte Apple, où tu peux les gérer à tout moment. Les remboursements sont gérés par Apple selon les politiques de remboursement de l’App Store ; nous ne pouvons pas les effectuer directement.</p>
+
+  <h2>4. Ton contenu t’appartient</h2>
+  <p>Tout ce que tu crées dans une app Seize (minuteurs, relevés de travail, dépenses, routines, tickets de caisse, journaux d’entraînement, journaux alimentaires) t’appartient. Comme décrit dans notre <a href="privacy.html">Politique de confidentialité</a>, il est stocké sur ton appareil et dans ton propre iCloud et nous n’y avons pas accès, ce qui signifie aussi que <strong>les sauvegardes sont de ton ressort</strong>. La seule exception est un produit que tu choisis d’envoyer à Open Food Facts depuis Grain, qui y est publié sous la licence Open Database License. Supprimer une app supprime ses données sur cet appareil ; ce qui se trouve dans ton iCloud y reste jusqu’à ce que tu l’y supprimes.</p>
+
+  <h2>5. Pas un conseil professionnel</h2>
+  <p>Nos apps sont des outils d’organisation. Elles ne constituent pas un conseil médical, nutritionnel, psychologique, financier ni juridique. Toute app de Seize qui touche au bien-être est un accompagnement et <strong>ne remplace pas un traitement professionnel</strong> ; si tu traverses une période difficile, cherche une aide qualifiée. Les durées de garantie affichées par Kover sont des valeurs indicatives par défaut ; tes droits dépendent de la loi et des conditions du vendeur applicables à chaque achat.</p>
+
+  <h2>6. Usage acceptable</h2>
+  <p>Ne fais pas d’ingénierie inverse, ne revends pas les apps, n’en fais pas un mauvais usage et ne les utilise d’aucune manière qui enfreigne la loi ou les conditions d’Apple.</p>
+
+  <h2>7. Garantie et responsabilité</h2>
+  <p>Les apps sont fournies « en l’état », sans garantie d’aucune sorte. Dans toute la mesure permise par la loi, nous ne sommes pas responsables des dommages indirects ou consécutifs découlant de l’utilisation des apps ; notre responsabilité totale est limitée au montant que tu as payé pour l’app au cours des douze mois précédant la réclamation. Rien dans ces conditions ne limite les droits que la législation sur la consommation t’accorde et auxquels il n’est pas possible de renoncer.</p>
+
+  <h2>8. Modifications</h2>
+  <p>Nous pouvons mettre à jour ces conditions à mesure que les apps évoluent ; la version en vigueur se trouve toujours à cette adresse, avec sa date d’entrée en vigueur en haut. Continuer à utiliser les apps après une modification vaut acceptation des conditions mises à jour.</p>
+
+  <h2>9. Droit applicable</h2>
+  <p>Ces conditions sont régies par le droit espagnol. Les consommateurs de l’UE conservent en outre les protections de leur pays de résidence.</p>
+
+  <h2>Contact</h2>
+  <p><a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a></p>
+'''
+
+LEGAL_FR={
+  'privacy': dict(title='Politique de confidentialité — Seize Apps',
+                  desc='Comment les apps Seize traitent tes données : pas de comptes, pas de mesure d’audience, tout sur ton appareil et dans ton propre iCloud. Détail par app : Cycle Timers, Tempo, Drip, Anchor, Kover, Tandem, Meso et Grain.',
+                  body=PRIVACY_FR),
+  'terms':   dict(title='Conditions d’utilisation — Seize Apps',
+                  desc='Conditions d’utilisation des apps publiées par Seize Apps.',
+                  body=TERMS_FR),
+}

@@ -204,22 +204,22 @@ PAGES = [  # (lang, kind, slug, title, desc)
 ]
 
 
+# The French pages come from gen_legal_criba_fr.py.
+from gen_legal_criba_fr import PRIVACY_FR, TERMS_FR, UPDATED_FR, PAGES_FR
+PRIVACY['fr'], TERMS['fr'], UPDATED['fr'] = PRIVACY_FR, TERMS_FR, UPDATED_FR
+PAGES += PAGES_FR
+
+
 def build_criba():
+    # One tree for every language: the slugs already differ (privacidad/privacy/confidentialite).
+    slugs = {(lang, kind): slug for lang, kind, slug, _, _ in PAGES}
     for lang, kind, slug, title, desc in PAGES:
         root = '../../'
         body = (PRIVACY if kind == 'privacy' else TERMS)[lang].replace('{updated}', UPDATED[lang])
         canonical = f'garum/{slug}/'
-        html = (head(lang, title, desc, root, canonical) + header(lang, root, canonical)
+        langs = [L for L, k in slugs if k == kind]
+        alts = {L: f'https://seizeapps.com/garum/{slugs[L, kind]}/' for L in langs}
+        switch = {L: f'{root}garum/{slugs[L, kind]}/' for L in langs}
+        html = (head(lang, title, desc, root, canonical, alts=alts) + header(lang, root, canonical, switch=switch)
                 + f'<main class="shell legal">\n{body}\n</main>\n' + footer(lang, root))
-        # One tree for both languages: the slugs already differ (privacidad/privacy).
-        html = html.replace('https://seizeapps.com/es/garum/', 'https://seizeapps.com/garum/')
-        # hreflang and the language switch point at the page in the other language.
-        pair = {'privacidad': 'privacy', 'privacy': 'privacidad', 'condiciones': 'terms', 'terms': 'condiciones'}[slug]
-        es_slug, en_slug = (slug, pair) if lang == 'es' else (pair, slug)
-        html = (html.replace(f'hreflang="en" href="https://seizeapps.com/garum/{slug}/"', f'hreflang="en" href="https://seizeapps.com/garum/{en_slug}/"')
-                    .replace(f'hreflang="es" href="https://seizeapps.com/garum/{slug}/"', f'hreflang="es" href="https://seizeapps.com/garum/{es_slug}/"')
-                    .replace(f'hreflang="x-default" href="https://seizeapps.com/garum/{slug}/"', f'hreflang="x-default" href="https://seizeapps.com/garum/{en_slug}/"'))
-        other = 'en' if lang == 'es' else 'es'
-        for prefix in ('../../es/', '../../'):
-            html = html.replace(f'class="lang" href="{prefix}garum/{slug}/"', f'class="lang" href="../../garum/{pair}/"')
         write(f'garum/{slug}/index.html', html)

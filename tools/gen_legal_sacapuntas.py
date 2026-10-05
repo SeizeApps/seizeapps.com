@@ -93,14 +93,10 @@ PAGES = [  # (path, body, title, desc)
 def build_sacapuntas():
     for path, body, title, desc in PAGES:
         root = '../' * path.count('/')
-        html = (head('es', title, desc, root, path) + header('es', root, path)
+        # Solo en castellano, como la app: una URL, sin el árbol /es/ ni hreflang. Los otros idiomas
+        # del selector llevan a la política general, porque esta no existe en ellos.
+        alts = {'es': f'https://seizeapps.com/{path}'}
+        switch = {'en': f'{root}privacy.html', 'fr': f'{root}fr/privacy.html'}
+        html = (head('es', title, desc, root, path, alts=alts) + header('es', root, path, switch=switch)
                 + f'<main class="shell legal">\n{body.replace("{updated}", UPDATED)}\n</main>\n' + footer('es', root))
-        # Solo en castellano, como la app: una URL, sin el árbol /es/ ni la versión en inglés.
-        url = f'https://seizeapps.com/{path}'
-        html = (html.replace(f'https://seizeapps.com/es/{path}', url)
-                    .replace(f'<link rel="alternate" hreflang="en" href="{url}">\n', '')
-                    .replace(f'<link rel="alternate" hreflang="es" href="{url}">\n', '')
-                    .replace(f'<link rel="alternate" hreflang="x-default" href="{url}">\n', ''))
-        # El botón de idioma llevaría a una página en inglés que no existe: a la política general.
-        html = html.replace(f'class="lang" href="{root}{path}"', f'class="lang" href="{root}privacy.html"')
         write(f'{path}index.html', html)

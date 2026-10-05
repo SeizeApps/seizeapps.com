@@ -189,3 +189,8 @@ p { margin: 0; }
   html { scroll-behavior: auto; }
   .button, .app-card, .store-icon { transition: none; }
 }
+
+/* Language switch (05/10/2026: three languages) */
+.site-nav .lang { display: inline-flex; gap: 2px; padding: 3px; }
+.site-nav .lang a, .site-nav .lang span { padding: 3px 7px; border-radius: 999px; font-size: 12px; font-weight: 600; letter-spacing: .04em; }
+.site-nav .lang span[aria-current] { color: var(--white); background: var(--line); }
