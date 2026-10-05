@@ -4,23 +4,26 @@ Static site for **Seize Apps**, served by GitHub Pages at https://seizeapps.com 
 
 ## Identity
 
-SEIZE 2026 (locked 2026-09-16): ribbon-S mark, Electric Blue `#007AFF`, Cyan `#22D3EE`, Deep Navy `#060E1F`, Stone `#E5E7EB`; SF Pro Display / SF Pro on Apple platforms, Inter elsewhere. Sources of truth live in the SeizeRepo: `brand/design-tokens.json` (v2.1), `brand/sheets/02-web-ui-system.png`, `brand/logo-masters/`. The mark here (`assets/seize-mark.png`, favicons) is cut from `01-s-mark-white-bg.png`; replace it with the SVG when the masters ship one.
+SEIZE 2026 (locked 2026-09-16): ribbon-S mark, Electric Blue `#007AFF`, Cyan `#22D3EE`, Deep Navy `#060E1F`, Stone `#E5E7EB`; SF Pro Display / SF Pro on Apple platforms, Inter elsewhere (self-hosted: `assets/fonts/inter-latin.woff2`, OFL; no request to Google). Sources of truth live in the SeizeRepo: `brand/design-tokens.json` (v2.1), `brand/sheets/02-web-ui-system.png`, `brand/logo-masters/`. The mark here (`assets/seize-mark.png`, favicons) is cut from `01-s-mark-white-bg.png`; replace it with the SVG when the masters ship one.
 
 ## Structure
 
 ```
-index.html            studio home: hero · Apps · Philosophy · Work with us · Studio · Contact
-apps/<slug>.html      one page per app (one per entry in `APPS`): icon, lede, screenshots, what it does, privacy
+index.html            studio home: hero (screenshot fan + icon marquee) · Apps (On the App Store / Coming soon) · Philosophy · Work with us · Studio · Contact
+apps/<slug>.html      one page per app (one per entry in `APPS`): icon, lede, screenshot rail, what it does, privacy, more apps
 privacy.html          privacy policy, one section per app (#cycle-timers … #atino)
 terms.html            terms of use
 es/… · fr/…           the same four kinds of page in Spanish and French (same paths; hreflang between the three)
-assets/site.css       the whole visual system (dark only)
+assets/site.css       the whole visual system (dark only, mobile first; motion rules at the end)
+assets/site.js        the only script (language memory, header state, pointer tilt); nothing depends on it
+assets/fonts/         Inter, latin subset, and its licence
+docs/                 design notes (docs/redesign-2026-10.md: references and rationale of the October 2026 redesign)
 assets/seize-mark.png · assets/og.jpg · favicon*.png · apple-touch-icon.png
 assets/icons/*.png    app icons, 256 px, from each app's AppIcon.png
 assets/shots/*.jpg    real screenshots, 600 px wide, JPEG 70, English simulator
 ```
 
-The HTML is **generated** by `tools/gen_site.py` (UI strings and app copy in English and Spanish; French in `tools/gen_site_fr.py`) with the legal bodies in `tools/gen_legal_copy.py` (EN), `tools/gen_legal_es.py` (ES) and `tools/gen_legal_fr.py` (FR); Garum's French legal pages (`/garum/confidentialite/`, `/garum/conditions/`) in `tools/gen_legal_criba_fr.py`. Sacapuntas' policy is Spanish only, like the app; Atino's (`gen_legal_atino.py`, `/atino/privacy/` and `/atino/privacidad/`) is English and Spanish; Roomy's (`gen_legal_roomy.py`, `/roomy/privacy/`) is English only. French typography: a no-break space (U+00A0) before `: ; ! ?` and inside « ». Edit the generators, run `python3 tools/gen_site.py`, commit the output. Don't hand-edit the HTML. Bump `CSS_V` in `gen_site.py` whenever `site.css` changes (cache-busting: the path is shared with the previous site).
+The HTML is **generated** by `tools/gen_site.py` (UI strings and app copy in English and Spanish; French in `tools/gen_site_fr.py`) with the legal bodies in `tools/gen_legal_copy.py` (EN), `tools/gen_legal_es.py` (ES) and `tools/gen_legal_fr.py` (FR); Garum's French legal pages (`/garum/confidentialite/`, `/garum/conditions/`) in `tools/gen_legal_criba_fr.py`. Sacapuntas' policy is Spanish only, like the app; Atino's (`gen_legal_atino.py`, `/atino/privacy/` and `/atino/privacidad/`) is English and Spanish; Roomy's (`gen_legal_roomy.py`, `/roomy/privacy/`) is English only. French typography: a no-break space (U+00A0) before `: ; ! ?` and inside « ». Edit the generators, run `python3 tools/gen_site.py`, commit the output. Don't hand-edit the HTML. Bump `CSS_V` in `gen_site.py` whenever `site.css` or `site.js` changes (cache-busting: the path is shared with the previous site). Every legal page goes through `legal_main()` in `gen_site.py`: it gives each `<h2>` an id and builds the sticky contents list shown on wide screens, without touching the text.
 
 ## Adding an app
 
@@ -46,10 +49,12 @@ retirada de la venta el 22/09 y ya vuelve a responder), Meso (6813842295), Grain
 y Garum (6816385891). Sin id porque `lookup` devuelve 0: Sacapuntas (6818098257), GamingHub
 (6761752010) y Atino (6818553139); Roomy no tiene id de ASC todavía.
 
-En la portada, cada tarjeta con `appstore` lleva además un icono redondo de la
-Store (`.store-icon`, arriba a la derecha) que enlaza a la ficha sin pasar por la
-página de la app. Es un `<a>` hermano de la tarjeta dentro de `.app-card-wrap`,
-porque un enlace no puede ir dentro de otro.
+En la portada las apps van en dos grupos que salen del mismo dato: «On the App Store»
+(con `appstore`) y «Coming soon» (sin él). Cada tarjeta del primer grupo lleva una
+píldora «App Store» (`.status.live`, arriba a la derecha) que enlaza a la ficha sin pasar
+por la página de la app. Es un `<a>` hermano de la tarjeta dentro de `.app-card-wrap`,
+porque un enlace no puede ir dentro de otro. En la página de una app sin id, en lugar
+del badge sale «Coming soon».
 
 ## Garum: enlaces para compartir (30/09/2026, Garum 0.0.26)
 
@@ -79,6 +84,6 @@ GitHub Pages no negocia idioma en el servidor, así que las páginas en inglés 
 script corto (`LANG_PICK` en `gen_site.py`): si la persona nunca eligió idioma con el selector, la lleva a la primera de
 las lenguas de su navegador que tenga versión, sacada de los `hreflang` de la propia página (sirve también para lo
 legal de Garum), y conserva el `#ancla`. Las URL en castellano o francés no se redirigen nunca: quien llega ahí pidió
-ese idioma. Pulsar el selector se recuerda (`localStorage`, clave `seize-lang`) y manda sobre el navegador. Sin
+ese idioma. Pulsar el selector se recuerda (`localStorage`, clave `seize-lang`, desde `assets/site.js`) y manda sobre el navegador. Sin
 geolocalización por IP: un país no es un idioma (Bélgica, Suiza, Canadá, el País Vasco). Sin JavaScript, o para los
 buscadores, la página se queda como está.
