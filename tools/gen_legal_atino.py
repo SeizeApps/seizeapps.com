@@ -10,7 +10,7 @@ GitHub Pages. Paths follow Garum's convention:
 The CONFIRM(U7) notes are lawyer to-dos and stay in the generated HTML as comments.
 Built with gen_site's chrome; run `python3 tools/gen_site.py`, which calls build_atino().
 """
-from gen_site import head, header, footer, write
+from gen_site import head, header, footer, write, legal_main
 
 PRIVACY = {
 'en': '''
@@ -161,5 +161,5 @@ def build_atino():
         canonical = f'atino/{slug}/'
         switch = {L: f'{root}atino/{s}/' for L, s in slugs.items()}
         html = (head(lang, title, desc, root, canonical, alts=alts) + header(lang, root, canonical, switch=switch)
-                + f'<main class="shell legal">\n{PRIVACY[lang]}\n</main>\n' + footer(lang, root))
+                + legal_main(lang, PRIVACY[lang]) + footer(lang, root))
         write(f'atino/{slug}/index.html', html)

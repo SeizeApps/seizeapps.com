@@ -3,7 +3,7 @@
 Ported from a hand-made page (4a9a712) into a generator on 05/10/2026; the text is unchanged.
 Built with gen_site's chrome; run `python3 tools/gen_site.py`, which calls build_roomy().
 """
-from gen_site import head, header, footer, write
+from gen_site import head, header, footer, write, legal_main
 
 TITLE = 'Roomy privacy — Seize Apps'
 DESC = 'Roomy privacy: photos stay on your iPhone. No accounts, no tracking, no personal data collected.'
@@ -54,5 +54,5 @@ def build_roomy():
     alts = {'en': f'https://seizeapps.com/{path}'}
     switch = {'es': f'{root}es/privacy.html', 'fr': f'{root}fr/privacy.html'}
     html = (head('en', TITLE, DESC, root, path, alts=alts) + header('en', root, path, switch=switch)
-            + f'<main class="shell legal">\n{BODY}\n</main>\n' + footer('en', root))
+            + legal_main('en', BODY) + footer('en', root))
     write(f'{path}index.html', html)

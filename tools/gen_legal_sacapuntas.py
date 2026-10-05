@@ -7,7 +7,7 @@ docs/app-ninos/04-normas-y-ley.md §4.8). Spanish only, like the app:
   /sacapuntas/privacidad/ninos/  the version for children
 Built with gen_site's chrome; run `python3 tools/gen_site.py`, which calls build_sacapuntas().
 """
-from gen_site import head, header, footer, write
+from gen_site import head, header, footer, write, legal_main
 
 UPDATED = 'En vigor desde el 4 de octubre de 2026'
 
@@ -98,5 +98,5 @@ def build_sacapuntas():
         alts = {'es': f'https://seizeapps.com/{path}'}
         switch = {'en': f'{root}privacy.html', 'fr': f'{root}fr/privacy.html'}
         html = (head('es', title, desc, root, path, alts=alts) + header('es', root, path, switch=switch)
-                + f'<main class="shell legal">\n{body.replace("{updated}", UPDATED)}\n</main>\n' + footer('es', root))
+                + legal_main('es', body.replace("{updated}", UPDATED)) + footer('es', root))
         write(f'{path}index.html', html)

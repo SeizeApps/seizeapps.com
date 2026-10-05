@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#060E1F">
+<meta name="color-scheme" content="dark">
 <meta name="description" content="Une carte d’adresses qui ont une raison d’être là : des classiques, des établis et des nouveaux qui ont un parti pris, chacun avec son pourquoi, et tout est signé.">
 <link rel="canonical" href="https://seizeapps.com/fr/apps/garum.html">
 <link rel="alternate" hreflang="en" href="https://seizeapps.com/apps/garum.html">
@@ -24,58 +25,76 @@
 <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16.png">
 <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="../../assets/site.css?v=2026-10-05">
+<link rel="stylesheet" href="../../assets/site.css?v=2026-10-05.2">
+<script src="../../assets/site.js?v=2026-10-05.2" defer></script>
 </head>
 <body>
-<header class="site-header shell">
-  <a class="brand" href="../../fr/index.html" aria-label="Seize">
-    <img class="brand-mark" src="../../assets/seize-mark.png?v=1" alt="" width="36" height="36">
-    <span class="wordmark">SEIZE</span>
-  </a>
-  <nav class="site-nav" aria-label="Main">
-    <a href="../../fr/index.html#apps" aria-current="page">Apps</a>
-    <a href="../../fr/index.html#philosophy">Philosophie</a>
-    <a href="../../fr/index.html#work">Travailler avec nous</a>
-    <a href="../../fr/index.html#studio">Studio</a>
-    <span class="lang"><a href="../../apps/garum.html" hreflang="en" lang="en" aria-label="Read in English">EN</a><a href="../../es/apps/garum.html" hreflang="es" lang="es" aria-label="Leer en castellano">ES</a><span aria-current="true">FR</span></span>
-    <a class="button small" href="mailto:hello@seizeapps.com">Écris-nous</a>
-  </nav>
+<a class="skip" href="#main">Aller au contenu</a>
+<header class="site-header">
+  <div class="shell header-inner">
+    <a class="brand" href="../../fr/index.html" aria-label="Seize">
+      <img class="brand-mark" src="../../assets/seize-mark.png?v=1" alt="" width="32" height="32">
+      <span class="wordmark">SEIZE</span>
+    </a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="../../fr/index.html#apps" aria-current="page">Apps</a>
+      <a href="../../fr/index.html#philosophy">Philosophie</a>
+      <a href="../../fr/index.html#work">Travailler avec nous</a>
+      <a href="../../fr/index.html#studio">Studio</a>
+    </nav>
+    <div class="header-tools">
+      <div class="lang" role="group" aria-label="Langue"><a href="../../apps/garum.html" hreflang="en" lang="en" aria-label="Read in English">EN</a><a href="../../es/apps/garum.html" hreflang="es" lang="es" aria-label="Leer en castellano">ES</a><span aria-current="true">FR</span></div>
+      <a class="button small" href="mailto:hello@seizeapps.com">Écris-nous</a>
+    </div>
+  </div>
 </header>
-<main>
+<main id="main">
   <section class="app-hero shell" aria-labelledby="app-title">
-    <div class="app-hero-copy">
-      <img class="icon" src="../../assets/icons/garum.png" alt="" width="96" height="96">
-      <p class="eyebrow">Seize Apps · iOS</p>
-      <h1 id="app-title">Garum</h1>
+    <div class="app-hero-head">
+      <img class="icon" src="../../assets/icons/garum.png" alt="" width="128" height="128" fetchpriority="high" style="view-transition-name:icon-garum">
+      <div><p class="eyebrow">Seize Apps · iOS</p><h1 id="app-title">Garum</h1></div>
+    </div>
+    <div class="app-hero-body">
       <p class="lede"><strong>Garum</strong> est une carte où les adresses entrent au mérite, pas grâce aux étoiles ni à la publicité. Trois listes selon l’ancienneté — les classiques, ouverts depuis plus de 25 ans, les établis, entre 3 et 25 ans, et les nouveaux, de moins de 3 ans, qui ont un parti pris — et les adresses passent d’une liste à la suivante toutes seules, avec les années. Chacune porte les raisons de sa présence et des notes signées par qui s’en porte garant. Tout le monde peut proposer une adresse ; elle entre quand un Curator la signe ou que suffisamment de personnes de confiance la recommandent.</p>
       <div class="app-meta"><span>iOS 26+</span><span>Gratuit</span><span>Plans</span><span>Français · Anglais · Espagnol</span></div>
-      <a class="store-badge button" href="https://apps.apple.com/app/id6816385891">Télécharger dans l’App Store</a>
+      <div class="cta-row"><a class="store-badge button" href="https://apps.apple.com/app/id6816385891"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16.37 12.72c-.02-2.3 1.88-3.41 1.97-3.46-1.07-1.57-2.74-1.79-3.34-1.81-1.42-.14-2.77.84-3.49.84-.72 0-1.83-.82-3.01-.8-1.55.02-2.98.9-3.77 2.29-1.61 2.79-.41 6.92 1.16 9.18.77 1.11 1.68 2.35 2.87 2.31 1.15-.05 1.59-.75 2.98-.75 1.39 0 1.78.75 3 .72 1.24-.02 2.03-1.13 2.79-2.24.88-1.29 1.24-2.53 1.26-2.6-.03-.01-2.41-.93-2.42-3.68zM14.07 5.94c.63-.77 1.06-1.83.94-2.9-.91.04-2.02.61-2.67 1.37-.58.67-1.1 1.76-.96 2.8 1.02.08 2.05-.52 2.69-1.27z"/></svg><span>Télécharger dans l’App Store</span></a></div>
       
     </div>
   </section>
-  <section class="shell" aria-label="Captures d’écran"><div class="shots shots-4"><figure><div class="phone"><img src="../../assets/shots/garum-01-map.jpg" alt="Capture d’écran de Garum : La carte : classiques, établis et nouveaux" loading="lazy" width="552" height="1200"></div><figcaption>La carte : classiques, établis et nouveaux</figcaption></figure><figure><div class="phone"><img src="../../assets/shots/garum-02-why.jpg" alt="Capture d’écran de Garum : Chaque adresse avec ses motifs et des notes signées" loading="lazy" width="552" height="1200"></div><figcaption>Chaque adresse avec ses motifs et des notes signées</figcaption></figure><figure><div class="phone"><img src="../../assets/shots/garum-03-detail.jpg" alt="Capture d’écran de Garum : Quoi commander, quand y aller, s’il faut réserver" loading="lazy" width="552" height="1200"></div><figcaption>Quoi commander, quand y aller, s’il faut réserver</figcaption></figure><figure><div class="phone"><img src="../../assets/shots/garum-04-signed.jpg" alt="Capture d’écran de Garum : Tout est signé : qui recommande quoi" loading="lazy" width="552" height="1200"></div><figcaption>Tout est signé : qui recommande quoi</figcaption></figure></div></section>
 
-  <section class="section shell" aria-labelledby="what-title">
-    <div class="section-head">
-      <div><p class="eyebrow">Ce qu’elle fait</p><h2 id="what-title">Une seule chose, <span>bien faite.</span></h2></div>
-    </div>
-    <div class="features"><div class="feature"><span class="num">01 / POURQUOI</span><h3>Chaque adresse, avec son pourquoi</h3><p>Une liste fermée de motifs — un classique, le produit, le prix, le lieu — et des notes signées, jamais de notation. Horaires, téléphone et itinéraire arrivent en direct depuis Plans.</p></div><div class="feature"><span class="num">02 / TROUVER</span><h3>Ce qui te fait envie, maintenant</h3><p>Filtre par liste, type d’adresse, cuisine, prix et moment, ou selon ce qui convient en ce moment même. Quoi commander et s’il faut réserver : c’est sur la fiche.</p></div><div class="feature"><span class="num">03 / SIGNÉ</span><h3>Tout est signé</h3><p>Vois qui recommande chaque adresse et suis des gens qui ont tes goûts. Propose ce qui manque ; si ça n’entre pas, on te dit pourquoi. Les Curators peuvent aussi proposer de retirer une adresse qui a fermé ou qui n’est plus ce qu’elle était, et la modération décide, motif à l’appui.</p></div></div>
+  <section class="gallery" aria-label="Captures d’écran">
+    <ul class="shots-rail" role="list">
+      <li class="shot reveal" style="--i:0"><figure><div class="phone" data-tilt><img src="../../assets/shots/garum-01-map.jpg" alt="Capture d’écran de Garum : La carte : classiques, établis et nouveaux" width="600" height="1304" loading="lazy" decoding="async"></div><figcaption>La carte : classiques, établis et nouveaux</figcaption></figure></li>
+      <li class="shot reveal" style="--i:1"><figure><div class="phone" data-tilt><img src="../../assets/shots/garum-02-why.jpg" alt="Capture d’écran de Garum : Chaque adresse avec ses motifs et des notes signées" width="600" height="1304" loading="lazy" decoding="async"></div><figcaption>Chaque adresse avec ses motifs et des notes signées</figcaption></figure></li>
+      <li class="shot reveal" style="--i:2"><figure><div class="phone" data-tilt><img src="../../assets/shots/garum-03-detail.jpg" alt="Capture d’écran de Garum : Quoi commander, quand y aller, s’il faut réserver" width="600" height="1304" loading="lazy" decoding="async"></div><figcaption>Quoi commander, quand y aller, s’il faut réserver</figcaption></figure></li>
+      <li class="shot reveal" style="--i:3"><figure><div class="phone" data-tilt><img src="../../assets/shots/garum-04-signed.jpg" alt="Capture d’écran de Garum : Tout est signé : qui recommande quoi" width="600" height="1304" loading="lazy" decoding="async"></div><figcaption>Tout est signé : qui recommande quoi</figcaption></figure></li>
+    </ul>
   </section>
 
-  <section class="shell" aria-labelledby="privacy-title">
-    <div class="privacy-box">
-      <div><p class="eyebrow">Confidentialité</p><h3 id="privacy-title" style="margin-bottom:10px">À toi, pas à nous.</h3><p>Regarder la carte ne demande aucun compte. Pour voir pourquoi chaque adresse est là et pour contribuer, tu te connectes avec Apple, sans donner ton e-mail : tu apparais avec le nom que tu partages avec Apple (ou celui que tu choisis ensuite) et un nom d’utilisateur, et ce que tu apportes est publié, sur un serveur situé dans l’UE. Pas de publicité, pas de mesure d’audience. Garum a sa propre politique de confidentialité et ses propres conditions d’utilisation.</p><p class="note" style="margin-top:14px">Une app de Seize Apps.</p></div>
+  <section class="section shell" aria-labelledby="what-title">
+    <div class="section-head reveal">
+      <div><p class="eyebrow">Ce qu’elle fait</p><h2 id="what-title">Une seule chose, <span>bien faite.</span></h2></div>
+    </div>
+    <ul class="features" role="list"><li class="feature reveal" style="--i:0"><span class="num">01 / POURQUOI</span><h3>Chaque adresse, avec son pourquoi</h3><p>Une liste fermée de motifs — un classique, le produit, le prix, le lieu — et des notes signées, jamais de notation. Horaires, téléphone et itinéraire arrivent en direct depuis Plans.</p></li><li class="feature reveal" style="--i:1"><span class="num">02 / TROUVER</span><h3>Ce qui te fait envie, maintenant</h3><p>Filtre par liste, type d’adresse, cuisine, prix et moment, ou selon ce qui convient en ce moment même. Quoi commander et s’il faut réserver : c’est sur la fiche.</p></li><li class="feature reveal" style="--i:2"><span class="num">03 / SIGNÉ</span><h3>Tout est signé</h3><p>Vois qui recommande chaque adresse et suis des gens qui ont tes goûts. Propose ce qui manque ; si ça n’entre pas, on te dit pourquoi. Les Curators peuvent aussi proposer de retirer une adresse qui a fermé ou qui n’est plus ce qu’elle était, et la modération décide, motif à l’appui.</p></li></ul>
+  </section>
+
+  <section class="section shell" aria-labelledby="privacy-title">
+    <div class="privacy-box reveal">
+      <div class="privacy-glyph" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M12 3 4.5 6v5.5c0 4.6 3.1 8.3 7.5 9.5 4.4-1.2 7.5-4.9 7.5-9.5V6L12 3Z"/><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="m8.8 12.2 2.3 2.3 4.3-4.6"/></svg></div>
+      <div><p class="eyebrow">Confidentialité</p><h2 id="privacy-title">À toi, pas à nous.</h2><p>Regarder la carte ne demande aucun compte. Pour voir pourquoi chaque adresse est là et pour contribuer, tu te connectes avec Apple, sans donner ton e-mail : tu apparais avec le nom que tu partages avec Apple (ou celui que tu choisis ensuite) et un nom d’utilisateur, et ce que tu apportes est publié, sur un serveur situé dans l’UE. Pas de publicité, pas de mesure d’audience. Garum a sa propre politique de confidentialité et ses propres conditions d’utilisation.</p><p class="note">Une app de Seize Apps.</p></div>
       <div class="links"><a class="button ghost" href="../../fr/../garum/confidentialite/">Politique de confidentialité</a><a class="button ghost" href="mailto:hello@seizeapps.com?subject=Garum">Contact</a></div>
     </div>
+  </section>
+
+  <section class="section shell more-apps" aria-labelledby="more-title">
+    <h2 id="more-title" class="more-title">Aussi chez Seize</h2>
+    <ul class="more-list" role="list"><li><a href="../../fr/apps/cycle-timers.html"><img src="../../assets/icons/cycle-timers.png" alt="" width="56" height="56" loading="lazy" decoding="async"><span>Cycle Timers</span></a></li><li><a href="../../fr/apps/tempo.html"><img src="../../assets/icons/tempo.png" alt="" width="56" height="56" loading="lazy" decoding="async"><span>Tempo</span></a></li><li><a href="../../fr/apps/drip.html"><img src="../../assets/icons/drip.png" alt="" width="56" height="56" loading="lazy" decoding="async"><span>Drip</span></a></li><li><a href="../../fr/apps/anchor.html"><img src="../../assets/icons/anchor.png" alt="" width="56" height="56" loading="lazy" decoding="async"><span>Anchor</span></a></li><li><a href="../../fr/apps/kover.html"><img src="../../assets/icons/kover.png" alt="" width="56" height="56" loading="lazy" decoding="async"><span>Kover</span></a></li><li><a href="../../fr/apps/tandem.html"><img src="../../assets/icons/tandem.png" alt="" width="56" height="56" loading="lazy" decoding="async"><span>Tandem</span></a></li><li><a href="../../fr/apps/meso.html"><img src="../../assets/icons/meso.png" alt="" width="56" height="56" loading="lazy" decoding="async"><span>Meso</span></a></li><li><a href="../../fr/apps/grain.html"><img src="../../assets/icons/grain.png" alt="" width="56" height="56" loading="lazy" decoding="async"><span>Grain</span></a></li><li><a href="../../fr/apps/sacapuntas.html"><img src="../../assets/icons/sacapuntas.png" alt="" width="56" height="56" loading="lazy" decoding="async"><span>Sacapuntas</span></a></li><li><a href="../../fr/apps/gaminghub.html"><img src="../../assets/icons/gaminghub.png" alt="" width="56" height="56" loading="lazy" decoding="async"><span>GamingHub</span></a></li><li><a href="../../fr/apps/atino.html"><img src="../../assets/icons/atino.png" alt="" width="56" height="56" loading="lazy" decoding="async"><span>Atino</span></a></li><li><a href="../../fr/apps/roomy.html"><img src="../../assets/icons/roomy.png" alt="" width="56" height="56" loading="lazy" decoding="async"><span>Roomy</span></a></li></ul>
   </section>
 </main>
 <footer class="site-footer">
   <div class="footer-inner shell">
     <div class="footer-brand">
-      <img src="../../assets/seize-mark.png?v=1" alt="" width="28" height="28">
+      <img src="../../assets/seize-mark.png?v=1" alt="" width="32" height="32" loading="lazy" decoding="async">
       <div>
         <p class="footer-signoff">Des apps pour des lendemains meilleurs.</p>
         <p class="copyright">© 2026 Seize Apps · Izotz Cristobal Mota &amp; Sendoa Sola · Pays basque, Espagne</p>
@@ -83,6 +102,7 @@
     </div>
     <nav class="footer-links" aria-label="Footer">
       <a href="../../fr/index.html#apps">Apps</a>
+      <a href="../../fr/index.html#studio">Studio</a>
       <a href="../../fr/privacy.html">Confidentialité</a>
       <a href="../../fr/terms.html">Conditions d’utilisation</a>
       <a href="https://github.com/SeizeApps" rel="noopener">GitHub</a>
@@ -90,6 +110,5 @@
     </nav>
   </div>
 </footer>
-<script>document.querySelectorAll('.site-nav .lang a[hreflang]').forEach(function(a){a.addEventListener('click',function(){try{localStorage.setItem('seize-lang',a.hreflang)}catch(e){}})});</script>
 </body>
 </html>

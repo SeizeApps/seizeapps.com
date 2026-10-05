@@ -39,6 +39,8 @@ UI_FR = dict(
    privacy_eyebrow='Confidentialité', privacy_h3='À toi, pas à nous.', published_by='Une app de Seize Apps.',
    privacy_policy='Politique de confidentialité', contact='Contact', store_badge='Télécharger dans l’App Store', store_icon='{name} dans l’App Store',
    shot_alt='Capture d’écran de {name} : {cap}',
+   skip='Aller au contenu', lang_label='Langue', soon='Bientôt disponible', live_title='Sur l’App Store', more_apps='Aussi chez Seize', toc_title='Sur cette page',
+   hero_proof='{n} apps · {live} sur l’App Store · Conçues au Pays basque',
 )
 
 APPS_FR = {

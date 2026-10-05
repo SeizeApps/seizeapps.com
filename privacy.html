@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#060E1F">
+<meta name="color-scheme" content="dark">
 <meta name="description" content="How Seize apps handle your data: no accounts, no analytics, everything on your device and in your own iCloud. Per-app details for Cycle Timers, Tempo, Drip, Anchor, Kover, Tandem, Meso, Grain, GamingHub and Atino.">
 <link rel="canonical" href="https://seizeapps.com/privacy.html">
 <link rel="alternate" hreflang="en" href="https://seizeapps.com/privacy.html">
@@ -25,27 +26,31 @@
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="assets/site.css?v=2026-10-05">
+<link rel="stylesheet" href="assets/site.css?v=2026-10-05.2">
+<script src="assets/site.js?v=2026-10-05.2" defer></script>
 </head>
 <body>
-<header class="site-header shell">
-  <a class="brand" href="index.html" aria-label="Seize">
-    <img class="brand-mark" src="assets/seize-mark.png?v=1" alt="" width="36" height="36">
-    <span class="wordmark">SEIZE</span>
-  </a>
-  <nav class="site-nav" aria-label="Main">
-    <a href="index.html#apps">Apps</a>
-    <a href="index.html#philosophy">Philosophy</a>
-    <a href="index.html#work">Work with us</a>
-    <a href="index.html#studio">Studio</a>
-    <span class="lang"><span aria-current="true">EN</span><a href="es/privacy.html" hreflang="es" lang="es" aria-label="Leer en castellano">ES</a><a href="fr/privacy.html" hreflang="fr" lang="fr" aria-label="Lire en français">FR</a></span>
-    <a class="button small" href="mailto:hello@seizeapps.com">Get in touch</a>
-  </nav>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="shell header-inner">
+    <a class="brand" href="index.html" aria-label="Seize">
+      <img class="brand-mark" src="assets/seize-mark.png?v=1" alt="" width="32" height="32">
+      <span class="wordmark">SEIZE</span>
+    </a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="index.html#apps">Apps</a>
+      <a href="index.html#philosophy">Philosophy</a>
+      <a href="index.html#work">Work with us</a>
+      <a href="index.html#studio">Studio</a>
+    </nav>
+    <div class="header-tools">
+      <div class="lang" role="group" aria-label="Language"><span aria-current="true">EN</span><a href="es/privacy.html" hreflang="es" lang="es" aria-label="Leer en castellano">ES</a><a href="fr/privacy.html" hreflang="fr" lang="fr" aria-label="Lire en français">FR</a></div>
+      <a class="button small" href="mailto:hello@seizeapps.com">Get in touch</a>
+    </div>
+  </div>
 </header>
-<main class="shell legal">
+<main id="main" class="shell legal-page">
+<article class="legal">
 
   <p class="eyebrow">Legal</p>
   <h1>Privacy Policy</h1>
@@ -60,20 +65,20 @@
 
   <p><strong>Atino is another exception:</strong> your CV, redacted on your iPhone, is sent to third-party ranking services through a Seize relay when you allow it, so it has <a href="atino/privacy/">its own privacy policy</a>.</p>
 
-  <h2>Who we are</h2>
+  <h2 id="who-we-are">Who we are</h2>
   <p>Seize Apps is an independent app studio run by <strong>Izotz Cristobal Mota</strong> and <strong>Sendoa Sola</strong> from the Basque Country, Spain ("we", "us"). This policy covers all Seize apps distributed through the Apple App Store and TestFlight — currently <a href="#cycle-timers">Cycle Timers</a>, <a href="#tempo">Tempo</a>, <a href="#drip">Drip</a>, <a href="#anchor">Anchor</a>, <a href="#kover">Kover</a>, <a href="#tandem">Tandem</a>, <a href="#meso">Meso</a>, <a href="#grain">Grain</a>, <a href="#gaminghub">GamingHub</a> and <a href="#atino">Atino</a>. Each app is published on the App Store by one of us: the seller named in its App Store listing is the data controller for that app, and is named in its section below. Where an individual app differs, its section is the authoritative one.</p>
 
-  <h2>What we collect</h2>
+  <h2 id="what-we-collect">What we collect</h2>
   <p><strong>Nothing, by default.</strong> Our apps do not require an account, do not include third-party analytics, advertising, or tracking SDKs, and do not transmit the content you create to us. We cannot see your timers, work sessions, expenses, receipts, routines, or any other content you create in a Seize app.</p>
   <p>Purchases are processed entirely by Apple. Where an app sells a one-time "Pro" unlock, the app checks that purchase with Apple's StoreKit on your device and remembers only whether it is active; we never see who bought it. We receive aggregated, anonymized sales and crash statistics from Apple's App Store Connect (for example, the number of downloads by country). These statistics contain no personal identifiers.</p>
 
-  <h2>Where your data lives</h2>
+  <h2 id="where-your-data-lives">Where your data lives</h2>
   <ul>
     <li><strong>On your device.</strong> App content is stored locally, in the app's private container (and, for apps with widgets, a shared App Group container that only the app and its own widget can read).</li>
     <li><strong>In your iCloud.</strong> Our apps sync through your personal iCloud account under Apple's terms, unless you turn it off in Settings or the app's own section below says otherwise — we never have access to it.</li>
   </ul>
 
-  <h2>Per-app details</h2>
+  <h2 id="per-app-details">Per-app details</h2>
 
   <section id="cycle-timers">
   <h3>Cycle Timers</h3>
@@ -161,26 +166,28 @@
   <p><em>Published on the App Store by Izotz Cristobal Mota.</em></p>
   </section>
 
-  <h2>Notifications</h2>
+  <h2 id="notifications">Notifications</h2>
   <p>Apps that remind you of things use local notifications, scheduled and delivered on your device. We do not operate push-notification servers for these features.</p>
 
-  <h2>Your rights</h2>
+  <h2 id="your-rights">Your rights</h2>
   <p>Because your data lives on your device, you exercise your rights directly: deleting content in an app deletes it; deleting the app deletes its container; turning iCloud sync off and deleting the app removes it from iCloud as well (or manage it under Settings › Apple Account › iCloud). Under the GDPR you also have rights of access, rectification, erasure, and portability — since we hold no personal data about you, there is typically nothing for us to produce, but you can always reach us with questions or requests at <a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a>.</p>
 
-  <h2>Children</h2>
+  <h2 id="children">Children</h2>
   <p>Our apps are general-audience utilities and do not knowingly collect personal information from anyone, including children.</p>
 
-  <h2>Changes</h2>
+  <h2 id="changes">Changes</h2>
   <p>If a future app or feature changes any of the above (for example, an app that adds an online service), we will update this policy and the app's App Store privacy label before that feature ships.</p>
 
-  <h2>Contact</h2>
+  <h2 id="contact">Contact</h2>
   <p>Seize Apps · Izotz Cristobal Mota &amp; Sendoa Sola<br><a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a></p>
 
+</article>
+<aside class="legal-aside"><nav aria-label="On this page"><p class="toc-label">On this page</p><ol role="list"><li><a href="#who-we-are">Who we are</a></li><li><a href="#what-we-collect">What we collect</a></li><li><a href="#where-your-data-lives">Where your data lives</a></li><li><a href="#per-app-details">Per-app details</a></li><li><a href="#notifications">Notifications</a></li><li><a href="#your-rights">Your rights</a></li><li><a href="#children">Children</a></li><li><a href="#changes">Changes</a></li><li><a href="#contact">Contact</a></li></ol><p class="toc-label">Apps</p><div class="toc-apps"><a href="#cycle-timers">Cycle Timers</a><a href="#tempo">Tempo</a><a href="#drip">Drip</a><a href="#anchor">Anchor</a><a href="#kover">Kover</a><a href="#tandem">Tandem</a><a href="#meso">Meso</a><a href="#grain">Grain</a><a href="#gaminghub">GamingHub</a><a href="#atino">Atino</a></div></nav></aside>
 </main>
 <footer class="site-footer">
   <div class="footer-inner shell">
     <div class="footer-brand">
-      <img src="assets/seize-mark.png?v=1" alt="" width="28" height="28">
+      <img src="assets/seize-mark.png?v=1" alt="" width="32" height="32" loading="lazy" decoding="async">
       <div>
         <p class="footer-signoff">Apps for a brighter tomorrow.</p>
         <p class="copyright">© 2026 Seize Apps · Izotz Cristobal Mota &amp; Sendoa Sola · Basque Country, Spain</p>
@@ -188,6 +195,7 @@
     </div>
     <nav class="footer-links" aria-label="Footer">
       <a href="index.html#apps">Apps</a>
+      <a href="index.html#studio">Studio</a>
       <a href="privacy.html">Privacy</a>
       <a href="terms.html">Terms</a>
       <a href="https://github.com/SeizeApps" rel="noopener">GitHub</a>
@@ -195,6 +203,5 @@
     </nav>
   </div>
 </footer>
-<script>document.querySelectorAll('.site-nav .lang a[hreflang]').forEach(function(a){a.addEventListener('click',function(){try{localStorage.setItem('seize-lang',a.hreflang)}catch(e){}})});</script>
 </body>
 </html>

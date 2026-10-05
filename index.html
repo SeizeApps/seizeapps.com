@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#060E1F">
+<meta name="color-scheme" content="dark">
 <meta name="description" content="Seize designs and builds exceptional iOS apps that make life better: Cycle Timers, Tempo, Drip, Anchor, Kover, Tandem, Meso, Grain, Garum, Sacapuntas, GamingHub, Atino and Roomy. An independent studio from the Basque Country that also builds apps and websites for clients.">
 <link rel="canonical" href="https://seizeapps.com/">
 <link rel="alternate" hreflang="en" href="https://seizeapps.com/">
@@ -25,232 +26,228 @@
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="assets/site.css?v=2026-10-05">
+<link rel="preload" as="image" href="assets/shots/tempo-01-welcome.jpg" fetchpriority="high">
+<link rel="stylesheet" href="assets/site.css?v=2026-10-05.2">
+<script src="assets/site.js?v=2026-10-05.2" defer></script>
 </head>
 <body>
-<header class="site-header shell">
-  <a class="brand" href="index.html" aria-label="Seize">
-    <img class="brand-mark" src="assets/seize-mark.png?v=1" alt="" width="36" height="36">
-    <span class="wordmark">SEIZE</span>
-  </a>
-  <nav class="site-nav" aria-label="Main">
-    <a href="index.html#apps">Apps</a>
-    <a href="index.html#philosophy">Philosophy</a>
-    <a href="index.html#work">Work with us</a>
-    <a href="index.html#studio">Studio</a>
-    <span class="lang"><span aria-current="true">EN</span><a href="es/index.html" hreflang="es" lang="es" aria-label="Leer en castellano">ES</a><a href="fr/index.html" hreflang="fr" lang="fr" aria-label="Lire en français">FR</a></span>
-    <a class="button small" href="mailto:hello@seizeapps.com">Get in touch</a>
-  </nav>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="shell header-inner">
+    <a class="brand" href="index.html" aria-label="Seize">
+      <img class="brand-mark" src="assets/seize-mark.png?v=1" alt="" width="32" height="32">
+      <span class="wordmark">SEIZE</span>
+    </a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="index.html#apps">Apps</a>
+      <a href="index.html#philosophy">Philosophy</a>
+      <a href="index.html#work">Work with us</a>
+      <a href="index.html#studio">Studio</a>
+    </nav>
+    <div class="header-tools">
+      <div class="lang" role="group" aria-label="Language"><span aria-current="true">EN</span><a href="es/index.html" hreflang="es" lang="es" aria-label="Leer en castellano">ES</a><a href="fr/index.html" hreflang="fr" lang="fr" aria-label="Lire en français">FR</a></div>
+      <a class="button small" href="mailto:hello@seizeapps.com">Get in touch</a>
+    </div>
+  </div>
 </header>
-<main>
-  <section class="hero" aria-labelledby="hero-title">
-    <svg class="wave" viewBox="0 0 1440 420" preserveAspectRatio="none" aria-hidden="true">
-  <defs>
-    <linearGradient id="wg" x1="0" x2="1" y1="0" y2="0">
-      <stop offset="0" stop-color="#007AFF" stop-opacity="0"/>
-      <stop offset=".45" stop-color="#007AFF" stop-opacity=".55"/>
-      <stop offset=".75" stop-color="#22D3EE" stop-opacity=".7"/>
-      <stop offset="1" stop-color="#22D3EE" stop-opacity="0"/>
-    </linearGradient>
-  </defs>
-  <path d="M0 300 C 240 200, 420 380, 700 260 S 1120 120, 1440 240" fill="none" stroke="url(#wg)" stroke-width="2"/>
-  <path d="M0 340 C 260 240, 460 420, 760 300 S 1160 160, 1440 280" fill="none" stroke="url(#wg)" stroke-width="1.5" opacity=".6"/>
-  <path d="M0 260 C 220 160, 400 340, 660 220 S 1080 80, 1440 200" fill="none" stroke="url(#wg)" stroke-width="1" opacity=".4"/>
-</svg>
+<main id="main">
+  <section class="hero" aria-labelledby="hero-title" data-tilt>
     <div class="shell hero-grid">
       <div class="hero-copy">
-        <p class="eyebrow">Apps for a brighter tomorrow</p>
-        <h1 id="hero-title">Ideas into <span>extraordinary.</span></h1>
-        <p class="lede">We design and build exceptional iOS apps that make life better. Small, native and private by design — each one does a single job, beautifully. And we build the same way for others.</p>
-        <div class="cta-row">
+        <p class="eyebrow" style="--i:0">Apps for a brighter tomorrow</p>
+        <h1 id="hero-title" style="--i:1">Ideas into <span>extraordinary.</span></h1>
+        <p class="lede" style="--i:2">We design and build exceptional iOS apps that make life better. Small, native and private by design — each one does a single job, beautifully. And we build the same way for others.</p>
+        <div class="cta-row" style="--i:3">
           <a class="button" href="#apps">Explore our apps</a>
           <a class="button ghost" href="#work">Work with us</a>
         </div>
+        <p class="hero-proof" style="--i:4">13 apps · 9 on the App Store · Made in the Basque Country</p>
       </div>
-      <div class="hero-phone" aria-hidden="true">
-        <div class="phone"><img src="assets/shots/anchor-01-home.jpg" alt="" width="552" height="1200"></div>
-      </div>
+      <div class="hero-stage" aria-hidden="true"><div class="device device-left"><div class="phone"><img src="assets/shots/drip-01-dashboard.jpg" alt="" width="600" height="1304" decoding="async"></div></div><div class="device device-right"><div class="phone"><img src="assets/shots/garum-01-map.jpg" alt="" width="600" height="1304" decoding="async"></div></div><div class="device device-front"><div class="phone"><img src="assets/shots/tempo-01-welcome.jpg" alt="" width="600" height="1303" fetchpriority="high" decoding="async"></div></div></div>
     </div>
+    <div class="marquee" aria-hidden="true"><div class="marquee-inner"><ul><li><img src="assets/icons/cycle-timers.png" alt="" width="56" height="56" decoding="async"><span>Cycle Timers</span></li><li><img src="assets/icons/tempo.png" alt="" width="56" height="56" decoding="async"><span>Tempo</span></li><li><img src="assets/icons/drip.png" alt="" width="56" height="56" decoding="async"><span>Drip</span></li><li><img src="assets/icons/anchor.png" alt="" width="56" height="56" decoding="async"><span>Anchor</span></li><li><img src="assets/icons/kover.png" alt="" width="56" height="56" decoding="async"><span>Kover</span></li><li><img src="assets/icons/tandem.png" alt="" width="56" height="56" decoding="async"><span>Tandem</span></li><li><img src="assets/icons/meso.png" alt="" width="56" height="56" decoding="async"><span>Meso</span></li><li><img src="assets/icons/grain.png" alt="" width="56" height="56" decoding="async"><span>Grain</span></li><li><img src="assets/icons/garum.png" alt="" width="56" height="56" decoding="async"><span>Garum</span></li><li><img src="assets/icons/sacapuntas.png" alt="" width="56" height="56" decoding="async"><span>Sacapuntas</span></li><li><img src="assets/icons/gaminghub.png" alt="" width="56" height="56" decoding="async"><span>GamingHub</span></li><li><img src="assets/icons/atino.png" alt="" width="56" height="56" decoding="async"><span>Atino</span></li><li><img src="assets/icons/roomy.png" alt="" width="56" height="56" decoding="async"><span>Roomy</span></li></ul><ul><li><img src="assets/icons/cycle-timers.png" alt="" width="56" height="56" decoding="async"><span>Cycle Timers</span></li><li><img src="assets/icons/tempo.png" alt="" width="56" height="56" decoding="async"><span>Tempo</span></li><li><img src="assets/icons/drip.png" alt="" width="56" height="56" decoding="async"><span>Drip</span></li><li><img src="assets/icons/anchor.png" alt="" width="56" height="56" decoding="async"><span>Anchor</span></li><li><img src="assets/icons/kover.png" alt="" width="56" height="56" decoding="async"><span>Kover</span></li><li><img src="assets/icons/tandem.png" alt="" width="56" height="56" decoding="async"><span>Tandem</span></li><li><img src="assets/icons/meso.png" alt="" width="56" height="56" decoding="async"><span>Meso</span></li><li><img src="assets/icons/grain.png" alt="" width="56" height="56" decoding="async"><span>Grain</span></li><li><img src="assets/icons/garum.png" alt="" width="56" height="56" decoding="async"><span>Garum</span></li><li><img src="assets/icons/sacapuntas.png" alt="" width="56" height="56" decoding="async"><span>Sacapuntas</span></li><li><img src="assets/icons/gaminghub.png" alt="" width="56" height="56" decoding="async"><span>GamingHub</span></li><li><img src="assets/icons/atino.png" alt="" width="56" height="56" decoding="async"><span>Atino</span></li><li><img src="assets/icons/roomy.png" alt="" width="56" height="56" decoding="async"><span>Roomy</span></li></ul></div></div>
   </section>
 
   <section class="section shell" id="apps" aria-labelledby="apps-title">
-    <div class="section-head">
+    <div class="section-head reveal">
       <div><p class="eyebrow">Apps</p><h2 id="apps-title">Thirteen apps, <span>thirteen jobs.</span></h2></div>
       <p>Household rhythms, the working day, recurring money, recovery, warranties, the bills a couple shares, the training block, the macros you eat and the places worth the trip. Different problems, one way of building: a screen you understand at a glance, only the data the job needs, Spanish and English from day one.</p>
     </div>
-    <div class="app-grid">
-    <div class="app-card-wrap">
-    <a class="app-card" href="apps/cycle-timers.html">
-      <img src="assets/icons/cycle-timers.png" alt="" width="64" height="64">
-      <h3>Cycle Timers</h3>
-      <p class="one-liner">Recurring household timers you read at a glance — from the Home Screen widget, without opening the app.</p>
-      <div class="tags"><span>Household</span><span>Widgets</span><span>iOS</span></div>
-      <span class="card-more">Learn more <span aria-hidden="true">→</span></span>
-    </a><a class="store-icon" href="https://apps.apple.com/app/id6796827400" aria-label="Cycle Timers on the App Store" title="Cycle Timers on the App Store"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16.37 12.72c-.02-2.3 1.88-3.41 1.97-3.46-1.07-1.57-2.74-1.79-3.34-1.81-1.42-.14-2.77.84-3.49.84-.72 0-1.83-.82-3.01-.8-1.55.02-2.98.9-3.77 2.29-1.61 2.79-.41 6.92 1.16 9.18.77 1.11 1.68 2.35 2.87 2.31 1.15-.05 1.59-.75 2.98-.75 1.39 0 1.78.75 3 .72 1.24-.02 2.03-1.13 2.79-2.24.88-1.29 1.24-2.53 1.26-2.6-.03-.01-2.41-.93-2.42-3.68zM14.07 5.94c.63-.77 1.06-1.83.94-2.9-.91.04-2.02.61-2.67 1.37-.58.67-1.1 1.76-.96 2.8 1.02.08 2.05-.52 2.69-1.27z"/></svg></a>
-    </div>
-    <div class="app-card-wrap">
-    <a class="app-card" href="apps/tempo.html">
-      <img src="assets/icons/tempo.png" alt="" width="64" height="64">
-      <h3>Tempo</h3>
-      <p class="one-liner">A workday companion that remembers your hours for you — arrive, work, leave — and keeps the record yours to correct.</p>
-      <div class="tags"><span>Work</span><span>Time tracking</span><span>Calendar</span></div>
-      <span class="card-more">Learn more <span aria-hidden="true">→</span></span>
-    </a><a class="store-icon" href="https://apps.apple.com/app/id6761499275" aria-label="Tempo on the App Store" title="Tempo on the App Store"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16.37 12.72c-.02-2.3 1.88-3.41 1.97-3.46-1.07-1.57-2.74-1.79-3.34-1.81-1.42-.14-2.77.84-3.49.84-.72 0-1.83-.82-3.01-.8-1.55.02-2.98.9-3.77 2.29-1.61 2.79-.41 6.92 1.16 9.18.77 1.11 1.68 2.35 2.87 2.31 1.15-.05 1.59-.75 2.98-.75 1.39 0 1.78.75 3 .72 1.24-.02 2.03-1.13 2.79-2.24.88-1.29 1.24-2.53 1.26-2.6-.03-.01-2.41-.93-2.42-3.68zM14.07 5.94c.63-.77 1.06-1.83.94-2.9-.91.04-2.02.61-2.67 1.37-.58.67-1.1 1.76-.96 2.8 1.02.08 2.05-.52 2.69-1.27z"/></svg></a>
-    </div>
-    <div class="app-card-wrap">
-    <a class="app-card" href="apps/drip.html">
-      <img src="assets/icons/drip.png" alt="" width="64" height="64">
-      <h3>Drip</h3>
-      <p class="one-liner">See exactly where your money drips: every subscription, bill and membership shown as what it really costs a year.</p>
-      <div class="tags"><span>Subscriptions</span><span>Budget</span><span>ES · EN · FR</span></div>
-      <span class="card-more">Learn more <span aria-hidden="true">→</span></span>
-    </a><a class="store-icon" href="https://apps.apple.com/app/id6812332005" aria-label="Drip on the App Store" title="Drip on the App Store"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16.37 12.72c-.02-2.3 1.88-3.41 1.97-3.46-1.07-1.57-2.74-1.79-3.34-1.81-1.42-.14-2.77.84-3.49.84-.72 0-1.83-.82-3.01-.8-1.55.02-2.98.9-3.77 2.29-1.61 2.79-.41 6.92 1.16 9.18.77 1.11 1.68 2.35 2.87 2.31 1.15-.05 1.59-.75 2.98-.75 1.39 0 1.78.75 3 .72 1.24-.02 2.03-1.13 2.79-2.24.88-1.29 1.24-2.53 1.26-2.6-.03-.01-2.41-.93-2.42-3.68zM14.07 5.94c.63-.77 1.06-1.83.94-2.9-.91.04-2.02.61-2.67 1.37-.58.67-1.1 1.76-.96 2.8 1.02.08 2.05-.52 2.69-1.27z"/></svg></a>
-    </div>
-    <div class="app-card-wrap">
-    <a class="app-card" href="apps/anchor.html">
-      <img src="assets/icons/anchor.png" alt="" width="64" height="64">
-      <h3>Anchor</h3>
-      <p class="one-liner">Daily support for eating-disorder recovery: routines that hold you and tools for the hard moment — alongside professional treatment, never instead of it.</p>
-      <div class="tags"><span>Recovery</span><span>Routines</span><span>ES · EN · FR</span></div>
-      <span class="card-more">Learn more <span aria-hidden="true">→</span></span>
-    </a><a class="store-icon" href="https://apps.apple.com/app/id6812615752" aria-label="Anchor on the App Store" title="Anchor on the App Store"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16.37 12.72c-.02-2.3 1.88-3.41 1.97-3.46-1.07-1.57-2.74-1.79-3.34-1.81-1.42-.14-2.77.84-3.49.84-.72 0-1.83-.82-3.01-.8-1.55.02-2.98.9-3.77 2.29-1.61 2.79-.41 6.92 1.16 9.18.77 1.11 1.68 2.35 2.87 2.31 1.15-.05 1.59-.75 2.98-.75 1.39 0 1.78.75 3 .72 1.24-.02 2.03-1.13 2.79-2.24.88-1.29 1.24-2.53 1.26-2.6-.03-.01-2.41-.93-2.42-3.68zM14.07 5.94c.63-.77 1.06-1.83.94-2.9-.91.04-2.02.61-2.67 1.37-.58.67-1.1 1.76-.96 2.8 1.02.08 2.05-.52 2.69-1.27z"/></svg></a>
-    </div>
-    <div class="app-card-wrap">
-    <a class="app-card" href="apps/kover.html">
-      <img src="assets/icons/kover.png" alt="" width="64" height="64">
-      <h3>Kover</h3>
-      <p class="one-liner">Snap the receipt, and Kover watches the warranty: what is covered, until when, and a nudge before it runs out.</p>
-      <div class="tags"><span>Warranties</span><span>Receipts</span><span>ES · EN · FR</span></div>
-      <span class="card-more">Learn more <span aria-hidden="true">→</span></span>
-    </a><a class="store-icon" href="https://apps.apple.com/app/id6812714562" aria-label="Kover on the App Store" title="Kover on the App Store"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16.37 12.72c-.02-2.3 1.88-3.41 1.97-3.46-1.07-1.57-2.74-1.79-3.34-1.81-1.42-.14-2.77.84-3.49.84-.72 0-1.83-.82-3.01-.8-1.55.02-2.98.9-3.77 2.29-1.61 2.79-.41 6.92 1.16 9.18.77 1.11 1.68 2.35 2.87 2.31 1.15-.05 1.59-.75 2.98-.75 1.39 0 1.78.75 3 .72 1.24-.02 2.03-1.13 2.79-2.24.88-1.29 1.24-2.53 1.26-2.6-.03-.01-2.41-.93-2.42-3.68zM14.07 5.94c.63-.77 1.06-1.83.94-2.9-.91.04-2.02.61-2.67 1.37-.58.67-1.1 1.76-.96 2.8 1.02.08 2.05-.52 2.69-1.27z"/></svg></a>
-    </div>
-    <div class="app-card-wrap">
-    <a class="app-card" href="apps/tandem.html">
-      <img src="assets/icons/tandem.png" alt="" width="64" height="64">
-      <h3>Tandem</h3>
-      <p class="one-liner">Fair expense splitting for couples: each pays in proportion to what they earn, and the month settles with one number.</p>
-      <div class="tags"><span>Couples</span><span>Expenses</span><span>ES · EN · FR</span></div>
-      <span class="card-more">Learn more <span aria-hidden="true">→</span></span>
-    </a><a class="store-icon" href="https://apps.apple.com/app/id6812734713" aria-label="Tandem on the App Store" title="Tandem on the App Store"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16.37 12.72c-.02-2.3 1.88-3.41 1.97-3.46-1.07-1.57-2.74-1.79-3.34-1.81-1.42-.14-2.77.84-3.49.84-.72 0-1.83-.82-3.01-.8-1.55.02-2.98.9-3.77 2.29-1.61 2.79-.41 6.92 1.16 9.18.77 1.11 1.68 2.35 2.87 2.31 1.15-.05 1.59-.75 2.98-.75 1.39 0 1.78.75 3 .72 1.24-.02 2.03-1.13 2.79-2.24.88-1.29 1.24-2.53 1.26-2.6-.03-.01-2.41-.93-2.42-3.68zM14.07 5.94c.63-.77 1.06-1.83.94-2.9-.91.04-2.02.61-2.67 1.37-.58.67-1.1 1.76-.96 2.8 1.02.08 2.05-.52 2.69-1.27z"/></svg></a>
-    </div>
-    <div class="app-card-wrap">
-    <a class="app-card" href="apps/meso.html">
-      <img src="assets/icons/meso.png" alt="" width="64" height="64">
-      <h3>Meso</h3>
-      <p class="one-liner">The gym version of your coach's spreadsheet: blocks of weeks, load and reps per set, effort as reps in reserve.</p>
-      <div class="tags"><span>Strength</span><span>Blocks &amp; RIR</span><span>ES · EN · FR</span></div>
-      <span class="card-more">Learn more <span aria-hidden="true">→</span></span>
-    </a><a class="store-icon" href="https://apps.apple.com/app/id6813842295" aria-label="Meso on the App Store" title="Meso on the App Store"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16.37 12.72c-.02-2.3 1.88-3.41 1.97-3.46-1.07-1.57-2.74-1.79-3.34-1.81-1.42-.14-2.77.84-3.49.84-.72 0-1.83-.82-3.01-.8-1.55.02-2.98.9-3.77 2.29-1.61 2.79-.41 6.92 1.16 9.18.77 1.11 1.68 2.35 2.87 2.31 1.15-.05 1.59-.75 2.98-.75 1.39 0 1.78.75 3 .72 1.24-.02 2.03-1.13 2.79-2.24.88-1.29 1.24-2.53 1.26-2.6-.03-.01-2.41-.93-2.42-3.68zM14.07 5.94c.63-.77 1.06-1.83.94-2.9-.91.04-2.02.61-2.67 1.37-.58.67-1.1 1.76-.96 2.8 1.02.08 2.05-.52 2.69-1.27z"/></svg></a>
-    </div>
-    <div class="app-card-wrap">
-    <a class="app-card" href="apps/grain.html">
-      <img src="assets/icons/grain.png" alt="" width="64" height="64">
-      <h3>Grain</h3>
-      <p class="one-liner">A macro diary with no diet talk: energy, protein, carbs and fat against the targets you set, and what is left.</p>
-      <div class="tags"><span>Nutrition</span><span>Macros</span><span>ES · EN · FR</span></div>
-      <span class="card-more">Learn more <span aria-hidden="true">→</span></span>
-    </a><a class="store-icon" href="https://apps.apple.com/app/id6816346843" aria-label="Grain on the App Store" title="Grain on the App Store"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16.37 12.72c-.02-2.3 1.88-3.41 1.97-3.46-1.07-1.57-2.74-1.79-3.34-1.81-1.42-.14-2.77.84-3.49.84-.72 0-1.83-.82-3.01-.8-1.55.02-2.98.9-3.77 2.29-1.61 2.79-.41 6.92 1.16 9.18.77 1.11 1.68 2.35 2.87 2.31 1.15-.05 1.59-.75 2.98-.75 1.39 0 1.78.75 3 .72 1.24-.02 2.03-1.13 2.79-2.24.88-1.29 1.24-2.53 1.26-2.6-.03-.01-2.41-.93-2.42-3.68zM14.07 5.94c.63-.77 1.06-1.83.94-2.9-.91.04-2.02.61-2.67 1.37-.58.67-1.1 1.76-.96 2.8 1.02.08 2.05-.52 2.69-1.27z"/></svg></a>
-    </div>
-    <div class="app-card-wrap">
-    <a class="app-card" href="apps/garum.html">
-      <img src="assets/icons/garum.png" alt="" width="64" height="64">
-      <h3>Garum</h3>
-      <p class="one-liner">A map of places that are there for a reason: classics, established places and new ones with a point of view, each with its why, everything signed.</p>
-      <div class="tags"><span>Food &amp; drink</span><span>Curated map</span><span>ES · EN · FR</span></div>
-      <span class="card-more">Learn more <span aria-hidden="true">→</span></span>
-    </a><a class="store-icon" href="https://apps.apple.com/app/id6816385891" aria-label="Garum on the App Store" title="Garum on the App Store"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16.37 12.72c-.02-2.3 1.88-3.41 1.97-3.46-1.07-1.57-2.74-1.79-3.34-1.81-1.42-.14-2.77.84-3.49.84-.72 0-1.83-.82-3.01-.8-1.55.02-2.98.9-3.77 2.29-1.61 2.79-.41 6.92 1.16 9.18.77 1.11 1.68 2.35 2.87 2.31 1.15-.05 1.59-.75 2.98-.75 1.39 0 1.78.75 3 .72 1.24-.02 2.03-1.13 2.79-2.24.88-1.29 1.24-2.53 1.26-2.6-.03-.01-2.41-.93-2.42-3.68zM14.07 5.94c.63-.77 1.06-1.83.94-2.9-.91.04-2.02.61-2.67 1.37-.58.67-1.1 1.76-.96 2.8 1.02.08 2.05-.52 2.69-1.27z"/></svg></a>
-    </div>
-    <div class="app-card-wrap">
-    <a class="app-card" href="apps/sacapuntas.html">
-      <img src="assets/icons/sacapuntas.png" alt="" width="64" height="64">
-      <h3>Sacapuntas</h3>
-      <p class="one-liner">Primary-school workbooks for children aged 9 to 11: column arithmetic, times tables and Spanish accents, with a village that grows with every page done well.</p>
-      <div class="tags"><span>Education</span><span>Kids 9–11</span><span>ES</span></div>
-      <span class="card-more">Learn more <span aria-hidden="true">→</span></span>
-    </a>
-    </div>
-    <div class="app-card-wrap">
-    <a class="app-card" href="apps/gaminghub.html">
-      <img src="assets/icons/gaminghub.png" alt="" width="64" height="64">
-      <h3>GamingHub</h3>
-      <p class="one-liner">Party games for a game night, each friend on their own phone: create a room, share the code and play. Each device shows only what you are allowed to see.</p>
-      <div class="tags"><span>Games</span><span>Multiplayer</span><span>EN · ES</span></div>
-      <span class="card-more">Learn more <span aria-hidden="true">→</span></span>
-    </a>
-    </div>
-    <div class="app-card-wrap">
-    <a class="app-card" href="apps/atino.html">
-      <img src="assets/icons/atino.png" alt="" width="64" height="64">
-      <h3>Atino</h3>
-      <p class="one-liner">Import your CV and see current job ads across Europe ranked by how well they fit, each with a short reason. Your name and contact details are removed on your iPhone first.</p>
-      <div class="tags"><span>Jobs</span><span>Europe</span><span>CV</span></div>
-      <span class="card-more">Learn more <span aria-hidden="true">→</span></span>
-    </a>
-    </div>
-    <div class="app-card-wrap">
-    <a class="app-card" href="apps/roomy.html">
-      <img src="assets/icons/roomy.png" alt="" width="64" height="64">
-      <h3>Roomy</h3>
-      <p class="one-liner">Swipe left to delete, right to keep. Roomy also finds duplicates, similar shots and huge videos, all on your iPhone.</p>
-      <div class="tags"><span>Utilities</span><span>Photos</span><span>9 languages</span></div>
-      <span class="card-more">Learn more <span aria-hidden="true">→</span></span>
-    </a>
-    </div>
-    </div>
+
+    <p class="group-label" id="apps-live">On the App Store</p>
+    <ul class="app-grid app-grid-live" role="list" aria-labelledby="apps-live">
+        <li class="app-card-wrap reveal" style="--i:0">
+          <a class="app-card" href="apps/cycle-timers.html">
+            <img class="app-icon" src="assets/icons/cycle-timers.png" alt="" width="64" height="64" loading="lazy" decoding="async" style="view-transition-name:icon-cycle-timers">
+            <h3>Cycle Timers</h3>
+            <p class="one-liner">Recurring household timers you read at a glance — from the Home Screen widget, without opening the app.</p>
+            <div class="tags"><span>Household</span><span>Widgets</span><span>iOS</span></div>
+            <span class="card-more">Learn more <span aria-hidden="true">→</span></span>
+          </a><a class="status live" href="https://apps.apple.com/app/id6796827400" aria-label="Cycle Timers on the App Store" title="Cycle Timers on the App Store"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16.37 12.72c-.02-2.3 1.88-3.41 1.97-3.46-1.07-1.57-2.74-1.79-3.34-1.81-1.42-.14-2.77.84-3.49.84-.72 0-1.83-.82-3.01-.8-1.55.02-2.98.9-3.77 2.29-1.61 2.79-.41 6.92 1.16 9.18.77 1.11 1.68 2.35 2.87 2.31 1.15-.05 1.59-.75 2.98-.75 1.39 0 1.78.75 3 .72 1.24-.02 2.03-1.13 2.79-2.24.88-1.29 1.24-2.53 1.26-2.6-.03-.01-2.41-.93-2.42-3.68zM14.07 5.94c.63-.77 1.06-1.83.94-2.9-.91.04-2.02.61-2.67 1.37-.58.67-1.1 1.76-.96 2.8 1.02.08 2.05-.52 2.69-1.27z"/></svg><span>App Store</span></a>
+        </li>
+        <li class="app-card-wrap reveal" style="--i:1">
+          <a class="app-card" href="apps/tempo.html">
+            <img class="app-icon" src="assets/icons/tempo.png" alt="" width="64" height="64" loading="lazy" decoding="async" style="view-transition-name:icon-tempo">
+            <h3>Tempo</h3>
+            <p class="one-liner">A workday companion that remembers your hours for you — arrive, work, leave — and keeps the record yours to correct.</p>
+            <div class="tags"><span>Work</span><span>Time tracking</span><span>Calendar</span></div>
+            <span class="card-more">Learn more <span aria-hidden="true">→</span></span>
+          </a><a class="status live" href="https://apps.apple.com/app/id6761499275" aria-label="Tempo on the App Store" title="Tempo on the App Store"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16.37 12.72c-.02-2.3 1.88-3.41 1.97-3.46-1.07-1.57-2.74-1.79-3.34-1.81-1.42-.14-2.77.84-3.49.84-.72 0-1.83-.82-3.01-.8-1.55.02-2.98.9-3.77 2.29-1.61 2.79-.41 6.92 1.16 9.18.77 1.11 1.68 2.35 2.87 2.31 1.15-.05 1.59-.75 2.98-.75 1.39 0 1.78.75 3 .72 1.24-.02 2.03-1.13 2.79-2.24.88-1.29 1.24-2.53 1.26-2.6-.03-.01-2.41-.93-2.42-3.68zM14.07 5.94c.63-.77 1.06-1.83.94-2.9-.91.04-2.02.61-2.67 1.37-.58.67-1.1 1.76-.96 2.8 1.02.08 2.05-.52 2.69-1.27z"/></svg><span>App Store</span></a>
+        </li>
+        <li class="app-card-wrap reveal" style="--i:2">
+          <a class="app-card" href="apps/drip.html">
+            <img class="app-icon" src="assets/icons/drip.png" alt="" width="64" height="64" loading="lazy" decoding="async" style="view-transition-name:icon-drip">
+            <h3>Drip</h3>
+            <p class="one-liner">See exactly where your money drips: every subscription, bill and membership shown as what it really costs a year.</p>
+            <div class="tags"><span>Subscriptions</span><span>Budget</span><span>ES · EN · FR</span></div>
+            <span class="card-more">Learn more <span aria-hidden="true">→</span></span>
+          </a><a class="status live" href="https://apps.apple.com/app/id6812332005" aria-label="Drip on the App Store" title="Drip on the App Store"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16.37 12.72c-.02-2.3 1.88-3.41 1.97-3.46-1.07-1.57-2.74-1.79-3.34-1.81-1.42-.14-2.77.84-3.49.84-.72 0-1.83-.82-3.01-.8-1.55.02-2.98.9-3.77 2.29-1.61 2.79-.41 6.92 1.16 9.18.77 1.11 1.68 2.35 2.87 2.31 1.15-.05 1.59-.75 2.98-.75 1.39 0 1.78.75 3 .72 1.24-.02 2.03-1.13 2.79-2.24.88-1.29 1.24-2.53 1.26-2.6-.03-.01-2.41-.93-2.42-3.68zM14.07 5.94c.63-.77 1.06-1.83.94-2.9-.91.04-2.02.61-2.67 1.37-.58.67-1.1 1.76-.96 2.8 1.02.08 2.05-.52 2.69-1.27z"/></svg><span>App Store</span></a>
+        </li>
+        <li class="app-card-wrap reveal" style="--i:0">
+          <a class="app-card" href="apps/anchor.html">
+            <img class="app-icon" src="assets/icons/anchor.png" alt="" width="64" height="64" loading="lazy" decoding="async" style="view-transition-name:icon-anchor">
+            <h3>Anchor</h3>
+            <p class="one-liner">Daily support for eating-disorder recovery: routines that hold you and tools for the hard moment — alongside professional treatment, never instead of it.</p>
+            <div class="tags"><span>Recovery</span><span>Routines</span><span>ES · EN · FR</span></div>
+            <span class="card-more">Learn more <span aria-hidden="true">→</span></span>
+          </a><a class="status live" href="https://apps.apple.com/app/id6812615752" aria-label="Anchor on the App Store" title="Anchor on the App Store"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16.37 12.72c-.02-2.3 1.88-3.41 1.97-3.46-1.07-1.57-2.74-1.79-3.34-1.81-1.42-.14-2.77.84-3.49.84-.72 0-1.83-.82-3.01-.8-1.55.02-2.98.9-3.77 2.29-1.61 2.79-.41 6.92 1.16 9.18.77 1.11 1.68 2.35 2.87 2.31 1.15-.05 1.59-.75 2.98-.75 1.39 0 1.78.75 3 .72 1.24-.02 2.03-1.13 2.79-2.24.88-1.29 1.24-2.53 1.26-2.6-.03-.01-2.41-.93-2.42-3.68zM14.07 5.94c.63-.77 1.06-1.83.94-2.9-.91.04-2.02.61-2.67 1.37-.58.67-1.1 1.76-.96 2.8 1.02.08 2.05-.52 2.69-1.27z"/></svg><span>App Store</span></a>
+        </li>
+        <li class="app-card-wrap reveal" style="--i:1">
+          <a class="app-card" href="apps/kover.html">
+            <img class="app-icon" src="assets/icons/kover.png" alt="" width="64" height="64" loading="lazy" decoding="async" style="view-transition-name:icon-kover">
+            <h3>Kover</h3>
+            <p class="one-liner">Snap the receipt, and Kover watches the warranty: what is covered, until when, and a nudge before it runs out.</p>
+            <div class="tags"><span>Warranties</span><span>Receipts</span><span>ES · EN · FR</span></div>
+            <span class="card-more">Learn more <span aria-hidden="true">→</span></span>
+          </a><a class="status live" href="https://apps.apple.com/app/id6812714562" aria-label="Kover on the App Store" title="Kover on the App Store"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16.37 12.72c-.02-2.3 1.88-3.41 1.97-3.46-1.07-1.57-2.74-1.79-3.34-1.81-1.42-.14-2.77.84-3.49.84-.72 0-1.83-.82-3.01-.8-1.55.02-2.98.9-3.77 2.29-1.61 2.79-.41 6.92 1.16 9.18.77 1.11 1.68 2.35 2.87 2.31 1.15-.05 1.59-.75 2.98-.75 1.39 0 1.78.75 3 .72 1.24-.02 2.03-1.13 2.79-2.24.88-1.29 1.24-2.53 1.26-2.6-.03-.01-2.41-.93-2.42-3.68zM14.07 5.94c.63-.77 1.06-1.83.94-2.9-.91.04-2.02.61-2.67 1.37-.58.67-1.1 1.76-.96 2.8 1.02.08 2.05-.52 2.69-1.27z"/></svg><span>App Store</span></a>
+        </li>
+        <li class="app-card-wrap reveal" style="--i:2">
+          <a class="app-card" href="apps/tandem.html">
+            <img class="app-icon" src="assets/icons/tandem.png" alt="" width="64" height="64" loading="lazy" decoding="async" style="view-transition-name:icon-tandem">
+            <h3>Tandem</h3>
+            <p class="one-liner">Fair expense splitting for couples: each pays in proportion to what they earn, and the month settles with one number.</p>
+            <div class="tags"><span>Couples</span><span>Expenses</span><span>ES · EN · FR</span></div>
+            <span class="card-more">Learn more <span aria-hidden="true">→</span></span>
+          </a><a class="status live" href="https://apps.apple.com/app/id6812734713" aria-label="Tandem on the App Store" title="Tandem on the App Store"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16.37 12.72c-.02-2.3 1.88-3.41 1.97-3.46-1.07-1.57-2.74-1.79-3.34-1.81-1.42-.14-2.77.84-3.49.84-.72 0-1.83-.82-3.01-.8-1.55.02-2.98.9-3.77 2.29-1.61 2.79-.41 6.92 1.16 9.18.77 1.11 1.68 2.35 2.87 2.31 1.15-.05 1.59-.75 2.98-.75 1.39 0 1.78.75 3 .72 1.24-.02 2.03-1.13 2.79-2.24.88-1.29 1.24-2.53 1.26-2.6-.03-.01-2.41-.93-2.42-3.68zM14.07 5.94c.63-.77 1.06-1.83.94-2.9-.91.04-2.02.61-2.67 1.37-.58.67-1.1 1.76-.96 2.8 1.02.08 2.05-.52 2.69-1.27z"/></svg><span>App Store</span></a>
+        </li>
+        <li class="app-card-wrap reveal" style="--i:0">
+          <a class="app-card" href="apps/meso.html">
+            <img class="app-icon" src="assets/icons/meso.png" alt="" width="64" height="64" loading="lazy" decoding="async" style="view-transition-name:icon-meso">
+            <h3>Meso</h3>
+            <p class="one-liner">The gym version of your coach's spreadsheet: blocks of weeks, load and reps per set, effort as reps in reserve.</p>
+            <div class="tags"><span>Strength</span><span>Blocks &amp; RIR</span><span>ES · EN · FR</span></div>
+            <span class="card-more">Learn more <span aria-hidden="true">→</span></span>
+          </a><a class="status live" href="https://apps.apple.com/app/id6813842295" aria-label="Meso on the App Store" title="Meso on the App Store"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16.37 12.72c-.02-2.3 1.88-3.41 1.97-3.46-1.07-1.57-2.74-1.79-3.34-1.81-1.42-.14-2.77.84-3.49.84-.72 0-1.83-.82-3.01-.8-1.55.02-2.98.9-3.77 2.29-1.61 2.79-.41 6.92 1.16 9.18.77 1.11 1.68 2.35 2.87 2.31 1.15-.05 1.59-.75 2.98-.75 1.39 0 1.78.75 3 .72 1.24-.02 2.03-1.13 2.79-2.24.88-1.29 1.24-2.53 1.26-2.6-.03-.01-2.41-.93-2.42-3.68zM14.07 5.94c.63-.77 1.06-1.83.94-2.9-.91.04-2.02.61-2.67 1.37-.58.67-1.1 1.76-.96 2.8 1.02.08 2.05-.52 2.69-1.27z"/></svg><span>App Store</span></a>
+        </li>
+        <li class="app-card-wrap reveal" style="--i:1">
+          <a class="app-card" href="apps/grain.html">
+            <img class="app-icon" src="assets/icons/grain.png" alt="" width="64" height="64" loading="lazy" decoding="async" style="view-transition-name:icon-grain">
+            <h3>Grain</h3>
+            <p class="one-liner">A macro diary with no diet talk: energy, protein, carbs and fat against the targets you set, and what is left.</p>
+            <div class="tags"><span>Nutrition</span><span>Macros</span><span>ES · EN · FR</span></div>
+            <span class="card-more">Learn more <span aria-hidden="true">→</span></span>
+          </a><a class="status live" href="https://apps.apple.com/app/id6816346843" aria-label="Grain on the App Store" title="Grain on the App Store"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16.37 12.72c-.02-2.3 1.88-3.41 1.97-3.46-1.07-1.57-2.74-1.79-3.34-1.81-1.42-.14-2.77.84-3.49.84-.72 0-1.83-.82-3.01-.8-1.55.02-2.98.9-3.77 2.29-1.61 2.79-.41 6.92 1.16 9.18.77 1.11 1.68 2.35 2.87 2.31 1.15-.05 1.59-.75 2.98-.75 1.39 0 1.78.75 3 .72 1.24-.02 2.03-1.13 2.79-2.24.88-1.29 1.24-2.53 1.26-2.6-.03-.01-2.41-.93-2.42-3.68zM14.07 5.94c.63-.77 1.06-1.83.94-2.9-.91.04-2.02.61-2.67 1.37-.58.67-1.1 1.76-.96 2.8 1.02.08 2.05-.52 2.69-1.27z"/></svg><span>App Store</span></a>
+        </li>
+        <li class="app-card-wrap reveal" style="--i:2">
+          <a class="app-card" href="apps/garum.html">
+            <img class="app-icon" src="assets/icons/garum.png" alt="" width="64" height="64" loading="lazy" decoding="async" style="view-transition-name:icon-garum">
+            <h3>Garum</h3>
+            <p class="one-liner">A map of places that are there for a reason: classics, established places and new ones with a point of view, each with its why, everything signed.</p>
+            <div class="tags"><span>Food &amp; drink</span><span>Curated map</span><span>ES · EN · FR</span></div>
+            <span class="card-more">Learn more <span aria-hidden="true">→</span></span>
+          </a><a class="status live" href="https://apps.apple.com/app/id6816385891" aria-label="Garum on the App Store" title="Garum on the App Store"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16.37 12.72c-.02-2.3 1.88-3.41 1.97-3.46-1.07-1.57-2.74-1.79-3.34-1.81-1.42-.14-2.77.84-3.49.84-.72 0-1.83-.82-3.01-.8-1.55.02-2.98.9-3.77 2.29-1.61 2.79-.41 6.92 1.16 9.18.77 1.11 1.68 2.35 2.87 2.31 1.15-.05 1.59-.75 2.98-.75 1.39 0 1.78.75 3 .72 1.24-.02 2.03-1.13 2.79-2.24.88-1.29 1.24-2.53 1.26-2.6-.03-.01-2.41-.93-2.42-3.68zM14.07 5.94c.63-.77 1.06-1.83.94-2.9-.91.04-2.02.61-2.67 1.37-.58.67-1.1 1.76-.96 2.8 1.02.08 2.05-.52 2.69-1.27z"/></svg><span>App Store</span></a>
+        </li>
+    </ul>
+    <p class="group-label" id="apps-soon">Coming soon</p>
+    <ul class="app-grid app-grid-soon" role="list" aria-labelledby="apps-soon">
+        <li class="app-card-wrap reveal" style="--i:0">
+          <a class="app-card" href="apps/sacapuntas.html">
+            <img class="app-icon" src="assets/icons/sacapuntas.png" alt="" width="64" height="64" loading="lazy" decoding="async" style="view-transition-name:icon-sacapuntas">
+            <h3>Sacapuntas</h3>
+            <p class="one-liner">Primary-school workbooks for children aged 9 to 11: column arithmetic, times tables and Spanish accents, with a village that grows with every page done well.</p>
+            <div class="tags"><span>Education</span><span>Kids 9–11</span><span>ES</span></div>
+            <span class="card-more">Learn more <span aria-hidden="true">→</span></span>
+          </a>
+        </li>
+        <li class="app-card-wrap reveal" style="--i:1">
+          <a class="app-card" href="apps/gaminghub.html">
+            <img class="app-icon" src="assets/icons/gaminghub.png" alt="" width="64" height="64" loading="lazy" decoding="async" style="view-transition-name:icon-gaminghub">
+            <h3>GamingHub</h3>
+            <p class="one-liner">Party games for a game night, each friend on their own phone: create a room, share the code and play. Each device shows only what you are allowed to see.</p>
+            <div class="tags"><span>Games</span><span>Multiplayer</span><span>EN · ES</span></div>
+            <span class="card-more">Learn more <span aria-hidden="true">→</span></span>
+          </a>
+        </li>
+        <li class="app-card-wrap reveal" style="--i:2">
+          <a class="app-card" href="apps/atino.html">
+            <img class="app-icon" src="assets/icons/atino.png" alt="" width="64" height="64" loading="lazy" decoding="async" style="view-transition-name:icon-atino">
+            <h3>Atino</h3>
+            <p class="one-liner">Import your CV and see current job ads across Europe ranked by how well they fit, each with a short reason. Your name and contact details are removed on your iPhone first.</p>
+            <div class="tags"><span>Jobs</span><span>Europe</span><span>CV</span></div>
+            <span class="card-more">Learn more <span aria-hidden="true">→</span></span>
+          </a>
+        </li>
+        <li class="app-card-wrap reveal" style="--i:0">
+          <a class="app-card" href="apps/roomy.html">
+            <img class="app-icon" src="assets/icons/roomy.png" alt="" width="64" height="64" loading="lazy" decoding="async" style="view-transition-name:icon-roomy">
+            <h3>Roomy</h3>
+            <p class="one-liner">Swipe left to delete, right to keep. Roomy also finds duplicates, similar shots and huge videos, all on your iPhone.</p>
+            <div class="tags"><span>Utilities</span><span>Photos</span><span>9 languages</span></div>
+            <span class="card-more">Learn more <span aria-hidden="true">→</span></span>
+          </a>
+        </li>
+    </ul>
   </section>
 
   <section class="section shell" id="philosophy" aria-labelledby="philosophy-title">
-    <div class="section-head">
+    <div class="section-head reveal">
       <div><p class="eyebrow">Philosophy</p><h2 id="philosophy-title">Beautiful. Useful. <span>Human. Possible.</span></h2></div>
       <p>Four words we hold every screen against. If a feature fails one of them, it doesn't ship — however clever it is.</p>
     </div>
-    <div class="values"><div class="value"><span class="num">01</span><h3>Beautiful</h3><p>Design with an opinion: one dominant colour, weight before size, motion that means something. The kind of care you notice without being told.</p></div><div class="value"><span class="num">02</span><h3>Useful</h3><p>Every app answers one real question people ask every day, and answers it on the first screen. No dashboards for their own sake.</p></div><div class="value"><span class="num">03</span><h3>Human</h3><p>No analytics, no advertising, no dark patterns. No accounts either, except where the app is a community — Garum is the only one. Everything else lives on your iPhone and in your own iCloud, and we never see it. Copy written for people, in two languages.</p></div><div class="value"><span class="num">04</span><h3>Possible</h3><p>Native all the way: SwiftUI, widgets, Live Activities, Siri and Apple Health when they earn their place. Small teams can build things that feel first-party.</p></div></div>
+    <ol class="values" role="list"><li class="value reveal" style="--i:0"><span class="num">01</span><h3>Beautiful</h3><p>Design with an opinion: one dominant colour, weight before size, motion that means something. The kind of care you notice without being told.</p></li><li class="value reveal" style="--i:1"><span class="num">02</span><h3>Useful</h3><p>Every app answers one real question people ask every day, and answers it on the first screen. No dashboards for their own sake.</p></li><li class="value reveal" style="--i:2"><span class="num">03</span><h3>Human</h3><p>No analytics, no advertising, no dark patterns. No accounts either, except where the app is a community — Garum is the only one. Everything else lives on your iPhone and in your own iCloud, and we never see it. Copy written for people, in two languages.</p></li><li class="value reveal" style="--i:3"><span class="num">04</span><h3>Possible</h3><p>Native all the way: SwiftUI, widgets, Live Activities, Siri and Apple Health when they earn their place. Small teams can build things that feel first-party.</p></li></ol>
   </section>
 
   <section class="section shell" id="work" aria-labelledby="work-title">
-    <div class="section-head">
+    <div class="section-head reveal">
       <div><p class="eyebrow">Work with us</p><h2 id="work-title">The same craft, <span>for your project.</span></h2></div>
       <p>We take on a small number of client projects a year — the ones where we can bring the same standard we hold our own apps to. If you need something built well, talk to us.</p>
     </div>
-    <div class="features"><div class="feature"><span class="num">01</span><h3>iOS apps</h3><p>Native Swift and SwiftUI, from the first sketch to the App Store: product thinking, design, code, review and the release itself. Widgets, Live Activities, Siri and iCloud when they earn their place.</p></div><div class="feature"><span class="num">02</span><h3>Websites and web apps</h3><p>Fast, accessible sites and web applications that are pleasant to use and simple to keep — from a landing page like this one to a full product.</p></div><div class="feature"><span class="num">03</span><h3>Custom development</h3><p>Tooling, integrations and the automation that removes a job nobody should be doing by hand. Scoped, delivered, documented.</p></div></div>
-    <div class="work-how">
+    <ul class="features" role="list"><li class="feature reveal" style="--i:0"><span class="num">01</span><h3>iOS apps</h3><p>Native Swift and SwiftUI, from the first sketch to the App Store: product thinking, design, code, review and the release itself. Widgets, Live Activities, Siri and iCloud when they earn their place.</p></li><li class="feature reveal" style="--i:1"><span class="num">02</span><h3>Websites and web apps</h3><p>Fast, accessible sites and web applications that are pleasant to use and simple to keep — from a landing page like this one to a full product.</p></li><li class="feature reveal" style="--i:2"><span class="num">03</span><h3>Custom development</h3><p>Tooling, integrations and the automation that removes a job nobody should be doing by hand. Scoped, delivered, documented.</p></li></ul>
+    <div class="work-how reveal">
       <div class="work-how-head"><h3>How it works</h3><a class="button" href="mailto:hello@seizeapps.com?subject=Project%20inquiry">Tell us about your project</a></div>
-      <div class="steps"><div class="step"><h4>Scope</h4><p>A written brief with what ships, what it costs and when. No surprises halfway.</p></div><div class="step"><h4>One lead</h4><p>One of us owns your project end to end and is the person you talk to.</p></div><div class="step"><h4>Delivery</h4><p>Working software at every milestone, source code and documentation yours from day one.</p></div></div>
+      <ol class="steps" role="list"><li class="step"><span class="step-dot" aria-hidden="true"></span><h4>Scope</h4><p>A written brief with what ships, what it costs and when. No surprises halfway.</p></li><li class="step"><span class="step-dot" aria-hidden="true"></span><h4>One lead</h4><p>One of us owns your project end to end and is the person you talk to.</p></li><li class="step"><span class="step-dot" aria-hidden="true"></span><h4>Delivery</h4><p>Working software at every milestone, source code and documentation yours from day one.</p></li></ol>
     </div>
   </section>
 
   <section class="section shell" id="studio" aria-labelledby="studio-title">
-    <div class="section-head">
+    <div class="section-head reveal">
       <div><p class="eyebrow">Studio</p><h2 id="studio-title">Two developers, <span>one bar.</span></h2></div>
       <p>Seize Apps is Izotz and Sendoa, two co-founders from the Basque Country. Every app is the two of us: the same standard of craft, the same care, from the first sketch to the release.</p>
     </div>
     <div class="studio">
-      <div class="person">
-        <div class="initials a" aria-hidden="true">IC</div>
+      <div class="person reveal" style="--i:0">
+        <div class="initials" aria-hidden="true">IC</div>
         <div><h3>Izotz Cristobal Mota</h3><p class="role">Co-founder · Developer</p><p class="bio">Product, design and code across the whole catalogue.</p></div>
       </div>
-      <div class="person">
-        <div class="initials b" aria-hidden="true">SS</div>
+      <div class="person reveal" style="--i:1">
+        <div class="initials" aria-hidden="true">SS</div>
         <div><h3>Sendoa Sola</h3><p class="role">Co-founder · Developer</p><p class="bio">Product, design and code across the whole catalogue.</p></div>
       </div>
-      <p class="studio-note">We ship our own apps and we build for clients, and we stay small enough that the person who wrote the code is the one reading your email.</p>
+      <p class="studio-note reveal">We ship our own apps and we build for clients, and we stay small enough that the person who wrote the code is the one reading your email.</p>
     </div>
   </section>
 
-  <section class="shell" id="contact" aria-labelledby="contact-title">
-    <div class="contact">
-      <div><p class="eyebrow">Contact</p><h2 id="contact-title">Say hello.</h2><p class="note" style="margin-top:10px">Questions, ideas, a project, a bug you found — one address, and we read everything.</p></div>
-      <a class="button" href="mailto:hello@seizeapps.com">hello@seizeapps.com</a>
+  <section class="section shell" id="contact" aria-labelledby="contact-title">
+    <div class="contact reveal">
+      <div><p class="eyebrow">Contact</p><h2 id="contact-title">Say hello.</h2><p class="contact-p">Questions, ideas, a project, a bug you found — one address, and we read everything.</p></div>
+      <a class="button large" href="mailto:hello@seizeapps.com">hello@seizeapps.com</a>
     </div>
   </section>
 </main>
 <footer class="site-footer">
   <div class="footer-inner shell">
     <div class="footer-brand">
-      <img src="assets/seize-mark.png?v=1" alt="" width="28" height="28">
+      <img src="assets/seize-mark.png?v=1" alt="" width="32" height="32" loading="lazy" decoding="async">
       <div>
         <p class="footer-signoff">Apps for a brighter tomorrow.</p>
         <p class="copyright">© 2026 Seize Apps · Izotz Cristobal Mota &amp; Sendoa Sola · Basque Country, Spain</p>
@@ -258,6 +255,7 @@
     </div>
     <nav class="footer-links" aria-label="Footer">
       <a href="index.html#apps">Apps</a>
+      <a href="index.html#studio">Studio</a>
       <a href="privacy.html">Privacy</a>
       <a href="terms.html">Terms</a>
       <a href="https://github.com/SeizeApps" rel="noopener">GitHub</a>
@@ -265,6 +263,5 @@
     </nav>
   </div>
 </footer>
-<script>document.querySelectorAll('.site-nav .lang a[hreflang]').forEach(function(a){a.addEventListener('click',function(){try{localStorage.setItem('seize-lang',a.hreflang)}catch(e){}})});</script>
 </body>
 </html>

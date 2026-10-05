@@ -3,10 +3,10 @@
 # The French copy lives in gen_site_fr.py (UI_FR, APPS_FR) and gen_legal_fr.py.
 # Run from anywhere: python3 tools/gen_site.py
 # Identity: SEIZE 2026 (brand/design-tokens.json v2.1, brand/sheets/02-web-ui-system.png).
-import os, sys
+import os, re, sys, unicodedata
 SITE=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-CSS_V='2026-10-05'
+CSS_V='2026-10-05.2'
 LANGS=['en','es','fr']
 # Language switch: short label and the link's accessible name, in the target language.
 LANG_LINK={'en':('EN','Read in English'),'es':('ES','Leer en castellano'),'fr':('FR','Lire en français')}
@@ -18,8 +18,6 @@ OG_LOCALE={'en':'en_US','es':'es_ES','fr':'fr_FR'}
 # redirected: someone who lands there asked for that language. A click on the switch is remembered
 # (localStorage) and wins over the browser. No IP geolocation: a country is not a language.
 LANG_PICK='''<script>(function(){try{var k='seize-lang',c=localStorage.getItem(k);var alt={};document.querySelectorAll('link[rel=alternate][hreflang]').forEach(function(l){alt[l.hreflang]=l.href});var want=null;if(c){want=c}else{var ls=navigator.languages||[navigator.language||''];for(var i=0;i<ls.length;i++){var b=(ls[i]||'').toLowerCase().split('-')[0];if(alt[b]){want=b;break}}}if(want&&want!=='en'&&alt[want]&&!/bot|crawl|spider/i.test(navigator.userAgent)){location.replace(alt[want]+location.hash)}}catch(e){}})();</script>
-'''
-LANG_REMEMBER='''<script>document.querySelectorAll('.site-nav .lang a[hreflang]').forEach(function(a){a.addEventListener('click',function(){try{localStorage.setItem('seize-lang',a.hreflang)}catch(e){}})});</script>
 '''
 
 # ---------------------------------------------------------------- UI strings
@@ -59,6 +57,8 @@ UI={
    privacy_eyebrow='Privacy', privacy_h3='Yours, not ours.', published_by='A Seize Apps app.',
    privacy_policy='Privacy policy', contact='Contact', store_badge='Download on the App Store', store_icon='{name} on the App Store',
    shot_alt='{name} screenshot: {cap}',
+   skip='Skip to content', lang_label='Language', soon='Coming soon', live_title='On the App Store', more_apps='More from Seize', toc_title='On this page',
+   hero_proof='{n} apps · {live} on the App Store · Made in the Basque Country',
  ),
  'es': dict(
    nav_apps='Apps', nav_phil='Filosofía', nav_work='Trabaja con nosotros', nav_studio='Estudio', nav_cta='Escríbenos',
@@ -95,6 +95,8 @@ UI={
    privacy_eyebrow='Privacidad', privacy_h3='Tuyo, no nuestro.', published_by='Una app de Seize Apps.',
    privacy_policy='Política de privacidad', contact='Contacto', store_badge='Descargar en la App Store', store_icon='{name} en la App Store',
    shot_alt='Captura de {name}: {cap}',
+   skip='Saltar al contenido', lang_label='Idioma', soon='Próximamente', live_title='En la App Store', more_apps='Más de Seize', toc_title='En esta página',
+   hero_proof='{n} apps · {live} en la App Store · Hechas en el País Vasco',
  ),
 }
 
@@ -390,7 +392,25 @@ for a in APPS: a['copy']['fr']=APPS_FR[a['slug']]
 def prefix(lang): return '' if lang=='en' else lang+'/'
 def up(lang, depth=1): return '../'*(depth + (lang!='en'))   # from a page `depth` folders deep in its language tree to the site root
 
-def head(lang, title, desc, root, canonical, og_title=None, alts=None):
+def jpeg_size(path):
+    # (width, height) from the JPEG's SOF marker, so every screenshot reserves its real box (most are
+    # 552×1304, a few 552×1200): no layout shift while they load.
+    d=open(path,'rb').read(); i=2
+    while i < len(d):
+        while d[i]!=0xFF: i+=1
+        while d[i]==0xFF: i+=1
+        marker=d[i]; seg=int.from_bytes(d[i+1:i+3],'big')
+        if marker in (0xC0,0xC1,0xC2): return int.from_bytes(d[i+6:i+8],'big'), int.from_bytes(d[i+4:i+6],'big')
+        i+=1+seg
+    raise ValueError(f'no SOF marker in {path}')
+
+def shot(root, f, alt='', lazy=True, priority=False):
+    w,h=jpeg_size(os.path.join(SITE,'assets','shots',f))
+    load=' loading="lazy"' if lazy else ''
+    prio=' fetchpriority="high"' if priority else ''
+    return f'<img src="{root}assets/shots/{f}" alt="{alt}" width="{w}" height="{h}"{load}{prio} decoding="async">'
+
+def head(lang, title, desc, root, canonical, og_title=None, alts=None, preload=()):
     # canonical is the path inside the language tree (e.g. 'apps/kover.html' or '').
     # `alts`: {lang: absolute URL} for pages outside the language trees (Garum, Sacapuntas legal);
     # a page with a single language gets no hreflang.
@@ -399,12 +419,14 @@ def head(lang, title, desc, root, canonical, og_title=None, alts=None):
     hreflang=''.join(f'<link rel="alternate" hreflang="{L}" href="{u}">\n' for L,u in alts.items())
     if len(alts)>1: hreflang+=f'<link rel="alternate" hreflang="x-default" href="{alts.get("en", self_url)}">\n'
     else: hreflang=''
+    preloads=''.join(f'<link rel="preload" as="image" href="{u}" fetchpriority="high">\n' for u in preload)
     return f'''<!DOCTYPE html>
 <html lang="{lang}">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#060E1F">
+<meta name="color-scheme" content="dark">
 <meta name="description" content="{desc}">
 <link rel="canonical" href="{self_url}">
 {hreflang}<meta property="og:type" content="website">
@@ -421,10 +443,8 @@ def head(lang, title, desc, root, canonical, og_title=None, alts=None):
 <link rel="icon" type="image/png" sizes="32x32" href="{root}favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="{root}favicon-16.png">
 <link rel="apple-touch-icon" href="{root}apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="{root}assets/site.css?v={CSS_V}">
+{preloads}<link rel="stylesheet" href="{root}assets/site.css?v={CSS_V}">
+<script src="{root}assets/site.js?v={CSS_V}" defer></script>
 </head>
 <body>
 '''
@@ -439,19 +459,24 @@ def header(lang, root, canonical, current=None, switch=None):
     def nav(href, label, key):
         cur=' aria-current="page"' if current==key else ''
         return f'<a href="{home}{href}"{cur}>{label}</a>'
-    return f'''<header class="site-header shell">
-  <a class="brand" href="{home}index.html" aria-label="Seize">
-    <img class="brand-mark" src="{root}assets/seize-mark.png?v=1" alt="" width="36" height="36">
-    <span class="wordmark">SEIZE</span>
-  </a>
-  <nav class="site-nav" aria-label="Main">
-    {nav('index.html#apps',t['nav_apps'],'apps')}
-    {nav('index.html#philosophy',t['nav_phil'],'philosophy')}
-    {nav('index.html#work',t['nav_work'],'work')}
-    {nav('index.html#studio',t['nav_studio'],'studio')}
-    <span class="lang">{langs}</span>
-    <a class="button small" href="mailto:hello@seizeapps.com">{t['nav_cta']}</a>
-  </nav>
+    return f'''<a class="skip" href="#main">{t['skip']}</a>
+<header class="site-header">
+  <div class="shell header-inner">
+    <a class="brand" href="{home}index.html" aria-label="Seize">
+      <img class="brand-mark" src="{root}assets/seize-mark.png?v=1" alt="" width="32" height="32">
+      <span class="wordmark">SEIZE</span>
+    </a>
+    <nav class="site-nav" aria-label="Main">
+      {nav('index.html#apps',t['nav_apps'],'apps')}
+      {nav('index.html#philosophy',t['nav_phil'],'philosophy')}
+      {nav('index.html#work',t['nav_work'],'work')}
+      {nav('index.html#studio',t['nav_studio'],'studio')}
+    </nav>
+    <div class="header-tools">
+      <div class="lang" role="group" aria-label="{t['lang_label']}">{langs}</div>
+      <a class="button small" href="mailto:hello@seizeapps.com">{t['nav_cta']}</a>
+    </div>
+  </div>
 </header>
 '''
 
@@ -460,7 +485,7 @@ def footer(lang, root):
     return f'''<footer class="site-footer">
   <div class="footer-inner shell">
     <div class="footer-brand">
-      <img src="{root}assets/seize-mark.png?v=1" alt="" width="28" height="28">
+      <img src="{root}assets/seize-mark.png?v=1" alt="" width="32" height="32" loading="lazy" decoding="async">
       <div>
         <p class="footer-signoff">{t['footer_tag']}</p>
         <p class="copyright">{t['copyright']}</p>
@@ -468,6 +493,7 @@ def footer(lang, root):
     </div>
     <nav class="footer-links" aria-label="Footer">
       <a href="{home}index.html#apps">{t['nav_apps']}</a>
+      <a href="{home}index.html#studio">{t['nav_studio']}</a>
       <a href="{home}privacy.html">{t['footer_privacy']}</a>
       <a href="{home}terms.html">{t['footer_terms']}</a>
       <a href="https://github.com/SeizeApps" rel="noopener">GitHub</a>
@@ -475,23 +501,10 @@ def footer(lang, root):
     </nav>
   </div>
 </footer>
-{LANG_REMEMBER}</body>
+</body>
 </html>
 '''
 
-WAVE='''<svg class="wave" viewBox="0 0 1440 420" preserveAspectRatio="none" aria-hidden="true">
-  <defs>
-    <linearGradient id="wg" x1="0" x2="1" y1="0" y2="0">
-      <stop offset="0" stop-color="#007AFF" stop-opacity="0"/>
-      <stop offset=".45" stop-color="#007AFF" stop-opacity=".55"/>
-      <stop offset=".75" stop-color="#22D3EE" stop-opacity=".7"/>
-      <stop offset="1" stop-color="#22D3EE" stop-opacity="0"/>
-    </linearGradient>
-  </defs>
-  <path d="M0 300 C 240 200, 420 380, 700 260 S 1120 120, 1440 240" fill="none" stroke="url(#wg)" stroke-width="2"/>
-  <path d="M0 340 C 260 240, 460 420, 760 300 S 1160 160, 1440 280" fill="none" stroke="url(#wg)" stroke-width="1.5" opacity=".6"/>
-  <path d="M0 260 C 220 160, 400 340, 660 220 S 1080 80, 1440 200" fill="none" stroke="url(#wg)" stroke-width="1" opacity=".4"/>
-</svg>'''
 
 def write(path, html):
     full=os.path.join(SITE,path); os.makedirs(os.path.dirname(full), exist_ok=True)
@@ -527,105 +540,121 @@ def fill_counts():
         word=NUMBERS[lang][n]
         UI[lang]['site_desc']=UI[lang]['site_desc'].format(apps=apps)
         UI[lang]['apps_h2']=UI[lang]['apps_h2'].format(Count=word.capitalize(), count=word)
+        UI[lang]['hero_proof']=UI[lang]['hero_proof'].format(n=n, live=sum(1 for a in APPS if a.get('appstore')))
 fill_counts()
 
 APPLE_GLYPH='<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16.37 12.72c-.02-2.3 1.88-3.41 1.97-3.46-1.07-1.57-2.74-1.79-3.34-1.81-1.42-.14-2.77.84-3.49.84-.72 0-1.83-.82-3.01-.8-1.55.02-2.98.9-3.77 2.29-1.61 2.79-.41 6.92 1.16 9.18.77 1.11 1.68 2.35 2.87 2.31 1.15-.05 1.59-.75 2.98-.75 1.39 0 1.78.75 3 .72 1.24-.02 2.03-1.13 2.79-2.24.88-1.29 1.24-2.53 1.26-2.6-.03-.01-2.41-.93-2.42-3.68zM14.07 5.94c.63-.77 1.06-1.83.94-2.9-.91.04-2.02.61-2.67 1.37-.58.67-1.1 1.76-.96 2.8 1.02.08 2.05-.52 2.69-1.27z"/></svg>'
 
-def store_icon(a, t):
-    if not a.get('appstore'): return ''
+def store_status(a, t):
+    # Live apps carry an «App Store» pill that links straight to the listing (a sibling of the card's link:
+    # a link can't sit inside another); the rest say «Coming soon». Both come from `appstore`, never by hand.
+    if not a.get('appstore'): return f'<span class="status soon">{t["soon"]}</span>'
     label=t['store_icon'].format(name=a['name'])
-    return (f'<a class="store-icon" href="https://apps.apple.com/app/id{a["appstore"]}" '
-            f'aria-label="{label}" title="{label}">{APPLE_GLYPH}</a>')
+    return (f'<a class="status live" href="https://apps.apple.com/app/id{a["appstore"]}" '
+            f'aria-label="{label}" title="{label}">{APPLE_GLYPH}<span>App Store</span></a>')
+
+def icon_vt(a):
+    # Same name on the home card's icon and the app page's hero icon: the cross-page View Transition morphs one into the other.
+    return f'style="view-transition-name:icon-{a["slug"]}"'
 
 # ---------------------------------------------------------------- index
+HERO_SHOTS=(('left','drip-01-dashboard.jpg'),('right','garum-01-map.jpg'),('front','tempo-01-welcome.jpg'))
+SHIELD='<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M12 3 4.5 6v5.5c0 4.6 3.1 8.3 7.5 9.5 4.4-1.2 7.5-4.9 7.5-9.5V6L12 3Z"/><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="m8.8 12.2 2.3 2.3 4.3-4.6"/></svg>'
+
 def build_index(lang):
     t=UI[lang]; root=up(lang,0); home=root+prefix(lang)
-    # El icono de la Store es un enlace hermano de la tarjeta (un <a> no puede
-    # ir dentro de otro) y solo sale con `appstore`, como el badge de la página.
-    cards=''.join(f'''
-    <div class="app-card-wrap">
-    <a class="app-card" href="{home}apps/{a['slug']}.html">
-      <img src="{root}assets/icons/{a['icon']}" alt="" width="64" height="64">
-      <h3>{a['name']}</h3>
-      <p class="one-liner">{a['copy'][lang]['one']}</p>
-      <div class="tags">{''.join(f'<span>{x}</span>' for x in a['copy'][lang]['tags'])}</div>
-      <span class="card-more">{t['learn_more']} <span aria-hidden="true">→</span></span>
-    </a>{store_icon(a, t)}
-    </div>''' for a in APPS)
-    values=''.join(f'<div class="value"><span class="num">0{i+1}</span><h3>{h}</h3><p>{p}</p></div>' for i,(h,p) in enumerate(t['values']))
-    work=''.join(f'<div class="feature"><span class="num">0{i+1}</span><h3>{h}</h3><p>{p}</p></div>' for i,(h,p) in enumerate(t['work_items']))
-    how=''.join(f'<div class="step"><h4>{h}</h4><p>{p}</p></div>' for h,p in t['work_how'])
+    def cards(apps):
+        return ''.join(f'''
+        <li class="app-card-wrap reveal" style="--i:{k%3}">
+          <a class="app-card" href="{home}apps/{a['slug']}.html">
+            <img class="app-icon" src="{root}assets/icons/{a['icon']}" alt="" width="64" height="64" loading="lazy" decoding="async" {icon_vt(a)}>
+            <h3>{a['name']}</h3>
+            <p class="one-liner">{a['copy'][lang]['one']}</p>
+            <div class="tags">{''.join(f'<span>{x}</span>' for x in a['copy'][lang]['tags'])}</div>
+            <span class="card-more">{t['learn_more']} <span aria-hidden="true">→</span></span>
+          </a>{store_status(a, t) if a.get('appstore') else ''}
+        </li>''' for k,a in enumerate(apps))
+    # Live apps first, then the ones without an App Store id under «Coming soon»: the group says it, so their cards carry no pill.
+    groups=''.join(f'''
+    <p class="group-label" id="apps-{key}">{label}</p>
+    <ul class="app-grid app-grid-{key}" role="list" aria-labelledby="apps-{key}">{cards(apps)}
+    </ul>''' for key,label,apps in (('live', t['live_title'], [a for a in APPS if a.get('appstore')]),
+                                       ('soon', t['soon'], [a for a in APPS if not a.get('appstore')])) if apps)
+    strip=''.join(f'<li><img src="{root}assets/icons/{a["icon"]}" alt="" width="56" height="56" decoding="async"><span>{a["name"]}</span></li>' for a in APPS)
+    stage=''.join(f'<div class="device device-{pos}"><div class="phone">{shot(root, f, lazy=False, priority=(pos=="front"))}</div></div>' for pos,f in HERO_SHOTS)
+    values=''.join(f'<li class="value reveal" style="--i:{i}"><span class="num">0{i+1}</span><h3>{h}</h3><p>{p}</p></li>' for i,(h,p) in enumerate(t['values']))
+    work=''.join(f'<li class="feature reveal" style="--i:{i}"><span class="num">0{i+1}</span><h3>{h}</h3><p>{p}</p></li>' for i,(h,p) in enumerate(t['work_items']))
+    how=''.join(f'<li class="step"><span class="step-dot" aria-hidden="true"></span><h4>{h}</h4><p>{p}</p></li>' for h,p in t['work_how'])
     subject=t['work_subject'].replace(' ','%20')
-    html=head(lang, t['site_title'], t['site_desc'], root, '', og_title=t['og_title'])+header(lang, root, 'index.html')+f'''<main>
-  <section class="hero" aria-labelledby="hero-title">
-    {WAVE}
+    front=dict(HERO_SHOTS)['front']
+    html=head(lang, t['site_title'], t['site_desc'], root, '', og_title=t['og_title'], preload=[f'{root}assets/shots/{front}'])+header(lang, root, 'index.html')+f'''<main id="main">
+  <section class="hero" aria-labelledby="hero-title" data-tilt>
     <div class="shell hero-grid">
       <div class="hero-copy">
-        <p class="eyebrow">{t['hero_eyebrow']}</p>
-        <h1 id="hero-title">{t['hero_h1']}</h1>
-        <p class="lede">{t['hero_lede']}</p>
-        <div class="cta-row">
+        <p class="eyebrow" style="--i:0">{t['hero_eyebrow']}</p>
+        <h1 id="hero-title" style="--i:1">{t['hero_h1']}</h1>
+        <p class="lede" style="--i:2">{t['hero_lede']}</p>
+        <div class="cta-row" style="--i:3">
           <a class="button" href="#apps">{t['hero_cta']}</a>
           <a class="button ghost" href="#work">{t['hero_cta2']}</a>
         </div>
+        <p class="hero-proof" style="--i:4">{t['hero_proof']}</p>
       </div>
-      <div class="hero-phone" aria-hidden="true">
-        <div class="phone"><img src="{root}assets/shots/anchor-01-home.jpg" alt="" width="552" height="1200"></div>
-      </div>
+      <div class="hero-stage" aria-hidden="true">{stage}</div>
     </div>
+    <div class="marquee" aria-hidden="true"><div class="marquee-inner"><ul>{strip}</ul><ul>{strip}</ul></div></div>
   </section>
 
   <section class="section shell" id="apps" aria-labelledby="apps-title">
-    <div class="section-head">
+    <div class="section-head reveal">
       <div><p class="eyebrow">{t['apps_eyebrow']}</p><h2 id="apps-title">{t['apps_h2']}</h2></div>
       <p>{t['apps_p']}</p>
     </div>
-    <div class="app-grid">{cards}
-    </div>
+{groups}
   </section>
 
   <section class="section shell" id="philosophy" aria-labelledby="philosophy-title">
-    <div class="section-head">
+    <div class="section-head reveal">
       <div><p class="eyebrow">{t['phil_eyebrow']}</p><h2 id="philosophy-title">{t['phil_h2']}</h2></div>
       <p>{t['phil_p']}</p>
     </div>
-    <div class="values">{values}</div>
+    <ol class="values" role="list">{values}</ol>
   </section>
 
   <section class="section shell" id="work" aria-labelledby="work-title">
-    <div class="section-head">
+    <div class="section-head reveal">
       <div><p class="eyebrow">{t['work_eyebrow']}</p><h2 id="work-title">{t['work_h2']}</h2></div>
       <p>{t['work_p']}</p>
     </div>
-    <div class="features">{work}</div>
-    <div class="work-how">
+    <ul class="features" role="list">{work}</ul>
+    <div class="work-how reveal">
       <div class="work-how-head"><h3>{t['work_how_title']}</h3><a class="button" href="mailto:hello@seizeapps.com?subject={subject}">{t['work_cta']}</a></div>
-      <div class="steps">{how}</div>
+      <ol class="steps" role="list">{how}</ol>
     </div>
   </section>
 
   <section class="section shell" id="studio" aria-labelledby="studio-title">
-    <div class="section-head">
+    <div class="section-head reveal">
       <div><p class="eyebrow">{t['studio_eyebrow']}</p><h2 id="studio-title">{t['studio_h2']}</h2></div>
       <p>{t['studio_p']}</p>
     </div>
     <div class="studio">
-      <div class="person">
-        <div class="initials a" aria-hidden="true">IC</div>
+      <div class="person reveal" style="--i:0">
+        <div class="initials" aria-hidden="true">IC</div>
         <div><h3>Izotz Cristobal Mota</h3><p class="role">{t['role']}</p><p class="bio">{t['bio_izotz']}</p></div>
       </div>
-      <div class="person">
-        <div class="initials b" aria-hidden="true">SS</div>
+      <div class="person reveal" style="--i:1">
+        <div class="initials" aria-hidden="true">SS</div>
         <div><h3>Sendoa Sola</h3><p class="role">{t['role']}</p><p class="bio">{t['bio_sendoa']}</p></div>
       </div>
-      <p class="studio-note">{t['studio_note']}</p>
+      <p class="studio-note reveal">{t['studio_note']}</p>
     </div>
   </section>
 
-  <section class="shell" id="contact" aria-labelledby="contact-title">
-    <div class="contact">
-      <div><p class="eyebrow">{t['contact_eyebrow']}</p><h2 id="contact-title">{t['contact_h2']}</h2><p class="note" style="margin-top:10px">{t['contact_p']}</p></div>
-      <a class="button" href="mailto:hello@seizeapps.com">hello@seizeapps.com</a>
+  <section class="section shell" id="contact" aria-labelledby="contact-title">
+    <div class="contact reveal">
+      <div><p class="eyebrow">{t['contact_eyebrow']}</p><h2 id="contact-title">{t['contact_h2']}</h2><p class="contact-p">{t['contact_p']}</p></div>
+      <a class="button large" href="mailto:hello@seizeapps.com">hello@seizeapps.com</a>
     </div>
   </section>
 </main>
@@ -635,40 +664,56 @@ def build_index(lang):
 # ---------------------------------------------------------------- app pages
 def build_app(lang, a):
     t=UI[lang]; c=a['copy'][lang]; root=up(lang); home=root+prefix(lang)
-    shots=''.join(f'<figure><div class="phone"><img src="{root}assets/shots/{f}" alt="{t["shot_alt"].format(name=a["name"], cap=cap)}" loading="lazy" width="552" height="1200"></div><figcaption>{cap}</figcaption></figure>' for f,cap in zip(a['shots'], c['captions']))
-    feats=''.join(f'<div class="feature"><span class="num">{n}</span><h3>{h}</h3><p>{p}</p></div>' for n,h,p in c['features'])
-    extra=f'<p class="note" style="margin-top:20px">{c["extra"]}</p>' if c.get('extra') else ''
+    shots=''.join(f'''
+      <li class="shot reveal" style="--i:{k}"><figure><div class="phone" data-tilt>{shot(root, f, t["shot_alt"].format(name=a["name"], cap=cap))}</div><figcaption>{cap}</figcaption></figure></li>'''
+                  for k,(f,cap) in enumerate(zip(a['shots'], c['captions'])))
+    feats=''.join(f'<li class="feature reveal" style="--i:{k}"><span class="num">{n}</span><h3>{h}</h3><p>{p}</p></li>' for k,(n,h,p) in enumerate(c['features']))
+    extra=f'<p class="note app-extra">{c["extra"]}</p>' if c.get('extra') else ''
     # Sin id de App Store no hay badge: el sitio nunca enlaza a una ficha que
     # todavía no existe, ni menciona revisión, TestFlight ni fechas.
     # La URL va sin país a propósito: Apple redirige a la tienda del visitante.
-    badge=(f'<a class="store-badge button" href="https://apps.apple.com/app/id{a["appstore"]}">{t["store_badge"]}</a>'
-           if a.get('appstore') else '')
-    html=head(lang, f'{a["name"]} — Seize Apps', c['one'].replace('"','&quot;'), root, f'apps/{a["slug"]}.html')+header(lang, root, f'apps/{a["slug"]}.html', 'apps')+f'''<main>
+    badge=(f'<a class="store-badge button" href="https://apps.apple.com/app/id{a["appstore"]}">{APPLE_GLYPH}<span>{t["store_badge"]}</span></a>'
+           if a.get('appstore') else f'<span class="status soon">{t["soon"]}</span>')
+    more=''.join(f'<li><a href="{home}apps/{b["slug"]}.html"><img src="{root}assets/icons/{b["icon"]}" alt="" width="56" height="56" loading="lazy" decoding="async"><span>{b["name"]}</span></a></li>'
+                 for b in APPS if b is not a)
+    privacy_href=home+(a['privacy_path'][lang] if a.get('privacy_path') else 'privacy.html#'+a['privacy_id'])
+    html=head(lang, f'{a["name"]} — Seize Apps', c['one'].replace('"','&quot;'), root, f'apps/{a["slug"]}.html')+header(lang, root, f'apps/{a["slug"]}.html', 'apps')+f'''<main id="main">
   <section class="app-hero shell" aria-labelledby="app-title">
-    <div class="app-hero-copy">
-      <img class="icon" src="{root}assets/icons/{a['icon']}" alt="" width="96" height="96">
-      <p class="eyebrow">{t['app_eyebrow']}</p>
-      <h1 id="app-title">{a['name']}</h1>
+    <div class="app-hero-head">
+      <img class="icon" src="{root}assets/icons/{a['icon']}" alt="" width="128" height="128" fetchpriority="high" {icon_vt(a)}>
+      <div><p class="eyebrow">{t['app_eyebrow']}</p><h1 id="app-title">{a['name']}</h1></div>
+    </div>
+    <div class="app-hero-body">
       <p class="lede">{c['lede']}</p>
       <div class="app-meta">{''.join(f'<span>{m}</span>' for m in c['meta'])}</div>
-      {badge}
+      <div class="cta-row">{badge}</div>
       {extra}
     </div>
   </section>
-  <section class="shell" aria-label="{t['shots_aria']}"><div class="shots shots-{len(a['shots'])}">{shots}</div></section>
 
-  <section class="section shell" aria-labelledby="what-title">
-    <div class="section-head">
-      <div><p class="eyebrow">{t['what_eyebrow']}</p><h2 id="what-title">{t['what_h2']}</h2></div>
-    </div>
-    <div class="features">{feats}</div>
+  <section class="gallery" aria-label="{t['shots_aria']}">
+    <ul class="shots-rail" role="list">{shots}
+    </ul>
   </section>
 
-  <section class="shell" aria-labelledby="privacy-title">
-    <div class="privacy-box">
-      <div><p class="eyebrow">{t['privacy_eyebrow']}</p><h3 id="privacy-title" style="margin-bottom:10px">{t['privacy_h3']}</h3><p>{c['privacy']}</p><p class="note" style="margin-top:14px">{t['published_by'].format(lead=a['lead'])}</p></div>
-      <div class="links"><a class="button ghost" href="{home}{a['privacy_path'][lang] if a.get('privacy_path') else 'privacy.html#' + a['privacy_id']}">{t['privacy_policy']}</a><a class="button ghost" href="mailto:hello@seizeapps.com?subject={a['name']}">{t['contact']}</a></div>
+  <section class="section shell" aria-labelledby="what-title">
+    <div class="section-head reveal">
+      <div><p class="eyebrow">{t['what_eyebrow']}</p><h2 id="what-title">{t['what_h2']}</h2></div>
     </div>
+    <ul class="features" role="list">{feats}</ul>
+  </section>
+
+  <section class="section shell" aria-labelledby="privacy-title">
+    <div class="privacy-box reveal">
+      <div class="privacy-glyph" aria-hidden="true">{SHIELD}</div>
+      <div><p class="eyebrow">{t['privacy_eyebrow']}</p><h2 id="privacy-title">{t['privacy_h3']}</h2><p>{c['privacy']}</p><p class="note">{t['published_by'].format(lead=a['lead'])}</p></div>
+      <div class="links"><a class="button ghost" href="{privacy_href}">{t['privacy_policy']}</a><a class="button ghost" href="mailto:hello@seizeapps.com?subject={a['name']}">{t['contact']}</a></div>
+    </div>
+  </section>
+
+  <section class="section shell more-apps" aria-labelledby="more-title">
+    <h2 id="more-title" class="more-title">{t['more_apps']}</h2>
+    <ul class="more-list" role="list">{more}</ul>
   </section>
 </main>
 '''+footer(lang, root)
@@ -676,11 +721,39 @@ def build_app(lang, a):
 
 # ---------------------------------------------------------------- legal
 from gen_legal_copy import LEGAL
+LEGAL_H2=re.compile(r'<h2>(.*?)</h2>')
+LEGAL_TOC=re.compile(r'<nav class="toc" aria-label="([^"]*)">(.*?)</nav>', re.S)
+def plain(s): return re.sub(r'<[^>]+>','',s)
+def anchor(s):
+    s=unicodedata.normalize('NFKD', plain(s)).encode('ascii','ignore').decode().lower()
+    return re.sub(r'[^a-z0-9]+','-',s).strip('-') or 'section'
+
+def legal_main(lang, body):
+    # Every legal page goes through here (studio-wide, Garum, Sacapuntas, Atino, Roomy). The text is never
+    # touched: each bare <h2> gets an id, and on wide screens those headings (plus the app list, if the page
+    # has one) become a sticky table of contents beside a ~68ch column. Narrow screens keep the inline pills.
+    used=set(re.findall(r'\bid="([^"]+)"', body)); heads=[]
+    def add_id(m):
+        base=anchor(m.group(1)); s=base; k=2
+        while s in used: s=f'{base}-{k}'; k+=1
+        used.add(s); heads.append((s, plain(m.group(1))))
+        return f'<h2 id="{s}">{m.group(1)}</h2>'
+    body=LEGAL_H2.sub(add_id, body)
+    aside=''
+    if heads:
+        title=UI[lang]['toc_title']
+        links=''.join(f'<li><a href="#{s}">{h}</a></li>' for s,h in heads)
+        m=LEGAL_TOC.search(body)
+        apps=f'<p class="toc-label">{m.group(1)}</p><div class="toc-apps">{m.group(2).strip()}</div>' if m else ''
+        aside=f'<aside class="legal-aside"><nav aria-label="{title}"><p class="toc-label">{title}</p><ol role="list">{links}</ol>{apps}</nav></aside>'
+    return f'<main id="main" class="shell legal-page">\n<article class="legal">\n{body}\n</article>\n{aside}\n</main>\n'
+
 def build_legal(lang, kind):
     t=UI[lang]; root=up(lang,0)
     L=LEGAL[lang][kind]
-    html=head(lang, L['title'], L['desc'], root, f'{kind}.html')+header(lang, root, f'{kind}.html')+f'<main class="shell legal">\n{L["body"]}\n</main>\n'+footer(lang, root)
+    html=head(lang, L['title'], L['desc'], root, f'{kind}.html')+header(lang, root, f'{kind}.html')+legal_main(lang, L['body'])+footer(lang, root)
     write(prefix(lang)+f'{kind}.html', html)
+
 
 if __name__=='__main__':
     for lang in LANGS:

@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#060E1F">
+<meta name="color-scheme" content="dark">
 <meta name="description" content="Le tableur de ton coach, version salle de sport : des blocs de semaines, la charge et les reps de chaque série, l’effort en répétitions en réserve.">
 <link rel="canonical" href="https://seizeapps.com/fr/apps/meso.html">
 <link rel="alternate" hreflang="en" href="https://seizeapps.com/apps/meso.html">
@@ -24,58 +25,76 @@
 <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16.png">
 <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
-<link rel="stylesheet" href="../../assets/site.css?v=2026-10-05">
+<link rel="stylesheet" href="../../assets/site.css?v=2026-10-05.2">
+<script src="../../assets/site.js?v=2026-10-05.2" defer></script>
 </head>
 <body>
-<header class="site-header shell">
-  <a class="brand" href="../../fr/index.html" aria-label="Seize">
-    <img class="brand-mark" src="../../assets/seize-mark.png?v=1" alt="" width="36" height="36">
-    <span class="wordmark">SEIZE</span>
-  </a>
-  <nav class="site-nav" aria-label="Main">
-    <a href="../../fr/index.html#apps" aria-current="page">Apps</a>
-    <a href="../../fr/index.html#philosophy">Philosophie</a>
-    <a href="../../fr/index.html#work">Travailler avec nous</a>
-    <a href="../../fr/index.html#studio">Studio</a>
-    <span class="lang"><a href="../../apps/meso.html" hreflang="en" lang="en" aria-label="Read in English">EN</a><a href="../../es/apps/meso.html" hreflang="es" lang="es" aria-label="Leer en castellano">ES</a><span aria-current="true">FR</span></span>
-    <a class="button small" href="mailto:hello@seizeapps.com">Écris-nous</a>
-  </nav>
+<a class="skip" href="#main">Aller au contenu</a>
+<header class="site-header">
+  <div class="shell header-inner">
+    <a class="brand" href="../../fr/index.html" aria-label="Seize">
+      <img class="brand-mark" src="../../assets/seize-mark.png?v=1" alt="" width="32" height="32">
+      <span class="wordmark">SEIZE</span>
+    </a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="../../fr/index.html#apps" aria-current="page">Apps</a>
+      <a href="../../fr/index.html#philosophy">Philosophie</a>
+      <a href="../../fr/index.html#work">Travailler avec nous</a>
+      <a href="../../fr/index.html#studio">Studio</a>
+    </nav>
+    <div class="header-tools">
+      <div class="lang" role="group" aria-label="Langue"><a href="../../apps/meso.html" hreflang="en" lang="en" aria-label="Read in English">EN</a><a href="../../es/apps/meso.html" hreflang="es" lang="es" aria-label="Leer en castellano">ES</a><span aria-current="true">FR</span></div>
+      <a class="button small" href="mailto:hello@seizeapps.com">Écris-nous</a>
+    </div>
+  </div>
 </header>
-<main>
+<main id="main">
   <section class="app-hero shell" aria-labelledby="app-title">
-    <div class="app-hero-copy">
-      <img class="icon" src="../../assets/icons/meso.png" alt="" width="96" height="96">
-      <p class="eyebrow">Seize Apps · iOS</p>
-      <h1 id="app-title">Meso</h1>
+    <div class="app-hero-head">
+      <img class="icon" src="../../assets/icons/meso.png" alt="" width="128" height="128" fetchpriority="high" style="view-transition-name:icon-meso">
+      <div><p class="eyebrow">Seize Apps · iOS</p><h1 id="app-title">Meso</h1></div>
+    </div>
+    <div class="app-hero-body">
       <p class="lede">Un programme est un bloc de semaines, pas une liste de séances. <strong>Meso</strong> prend les séances que ton coach a écrites — ou l’un de ses modèles — et les transforme en un journal qui se remplit tout seul : chaque série arrive pré-remplie avec ta meilleure séance récente, les séries restantes suivent chaque série que tu valides, un toucher suffit pour valider, et l’effort se note en répétitions en réserve. Ensuite, Meso te montre si le bloc avance : le tonnage par exercice semaine après semaine et, avec Meso Pro, les séries par muscle face à ce que la recherche juge suffisant.</p>
       <div class="app-meta"><span>iOS 17+</span><span>Gratuit · Pro, achat unique</span><span>Santé (Pro)</span><span>Français · Anglais · Espagnol</span></div>
-      <a class="store-badge button" href="https://apps.apple.com/app/id6813842295">Télécharger dans l’App Store</a>
+      <div class="cta-row"><a class="store-badge button" href="https://apps.apple.com/app/id6813842295"><svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16.37 12.72c-.02-2.3 1.88-3.41 1.97-3.46-1.07-1.57-2.74-1.79-3.34-1.81-1.42-.14-2.77.84-3.49.84-.72 0-1.83-.82-3.01-.8-1.55.02-2.98.9-3.77 2.29-1.61 2.79-.41 6.92 1.16 9.18.77 1.11 1.68 2.35 2.87 2.31 1.15-.05 1.59-.75 2.98-.75 1.39 0 1.78.75 3 .72 1.24-.02 2.03-1.13 2.79-2.24.88-1.29 1.24-2.53 1.26-2.6-.03-.01-2.41-.93-2.42-3.68zM14.07 5.94c.63-.77 1.06-1.83.94-2.9-.91.04-2.02.61-2.67 1.37-.58.67-1.1 1.76-.96 2.8 1.02.08 2.05-.52 2.69-1.27z"/></svg><span>Télécharger dans l’App Store</span></a></div>
       
     </div>
   </section>
-  <section class="shell" aria-label="Captures d’écran"><div class="shots shots-4"><figure><div class="phone"><img src="../../assets/shots/meso-01-today.jpg" alt="Capture d’écran de Meso : Aujourd’hui : la séance prévue" loading="lazy" width="552" height="1200"></div><figcaption>Aujourd’hui : la séance prévue</figcaption></figure><figure><div class="phone"><img src="../../assets/shots/meso-02-workout.jpg" alt="Capture d’écran de Meso : Une série, c’est une coche ; le reste est pré-rempli" loading="lazy" width="552" height="1200"></div><figcaption>Une série, c’est une coche ; le reste est pré-rempli</figcaption></figure><figure><div class="phone"><img src="../../assets/shots/meso-03-grid.jpg" alt="Capture d’écran de Meso : Le tonnage par exercice, semaine après semaine" loading="lazy" width="552" height="1200"></div><figcaption>Le tonnage par exercice, semaine après semaine</figcaption></figure><figure><div class="phone"><img src="../../assets/shots/meso-04-week.jpg" alt="Capture d’écran de Meso : Les séries par muscle face à la bande fondée sur les preuves (Pro)" loading="lazy" width="552" height="1200"></div><figcaption>Les séries par muscle face à la bande fondée sur les preuves (Pro)</figcaption></figure></div></section>
 
-  <section class="section shell" aria-labelledby="what-title">
-    <div class="section-head">
-      <div><p class="eyebrow">Ce qu’elle fait</p><h2 id="what-title">Une seule chose, <span>bien faite.</span></h2></div>
-    </div>
-    <div class="features"><div class="feature"><span class="num">01 / NOTER</span><h3>Un toucher par série</h3><p>Charge, reps et RIR arrivent pré-remplis depuis ta meilleure séance récente, et chaque série validée réajuste les suivantes à leurs propres reps et RIR ; quand rien n’a changé, la coche suffit. Une note par exercice, des séries d’échauffement si tu en veux, et la série suivante sur l’écran verrouillé.</p></div><div class="feature"><span class="num">02 / PROGRESSER</span><h3>Des blocs, pas des jours</h3><p>Une grille du tonnage par exercice au fil des semaines. Meso Pro ajoute les séries par muscle face à la bande 10–20, le 1RM estimé de chaque exercice d’un bloc à l’autre, l’étape suivante avant ta première série, et tes salles avec leur barre et leurs disques : un achat unique, avec un essai gratuit de 30 jours. Pas de jours d’affilée, pas de confettis : la progression se mesure en blocs.</p></div><div class="feature"><span class="num">03 / APPRENDRE</span><h3>Chaque règle avec sa source</h3><p>Pourquoi le RIR, pourquoi une décharge, pourquoi la bande : chaque principe de l’app vient avec ses preuves et leur solidité, et des références que tu peux vérifier. Honnête sur ce qui est établi et sur ce qui ne l’est pas.</p></div></div>
+  <section class="gallery" aria-label="Captures d’écran">
+    <ul class="shots-rail" role="list">
+      <li class="shot reveal" style="--i:0"><figure><div class="phone" data-tilt><img src="../../assets/shots/meso-01-today.jpg" alt="Capture d’écran de Meso : Aujourd’hui : la séance prévue" width="600" height="1304" loading="lazy" decoding="async"></div><figcaption>Aujourd’hui : la séance prévue</figcaption></figure></li>
+      <li class="shot reveal" style="--i:1"><figure><div class="phone" data-tilt><img src="../../assets/shots/meso-02-workout.jpg" alt="Capture d’écran de Meso : Une série, c’est une coche ; le reste est pré-rempli" width="600" height="1304" loading="lazy" decoding="async"></div><figcaption>Une série, c’est une coche ; le reste est pré-rempli</figcaption></figure></li>
+      <li class="shot reveal" style="--i:2"><figure><div class="phone" data-tilt><img src="../../assets/shots/meso-03-grid.jpg" alt="Capture d’écran de Meso : Le tonnage par exercice, semaine après semaine" width="600" height="1304" loading="lazy" decoding="async"></div><figcaption>Le tonnage par exercice, semaine après semaine</figcaption></figure></li>
+      <li class="shot reveal" style="--i:3"><figure><div class="phone" data-tilt><img src="../../assets/shots/meso-04-week.jpg" alt="Capture d’écran de Meso : Les séries par muscle face à la bande fondée sur les preuves (Pro)" width="600" height="1304" loading="lazy" decoding="async"></div><figcaption>Les séries par muscle face à la bande fondée sur les preuves (Pro)</figcaption></figure></li>
+    </ul>
   </section>
 
-  <section class="shell" aria-labelledby="privacy-title">
-    <div class="privacy-box">
-      <div><p class="eyebrow">Confidentialité</p><h3 id="privacy-title" style="margin-bottom:10px">À toi, pas à nous.</h3><p>Meso garde tes programmes et tes séances sur ton appareil et dans ton propre compte iCloud. Meso n’écrit dans Santé que si tu l’actives, et n’y lit jamais rien. Sans compte, sans mesure d’audience.</p><p class="note" style="margin-top:14px">Une app de Seize Apps.</p></div>
+  <section class="section shell" aria-labelledby="what-title">
+    <div class="section-head reveal">
+      <div><p class="eyebrow">Ce qu’elle fait</p><h2 id="what-title">Une seule chose, <span>bien faite.</span></h2></div>
+    </div>
+    <ul class="features" role="list"><li class="feature reveal" style="--i:0"><span class="num">01 / NOTER</span><h3>Un toucher par série</h3><p>Charge, reps et RIR arrivent pré-remplis depuis ta meilleure séance récente, et chaque série validée réajuste les suivantes à leurs propres reps et RIR ; quand rien n’a changé, la coche suffit. Une note par exercice, des séries d’échauffement si tu en veux, et la série suivante sur l’écran verrouillé.</p></li><li class="feature reveal" style="--i:1"><span class="num">02 / PROGRESSER</span><h3>Des blocs, pas des jours</h3><p>Une grille du tonnage par exercice au fil des semaines. Meso Pro ajoute les séries par muscle face à la bande 10–20, le 1RM estimé de chaque exercice d’un bloc à l’autre, l’étape suivante avant ta première série, et tes salles avec leur barre et leurs disques : un achat unique, avec un essai gratuit de 30 jours. Pas de jours d’affilée, pas de confettis : la progression se mesure en blocs.</p></li><li class="feature reveal" style="--i:2"><span class="num">03 / APPRENDRE</span><h3>Chaque règle avec sa source</h3><p>Pourquoi le RIR, pourquoi une décharge, pourquoi la bande : chaque principe de l’app vient avec ses preuves et leur solidité, et des références que tu peux vérifier. Honnête sur ce qui est établi et sur ce qui ne l’est pas.</p></li></ul>
+  </section>
+
+  <section class="section shell" aria-labelledby="privacy-title">
+    <div class="privacy-box reveal">
+      <div class="privacy-glyph" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M12 3 4.5 6v5.5c0 4.6 3.1 8.3 7.5 9.5 4.4-1.2 7.5-4.9 7.5-9.5V6L12 3Z"/><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="m8.8 12.2 2.3 2.3 4.3-4.6"/></svg></div>
+      <div><p class="eyebrow">Confidentialité</p><h2 id="privacy-title">À toi, pas à nous.</h2><p>Meso garde tes programmes et tes séances sur ton appareil et dans ton propre compte iCloud. Meso n’écrit dans Santé que si tu l’actives, et n’y lit jamais rien. Sans compte, sans mesure d’audience.</p><p class="note">Une app de Seize Apps.</p></div>
       <div class="links"><a class="button ghost" href="../../fr/privacy.html#meso">Politique de confidentialité</a><a class="button ghost" href="mailto:hello@seizeapps.com?subject=Meso">Contact</a></div>
     </div>
+  </section>
+
+  <section class="section shell more-apps" aria-labelledby="more-title">
+    <h2 id="more-title" class="more-title">Aussi chez Seize</h2>
+    <ul class="more-list" role="list"><li><a href="../../fr/apps/cycle-timers.html"><img src="../../assets/icons/cycle-timers.png" alt="" width="56" height="56" loading="lazy" decoding="async"><span>Cycle Timers</span></a></li><li><a href="../../fr/apps/tempo.html"><img src="../../assets/icons/tempo.png" alt="" width="56" height="56" loading="lazy" decoding="async"><span>Tempo</span></a></li><li><a href="../../fr/apps/drip.html"><img src="../../assets/icons/drip.png" alt="" width="56" height="56" loading="lazy" decoding="async"><span>Drip</span></a></li><li><a href="../../fr/apps/anchor.html"><img src="../../assets/icons/anchor.png" alt="" width="56" height="56" loading="lazy" decoding="async"><span>Anchor</span></a></li><li><a href="../../fr/apps/kover.html"><img src="../../assets/icons/kover.png" alt="" width="56" height="56" loading="lazy" decoding="async"><span>Kover</span></a></li><li><a href="../../fr/apps/tandem.html"><img src="../../assets/icons/tandem.png" alt="" width="56" height="56" loading="lazy" decoding="async"><span>Tandem</span></a></li><li><a href="../../fr/apps/grain.html"><img src="../../assets/icons/grain.png" alt="" width="56" height="56" loading="lazy" decoding="async"><span>Grain</span></a></li><li><a href="../../fr/apps/garum.html"><img src="../../assets/icons/garum.png" alt="" width="56" height="56" loading="lazy" decoding="async"><span>Garum</span></a></li><li><a href="../../fr/apps/sacapuntas.html"><img src="../../assets/icons/sacapuntas.png" alt="" width="56" height="56" loading="lazy" decoding="async"><span>Sacapuntas</span></a></li><li><a href="../../fr/apps/gaminghub.html"><img src="../../assets/icons/gaminghub.png" alt="" width="56" height="56" loading="lazy" decoding="async"><span>GamingHub</span></a></li><li><a href="../../fr/apps/atino.html"><img src="../../assets/icons/atino.png" alt="" width="56" height="56" loading="lazy" decoding="async"><span>Atino</span></a></li><li><a href="../../fr/apps/roomy.html"><img src="../../assets/icons/roomy.png" alt="" width="56" height="56" loading="lazy" decoding="async"><span>Roomy</span></a></li></ul>
   </section>
 </main>
 <footer class="site-footer">
   <div class="footer-inner shell">
     <div class="footer-brand">
-      <img src="../../assets/seize-mark.png?v=1" alt="" width="28" height="28">
+      <img src="../../assets/seize-mark.png?v=1" alt="" width="32" height="32" loading="lazy" decoding="async">
       <div>
         <p class="footer-signoff">Des apps pour des lendemains meilleurs.</p>
         <p class="copyright">© 2026 Seize Apps · Izotz Cristobal Mota &amp; Sendoa Sola · Pays basque, Espagne</p>
@@ -83,6 +102,7 @@
     </div>
     <nav class="footer-links" aria-label="Footer">
       <a href="../../fr/index.html#apps">Apps</a>
+      <a href="../../fr/index.html#studio">Studio</a>
       <a href="../../fr/privacy.html">Confidentialité</a>
       <a href="../../fr/terms.html">Conditions d’utilisation</a>
       <a href="https://github.com/SeizeApps" rel="noopener">GitHub</a>
@@ -90,6 +110,5 @@
     </nav>
   </div>
 </footer>
-<script>document.querySelectorAll('.site-nav .lang a[hreflang]').forEach(function(a){a.addEventListener('click',function(){try{localStorage.setItem('seize-lang',a.hreflang)}catch(e){}})});</script>
 </body>
 </html>
