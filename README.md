@@ -71,3 +71,13 @@ como `application/octet-stream`; si la copia de Apple no aparece o el enlace no 
 ## Redirector
 
 `Kasempiternal/seizeapps.com` (the old GitHub Pages URL) is a meta-refresh redirector to this domain, kept because its URL is baked into shipped builds. Don't move `index.html`, `privacy.html` or `terms.html`.
+
+## Idioma al llegar (05/10/2026)
+
+GitHub Pages no negocia idioma en el servidor, así que las páginas en inglés (las `x-default`) llevan en el `<head>` un
+script corto (`LANG_PICK` en `gen_site.py`): si la persona nunca eligió idioma con el selector, la lleva a la primera de
+las lenguas de su navegador que tenga versión, sacada de los `hreflang` de la propia página (sirve también para lo
+legal de Garum), y conserva el `#ancla`. Las URL en castellano o francés no se redirigen nunca: quien llega ahí pidió
+ese idioma. Pulsar el selector se recuerda (`localStorage`, clave `seize-lang`) y manda sobre el navegador. Sin
+geolocalización por IP: un país no es un idioma (Bélgica, Suiza, Canadá, el País Vasco). Sin JavaScript, o para los
+buscadores, la página se queda como está.

@@ -11,6 +11,16 @@ LANGS=['en','es','fr']
 # Language switch: short label and the link's accessible name, in the target language.
 LANG_LINK={'en':('EN','Read in English'),'es':('ES','Leer en castellano'),'fr':('FR','Lire en français')}
 OG_LOCALE={'en':'en_US','es':'es_ES','fr':'fr_FR'}
+# Language on arrival (05/10/2026). GitHub Pages can't negotiate on the server, so the English pages (the
+# x-default) carry a tiny script in <head>: if the visitor never picked a language with the switch, it goes
+# to the first of the browser's languages that the page has an alternate for (read from its own hreflang
+# links, so Garum's legal pages work too), keeping the #anchor. Spanish and French URLs are never
+# redirected: someone who lands there asked for that language. A click on the switch is remembered
+# (localStorage) and wins over the browser. No IP geolocation: a country is not a language.
+LANG_PICK='''<script>(function(){try{var k='seize-lang',c=localStorage.getItem(k);var alt={};document.querySelectorAll('link[rel=alternate][hreflang]').forEach(function(l){alt[l.hreflang]=l.href});var want=null;if(c){want=c}else{var ls=navigator.languages||[navigator.language||''];for(var i=0;i<ls.length;i++){var b=(ls[i]||'').toLowerCase().split('-')[0];if(alt[b]){want=b;break}}}if(want&&want!=='en'&&alt[want]&&!/bot|crawl|spider/i.test(navigator.userAgent)){location.replace(alt[want]+location.hash)}}catch(e){}})();</script>
+'''
+LANG_REMEMBER='''<script>document.querySelectorAll('.site-nav .lang a[hreflang]').forEach(function(a){a.addEventListener('click',function(){try{localStorage.setItem('seize-lang',a.hreflang)}catch(e){}})});</script>
+'''
 
 # ---------------------------------------------------------------- UI strings
 UI={
@@ -339,6 +349,7 @@ def head(lang, title, desc, root, canonical, og_title=None, alts=None):
 <meta property="og:url" content="{self_url}">
 <meta property="og:image" content="https://seizeapps.com/assets/og.jpg">
 <meta property="og:locale" content="{OG_LOCALE[lang]}">
+{LANG_PICK if lang=='en' and hreflang else ''}
 <meta name="twitter:card" content="summary_large_image">
 <title>{title}</title>
 <link rel="icon" type="image/png" sizes="64x64" href="{root}favicon.png">
@@ -399,7 +410,7 @@ def footer(lang, root):
     </nav>
   </div>
 </footer>
-</body>
+{LANG_REMEMBER}</body>
 </html>
 '''
 

@@ -17,6 +17,8 @@
 <meta property="og:url" content="https://seizeapps.com/garum/terms/">
 <meta property="og:image" content="https://seizeapps.com/assets/og.jpg">
 <meta property="og:locale" content="en_US">
+<script>(function(){try{var k='seize-lang',c=localStorage.getItem(k);var alt={};document.querySelectorAll('link[rel=alternate][hreflang]').forEach(function(l){alt[l.hreflang]=l.href});var want=null;if(c){want=c}else{var ls=navigator.languages||[navigator.language||''];for(var i=0;i<ls.length;i++){var b=(ls[i]||'').toLowerCase().split('-')[0];if(alt[b]){want=b;break}}}if(want&&want!=='en'&&alt[want]&&!/bot|crawl|spider/i.test(navigator.userAgent)){location.replace(alt[want]+location.hash)}}catch(e){}})();</script>
+
 <meta name="twitter:card" content="summary_large_image">
 <title>Garum terms of use — Seize Apps</title>
 <link rel="icon" type="image/png" sizes="64x64" href="../../favicon.png">
@@ -95,5 +97,6 @@
     </nav>
   </div>
 </footer>
+<script>document.querySelectorAll('.site-nav .lang a[hreflang]').forEach(function(a){a.addEventListener('click',function(){try{localStorage.setItem('seize-lang',a.hreflang)}catch(e){}})});</script>
 </body>
 </html>
