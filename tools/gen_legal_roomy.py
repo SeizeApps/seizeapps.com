@@ -16,7 +16,7 @@ BODY = '''
   <p><strong>The short version:</strong> Roomy analyzes your photo library on your iPhone only. No accounts, no analytics, no ads, no personal data collected. App Store privacy label: Data Not Collected.</p>
 
   <h2>Who is responsible</h2>
-  <p>Roomy is published on the App Store by <strong>Sendoa Sola</strong> (Seize Apps, Basque Country, Spain), the data controller. Contact for anything about your data: <a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a>.</p>
+  <p>Roomy is published on the App Store by <strong>Izotz Cristobal Mota</strong> (Seize Apps, Basque Country, Spain), the data controller. Contact for anything about your data: <a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a>.</p>
 
   <h2>Your photos stay on your iPhone</h2>
   <p>Roomy analyzes your photo library entirely on your device to help you find photos and videos to remove. Your photos, videos and their metadata are never uploaded, shared or sold.</p>
