@@ -6,7 +6,7 @@ the studio-wide policy («no accounts, nothing on our side»). Its pages:
   /garum/privacy/     /garum/terms/         (English)
 Built with gen_site's chrome; run `python3 tools/gen_site.py`, which calls build_criba().
 """
-from gen_site import head, header, footer, write
+from gen_site import head, header, footer, write, legal_main
 
 UPDATED = {'es': 'En vigor desde el 30 de septiembre de 2026', 'en': 'Effective September 30, 2026'}
 
@@ -221,5 +221,5 @@ def build_criba():
         alts = {L: f'https://seizeapps.com/garum/{slugs[L, kind]}/' for L in langs}
         switch = {L: f'{root}garum/{slugs[L, kind]}/' for L in langs}
         html = (head(lang, title, desc, root, canonical, alts=alts) + header(lang, root, canonical, switch=switch)
-                + f'<main class="shell legal">\n{body}\n</main>\n' + footer(lang, root))
+                + legal_main(lang, body) + footer(lang, root))
         write(f'garum/{slug}/index.html', html)

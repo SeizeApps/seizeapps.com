@@ -4,15 +4,17 @@ PRIVACY_ES='''
   <h1>Política de privacidad</h1>
   <p class="effective">En vigor desde el 2 de octubre de 2026</p>
   <nav class="toc" aria-label="Apps">
-    <a href="#cycle-timers">Cycle Timers</a><a href="#tempo">Tempo</a><a href="#drip">Drip</a><a href="#anchor">Anchor</a><a href="#kover">Kover</a><a href="#tandem">Tandem</a><a href="#meso">Meso</a><a href="#grain">Grain</a><a href="#gaminghub">GamingHub</a><a href="#overbit">Overbit</a>
+    <a href="#cycle-timers">Cycle Timers</a><a href="#tempo">Tempo</a><a href="#drip">Drip</a><a href="#anchor">Anchor</a><a href="#kover">Kover</a><a href="#tandem">Tandem</a><a href="#meso">Meso</a><a href="#grain">Grain</a><a href="#gaminghub">GamingHub</a><a href="#atino">Atino</a>
   </nav>
 
-  <p><strong>La versión corta:</strong> las apps de Seize están hechas para funcionar sin tus datos. No tenemos cuentas de usuario, no usamos SDK de analítica ni de publicidad, y no vendemos ni compartimos nada. Lo que metes en una app se queda en tu dispositivo y en tu propio iCloud, salvo que la sección de esa app diga otra cosa (véase <a href="#gaminghub">GamingHub</a> y <a href="#overbit">Overbit</a>).</p>
+  <p><strong>La versión corta:</strong> las apps de Seize están hechas para funcionar sin tus datos. No tenemos cuentas de usuario, no usamos SDK de analítica ni de publicidad, y no vendemos ni compartimos nada. Lo que metes en una app se queda en tu dispositivo y en tu propio iCloud, salvo que la sección de esa app diga otra cosa (véase <a href="#gaminghub">GamingHub</a> y <a href="#atino">Atino</a>).</p>
 
   <p><strong>Garum es la excepción:</strong> tiene cuentas, un servidor en la UE y contenido de usuarios, así que tiene <a href="../garum/privacidad/">su propia política de privacidad</a> y <a href="../garum/condiciones/">condiciones de uso</a>.</p>
 
+  <p><strong>Atino es otra excepción:</strong> tu CV, redactado en tu iPhone, se envía a servicios de ordenación de terceros a través de una pasarela de Seize cuando lo permites, así que tiene <a href="../atino/privacidad/">su propia política de privacidad</a>.</p>
+
   <h2>Quiénes somos</h2>
-  <p>Seize Apps es un estudio independiente de aplicaciones que llevan <strong>Izotz Cristobal Mota</strong> y <strong>Sendoa Sola</strong> desde el País Vasco (España) («nosotros»). Esta política cubre todas las apps de Seize distribuidas a través de la App Store de Apple y TestFlight: actualmente <a href="#cycle-timers">Cycle Timers</a>, <a href="#tempo">Tempo</a>, <a href="#drip">Drip</a>, <a href="#anchor">Anchor</a>, <a href="#kover">Kover</a>, <a href="#tandem">Tandem</a>, <a href="#meso">Meso</a> y <a href="#grain">Grain</a>. Cada app la publica en la App Store uno de los dos: el vendedor que figura en su ficha es el responsable del tratamiento de esa app, y se nombra en su sección. Si una app difiere en algo, su sección es la que manda.</p>
+  <p>Seize Apps es un estudio independiente de aplicaciones que llevan <strong>Izotz Cristobal Mota</strong> y <strong>Sendoa Sola</strong> desde el País Vasco (España) («nosotros»). Esta política cubre todas las apps de Seize distribuidas a través de la App Store de Apple y TestFlight: actualmente <a href="#cycle-timers">Cycle Timers</a>, <a href="#tempo">Tempo</a>, <a href="#drip">Drip</a>, <a href="#anchor">Anchor</a>, <a href="#kover">Kover</a>, <a href="#tandem">Tandem</a>, <a href="#meso">Meso</a>, <a href="#grain">Grain</a>, <a href="#gaminghub">GamingHub</a> y <a href="#atino">Atino</a>. Cada app la publica en la App Store uno de los dos: el vendedor que figura en su ficha es el responsable del tratamiento de esa app, y se nombra en su sección. Si una app difiere en algo, su sección es la que manda.</p>
 
   <h2>Qué recogemos</h2>
   <p><strong>Nada, por defecto.</strong> Nuestras apps no requieren cuenta, no incluyen SDK de terceros de analítica, publicidad o seguimiento, y no nos transmiten el contenido que creas. No podemos ver tus temporizadores, sesiones de trabajo, gastos, tickets, rutinas ni ningún otro contenido que crees en una app de Seize.</p>
@@ -105,20 +107,15 @@ PRIVACY_ES='''
   <p><em>Publicada en el App Store por Izotz Cristobal Mota.</em></p>
   </section>
 
-  <section id="overbit">
-  <h3>Overbit</h3>
-  <p>Overbit es una app de avisos de RSI de Bitcoin. No tiene cuenta, ni inicio de sesión, ni contraseña. No es un bróker y no opera.</p>
-  <p><strong>Qué recogemos para los avisos.</strong> Para enviarte notificaciones de cruce, la app registra un identificador de instalación aleatorio creado en tu dispositivo, el token de notificaciones APNs, tu configuración regional (locale), si Overbit Pro está desbloqueado en esa instalación, y los marcos de tiempo y ajustes de RSI que vigilas. Eso se guarda en nuestro proyecto de Supabase (Fráncfort) para que un trabajo programado evalúe las velas cerradas y envíe notificaciones push de Apple. Si Apple marca el token como inválido, lo borramos de esa fila; el código no elimina la fila completa del dispositivo al desinstalar. Los registros de envío de avisos en el servidor se recortan a los 90 días.</p>
-  <p><strong>Datos de mercado.</strong> Las peticiones de precio y velas van a endpoints HTTP públicos de exchanges (Binance, con Bitstamp y Kraken como alternativas). Esos servicios ven una petición de red normal (incluida tu IP), como cualquier web. No se añade nada que te identifique más allá de eso.</p>
-  <p><strong>Comentarios (Overbit Pro).</strong> Si usas el buzón de comentarios, el mensaje que escribes se envía al mismo proyecto de Supabase de Seize, junto con un correo de respuesta opcional (solo si lo pones tú), la versión y el build de la app, la versión de iOS, el modelo del dispositivo, el locale, el identificador de instalación, la marca Pro y los marcos de tiempo que tenías activados. Sirve para atención al cliente, no es un tablón público.</p>
-  <p><strong>Compras.</strong> Overbit Pro es una compra dentro de la app de pago único que procesa Apple (StoreKit). La app comprueba el derecho con Apple en tu dispositivo. Por separado, cuando hay una clave de API de RevenueCat configurada, los eventos de compra y de pantalla de pago pueden enviarse a RevenueCat bajo un identificador de usuario anónimo de RevenueCat, solo para analítica: sin paywalls de RevenueCat y sin identificador publicitario ni aviso de App Tracking Transparency en la app. No usamos esos datos para «seguimiento» en el sentido de Apple (no se enlazan con datos de terceros para publicidad ni se venden a intermediarios de datos).</p>
-  <p>Esta versión no tiene publicidad ni SDK de terceros de publicidad o de fallos. Los ajustes y el historial de avisos en el dispositivo se quedan en tu iPhone.</p>
-  <p>Borrar la app elimina los datos del contenedor de la app en ese dispositivo (incluido el identificador local de instalación). El registro de avisos en el servidor no se purga solo al desinstalar; si necesitas que borremos una fila, escríbenos a <a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a>.</p>
-  <p><em>Publicada en el App Store por Izotz Cristobal Mota.</em></p>
+  <section id="atino">
+  <h3>Atino</h3>
+  <p>Atino ordena ofertas de empleo según tu CV. Tu CV se queda en tu iPhone: Atino nunca sube el PDF y quita tu nombre y tus datos de contacto en el teléfono antes de que salga ningún texto. Solo después de que lo permitas, el texto redactado se envía a través de la pasarela de Seize a Command Code y TypeSafe AI (Jev) para ordenar las ofertas y explicar el encaje; pueden conservarlo según sus propias condiciones. La pasarela, que funciona en Supabase en la UE (Fráncfort, Alemania), guarda un registro pequeño por instalación —un identificador aleatorio, una clave de App Attest y los contadores de búsquedas del día— y lo borra a los 60 días sin actividad. No hay cuenta, ni publicidad, ni seguimiento. Apple procesa la suscripción; nosotros nunca vemos tus datos de pago.</p>
+  <p>Los detalles completos —qué se envía, quién lo recibe, cuánto tiempo se conserva y cómo retirar el permiso— están en <a href="../atino/privacidad/">la política de privacidad de Atino</a>.</p>
+  <p><em>Publicada en la App Store por Izotz Cristobal Mota.</em></p>
   </section>
 
   <h2>Notificaciones</h2>
-  <p>Las apps que te recuerdan cosas usan notificaciones locales, programadas y entregadas en tu dispositivo. No operamos servidores de notificaciones push para estas funciones. <a href="#overbit">Overbit</a> es la excepción: usa un servidor push de Seize para enviar avisos.</p>
+  <p>Las apps que te recuerdan cosas usan notificaciones locales, programadas y entregadas en tu dispositivo. No operamos servidores de notificaciones push para estas funciones.</p>
 
   <h2>Tus derechos</h2>
   <p>Como tus datos viven en tu dispositivo, ejerces tus derechos directamente: borrar contenido en una app lo borra; borrar la app borra su contenedor; desactivar la sincronización con iCloud y borrar la app lo elimina también de iCloud (o gestiónalo en Ajustes › Cuenta de Apple › iCloud). Con arreglo al RGPD tienes además derechos de acceso, rectificación, supresión y portabilidad; como no tenemos datos personales tuyos, normalmente no hay nada que podamos entregarte, pero siempre puedes escribirnos con preguntas o solicitudes a <a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a>.</p>

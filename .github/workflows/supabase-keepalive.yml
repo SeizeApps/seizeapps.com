@@ -1,0 +1,43 @@
+# Keeps the free-plan Supabase projects from pausing: Supabase pauses a free project after about a week
+# without activity, and a paused `seize` takes Atino's relay and catalogue, the feedback inbox and overbit down
+# with it. Once a day this asks each project's Postgres for nothing (limit 0) through the REST API, and checks
+# that Atino's relay and catalogue answer. It lives in this public repo because public repos have no Actions
+# minute limit (SeizeRepo is private and its runs were not being picked up). Retire it when the org moves to Pro.
+name: supabase-keepalive
+
+on:
+  schedule:
+    - cron: "17 6 * * *"
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Ping the projects
+        env:
+          SEIZE_ANON_KEY: ${{ secrets.SUPABASE_SEIZE_ANON_KEY }}
+          GAMINGHUB_ANON_KEY: ${{ secrets.SUPABASE_GAMINGHUB_ANON_KEY }}
+        run: |
+          set -u
+          fail=0
+          # A 4xx from PostgREST (no such column, no privilege) still means Postgres answered.
+          check() {
+            local label=$1 url=$2 key=${3:-}
+            local code
+            if [ -n "$key" ]; then
+              code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 30 "$url" -H "apikey: $key" -H "Authorization: Bearer $key")
+            else
+              code=$(curl -s -o /dev/null -w '%{http_code}' --max-time 30 "$url")
+            fi
+            echo "$label: $code"
+            case "$code" in 2??|400|401|403|404) ;; *) fail=1 ;; esac
+          }
+          check "seize postgres"      "https://mgnmvdjnsoteofiemlse.supabase.co/rest/v1/apps?select=*&limit=0" "$SEIZE_ANON_KEY"
+          check "gaminghub postgres"  "https://yhahkhlrekkmvayepaxx.supabase.co/rest/v1/rooms?select=*&limit=0" "$GAMINGHUB_ANON_KEY"
+          check "atino relay"         "https://mgnmvdjnsoteofiemlse.supabase.co/functions/v1/atino-relay/v1/health"
+          check "atino catalogue"     "https://mgnmvdjnsoteofiemlse.supabase.co/storage/v1/object/public/atino/manifest.json"
+          exit $fail
