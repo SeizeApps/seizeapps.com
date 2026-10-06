@@ -65,6 +65,7 @@
     <li>Before any text leaves the iPhone, Atino removes your name and contact details — email, phone, home address, date of birth, ID numbers and more — on the phone itself.</li>
     <li>Only after you allow it, the redacted CV text is sent to rank jobs, and to explain your profile and a job's fit when you open them: through the Seize relay to Command Code and TypeSafe AI (Jev). You can see and edit the exact text before anything is sent.</li>
     <li>There is no account, no advertising and no tracking.</li>
+    <li>Atino tells RevenueCat, a purchase-analytics service, about your subscription: an anonymous ID, your iPhone's vendor ID and your App Store purchases. RevenueCat never receives your CV, and Apple still takes the payment.</li>
     <li>The relay keeps no copy of the text. It keeps a small record per install — a random install ID, an App Attest key and the day's search counters — and, for a subscriber, the number Apple gives the subscription together with the IDs of the installs that used it, so the free limit works, one subscription is not shared without limit and abuse is stopped. Both are deleted after 60 days without activity.</li>
   </ul>
 
@@ -79,6 +80,9 @@
   <h3>The install ID and App Attest key — our legitimate interest (Art. 6(1)(f))</h3>
   <p>The phone creates a random install ID (16 random bytes, kept in the iPhone's Keychain) and an App Attest key, so that requests cannot be replayed and one install cannot use more than its share: the free search of the day, fair use for Pro, and the shared budget that keeps the ranking service affordable. This is our legitimate interest in keeping Atino working for everyone; it is not used to track you.</p>
 
+  <h3>Purchase analytics (RevenueCat) — our legitimate interest (Art. 6(1)(f))</h3>
+  <p>Atino includes RevenueCat's software library, used for analytics only: Apple's StoreKit still handles every purchase. Whenever Atino is opened, whether or not you have allowed your CV text to be sent, the library gives your install a random anonymous ID and sends RevenueCat, Inc. (United States) that ID, your iPhone's vendor identifier (a number Apple gives the apps of one developer on a device; it is not the advertising identifier), your App Store purchases and subscription status (product, price, dates and Apple's transaction data), the time you last used Atino, your iPhone model, iOS and app version, language and App Store country. Like any server, RevenueCat also sees the internet address of each request. We use it to count subscribers, trials and renewals and to check that purchases are recorded correctly. Atino never gives RevenueCat your name, email or CV, and we do not enable its advertising integrations: it is not used to track you.</p>
+
   <h3>The job catalogue download — no personal data</h3>
   <p>Your phone downloads the public job catalogue (a signed manifest and the job files) from the catalogue storage service described below. That is public job data, not personal data. The service sees a download request and your iPhone's internet address, as any download does; it never receives your CV.</p>
 
@@ -92,9 +96,11 @@
     <li><strong>Command Code (United States).</strong> Receives the redacted text from the relay and passes it to Jev. It may keep the text under its own terms.</li>
     <li><strong>TypeSafe AI (United States).</strong> Runs Jev, the model that scores each job against your CV. It may keep the text under its own terms.</li>
     <li><strong>Apple.</strong> Handles the purchase and the App Store. Atino receives only the signed confirmation described above. The purchase and your Apple Account are governed by Apple's own terms.</li>
+    <li><strong>RevenueCat (RevenueCat, Inc., United States).</strong> Our processor for the purchase analytics described in section 3. It stores the data on Amazon Web Services in the United States and acts on our instructions, under its data processing addendum. It never receives your CV text.</li>
+    <!-- CONFIRM(U7): RevenueCat's addendum makes the EU standard contractual clauses available for transfers from the EEA (revenuecat.com/dpa, read 6 October 2026); a UK transfer mechanism, a fixed retention period for end-user data and our acceptance of the addendum are not visible in this repo. -->
     <li><strong>GitHub (GitHub Inc., United States).</strong> Serves these policy pages, as described in section 3. It receives no CV text and nothing from the app.</li>
   </ul>
-  <p>Transfers outside the EEA. Command Code and TypeSafe AI are in the United States, so the text is transferred outside the European Economic Area. The redacted CV text is sent to Command Code and TypeSafe AI in the United States. The transfer safeguard will be named here once it is confirmed with those providers. Supabase keeps the relay's data in Frankfurt, but the company is American.</p>
+  <p>Transfers outside the EEA. Command Code and TypeSafe AI are in the United States, so the text is transferred outside the European Economic Area. The redacted CV text is sent to Command Code and TypeSafe AI in the United States. The transfer safeguard will be named here once it is confirmed with those providers. Supabase keeps the relay's data in Frankfurt, but the company is American. RevenueCat is in the United States too, so its data is transferred as well; its addendum makes the EU standard contractual clauses available for that.</p>
   <!-- CONFIRM(U7): the processor agreements and the exact transfer safeguard (the Commission's standard contractual clauses and, where certified, the EU-US Data Privacy Framework) are not visible in this repo; confirm them with Supabase, Command Code and TypeSafe AI before publishing. No safeguard is claimed here for Supabase or GitHub. -->
 
   <h2 id="5-how-long">5. How long</h2>
@@ -102,6 +108,8 @@
     <li><strong>On your iPhone.</strong> Your CV (the redacted text, never the PDF) and everything Atino makes from it stay until you delete the CV in the app or delete the app; withdrawing consent deletes them at once. Alert digests are kept for 2 days. The daily counts and your consent also live on the phone.</li>
     <li><strong>At the relay.</strong> One record per install, keyed by the random install ID: that ID, your App Attest key (its ID, public key and counter), the day's counters, your phone's time-zone name, and the short-lived tickets of the requests in flight. A ticket lasts 5 minutes. The record is deleted after 60 days without activity. The relay also keeps daily totals of what the ranking service costs it (no install ID, no text, no searches) for 90 days, to hold the shared budget.</li>
     <li><strong>At the relay, for a subscription.</strong> One record per subscription, keyed by the number Apple gives it (the original transaction ID): the IDs of the installs that used it and when each was last seen. No payment details and no copy of Apple's confirmation. The record is deleted after 60 days without activity.</li>
+    <li><strong>RevenueCat.</strong> It keeps the data in section 3 for as long as we use RevenueCat, unless we ask it to delete a record; its agreement with us sets the terms, and its privacy policy says that how long it keeps end-user data is governed by its customer agreements. Deleting Atino or withdrawing consent does not delete what RevenueCat already holds: write to us and we will ask it to delete the record.</li>
+    <!-- CONFIRM(U7): RevenueCat states no fixed retention period for end-user data (privacy policy, June 2026; DPA, August 2026: customer data may be deleted from live systems 30 days after termination). -->
     <li><strong>Command Code and TypeSafe AI.</strong> The text may be kept under their own terms; we cannot delete those copies for you.</li>
     <!-- CONFIRM(U7): how long Command Code and TypeSafe AI keep the text is not in this repo; confirm before publishing. -->
     <li><strong>Apple.</strong> The purchase is Apple's record, under Apple's terms.</li>
