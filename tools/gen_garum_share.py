@@ -26,7 +26,7 @@ import json
 from gen_site import write
 
 GARUM_APP_ID = '6816385891'
-GARUM_ON_STORE = False
+GARUM_ON_STORE = True
 TEAM_ID = '5487U4H5BK'
 BUNDLE_ID = 'com.seizeapps.criba'   # Garum's bundle id (the app was called Criba)
 BACKEND = 'https://rbiyqvizjwcysfhvdyox.supabase.co'
