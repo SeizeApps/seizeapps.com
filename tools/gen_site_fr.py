@@ -62,7 +62,7 @@ APPS_FR = {
    features=[('01 / ARRIVER','Des heures sans rien toucher','Dessine une zone de travail une fois et Tempo fait le reste avec la localisation qu’iOS garde déjà. Plusieurs passages s’additionnent en une journée exacte.'),
              ('02 / VOIR','Aujourd’hui, clairement','Le temps travaillé, ton objectif du jour, l’arrivée et le départ sur un seul écran, et une vue du mois qui montre d’un coup d’œil les jours dans les temps, les jours courts et ceux avec des heures en plus.'),
              ('03 / À TOI','Ton relevé, modifiable','Vérifie, corrige, découpe, fusionne ou exporte. Si une limite n’était pas claire, Tempo te pose la question au lieu de deviner.')],
-   privacy='Tempo garde tes sessions, tes zones et tes objectifs sur ton appareil. La localisation sert uniquement à détecter la zone de travail que tu as dessinée, sur le téléphone lui-même, et n’est jamais envoyée nulle part. Sans compte, sans mesure d’audience.',
+   privacy='Tempo garde tes sessions, tes zones et tes objectifs sur ton appareil. La localisation sert uniquement à détecter la zone de travail que tu as dessinée, sur le téléphone lui-même, et n’est jamais envoyée nulle part. Sans compte ni publicité ; la seule chose qu’elle partage, c’est la mesure des achats (RevenueCat), jamais ton travail ni ta localisation.',
    captions=['Ta journée, retenue pour toi','Aujourd’hui : le temps travaillé face à ton objectif','Un mois de journées, colorées selon leur déroulement']),
  'drip': dict(
    one='Vois exactement où file ton argent : chaque abonnement, facture et cotisation, avec ce qu’il coûte vraiment à l’année.',
