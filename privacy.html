@@ -54,19 +54,21 @@
 
   <p class="eyebrow">Legal</p>
   <h1>Privacy Policy</h1>
-  <p class="effective">Effective October 2, 2026</p>
+  <p class="effective">Effective October 6, 2026</p>
   <nav class="toc" aria-label="Apps">
-    <a href="#cycle-timers">Cycle Timers</a><a href="#tempo">Tempo</a><a href="#drip">Drip</a><a href="#anchor">Anchor</a><a href="#kover">Kover</a><a href="#tandem">Tandem</a><a href="#meso">Meso</a><a href="#grain">Grain</a><a href="#gaminghub">GamingHub</a><a href="#atino">Atino</a>
+    <a href="#cycle-timers">Cycle Timers</a><a href="#tempo">Tempo</a><a href="#drip">Drip</a><a href="#anchor">Anchor</a><a href="#kover">Kover</a><a href="#tandem">Tandem</a><a href="#meso">Meso</a><a href="#grain">Grain</a><a href="#gaminghub">GamingHub</a><a href="#atino">Atino</a><a href="#overbit">Overbit</a>
   </nav>
 
-  <p><strong>The short version:</strong> Seize apps are built to work without your data. We don't run accounts, we don't use analytics or advertising SDKs, and we don't sell or share anything. What you put into an app stays on your device and in your own iCloud unless the app's own section below says otherwise (see <a href="#gaminghub">GamingHub</a> and <a href="#atino">Atino</a>).</p>
+  <p><strong>The short version:</strong> Seize apps are built to work without your data. We don't run accounts, we don't use analytics or advertising SDKs, and we don't sell or share anything. What you put into an app stays on your device and in your own iCloud unless the app's own section below says otherwise (see <a href="#gaminghub">GamingHub</a>, <a href="#atino">Atino</a> and <a href="#overbit">Overbit</a>).</p>
 
   <p><strong>Garum is the exception:</strong> it has accounts, a server in the EU and user content, so it has <a href="garum/privacy/">its own privacy policy</a> and <a href="garum/terms/">terms of use</a>.</p>
 
   <p><strong>Atino is another exception:</strong> your CV, redacted on your iPhone, is sent to third-party ranking services through a Seize relay when you allow it, so it has <a href="atino/privacy/">its own privacy policy</a>.</p>
 
+  <p><strong>Overbit is another exception:</strong> to send you alerts it registers a random install identifier and your push-notification token with a Seize server, so read <a href="#overbit">its section below</a>.</p>
+
   <h2 id="who-we-are">Who we are</h2>
-  <p>Seize Apps is an independent app studio run by <strong>Izotz Cristobal Mota</strong> and <strong>Sendoa Sola</strong> from the Basque Country, Spain ("we", "us"). This policy covers all Seize apps distributed through the Apple App Store and TestFlight — currently <a href="#cycle-timers">Cycle Timers</a>, <a href="#tempo">Tempo</a>, <a href="#drip">Drip</a>, <a href="#anchor">Anchor</a>, <a href="#kover">Kover</a>, <a href="#tandem">Tandem</a>, <a href="#meso">Meso</a>, <a href="#grain">Grain</a>, <a href="#gaminghub">GamingHub</a> and <a href="#atino">Atino</a>. Each app is published on the App Store by one of us: the seller named in its App Store listing is the data controller for that app, and is named in its section below. Where an individual app differs, its section is the authoritative one.</p>
+  <p>Seize Apps is an independent app studio run by <strong>Izotz Cristobal Mota</strong> and <strong>Sendoa Sola</strong> from the Basque Country, Spain ("we", "us"). This policy covers all Seize apps distributed through the Apple App Store and TestFlight — currently <a href="#cycle-timers">Cycle Timers</a>, <a href="#tempo">Tempo</a>, <a href="#drip">Drip</a>, <a href="#anchor">Anchor</a>, <a href="#kover">Kover</a>, <a href="#tandem">Tandem</a>, <a href="#meso">Meso</a>, <a href="#grain">Grain</a>, <a href="#gaminghub">GamingHub</a>, <a href="#atino">Atino</a> and <a href="#overbit">Overbit</a>. Each app is published on the App Store by one of us: the seller named in its App Store listing is the data controller for that app, and is named in its section below. Where an individual app differs, its section is the authoritative one.</p>
 
   <h2 id="what-we-collect">What we collect</h2>
   <p><strong>Nothing, by default.</strong> Our apps do not require an account, do not include third-party analytics, advertising, or tracking SDKs, and do not transmit the content you create to us. We cannot see your timers, work sessions, expenses, receipts, routines, or any other content you create in a Seize app.</p>
@@ -166,11 +168,23 @@
   <p><em>Published on the App Store by Izotz Cristobal Mota.</em></p>
   </section>
 
+  <section id="overbit">
+  <h3>Overbit</h3>
+  <p>Overbit is a Bitcoin RSI alert app. It has no account, no sign-in and no password, and it does not trade or hold anything for you.</p>
+  <p><strong>What the app sends to our server.</strong> Overbit uses a Seize server (Supabase, Frankfurt, Germany) to push you an alert when RSI crosses a level. Whenever the app is open and refreshes, it registers this install with a random identifier created on your device, your Apple push-notification token, your device language and region setting, whether Overbit Pro is unlocked on that install, and the timeframes, RSI length and levels you chose. This registration is sent whether or not the Notifications switch in the app is on: the switch only controls the alerts the app posts itself, and your iOS notification settings decide whether a push is shown. The server keeps one record per install and does not delete it when the app is deleted; when Apple reports that a token is no longer valid, the server clears the token. The log of alerts already sent is deleted after 90 days.</p>
+  <p><strong>Prices.</strong> The price and candles in the app come from our own server, not from an exchange and not from any service you connect to. The app asks our Supabase project for them. Like any server, it receives your IP address with each request; the request carries no identifier, our code does not read or store the address, and Supabase, as our hosting provider, may keep standard request logs under its own terms. The server itself reads public on-chain price data (PancakeSwap and Aerodrome pools on Base, Uniswap pools on Ethereum) through node providers, Alchemy and PublicNode. Those providers see only the server's requests for public blockchain data; they receive nothing from your phone and nothing about you.</p>
+  <p><strong>Feedback (Overbit Pro).</strong> If you use the feedback box, the message you type is sent to the same Supabase project with a reply email (only if you enter one), the app version and build, the iOS version, the device model, your language and region setting, the random identifier above, the Pro flag and the timeframes you had on. We read it to give support; it is not published. We keep it until you ask us to delete it.</p>
+  <p><strong>Purchases.</strong> Overbit Pro is a one-time purchase processed by Apple, which the app reads from StoreKit on your device. The server stores only a yes-or-no Pro flag next to the install identifier, so it can apply the Pro limits to alerts and feedback; we never see your name or payment details. The app includes the RevenueCat library for purchase analytics, but it is switched off in this release, so nothing is sent to RevenueCat.</p>
+  <p>This release has no advertising, no analytics and no tracking, and we do not sell your data. Your settings, the alert history you see in the app and the random identifier stay on your device as well.</p>
+  <p><strong>Your data.</strong> The server record is tied to a random identifier, not to your name, email or account, so the only way we can tell which record is yours is a message sent from the app's feedback box, which carries that identifier. Write to <a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a> and we will delete the record and the feedback we can match. You can stop pushes at any time in iOS Settings › Notifications.</p>
+  <p><em>Published on the App Store by Izotz Cristobal Mota.</em></p>
+  </section>
+
   <h2 id="notifications">Notifications</h2>
-  <p>Apps that remind you of things use local notifications, scheduled and delivered on your device. We do not operate push-notification servers for these features.</p>
+  <p>Apps that remind you of things use local notifications, scheduled and delivered on your device. We do not operate push-notification servers for these features. <a href="#overbit">Overbit</a> is the exception: it registers with a Seize server so that the server can push its alerts.</p>
 
   <h2 id="your-rights">Your rights</h2>
-  <p>Because your data lives on your device, you exercise your rights directly: deleting content in an app deletes it; deleting the app deletes its container; turning iCloud sync off and deleting the app removes it from iCloud as well (or manage it under Settings › Apple Account › iCloud). Under the GDPR you also have rights of access, rectification, erasure, and portability — since we hold no personal data about you, there is typically nothing for us to produce, but you can always reach us with questions or requests at <a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a>.</p>
+  <p>Because your data lives on your device, you exercise your rights directly: deleting content in an app deletes it; deleting the app deletes its container; turning iCloud sync off and deleting the app removes it from iCloud as well (or manage it under Settings › Apple Account › iCloud). Under the GDPR you also have rights of access, rectification, erasure, and portability — since we hold no personal data about you, there is typically nothing for us to produce, but you can always reach us with questions or requests at <a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a>. The exception is <a href="#overbit">Overbit</a>, which keeps a record on our server under a random identifier: ask us there to delete it.</p>
 
   <h2 id="children">Children</h2>
   <p>Our apps are general-audience utilities and do not knowingly collect personal information from anyone, including children.</p>
@@ -182,7 +196,7 @@
   <p>Seize Apps · Izotz Cristobal Mota &amp; Sendoa Sola<br><a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a></p>
 
 </article>
-<aside class="legal-aside"><nav aria-label="On this page"><p class="toc-label">On this page</p><ol role="list"><li><a href="#who-we-are">Who we are</a></li><li><a href="#what-we-collect">What we collect</a></li><li><a href="#where-your-data-lives">Where your data lives</a></li><li><a href="#per-app-details">Per-app details</a></li><li><a href="#notifications">Notifications</a></li><li><a href="#your-rights">Your rights</a></li><li><a href="#children">Children</a></li><li><a href="#changes">Changes</a></li><li><a href="#contact">Contact</a></li></ol><p class="toc-label">Apps</p><div class="toc-apps"><a href="#cycle-timers">Cycle Timers</a><a href="#tempo">Tempo</a><a href="#drip">Drip</a><a href="#anchor">Anchor</a><a href="#kover">Kover</a><a href="#tandem">Tandem</a><a href="#meso">Meso</a><a href="#grain">Grain</a><a href="#gaminghub">GamingHub</a><a href="#atino">Atino</a></div></nav></aside>
+<aside class="legal-aside"><nav aria-label="On this page"><p class="toc-label">On this page</p><ol role="list"><li><a href="#who-we-are">Who we are</a></li><li><a href="#what-we-collect">What we collect</a></li><li><a href="#where-your-data-lives">Where your data lives</a></li><li><a href="#per-app-details">Per-app details</a></li><li><a href="#notifications">Notifications</a></li><li><a href="#your-rights">Your rights</a></li><li><a href="#children">Children</a></li><li><a href="#changes">Changes</a></li><li><a href="#contact">Contact</a></li></ol><p class="toc-label">Apps</p><div class="toc-apps"><a href="#cycle-timers">Cycle Timers</a><a href="#tempo">Tempo</a><a href="#drip">Drip</a><a href="#anchor">Anchor</a><a href="#kover">Kover</a><a href="#tandem">Tandem</a><a href="#meso">Meso</a><a href="#grain">Grain</a><a href="#gaminghub">GamingHub</a><a href="#atino">Atino</a><a href="#overbit">Overbit</a></div></nav></aside>
 </main>
 <footer class="site-footer">
   <div class="footer-inner shell">
