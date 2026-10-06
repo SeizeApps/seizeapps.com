@@ -63,7 +63,7 @@
 
   <p><strong>Garum is the exception:</strong> it has accounts, a server in the EU and user content, so it has <a href="garum/privacy/">its own privacy policy</a> and <a href="garum/terms/">terms of use</a>.</p>
 
-  <p><strong>Atino is another exception:</strong> your CV, redacted on your iPhone, is sent to third-party ranking services through a Seize relay when you allow it, so it has <a href="atino/privacy/">its own privacy policy</a>.</p>
+  <p><strong>Atino is another exception:</strong> your CV, redacted on your iPhone, is sent to third-party ranking services through a Seize relay when you allow it, and its subscription is reported to RevenueCat for purchase analytics, so it has <a href="atino/privacy/">its own privacy policy</a>.</p>
 
   <p><strong>Overbit is another exception:</strong> to send you alerts it registers a random install identifier and your push-notification token with a Seize server, so read <a href="#overbit">its section below</a>.</p>
 
@@ -163,7 +163,7 @@
 
   <section id="atino">
   <h3>Atino</h3>
-  <p>Atino ranks job ads against your CV. Your CV stays on your iPhone: Atino never uploads the PDF, and it removes your name and contact details on the phone before any text leaves it. Only after you allow it, the redacted text is sent through the Seize relay to Command Code and TypeSafe AI (Jev) to rank jobs and explain the fit; they may keep it under their own terms. The relay, which runs on Supabase in the EU (Frankfurt, Germany), keeps a small record per install — a random install ID, an App Attest key and the day's search counters — and deletes it after 60 days without activity. There is no account, no advertising and no tracking. Apple processes the subscription; we never see your payment details.</p>
+  <p>Atino ranks job ads against your CV. Your CV stays on your iPhone: Atino never uploads the PDF, and it removes your name and contact details on the phone before any text leaves it. Only after you allow it, the redacted text is sent through the Seize relay to Command Code and TypeSafe AI (Jev) to rank jobs and explain the fit; they may keep it under their own terms. The relay, which runs on Supabase in the EU (Frankfurt, Germany), keeps a small record per install — a random install ID, an App Attest key and the day's search counters — and deletes it after 60 days without activity. There is no account, no advertising and no tracking. Apple processes the subscription; we never see your payment details. Atino also reports your subscription to RevenueCat for purchase analytics (an anonymous ID, your App Store purchases and the time you last used the app); RevenueCat acts on our instructions and receives no CV text.</p>
   <p>The full details — what is sent, who receives it, how long it is kept and how to withdraw — are in <a href="atino/privacy/">Atino's privacy policy</a>.</p>
   <p><em>Published on the App Store by Izotz Cristobal Mota.</em></p>
   </section>
