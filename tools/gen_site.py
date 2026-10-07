@@ -371,7 +371,7 @@ APPS=[
           features=[('01 / SWIPE','Clean a month in minutes','Swipe through your library month by month, by On This Day memories or at random. Every swipe is undoable, and deleted items wait in the Trash until you confirm. Free: 50 swipes a day.'),
                     ('02 / FIND','The clutter, found for you','Duplicates, similar shots, screenshots and large videos each get their own queue. Similar photos arrive grouped with the best one marked, and what you swiped Keep is never pre-selected for deletion.'),
                     ('03 / FREE UP','See what you got back','Roomy Pro adds unlimited swipes, one-tap cleanup of duplicates and similar shots, and video compression that saves up to 80% of the space. Track the storage you freed and keep a daily streak.')],
-          privacy='Roomy analyses your library on your iPhone only. Your photos, videos and metadata are never uploaded. No account, no analytics, no ads, no tracking: nothing leaves the phone. Purchases go through Apple.',
+          privacy='Roomy analyses your library on your iPhone only. Your photos, videos and metadata are never uploaded. No account, no ads, no tracking. Purchases go through Apple; the only thing Roomy shares is purchase analytics (RevenueCat, from version 0.0.3), never your photos.',
           captions=['Home: free space, and the clutter Roomy found','Swipe left to delete, right to keep','Similar shots grouped, with the best one marked']),
      dict(one='Desliza a la izquierda para borrar, a la derecha para quedarte. Roomy también encuentra duplicados, fotos parecidas y vídeos enormes, todo en tu iPhone.',
           tags=['Utilidades','Fotos','9 idiomas'],
@@ -380,7 +380,7 @@ APPS=[
           features=[('01 / DESLIZAR','Un mes limpio en minutos','Recorre tu biblioteca mes a mes, por los recuerdos de «Tal día como hoy» o al azar. Cada gesto se puede deshacer y lo borrado espera en la Papelera hasta que confirmas. Gratis: 50 gestos al día.'),
                     ('02 / ENCONTRAR','El desorden, encontrado por ti','Duplicados, fotos parecidas, capturas de pantalla y vídeos grandes tienen cada uno su cola. Las parecidas llegan agrupadas con la mejor marcada, y lo que marcaste como «quedarme» nunca se preselecciona para borrar.'),
                     ('03 / LIBERAR','Mira lo que has recuperado','Roomy Pro suma gestos ilimitados, borrado de duplicados y parecidas con un toque y compresión de vídeo que ahorra hasta un 80 % del espacio. Sigue el espacio liberado y mantén una racha diaria.')],
-          privacy='Roomy analiza tu biblioteca solo en tu iPhone. Tus fotos, vídeos y metadatos nunca se suben. Sin cuenta, sin analítica, sin anuncios y sin seguimiento: nada sale del teléfono. Las compras pasan por Apple.',
+          privacy='Roomy analiza tu biblioteca solo en tu iPhone. Tus fotos, vídeos y metadatos nunca se suben. Sin cuenta, sin anuncios y sin seguimiento. Las compras pasan por Apple; lo único que Roomy comparte es la analítica de compras (RevenueCat, desde la versión 0.0.3), nunca tus fotos.',
           captions=['Inicio: espacio libre y el desorden que ha encontrado Roomy','Izquierda para borrar, derecha para quedarte','Fotos parecidas agrupadas, con la mejor marcada']),
      privacy_path={'en': 'roomy/privacy/', 'es': '../roomy/privacy/', 'fr': '../roomy/privacy/'}),
 ]
