@@ -9,6 +9,8 @@ Built with gen_site's chrome; run `python3 tools/gen_site.py`, which calls build
 from gen_site import head, header, footer, write, legal_main
 
 UPDATED = {'es': 'En vigor desde el 30 de septiembre de 2026', 'en': 'Effective September 30, 2026'}
+# La privacidad cambió el 07/10/2026 (avisos de compra de Apple); las condiciones siguen con la fecha de arriba.
+PRIVACY_UPDATED = {'es': 'En vigor desde el 7 de octubre de 2026', 'en': 'Effective October 7, 2026'}
 
 PRIVACY = {
 'es': '''
@@ -29,6 +31,7 @@ PRIVACY = {
     <li><strong>Tu ubicación</strong> se usa en el iPhone, cuando tocas «Cerca de mí», para centrar el mapa, y no se envía a Garum. <strong>La única excepción la activas tú</strong>: con Garum Pro, en Ajustes › Avisos › Zonas › «Mi ubicación», para avisarte de sitios nuevos cerca de donde abres la app. Entonces, cada vez que la abres, la app calcula en el iPhone en qué casilla de una cuadrícula de 0,2 grados cae tu posición (unos 22 km de norte a sur y 16 km de este a oeste a esta latitud) y manda solo esa casilla (dos números enteros), ligada a tu cuenta; nunca tu posición. Se guarda la última casilla, se deja de usar a los 30 días sin abrir la app y se borra al apagar «Mi ubicación», al apagar los avisos de zonas o al borrar la cuenta. En la ficha de privacidad del App Store figura como «Ubicación aproximada», vinculada a tu cuenta y solo para que la app funcione.</li>
     <li><strong>Si entras con Apple:</strong> Apple nos da un identificador de cuenta y, la primera vez, el nombre que decidas compartir en su ventana (puedes cambiarlo u ocultarlo ahí); Garum lo usa como tu nombre público, y puedes cambiarlo cuando quieras. Garum no pide tu correo. Guardamos ese identificador, tu <strong>perfil</strong> (nombre de usuario, nombre y, si los pones, foto, bio y un enlace) y lo que aportas: sitios que propones, respaldos (motivos y comentario), notas, fotos de sitios, <strong>sugerencias de cambio</strong> sobre un sitio (los datos que corriges, si ha cerrado, y un comentario o enlace si los pones), sugerencias de quitar un sitio si eres Curator, <strong>colecciones</strong> (listas e itinerarios: título, introducción, sus sitios, tu nota en cada uno y si son públicas, solo con enlace o privadas), los comentarios que dejas en colecciones, las colecciones de otras personas que guardas, a quién sigues, a quién bloqueas y las denuncias que envías.</li>
     <li><strong>Si activas los avisos:</strong> el identificador de avisos que Apple da a tu iPhone (para enviártelos a través del servicio de avisos de Apple) y qué tipos de aviso quieres recibir; con Garum Pro, además, las zonas que eliges para los avisos de sitios nuevos (continentes, países, regiones o ciudades). Se borra al cerrar sesión o borrar la cuenta. Los avisos solo tratan de ti o de lo que pides (tus propuestas, tus fotos, quién te sigue, quién guarda, comenta o comparte tus colecciones, tu papel; con Garum Pro, sitios nuevos en tus zonas y sitios de tus colecciones que cierran, como mucho uno de cada tipo al día) y nunca son publicidad.</li>
+    <li><strong>Compras:</strong> cuando compras algo en Garum (como Garum Pro), empiezas una prueba o canjeas un código, Apple nos lo comunica, y también sus renovaciones y reembolsos: qué producto, cuándo, en qué país de la App Store, el precio y la moneda, y unos números de transacción y un seudónimo que genera Apple para cada cuenta y app. No incluye tu nombre, tu correo ni tu Apple ID. Lo guardamos en un servidor nuestro, solo para llevar las cuentas y atender reembolsos o dudas sobre una compra. No lo compartimos con nadie ni lo usamos para publicidad ni analítica.</li>
     <li><strong>Registros técnicos:</strong> el servidor anota durante poco tiempo datos técnicos de las peticiones (como la dirección IP) para funcionar y protegerse de abusos.</li>
   </ul>
 
@@ -44,6 +47,7 @@ PRIVACY = {
     <li>Atender denuncias y explicar cada retirada: la obligación legal del Reglamento de Servicios Digitales (DSA).</li>
     <li>Contar los guardados («Lo guardan N personas»): nuestro interés legítimo en mostrar qué sitios guarda la gente, solo como números y con la opción de no contar los tuyos.</li>
     <li>La zona aproximada de «Mi ubicación» y las zonas de tus avisos: tu consentimiento, que das al activarlos y retiras al apagarlos.</li>
+    <li>Guardar los avisos de compra de Apple: el cumplimiento de nuestras obligaciones legales de contabilidad y nuestro interés legítimo en atender dudas y reembolsos.</li>
   </ul>
 
   <h2>Quién más interviene</h2>
@@ -58,7 +62,7 @@ PRIVACY = {
   <p>No hay SDK de publicidad ni de analítica, y no vendemos ni cedemos datos a nadie.</p>
 
   <h2>Cuánto tiempo</h2>
-  <p>Mientras tengas la cuenta. <strong>Puedes borrarla desde la app</strong> (Ajustes › Tu cuenta › Borrar la cuenta): se eliminan tu perfil (con tu foto de perfil), tus respaldos, tus notas, tus seguidos, tus bloqueos, tus sugerencias de cambio (y con ellas tu nombre en «Datos corregidos por»), tus sugerencias de quitar sitios, tus colecciones (con sus notas y sus traducciones), tus comentarios, las colecciones que guardaste, tu señal de guardado, las zonas de tus avisos y la zona aproximada de «Mi ubicación», y las propuestas tuyas que nadie más respalde. Las fotos de sitios que subiste se quedan publicadas sin tu nombre (su crédito pasa a ser «un antiguo usuario»; ver las condiciones), las denuncias que enviaste se conservan sin autor, y el registro de las decisiones de moderación que te afectaron se guarda el tiempo que exige la ley. Al borrarla, la app te pide confirmar con Apple y <strong>Garum revoca su acceso a tu cuenta de Apple</strong>. Las copias de seguridad desaparecen en 30 días.</p>
+  <p>Mientras tengas la cuenta. <strong>Puedes borrarla desde la app</strong> (Ajustes › Tu cuenta › Borrar la cuenta): se eliminan tu perfil (con tu foto de perfil), tus respaldos, tus notas, tus seguidos, tus bloqueos, tus sugerencias de cambio (y con ellas tu nombre en «Datos corregidos por»), tus sugerencias de quitar sitios, tus colecciones (con sus notas y sus traducciones), tus comentarios, las colecciones que guardaste, tu señal de guardado, las zonas de tus avisos y la zona aproximada de «Mi ubicación», y las propuestas tuyas que nadie más respalde. Las fotos de sitios que subiste se quedan publicadas sin tu nombre (su crédito pasa a ser «un antiguo usuario»; ver las condiciones), las denuncias que enviaste se conservan sin autor, y el registro de las decisiones de moderación que te afectaron se guarda el tiempo que exige la ley. Al borrarla, la app te pide confirmar con Apple y <strong>Garum revoca su acceso a tu cuenta de Apple</strong>. Las copias de seguridad desaparecen en 30 días. Los avisos de compra se conservan seis años, el tiempo que exige la ley para la contabilidad, también si borras la cuenta.</p>
 
   <h2>Tus derechos</h2>
   <p>Puedes acceder a tus datos, corregirlos (tu perfil se edita en la app), suprimirlos (borrando la cuenta), llevártelos u oponerte a su tratamiento escribiendo a <a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a>. Si no te respondemos bien, puedes reclamar ante la Agencia Española de Protección de Datos (<a href="https://www.aepd.es" rel="noopener">aepd.es</a>).</p>
@@ -87,6 +91,7 @@ PRIVACY = {
     <li><strong>Your location</strong> is used on the iPhone, when you tap «Near me», to centre the map, and it is not sent to Garum. <strong>The only exception is one you turn on</strong>: with Garum Pro, in Settings › Notifications › Areas › «My location», to tell you about new places near where you open the app. Then, each time you open it, the app works out on the iPhone which square of a 0.2-degree grid your position falls in (about 22 km north to south and 16 km east to west at these latitudes) and sends only that square (two whole numbers), linked to your account; never your position. The last square is kept, stops being used after 30 days without opening the app, and is deleted when you turn «My location» or area notices off, or delete the account. In the App Store privacy label it is declared as «Coarse Location», linked to your account and only for the app's functionality.</li>
     <li><strong>If you sign in with Apple:</strong> Apple gives us an account identifier and, the first time, the name you choose to share in its sheet (you can edit or hide it there); Garum uses it as your public name, and you can change it whenever you like. Garum doesn't ask for your email. We keep that identifier, your <strong>profile</strong> (username, name and, if you add them, photo, bio and a link) and what you contribute: places you propose, backings (reasons and comment), notes, place photos, <strong>suggested changes</strong> to a place (the details you correct, whether it has closed, and a comment or link if you add them), suggestions to remove a place if you are a Curator, <strong>collections</strong> (lists and itineraries: title, introduction, their places, your note on each and whether they are public, link-only or private), the comments you leave on collections, other people's collections you save, who you follow, who you block and the reports you send.</li>
     <li><strong>If you turn on notifications:</strong> the notification identifier Apple gives your iPhone (to send them through Apple's push service) and which kinds you want; with Garum Pro, also the areas you choose for new-place notices (continents, countries, regions or cities). It's deleted when you sign out or delete the account. Notifications are only about you or what you ask for (your proposals, your photos, who follows you, who saves, comments on or shares your collections, your role; with Garum Pro, new places in your areas and places in your collections that close, at most one of each kind a day) and never ads.</li>
+    <li><strong>Purchases:</strong> when you buy something in Garum (such as Garum Pro), start a trial or redeem a code, Apple tells us, and also about its renewals and refunds: which product, when, in which App Store country, the price and currency, and some transaction numbers and a pseudonym that Apple generates for each account and app. It does not include your name, your email or your Apple ID. We keep it on a server of our own, only to keep our accounts and to handle refunds or questions about a purchase. We do not share it with anyone or use it for advertising or analytics.</li>
     <li><strong>Technical logs:</strong> the server briefly records technical request data (such as the IP address) to run and to protect itself from abuse.</li>
   </ul>
 
@@ -102,6 +107,7 @@ PRIVACY = {
     <li>Handling reports and explaining every removal: the legal obligation under the EU Digital Services Act (DSA).</li>
     <li>Counting saves («Saved by N people»): our legitimate interest in showing which places people save, only as numbers and with the option not to count yours.</li>
     <li>The rough area of «My location» and the areas of your notices: your consent, given by turning them on and withdrawn by turning them off.</li>
+    <li>Keeping Apple's purchase notices: complying with our legal bookkeeping obligations, and our legitimate interest in handling questions and refunds.</li>
   </ul>
 
   <h2>Who else is involved</h2>
@@ -116,7 +122,7 @@ PRIVACY = {
   <p>No advertising or analytics SDKs, and we don't sell or share data with anyone.</p>
 
   <h2>How long</h2>
-  <p>As long as you keep the account. <strong>You can delete it in the app</strong> (Settings › Your account › Delete account): your profile (with your profile photo), backings, notes, follows, blocks, suggested changes (and with them your name under «Details corrected by»), suggestions to remove places, collections (with their notes and their translations), comments, the collections you saved, your save signal, the areas of your notices and the rough area of «My location» are removed, along with your proposals nobody else backs. Place photos you uploaded stay published without your name (their credit becomes «a former user»; see the terms), reports you sent are kept without an author, and the record of moderation decisions that affected you is kept as long as the law requires. When you delete it, the app asks you to confirm with Apple and <strong>Garum revokes its access to your Apple account</strong>. Backups expire within 30 days.</p>
+  <p>As long as you keep the account. <strong>You can delete it in the app</strong> (Settings › Your account › Delete account): your profile (with your profile photo), backings, notes, follows, blocks, suggested changes (and with them your name under «Details corrected by»), suggestions to remove places, collections (with their notes and their translations), comments, the collections you saved, your save signal, the areas of your notices and the rough area of «My location» are removed, along with your proposals nobody else backs. Place photos you uploaded stay published without your name (their credit becomes «a former user»; see the terms), reports you sent are kept without an author, and the record of moderation decisions that affected you is kept as long as the law requires. When you delete it, the app asks you to confirm with Apple and <strong>Garum revokes its access to your Apple account</strong>. Backups expire within 30 days. Purchase notices are kept for six years, the time the law requires for bookkeeping, even if you delete your account.</p>
 
   <h2>Your rights</h2>
   <p>You can access, correct (your profile is edited in the app), erase (by deleting the account), port or object to the processing of your data by writing to <a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a>. You can also complain to the Spanish Data Protection Agency (<a href="https://www.aepd.es" rel="noopener">aepd.es</a>).</p>
@@ -205,8 +211,8 @@ PAGES = [  # (lang, kind, slug, title, desc)
 
 
 # The French pages come from gen_legal_criba_fr.py.
-from gen_legal_criba_fr import PRIVACY_FR, TERMS_FR, UPDATED_FR, PAGES_FR
-PRIVACY['fr'], TERMS['fr'], UPDATED['fr'] = PRIVACY_FR, TERMS_FR, UPDATED_FR
+from gen_legal_criba_fr import PRIVACY_FR, TERMS_FR, UPDATED_FR, PRIVACY_UPDATED_FR, PAGES_FR
+PRIVACY['fr'], TERMS['fr'], UPDATED['fr'], PRIVACY_UPDATED['fr'] = PRIVACY_FR, TERMS_FR, UPDATED_FR, PRIVACY_UPDATED_FR
 PAGES += PAGES_FR
 
 
@@ -215,7 +221,8 @@ def build_criba():
     slugs = {(lang, kind): slug for lang, kind, slug, _, _ in PAGES}
     for lang, kind, slug, title, desc in PAGES:
         root = '../../'
-        body = (PRIVACY if kind == 'privacy' else TERMS)[lang].replace('{updated}', UPDATED[lang])
+        body = (PRIVACY if kind == 'privacy' else TERMS)[lang].replace(
+            '{updated}', (PRIVACY_UPDATED if kind == 'privacy' else UPDATED)[lang])
         canonical = f'garum/{slug}/'
         langs = [L for L, k in slugs if k == kind]
         alts = {L: f'https://seizeapps.com/garum/{slugs[L, kind]}/' for L in langs}
