@@ -52,7 +52,7 @@ APPS_FR = {
    features=[('01 / VOIR','Le temps, d’un coup d’œil','La couleur et la forme te disent ce qui est récent, ce qui approche et ce qui demande ton attention maintenant. Aucune liste à lire.'),
              ('02 / TOUCHER','Fait veut dire relancé','Un toucher marque la tâche comme faite et lance le cycle suivant, directement depuis le widget si tu veux.'),
              ('03 / GARDER','À toi, pas à nous','Sans compte et sans pistage. Tes minuteurs restent sur ton appareil, là où doit vivre un outil pour la maison.')],
-   privacy='Cycle Timers ne collecte aucune donnée. Les minuteurs vivent sur ton appareil, dans un conteneur privé partagé uniquement avec les widgets de l’app ; les rappels sont programmés en local.',
+   privacy='Cycle Timers n’a ni compte ni publicité. Les minuteurs vivent sur ton appareil, dans un conteneur privé partagé uniquement avec les widgets de l’app ; les rappels sont programmés en local. La seule chose qu’elle partage, c’est la mesure des achats (RevenueCat), jamais tes minuteurs.',
    captions=['Six anneaux, un coup d’œil','Un minuteur, c’est un nom, une icône et un cycle']),
  'tempo': dict(
    one='Un compagnon de journée qui retient tes heures à ta place — arriver, travailler, partir — et te laisse la main sur le relevé pour le corriger.',
@@ -154,7 +154,7 @@ APPS_FR = {
    features=[('01 / SALON','Un code, une table','Crée un salon, partage un code de quatre lettres ou un QR et tes amis apparaissent dans le salon d’attente à mesure qu’ils arrivent. Reprends ta table après un appel, un verrouillage d’écran ou un redémarrage.'),
              ('02 / SECRET','Chaque téléphone garde son secret','Ton rôle, ton mot et tes cartes ne sont envoyés qu’à ton appareil. Le salon voit la partie ; personne ne voit ta main.'),
              ('03 / JOUER','Gratuit pour essayer, à toi pour toujours','Unison est gratuit pour tout le monde. Les autres jeux sont des achats uniques, et toute ta table joue gratuitement dès que l’hôte possède le jeu ; sinon, chaque joueur a trois parties gratuites de chaque jeu. Les achats sont partagés avec ta famille.')],
-   privacy='GamingHub n’a ni compte, ni e-mail, ni mot de passe. Pour faire tourner un salon, elle envoie à notre serveur (Supabase) un nom d’affichage que tu choisis, un avatar, un identifiant anonyme et l’état de la partie, que les autres joueurs du salon voient ; les salons sont supprimés quand ils se vident et purgés au bout de 12 heures. Sans publicité, sans mesure d’audience, sans suivi.',
+   privacy='GamingHub n’a ni compte, ni e-mail, ni mot de passe. Pour faire tourner un salon, elle envoie à notre serveur (Supabase) un nom d’affichage que tu choisis, un avatar, un identifiant anonyme et l’état de la partie, que les autres joueurs du salon voient ; les salons sont supprimés quand ils se vident et purgés au bout de 12 heures. Sans publicité et sans suivi ; seulement la mesure des achats, avec RevenueCat (ni noms ni rien d’un salon).',
    captions=['Accueil : crée un salon, rejoins-en un avec un code ou scanne un QR','Impostor : brise le sceau pour lire ton invitation','Unison : jouez vos cartes dans l’ordre, en silence']),
  'atino': dict(
    one='Importe ton CV et vois les offres d’emploi d’Europe classées selon leur correspondance, chacune avec un motif bref. Ton nom et tes coordonnées sont d’abord retirés sur ton iPhone.',
@@ -175,6 +175,6 @@ APPS_FR = {
    features=[('01 / GLISSER','Un mois nettoyé en quelques minutes','Parcours ta photothèque mois par mois, par souvenirs « Ce jour-là » ou au hasard. Chaque geste peut être annulé et ce qui est supprimé attend dans la corbeille jusqu’à ta confirmation. Gratuit : 50 gestes par jour.'),
              ('02 / TROUVER','Le fouillis, trouvé pour toi','Doublons, photos similaires, captures d’écran et grosses vidéos ont chacun leur file. Les photos similaires arrivent groupées avec la meilleure marquée, et ce que tu as gardé n’est jamais présélectionné pour suppression.'),
              ('03 / LIBÉRER','Vois ce que tu as récupéré','Roomy Pro ajoute des gestes illimités, la suppression des doublons et des similaires en un geste et la compression vidéo, qui économise jusqu’à 80 % de place. Suis l’espace libéré et garde une série quotidienne.')],
-   privacy='Roomy analyse ta photothèque uniquement sur ton iPhone. Tes photos, tes vidéos et leurs métadonnées ne sont jamais envoyées. Sans compte, sans mesure d’audience, sans publicité, sans suivi : rien ne quitte le téléphone. Les achats passent par Apple.',
+   privacy='Roomy analyse ta photothèque uniquement sur ton iPhone. Tes photos, tes vidéos et leurs métadonnées ne sont jamais envoyées. Sans compte, sans publicité, sans suivi. Les achats passent par Apple ; la seule chose que Roomy partage, c’est la mesure des achats (RevenueCat, depuis la version 0.0.3), jamais tes photos.',
    captions=['Accueil : l’espace libre et le fouillis trouvé par Roomy','À gauche pour supprimer, à droite pour garder','Photos similaires groupées, la meilleure marquée']),
 }
