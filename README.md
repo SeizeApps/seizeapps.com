@@ -46,7 +46,9 @@ no menciona revisión, TestFlight ni fechas de lanzamiento, a propósito.
 Vivas a 05/10/2026 según `lookup` (resultCount 1): Cycle Timers (6796827400), Tempo (6761499275),
 Drip (6812332005), Kover (6812714562), Anchor (6812615752), Tandem (6812734713, que estuvo
 retirada de la venta el 22/09 y ya vuelve a responder), Meso (6813842295), Grain (6816346843)
-y Garum (6816385891). Sin id porque `lookup` devuelve 0: Sacapuntas (6818098257), GamingHub
+y Garum (6816385891). Sacapuntas (6818098257) está a la venta desde el 07/10/2026 **solo en España**: `lookup` sin país devuelve 0 y con
+`&country=es` devuelve 1; lleva `store_country='es'`, así su enlace va a `apps.apple.com/es/…` (sin país, fuera de
+España Apple diría que no está disponible). Sin id porque `lookup` devuelve 0: GamingHub
 (6761752010) y Atino (6818553139); Roomy no tiene id de ASC todavía.
 
 En la portada las apps van en dos grupos que salen del mismo dato: «On the App Store»

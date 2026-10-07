@@ -101,7 +101,7 @@ UI={
 }
 
 # ---------------------------------------------------------------- apps
-def app(slug, name, icon, lead, privacy_id, shots, en, es, appstore=None, privacy_path=None):
+def app(slug, name, icon, lead, privacy_id, shots, en, es, appstore=None, privacy_path=None, store_country=None):
     # The French block comes from gen_site_fr.APPS_FR[slug] (added after APPS).
     # `appstore`: el id numérico de App Store Connect, solo cuando la app está
     # publicada de verdad. Si está, la página saca el badge; si no, no hay
@@ -109,7 +109,7 @@ def app(slug, name, icon, lead, privacy_id, shots, en, es, appstore=None, privac
     # `privacy_path`: {'en': ..., 'es': ...} relativo a la raíz, para una app con
     # política propia (Garum), relativo a la portada de cada idioma (la de es está en /es/).
     return dict(slug=slug, name=name, icon=icon, lead=lead, privacy_id=privacy_id,
-                shots=shots, appstore=appstore, privacy_path=privacy_path, copy={'en':en,'es':es})
+                shots=shots, appstore=appstore, privacy_path=privacy_path, copy={'en':en,'es':es}, store_country=store_country)
 
 APPS=[
  app('cycle-timers','Cycle Timers','cycle-timers.png','Izotz Cristobal Mota','cycle-timers',
@@ -316,7 +316,8 @@ APPS=[
                     ('03 / FAMILIAS','Tras el código de familia','Perfiles, el informe de la semana con lo que le cuesta y una actividad para hacer juntos, el curso y lo visto en clase, los métodos de su colegio, fichas para imprimir con solucionario y Sacapuntas Pro: de una vez y para siempre o por suscripción, con una prueba gratis que acaba sola. El niño nunca ve un precio.')],
           privacy='Sacapuntas no recoge ningún dato del niño: sin cuenta, sin anuncios, sin analítica y sin notificaciones. El progreso se queda en el dispositivo y, si la familia lo deja activado, en su propio iCloud.',
           captions=['La estantería: lo que toca','Sumas en columna, cifra a cifra','El pueblo hecho con virutas','Para la familia: el informe de la semana']),
-     privacy_path={'en': 'sacapuntas/privacidad/', 'es': '../sacapuntas/privacidad/', 'fr': '../sacapuntas/privacidad/'}),
+     privacy_path={'en': 'sacapuntas/privacidad/', 'es': '../sacapuntas/privacidad/', 'fr': '../sacapuntas/privacidad/'},
+     appstore='6818098257', store_country='es'),
  # GamingHub (0.5.0, aún sin publicar en la Store): sin appstore hasta que `lookup` devuelva 1.
  app('gaminghub','GamingHub','gaminghub.png','Izotz Cristobal Mota','gaminghub',
      ['gaminghub-01-home.jpg','gaminghub-02-impostor.jpg','gaminghub-03-unison.jpg'],
@@ -545,12 +546,19 @@ fill_counts()
 
 APPLE_GLYPH='<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16.37 12.72c-.02-2.3 1.88-3.41 1.97-3.46-1.07-1.57-2.74-1.79-3.34-1.81-1.42-.14-2.77.84-3.49.84-.72 0-1.83-.82-3.01-.8-1.55.02-2.98.9-3.77 2.29-1.61 2.79-.41 6.92 1.16 9.18.77 1.11 1.68 2.35 2.87 2.31 1.15-.05 1.59-.75 2.98-.75 1.39 0 1.78.75 3 .72 1.24-.02 2.03-1.13 2.79-2.24.88-1.29 1.24-2.53 1.26-2.6-.03-.01-2.41-.93-2.42-3.68zM14.07 5.94c.63-.77 1.06-1.83.94-2.9-.91.04-2.02.61-2.67 1.37-.58.67-1.1 1.76-.96 2.8 1.02.08 2.05-.52 2.69-1.27z"/></svg>'
 
+def store_url(a):
+    # Sin país, Apple redirige a la tienda del visitante. Con `store_country` (Sacapuntas, solo a la venta en
+    # España), a esa tienda: fuera de ella, la URL sin país diría que no está disponible.
+    c = a.get('store_country')
+    return f'https://apps.apple.com/{c + "/" if c else ""}app/id{a["appstore"]}'
+
+
 def store_status(a, t):
     # Live apps carry an «App Store» pill that links straight to the listing (a sibling of the card's link:
     # a link can't sit inside another); the rest say «Coming soon». Both come from `appstore`, never by hand.
     if not a.get('appstore'): return f'<span class="status soon">{t["soon"]}</span>'
     label=t['store_icon'].format(name=a['name'])
-    return (f'<a class="status live" href="https://apps.apple.com/app/id{a["appstore"]}" '
+    return (f'<a class="status live" href="{store_url(a)}" '
             f'aria-label="{label}" title="{label}">{APPLE_GLYPH}<span>App Store</span></a>')
 
 def icon_vt(a):
@@ -672,7 +680,7 @@ def build_app(lang, a):
     # Sin id de App Store no hay badge: el sitio nunca enlaza a una ficha que
     # todavía no existe, ni menciona revisión, TestFlight ni fechas.
     # La URL va sin país a propósito: Apple redirige a la tienda del visitante.
-    badge=(f'<a class="store-badge button" href="https://apps.apple.com/app/id{a["appstore"]}">{APPLE_GLYPH}<span>{t["store_badge"]}</span></a>'
+    badge=(f'<a class="store-badge button" href="{store_url(a)}">{APPLE_GLYPH}<span>{t["store_badge"]}</span></a>'
            if a.get('appstore') else f'<span class="status soon">{t["soon"]}</span>')
     more=''.join(f'<li><a href="{home}apps/{b["slug"]}.html"><img src="{root}assets/icons/{b["icon"]}" alt="" width="56" height="56" loading="lazy" decoding="async"><span>{b["name"]}</span></a></li>'
                  for b in APPS if b is not a)
