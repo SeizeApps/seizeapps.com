@@ -52,7 +52,7 @@ APPS_FR = {
    features=[('01 / VOIR','Le temps, d’un coup d’œil','La couleur et la forme te disent ce qui est récent, ce qui approche et ce qui demande ton attention maintenant. Aucune liste à lire.'),
              ('02 / TOUCHER','Fait veut dire relancé','Un toucher marque la tâche comme faite et lance le cycle suivant, directement depuis le widget si tu veux.'),
              ('03 / GARDER','À toi, pas à nous','Sans compte et sans pistage. Tes minuteurs restent sur ton appareil, là où doit vivre un outil pour la maison.')],
-   privacy='Cycle Timers ne collecte aucune donnée. Les minuteurs vivent sur ton appareil, dans un conteneur privé partagé uniquement avec les widgets de l’app ; les rappels sont programmés en local.',
+   privacy='Cycle Timers n’a ni compte ni publicité. Les minuteurs vivent sur ton appareil, dans un conteneur privé partagé uniquement avec les widgets de l’app ; les rappels sont programmés en local. La seule chose qu’elle partage, c’est la mesure des achats (RevenueCat), jamais tes minuteurs.',
    captions=['Six anneaux, un coup d’œil','Un minuteur, c’est un nom, une icône et un cycle']),
  'tempo': dict(
    one='Un compagnon de journée qui retient tes heures à ta place — arriver, travailler, partir — et te laisse la main sur le relevé pour le corriger.',
