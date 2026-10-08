@@ -84,7 +84,22 @@ NINOS = '''
   <p>Las personas adultas pueden leer <a href="../">la versión completa</a>.</p>
 '''
 
+DIBUJOS = '''
+  <p class="eyebrow">Sacapuntas · Créditos</p>
+  <h1>Los dibujos de Sacapuntas</h1>
+  <p>Los dibujos de los ejercicios de Sacapuntas (animales, comida, objetos, oficios…) están hechos a partir de
+  <a href="https://openmoji.org" rel="noopener">OpenMoji</a> – the open-source emoji and icon project, con licencia
+  <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.es" rel="noopener">CC BY-SA 4.0</a>.</p>
+  <p><strong>Qué hemos cambiado:</strong> los colores, para que vayan con el cuaderno de Sacapuntas (el contorno en grafito
+  y cada color de OpenMoji pasado a uno de nuestra paleta). La forma de cada dibujo es la de OpenMoji.</p>
+  <p>Estas versiones recoloreadas se publican con la misma licencia, CC BY-SA 4.0. Puedes descargarlas aquí:
+  <a href="sacapuntas-dibujos.zip">sacapuntas-dibujos.zip</a> (SVG).</p>
+  <p>Las personas dibujadas, las tiendas, las láminas y el pueblo los dibuja la propia app y son de Seize Apps.</p>
+'''
+
 PAGES = [  # (path, body, title, desc)
+    ('sacapuntas/dibujos/', DIBUJOS, 'Los dibujos de Sacapuntas — Seize Apps',
+     'Créditos y licencia de los dibujos de Sacapuntas: OpenMoji (CC BY-SA 4.0), recoloreados.'),
     ('sacapuntas/privacidad/', PRIVACIDAD.replace('{updated}', UPDATED_FAMILIAS), 'Privacidad de Sacapuntas — Seize Apps',
      'Sacapuntas no recoge datos de los niños: sin cuentas, sin anuncios ni analítica; el progreso, en el dispositivo o en vuestro iCloud.'),
     ('sacapuntas/privacidad/ninos/', NINOS, 'Tus datos en Sacapuntas — Seize Apps',
