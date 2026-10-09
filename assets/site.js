@@ -16,6 +16,32 @@
     top();
   }
 
+  // Screenshot rails: when they overflow, the arrows appear and move one screen of cards at a time
+  // (touch and trackpads scroll the rail directly; without this script the rail still scrolls).
+  var still = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  d.querySelectorAll('.gallery-store').forEach(function (g) {
+    var rail = g.querySelector('.shots-rail'), nav = g.querySelector('.rail-nav');
+    if (!rail || !nav) return;
+    var btns = nav.querySelectorAll('.rail-btn');
+    function update() {
+      var max = rail.scrollWidth - rail.clientWidth;
+      nav.hidden = max < 4;
+      btns[0].disabled = rail.scrollLeft < 4;
+      btns[1].disabled = rail.scrollLeft > max - 4;
+    }
+    btns.forEach(function (b) {
+      b.addEventListener('click', function () {
+        var card = rail.querySelector('.shot');
+        var step = card ? card.getBoundingClientRect().width + parseFloat(getComputedStyle(rail).columnGap || 0) : rail.clientWidth;
+        var n = Math.max(1, Math.floor((rail.clientWidth - 40) / step));
+        rail.scrollBy({ left: (+b.dataset.dir) * n * step, behavior: still ? 'auto' : 'smooth' });
+      });
+    });
+    rail.addEventListener('scroll', function () { requestAnimationFrame(update); }, { passive: true });
+    addEventListener('resize', update);
+    update();
+  });
+
   if (matchMedia('(prefers-reduced-motion: reduce)').matches || !matchMedia('(hover: hover) and (pointer: fine)').matches) return;
 
   // One rAF per frame at most; `fn` gets the pointer as 0…1 inside the element, or null when it leaves.

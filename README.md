@@ -21,6 +21,7 @@ docs/                 design notes (docs/redesign-2026-10.md: references and rat
 assets/seize-mark.png · assets/og.jpg · favicon*.png · apple-touch-icon.png
 assets/icons/*.png    app icons, 256 px, from each app's AppIcon.png
 assets/shots/*.jpg    real screenshots, 600 px wide, JPEG 70, English simulator
+assets/store/<slug>/<lang>/*.webp   the App Store screenshots (headline + device), 400/800 px WebP; see below
 ```
 
 The HTML is **generated** by `tools/gen_site.py` (UI strings and app copy in English and Spanish; French in `tools/gen_site_fr.py`) with the legal bodies in `tools/gen_legal_copy.py` (EN), `tools/gen_legal_es.py` (ES) and `tools/gen_legal_fr.py` (FR); Garum's French legal pages (`/garum/confidentialite/`, `/garum/conditions/`) in `tools/gen_legal_criba_fr.py`. Sacapuntas' policy is Spanish only, like the app; Atino's (`gen_legal_atino.py`, `/atino/privacy/` and `/atino/privacidad/`) is English and Spanish; Roomy's (`gen_legal_roomy.py`, `/roomy/privacy/`) is English only. French typography: a no-break space (U+00A0) before `: ; ! ?` and inside « ». Edit the generators, run `python3 tools/gen_site.py`, commit the output. Don't hand-edit the HTML. Bump `CSS_V` in `gen_site.py` whenever `site.css` or `site.js` changes (cache-busting: the path is shared with the previous site). Every legal page goes through `legal_main()` in `gen_site.py`: it gives each `<h2>` an id and builds the sticky contents list shown on wide screens, without touching the text.
@@ -89,3 +90,18 @@ legal de Garum), y conserva el `#ancla`. Las URL en castellano o francés no se 
 ese idioma. Pulsar el selector se recuerda (`localStorage`, clave `seize-lang`, desde `assets/site.js`) y manda sobre el navegador. Sin
 geolocalización por IP: un país no es un idioma (Bélgica, Suiza, Canadá, el País Vasco). Sin JavaScript, o para los
 buscadores, la página se queda como está.
+
+## Capturas de la Store (09/10/2026)
+
+Las páginas de las apps de Sendoa (Drip, Anchor, Kover, Tandem, Meso, Grain, Garum y Sacapuntas) enseñan las mismas
+capturas compuestas que la App Store (titular + dispositivo), en el idioma de la página, en un carril horizontal con
+snap y flechas (las flechas solo salen con JavaScript y si el carril desborda). Las genera
+`tools/build_store_shots.py` desde `SeizeRepo/tools/store/out/<App>/store/<lang>/<prefijo>-<lang>-NN-<slug>.png`:
+webp de 400 y 800 px en `assets/store/<slug>/<lang>/` y el manifiesto `tools/store_shots.json`, con el titular y el
+subtítulo aprobados de `tools/store/config/<app>.yaml`, que son el texto alternativo. `gen_site.py` solo lee el
+manifiesto. Sacapuntas solo tiene capturas en castellano: sus páginas en/fr las enseñan con el texto alternativo
+traducido (`shot_alts` en su bloque de copia).
+
+**Versión nueva de una app:** cambiar su prefijo en `SOURCES` de `build_store_shots.py`, correrlo con el Python del
+venv de `tools/asc` del SeizeRepo (tiene Pillow) y después `python3 tools/gen_site.py` y `python3 tools/check_links.py`
+(que también comprueba los `srcset`). Las apps de Izotz siguen con sus capturas crudas de `assets/shots/`.

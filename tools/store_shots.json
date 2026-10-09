@@ -1,0 +1,1227 @@
+{
+ "drip": {
+  "source": "drip-0.4.6",
+  "langs": {
+   "en": [
+    {
+     "base": "assets/store/drip/en/01-real-cost",
+     "w": 400,
+     "h": 869,
+     "title": "What subscriptions really cost.",
+     "subtitle": "Per year, per month, per day. Honest numbers, no bank link."
+    },
+    {
+     "base": "assets/store/drip/en/02-every-renewal",
+     "w": 400,
+     "h": 869,
+     "title": "Every service, every renewal.",
+     "subtitle": "Sorted by cost, with the next charge in sight."
+    },
+    {
+     "base": "assets/store/drip/en/03-where-it-drips",
+     "w": 400,
+     "h": 869,
+     "title": "See where it drips most.",
+     "subtitle": "By category and by billing cycle, at a glance."
+    },
+    {
+     "base": "assets/store/drip/en/04-patterns",
+     "w": 400,
+     "h": 869,
+     "title": "Twelve months of patterns.",
+     "subtitle": "Seasonal peaks and what is coming up next."
+    },
+    {
+     "base": "assets/store/drip/en/05-recap",
+     "w": 400,
+     "h": 869,
+     "title": "Your year in services.",
+     "subtitle": "What you paid, what changed, what you dropped."
+    },
+    {
+     "base": "assets/store/drip/en/06-pro",
+     "w": 400,
+     "h": 869,
+     "title": "Your year in services, at a glance.",
+     "subtitle": "Drip Pro: annual recap, deeper analysis, budget, your own categories, widgets and Siri."
+    },
+    {
+     "base": "assets/store/drip/en/07-themes",
+     "w": 400,
+     "h": 869,
+     "title": "Your colours, day and night.",
+     "subtitle": "Colour themes with Drip Pro, plus light, dark or system appearance and a second app icon."
+    }
+   ],
+   "es": [
+    {
+     "base": "assets/store/drip/es/01-real-cost",
+     "w": 400,
+     "h": 869,
+     "title": "Lo que cuestan de verdad.",
+     "subtitle": "Tus suscripciones al año, al mes y al día. Sin enlazar el banco."
+    },
+    {
+     "base": "assets/store/drip/es/02-every-renewal",
+     "w": 400,
+     "h": 869,
+     "title": "Cada servicio, cada renovación.",
+     "subtitle": "Ordenados por coste, con el próximo cobro a la vista."
+    },
+    {
+     "base": "assets/store/drip/es/03-where-it-drips",
+     "w": 400,
+     "h": 869,
+     "title": "Mira por dónde se te va más.",
+     "subtitle": "Por categoría y por ciclo de cobro, de un vistazo."
+    },
+    {
+     "base": "assets/store/drip/es/04-patterns",
+     "w": 400,
+     "h": 869,
+     "title": "Doce meses de patrones.",
+     "subtitle": "Los picos del año y lo que viene ahora."
+    },
+    {
+     "base": "assets/store/drip/es/05-recap",
+     "w": 400,
+     "h": 869,
+     "title": "Tu año en servicios.",
+     "subtitle": "Lo que pagaste, lo que cambió, lo que dejaste."
+    },
+    {
+     "base": "assets/store/drip/es/06-pro",
+     "w": 400,
+     "h": 869,
+     "title": "Tu año en servicios, de un vistazo.",
+     "subtitle": "Drip Pro: resumen anual, análisis a fondo, presupuesto, categorías propias, widgets y Siri."
+    },
+    {
+     "base": "assets/store/drip/es/07-themes",
+     "w": 400,
+     "h": 869,
+     "title": "Tus colores, de día y de noche.",
+     "subtitle": "Temas de color con Drip Pro, y aspecto claro, oscuro o del sistema, y otro icono."
+    }
+   ],
+   "fr": [
+    {
+     "base": "assets/store/drip/fr/01-real-cost",
+     "w": 400,
+     "h": 869,
+     "title": "Ce que coûtent tes abonnements.",
+     "subtitle": "Par an, par mois, par jour. Des chiffres honnêtes, sans lien bancaire."
+    },
+    {
+     "base": "assets/store/drip/fr/02-every-renewal",
+     "w": 400,
+     "h": 869,
+     "title": "Chaque service, chaque échéance.",
+     "subtitle": "Triés par coût, avec le prochain prélèvement en vue."
+    },
+    {
+     "base": "assets/store/drip/fr/03-where-it-drips",
+     "w": 400,
+     "h": 869,
+     "title": "Vois où ça file le plus.",
+     "subtitle": "Par catégorie et par cycle de facturation, d’un coup d’œil."
+    },
+    {
+     "base": "assets/store/drip/fr/04-patterns",
+     "w": 400,
+     "h": 869,
+     "title": "Douze mois de tendances.",
+     "subtitle": "Les pics de l’année et ce qui arrive ensuite."
+    },
+    {
+     "base": "assets/store/drip/fr/05-recap",
+     "w": 400,
+     "h": 869,
+     "title": "Ton année en services.",
+     "subtitle": "Ce que tu as payé, ce qui a changé, ce que tu as arrêté."
+    },
+    {
+     "base": "assets/store/drip/fr/06-pro",
+     "w": 400,
+     "h": 869,
+     "title": "Ton année en services, d’un coup d’œil.",
+     "subtitle": "Drip Pro : récap annuel, analyses poussées, budget, tes catégories, widgets et Siri."
+    },
+    {
+     "base": "assets/store/drip/fr/07-themes",
+     "w": 400,
+     "h": 869,
+     "title": "Tes couleurs, de jour comme de nuit.",
+     "subtitle": "Des thèmes de couleur avec Drip Pro, l’apparence claire, sombre ou système, et une autre icône."
+    }
+   ]
+  }
+ },
+ "anchor": {
+  "source": "anchor-0.1.9",
+  "langs": {
+   "en": [
+    {
+     "base": "assets/store/anchor/en/01-anchored",
+     "w": 400,
+     "h": 869,
+     "title": "Your day, anchored.",
+     "subtitle": "Daily routines as relapse prevention. Gentle, and without numbers."
+    },
+    {
+     "base": "assets/store/anchor/en/02-right-now",
+     "w": 400,
+     "h": 869,
+     "title": "When it gets hard, one tap.",
+     "subtitle": "An urge, tension, an emotion: Anchor answers with what helps right now."
+    },
+    {
+     "base": "assets/store/anchor/en/03-strategies",
+     "w": 400,
+     "h": 869,
+     "title": "Strategies for this moment.",
+     "subtitle": "DBT, CBT, ACT and self-compassion, sorted by the time of day."
+    },
+    {
+     "base": "assets/store/anchor/en/04-guided",
+     "w": 400,
+     "h": 869,
+     "title": "Guided, with the evidence.",
+     "subtitle": "The steps, the theory behind them and the paper. Breathing guided in-app."
+    },
+    {
+     "base": "assets/store/anchor/en/05-checkin",
+     "w": 400,
+     "h": 869,
+     "title": "How are you? No numbers.",
+     "subtitle": "A moment for yourself. Just how you feel right now."
+    },
+    {
+     "base": "assets/store/anchor/en/06-progress",
+     "w": 400,
+     "h": 869,
+     "title": "Every day counts. No scores.",
+     "subtitle": "Twelve weeks of your routines, in shades, never in numbers."
+    },
+    {
+     "base": "assets/store/anchor/en/07-plan",
+     "w": 400,
+     "h": 869,
+     "title": "Plan ahead for the odd day.",
+     "subtitle": "A trip, an exam week: keep the routines that matter and let the rest go."
+    },
+    {
+     "base": "assets/store/anchor/en/08-night",
+     "w": 400,
+     "h": 869,
+     "title": "Day or night, the same calm.",
+     "subtitle": "Light, dark or as your iPhone. Gentle on the eyes at any hour."
+    }
+   ],
+   "es": [
+    {
+     "base": "assets/store/anchor/es/01-anchored",
+     "w": 400,
+     "h": 869,
+     "title": "Tu día, con ancla.",
+     "subtitle": "Rutinas diarias como prevención de recaídas. Con calma y sin cifras."
+    },
+    {
+     "base": "assets/store/anchor/es/02-right-now",
+     "w": 400,
+     "h": 869,
+     "title": "Cuando se pone difícil, un toque.",
+     "subtitle": "Un impulso, tensión, una emoción: Anchor responde con lo que ayuda ahora."
+    },
+    {
+     "base": "assets/store/anchor/es/03-strategies",
+     "w": 400,
+     "h": 869,
+     "title": "Estrategias para este momento.",
+     "subtitle": "DBT, TCC, ACT y autocompasión, ordenadas por la hora del día."
+    },
+    {
+     "base": "assets/store/anchor/es/04-guided",
+     "w": 400,
+     "h": 869,
+     "title": "Guiadas, con su evidencia.",
+     "subtitle": "Los pasos, la teoría detrás y el artículo. La respiración, guiada en la app."
+    },
+    {
+     "base": "assets/store/anchor/es/05-checkin",
+     "w": 400,
+     "h": 869,
+     "title": "¿Cómo estás? Sin cifras.",
+     "subtitle": "Un momento para ti. Solo cómo te sientes ahora mismo."
+    },
+    {
+     "base": "assets/store/anchor/es/06-progress",
+     "w": 400,
+     "h": 869,
+     "title": "Cada día cuenta. Sin puntuaciones.",
+     "subtitle": "Doce semanas de tus rutinas, en tonos, nunca en cifras."
+    },
+    {
+     "base": "assets/store/anchor/es/07-plan",
+     "w": 400,
+     "h": 869,
+     "title": "Planifica el día distinto.",
+     "subtitle": "Un viaje, una semana de exámenes: quédate con las rutinas que importan y suelta el resto."
+    },
+    {
+     "base": "assets/store/anchor/es/08-night",
+     "w": 400,
+     "h": 869,
+     "title": "De día o de noche, la misma calma.",
+     "subtitle": "Claro, oscuro o como tu iPhone. Suave para la vista a cualquier hora."
+    }
+   ],
+   "fr": [
+    {
+     "base": "assets/store/anchor/fr/01-anchored",
+     "w": 400,
+     "h": 869,
+     "title": "Ta journée, bien ancrée.",
+     "subtitle": "Des routines quotidiennes pour prévenir la rechute. En douceur, et sans chiffres."
+    },
+    {
+     "base": "assets/store/anchor/fr/02-right-now",
+     "w": 400,
+     "h": 869,
+     "title": "Quand c’est dur, un seul geste.",
+     "subtitle": "Une envie, une tension, une émotion : Anchor répond avec ce qui aide, maintenant."
+    },
+    {
+     "base": "assets/store/anchor/fr/03-strategies",
+     "w": 400,
+     "h": 869,
+     "title": "Des stratégies pour ce moment.",
+     "subtitle": "TCD, TCC, ACT et autocompassion, classées selon l’heure de la journée."
+    },
+    {
+     "base": "assets/store/anchor/fr/04-guided",
+     "w": 400,
+     "h": 869,
+     "title": "Guidées, preuves à l’appui.",
+     "subtitle": "Les étapes, la théorie qui les fonde et l’article. La respiration est guidée dans l’app."
+    },
+    {
+     "base": "assets/store/anchor/fr/05-checkin",
+     "w": 400,
+     "h": 869,
+     "title": "Comment ça va ? Sans chiffres.",
+     "subtitle": "Un moment pour toi. Juste ce que tu ressens, là, maintenant."
+    },
+    {
+     "base": "assets/store/anchor/fr/06-progress",
+     "w": 400,
+     "h": 869,
+     "title": "Chaque jour compte. Sans score.",
+     "subtitle": "Douze semaines de tes routines, en nuances, jamais en chiffres."
+    },
+    {
+     "base": "assets/store/anchor/fr/07-plan",
+     "w": 400,
+     "h": 869,
+     "title": "Anticipe les jours à part.",
+     "subtitle": "Un voyage, une semaine d’examens : garde les routines qui comptent et lâche le reste."
+    },
+    {
+     "base": "assets/store/anchor/fr/08-night",
+     "w": 400,
+     "h": 869,
+     "title": "De jour comme de nuit, le même calme.",
+     "subtitle": "Clair, sombre ou comme ton iPhone. Doux pour les yeux à toute heure."
+    }
+   ]
+  }
+ },
+ "kover": {
+  "source": "kover-0.2.5",
+  "langs": {
+   "en": [
+    {
+     "base": "assets/store/kover/en/01-watched",
+     "w": 400,
+     "h": 869,
+     "title": "Every warranty, watched.",
+     "subtitle": "Legal and extended. Kover tells you what is still covered."
+    },
+    {
+     "base": "assets/store/kover/en/02-covered-until",
+     "w": 400,
+     "h": 869,
+     "title": "Know exactly until when.",
+     "subtitle": "The seal, the timeline and every date that matters."
+    },
+    {
+     "base": "assets/store/kover/en/03-three-questions",
+     "w": 400,
+     "h": 869,
+     "title": "Add a purchase in three questions.",
+     "subtitle": "What, when, how much. Or read it straight off the receipt."
+    },
+    {
+     "base": "assets/store/kover/en/04-papers",
+     "w": 400,
+     "h": 869,
+     "title": "Every paper, in one place.",
+     "subtitle": "Receipt, invoice, extended warranty. Camera, library or PDF."
+    },
+    {
+     "base": "assets/store/kover/en/05-heads-up",
+     "w": 400,
+     "h": 869,
+     "title": "A heads-up before it expires.",
+     "subtitle": "So a warranty never runs out without you knowing."
+    },
+    {
+     "base": "assets/store/kover/en/06-pro",
+     "w": 400,
+     "h": 869,
+     "title": "All the paperwork, ready to claim.",
+     "subtitle": "Kover Pro: more papers per product, the claim PDF, CSV export and Siri."
+    },
+    {
+     "base": "assets/store/kover/en/07-themes",
+     "w": 400,
+     "h": 869,
+     "title": "Your colours, day and night.",
+     "subtitle": "Colour themes with Kover Pro, plus light, dark or system appearance and a second app icon."
+    }
+   ],
+   "es": [
+    {
+     "base": "assets/store/kover/es/01-watched",
+     "w": 400,
+     "h": 869,
+     "title": "Todas tus garantías, vigiladas.",
+     "subtitle": "Legal y extendida. Kover te dice qué sigue cubierto."
+    },
+    {
+     "base": "assets/store/kover/es/02-covered-until",
+     "w": 400,
+     "h": 869,
+     "title": "Sabe hasta cuándo, exactamente.",
+     "subtitle": "El sello, la línea de tiempo y cada fecha que importa."
+    },
+    {
+     "base": "assets/store/kover/es/03-three-questions",
+     "w": 400,
+     "h": 869,
+     "title": "Añade una compra en tres preguntas.",
+     "subtitle": "Qué, cuándo, cuánto. O léelo directamente del ticket."
+    },
+    {
+     "base": "assets/store/kover/es/04-papers",
+     "w": 400,
+     "h": 869,
+     "title": "Todos los papeles, en un sitio.",
+     "subtitle": "Ticket, factura, garantía extendida. Cámara, fototeca o PDF."
+    },
+    {
+     "base": "assets/store/kover/es/05-heads-up",
+     "w": 400,
+     "h": 869,
+     "title": "Un aviso antes de que caduque.",
+     "subtitle": "Para que ninguna garantía se acabe sin que lo sepas."
+    },
+    {
+     "base": "assets/store/kover/es/06-pro",
+     "w": 400,
+     "h": 869,
+     "title": "Todo el papeleo, listo para reclamar.",
+     "subtitle": "Kover Pro: más documentos por producto, el PDF de reclamación, CSV y Siri."
+    },
+    {
+     "base": "assets/store/kover/es/07-themes",
+     "w": 400,
+     "h": 869,
+     "title": "Tus colores, de día y de noche.",
+     "subtitle": "Temas de color con Kover Pro, y aspecto claro, oscuro o del sistema, y otro icono."
+    }
+   ],
+   "fr": [
+    {
+     "base": "assets/store/kover/fr/01-watched",
+     "w": 400,
+     "h": 869,
+     "title": "Toutes tes garanties, sous bonne garde.",
+     "subtitle": "Garantie légale et extension. Kover te dit ce qui est encore couvert."
+    },
+    {
+     "base": "assets/store/kover/fr/02-covered-until",
+     "w": 400,
+     "h": 869,
+     "title": "Sache exactement jusqu’à quand.",
+     "subtitle": "Le sceau, la frise et chaque date qui compte."
+    },
+    {
+     "base": "assets/store/kover/fr/03-three-questions",
+     "w": 400,
+     "h": 869,
+     "title": "Ajoute un achat en trois questions.",
+     "subtitle": "Quoi, quand, combien. Ou lis-le directement sur le ticket."
+    },
+    {
+     "base": "assets/store/kover/fr/04-papers",
+     "w": 400,
+     "h": 869,
+     "title": "Tous tes papiers, au même endroit.",
+     "subtitle": "Ticket, facture, extension de garantie. Appareil photo, photothèque ou PDF."
+    },
+    {
+     "base": "assets/store/kover/fr/05-heads-up",
+     "w": 400,
+     "h": 869,
+     "title": "Un rappel avant la fin de la garantie.",
+     "subtitle": "Pour qu’aucune garantie ne se termine sans que tu le saches."
+    },
+    {
+     "base": "assets/store/kover/fr/06-pro",
+     "w": 400,
+     "h": 869,
+     "title": "Toute la paperasse, prête pour réclamer.",
+     "subtitle": "Kover Pro : plus de documents par produit, le PDF de réclamation, l’export CSV et Siri."
+    },
+    {
+     "base": "assets/store/kover/fr/07-themes",
+     "w": 400,
+     "h": 869,
+     "title": "Tes couleurs, de jour comme de nuit.",
+     "subtitle": "Des thèmes de couleur avec Kover Pro, l’apparence claire, sombre ou système, et une autre icône."
+    }
+   ]
+  }
+ },
+ "tandem": {
+  "source": "tandem-0.2.4",
+  "langs": {
+   "en": [
+    {
+     "base": "assets/store/tandem/en/01-fair",
+     "w": 400,
+     "h": 869,
+     "title": "Fair means proportional.",
+     "subtitle": "Two incomes, one fair split, and the math always on screen."
+    },
+    {
+     "base": "assets/store/tandem/en/02-the-math",
+     "w": 400,
+     "h": 869,
+     "title": "See the math, not just the result.",
+     "subtitle": "Each share, what each one paid, and the transfer that closes the month."
+    },
+    {
+     "base": "assets/store/tandem/en/03-expenses",
+     "w": 400,
+     "h": 869,
+     "title": "Every shared expense, in one place.",
+     "subtitle": "Fixed and variable, who paid it, and the ones that repeat every month."
+    },
+    {
+     "base": "assets/store/tandem/en/04-add",
+     "w": 400,
+     "h": 869,
+     "title": "Add it in seconds.",
+     "subtitle": "Amount, category, who paid. The split is already fair."
+    },
+    {
+     "base": "assets/store/tandem/en/05-reports",
+     "w": 400,
+     "h": 869,
+     "title": "Your year, month by month.",
+     "subtitle": "The trend, who paid what, and the categories that weigh most."
+    },
+    {
+     "base": "assets/store/tandem/en/06-pro",
+     "w": 400,
+     "h": 869,
+     "title": "Your month, in full detail.",
+     "subtitle": "Tandem Pro: reports, a custom split, reminders, widgets and CSV export."
+    },
+    {
+     "base": "assets/store/tandem/en/07-themes",
+     "w": 400,
+     "h": 869,
+     "title": "Your colours, day and night.",
+     "subtitle": "Colour themes with Tandem Pro, one colour for each of you, day and night."
+    }
+   ],
+   "es": [
+    {
+     "base": "assets/store/tandem/es/01-fair",
+     "w": 400,
+     "h": 869,
+     "title": "Justo significa proporcional.",
+     "subtitle": "Dos sueldos, un reparto justo, y las cuentas siempre a la vista."
+    },
+    {
+     "base": "assets/store/tandem/es/02-the-math",
+     "w": 400,
+     "h": 869,
+     "title": "Mira las cuentas, no solo el resultado.",
+     "subtitle": "La parte de cada uno, lo que pagó cada uno y la transferencia que cierra el mes."
+    },
+    {
+     "base": "assets/store/tandem/es/03-expenses",
+     "w": 400,
+     "h": 869,
+     "title": "Cada gasto compartido, en un sitio.",
+     "subtitle": "Fijos y variables, quién lo pagó, y los que se repiten cada mes."
+    },
+    {
+     "base": "assets/store/tandem/es/04-add",
+     "w": 400,
+     "h": 869,
+     "title": "Añádelo en segundos.",
+     "subtitle": "Importe, categoría, quién pagó. El reparto ya es justo."
+    },
+    {
+     "base": "assets/store/tandem/es/05-reports",
+     "w": 400,
+     "h": 869,
+     "title": "Tu año, mes a mes.",
+     "subtitle": "La tendencia, quién pagó qué y las categorías que más pesan."
+    },
+    {
+     "base": "assets/store/tandem/es/06-pro",
+     "w": 400,
+     "h": 869,
+     "title": "Tu mes, con todo detalle.",
+     "subtitle": "Tandem Pro: informes, reparto a medida, recordatorios, widgets y CSV."
+    },
+    {
+     "base": "assets/store/tandem/es/07-themes",
+     "w": 400,
+     "h": 869,
+     "title": "Tus colores, de día y de noche.",
+     "subtitle": "Temas de color con Tandem Pro, con un color para cada uno, de día y de noche."
+    }
+   ],
+   "fr": [
+    {
+     "base": "assets/store/tandem/fr/01-fair",
+     "w": 400,
+     "h": 869,
+     "title": "Juste veut dire proportionnel.",
+     "subtitle": "Deux revenus, une répartition juste, et le calcul toujours à l’écran."
+    },
+    {
+     "base": "assets/store/tandem/fr/02-the-math",
+     "w": 400,
+     "h": 869,
+     "title": "Le calcul, pas que le résultat.",
+     "subtitle": "La part de chacun, ce que chacun a payé et le virement qui boucle le mois."
+    },
+    {
+     "base": "assets/store/tandem/fr/03-expenses",
+     "w": 400,
+     "h": 869,
+     "title": "Toutes tes dépenses, au même endroit.",
+     "subtitle": "Fixes et variables, qui a payé, et celles qui reviennent chaque mois."
+    },
+    {
+     "base": "assets/store/tandem/fr/04-add",
+     "w": 400,
+     "h": 869,
+     "title": "Ajoute une dépense en quelques secondes.",
+     "subtitle": "Montant, catégorie, qui a payé. La répartition est déjà juste."
+    },
+    {
+     "base": "assets/store/tandem/fr/05-reports",
+     "w": 400,
+     "h": 869,
+     "title": "Ton année, mois par mois.",
+     "subtitle": "La tendance, qui a payé quoi et les catégories qui pèsent le plus."
+    },
+    {
+     "base": "assets/store/tandem/fr/06-pro",
+     "w": 400,
+     "h": 869,
+     "title": "Ton mois, dans le moindre détail.",
+     "subtitle": "Tandem Pro : rapports, répartition sur mesure, rappels, widgets et export CSV."
+    },
+    {
+     "base": "assets/store/tandem/fr/07-themes",
+     "w": 400,
+     "h": 869,
+     "title": "Tes couleurs, de jour comme de nuit.",
+     "subtitle": "Des thèmes de couleur avec Tandem Pro, une couleur pour chacun, de jour comme de nuit."
+    }
+   ]
+  }
+ },
+ "meso": {
+  "source": "meso-0.3.3",
+  "langs": {
+   "en": [
+    {
+     "base": "assets/store/meso/en/01-today",
+     "w": 400,
+     "h": 869,
+     "title": "Train by blocks, guided by RIR.",
+     "subtitle": "The coach's spreadsheet, made for the gym floor."
+    },
+    {
+     "base": "assets/store/meso/en/02-next-step",
+     "w": 400,
+     "h": 869,
+     "title": "It knows your next step.",
+     "subtitle": "Load and reps suggested from last week. One tap to apply."
+    },
+    {
+     "base": "assets/store/meso/en/03-tonnage",
+     "w": 400,
+     "h": 869,
+     "title": "Tonnage, week by week.",
+     "subtitle": "Every exercise of the block, with the change from the week before."
+    },
+    {
+     "base": "assets/store/meso/en/04-sets-per-muscle",
+     "w": 400,
+     "h": 869,
+     "title": "Sets per muscle, in the right band.",
+     "subtitle": "Hard sets counted honestly, against what the evidence says."
+    },
+    {
+     "base": "assets/store/meso/en/05-e1rm",
+     "w": 400,
+     "h": 869,
+     "title": "Every lift, on its curve.",
+     "subtitle": "Estimated 1RM and tonnage per week, read with the best set."
+    },
+    {
+     "base": "assets/store/meso/en/06-pro",
+     "w": 400,
+     "h": 869,
+     "title": "Your block, week by week.",
+     "subtitle": "Meso Pro: progress by week and exercise, your coach, the next step and Apple Health."
+    }
+   ],
+   "es": [
+    {
+     "base": "assets/store/meso/es/01-today",
+     "w": 400,
+     "h": 869,
+     "title": "Entrena por bloques, guiado por RIR.",
+     "subtitle": "El Excel del entrenador, hecho para el gimnasio."
+    },
+    {
+     "base": "assets/store/meso/es/02-next-step",
+     "w": 400,
+     "h": 869,
+     "title": "Sabe cuál es tu siguiente paso.",
+     "subtitle": "Carga y repeticiones a partir de la semana pasada. Un toque y listo."
+    },
+    {
+     "base": "assets/store/meso/es/03-tonnage",
+     "w": 400,
+     "h": 869,
+     "title": "Tonelaje, semana a semana.",
+     "subtitle": "Cada ejercicio del bloque, con el cambio respecto a la semana anterior."
+    },
+    {
+     "base": "assets/store/meso/es/04-sets-per-muscle",
+     "w": 400,
+     "h": 869,
+     "title": "Series por músculo, en su banda.",
+     "subtitle": "Series duras contadas de verdad, frente a lo que dice la evidencia."
+    },
+    {
+     "base": "assets/store/meso/es/05-e1rm",
+     "w": 400,
+     "h": 869,
+     "title": "Cada levantamiento, en su curva.",
+     "subtitle": "1RM estimado y tonelaje por semana, leídos con la mejor serie."
+    },
+    {
+     "base": "assets/store/meso/es/06-pro",
+     "w": 400,
+     "h": 869,
+     "title": "Tu bloque, semana a semana.",
+     "subtitle": "Meso Pro: progreso por semana y ejercicio, tu entrenador, el siguiente paso y Apple Salud."
+    }
+   ],
+   "fr": [
+    {
+     "base": "assets/store/meso/fr/01-today",
+     "w": 400,
+     "h": 869,
+     "title": "Entraîne-toi par blocs, au RIR.",
+     "subtitle": "Le tableur du coach, fait pour la salle."
+    },
+    {
+     "base": "assets/store/meso/fr/02-next-step",
+     "w": 400,
+     "h": 869,
+     "title": "Il connaît ta prochaine étape.",
+     "subtitle": "Charge et reps à partir de la semaine dernière. Tu appliques d’un toucher."
+    },
+    {
+     "base": "assets/store/meso/fr/03-tonnage",
+     "w": 400,
+     "h": 869,
+     "title": "Le tonnage, semaine par semaine.",
+     "subtitle": "Chaque exercice du bloc, avec l’évolution par rapport à la semaine d’avant."
+    },
+    {
+     "base": "assets/store/meso/fr/04-sets-per-muscle",
+     "w": 400,
+     "h": 869,
+     "title": "Séries par muscle, dans la bonne bande.",
+     "subtitle": "Les séries dures comptées honnêtement, face à ce que disent les études."
+    },
+    {
+     "base": "assets/store/meso/fr/05-e1rm",
+     "w": 400,
+     "h": 869,
+     "title": "Chaque mouvement, sur sa courbe.",
+     "subtitle": "1RM estimé et tonnage par semaine, lus avec la meilleure série."
+    },
+    {
+     "base": "assets/store/meso/fr/06-pro",
+     "w": 400,
+     "h": 869,
+     "title": "Ton bloc, semaine par semaine.",
+     "subtitle": "Meso Pro : progrès par semaine et par exercice, ton coach, l’étape suivante et Santé."
+    }
+   ]
+  }
+ },
+ "grain": {
+  "source": "grain-0.1.2",
+  "langs": {
+   "en": [
+    {
+     "base": "assets/store/grain/en/01-today",
+     "w": 400,
+     "h": 869,
+     "title": "Your macros, minus diet talk.",
+     "subtitle": "Energy, protein, carbs and fat against your targets, and what's left."
+    },
+    {
+     "base": "assets/store/grain/en/02-say-it",
+     "w": 400,
+     "h": 869,
+     "title": "Write it the way you'd say it.",
+     "subtitle": "Grain splits the foods and suggests the grams. You check it first."
+    },
+    {
+     "base": "assets/store/grain/en/03-recents",
+     "w": 400,
+     "h": 869,
+     "title": "What's yours, first.",
+     "subtitle": "Recents with their amount and brand, favourites and your recipes, each with a +."
+    },
+    {
+     "base": "assets/store/grain/en/04-recipe",
+     "w": 400,
+     "h": 869,
+     "title": "Your recipes, by the serving.",
+     "subtitle": "Ingredients, cooked weight and servings. Log one serving or a third of the pot."
+    },
+    {
+     "base": "assets/store/grain/en/05-repeat",
+     "w": 400,
+     "h": 869,
+     "title": "The usual, in one tap.",
+     "subtitle": "Repeat a meal from another day, copy it or save it. Over 4,000 foods, offline."
+    },
+    {
+     "base": "assets/store/grain/en/06-label",
+     "w": 400,
+     "h": 869,
+     "title": "Read the label.",
+     "subtitle": "A photo of the pack and the values are in, read on your iPhone."
+    },
+    {
+     "base": "assets/store/grain/en/07-history",
+     "w": 400,
+     "h": 869,
+     "title": "How your weeks add up.",
+     "subtitle": "7, 30 and 90 days, averaging only the days you logged."
+    },
+    {
+     "base": "assets/store/grain/en/08-pro",
+     "w": 400,
+     "h": 869,
+     "title": "Read the label. See your weeks.",
+     "subtitle": "Grain Pro: label reading, history and trends, widgets, Apple Health and colour themes."
+    }
+   ],
+   "es": [
+    {
+     "base": "assets/store/grain/es/01-today",
+     "w": 400,
+     "h": 869,
+     "title": "Tus macros, sin tono de dieta.",
+     "subtitle": "Energía, proteína, hidratos y grasa frente a tus metas, y lo que queda."
+    },
+    {
+     "base": "assets/store/grain/es/02-say-it",
+     "w": 400,
+     "h": 869,
+     "title": "Escríbelo como lo dirías.",
+     "subtitle": "Grain separa los alimentos y propone los gramos. Tú lo revisas."
+    },
+    {
+     "base": "assets/store/grain/es/03-recents",
+     "w": 400,
+     "h": 869,
+     "title": "Lo tuyo, primero.",
+     "subtitle": "Recientes con su cantidad y su marca, favoritos y tus recetas, cada uno con su +."
+    },
+    {
+     "base": "assets/store/grain/es/04-recipe",
+     "w": 400,
+     "h": 869,
+     "title": "Tus recetas, por raciones.",
+     "subtitle": "Ingredientes, peso cocinado y raciones. Anota una ración o un tercio de la olla."
+    },
+    {
+     "base": "assets/store/grain/es/05-repeat",
+     "w": 400,
+     "h": 869,
+     "title": "Lo de siempre, de un toque.",
+     "subtitle": "Repite una comida de otro día, cópiala o guárdala. Más de 4.000 alimentos, sin conexión."
+    },
+    {
+     "base": "assets/store/grain/es/06-label",
+     "w": 400,
+     "h": 869,
+     "title": "Lee la etiqueta.",
+     "subtitle": "Una foto del envase y los valores entran, leídos en tu iPhone."
+    },
+    {
+     "base": "assets/store/grain/es/07-history",
+     "w": 400,
+     "h": 869,
+     "title": "Cómo suman tus semanas.",
+     "subtitle": "7, 30 y 90 días, con la media de los días anotados."
+    },
+    {
+     "base": "assets/store/grain/es/08-pro",
+     "w": 400,
+     "h": 869,
+     "title": "Lee la etiqueta. Mira tus semanas.",
+     "subtitle": "Grain Pro: leer la etiqueta, historial y tendencias, widgets, Apple Salud y temas de color."
+    }
+   ],
+   "fr": [
+    {
+     "base": "assets/store/grain/fr/01-today",
+     "w": 400,
+     "h": 869,
+     "title": "Tes macros, sans parler régime.",
+     "subtitle": "Énergie, protéines, glucides et lipides face à tes objectifs, et ce qu’il reste."
+    },
+    {
+     "base": "assets/store/grain/fr/02-say-it",
+     "w": 400,
+     "h": 869,
+     "title": "Écris-le comme tu le dirais.",
+     "subtitle": "Grain sépare les aliments et propose les grammes. Tu vérifies d’abord."
+    },
+    {
+     "base": "assets/store/grain/fr/03-recents",
+     "w": 400,
+     "h": 869,
+     "title": "Ce qui est à toi, d’abord.",
+     "subtitle": "Les récents avec leur quantité et leur marque, les favoris et tes recettes, chacun avec son +."
+    },
+    {
+     "base": "assets/store/grain/fr/04-recipe",
+     "w": 400,
+     "h": 869,
+     "title": "Tes recettes, à la portion.",
+     "subtitle": "Ingrédients, poids cuit et portions. Note une portion ou un tiers de la marmite."
+    },
+    {
+     "base": "assets/store/grain/fr/05-repeat",
+     "w": 400,
+     "h": 869,
+     "title": "Comme d’habitude, d’une touche.",
+     "subtitle": "Reprends un repas d’un autre jour, copie-le ou enregistre-le. Plus de 4 000 aliments, hors connexion."
+    },
+    {
+     "base": "assets/store/grain/fr/06-label",
+     "w": 400,
+     "h": 869,
+     "title": "Lis l’étiquette.",
+     "subtitle": "Une photo de l’emballage et les valeurs sont là, lues sur ton iPhone."
+    },
+    {
+     "base": "assets/store/grain/fr/07-history",
+     "w": 400,
+     "h": 869,
+     "title": "Le bilan de tes semaines.",
+     "subtitle": "7, 30 et 90 jours, avec la moyenne des seuls jours notés."
+    },
+    {
+     "base": "assets/store/grain/fr/08-pro",
+     "w": 400,
+     "h": 869,
+     "title": "Lis l’étiquette. Vois tes semaines.",
+     "subtitle": "Grain Pro : lecture d’étiquette, historique et tendances, widgets, Santé et thèmes de couleur."
+    }
+   ]
+  }
+ },
+ "garum": {
+  "source": "criba-0.1.1",
+  "langs": {
+   "en": [
+    {
+     "base": "assets/store/garum/en/01-map",
+     "w": 400,
+     "h": 869,
+     "title": "Places that are there for a reason.",
+     "subtitle": "Classics, established places and new ones, each with its icon. No stars, no posing."
+    },
+    {
+     "base": "assets/store/garum/en/02-why",
+     "w": 400,
+     "h": 869,
+     "title": "Every place, with its why.",
+     "subtitle": "Reasons, a signed note, what to order and who backs it."
+    },
+    {
+     "base": "assets/store/garum/en/03-social",
+     "w": 400,
+     "h": 869,
+     "title": "Follow people with your taste.",
+     "subtitle": "See what they back and propose, as it happens."
+    },
+    {
+     "base": "assets/store/garum/en/04-profile",
+     "w": 400,
+     "h": 869,
+     "title": "Everything is signed.",
+     "subtitle": "Your profile shows what you propose and back. Your saved places are just for you."
+    },
+    {
+     "base": "assets/store/garum/en/05-lists",
+     "w": 400,
+     "h": 869,
+     "title": "Classics, established and new.",
+     "subtitle": "Three lists by age. Places move on to the next one by themselves as the years go by."
+    },
+    {
+     "base": "assets/store/garum/en/06-collection",
+     "w": 400,
+     "h": 869,
+     "title": "Collections worth following.",
+     "subtitle": "Lists and itineraries from people you trust, with a note at every stop."
+    },
+    {
+     "base": "assets/store/garum/en/07-browse",
+     "w": 400,
+     "h": 869,
+     "title": "Collections by theme, area and route.",
+     "subtitle": "From Garum and from people, near you or wherever you go."
+    },
+    {
+     "base": "assets/store/garum/en/08-pro",
+     "w": 400,
+     "h": 869,
+     "title": "Garum Pro, your way.",
+     "subtitle": "Private collections, notices about new places, widgets, the whole map offline and colour themes."
+    }
+   ],
+   "es": [
+    {
+     "base": "assets/store/garum/es/01-map",
+     "w": 400,
+     "h": 869,
+     "title": "Sitios que están por algo.",
+     "subtitle": "Clásicos, establecidos y nuevos, cada uno con su icono. Sin estrellas ni postureo."
+    },
+    {
+     "base": "assets/store/garum/es/02-why",
+     "w": 400,
+     "h": 869,
+     "title": "Cada sitio, con su porqué.",
+     "subtitle": "Motivos, una nota firmada, qué pedir y quién lo respalda."
+    },
+    {
+     "base": "assets/store/garum/es/03-social",
+     "w": 400,
+     "h": 869,
+     "title": "Sigue a gente con tu gusto.",
+     "subtitle": "Mira lo que respaldan y proponen, a medida que lo hacen."
+    },
+    {
+     "base": "assets/store/garum/es/04-profile",
+     "w": 400,
+     "h": 869,
+     "title": "Todo va firmado.",
+     "subtitle": "Tu perfil enseña lo que propones y respaldas. Tus guardados, solo para ti."
+    },
+    {
+     "base": "assets/store/garum/es/05-lists",
+     "w": 400,
+     "h": 869,
+     "title": "Clásicos, establecidos y nuevos.",
+     "subtitle": "Tres listas por antigüedad. Los sitios pasan a la siguiente solos, con los años."
+    },
+    {
+     "base": "assets/store/garum/es/06-collection",
+     "w": 400,
+     "h": 869,
+     "title": "Colecciones que seguir.",
+     "subtitle": "Listas e itinerarios de gente de fiar, con una nota en cada parada."
+    },
+    {
+     "base": "assets/store/garum/es/07-browse",
+     "w": 400,
+     "h": 869,
+     "title": "Colecciones por tema, zona e itinerario.",
+     "subtitle": "De Garum y de la gente, cerca de ti o donde vayas."
+    },
+    {
+     "base": "assets/store/garum/es/08-pro",
+     "w": 400,
+     "h": 869,
+     "title": "Garum Pro, a tu manera.",
+     "subtitle": "Colecciones privadas, avisos de sitios nuevos, widgets, todo el mapa sin conexión y temas de color."
+    }
+   ],
+   "fr": [
+    {
+     "base": "assets/store/garum/fr/01-map",
+     "w": 400,
+     "h": 869,
+     "title": "Des adresses qui ont une raison d’être là.",
+     "subtitle": "Classiques, établis et nouveaux, chacun avec son icône. Ni étoiles ni chichis."
+    },
+    {
+     "base": "assets/store/garum/fr/02-why",
+     "w": 400,
+     "h": 869,
+     "title": "Chaque adresse, avec son pourquoi.",
+     "subtitle": "Des motifs, une note signée, quoi commander et qui la recommande."
+    },
+    {
+     "base": "assets/store/garum/fr/03-social",
+     "w": 400,
+     "h": 869,
+     "title": "Suis des gens qui ont tes goûts.",
+     "subtitle": "Vois ce qu’ils recommandent et proposent, au fil de l’eau."
+    },
+    {
+     "base": "assets/store/garum/fr/04-profile",
+     "w": 400,
+     "h": 869,
+     "title": "Tout est signé.",
+     "subtitle": "Ton profil montre ce que tu proposes et recommandes. Tes adresses enregistrées, rien que pour toi."
+    },
+    {
+     "base": "assets/store/garum/fr/05-lists",
+     "w": 400,
+     "h": 869,
+     "title": "Classiques, établis et nouveaux.",
+     "subtitle": "Trois listes selon l’ancienneté. Les adresses passent à la suivante toutes seules, avec les années."
+    },
+    {
+     "base": "assets/store/garum/fr/06-collection",
+     "w": 400,
+     "h": 869,
+     "title": "Des collections à suivre.",
+     "subtitle": "Des listes et des itinéraires de gens de confiance, avec une note à chaque étape."
+    },
+    {
+     "base": "assets/store/garum/fr/07-browse",
+     "w": 400,
+     "h": 869,
+     "title": "Collections par thème, zone et itinéraire.",
+     "subtitle": "De Garum et des membres, près de toi ou là où tu vas."
+    },
+    {
+     "base": "assets/store/garum/fr/08-pro",
+     "w": 400,
+     "h": 869,
+     "title": "Garum Pro, à ta façon.",
+     "subtitle": "Collections privées, avis de nouvelles adresses, widgets, toute la carte hors ligne et thèmes de couleur."
+    }
+   ]
+  }
+ },
+ "sacapuntas": {
+  "source": "sacapuntas-0.7.0",
+  "langs": {
+   "es": [
+    {
+     "base": "assets/store/sacapuntas/es/01-estanteria",
+     "w": 400,
+     "h": 869,
+     "title": "Cuadernillos de primaria",
+     "subtitle": "Para mentes afiladas: cuentas en columna, tablas y tildes, como en el cole."
+    },
+    {
+     "base": "assets/store/sacapuntas/es/02-informe",
+     "w": 400,
+     "h": 869,
+     "title": "Sabréis qué le cuesta",
+     "subtitle": "Cada semana, lo que domina, el error que repite y una actividad para hacer juntos."
+    },
+    {
+     "base": "assets/store/sacapuntas/es/03-cuentas",
+     "w": 400,
+     "h": 869,
+     "title": "Cuentas en columna",
+     "subtitle": "Sumar, restar, multiplicar y dividir cifra a cifra. La pista dice qué columna mirar."
+    },
+    {
+     "base": "assets/store/sacapuntas/es/04-tildes",
+     "w": 400,
+     "h": 869,
+     "title": "Agudas, llanas y esdrújulas",
+     "subtitle": "La sílaba tónica y «¿lleva tilde?», con las reglas de la RAE."
+    },
+    {
+     "base": "assets/store/sacapuntas/es/05-ingles",
+     "w": 400,
+     "h": 869,
+     "title": "Inglés con voz",
+     "subtitle": "Palabras, números y frases en inglés, con la voz del iPhone y sin internet."
+    },
+    {
+     "base": "assets/store/sacapuntas/es/06-clase",
+     "w": 400,
+     "h": 869,
+     "title": "Lo que da en clase",
+     "subtitle": "Marcáis qué materias quiere y qué está dando ahora: la estantería lo pone delante."
+    },
+    {
+     "base": "assets/store/sacapuntas/es/07-signo",
+     "w": 400,
+     "h": 869,
+     "title": "Sumas y restas: mira el signo",
+     "subtitle": "Mezcladas en la misma página, como en las fichas de 3.º."
+    },
+    {
+     "base": "assets/store/sacapuntas/es/08-primero",
+     "w": 400,
+     "h": 869,
+     "title": "Desde 1.º de primaria",
+     "subtitle": "Sumas y restas sin llevar, el reloj, las monedas y las figuras."
+    },
+    {
+     "base": "assets/store/sacapuntas/es/09-pueblo",
+     "w": 400,
+     "h": 869,
+     "title": "Su propio pueblo",
+     "subtitle": "Elige qué construir y dónde. Lo construido se queda para siempre."
+    },
+    {
+     "base": "assets/store/sacapuntas/es/10-euskera",
+     "w": 400,
+     "h": 869,
+     "title": "También en euskera",
+     "subtitle": "Cada niño, en su idioma. Y un camino de euskera, con su irakurmena."
+    }
+   ]
+  }
+ }
+}

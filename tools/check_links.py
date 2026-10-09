@@ -5,6 +5,7 @@ from urllib.parse import urlsplit, unquote
 SITE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 HOST = 'seizeapps.com'
 ATTR = re.compile(r'<(?:a|link|img|script)\b[^>]*?\b(?:href|src)="([^"]+)"', re.I)
+SRCSET = re.compile(r'\bsrcset="([^"]+)"', re.I)
 ID = re.compile(r'\bid="([^"]+)"')
 
 def target(page, url):
@@ -28,7 +29,8 @@ pages = [os.path.join(d, f) for d, ds, fs in os.walk(SITE) if '.git' not in d.sp
 for page in pages:
     html = open(page, encoding='utf-8').read()
     html_nc = re.sub(r'<!--.*?-->', '', html, flags=re.S)
-    for url in ATTR.findall(html_nc):
+    urls = ATTR.findall(html_nc) + [c.strip().split()[0] for v in SRCSET.findall(html_nc) for c in v.split(',') if c.strip()]
+    for url in urls:
         t = target(page, url)
         if t is None: continue
         n += 1

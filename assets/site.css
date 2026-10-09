@@ -223,6 +223,23 @@ ul, ol { margin: 0; padding: 0; }
 .shot .phone { transform: perspective(1000px) rotateY(calc(var(--px, 0) * 8deg)) rotateX(calc(var(--py, 0) * -6deg)); transition: transform var(--spring-gentle-d) var(--spring-gentle); }
 .shot figcaption { margin-top: 16px; padding-inline: 6px; color: var(--muted); font-size: 15px; line-height: 1.45; text-align: center; text-wrap: balance; }
 
+/* Store screenshots (09/10/2026): the composed App Store images, headline and device already inside, so no phone frame
+   and no caption — one rounded card each, the same radius and the same soft shadow, snapping one by one. */
+.gallery-store .shots-rail { justify-content: flex-start; gap: clamp(14px, 1.8vw, 22px); padding-block: 22px 40px; outline-offset: -4px; }
+@media (min-width: 700px) {
+  .gallery-store .shots-rail { -webkit-mask-image: linear-gradient(90deg, transparent, #000 var(--gutter), #000 calc(100% - var(--gutter)), transparent); mask-image: linear-gradient(90deg, transparent, #000 var(--gutter), #000 calc(100% - var(--gutter)), transparent); }
+}
+.shot-store { flex: 0 0 clamp(200px, 58vw, 276px); }
+.shot-store img { display: block; width: 100%; height: auto; border-radius: clamp(18px, 6.5vw, 26px); background: var(--navy-2); box-shadow: 0 28px 56px -20px var(--shadow), 0 10px 24px -12px rgba(2, 6, 16, .5), 0 0 0 1px rgba(229, 231, 235, .09); transition: translate var(--spring-d) var(--spring); }
+@media (hover: hover) and (pointer: fine) { .shot-store img:hover { translate: 0 -6px; } }
+.rail-nav { display: flex; justify-content: flex-end; gap: 10px; margin-top: -14px; }
+.rail-nav[hidden] { display: none; }
+.rail-btn { display: grid; place-items: center; width: 44px; height: 44px; border: 1px solid var(--line); border-radius: 50%; background: var(--navy-2); color: var(--text); cursor: pointer; transition: border-color 160ms, background-color 160ms, opacity 160ms; }
+.rail-btn:hover { border-color: var(--blue); background: var(--navy-3); }
+.rail-btn:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
+.rail-btn:disabled { opacity: .35; cursor: default; border-color: var(--line); background: var(--navy-2); }
+.rail-prev svg { transform: scaleX(-1); }
+
 .privacy-box { display: grid; gap: 22px; padding: 28px 26px; border: 1px solid var(--line-soft); border-radius: var(--radius); background: var(--navy-2); }
 .privacy-glyph { display: grid; place-items: center; width: 52px; height: 52px; border-radius: 16px; background: var(--navy-3); color: var(--cyan); }
 .privacy-box h2 { font-size: 24px; letter-spacing: -.02em; }
