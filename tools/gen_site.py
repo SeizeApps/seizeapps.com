@@ -6,7 +6,7 @@
 import os, re, sys, unicodedata
 SITE=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-CSS_V='2026-10-05.2'
+CSS_V='2026-10-09.1'
 LANGS=['en','es','fr']
 # Language switch: short label and the link's accessible name, in the target language.
 LANG_LINK={'en':('EN','Read in English'),'es':('ES','Leer en castellano'),'fr':('FR','Lire en français')}
@@ -56,7 +56,7 @@ UI={
    app_eyebrow='Seize Apps · iOS', shots_aria='Screenshots', what_eyebrow='What it does', what_h2='One job, <span>done well.</span>',
    privacy_eyebrow='Privacy', privacy_h3='Yours, not ours.', published_by='A Seize Apps app.',
    privacy_policy='Privacy policy', contact='Contact', store_badge='Download on the App Store', store_icon='{name} on the App Store',
-   shot_alt='{name} screenshot: {cap}',
+   shot_alt='{name} screenshot: {cap}', shots_prev='Previous screenshots', shots_next='Next screenshots',
    skip='Skip to content', lang_label='Language', soon='Coming soon', live_title='On the App Store', more_apps='More from Seize', toc_title='On this page',
    hero_proof='{n} apps · {live} on the App Store · Made in the Basque Country',
  ),
@@ -94,7 +94,7 @@ UI={
    app_eyebrow='Seize Apps · iOS', shots_aria='Capturas', what_eyebrow='Qué hace', what_h2='Una sola cosa, <span>bien hecha.</span>',
    privacy_eyebrow='Privacidad', privacy_h3='Tuyo, no nuestro.', published_by='Una app de Seize Apps.',
    privacy_policy='Política de privacidad', contact='Contacto', store_badge='Descargar en la App Store', store_icon='{name} en la App Store',
-   shot_alt='Captura de {name}: {cap}',
+   shot_alt='Captura de {name}: {cap}', shots_prev='Capturas anteriores', shots_next='Capturas siguientes',
    skip='Saltar al contenido', lang_label='Idioma', soon='Próximamente', live_title='En la App Store', more_apps='Más de Seize', toc_title='En esta página',
    hero_proof='{n} apps · {live} en la App Store · Hechas en el País Vasco',
  ),
@@ -159,7 +159,7 @@ APPS=[
           lede='Monthly hides the pain. <strong>Drip</strong> tracks every recurring service — subscriptions, bills, memberships — and puts the true yearly cost next to what you pay each month. Free for everyday use; Drip Pro is a one-time purchase, with a free 30-day trial. No account, no ads, no subscription: just the number, and what to do about it.',
           meta=['iOS 17+','Free · Pro, one-time purchase','Widgets &amp; Siri (Pro)','English · Spanish · French'],
           features=[('01 / REVEAL','Annual cost, always','That "just €9.99 a month" is €120 a year. Drip shows both, for every service, all the time, with the total by month, quarter and year. Drip Pro adds the deeper look: the twelve-month trend, seasonal patterns and the split by category, your own included.'),
-                    ('02 / CONTROL','Know what\'s next','The next 14 days of charges at a glance, free-trial alerts and a swipe to mark a charge as paid. Pause a service instead of deleting it. With Drip Pro, a monthly budget and a yearly recap of what you spent.'),
+                    ('02 / CONTROL','Know what\'s next','The next 14 days of charges at a glance, free-trial alerts and a swipe to mark a charge as paid. Pause a service instead of deleting it. With Drip Pro, a monthly budget, a yearly recap of what you spent and colour themes for day and night.'),
                     ('03 / KEEP','Yours, not ours','No account and no tracking. Your services live on your device and in your own iCloud — never on a server of ours.')],
           privacy='Drip stores your services on your device, in a private container shared only with its widgets and Siri shortcuts, and in your own iCloud account — never anywhere we can see.',
           captions=['Dashboard: the yearly figure first','Every service, monthly and yearly','Where it drips most, and by category','The yearly recap (Pro)']),
@@ -168,7 +168,7 @@ APPS=[
           lede='Lo mensual esconde el daño. <strong>Drip</strong> lleva la cuenta de cada servicio recurrente —suscripciones, recibos, cuotas— y pone el coste anual real al lado de lo que pagas cada mes. Gratis para el día a día; Drip Pro es una compra única, con 30 días de prueba gratis. Sin cuenta, sin anuncios, sin suscripción: solo el número, y qué hacer con él.',
           meta=['iOS 17+','Gratis · Pro, pago único','Widgets y Siri (Pro)','Castellano · Inglés · Francés'],
           features=[('01 / VER','El coste anual, siempre','Ese «solo 9,99 € al mes» son 120 € al año. Drip enseña las dos cifras, para cada servicio, todo el tiempo, con el total por mes, trimestre y año. Drip Pro añade el análisis a fondo: la tendencia a doce meses, los patrones estacionales y el reparto por categoría, también las tuyas.'),
-                    ('02 / CONTROLAR','Saber qué viene','Los cobros de los próximos 14 días de un vistazo, avisos de fin de prueba y un gesto para marcar un cobro como pagado. Pausa un servicio en vez de borrarlo. Con Drip Pro, un presupuesto mensual y el resumen anual de lo que has gastado.'),
+                    ('02 / CONTROLAR','Saber qué viene','Los cobros de los próximos 14 días de un vistazo, avisos de fin de prueba y un gesto para marcar un cobro como pagado. Pausa un servicio en vez de borrarlo. Con Drip Pro, un presupuesto mensual, el resumen anual de lo que has gastado y temas de color para el día y la noche.'),
                     ('03 / GUARDAR','Tuyo, no nuestro','Sin cuenta y sin rastreo. Tus servicios viven en tu dispositivo y en tu propio iCloud, nunca en un servidor nuestro.')],
           privacy='Drip guarda tus servicios en tu dispositivo, en un contenedor privado compartido solo con sus widgets y atajos de Siri, y en tu propia cuenta de iCloud; nunca en ningún sitio que podamos ver.',
           captions=['Panel: la cifra anual primero','Cada servicio, al mes y al año','Por dónde se va más, y por categoría','El resumen anual (Pro)']), appstore='6812332005'),
@@ -202,7 +202,7 @@ APPS=[
           meta=['iOS 17+','Free · Pro, one-time purchase','Camera, Photos or PDF','English · Spanish · French'],
           features=[('01 / ADD','Three questions, then the seal','What did you buy, when and where, how much. Or let the receipt answer: camera, photo library or a PDF from your email, and the steps come prefilled. Saving ends on «Covered until».'),
                     ('02 / WATCH','Covered until, in plain words','Legal guarantee by country — 36 months in Spain — plus any extended warranty on top. «3 years left», not a countdown of days, on a seal that wears as time passes. Reminders at one month, one week and the day of.'),
-                    ('03 / CLAIM','Everything for the day you need it','Serial number, support phone or website one tap away, and the receipt photo. Claimed, replaced or gone: archive instead of delete. Kover Pro adds more documents per product, a claim PDF, a CSV export and Siri — a one-time purchase, with a free 30-day trial.')],
+                    ('03 / CLAIM','Everything for the day you need it','Serial number, support phone or website one tap away, and the receipt photo. Claimed, replaced or gone: archive instead of delete. Kover Pro adds more documents per product, a claim PDF, a CSV export, Siri and colour themes — a one-time purchase, with a free 30-day trial.')],
           privacy='Kover keeps your products and receipt photos on your device and in your own iCloud account. Receipts are read on the phone with Apple\'s Vision framework — nothing is uploaded, no account, no analytics.',
           captions=['Next to expire, and the whole shelf','Three questions: what, when, how much — or the receipt','Covered until 2029, on its seal','Reminders before it runs out']),
      dict(one='Haz una foto al ticket y Kover vigila la garantía: qué está cubierto, hasta cuándo, y un aviso antes de que se acabe.',
@@ -211,7 +211,7 @@ APPS=[
           meta=['iOS 17+','Gratis · Pro, pago único','Cámara, Fotos o PDF','Castellano · Inglés · Francés'],
           features=[('01 / AÑADIR','Tres preguntas y el sello','Qué has comprado, cuándo y dónde, cuánto costó. O deja que responda el ticket: cámara, fototeca o un PDF del correo, y los pasos llegan rellenos. Guardar termina en «Cubierto hasta».'),
                     ('02 / VIGILAR','Cubierto hasta, en palabras','Garantía legal según el país —36 meses en España— más la extendida si la hay. «Quedan 3 años», no una cuenta atrás de días, en un sello que se gasta con el tiempo. Avisos un mes antes, una semana antes y el mismo día.'),
-                    ('03 / RECLAMAR','Todo para el día que lo necesites','Número de serie, teléfono o web de soporte a un toque, y la foto del ticket. Reclamado, sustituido o ya no es tuyo: archivar en vez de borrar. Kover Pro añade más documentos por producto, un PDF de reclamación, exportar a CSV y Siri: una compra única, con 30 días de prueba gratis.')],
+                    ('03 / RECLAMAR','Todo para el día que lo necesites','Número de serie, teléfono o web de soporte a un toque, y la foto del ticket. Reclamado, sustituido o ya no es tuyo: archivar en vez de borrar. Kover Pro añade más documentos por producto, un PDF de reclamación, exportar a CSV, Siri y temas de color: una compra única, con 30 días de prueba gratis.')],
           privacy='Kover guarda tus productos y las fotos de los tickets en tu dispositivo y en tu propia cuenta de iCloud. Los tickets se leen en el propio teléfono con el framework Vision de Apple: no se sube nada, sin cuenta, sin analítica.',
           captions=['La próxima en caducar, y toda la estantería','Tres preguntas: qué, cuándo, cuánto, o el ticket','Cubierto hasta 2029, en su sello','Avisos antes de que se acabe']), appstore='6812714562'),
  app('tandem','Tandem','tandem.png','Sendoa Sola','tandem',
@@ -222,7 +222,7 @@ APPS=[
           meta=['iOS 17+','Free · Pro, one-time purchase','Widgets (Pro)','English · Spanish · French'],
           features=[('01 / SPLIT','Proportional by default','Enter both incomes once. Every expense is split by that ratio — or 50/50, or paid in full by one of you, or, with Tandem Pro, any share you agree on — and the ratio is frozen with the expense, so a raise next year never reopens last year\'s months.'),
                     ('02 / SETTLE','One number a month','Who paid what, who owes whom, and the transfer that squares it. Mark it settled; undo it if you were too quick.'),
-                    ('03 / SEE','Where it goes','Recurring expenses that log themselves. Tandem Pro adds reports by category and month, reminders to log and to settle, and widgets — a one-time purchase, with a free 30-day trial.')],
+                    ('03 / SEE','Where it goes','Recurring expenses that log themselves. Tandem Pro adds reports by category and month, reminders to log and to settle, widgets, a CSV export and colour themes — a one-time purchase, with a free 30-day trial.')],
           privacy='Tandem keeps names, incomes and expenses on your device and in your own iCloud account. Nothing is shared with anyone — not with us, and not with a server.',
           captions=['This month: shared, paid, to settle','Fixed and variable, by month','Settle up: the math, in the open','Reports: who paid, month by month (Pro)']),
      dict(one='Reparto justo de gastos en pareja: cada uno paga en proporción a lo que gana, y el mes se cierra con un solo número.',
@@ -231,7 +231,7 @@ APPS=[
           meta=['iOS 17+','Gratis · Pro, pago único','Widgets (Pro)','Castellano · Inglés · Francés'],
           features=[('01 / REPARTIR','Proporcional por defecto','Mete los dos ingresos una vez. Cada gasto se reparte con esa proporción —o a medias, o lo paga uno entero, o, con Tandem Pro, la parte que acordéis— y la proporción se congela con el gasto, así una subida de sueldo el año que viene no reabre los meses del anterior.'),
                     ('02 / LIQUIDAR','Un número al mes','Quién pagó qué, quién debe a quién y la transferencia que lo cuadra. Márcalo como liquidado; deshazlo si te precipitaste.'),
-                    ('03 / VER','A dónde va','Gastos recurrentes que se apuntan solos. Tandem Pro añade informes por categoría y por mes, recordatorios para apuntar y para liquidar, y widgets: una compra única, con 30 días de prueba gratis.')],
+                    ('03 / VER','A dónde va','Gastos recurrentes que se apuntan solos. Tandem Pro añade informes por categoría y por mes, recordatorios para apuntar y para liquidar, widgets, exportar a CSV y temas de color: una compra única, con 30 días de prueba gratis.')],
           privacy='Tandem guarda los nombres, los ingresos y los gastos en tu dispositivo y en tu propia cuenta de iCloud. No se comparte nada con nadie: ni con nosotros ni con un servidor.',
           captions=['Este mes: compartido, pagado, por liquidar','Fijos y variables, por mes','Liquidar: las cuentas, a la vista','Informes: quién pagó, mes a mes (Pro)']), appstore='6812734713'),
  app('meso','Meso','meso.png','Sendoa Sola','meso',
@@ -241,7 +241,7 @@ APPS=[
           lede='A programme is a block of weeks, not a list of workouts. <strong>Meso</strong> takes the sessions your coach wrote — or one of its templates — and turns them into a log that fills itself in: every set arrives pre-filled from your best recent session, the ones left follow each set you confirm, one tap confirms it, and effort is logged as reps in reserve. Then it shows whether the block is moving: tonnage per exercise week by week and, with Meso Pro, sets per muscle against what the evidence says is enough.',
           meta=['iOS 17+','Free · Pro, one-time purchase','Apple Health (Pro)','English · Spanish · French'],
           features=[('01 / LOG','One tap per set','Load, reps and RIR come pre-filled from your best recent session, and every set you confirm re-plans the ones left at their own reps and RIR; the tick is the whole input when nothing changed. A note per exercise, a warm-up ramp when you want one, and the next set on the Lock Screen.'),
-                    ('02 / PROGRESS','Blocks, not days','A grid of tonnage per exercise across the weeks. Meso Pro adds sets per muscle against the 10–20 band, each exercise\'s estimated 1RM across blocks, the next step before your first set, and your gyms with their bar and plates — a one-time purchase, with a free 30-day trial. No streaks, no confetti: the progression is measured in blocks.'),
+                    ('02 / PROGRESS','Blocks, not days','A grid of tonnage per exercise across the weeks. Meso Pro adds sets per muscle against the 10–20 band, each exercise\'s estimated 1RM across blocks, the next step before your first set, your gyms with their bar and plates, the week sent to your coach and colour themes — a one-time purchase, with a free 30-day trial. No streaks, no confetti: the progression is measured in blocks.'),
                     ('03 / LEARN','Every rule with its source','Why RIR, why a deload, why the band — each principle in the app carries its evidence and how solid it is, with references you can check. Honest about what is settled and what is not.')],
           privacy='Meso keeps your programmes and sessions on your device and in your own iCloud account. Apple Health is written only if you switch it on, and never read. No account, no analytics.',
           captions=['Today: the session that is due','A set is a tick; the rest is pre-filled','Tonnage per exercise, week by week','Sets per muscle against the evidence band (Pro)']),
@@ -250,7 +250,7 @@ APPS=[
           lede='Un programa es un bloque de semanas, no una lista de entrenos. <strong>Meso</strong> toma las sesiones que te escribió el entrenador —o una de sus plantillas— y las convierte en un registro que se rellena solo: cada serie llega rellena con tu mejor sesión reciente, las que quedan siguen a cada serie que confirmas, un toque la confirma y el esfuerzo se apunta como repeticiones en reserva. Después enseña si el bloque avanza: tonelaje por ejercicio semana a semana y, con Meso Pro, series por músculo frente a lo que la evidencia dice que basta.',
           meta=['iOS 17+','Gratis · Pro, pago único','Apple Salud (Pro)','Castellano · Inglés · Francés'],
           features=[('01 / APUNTAR','Un toque por serie','Carga, repeticiones y RIR vienen rellenos de tu mejor sesión reciente, y cada serie que confirmas replanifica las que quedan a sus repeticiones y su RIR; el ✓ es toda la entrada cuando nada cambió. Una nota por ejercicio, series de aproximación si las quieres y la siguiente serie en la pantalla de bloqueo.'),
-                    ('02 / PROGRESAR','Bloques, no días','Una rejilla de tonelaje por ejercicio a lo largo de las semanas. Meso Pro añade las series por músculo frente a la banda de 10–20, el 1RM estimado de cada ejercicio a lo largo de los bloques, el siguiente paso antes de la primera serie y tus gimnasios con su barra y sus discos: una compra única, con 30 días de prueba gratis. Sin rachas ni confeti: la progresión se mide en bloques.'),
+                    ('02 / PROGRESAR','Bloques, no días','Una rejilla de tonelaje por ejercicio a lo largo de las semanas. Meso Pro añade las series por músculo frente a la banda de 10–20, el 1RM estimado de cada ejercicio a lo largo de los bloques, el siguiente paso antes de la primera serie, tus gimnasios con su barra y sus discos, la semana enviada a tu entrenador y temas de color: una compra única, con 30 días de prueba gratis. Sin rachas ni confeti: la progresión se mide en bloques.'),
                     ('03 / APRENDER','Cada regla con su fuente','Por qué RIR, por qué una descarga, por qué la banda: cada principio de la app lleva su evidencia y lo sólida que es, con referencias que puedes comprobar. Honesta con lo que está claro y lo que no.')],
           privacy='Meso guarda tus programas y sesiones en tu dispositivo y en tu propia cuenta de iCloud. Apple Salud solo se escribe si lo activas, y nunca se lee. Sin cuenta, sin analítica.',
           captions=['Hoy: la sesión que toca','Una serie es un ✓; el resto viene relleno','Tonelaje por ejercicio, semana a semana','Series por músculo frente a la banda de la evidencia (Pro)']), appstore='6813842295'),
@@ -260,60 +260,61 @@ APPS=[
           tags=['Nutrition','Macros','ES · EN · FR'],
           lede='Building muscle, losing fat or following your dietitian\'s numbers: <strong>Grain</strong> works the same for all of them. You set the targets; Grain logs what you eat and compares, without suggesting or judging. Going over is not painted red and hitting it is not green — the bar fills in its colour and the figure says "+12 g". Over 4,000 foods from the CIQUAL and BEDCA tables ship inside the app and work offline.',
           meta=['iOS 26+','Free · Pro, one-time purchase','Apple Health (Pro)','English · Spanish · French'],
-          features=[('01 / LOG','The way you would say it','Type "2 eggs, 60 g toast, 10 g olive oil" and Grain splits the foods and suggests the grams, with the values from the tables; you check it before it is logged. Or search, scan a barcode (Open Food Facts), build a recipe and log it by its cooked weight, or add the macros by hand. Usual servings are already set, and any food that does not match its pack can be corrected.'),
+          features=[('01 / LOG','The way you would say it','Type "2 eggs, 60 g toast, 10 g olive oil" and Grain splits the foods and suggests the grams, with the values from the tables; you check it before it is logged. Or search, scan a barcode (Open Food Facts), build a recipe and log it by its cooked weight, or add the macros by hand. Save the meals you repeat and log them in one tap. Usual servings are already set, and any food that does not match its pack can be corrected.'),
                     ('02 / READ','The label, on your iPhone','With Grain Pro, point the camera at the nutrition table, or pick a photo, and the per-100 g values fill themselves in. It is read on the device; nothing leaves the phone.'),
-                    ('03 / REVIEW','How your weeks add up','Each meal adds up next to its name, and the day shows what is left of the energy and each macro. Grain Pro adds history over seven, thirty or ninety days, averaging only the days you logged — and saying so — plus widgets and Apple Health; a one-time purchase, with a free 30-day trial. No streaks, no weight.')],
-          privacy='Grain keeps your diary on your device and in your own iCloud account. From a barcode only the number leaves, to Open Food Facts, unless you choose to send a product to it. Apple Health is written only if you switch it on, and never read. No account, no analytics.',
+                    ('03 / REVIEW','How your weeks add up','Each meal adds up next to its name, and the day shows what is left of the energy and each macro. Grain Pro adds history over seven, thirty or ninety days, averaging only the days you logged — and saying so — plus widgets, Apple Health and colour themes; a one-time purchase, with a free 30-day trial. No streaks, no weight.')],
+          privacy='Grain keeps your diary on your device and in your own iCloud account. From a barcode only the number leaves, to Open Food Facts; when you save a product with a barcode, Grain shares it with Open Food Facts too, and you can turn that off on the same form. Apple Health is written only if you switch it on, and never read. No account, no analytics.',
           captions=['Today: what you ate against your targets, and what is left','Write a meal the way you would say it','A nutrition label, read on the iPhone (Pro)','How the weeks add up, by macro (Pro)']),
      dict(one='Un diario de macros sin tono de dieta: energía, proteína, hidratos y grasa frente a las metas que pones tú, y lo que queda.',
           tags=['Nutrición','Macros','ES · EN · FR'],
           lede='Ganar músculo, perder grasa o seguir lo que te ha pautado tu nutricionista: <strong>Grain</strong> sirve igual para todo. Las metas las pones tú; Grain anota lo que comes y lo compara, sin proponer ni juzgar. Pasarte no se pinta de rojo ni cumplir de verde: la barra se llena en su color y la cifra dice «+12 g». Más de 4.000 alimentos de las tablas CIQUAL y BEDCA van dentro de la app y funcionan sin conexión.',
           meta=['iOS 26+','Gratis · Pro, pago único','Apple Salud (Pro)','Castellano · Inglés · Francés'],
-          features=[('01 / ANOTAR','Como lo dirías','Escribe «2 huevos, 60 g de pan tostado, 10 g de aceite» y Grain separa los alimentos y propone los gramos, con los valores de las tablas; tú lo revisas antes de anotar. O busca, escanea un código de barras (Open Food Facts), crea una receta y apúntala por su peso ya cocinado, o mete los macros a mano. Las raciones habituales ya vienen puestas, y cualquier alimento que no cuadre con su envase se puede corregir.'),
+          features=[('01 / ANOTAR','Como lo dirías','Escribe «2 huevos, 60 g de pan tostado, 10 g de aceite» y Grain separa los alimentos y propone los gramos, con los valores de las tablas; tú lo revisas antes de anotar. O busca, escanea un código de barras (Open Food Facts), crea una receta y apúntala por su peso ya cocinado, o mete los macros a mano. Guarda las comidas que repites y apúntalas con un toque. Las raciones habituales ya vienen puestas, y cualquier alimento que no cuadre con su envase se puede corregir.'),
                     ('02 / LEER','La etiqueta, en tu iPhone','Con Grain Pro, apunta la cámara a la tabla nutricional, o elige una foto, y los valores por 100 g se rellenan solos. Se lee en el dispositivo; nada sale del teléfono.'),
-                    ('03 / REPASAR','Cómo suman tus semanas','Cada comida suma junto a su nombre y el día enseña lo que queda de energía y de cada macro. Grain Pro añade el historial de siete, treinta o noventa días, con la media de los días anotados (y diciéndolo), además de widgets y Apple Salud: una compra única, con 30 días de prueba gratis. Sin rachas, sin peso.')],
-          privacy='Grain guarda tu diario en tu dispositivo y en tu propia cuenta de iCloud. Del código de barras solo sale el número, a Open Food Facts, salvo que elijas enviarle un producto. Apple Salud solo se escribe si lo activas, y nunca se lee. Sin cuenta, sin analítica.',
+                    ('03 / REPASAR','Cómo suman tus semanas','Cada comida suma junto a su nombre y el día enseña lo que queda de energía y de cada macro. Grain Pro añade el historial de siete, treinta o noventa días, con la media de los días anotados (y diciéndolo), además de widgets, Apple Salud y temas de color: una compra única, con 30 días de prueba gratis. Sin rachas, sin peso.')],
+          privacy='Grain guarda tu diario en tu dispositivo y en tu propia cuenta de iCloud. Del código de barras solo sale el número, a Open Food Facts; cuando guardas un producto con código de barras, Grain lo comparte también con Open Food Facts, y puedes desactivarlo en el mismo formulario. Apple Salud solo se escribe si lo activas, y nunca se lee. Sin cuenta, sin analítica.',
           captions=['Hoy: lo que has comido frente a tus metas, y lo que queda','Escribe una comida como lo dirías','Una etiqueta nutricional, leída en el iPhone (Pro)','Cómo suman las semanas, por macro (Pro)']), appstore='6816346843'),
  app('garum','Garum','garum.png','Sendoa Sola','garum',
      ['garum-01-map.jpg','garum-02-why.jpg','garum-03-detail.jpg','garum-04-signed.jpg'],
      dict(one='A map of places that are there for a reason: classics, established places and new ones with a point of view, each with its why, everything signed.',
           tags=['Food &amp; drink','Curated map','ES · EN · FR'],
           lede='<strong>Garum</strong> is a map where places get in on merit, not on stars or ads. Three lists by age — classics open for more than 25 years, established places between 3 and 25, and new ones under 3 with a point of view — and places move from one to the next on their own as the years go by. Each one carries the reasons it is there and notes signed by whoever stands behind it. Anyone can propose a place; it gets in when a Curator signs it or enough trusted people back it.',
-          meta=['iOS 26+','Free','Apple Maps','English · Spanish · French'],
+          meta=['iOS 26+','Free · Pro, one-time purchase','Apple Maps','Widgets (Pro)','English · Spanish · French'],
           features=[('01 / WHY','Every place, with its why','A closed list of reasons — a classic, the product, the price, the room — and signed notes, never a score. Opening hours, phone and directions come live from Apple Maps.'),
                     ('02 / FIND','What you fancy, now','Filter by list, kind of place, food, price and moment, or by what fits right now. What to order and whether to book are on the card.'),
-                    ('03 / SIGNED','Everything is signed','See who backs each place and follow people with your taste. Propose what is missing; if it does not get in, you are told why. Curators can also suggest removing a place that has closed or lost its way, and moderation decides, with its reason.')],
-          privacy='Browsing the map needs no account. To see why each place is there and to contribute, you sign in with Apple, without giving your email: you appear with the name you share with Apple (or one you set later) and a username, and what you contribute is published, on a server in the EU. No ads, no analytics. Garum has its own privacy policy and terms.',
+                    ('03 / SIGNED','Everything is signed','See who backs each place and follow people with your taste. Make collections — lists and itineraries with a note at every stop — and share them with a link, even with people who don\'t have Garum. Propose what is missing; if it does not get in, you are told why. Garum Pro adds private collections, notices about new places in the areas you choose and about places in your collections that close, widgets, the whole map offline and colour themes — a one-time purchase, with a free 30-day trial.')],
+          privacy='Browsing the map needs no account. To see why each place is there and to contribute, you sign in with Apple, without giving your email: you appear with the name you share with Apple (or one you set later) and a username, and what you contribute is published, on a server in the EU. Your location never leaves your iPhone, except for an approximate area if you turn on Garum Pro notices for «My location». No ads, no analytics. Garum has its own privacy policy and terms.',
           captions=['The map: classics, established places and new ones','Each place with its reasons and signed notes','What to order, when to go, whether to book','Everything signed: who backs what']),
      dict(one='Un mapa de sitios que están por algo: clásicos, establecidos y nuevos con criterio, cada uno con su porqué, todo firmado.',
           tags=['Comer y beber','Mapa con criterio','ES · EN · FR'],
           lede='<strong>Garum</strong> es un mapa donde los sitios entran por mérito, no por estrellas ni anuncios. Tres listas por antigüedad —clásicos con más de 25 años abiertos, establecidos entre 3 y 25 y nuevos de menos de 3 con criterio—, y los sitios pasan de una a la siguiente solos con los años. Cada uno lleva los motivos por los que está y notas firmadas por quien lo respalda. Cualquiera puede proponer un sitio; entra cuando lo firma un Curator o lo respaldan suficientes personas de confianza.',
-          meta=['iOS 26+','Gratis','Apple Maps','Castellano · Inglés · Francés'],
+          meta=['iOS 26+','Gratis · Pro, pago único','Apple Maps','Widgets (Pro)','Castellano · Inglés · Francés'],
           features=[('01 / PORQUÉ','Cada sitio, con su porqué','Una lista cerrada de motivos —un clásico, el producto, el precio, el local— y notas firmadas, nunca una puntuación. Horario, teléfono y cómo llegar, en vivo desde Apple Maps.'),
                     ('02 / ENCONTRAR','Lo que te apetece, ahora','Filtra por lista, tipo de sitio, cocina, precio y momento, o por lo que encaja ahora mismo. Qué pedir y si hay que reservar, en la ficha.'),
-                    ('03 / FIRMADO','Todo va firmado','Mira quién respalda cada sitio y sigue a gente con tu gusto. Propón lo que falta; si no entra, te decimos por qué. Los Curators también pueden sugerir quitar un sitio que ha cerrado o ya no es lo que era, y la moderación decide, con su motivo.')],
-          privacy='Mirar el mapa no necesita cuenta. Para ver por qué está cada sitio y para aportar, entras con Apple, sin dar tu correo: apareces con el nombre que compartes con Apple (o el que pongas después) y un nombre de usuario, y lo que aportas se publica, en un servidor en la UE. Sin anuncios ni analítica. Garum tiene su propia política de privacidad y sus condiciones.',
+                    ('03 / FIRMADO','Todo va firmado','Mira quién respalda cada sitio y sigue a gente con tu gusto. Haz colecciones —listas e itinerarios con una nota en cada parada— y compártelas con un enlace, también con quien no tiene Garum. Propón lo que falta; si no entra, te decimos por qué. Garum Pro añade colecciones privadas, avisos de sitios nuevos en las zonas que eliges y de sitios de tus colecciones que cierran, widgets, el mapa entero sin conexión y temas de color: una compra única, con 30 días de prueba gratis.')],
+          privacy='Mirar el mapa no necesita cuenta. Para ver por qué está cada sitio y para aportar, entras con Apple, sin dar tu correo: apareces con el nombre que compartes con Apple (o el que pongas después) y un nombre de usuario, y lo que aportas se publica, en un servidor en la UE. Tu ubicación no sale del iPhone, salvo una zona aproximada si activas los avisos de «Mi ubicación» de Garum Pro. Sin anuncios ni analítica. Garum tiene su propia política de privacidad y sus condiciones.',
           captions=['El mapa: clásicos, establecidos y nuevos','Cada sitio con sus motivos y notas firmadas','Qué pedir, cuándo ir, si hay que reservar','Todo firmado: quién respalda qué']),
      privacy_path={'en': 'garum/privacy/', 'es': '../garum/privacidad/', 'fr': '../garum/confidentialite/'}, appstore='6816385891'),
  # Sacapuntas (Kids, 02/10/2026): solo en castellano y solo en España; su propia política, con versión para niños.
  app('sacapuntas','Sacapuntas','sacapuntas.png','Sendoa Sola','sacapuntas',
      ['sacapuntas-01-shelf.jpg','sacapuntas-02-sum.jpg','sacapuntas-03-village.jpg','sacapuntas-04-report.jpg'],
-     dict(one='Primary-school workbooks, from age 6 to 12, in Spanish and Basque: arithmetic, times tables, accents, grammar and reading comprehension, with a village that grows with every page done well.',
+     dict(one='Primary-school workbooks, from age 6 to 12, in Spanish and Basque: arithmetic, times tables, accents, grammar, reading comprehension, science and society, and English with a voice, with a village that grows with every page done well.',
           tags=['Education','Primary school','ES · EU'],
-          lede='The workbooks every Spanish child knows, made digital and with a sense of humour. <strong>Sacapuntas</strong> ("pencil sharpener") covers column arithmetic with carrying and borrowing, long multiplication and division in the Spanish layout, number facts and times tables, Spanish syllables and accentuation by the RAE rules, grammar and reading comprehension. Each child studies in their own language: there is a Basque path too. Short pages with a clear end; every page done well earns shavings to build the child\'s own village. For the Spanish school system, in Spanish and Basque.',
+          lede='The workbooks every Spanish child knows, made digital and with a sense of humour. <strong>Sacapuntas</strong> ("pencil sharpener") covers column arithmetic with carrying and borrowing, long multiplication and division in the Spanish layout, number facts and times tables, Spanish syllables and accentuation by the RAE rules, grammar, reading comprehension, science and society (Conocimiento del Medio) and English with a voice; from the first year, the clock, coins and shapes too. Each child studies in their own language: there is a Basque path too. Short pages with a clear end; every page done well earns shavings to build the child\'s own village. For the Spanish school system, in Spanish and Basque.',
           meta=['iOS 26+','iPhone &amp; iPad','Free · Pro, lifetime or subscription','Spanish · Basque'],
           features=[('01 / COLUMNS','Digit by digit','Each digit in its box and each carry where it goes. A mistake marks the box and the hint says which column to look at; a repeated slip is recognised and explained. A correct answer is never marked wrong for using another method.'),
                     ('02 / ACCENTS','Agudas, llanas, esdrújulas','The stressed syllable, the three classes and "does it take an accent?", by the 2010 Spanish spelling rules, with real words of the child\'s year.'),
-                    ('03 / FAMILIES','Behind the family code','Profiles, a weekly report with what is hard and an activity to do together, the school year and what the class has covered, the school\'s methods, printable worksheets with answers, and Sacapuntas Pro: once and for good or by subscription, with a free trial that ends on its own. The child never sees a price.')],
+                    ('03 / FAMILIES','Behind the family code','Profiles, a weekly report with what is hard and an activity to do together, the subjects each child wants and what the class is covering now («Ahora en clase» puts it first), the school\'s methods, printable worksheets with answers, and Sacapuntas Pro: once and for good or by subscription, with a free 7-day trial that ends on its own. The child never sees a price.')],
           privacy='Sacapuntas collects no data from the child: no account, no ads, no analytics, no notifications. Progress stays on the device and, if the family leaves it on, in its own iCloud.',
+          shot_alts=['Primary-school workbooks. For sharp minds: column sums, times tables and accents, like at school.', 'You will know what they find hard. Every week, what they have mastered, the slip they repeat and an activity to do together.', 'Column arithmetic. Add, subtract, multiply and divide digit by digit; the hint says which column to look at.', 'Agudas, llanas and esdrújulas. The stressed syllable and «does it take an accent?», by the RAE rules.', "English with a voice. Words, numbers and sentences in English, with the iPhone's own voice and no internet.", 'What the class is covering. You mark the subjects they want and what they are doing now: the shelf puts it first.', 'Sums and subtractions: watch the sign. Mixed on the same page, like the third-year worksheets.', 'From the first year of primary. Sums and subtractions without carrying, the clock, coins and shapes.', 'Their own village. They choose what to build and where; what they build stays for good.', 'In Basque too. Each child in their own language, and a Basque path with its reading comprehension.'],
           captions=['The shelf: what to do next','Column sums, digit by digit','The village built with shavings','For the family: the weekly report']),
-     dict(one='Cuadernillos para toda la primaria, de 6 a 12 años, en castellano y en euskera: cuentas, tablas, tildes, gramática y comprensión lectora, con un pueblo que crece con cada página bien terminada.',
+     dict(one='Cuadernillos para toda la primaria, de 6 a 12 años, en castellano y en euskera: cuentas, tablas, tildes, gramática, comprensión lectora, Conocimiento del Medio e inglés con voz, con un pueblo que crece con cada página bien terminada.',
           tags=['Educación','Primaria','ES · EU'],
-          lede='Los cuadernillos de toda la vida, digitales y con gracia. <strong>Sacapuntas</strong> trae las cuentas en columna con sus llevadas, multiplicar por dos cifras y dividir en la caja de siempre, sumas y tablas, numeración, sílabas, tildes con las reglas de la RAE, gramática y comprensión lectora. Cada niño estudia en su idioma: también hay un camino de Euskara. Páginas cortas con un final claro; cada página bien terminada da virutas para construir su propio pueblo. Para mentes afiladas.',
+          lede='Los cuadernillos de toda la vida, digitales y con gracia. <strong>Sacapuntas</strong> trae las cuentas en columna con sus llevadas, multiplicar por dos cifras y dividir en la caja de siempre, sumas y tablas, numeración, sílabas, tildes con las reglas de la RAE, gramática, comprensión lectora, Conocimiento del Medio e inglés con voz; desde 1.º, también el reloj, las monedas y las figuras. Cada niño estudia en su idioma: también hay un camino de Euskara. Páginas cortas con un final claro; cada página bien terminada da virutas para construir su propio pueblo. Para mentes afiladas.',
           meta=['iOS 26+','iPhone y iPad','Gratis · Pro, de por vida o por suscripción','Castellano · Euskera'],
           features=[('01 / CUENTAS','Cifra a cifra','Cada cifra en su casilla y cada llevada en su sitio. Un fallo marca la casilla y la pista dice qué columna mirar; si el mismo error se repite, se reconoce y se explica. Nunca se da por mal una cuenta bien hecha por otro método.'),
                     ('02 / TILDES','Agudas, llanas y esdrújulas','La sílaba tónica, las tres clases y «¿lleva tilde?», con la Ortografía de 2010 y palabras de su curso.'),
-                    ('03 / FAMILIAS','Tras el código de familia','Perfiles, el informe de la semana con lo que le cuesta y una actividad para hacer juntos, el curso y lo visto en clase, los métodos de su colegio, fichas para imprimir con solucionario y Sacapuntas Pro: de una vez y para siempre o por suscripción, con una prueba gratis que acaba sola. El niño nunca ve un precio.')],
+                    ('03 / FAMILIAS','Tras el código de familia','Perfiles, el informe de la semana con lo que le cuesta y una actividad para hacer juntos, qué materias quiere y qué está dando en clase («Ahora en clase» lo pone delante), los métodos de su colegio, fichas para imprimir con solucionario y Sacapuntas Pro: de una vez y para siempre o por suscripción, con una prueba gratis de 7 días que acaba sola. El niño nunca ve un precio.')],
           privacy='Sacapuntas no recoge ningún dato del niño: sin cuenta, sin anuncios, sin analítica y sin notificaciones. El progreso se queda en el dispositivo y, si la familia lo deja activado, en su propio iCloud.',
           captions=['La estantería: lo que toca','Sumas en columna, cifra a cifra','El pueblo hecho con virutas','Para la familia: el informe de la semana']),
      privacy_path={'en': 'sacapuntas/privacidad/', 'es': '../sacapuntas/privacidad/', 'fr': '../sacapuntas/privacidad/'},
@@ -410,6 +411,44 @@ def shot(root, f, alt='', lazy=True, priority=False):
     load=' loading="lazy"' if lazy else ''
     prio=' fetchpriority="high"' if priority else ''
     return f'<img src="{root}assets/shots/{f}" alt="{alt}" width="{w}" height="{h}"{load}{prio} decoding="async">'
+
+# The App Store screenshots (09/10/2026): the composed Store images (headline + device) of each app, per language,
+# as 400/800 px WebP. tools/build_store_shots.py writes them and this manifest from the SeizeRepo; an app that is in it
+# shows them on its page, the rest keep their raw screenshots in assets/shots/.
+import json
+STORE_SHOTS=json.load(open(os.path.join(SITE,'tools','store_shots.json'), encoding='utf-8'))
+
+def store_alt(s):
+    # The approved Store headline and subtitle, as one sentence: «What subscriptions really cost. Per year, …»
+    title, sub = s['title'], s['subtitle']
+    if not sub: return title
+    return title + ('' if title[-1:] in '.!?:…»' else '.') + ' ' + sub
+
+ARROW='<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="m9 5 7 7-7 7"/></svg>'
+
+def store_gallery(lang, a, t, root):
+    # Which language's images: the page's own, or the first the app has (Sacapuntas: Spanish only, its alt text
+    # translated in copy['shot_alts']).
+    m=STORE_SHOTS[a['slug']]['langs']
+    img_lang=lang if lang in m else next(iter(m))
+    shots=m[img_lang]; c=a['copy'][lang]
+    alts=c.get('shot_alts') if img_lang!=lang else None
+    if img_lang!=lang and (alts is None or len(alts)!=len(shots)):
+        raise SystemExit(f"{a['slug']} {lang}: needs one shot_alts entry per screenshot ({len(shots)})")
+    items=''
+    for k,s in enumerate(shots):
+        alt=t['shot_alt'].format(name=a['name'], cap=(alts[k] if alts else store_alt(s))).replace('"','&quot;')
+        src=root+s['base']
+        load='' if k<2 else ' loading="lazy"'
+        items+=(f'\n      <li class="shot shot-store reveal" style="--i:{min(k,5)}">'
+                f'<img src="{src}-400.webp" srcset="{src}-400.webp 400w, {src}-800.webp 800w" sizes="(min-width: 700px) 276px, 58vw" '
+                f'alt="{alt}" width="{s["w"]}" height="{s["h"]}"{load} decoding="async"></li>')
+    return (f'\n  <section class="gallery gallery-store" aria-label="{t["shots_aria"]}">'
+            f'\n    <ul class="shots-rail" role="list" tabindex="0" aria-label="{t["shots_aria"]}">{items}\n    </ul>'
+            f'\n    <div class="rail-nav shell" hidden>'
+            f'\n      <button type="button" class="rail-btn rail-prev" data-dir="-1" aria-label="{t["shots_prev"]}">{ARROW}</button>'
+            f'\n      <button type="button" class="rail-btn" data-dir="1" aria-label="{t["shots_next"]}">{ARROW}</button>'
+            f'\n    </div>\n  </section>')
 
 def head(lang, title, desc, root, canonical, og_title=None, alts=None, preload=()):
     # canonical is the path inside the language tree (e.g. 'apps/kover.html' or '').
@@ -675,6 +714,8 @@ def build_app(lang, a):
     shots=''.join(f'''
       <li class="shot reveal" style="--i:{k}"><figure><div class="phone" data-tilt>{shot(root, f, t["shot_alt"].format(name=a["name"], cap=cap))}</div><figcaption>{cap}</figcaption></figure></li>'''
                   for k,(f,cap) in enumerate(zip(a['shots'], c['captions'])))
+    gallery=(store_gallery(lang, a, t, root) if a['slug'] in STORE_SHOTS else
+             f'\n  <section class="gallery" aria-label="{t["shots_aria"]}">\n    <ul class="shots-rail" role="list">{shots}\n    </ul>\n  </section>')
     feats=''.join(f'<li class="feature reveal" style="--i:{k}"><span class="num">{n}</span><h3>{h}</h3><p>{p}</p></li>' for k,(n,h,p) in enumerate(c['features']))
     extra=f'<p class="note app-extra">{c["extra"]}</p>' if c.get('extra') else ''
     # Sin id de App Store no hay badge: el sitio nunca enlaza a una ficha que
@@ -699,10 +740,7 @@ def build_app(lang, a):
     </div>
   </section>
 
-  <section class="gallery" aria-label="{t['shots_aria']}">
-    <ul class="shots-rail" role="list">{shots}
-    </ul>
-  </section>
+{gallery}
 
   <section class="section shell" aria-labelledby="what-title">
     <div class="section-head reveal">
