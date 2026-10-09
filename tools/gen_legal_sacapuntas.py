@@ -93,7 +93,7 @@ DIBUJOS = '''
   <p><strong>Qué hemos cambiado:</strong> los colores, para que vayan con el cuaderno de Sacapuntas (el contorno en grafito
   y cada color de OpenMoji pasado a uno de nuestra paleta). La forma de cada dibujo es la de OpenMoji.</p>
   <p>Estas versiones recoloreadas se publican con la misma licencia, CC BY-SA 4.0. Puedes descargarlas aquí:
-  <a href="sacapuntas-dibujos.zip" download>sacapuntas-dibujos.zip</a> (los 227 dibujos en SVG, unos 280 KB). Dentro
+  <a href="sacapuntas-dibujos.zip" download>sacapuntas-dibujos.zip</a> (los 243 dibujos en SVG, unos 290 KB). Dentro
   van el texto de la licencia (<code>LICENSE.txt</code>), quién diseñó cada dibujo en OpenMoji (<code>CREDITOS.tsv</code>)
   y la tabla de colores que hemos cambiado (<code>LEEME.txt</code>).</p>
   <p>Las personas dibujadas, las tiendas, las láminas y el pueblo los dibuja la propia app y son de Seize Apps.</p>
