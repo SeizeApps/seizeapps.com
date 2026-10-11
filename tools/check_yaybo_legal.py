@@ -56,8 +56,8 @@ for k, t in pages.items():
                 'ask for your consent again', 'te pediremos el consentimiento otra vez'):
         if bad in t:
             fails.append(f'{k}: forbidden phrase "{bad}"')
-    if 'written information-security program' in t and 'SIGNED:' not in (open(PROGRAM).read() if os.path.exists(PROGRAM) else ''):
-        fails.append(f'{k}: claims a written information-security program that is not signed ({PROGRAM}, needs a "SIGNED:" line)')
+    if 'written information-security program' in t and not re.search(r'^SIGNED:[ \t]*[^_\s]', open(PROGRAM).read() if os.path.exists(PROGRAM) else '', re.M):
+        fails.append(f'{k}: claims a written information-security program that is not signed ({PROGRAM}, needs a filled-in "SIGNED:" line)')
 
 if 'Purchase analytics (RevenueCat)' in en:
     want = squash(doc11_paragraph())
