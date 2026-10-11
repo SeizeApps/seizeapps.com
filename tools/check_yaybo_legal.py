@@ -68,7 +68,7 @@ if 'Purchase analytics (RevenueCat)' in en:
     if 'within 30 days' not in en:
         fails.append('privacy: no concrete deletion timeframe (COPPA 312.10)')
 else:
-    for bad in ('RevenueCat', 'vendor identifier', 'IDFV'):
+    for bad in ('vendor identifier', 'IDFV', 'storefront country', 'anonymous app user ID'):
         if bad in en:
             fails.append(f'privacy (key-off): still mentions "{bad}"')
 

@@ -88,7 +88,7 @@ RC = {
   'en': {
    'short': "Yaybo sends nothing about you or your child to any analytics, advertising or tracking service.",
    'section': '''<h2>Purchases</h2>
-  <p>Yaybo contains no third-party analytics, advertising or tracking software. Apple processes the payment. We never see your card or your Apple Account details, and we receive no purchase data. Apple, not Yaybo, decides whether a subscription is active.</p>''',
+  <p>Yaybo's code includes a purchase-analytics library (RevenueCat), but this version ships without the key that switches it on, so the library never starts and sends nothing. Yaybo contains no advertising or tracking software. Apple processes the payment. We never see your card or your Apple Account details, and we receive no purchase data. Apple, not Yaybo, decides whether a subscription is active.</p>''',
    'collect': '''<li><strong>What we collect from a child:</strong> nothing. The learning data above stays on the family's device, and Yaybo sends no information about a child, or about the device, to Seize or to any third party.</li>''',
    'when': '', 'rights': '',
    'keep': '''<li><strong>Purchases:</strong> Apple keeps the record of a purchase under your Apple Account; we receive none of it.</li>''',
@@ -97,7 +97,7 @@ RC = {
   'es': {
    'short': "Yaybo no envía nada sobre ti ni sobre tu hijo o hija a ningún servicio de analítica, publicidad o seguimiento.",
    'section': '''<h2>Compras</h2>
-  <p>Yaybo no contiene software de analítica, publicidad ni seguimiento de terceros. Apple procesa el pago. Nunca vemos tu tarjeta ni los datos de tu cuenta de Apple, y no recibimos datos de compra. Es Apple, no Yaybo, quien decide si una suscripción está activa.</p>''',
+  <p>El código de Yaybo incluye una biblioteca de analítica de compras (RevenueCat), pero esta versión se publica sin la clave que la activa, así que la biblioteca nunca arranca y no envía nada. Yaybo no contiene software de publicidad ni de seguimiento. Apple procesa el pago. Nunca vemos tu tarjeta ni los datos de tu cuenta de Apple, y no recibimos datos de compra. Es Apple, no Yaybo, quien decide si una suscripción está activa.</p>''',
    'collect': '''<li><strong>Qué recogemos de un menor:</strong> nada. Los datos de aprendizaje de arriba se quedan en el dispositivo de la familia, y Yaybo no envía información sobre un niño, ni sobre el dispositivo, a Seize ni a ningún tercero.</li>''',
    'when': '', 'rights': '',
    'keep': '''<li><strong>Compras:</strong> Apple guarda el registro de una compra en tu cuenta de Apple; nosotros no recibimos nada de él.</li>''',
