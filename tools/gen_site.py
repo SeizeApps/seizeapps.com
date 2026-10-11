@@ -384,6 +384,28 @@ APPS=[
           privacy='Roomy analiza tu biblioteca solo en tu iPhone. Tus fotos, vídeos y metadatos nunca se suben. Sin cuenta, sin anuncios y sin seguimiento. Las compras pasan por Apple; lo único que Roomy comparte es la analítica de compras (RevenueCat, desde la versión 0.0.3), nunca tus fotos.',
           captions=['Inicio: espacio libre y el desorden que ha encontrado Roomy','Izquierda para borrar, derecha para quedarte','Fotos parecidas agrupadas, con la mejor marcada']),
      privacy_path={'en': 'roomy/privacy/', 'es': '../roomy/privacy/', 'fr': '../roomy/privacy/'}),
+ # Yaybo (0.1.0, aún sin publicar en la Store): sin appstore hasta que `lookup` devuelva 1. Política y condiciones propias en /yaybo/ (inglés y castellano; COPPA). Sin capturas hasta que existan las de la Store.
+ app('yaybo','Yaybo','yaybo.png','Izotz Cristobal Mota','yaybo',
+     [],
+     dict(one='A daily learning plan for your family: phonics, reading, math, money, time and handwriting, in one ten-minute adventure a day.',
+          tags=['Learning','Pre-K to 2nd grade','Families'],
+          lede='<strong>Yaybo</strong> turns a few minutes of practice into a daily adventure. Three short stops a day cover phonics and reading, math, money, time and handwriting, and Yaybo the coral axolotl cheers every right answer. You set it up in a few minutes, and one subscription covers up to four children.',
+          meta=['iOS 26+','iPhone &amp; iPad','Yaybo Plus, subscription','No account'],
+          features=[('01 / LEARN','One adventure a day','Phonics and reading, math, money, time and handwriting in three short stops, about ten minutes in all. It has a real end, so it never turns into endless scrolling.'),
+                    ('02 / PLAY','Yaybo cheers every right answer','A coral axolotl who is never sad, an island that blooms overnight and a streak that forgives a missed day. No hearts, no leagues, no loot.'),
+                    ('03 / GROWN-UPS','A Parent Zone behind a gate','See what your child practiced, leave a high-five in your own voice and manage the plan, all behind a grown-up gate that your child is not meant to pass.')],
+          privacy='What you tell Yaybo about your child stays on your devices and in your own iCloud: we never receive it. No accounts, no ads, no tracking, and Yaybo never records your child. If you subscribe, a purchase-analytics service (RevenueCat) sees the purchase and your device\'s technical details, never anything about your child. Yaybo has its own privacy policy, with a section for parents.',
+          captions=[]),
+     dict(one='Un plan diario de aprendizaje para tu familia: fonética, lectura, matemáticas, dinero, hora y escritura a mano, en una aventura de diez minutos al día.',
+          tags=['Aprender','De Pre-K a 2.º','Familias'],
+          lede='<strong>Yaybo</strong> convierte unos minutos de práctica en una aventura diaria. Tres paradas cortas al día cubren fonética y lectura, matemáticas, dinero, hora y escritura a mano, y Yaybo, el ajolote coral, celebra cada acierto. Se configura en unos minutos y una suscripción cubre hasta cuatro niños.',
+          meta=['iOS 26+','iPhone e iPad','Yaybo Plus, suscripción','Sin cuenta'],
+          features=[('01 / APRENDER','Una aventura al día','Fonética y lectura, matemáticas, dinero, hora y escritura a mano en tres paradas cortas, unos diez minutos en total. Tiene un final de verdad, así que nunca se convierte en un desplazamiento sin fin.'),
+                    ('02 / JUGAR','Yaybo celebra cada acierto','Un ajolote coral que nunca está triste, una isla que florece de la noche a la mañana y una racha que perdona un día perdido. Sin corazones, sin ligas, sin cofres de botín.'),
+                    ('03 / ADULTOS','Una Zona de padres tras una puerta','Mira lo que ha practicado tu hijo o hija, déjale un choca esos cinco con tu propia voz y gestiona el plan, todo tras una puerta para adultos que un niño no debería superar.')],
+          privacy='Lo que le cuentas a Yaybo sobre tu hijo o hija se queda en tus dispositivos y en tu propio iCloud: nosotros nunca lo recibimos. Sin cuentas, sin anuncios, sin seguimiento, y Yaybo nunca graba a tu hijo o hija. Si te suscribes, un servicio de analítica de compras (RevenueCat) ve la compra y los datos técnicos de tu dispositivo, nunca nada sobre tu hijo o hija. Yaybo tiene su propia política de privacidad, con una sección para padres.',
+          captions=[]),
+     privacy_path={'en': 'yaybo/privacy/', 'es': '../yaybo/privacidad/', 'fr': '../yaybo/privacy/'}),
 ]
 
 from gen_site_fr import UI_FR, APPS_FR
@@ -568,9 +590,9 @@ def redirect_page(url):
 
 # The app count and the app list in the copy come from APPS, so adding an
 # app never leaves a «six apps» behind (it did, 20/09/2026).
-NUMBERS={'en':['zero','one','two','three','four','five','six','seven','eight','nine','ten','eleven','twelve','thirteen'],
-         'es':['cero','una','dos','tres','cuatro','cinco','seis','siete','ocho','nueve','diez','once','doce','trece'],
-         'fr':['zéro','une','deux','trois','quatre','cinq','six','sept','huit','neuf','dix','onze','douze','treize']}
+NUMBERS={'en':['zero','one','two','three','four','five','six','seven','eight','nine','ten','eleven','twelve','thirteen','fourteen'],
+         'es':['cero','una','dos','tres','cuatro','cinco','seis','siete','ocho','nueve','diez','once','doce','trece','catorce'],
+         'fr':['zéro','une','deux','trois','quatre','cinq','six','sept','huit','neuf','dix','onze','douze','treize','quatorze']}
 def fill_counts():
     n=len(APPS)
     for lang in LANGS:
@@ -715,7 +737,7 @@ def build_app(lang, a):
       <li class="shot reveal" style="--i:{k}"><figure><div class="phone" data-tilt>{shot(root, f, t["shot_alt"].format(name=a["name"], cap=cap))}</div><figcaption>{cap}</figcaption></figure></li>'''
                   for k,(f,cap) in enumerate(zip(a['shots'], c['captions'])))
     gallery=(store_gallery(lang, a, t, root) if a['slug'] in STORE_SHOTS else
-             f'\n  <section class="gallery" aria-label="{t["shots_aria"]}">\n    <ul class="shots-rail" role="list">{shots}\n    </ul>\n  </section>')
+             f'\n  <section class="gallery" aria-label="{t["shots_aria"]}">\n    <ul class="shots-rail" role="list">{shots}\n    </ul>\n  </section>' if a['shots'] else '')
     feats=''.join(f'<li class="feature reveal" style="--i:{k}"><span class="num">{n}</span><h3>{h}</h3><p>{p}</p></li>' for k,(n,h,p) in enumerate(c['features']))
     extra=f'<p class="note app-extra">{c["extra"]}</p>' if c.get('extra') else ''
     # Sin id de App Store no hay badge: el sitio nunca enlaza a una ficha que
@@ -817,6 +839,9 @@ if __name__=='__main__':
     # Roomy (05/10/2026): su página de privacidad, en inglés como la app.
     from gen_legal_roomy import build_roomy
     build_roomy()
+    # Yaybo (11/10/2026): su política (con la sección COPPA) y sus condiciones, en inglés y castellano.
+    from gen_legal_yaybo import build_yaybo
+    build_yaybo()
     # Garum's share links (0.0.26): /garum/c/ and /garum/p/, and the Universal Links file.
     from gen_garum_share import build_garum_share
     build_garum_share()

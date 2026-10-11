@@ -178,4 +178,14 @@ APPS_FR = {
              ('03 / LIBÉRER','Vois ce que tu as récupéré','Roomy Pro ajoute des gestes illimités, la suppression des doublons et des similaires en un geste et la compression vidéo, qui économise jusqu’à 80 % de place. Suis l’espace libéré et garde une série quotidienne.')],
    privacy='Roomy analyse ta photothèque uniquement sur ton iPhone. Tes photos, tes vidéos et leurs métadonnées ne sont jamais envoyées. Sans compte, sans publicité, sans suivi. Les achats passent par Apple ; la seule chose que Roomy partage, c’est la mesure des achats (RevenueCat, depuis la version 0.0.3), jamais tes photos.',
    captions=['Accueil : l’espace libre et le fouillis trouvé par Roomy','À gauche pour supprimer, à droite pour garder','Photos similaires groupées, la meilleure marquée']),
+ 'yaybo': dict(
+   one='Un plan d’apprentissage quotidien pour ta famille : phonétique, lecture, maths, argent, heure et écriture, dans une aventure de dix minutes par jour.',
+   tags=['Apprendre','De la maternelle au CE1','Familles'],
+   lede='<strong>Yaybo</strong> transforme quelques minutes d’entraînement en aventure quotidienne. Trois courtes étapes par jour couvrent la phonétique et la lecture, les maths, l’argent, l’heure et l’écriture, et Yaybo, l’axolotl corail, fête chaque bonne réponse. Tu le configures en quelques minutes et un seul abonnement couvre jusqu’à quatre enfants.',
+   meta=['iOS 26+','iPhone et iPad','Yaybo Plus, abonnement','Sans compte'],
+   features=[('01 / APPRENDRE','Une aventure par jour','Phonétique et lecture, maths, argent, heure et écriture en trois courtes étapes, une dizaine de minutes en tout. Elle a une vraie fin, donc elle ne devient jamais un défilement sans fin.'),
+             ('02 / JOUER','Yaybo fête chaque bonne réponse','Un axolotl corail qui n’est jamais triste, une île qui fleurit pendant la nuit et une série qui pardonne un jour manqué. Pas de cœurs, pas de ligues, pas de butin.'),
+             ('03 / ADULTES','Un espace parents derrière une porte','Vois ce que ton enfant a pratiqué, laisse-lui un high five avec ta propre voix et gère l’abonnement, le tout derrière une porte pour adultes qu’un enfant n’est pas censé franchir.')],
+   privacy='Ce que tu dis à Yaybo sur ton enfant reste sur tes appareils et dans ton propre iCloud : nous ne le recevons jamais. Sans compte, sans publicité, sans suivi, et Yaybo n’enregistre jamais ton enfant. Si tu t’abonnes, un service de mesure des achats (RevenueCat) voit l’achat et les données techniques de ton appareil, jamais rien sur ton enfant. Yaybo a sa propre politique de confidentialité, avec une section pour les parents (en anglais et en espagnol).',
+   captions=[]),
 }
