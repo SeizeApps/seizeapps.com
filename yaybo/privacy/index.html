@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#060E1F">
 <meta name="color-scheme" content="dark">
-<meta name="description" content="Yaybo privacy and children’s privacy (COPPA): what you tell Yaybo about your child stays on your devices and in your iCloud; no ads, no tracking, no child audio.">
+<meta name="description" content="Yaybo privacy and children’s privacy (COPPA): what you tell Yaybo about your child stays on your device; no ads, no tracking, no child audio.">
 <link rel="canonical" href="https://seizeapps.com/yaybo/privacy/">
 <link rel="alternate" hreflang="en" href="https://seizeapps.com/yaybo/privacy/">
 <link rel="alternate" hreflang="es" href="https://seizeapps.com/yaybo/privacidad/">
@@ -13,7 +13,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Seize Apps">
 <meta property="og:title" content="Yaybo privacy policy — Seize Apps">
-<meta property="og:description" content="Yaybo privacy and children’s privacy (COPPA): what you tell Yaybo about your child stays on your devices and in your iCloud; no ads, no tracking, no child audio.">
+<meta property="og:description" content="Yaybo privacy and children’s privacy (COPPA): what you tell Yaybo about your child stays on your device; no ads, no tracking, no child audio.">
 <meta property="og:url" content="https://seizeapps.com/yaybo/privacy/">
 <meta property="og:image" content="https://seizeapps.com/assets/og.jpg">
 <meta property="og:locale" content="en_US">
@@ -58,59 +58,61 @@
 
   <h2 id="the-short-version">The short version</h2>
   <ul>
-    <li>What you tell Yaybo about your child stays on your devices and in your own iCloud. We never receive it.</li>
+    <li>What you tell Yaybo about your child stays on your device. We never receive it.</li>
     <li>Yaybo has no accounts, no email sign-up, no ads, no tracking and no third-party advertising or social SDKs.</li>
     <li>Yaybo never records your child's voice and never uses the camera, photos or location.</li>
-    <li>If you subscribe, a purchase-analytics service sees the purchase and your device's technical details. Never anything about your child.</li>
+    <li>If a grown-up buys or restores a subscription, a purchase-analytics service sees the purchase and your device's technical details. Never anything about your child.</li>
     <li>You can review and delete everything Yaybo keeps, in the Parent Zone, behind the grown-up gate.</li>
   </ul>
 
   <h2 id="who-we-are">Who we are</h2>
   <p>Yaybo is published on the App Store by <strong>Izotz Cristobal Mota</strong>, trading as Seize Apps, in the Basque Country, Spain. We are the operator of Yaybo for the purposes of the U.S. Children's Online Privacy Protection Act (COPPA) and responsible for the information described on this page. Write to us about anything here at <a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a>. Please do not put your child's name or details in an email.</p>
-  <!-- CONFIRM: the COPPA online notice asks for the operator's name, postal address, telephone number and email address. Only the name, country and email are confirmed anywhere in the repo (same block as Atino's and Roomy's policies); add the postal address and a telephone number here if Izotz wants them on the page. -->
+  <p>Operator contact, as the COPPA online notice requires: Izotz Cristobal Mota, trading as Seize Apps, [OPERATOR POSTAL ADDRESS], telephone [OPERATOR PHONE], <a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a>.</p>
+  <!-- OPERATOR: postal address and telephone are facts only Izotz can supply (16 CFR 312.4(d)(1)); set YAYBO_OPERATOR_ADDRESS and YAYBO_OPERATOR_PHONE when running tools/gen_site.py. tools/check_yaybo_legal.py fails while the markers are in the page. -->
 
   <h2 id="what-yaybo-keeps-and-where">What Yaybo keeps, and where</h2>
-  <p>Yaybo stores this on your device, and in your private iCloud database (hosted by Apple; Seize has no access to it) so that a second iPhone or iPad signed in to the same Apple Account shows the same family:</p>
+  <p>Yaybo stores this on the device it runs on, and nowhere else:</p>
   <ul>
     <li>your child's first name (or the nickname you choose), grade level, age range and U.S. state;</li>
     <li>the answers you gave while setting up, including anything you chose to share about how your child learns;</li>
     <li>your child's progress, rewards, island and streak;</li>
     <li>voice notes you record for your child (your own recording, five seconds at most).</li>
   </ul>
-  <p>Because this stays on your devices and in your iCloud, Seize does not collect it. iCloud sync is on by default and you can turn it off in the Parent Zone; with it off, the data stays on the device only. Yaybo does not ask for a last name, birth date, photo, email address or any account.</p>
+  <p>Because this stays on your device, Seize does not collect it. Yaybo does not ask for a last name, birth date, photo, email address or any account. A later version may offer optional iCloud sync between your own devices; we will update this page before it does.</p>
+  <!-- ICLOUD: 0.1.0 ships with YayboStore.cloudKitSchemaDeployed = false, so data is device-only. Flip these sentences in the same commit as the flag. -->
+  <p>From the Parent Zone, behind the grown-up gate, a grown-up can send a progress report as a picture ("Send to my phone"). It shows your child's first name and progress, and it goes only where you send it, through Apple's share sheet; Yaybo does not send it anywhere.</p>
 
   <h2 id="what-yaybo-never-collects">What Yaybo never collects</h2>
   <p>Last name; birth date; photos or camera; <strong>audio of your child</strong> (Yaybo has no microphone use for children); location (Yaybo uses the state you pick, never the device's location); email address or any account; free text about your child; the advertising identifier (IDFA); App Tracking Transparency prompts. Yaybo does not track you or your child across other companies' apps and websites, and there are no chat, social or sharing features through which anyone could reach your child.</p>
 
   <h2 id="microphone-notifications-and-apple-s-age-category">Microphone, notifications and Apple's age category</h2>
   <ul>
-    <li><strong>Microphone.</strong> The only time Yaybo uses it is when a grown-up taps Record to leave a short voice note for the child, in the Parent Zone, behind the grown-up gate. Yaybo asks for permission then and not before. The recording stays on your devices and in your iCloud.</li>
+    <li><strong>Microphone.</strong> The only time Yaybo uses it is when a grown-up taps Record to leave a short voice note for the child, in the Parent Zone, behind the grown-up gate. Yaybo asks for permission then and not before. The recording stays on your device.</li>
     <li><strong>Notifications.</strong> Reminders go to the grown-up, not to the child, and are scheduled on your device. We run no push-notification server. Yaybo asks for permission right after a purchase, and you can say no.</li>
     <li><strong>Apple's age category.</strong> In places where a state law asks app stores and apps to handle age (today Texas, Utah and Louisiana), Apple may tell Yaybo which age category your Apple Account belongs to. Yaybo uses that only to follow the law: for a minor's account, the subscription screen explains that a parent approves the purchase through Apple. Yaybo keeps the answer in memory only, never stores it, never sends it to anyone and never uses it to change what a child sees.</li>
   </ul>
 
   <h2 id="purchase-analytics-revenuecat">Purchase analytics (RevenueCat)</h2>
-  <p>To understand how many families subscribe, Yaybo uses RevenueCat, a US purchase-analytics service (RevenueCat, Inc.). It is switched on only after a grown-up passes the parental gate to buy or restore a subscription (or opens the subscription screen or the Parent Zone behind that gate), never on a child's own device, and never while a child is playing. When it is on, RevenueCat receives an anonymous app user ID, the device's IP address, device and OS information, the device's vendor identifier (IDFV), the App Store storefront country, an App Tracking Transparency status flag, and the purchase itself. It never receives your child's name, age, answers or progress. After it has been switched on, it stays on until you close the app. We do not use these for advertising, we do not track you across other companies' apps, and RevenueCat acts only as our service provider.</p>
-  <p>The vendor identifier is a number Apple gives the apps of one developer on a device; it is not the advertising identifier. The App Tracking Transparency flag is the device's tracking-permission status: Yaybo never asks to track, so it reads "not determined" unless you or Screen Time turned tracking off. Yaybo sets no attributes of its own in RevenueCat. RevenueCat stores this data in the United States.</p>
+  <p>To understand how many families subscribe, Yaybo uses RevenueCat, a US purchase-analytics service. We use it only to record and verify subscription purchases and to count, in aggregate, how many families subscribe; never to contact anyone, build a profile or show ads. It is switched on only after a grown-up passes the parental gate and then buys or restores a subscription, or opens the subscription screen of a lapsed plan, or opens the subscription screen inside the Parent Zone (both behind that gate), and never on a child's own device. Opening the Parent Zone alone starts nothing. Once it is on, it stays on, including while a child is playing, until you close the app. When it is on, RevenueCat receives an anonymous app user ID, the device's IP address, device and OS information, <strong>the device's vendor identifier (IDFV)</strong>, the App Store storefront country, an App Tracking Transparency status flag, and the purchase itself. It never receives your child's name, age, answers or progress. We do not use these for advertising, we do not track you across other companies' apps, and RevenueCat acts only as our service provider.</p>
+  <p>RevenueCat is RevenueCat, Inc. The vendor identifier is a number Apple gives the apps of one developer on a device; it is not the advertising identifier. The App Tracking Transparency flag is the device's tracking-permission status: Yaybo never asks to track, so it reads "not determined" unless you or Screen Time turned tracking off. Yaybo sets no attributes of its own in RevenueCat. RevenueCat stores this data in the United States.</p>
   <p>Apple processes the payment. We never see your card or your Apple Account details. Apple, not Yaybo or RevenueCat, decides whether a subscription is active.</p>
-  <!-- CONFIRM: sentences above are docs/kids-us/11-revenuecat-disclosure.md §3.2; RevenueCat's storage in the United States (Amazon Web Services) is as read for Roomy and Atino on 6-7 October 2026. -->
+  <!-- CONFIRM: the first paragraph is docs/kids-us/11-revenuecat-disclosure.md §3.2 (tools/check_yaybo_legal.py diffs it); RevenueCat's storage in the United States (Amazon Web Services) is as read for Roomy and Atino on 6-7 October 2026. -->
 
   <h2 id="children-s-privacy-coppa">Children's privacy (COPPA)</h2>
   <p>Yaybo is directed to children under 13 and is built to collect no personal information from them.</p>
   <ul>
-    <li><strong>Operator:</strong> Izotz Cristobal Mota, trading as Seize Apps, Basque Country, Spain, <a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a>.</li>
-    <li><strong>What we collect from a child:</strong> nothing. The learning data above stays on the family's devices and iCloud. The only information that reaches a service provider is the purchase data described under "Purchase analytics", and only after a grown-up passes the parental gate.</li>
-    <li><strong>Consent:</strong> the purchase-analytics step happens only after a grown-up passes the parental gate and buys or restores a subscription, or opens the subscription screen or the Parent Zone behind that gate, never on a device a grown-up told Yaybo is the child's own, and never where Apple tells Yaybo the account belongs to a minor.</li>
+    <li><strong>Operator:</strong> Izotz Cristobal Mota, trading as Seize Apps, [OPERATOR POSTAL ADDRESS], telephone [OPERATOR PHONE], <a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a>.</li>
+    <li><strong>What we collect from a child:</strong> nothing. The learning data above stays on the family's device. The only information that reaches a service provider is the purchase data described under "Purchase analytics" (including the device's vendor identifier, a persistent identifier), only after a grown-up passes the parental gate, and used only for the internal operations named there. Because RevenueCat stays on for the rest of that session, its background requests can continue while a child plays; they carry nothing about your child.</li>
+    <li><strong>When purchase analytics turns on:</strong> only after a grown-up passes the parental gate and buys or restores a subscription, or opens the subscription screen of a lapsed plan or the subscription screen inside the Parent Zone (both behind that gate). Opening the Parent Zone alone starts nothing. Never on a device a grown-up told Yaybo is the child's own, and never where Apple tells Yaybo the account belongs to a minor. The grown-up gate is how Yaybo keeps children out of grown-up screens; Yaybo collects no personal information from a child that would need a parent's consent.</li>
     <li><strong>Who can reach your child:</strong> nobody. Yaybo has no chat, no social features, no user-generated content shared with others, no ads and no links out that a child can open without the grown-up gate.</li>
-    <li><strong>Your rights, as a parent or guardian:</strong> you can review everything Yaybo keeps for a child in the Parent Zone; you can delete one child ("Delete") or everything ("Delete all data"); you can decline purchase analytics by not buying or restoring through Yaybo and by leaving the subscription screen and the Parent Zone alone, and you can write to us to ask for what RevenueCat holds about your device to be deleted; you can ask us anything at <a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a>.</li>
+    <li><strong>Your rights, as a parent or guardian:</strong> you can review everything Yaybo keeps for a child in the Parent Zone; you can delete one child ("Delete") or everything ("Delete all data"); you can decline purchase analytics by not buying or restoring through Yaybo and by not opening the subscription screen (opening the Parent Zone alone starts nothing), and you can write to us to ask for what RevenueCat holds about your device to be deleted; you can ask us anything at <a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a>.</li>
   </ul>
 
   <h2 id="keeping-and-deleting-data">Keeping and deleting data</h2>
   <ul>
-    <li><strong>On your devices and in your iCloud:</strong> kept until you delete it. "Delete" on a child, or "Delete all data", in the Parent Zone removes the data from the device and, while iCloud sync is on, from the family's iCloud (the deletion syncs to your other devices). The Parent Zone says whether iCloud is syncing. Deleting the app alone leaves the iCloud copy; you can remove it in <strong>Settings › Apple Account › iCloud › Manage Account Storage</strong>. Deleting your data does not cancel a subscription: that is in <strong>Settings › Apple Account › Subscriptions</strong>.</li>
-    <!-- CONFIRM: the iCloud storage path is re-checked on the current iOS before publishing (spec §5.4). -->
-    <li><strong>At RevenueCat:</strong> we keep purchase records only as long as we need them to show that a subscription existed (billing, refunds, support), and we use them for nothing else. RevenueCat states no fixed period for how long it keeps end-user data, and deleting Yaybo does not delete what it already holds: write to <a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a> and we will ask it to delete the record tied to your device.</li>
-    <!-- CONFIRM: RevenueCat's retention terms and our data processing agreement for Yaybo's RevenueCat project are not visible in the repo (privacy policy read June 2026: no fixed period for end-user data; DPA August 2026). State the period here once confirmed. -->
+    <li><strong>On your device:</strong> kept until you delete it. "Delete" on a child, or "Delete all data", in the Parent Zone removes the data from the device, and so does deleting the app. If you back up your device (iCloud Backup or a computer), the backup may hold a copy; that backup is yours, kept by Apple under your Apple Account, and you manage it in your device's backup settings. Deleting your data does not cancel a subscription: that is in <strong>Settings › [your name] › Subscriptions</strong>.</li>
+    <li><strong>At RevenueCat:</strong> we use these records only to record and verify subscription purchases and to count subscribers in aggregate, and keep them only as long as we need them for billing, refunds, support and legal records. If you ask us, we ask RevenueCat to delete the record tied to your device, and we aim to have it deleted within 30 days of your request. RevenueCat states no fixed period for how long it keeps end-user data, and deleting Yaybo does not delete what it already holds: write to <a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a>. We do not keep this information for any other purpose or without end.</li>
+    <!-- CONFIRM: the 30-day target and RevenueCat's retention terms / data processing agreement for Yaybo's RevenueCat project are not visible in the repo (privacy policy read June 2026: no fixed period for end-user data). Replace with RevenueCat's confirmed deletion timeframe, and COPPA §312.10 needs a concrete one. -->
     <li><strong>Our own servers:</strong> Seize runs none for Yaybo, so there is nothing else to delete.</li>
   </ul>
 
@@ -118,11 +120,11 @@
   <p>We do not sell your personal information or your child's, and we do not share it for advertising across other companies' apps and websites. Yaybo does not track you, so there is nothing to opt out of.</p>
 
   <h2 id="how-we-protect-it">How we protect it</h2>
-  <p>The learning data never leaves Apple's infrastructure (your device and your iCloud). Access to App Store Connect and to the RevenueCat dashboard is limited to named Seize developers with two-factor authentication. Seize keeps a written information-security program for Yaybo.</p>
-  <!-- CONFIRM: "a written information-security program" must be true when this page is published (docs/kids-us/10-... document to be written in P10, release gate). Cut the last sentence if it does not exist yet. -->
+  <p>The learning data never leaves your device. Access to App Store Connect (which Apple protects with two-factor authentication) and to the RevenueCat dashboard is limited to the Seize developers who work on Yaybo. Seize runs no server for Yaybo.</p>
+  <!-- SECURITY PROGRAM: do NOT add "Seize keeps a written information-security program" until docs/kids-us/release/information-security-program.md in the SeizeRepo is signed by Izotz (16 CFR 312.8); tools/check_yaybo_legal.py reads the signature line. -->
 
   <h2 id="changes">Changes</h2>
-  <p>If we change what Yaybo collects, we will update this page and, if it touches your child's information, ask for your consent again inside the app before the change takes effect.</p>
+  <p>If we change what Yaybo collects, we will update this page and its date, and we will not start collecting a child's personal information without first following the notice and parental-consent rules of COPPA.</p>
 
   <h2 id="contact">Contact</h2>
   <p>Seize Apps · Izotz Cristobal Mota<br><a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a> · seizeapps.com</p>
