@@ -54,12 +54,12 @@
 
   <p class="eyebrow">Legal</p>
   <h1>Privacy Policy</h1>
-  <p class="effective">Effective October 10, 2026</p>
+  <p class="effective">Effective October 12, 2026</p>
   <nav class="toc" aria-label="Apps">
-    <a href="#cycle-timers">Cycle Timers</a><a href="#tempo">Tempo</a><a href="#drip">Drip</a><a href="#anchor">Anchor</a><a href="#kover">Kover</a><a href="#tandem">Tandem</a><a href="#meso">Meso</a><a href="#grain">Grain</a><a href="#gaminghub">GamingHub</a><a href="#atino">Atino</a><a href="#overbit">Overbit</a><a href="#roomy">Roomy</a><a href="#readably">Readably</a>
+    <a href="#cycle-timers">Cycle Timers</a><a href="#tempo">Tempo</a><a href="#drip">Drip</a><a href="#anchor">Anchor</a><a href="#kover">Kover</a><a href="#tandem">Tandem</a><a href="#meso">Meso</a><a href="#grain">Grain</a><a href="#beatride">BeatRide</a><a href="#gaminghub">GamingHub</a><a href="#atino">Atino</a><a href="#overbit">Overbit</a><a href="#roomy">Roomy</a><a href="#readably">Readably</a>
   </nav>
 
-  <p><strong>The short version:</strong> Seize apps are built to work without your data. We don't run accounts, we don't use advertising SDKs, and we don't sell or share anything. When you buy something in <a href="#drip">Drip</a>, <a href="#anchor">Anchor</a>, <a href="#kover">Kover</a>, <a href="#tandem">Tandem</a>, <a href="#meso">Meso</a> or <a href="#grain">Grain</a>, Apple tells us about the purchase, without your name or email (see <a href="#purchases">Purchases</a>). Some apps use RevenueCat for purchase analytics only (see <a href="#atino">Atino</a>, <a href="#cycle-timers">Cycle Timers</a>, <a href="#gaminghub">GamingHub</a>, <a href="#tempo">Tempo</a>, <a href="#roomy">Roomy</a>, <a href="#readably">Readably</a> and, from version 0.1.2, <a href="#overbit">Overbit</a>). What you put into an app stays on your device and in your own iCloud unless the app's own section below says otherwise (see <a href="#gaminghub">GamingHub</a>, <a href="#atino">Atino</a>, <a href="#overbit">Overbit</a> and <a href="#tempo">Tempo</a>).</p>
+  <p><strong>The short version:</strong> Seize apps are built to work without your data. We don't run accounts, we don't use advertising SDKs, and we don't sell or share anything. When you buy something in <a href="#drip">Drip</a>, <a href="#anchor">Anchor</a>, <a href="#kover">Kover</a>, <a href="#tandem">Tandem</a>, <a href="#meso">Meso</a> or <a href="#grain">Grain</a>, Apple tells us about the purchase, without your name or email (see <a href="#purchases">Purchases</a>). Some apps use RevenueCat for purchase analytics only (see <a href="#atino">Atino</a>, <a href="#cycle-timers">Cycle Timers</a>, <a href="#gaminghub">GamingHub</a>, <a href="#tempo">Tempo</a>, <a href="#roomy">Roomy</a>, <a href="#readably">Readably</a> and, from version 0.1.2, <a href="#overbit">Overbit</a>). What you put into an app stays on your device and in your own iCloud unless the app's own section below says otherwise (see <a href="#gaminghub">GamingHub</a>, <a href="#atino">Atino</a>, <a href="#overbit">Overbit</a>, <a href="#tempo">Tempo</a> and <a href="#beatride">BeatRide</a>).</p>
 
   <p><strong>Garum is the exception:</strong> it has accounts, a server in the EU and user content, so it has <a href="garum/privacy/">its own privacy policy</a> and <a href="garum/terms/">terms of use</a>.</p>
 
@@ -165,6 +165,17 @@
   <p><em>Published on the App Store by Sendoa Sola.</em></p>
   </section>
 
+  <section id="beatride">
+  <h3>BeatRide</h3>
+  <p>BeatRide builds indoor cycling classes from music. Your rider profile (level, age or maximum heart rate if you give them, and the answers to the health check), the marks you put on songs and the analysis of each song (tempo, energy and its shape) stay <strong>on your device</strong>, in the app's private container. Your class history syncs through your personal iCloud account when iCloud sync is on (the default), under Apple's terms; we never have access to it. BeatRide has no analytics, no advertising and no third-party code that receives your data.</p>
+  <p><strong>Your name and username.</strong> When you create your profile, your display name and the username you choose are stored in BeatRide's public iCloud database (Apple CloudKit), with your username reserved so nobody else can take it. Today nothing in the app shows them to other people. Deleting your account in Settings deletes both.</p>
+  <p><strong>Apple Music.</strong> With your permission BeatRide reads your playlists and their songs to build classes, plays them through Apple Music, and creates a playlist in your library only when you ask it to. When BeatRide picks the music, it asks Apple Music for songs by their ISRC code. Playback follows Apple's terms; we never see your Apple Music account.</p>
+  <p><strong>Measuring songs.</strong> To know a song's tempo, energy and shape, BeatRide downloads its 30-second previews (from Apple and from Deezer), measures them on the device and throws them away; it sends the song's ISRC code to Deezer's public API, and its title, artist and length to LRCLIB (a public database of song timings), from which it uses only the timings. Nothing about you goes with those requests. BeatRide also ships maps of song structure from public research datasets.</p>
+  <p><strong>Microphone.</strong> Only Learn by listening uses it, while you run it: BeatRide plays a playlist out loud and keeps measurements of what it hears (levels and frequency bands, ten times a second) to learn each song's shape. Sound is never recorded or uploaded.</p>
+  <p><strong>Apple Health.</strong> Off by default. If you switch it on, each class you finish is written to Health as an indoor cycling workout (start and end). BeatRide never reads anything from Health and never uploads Health data anywhere.</p>
+  <p><em>In development; published by Sendoa Sola.</em></p>
+  </section>
+
   <section id="gaminghub">
   <h3>GamingHub</h3>
   <p>GamingHub is a party-game app you play in a room with other people. It has no account, no email and no password.</p>
@@ -235,7 +246,7 @@
   <p>Seize Apps · Izotz Cristobal Mota &amp; Sendoa Sola<br><a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a></p>
 
 </article>
-<aside class="legal-aside"><nav aria-label="On this page"><p class="toc-label">On this page</p><ol role="list"><li><a href="#who-we-are">Who we are</a></li><li><a href="#what-we-collect">What we collect</a></li><li><a href="#where-your-data-lives">Where your data lives</a></li><li><a href="#per-app-details">Per-app details</a></li><li><a href="#notifications">Notifications</a></li><li><a href="#your-rights">Your rights</a></li><li><a href="#children">Children</a></li><li><a href="#changes">Changes</a></li><li><a href="#contact">Contact</a></li></ol><p class="toc-label">Apps</p><div class="toc-apps"><a href="#cycle-timers">Cycle Timers</a><a href="#tempo">Tempo</a><a href="#drip">Drip</a><a href="#anchor">Anchor</a><a href="#kover">Kover</a><a href="#tandem">Tandem</a><a href="#meso">Meso</a><a href="#grain">Grain</a><a href="#gaminghub">GamingHub</a><a href="#atino">Atino</a><a href="#overbit">Overbit</a><a href="#roomy">Roomy</a><a href="#readably">Readably</a></div></nav></aside>
+<aside class="legal-aside"><nav aria-label="On this page"><p class="toc-label">On this page</p><ol role="list"><li><a href="#who-we-are">Who we are</a></li><li><a href="#what-we-collect">What we collect</a></li><li><a href="#where-your-data-lives">Where your data lives</a></li><li><a href="#per-app-details">Per-app details</a></li><li><a href="#notifications">Notifications</a></li><li><a href="#your-rights">Your rights</a></li><li><a href="#children">Children</a></li><li><a href="#changes">Changes</a></li><li><a href="#contact">Contact</a></li></ol><p class="toc-label">Apps</p><div class="toc-apps"><a href="#cycle-timers">Cycle Timers</a><a href="#tempo">Tempo</a><a href="#drip">Drip</a><a href="#anchor">Anchor</a><a href="#kover">Kover</a><a href="#tandem">Tandem</a><a href="#meso">Meso</a><a href="#grain">Grain</a><a href="#beatride">BeatRide</a><a href="#gaminghub">GamingHub</a><a href="#atino">Atino</a><a href="#overbit">Overbit</a><a href="#roomy">Roomy</a><a href="#readably">Readably</a></div></nav></aside>
 </main>
 <footer class="site-footer">
   <div class="footer-inner shell">
