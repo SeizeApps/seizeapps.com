@@ -101,14 +101,17 @@ UI={
 }
 
 # ---------------------------------------------------------------- apps
-def app(slug, name, icon, lead, privacy_id, shots, en, es, appstore=None, privacy_path=None, store_country=None):
+def app(slug, name, icon, lead, privacy_id, shots, en, es, appstore=None, privacy_path=None, store_country=None, hidden=False):
     # The French block comes from gen_site_fr.APPS_FR[slug] (added after APPS).
     # `appstore`: el id numérico de App Store Connect, solo cuando la app está
     # publicada de verdad. Si está, la página saca el badge; si no, no hay
     # badge. Nunca se escribe el href a mano en el HTML.
     # `privacy_path`: {'en': ..., 'es': ...} relativo a la raíz, para una app con
     # política propia (Garum), relativo a la portada de cada idioma (la de es está en /es/).
-    return dict(slug=slug, name=name, icon=icon, lead=lead, privacy_id=privacy_id,
+    # `hidden`: la app se queda entera aquí (textos, capturas, id) pero no sale en la web: ni tarjeta,
+    # ni marquesina, ni «More from Seize», ni cuenta, ni página propia. Su sección de la política de
+    # privacidad sí se queda (la app la enlaza). Para volver a mostrarla, quitar `hidden=True`.
+    return dict(hidden=hidden, slug=slug, name=name, icon=icon, lead=lead, privacy_id=privacy_id,
                 shots=shots, appstore=appstore, privacy_path=privacy_path, copy={'en':en,'es':es}, store_country=store_country)
 
 APPS=[
@@ -233,7 +236,9 @@ APPS=[
                     ('02 / LIQUIDAR','Un número al mes','Quién pagó qué, quién debe a quién y la transferencia que lo cuadra. Márcalo como liquidado; deshazlo si te precipitaste.'),
                     ('03 / VER','A dónde va','Gastos recurrentes que se apuntan solos. Tandem Pro añade informes por categoría y por mes, recordatorios para apuntar y para liquidar, widgets, exportar a CSV y temas de color: una compra única, con 30 días de prueba gratis.')],
           privacy='Tandem guarda los nombres, los ingresos y los gastos en tu dispositivo y en tu propia cuenta de iCloud. No se comparte nada con nadie: ni con nosotros ni con un servidor.',
-          captions=['Este mes: compartido, pagado, por liquidar','Fijos y variables, por mes','Liquidar: las cuentas, a la vista','Informes: quién pagó, mes a mes (Pro)']), appstore='6812734713'),
+          captions=['Este mes: compartido, pagado, por liquidar','Fijos y variables, por mes','Liquidar: las cuentas, a la vista','Informes: quién pagó, mes a mes (Pro)']), appstore='6812734713',
+     # Retirada de la venta en los 175 países el 15/10/2026 (decisión de Sendoa): oculta, no borrada.
+     hidden=True),
  app('meso','Meso','meso.png','Sendoa Sola','meso',
      ['meso-01-today.jpg','meso-02-workout.jpg','meso-03-grid.jpg','meso-04-week.jpg'],
      dict(one='The gym version of your coach\'s spreadsheet: blocks of weeks, load and reps per set, effort as reps in reserve.',
@@ -410,6 +415,9 @@ APPS=[
 from gen_site_fr import UI_FR, APPS_FR
 UI['fr']=UI_FR
 for a in APPS: a['copy']['fr']=APPS_FR[a['slug']]
+# Las ocultas (ver `hidden` en app()) salen de la lista con la que se construye todo el sitio.
+HIDDEN=[a for a in APPS if a['hidden']]
+APPS=[a for a in APPS if not a['hidden']]
 
 # ---------------------------------------------------------------- chrome
 def prefix(lang): return '' if lang=='en' else lang+'/'
