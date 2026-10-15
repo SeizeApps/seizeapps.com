@@ -101,14 +101,17 @@ UI={
 }
 
 # ---------------------------------------------------------------- apps
-def app(slug, name, icon, lead, privacy_id, shots, en, es, appstore=None, privacy_path=None, store_country=None):
+def app(slug, name, icon, lead, privacy_id, shots, en, es, appstore=None, privacy_path=None, store_country=None, hidden=False):
     # The French block comes from gen_site_fr.APPS_FR[slug] (added after APPS).
     # `appstore`: el id numérico de App Store Connect, solo cuando la app está
     # publicada de verdad. Si está, la página saca el badge; si no, no hay
     # badge. Nunca se escribe el href a mano en el HTML.
     # `privacy_path`: {'en': ..., 'es': ...} relativo a la raíz, para una app con
     # política propia (Garum), relativo a la portada de cada idioma (la de es está en /es/).
-    return dict(slug=slug, name=name, icon=icon, lead=lead, privacy_id=privacy_id,
+    # `hidden`: la app se queda entera aquí (textos, capturas, id) pero no sale en la web: ni tarjeta,
+    # ni marquesina, ni «More from Seize», ni cuenta, ni página propia. Su sección de la política de
+    # privacidad sí se queda (la app la enlaza). Para volver a mostrarla, quitar `hidden=True`.
+    return dict(hidden=hidden, slug=slug, name=name, icon=icon, lead=lead, privacy_id=privacy_id,
                 shots=shots, appstore=appstore, privacy_path=privacy_path, copy={'en':en,'es':es}, store_country=store_country)
 
 APPS=[
@@ -121,7 +124,7 @@ APPS=[
           features=[('01 / SEE','Time, at a glance','Colour and shape tell you what is fresh, what is close, and what needs attention now. No lists to read.'),
                     ('02 / TAP','Done means restarted','One tap marks a task done and begins its next cycle — directly from the Home Screen widget if you like.'),
                     ('03 / KEEP','Yours, not ours','No account and no tracking. Your timers stay on your device, where a household tool belongs.')],
-          privacy='Cycle Timers has no account and no ads. Timers live on your device, in a private container shared only with the app\'s own widgets; reminders are scheduled locally. The only thing it shares is purchase analytics (RevenueCat), never your timers.',
+          privacy='Cycle Timers has no account and no ads. Timers live on your device, in a private container shared only with the app\'s own widgets; reminders are scheduled locally. What leaves the device is purchase analytics (RevenueCat) and, if you choose to write to us from Cycle Pro, your message; never your timers.',
           captions=['Six rings, one glance','A timer is a name, an icon and a cycle']),
      dict(one='Temporizadores recurrentes para la casa que lees de un vistazo, desde el widget, sin abrir la app.',
           tags=['Hogar','Widgets','iOS'],
@@ -130,7 +133,7 @@ APPS=[
           features=[('01 / VER','El tiempo, de un vistazo','El color y la forma te dicen qué está reciente, qué se acerca y qué necesita atención ahora. Sin listas que leer.'),
                     ('02 / TOCAR','Hecho significa reiniciado','Un toque marca la tarea como hecha y empieza el siguiente ciclo, directamente desde el widget si quieres.'),
                     ('03 / GUARDAR','Tuyo, no nuestro','Sin cuenta y sin rastreo. Tus temporizadores se quedan en tu dispositivo, donde debe estar una herramienta de casa.')],
-          privacy='Cycle Timers no tiene cuenta ni anuncios. Los temporizadores viven en tu dispositivo, en un contenedor privado compartido solo con los widgets de la propia app; los recordatorios se programan en local. Lo único que comparte es analítica de compras (RevenueCat), nunca tus temporizadores.',
+          privacy='Cycle Timers no tiene cuenta ni anuncios. Los temporizadores viven en tu dispositivo, en un contenedor privado compartido solo con los widgets de la propia app; los recordatorios se programan en local. Lo que sale del dispositivo es la analítica de compras (RevenueCat) y, si decides escribirnos desde Cycle Pro, tu mensaje; nunca tus temporizadores.',
           captions=['Seis anillos, un vistazo','Un temporizador es un nombre, un icono y un ciclo']), appstore='6796827400'),
  app('tempo','Tempo','tempo.png','Izotz Cristobal Mota','tempo',
      ['tempo-01-welcome.jpg','tempo-02-today.jpg','tempo-03-calendar.jpg'],
@@ -233,7 +236,9 @@ APPS=[
                     ('02 / LIQUIDAR','Un número al mes','Quién pagó qué, quién debe a quién y la transferencia que lo cuadra. Márcalo como liquidado; deshazlo si te precipitaste.'),
                     ('03 / VER','A dónde va','Gastos recurrentes que se apuntan solos. Tandem Pro añade informes por categoría y por mes, recordatorios para apuntar y para liquidar, widgets, exportar a CSV y temas de color: una compra única, con 30 días de prueba gratis.')],
           privacy='Tandem guarda los nombres, los ingresos y los gastos en tu dispositivo y en tu propia cuenta de iCloud. No se comparte nada con nadie: ni con nosotros ni con un servidor.',
-          captions=['Este mes: compartido, pagado, por liquidar','Fijos y variables, por mes','Liquidar: las cuentas, a la vista','Informes: quién pagó, mes a mes (Pro)']), appstore='6812734713'),
+          captions=['Este mes: compartido, pagado, por liquidar','Fijos y variables, por mes','Liquidar: las cuentas, a la vista','Informes: quién pagó, mes a mes (Pro)']), appstore='6812734713',
+     # Retirada de la venta en los 175 países el 15/10/2026 (decisión de Sendoa): oculta, no borrada.
+     hidden=True),
  app('meso','Meso','meso.png','Sendoa Sola','meso',
      ['meso-01-today.jpg','meso-02-workout.jpg','meso-03-grid.jpg','meso-04-week.jpg'],
      dict(one='The gym version of your coach\'s spreadsheet: blocks of weeks, load and reps per set, effort as reps in reserve.',
@@ -340,6 +345,27 @@ APPS=[
                     ('03 / JUGAR','Gratis para probar, tuyo para quedártelo','Sintonía es gratis para todos. Los demás juegos son compras únicas, y toda tu mesa juega gratis siempre que el anfitrión tenga el juego; si no, cada jugador tiene tres partidas gratis de cada uno. Las compras se comparten con tu familia.')],
           privacy='GamingHub no tiene cuenta, ni correo, ni contraseña. Para llevar una sala envía a nuestro servidor (Supabase) un nombre que eliges, un avatar, un identificador anónimo y el estado de la partida, que ven los demás jugadores de la sala; las salas se borran al vaciarse y se purgan a las 12 horas. Sin anuncios y sin seguimiento; solo analítica de compras, con RevenueCat (sin nombres ni nada de una sala).',
           captions=['Inicio: crea una sala, entra con un código o escanea un QR','Impostor: rompe el sello para leer tu invitación','Sintonía: jugad las cartas en orden y en silencio'])),
+ # BeatRide (0.0.9, TestFlight interno; aún sin publicar en la Store): sin appstore hasta que esté a la venta.
+ app('beatride','BeatRide','beatride.png','Sendoa Sola','beatride',
+     ['beatride-01-home.jpg','beatride-02-class.jpg','beatride-03-ride.jpg'],
+     dict(one='Indoor cycling classes built on exercise science and set to your music: pick the ride and BeatRide builds the class, from your playlist or from Apple Music.',
+          tags=['Fitness','Indoor cycling','Apple Music'],
+          lede='<strong>BeatRide</strong> turns music into an indoor cycling class. Choose the ride (hills, endurance, intervals or HIIT) and how long, and BeatRide builds it from your Apple Music playlist or picks the songs itself: warm-up and cool-down with the calmest songs, climbs at 60–80 RPM, sprints where the music hits hardest, and the cadence on the beat. The rules come from exercise science (ACSM guidance, heart-rate zones, proven interval formats), and every class tells you why it is built the way it is.',
+          meta=['iOS 26+','iPhone','Apple Music','English · Spanish · French'],
+          features=[('01 / BUILD','A class, not a playlist','Warm-up, work and recovery in the right order, with limits for your level and a health check first. Every move tells you posture, cadence, heart-rate zone and effort, and changes land where the music changes.'),
+                    ('02 / MUSIC','Your songs, or ours','Build from any of your playlists, or let BeatRide pick from Apple Music by style and decade. Songs crossfade, and a cut never lands right before a drop: BeatRide knows the shape of thousands of songs.'),
+                    ('03 / RIDE','One screen, made for the bike','Cadence on a ring that pulses with the beat, the move and its countdown, effort and zone, what comes next and the whole class as a road. Your rides go to your history and, if you want, to Apple Health.')],
+          privacy='Your rider profile, health-check answers and song marks stay on your iPhone, and your class history syncs through your own iCloud. Your display name and username are kept in BeatRide\'s iCloud database so that usernames stay unique. To measure a song, BeatRide sends its ISRC code to Deezer and its title, artist and length to LRCLIB (song timings only). The microphone is used only by Learn by listening, which keeps measurements and never records. No ads, no tracking.',
+          captions=['Pick the ride, the length and the music','Your class: its shape, and why it is built that way','Riding: cadence on the beat, the move, the zone and what is next']),
+     dict(one='Clases de ciclo indoor basadas en la ciencia del ejercicio y montadas sobre tu música: eliges la clase y BeatRide la arma, con tu lista o con Apple Music.',
+          tags=['Fitness','Ciclo indoor','Apple Music'],
+          lede='<strong>BeatRide</strong> convierte la música en una clase de ciclo indoor. Eliges el tipo (subidas, resistencia, intervalos o HIIT) y cuánto dura, y BeatRide la arma con tu lista de Apple Music o eligiendo las canciones por ti: calentamiento y vuelta a la calma con las canciones más tranquilas, subidas a 60–80 RPM, sprints donde la música pega más fuerte y la cadencia al ritmo. Las reglas salen de la ciencia del ejercicio (las pautas del ACSM, las zonas de pulso, formatos de intervalos probados), y cada clase te explica por qué está armada así.',
+          meta=['iOS 26+','iPhone','Apple Music','Inglés · Español · Francés'],
+          features=[('01 / ARMAR','Una clase, no una lista','Calentamiento, trabajo y recuperación en su orden, con límites para tu nivel y un cuestionario de salud antes. Cada movimiento te dice postura, cadencia, zona de pulso y esfuerzo, y los cambios caen donde cambia la música.'),
+                    ('02 / MÚSICA','Tus canciones, o las nuestras','Ármala con cualquiera de tus listas, o deja que BeatRide elija de Apple Music por estilo y década. Las canciones se funden, y un corte nunca cae justo antes de un drop: BeatRide conoce la forma de miles de canciones.'),
+                    ('03 / RODAR','Una pantalla pensada para la bici','La cadencia en un anillo que late con el ritmo, el movimiento y su cuenta atrás, el esfuerzo y la zona, lo que viene y la clase entera como una carretera. Tus clases van a tu historial y, si quieres, a Apple Salud.')],
+          privacy='Tu perfil de ciclista, las respuestas del cuestionario de salud y tus marcas de canciones se quedan en tu iPhone, y tu historial de clases se sincroniza con tu propio iCloud. Tu nombre y tu nombre de usuario se guardan en la base de datos de iCloud de BeatRide para que los nombres de usuario no se repitan. Para medir una canción, BeatRide envía su código ISRC a Deezer y su título, artista y duración a LRCLIB (solo los tiempos de la canción). El micrófono solo lo usa «Aprender escuchando», que guarda medidas y nunca graba. Sin anuncios y sin seguimiento.',
+          captions=['Elige la clase, la duración y la música','Tu clase: su forma, y por qué está armada así','Rodando: la cadencia al ritmo, el movimiento, la zona y lo que viene'])),
  # Atino (0.1.0, aún sin publicar en la Store): sin appstore hasta que `lookup` devuelva 1. Política propia en /atino/.
  app('atino','Atino','atino.png','Izotz Cristobal Mota','atino',
      ['atino-01-matches.jpg','atino-02-job.jpg','atino-03-filters.jpg'],
@@ -411,6 +437,9 @@ APPS=[
 from gen_site_fr import UI_FR, APPS_FR
 UI['fr']=UI_FR
 for a in APPS: a['copy']['fr']=APPS_FR[a['slug']]
+# Las ocultas (ver `hidden` en app()) salen de la lista con la que se construye todo el sitio.
+HIDDEN=[a for a in APPS if a['hidden']]
+APPS=[a for a in APPS if not a['hidden']]
 
 # ---------------------------------------------------------------- chrome
 def prefix(lang): return '' if lang=='en' else lang+'/'
@@ -590,9 +619,9 @@ def redirect_page(url):
 
 # The app count and the app list in the copy come from APPS, so adding an
 # app never leaves a «six apps» behind (it did, 20/09/2026).
-NUMBERS={'en':['zero','one','two','three','four','five','six','seven','eight','nine','ten','eleven','twelve','thirteen','fourteen'],
-         'es':['cero','una','dos','tres','cuatro','cinco','seis','siete','ocho','nueve','diez','once','doce','trece','catorce'],
-         'fr':['zéro','une','deux','trois','quatre','cinq','six','sept','huit','neuf','dix','onze','douze','treize','quatorze']}
+NUMBERS={'en':['zero','one','two','three','four','five','six','seven','eight','nine','ten','eleven','twelve','thirteen','fourteen','fifteen','sixteen'],
+         'es':['cero','una','dos','tres','cuatro','cinco','seis','siete','ocho','nueve','diez','once','doce','trece','catorce','quince','dieciséis'],
+         'fr':['zéro','une','deux','trois','quatre','cinq','six','sept','huit','neuf','dix','onze','douze','treize','quatorze','quinze','seize']}
 def fill_counts():
     n=len(APPS)
     for lang in LANGS:
