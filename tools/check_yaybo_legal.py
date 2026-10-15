@@ -4,10 +4,13 @@ Fails when the page says something the build or the disclosure doc contradicts, 
   1. no [OPERATOR ...] marker left (postal address and telephone, 16 CFR 312.4(d)(1));
   2. the "Purchase analytics" paragraph equals docs/kids-us/11-revenuecat-disclosure.md §3.2 minus its last sentence
      (the key-off page has no such paragraph and must not mention RevenueCat's SDK data);
-  3. none of the statements found false on 11/10/2026 (RevenueCat "never while a child is playing", the Parent Zone alone
-     switching it on, a bullet titled "Consent:", iCloud promised while the build is device-only, the security-program
-     sentence while the program is unsigned);
-  4. the retention deadline and the internal-operations purpose are present.
+  3. none of the statements found false on 11/10 and 15/10/2026 (RevenueCat "never while a child is playing", the Parent Zone
+     alone switching it on, a bullet titled "Consent:", "no microphone use for children", "Seize runs no server", "the data never
+     leaves your device" now that iCloud sync and the family link are on, the security-program sentence while the program is
+     unsigned);
+  4. the retention deadline and the internal-operations purpose are present;
+  5. what the 15/10 build does is said: the Apple Ads attribution post, Read-aloud and SpeechAnalyzer, iCloud, the operator's
+     address and telephone.
 Usage: python3 tools/check_yaybo_legal.py [--seizerepo /path/to/SeizeRepo-kids-us]
 """
 import html, os, re, sys
@@ -51,13 +54,25 @@ for k, t in pages.items():
     if '[OPERATOR' in t:
         fails.append(f'{k}: an [OPERATOR ...] marker is still in the page (postal address / telephone missing)')
     for bad in ('never while a child is playing', 'nunca mientras un niño juega', 'Consent:', 'Consentimiento:',
-                'in your own iCloud', 'en tu propio iCloud', 'iCloud sync is on by default', 'stay viewable',
+                'iCloud sync is on by default', 'stay viewable',
                 'se pueden ver; las actividades', 'Apple Account › Subscriptions', 'Cuenta de Apple › Suscripciones',
-                'ask for your consent again', 'te pediremos el consentimiento otra vez'):
-        if bad in t:
+                'ask for your consent again', 'te pediremos el consentimiento otra vez',
+                # false for the 15/10 build (i4-statements DEFECT 2)
+                'no microphone use for children', 'no usa el micrófono con niños', 'Seize runs none', 'Seize runs no server',
+                'Seize no tiene ninguno', 'Seize no tiene ningún servidor', 'never leaves your device', 'nunca salen de tu dispositivo',
+                'a later version may offer optional iCloud sync', 'Una versión futura podría ofrecer sincronización',
+                'Yaybo never records your child', 'Yaybo nunca graba a tu hijo o hija.'):
+        if re.search(re.escape(bad) + r'(?!s)', t):  # "your device" must not match "your devices"
             fails.append(f'{k}: forbidden phrase "{bad}"')
     if 'written information-security program' in t and not re.search(r'^SIGNED:[ \t]*[^_\s]', open(PROGRAM).read() if os.path.exists(PROGRAM) else '', re.M):
         fails.append(f'{k}: claims a written information-security program that is not signed ({PROGRAM}, needs a filled-in "SIGNED:" line)')
+
+must = {'privacy': ('Apple Ads', 'Where our ads came from', 'SpeechAnalyzer', 'Read-aloud', 'iCloud', 'Ugarana kalea 3', '+34 672 53 17 63'),
+        'privacidad': ('Apple Ads', 'De dónde venían nuestros anuncios', 'SpeechAnalyzer', 'lectura en voz alta', 'iCloud', 'Ugarana kalea 3', '+34 672 53 17 63')}
+for k, phrases in must.items():
+    for ph in phrases:
+        if ph not in pages[k]:
+            fails.append(f'{k}: missing "{ph}"')
 
 if 'Purchase analytics (RevenueCat)' in en:
     want = squash(doc11_paragraph())

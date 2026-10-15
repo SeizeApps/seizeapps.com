@@ -2,7 +2,7 @@
 PRIVACY_FR='''
   <p class="eyebrow">Informations légales</p>
   <h1>Politique de confidentialité</h1>
-  <p class="effective">En vigueur depuis le 13 octobre 2026</p>
+  <p class="effective">En vigueur depuis le 15 octobre 2026</p>
   <nav class="toc" aria-label="Apps">
     <a href="#cycle-timers">Cycle Timers</a><a href="#tempo">Tempo</a><a href="#drip">Drip</a><a href="#anchor">Anchor</a><a href="#kover">Kover</a><a href="#tandem">Tandem</a><a href="#meso">Meso</a><a href="#grain">Grain</a><a href="#beatride">BeatRide</a><a href="#gaminghub">GamingHub</a><a href="#atino">Atino</a><a href="#overbit">Overbit</a><a href="#roomy">Roomy</a><a href="#yaybo">Yaybo</a>
   </nav>
@@ -172,7 +172,7 @@ PRIVACY_FR='''
 
   <section id="yaybo">
   <h3>Yaybo</h3>
-  <p>Yaybo est une app d’apprentissage pour les enfants de 4 à 8 ans, utilisée avec un adulte. Ce que tu lui dis sur ton enfant (prénom, niveau, réponses de la configuration, progression) reste sur ton appareil : nous ne le recevons jamais. Il n’y a ni compte, ni publicité, ni suivi, et Yaybo n’enregistre jamais ton enfant. Si un adulte achète ou restaure un abonnement, Yaybo le signale à RevenueCat pour la mesure des achats, seulement après qu’un adulte a franchi la porte parentale et jamais sur l’appareil propre d’un enfant : un identifiant anonyme, l’identifiant de fournisseur de ton appareil et des données techniques, et l’achat, jamais rien sur ton enfant. RevenueCat agit selon nos instructions. Apple traite le paiement ; nous ne voyons jamais ta carte.</p>
+  <p>Yaybo est une app d’apprentissage pour les enfants de 4 à 9 ans, utilisée avec un adulte. Ce que tu lui dis sur ton enfant (prénom, niveau, réponses de la configuration, progression) reste sur tes appareils et, quand la synchronisation iCloud est activée, dans ton propre iCloud : nous ne le recevons jamais. Il n’y a ni compte, ni publicité, ni suivi, et Yaybo n’enregistre, ne conserve ni n’envoie jamais la voix de ton enfant (si un adulte active la lecture à voix haute, l’appareil écoute de lui-même pendant que l’enfant maintient un bouton). Deux petites choses vont vers notre propre serveur, aucune sur ton enfant : une note qu’un adulte choisit d’écrire et un jeton anonyme d’Apple qui nous dit quelle publicité, s’il y en a une, t’a amené. Si un adulte achète ou restaure un abonnement, Yaybo le signale à RevenueCat pour la mesure des achats, seulement après qu’un adulte a franchi la porte parentale et jamais sur l’appareil propre d’un enfant : un identifiant anonyme, l’identifiant de fournisseur de ton appareil et des données techniques, et l’achat, jamais rien sur ton enfant. RevenueCat agit selon nos instructions. Apple traite le paiement ; nous ne voyons jamais ta carte.</p>
   <p>Comme Yaybo est faite pour les enfants, elle a sa propre <a href="../yaybo/privacy/">politique de confidentialité</a>, avec une section sur la vie privée des enfants (COPPA), et ses propres <a href="../yaybo/terms/">conditions d’utilisation</a> (en anglais et en espagnol).</p>
   <p><em>Publiée sur l’App Store par Izotz Cristobal Mota.</em></p>
   </section>
