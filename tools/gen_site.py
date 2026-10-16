@@ -868,6 +868,9 @@ if __name__=='__main__':
     # Roomy (05/10/2026): su página de privacidad, en inglés como la app.
     from gen_legal_roomy import build_roomy
     build_roomy()
+    # Chinese (16/10/2026): only the legal pages, for the apps that speak Chinese (Drip, Kover, Grain).
+    from gen_legal_zh import build_zh
+    build_zh()
     # Garum's share links (0.0.26): /garum/c/ and /garum/p/, and the Universal Links file.
     from gen_garum_share import build_garum_share
     build_garum_share()
