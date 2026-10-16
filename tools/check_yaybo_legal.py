@@ -10,7 +10,11 @@ Fails when the page says something the build or the disclosure doc contradicts, 
      unsigned);
   4. the retention deadline and the internal-operations purpose are present;
   5. what the 15/10 build does is said: the Apple Ads attribution post, Read-aloud and SpeechAnalyzer, iCloud, the operator's
-     address and telephone.
+     address and telephone;
+  6. what the 16/10 sync fixed stays fixed (legal-sync-2026-10-16): the post per subscription (not "once after the first
+     purchase"), the family link's high-five reaching a child, the per-child "Never listen", "Sign your letters as", the email
+     rows, the microphone text equal to the app's Info.plist, and the studio-wide policy's Yaybo section and "Where your data
+     lives" (no "Readably only").
 Usage: python3 tools/check_yaybo_legal.py [--seizerepo /path/to/SeizeRepo-kids-us]
 """
 import html, os, re, sys
@@ -61,18 +65,55 @@ for k, t in pages.items():
                 'no microphone use for children', 'no usa el micrófono con niños', 'Seize runs none', 'Seize runs no server',
                 'Seize no tiene ninguno', 'Seize no tiene ningún servidor', 'never leaves your device', 'nunca salen de tu dispositivo',
                 'a later version may offer optional iCloud sync', 'Una versión futura podría ofrecer sincronización',
-                'Yaybo never records your child', 'Yaybo nunca graba a tu hijo o hija.'):
+                'Yaybo never records your child', 'Yaybo nunca graba a tu hijo o hija.',
+                # false for the 16/10 build (legal-sync-2026-10-16)
+                'and once after your first purchase', 'y una vez después de tu primera compra',
+                'once after a first purchase', 'una vez tras una primera compra',
+                'Who can reach your child: nobody.', 'Quién puede llegar hasta tu hijo o hija: nadie.',
+                'no user-generated content shared with other users', 'ni contenido de usuarios compartido con otros',
+                'Parent Zone › Other phones › Stop sharing', 'Zona para padres › Otros teléfonos › Dejar de compartir',
+                'removes them from your devices and from your iCloud;', 'los quita de tus dispositivos y de tu iCloud;',
+                'through which anyone could reach your child', 'por las que alguien pudiera llegar hasta él o ella',
+                'Everything that costs money, leaves the app', 'Todo lo que cuesta dinero, sale de la app'):
         if re.search(re.escape(bad) + r'(?!s)', t):  # "your device" must not match "your devices"
             fails.append(f'{k}: forbidden phrase "{bad}"')
     if 'written information-security program' in t and not re.search(r'^SIGNED:[ \t]*[^_\s]', open(PROGRAM).read() if os.path.exists(PROGRAM) else '', re.M):
         fails.append(f'{k}: claims a written information-security program that is not signed ({PROGRAM}, needs a filled-in "SIGNED:" line)')
 
-must = {'privacy': ('Apple Ads', 'Where our ads came from', 'SpeechAnalyzer', 'Read-aloud', 'iCloud', 'Ugarana kalea 3', '+34 672 53 17 63'),
-        'privacidad': ('Apple Ads', 'De dónde venían nuestros anuncios', 'SpeechAnalyzer', 'lectura en voz alta', 'iCloud', 'Ugarana kalea 3', '+34 672 53 17 63')}
+MIC_EN = MIC_ES = None
+try:
+    import plistlib, json
+    app = os.path.join(SEIZE, 'apps/ios/Yaybo/Yaybo')
+    MIC_EN = plistlib.load(open(os.path.join(app, 'Info.plist'), 'rb'))['NSMicrophoneUsageDescription']
+    MIC_ES = json.load(open(os.path.join(app, 'InfoPlist.xcstrings'), encoding='utf-8'))['strings']['NSMicrophoneUsageDescription']['localizations']['es']['stringUnit']['value']
+except (OSError, KeyError, ValueError):
+    fails.append(f"cannot read the app's microphone usage text under {SEIZE}/apps/ios/Yaybo/Yaybo (Info.plist, InfoPlist.xcstrings)")
+
+must = {'privacy': ('Apple Ads', 'Where our ads came from', 'SpeechAnalyzer', 'Read-aloud', 'iCloud', 'Ugarana kalea 3', '+34 672 53 17 63',
+                    'once for each subscription', 'Never listen', 'Sign your letters as', 'I said it', 'Delete all data', 'An email you write',
+                    'a high-five from a grown-up you yourself invite', 'iCloud Sync is on by default'),
+        'privacidad': ('Apple Ads', 'De dónde venían nuestros anuncios', 'SpeechAnalyzer', 'lectura en voz alta', 'iCloud', 'Ugarana kalea 3', '+34 672 53 17 63',
+                       'una vez por cada suscripción', 'No escuchar nunca', 'Firmar tus cartas como', 'I said it', 'Eliminar todos los datos', 'Un correo que escribes',
+                       'un choque de manos de una persona adulta a quien invitas', 'viene activada por defecto')}
+if MIC_EN:
+    must['privacy'] += (MIC_EN,)
+    must['privacidad'] += (MIC_ES,)
 for k, phrases in must.items():
     for ph in phrases:
         if ph not in pages[k]:
             fails.append(f'{k}: missing "{ph}"')
+
+# The studio-wide policy's Yaybo section and the places that used to say "Readably only" (EN, ES, FR).
+for path, ids in (('privacy.html', ('Yaybo keeps the notes', 'Yaybo is another', 'never for a child a grown-up has set to "never listen"')),
+                  ('es/privacy.html', ('Yaybo guarda las notas', 'Yaybo es otra', 'no escuchar nunca')),
+                  ('fr/privacy.html', ('Yaybo conserve les notes', 'Yaybo est une exception', 'ne jamais écouter'))):
+    t = squash(text_of(os.path.join(ROOT, path)))
+    for ph in ids:
+        if ph not in t:
+            fails.append(f'{path}: the studio policy lacks "{ph}"')
+    for bad in ('(Readably only)', '(solo Readably)'):
+        if bad in t:
+            fails.append(f'{path}: stale "{bad}" now that Yaybo keeps notes on our server')
 
 if 'Purchase analytics (RevenueCat)' in en:
     want = squash(doc11_paragraph())
