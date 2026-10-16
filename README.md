@@ -14,6 +14,7 @@ apps/<slug>.html      one page per app (one per entry in `APPS`): icon, lede, sc
 privacy.html          privacy policy, one section per app (#cycle-timers … #atino)
 terms.html            terms of use
 es/… · fr/…           the same four kinds of page in Spanish and French (same paths; hreflang between the three)
+zh/privacy.html · zh/terms.html   Simplified Chinese legal pages only (tools/gen_legal_zh.py): Drip, Kover and Grain, the apps with Chinese; no hreflang, English prevails
 assets/site.css       the whole visual system (dark only, mobile first; motion rules at the end)
 assets/site.js        the only script (language memory, header state, pointer tilt); nothing depends on it
 assets/fonts/         Inter, latin subset, and its licence
