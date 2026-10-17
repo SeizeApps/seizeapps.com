@@ -1147,6 +1147,227 @@
    ]
   }
  },
+ "logicle": {
+  "source": "logicle-0.4.0",
+  "langs": {
+   "en": [
+    {
+     "base": "assets/store/logicle/en/01-today",
+     "w": 400,
+     "h": 869,
+     "title": "A fresh puzzle every day.",
+     "subtitle": "Eleven kinds of puzzle in three levels, the same for everyone in the world."
+    },
+    {
+     "base": "assets/store/logicle/en/02-manor",
+     "w": 400,
+     "h": 869,
+     "title": "Who ate the cake?",
+     "subtitle": "Manor: place every guest in the house from the clues, then name who ate the cake."
+    },
+    {
+     "base": "assets/store/logicle/en/03-sudoku",
+     "w": 400,
+     "h": 869,
+     "title": "Sudoku, the calm way.",
+     "subtitle": "Tap a cell, then a digit: the keypad dims what can't go there."
+    },
+    {
+     "base": "assets/store/logicle/en/04-hints",
+     "w": 400,
+     "h": 869,
+     "title": "Hints that teach.",
+     "subtitle": "First the idea and where to look, then the answer, only if you ask."
+    },
+    {
+     "base": "assets/store/logicle/en/05-tessera",
+     "w": 400,
+     "h": 869,
+     "title": "Every piece has its place.",
+     "subtitle": "Tessera: fill the board with the pieces left. Turn them, flip them, one way fits."
+    },
+    {
+     "base": "assets/store/logicle/en/06-shunt",
+     "w": 400,
+     "h": 869,
+     "title": "Get the key out.",
+     "subtitle": "Shunt: slide the blocks aside. Every puzzle shows the fewest moves it takes."
+    },
+    {
+     "base": "assets/store/logicle/en/07-thread",
+     "w": 400,
+     "h": 869,
+     "title": "Join every pair.",
+     "subtitle": "Thread: lines between dots of the same colour, never crossing, filling the board."
+    },
+    {
+     "base": "assets/store/logicle/en/08-crown",
+     "w": 400,
+     "h": 869,
+     "title": "One crown in each.",
+     "subtitle": "Crown: one per row, column and colour, and no two touching."
+    },
+    {
+     "base": "assets/store/logicle/en/09-pixel",
+     "w": 400,
+     "h": 869,
+     "title": "A picture in the numbers.",
+     "subtitle": "Pixel: paint what each row and column asks for, and see what appears."
+    },
+    {
+     "base": "assets/store/logicle/en/10-stats",
+     "w": 400,
+     "h": 869,
+     "title": "See how you improve.",
+     "subtitle": "From the big picture down to each type and level: streak, times, where you get faster."
+    }
+   ],
+   "es": [
+    {
+     "base": "assets/store/logicle/es/01-today",
+     "w": 400,
+     "h": 869,
+     "title": "Un puzle nuevo cada día.",
+     "subtitle": "Once tipos de puzle en tres niveles, los mismos para todo el mundo."
+    },
+    {
+     "base": "assets/store/logicle/es/02-manor",
+     "w": 400,
+     "h": 869,
+     "title": "¿Quién se comió la tarta?",
+     "subtitle": "Manor: coloca a cada invitado en la casa con las pistas y descubre quién se comió la tarta."
+    },
+    {
+     "base": "assets/store/logicle/es/03-sudoku",
+     "w": 400,
+     "h": 869,
+     "title": "Sudoku, con calma.",
+     "subtitle": "Toca una casilla y luego un número: el teclado atenúa lo que no cabe."
+    },
+    {
+     "base": "assets/store/logicle/es/04-hints",
+     "w": 400,
+     "h": 869,
+     "title": "Pistas que enseñan.",
+     "subtitle": "Primero la idea y dónde mirar; la respuesta, solo si la pides."
+    },
+    {
+     "base": "assets/store/logicle/es/05-tessera",
+     "w": 400,
+     "h": 869,
+     "title": "Cada pieza tiene su sitio.",
+     "subtitle": "Tessera: llena el tablero con las piezas que quedan. Gíralas, voltéalas: solo encajan de una forma."
+    },
+    {
+     "base": "assets/store/logicle/es/06-shunt",
+     "w": 400,
+     "h": 869,
+     "title": "Saca la llave.",
+     "subtitle": "Shunt: aparta los bloques. Cada puzle te dice el mínimo de movimientos."
+    },
+    {
+     "base": "assets/store/logicle/es/07-thread",
+     "w": 400,
+     "h": 869,
+     "title": "Une cada pareja.",
+     "subtitle": "Thread: líneas entre puntos del mismo color, sin cruzarse, hasta llenar el tablero."
+    },
+    {
+     "base": "assets/store/logicle/es/08-crown",
+     "w": 400,
+     "h": 869,
+     "title": "Una corona en cada una.",
+     "subtitle": "Crown: una por fila, columna y color, sin que dos se toquen."
+    },
+    {
+     "base": "assets/store/logicle/es/09-pixel",
+     "w": 400,
+     "h": 869,
+     "title": "Un dibujo en los números.",
+     "subtitle": "Pixel: pinta lo que pide cada fila y columna, y mira qué aparece."
+    },
+    {
+     "base": "assets/store/logicle/es/10-stats",
+     "w": 400,
+     "h": 869,
+     "title": "Mira cuánto mejoras.",
+     "subtitle": "De lo general a cada tipo y nivel: racha, tiempos y dónde vas más rápido."
+    }
+   ],
+   "fr": [
+    {
+     "base": "assets/store/logicle/fr/01-today",
+     "w": 400,
+     "h": 869,
+     "title": "Un casse-tête nouveau chaque jour.",
+     "subtitle": "Onze types de casse-tête en trois niveaux, les mêmes pour tout le monde."
+    },
+    {
+     "base": "assets/store/logicle/fr/02-manor",
+     "w": 400,
+     "h": 869,
+     "title": "Qui a mangé le gâteau ?",
+     "subtitle": "Manor : placez chaque invité dans la maison grâce aux indices, puis trouvez qui a mangé le gâteau."
+    },
+    {
+     "base": "assets/store/logicle/fr/03-sudoku",
+     "w": 400,
+     "h": 869,
+     "title": "Le sudoku, en toute sérénité.",
+     "subtitle": "Touchez une case, puis un chiffre : le clavier estompe ce qui ne va pas."
+    },
+    {
+     "base": "assets/store/logicle/fr/04-hints",
+     "w": 400,
+     "h": 869,
+     "title": "Des indices qui apprennent.",
+     "subtitle": "D’abord l’idée et où regarder ; la réponse, seulement si vous la demandez."
+    },
+    {
+     "base": "assets/store/logicle/fr/05-tessera",
+     "w": 400,
+     "h": 869,
+     "title": "Chaque pièce a sa place.",
+     "subtitle": "Tessera : remplissez le plateau avec les pièces restantes. Une seule façon de tout caser."
+    },
+    {
+     "base": "assets/store/logicle/fr/06-shunt",
+     "w": 400,
+     "h": 869,
+     "title": "Faites sortir la clé.",
+     "subtitle": "Shunt : écartez les blocs. Chaque casse-tête indique le moins de coups possible."
+    },
+    {
+     "base": "assets/store/logicle/fr/07-thread",
+     "w": 400,
+     "h": 869,
+     "title": "Reliez chaque paire.",
+     "subtitle": "Thread : des lignes entre points de même couleur, sans se croiser, jusqu’à remplir le plateau."
+    },
+    {
+     "base": "assets/store/logicle/fr/08-crown",
+     "w": 400,
+     "h": 869,
+     "title": "Une couronne par région.",
+     "subtitle": "Crown : une par ligne, colonne et couleur, sans que deux se touchent."
+    },
+    {
+     "base": "assets/store/logicle/fr/09-pixel",
+     "w": 400,
+     "h": 869,
+     "title": "Un dessin dans les nombres.",
+     "subtitle": "Pixel : coloriez ce que demande chaque ligne et colonne, et voyez ce qui apparaît."
+    },
+    {
+     "base": "assets/store/logicle/fr/10-stats",
+     "w": 400,
+     "h": 869,
+     "title": "Voyez vos progrès.",
+     "subtitle": "Du général à chaque type et niveau : série, temps, et là où vous allez plus vite."
+    }
+   ]
+  }
+ },
  "sacapuntas": {
   "source": "sacapuntas-0.7.0",
   "langs": {

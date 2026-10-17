@@ -2,7 +2,7 @@
 PRIVACY_FR='''
   <p class="eyebrow">Informations légales</p>
   <h1>Politique de confidentialité</h1>
-  <p class="effective">En vigueur depuis le 15 octobre 2026</p>
+  <p class="effective">En vigueur depuis le 17 octobre 2026</p>
   <nav class="toc" aria-label="Apps">
     <a href="#cycle-timers">Cycle Timers</a><a href="#tempo">Tempo</a><a href="#drip">Drip</a><a href="#anchor">Anchor</a><a href="#kover">Kover</a><a href="#tandem">Tandem</a><a href="#meso">Meso</a><a href="#grain">Grain</a><a href="#logicle">Logicle</a><a href="#beatride">BeatRide</a><a href="#gaminghub">GamingHub</a><a href="#atino">Atino</a><a href="#overbit">Overbit</a><a href="#roomy">Roomy</a><a href="#yaybo">Yaybo</a>
   </nav>
@@ -118,7 +118,7 @@ PRIVACY_FR='''
   <section id="logicle">
   <h3>Logicle</h3>
   <p>Logicle est une collection de puzzles logiques. Tes parties en cours, les puzzles que tu as résolus, tes temps, tes indices et tes séries, et tes réglages restent <strong>sur ton appareil</strong>, dans le conteneur privé de l’app. Les puzzles sont créés sur l’appareil : rien n’est donc téléchargé depuis chez nous ni envoyé pendant que tu joues. Logicle n’a ni comptes, ni mesure d’audience, ni publicité, ni code tiers qui reçoive tes données.</p>
-  <p><strong>Game Center.</strong> Si tu es connecté à Game Center, Logicle envoie à Apple ton temps pour chaque puzzle du jour que tu résous, au classement de ce jour-là (les parties où tu as rempli les notes automatiquement ne sont pas envoyées), et ouvre les écrans de classement d’Apple quand tu le demandes. Ton nom Game Center et tes temps sont visibles des autres joueurs selon tes réglages Game Center, aux conditions d’Apple ; nous ne voyons que ce que voit n’importe quel joueur dans ces classements. Tu peux jouer sans Game Center.</p>
+  <p><strong>Game Center.</strong> Si tu es connecté à Game Center, Logicle envoie à Apple ton temps pour chaque puzzle du jour que tu résous sans indice, au classement de ce jour-là (au Sudoku, pas non plus si tu as rempli les notes automatiquement) ; après chaque puzzle résolu, ta meilleure série, tes puzzles résolus, tes puzzles du jour résolus et tes points de la semaine, à leurs classements ; et les succès que tu décroches. Elle ouvre aussi les écrans Game Center d’Apple quand tu le demandes. Ton nom Game Center, tes temps, tes chiffres et tes succès sont visibles des autres joueurs selon tes réglages Game Center, aux conditions d’Apple ; nous ne voyons que ce que voit n’importe quel joueur dans Game Center. Tu peux jouer sans Game Center.</p>
   <p><strong>Achats.</strong> Logicle propose des déblocages facultatifs à paiement unique (un par type de puzzle, ou tous les types à la fois, y compris ceux ajoutés plus tard), qui peuvent être partagés avec le Partage familial, et une boîte à pourboires d’achats ponctuels qui ne débloquent rien et ne changent rien à l’app. Apple les traite et vérifie sur ton appareil ce que tu as acheté ; nous ne voyons jamais tes données de paiement. Ce qu’Apple nous dit de chaque achat se trouve dans <a href="#achats">Achats</a>.</p>
   <p><strong>La synchronisation iCloud</strong> est activée par défaut pour que tes parties et ta progression te suivent d’un appareil à l’autre grâce à ton compte iCloud personnel, aux conditions d’Apple ; nous n’y avons jamais accès. Si tu la désactives dans Réglages, tes données restent uniquement sur l’appareil. Logicle n’envoie pas de notifications.</p>
   <p><em>Publiée sur l’App Store par Sendoa Sola.</em></p>

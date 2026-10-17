@@ -13,7 +13,8 @@ más tools/store_shots.json, el manifiesto que lee gen_site.py: por app y por id
 tamaño y el titular y el subtítulo aprobados para la Store (de tools/store/config/<app>.yaml), que van al
 texto alternativo. gen_site.py no necesita el SeizeRepo ni Pillow: solo este manifiesto y las webp.
 
-Para una versión nueva: cambiar el prefijo en SOURCES, volver a correr esto y luego gen_site.py.
+Para una versión nueva: cambiar el prefijo en SOURCES, volver a correr esto (con el slug de la app como argumento
+para rehacer solo esa) y luego gen_site.py.
 Hace falta Pillow con WebP (el venv de tools/asc del SeizeRepo lo tiene). Ruta del SeizeRepo: $SEIZE_REPO
 o ~/dev/seize.
 """
@@ -39,6 +40,7 @@ SOURCES = {
     'meso':       ('Meso',       'meso-0.3.3',       'meso.yaml',       ('en', 'es', 'fr')),
     'grain':      ('Grain',      'grain-0.1.2',      'grain.yaml',      ('en', 'es', 'fr')),
     'garum':      ('Criba',      'criba-0.1.1',      'criba.yaml',      ('en', 'es', 'fr')),
+    'logicle':    ('Logicle',    'logicle-0.4.0',    'logicle.yaml',    ('en', 'es', 'fr')),
     # Sacapuntas solo tiene capturas en castellano (la app es castellano y euskera); las páginas en/fr las
     # enseñan con el texto alternativo traducido en gen_site.py (copy['shot_alts']).
     'sacapuntas': ('Sacapuntas', 'sacapuntas-0.7.0', 'sacapuntas.yaml', ('es',)),
@@ -51,8 +53,14 @@ def one_line(s):
 
 
 def main():
-    manifest = {}
+    # Con slugs como argumentos rehace solo esas apps y conserva el resto del manifiesto: los PNG de versiones
+    # viejas ya no están en tools/store/out y rehacerlo todo borraría sus webp (17/10/2026).
+    only = set(sys.argv[1:])
+    manifest_path = SITE / 'tools/store_shots.json'
+    manifest = json.loads(manifest_path.read_text()) if only else {}
     for slug, (folder, prefix, cfg_name, langs) in SOURCES.items():
+        if only and slug not in only:
+            continue
         cfg = yaml.safe_load((CONFIG / cfg_name).read_text())
         by_slug = {s['slug']: s for s in cfg['shots']}
         dest_app = SITE / 'assets/store' / slug
@@ -91,7 +99,8 @@ def main():
             manifest[slug]['langs'][lang] = shots
             kb = sum(p.stat().st_size for p in dest.glob('*.webp')) // 1024
             print(f'{slug:11} {lang}  {len(shots):2} capturas  {kb:5} KB')
-    (SITE / 'tools/store_shots.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=1) + '\n')
+    manifest = {k: manifest[k] for k in SOURCES if k in manifest}
+    manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=1) + '\n')
     print('ok → tools/store_shots.json')
 
 
