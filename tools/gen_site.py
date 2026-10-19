@@ -237,8 +237,8 @@ APPS=[
                     ('03 / VER','A dónde va','Gastos recurrentes que se apuntan solos. Tandem Pro añade informes por categoría y por mes, recordatorios para apuntar y para liquidar, widgets, exportar a CSV y temas de color: una compra única, con 30 días de prueba gratis.')],
           privacy='Tandem guarda los nombres, los ingresos y los gastos en tu dispositivo y en tu propia cuenta de iCloud. No se comparte nada con nadie: ni con nosotros ni con un servidor.',
           captions=['Este mes: compartido, pagado, por liquidar','Fijos y variables, por mes','Liquidar: las cuentas, a la vista','Informes: quién pagó, mes a mes (Pro)']), appstore='6812734713',
-     # Retirada de la venta en los 175 países el 15/10/2026 (decisión de Sendoa): oculta, no borrada.
-     hidden=True),
+     # Retirada de la venta del 15 al 19/10/2026 (oculta entonces); de nuevo a la venta en los 175 países desde el 19/10.
+     ),
  app('meso','Meso','meso.png','Sendoa Sola','meso',
      ['meso-01-today.jpg','meso-02-workout.jpg','meso-03-grid.jpg','meso-04-week.jpg'],
      dict(one='The gym version of your coach\'s spreadsheet: blocks of weeks, load and reps per set, effort as reps in reserve.',
