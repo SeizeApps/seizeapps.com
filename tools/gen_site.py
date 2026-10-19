@@ -388,6 +388,27 @@ APPS=[
                     ('03 / RODAR','Una pantalla pensada para la bici','La cadencia en un anillo que late con el ritmo, el movimiento y su cuenta atrás, el esfuerzo y la zona, lo que viene y la clase entera como una carretera. Tus clases van a tu historial y, si quieres, a Apple Salud.')],
           privacy='Tu perfil de ciclista, las respuestas del cuestionario de salud y tus marcas de canciones se quedan en tu iPhone, y tu historial de clases se sincroniza con tu propio iCloud. Tu nombre y tu nombre de usuario se guardan en la base de datos de iCloud de BeatRide para que los nombres de usuario no se repitan. Para medir una canción, BeatRide mide su avance de Apple Music en el dispositivo y envía su título, artista y duración a LRCLIB (solo los tiempos de la canción). El micrófono solo lo usa «Aprender escuchando», que guarda medidas y nunca graba. Sin anuncios y sin seguimiento.',
           captions=['Elige la clase, la duración y la música','Tu clase: su forma, y por qué está armada así','Rodando: la cadencia al ritmo, el movimiento, la zona y lo que viene'])),
+ # Heed (0.0.11 en TestFlight, aún sin publicar en la Store): sin appstore hasta que esté a la venta.
+ app('heed','Heed','heed.png','Sendoa Sola','heed',
+     ['heed-01-today.jpg','heed-02-moment.jpg','heed-03-stats.jpg'],
+     dict(one='A moment before the apps you choose: a question, a breath or a fact about your day, written for that kind of app and that hour. Then you choose.',
+          tags=['Wellbeing','Awareness','EN · ES · FR'],
+          lede='<strong>Heed</strong> stands, sparingly, before the apps you choose. Most of the time you won\'t see a thing. Now and then, when it matters, it offers a moment first: a question, a breath, a fact about your day. Then you choose, and "Continue" is always there. It is not a blocker; it is a way of noticing, so the phone becomes a little less automatic, day by day.',
+          meta=['iOS 27+','iPhone · iPad','Free · Pro, one-time purchase','Apple Health','English · Spanish · French'],
+          features=[('01 / NOTICE','A moment that fits','Windows written for each kind of app (what you feel before a food delivery app is not what you feel before a video feed) and for the hour, from morning to night. Twelve kinds of moment, from what you are here for to ten seconds face down. Calm openings get only a four-second pause, and most go by with nothing at all.'),
+                    ('02 / LEARN','What helps you, on your device','Heed notices which windows lead you to "I\'m done" and shows them more often, all of it on your device. The statistics show your openings per app and hour, how long you took to decide and what you felt before each app. In the hours you choose for rest, and during a focus block, every opening asks.'),
+                    ('03 / THE DAY','One line for today','A line for the day with ideas to start from, a short closing of the day, a weekly review that slowly asks for less and a body programme of four stretches, eyes open or closed. Heed Pro adds as many apps as you like, focus blocks, the digital sunset, the whole programme, longer statistics, widgets and colour themes: a one-time purchase, with a free 30-day trial. No streaks, no points, no blame.')],
+          privacy='No account, no analytics, no ads. Your settings and what you write stay on your device and in your own iCloud account; the record of your openings, and what Heed learns from it, never leave the device. Apple Health is optional, off by default and write-only. Heed cannot see what you do in other apps.',
+          captions=['Today: one line for the day, and a focus block','A moment before an app: what is it for?','Statistics: your openings, and the times you did not go in']),
+     dict(one='Un momento antes de las apps que eliges: una pregunta, una respiración o un dato de tu día, escrito para ese tipo de app y esa hora. Luego eliges tú.',
+          tags=['Bienestar','Atención','ES · EN · FR'],
+          lede='<strong>Heed</strong> se antepone, con mesura, a las apps que eliges. La mayoría de las veces no verás nada. De vez en cuando, cuando importa, ofrece antes un momento: una pregunta, una respiración, un dato de tu día. Luego eliges tú, y «Seguir» siempre está ahí. No es un bloqueador; es una forma de darse cuenta, para que el móvil sea un poco menos automático, día a día.',
+          meta=['iOS 27+','iPhone · iPad','Gratis · Pro, pago único','Apple Salud','Castellano · Inglés · Francés'],
+          features=[('01 / NOTAR','Un momento que encaja','Ventanas escritas para cada tipo de app (lo que sientes antes de una app de comida a domicilio no es lo que sientes antes de un feed de vídeos) y para la hora, de la mañana a la noche. Doce tipos de momento, de a qué vienes a diez segundos boca abajo. Las aperturas tranquilas solo tienen una pausa de cuatro segundos, y la mayoría pasan sin nada.'),
+                    ('02 / APRENDER','Lo que te ayuda, en tu dispositivo','Heed se fija en qué ventanas te llevan a «Ya está» y las enseña más a menudo, todo en tu dispositivo. Las estadísticas enseñan tus aperturas por app y por hora, cuánto tardaste en decidir y qué sentías antes de cada app. En las horas que eliges para descansar, y durante un bloque de foco, cada apertura pregunta.'),
+                    ('03 / EL DÍA','Una línea para hoy','Una línea para el día con ideas para empezar, un cierre breve del día, una revisión semanal que poco a poco pide menos y un programa corporal de cuatro tramos, con los ojos abiertos o cerrados. Heed Pro añade todas las apps que quieras, bloques de foco, el atardecer digital, el programa completo, más estadísticas, widgets y temas de color: un pago único, con prueba gratis de 30 días. Sin rachas, sin puntos, sin culpas.')],
+          privacy='Sin cuenta, sin analíticas, sin anuncios. Tus ajustes y lo que escribes se quedan en tu dispositivo y en tu propia cuenta de iCloud; el registro de tus aperturas, y lo que Heed aprende de él, nunca salen del dispositivo. Apple Salud es opcional, está apagado por defecto y es solo de escritura. Heed no puede ver lo que haces en otras apps.',
+          captions=['Hoy: una línea para el día, y un bloque de foco','Un momento antes de una app: ¿a qué vienes?','Estadísticas: tus aperturas, y las veces que no entraste'])),
  # Atino (0.1.0, aún sin publicar en la Store): sin appstore hasta que `lookup` devuelva 1. Política propia en /atino/.
  app('atino','Atino','atino.png','Izotz Cristobal Mota','atino',
      ['atino-01-matches.jpg','atino-02-job.jpg','atino-03-filters.jpg'],
@@ -641,9 +662,9 @@ def redirect_page(url):
 
 # The app count and the app list in the copy come from APPS, so adding an
 # app never leaves a «six apps» behind (it did, 20/09/2026).
-NUMBERS={'en':['zero','one','two','three','four','five','six','seven','eight','nine','ten','eleven','twelve','thirteen','fourteen','fifteen','sixteen'],
-         'es':['cero','una','dos','tres','cuatro','cinco','seis','siete','ocho','nueve','diez','once','doce','trece','catorce','quince','dieciséis'],
-         'fr':['zéro','une','deux','trois','quatre','cinq','six','sept','huit','neuf','dix','onze','douze','treize','quatorze','quinze','seize']}
+NUMBERS={'en':['zero','one','two','three','four','five','six','seven','eight','nine','ten','eleven','twelve','thirteen','fourteen','fifteen','sixteen','seventeen','eighteen','nineteen','twenty'],
+         'es':['cero','una','dos','tres','cuatro','cinco','seis','siete','ocho','nueve','diez','once','doce','trece','catorce','quince','dieciséis','diecisiete','dieciocho','diecinueve','veinte'],
+         'fr':['zéro','une','deux','trois','quatre','cinq','six','sept','huit','neuf','dix','onze','douze','treize','quatorze','quinze','seize','dix-sept','dix-huit','dix-neuf','vingt']}
 def fill_counts():
     n=len(APPS)
     for lang in LANGS:
