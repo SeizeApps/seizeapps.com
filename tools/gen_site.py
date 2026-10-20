@@ -39,7 +39,7 @@ UI={
    phil_p='Four words we hold every screen against. If a feature fails one of them, it doesn\'t ship — however clever it is.',
    values=[('Beautiful','Design with an opinion: one dominant colour, weight before size, motion that means something. The kind of care you notice without being told.'),
            ('Useful','Every app answers one real question people ask every day, and answers it on the first screen. No dashboards for their own sake.'),
-           ('Human','No third-party analytics, no advertising, no dark patterns. No accounts either, except where the app is a community — Garum is the only one. Everything else lives on your iPhone and in your own iCloud, and we never see it. Copy written for people, in two languages.'),
+           ('Human','No advertising, no tracking, no dark patterns. No accounts either, except where the app is a community — Garum is the only one. What you put in an app stays on your iPhone and in your own iCloud, unless the app needs a server to do its job (to run a room, send an alert, rank a CV). Some apps report purchases to RevenueCat for purchase analytics only. Each app\'s privacy section says exactly what leaves your phone. Copy written for people, in two languages.'),
            ('Possible','Native all the way: SwiftUI, widgets, Live Activities, Siri and Apple Health when they earn their place. Small teams can build things that feel first-party.')],
    work_eyebrow='Work with us', work_h2='The same craft, <span>for your project.</span>',
    work_p='We take on a small number of client projects a year — the ones where we can bring the same standard we hold our own apps to. If you need something built well, talk to us.',
@@ -77,7 +77,7 @@ UI={
    phil_p='Cuatro palabras contra las que medimos cada pantalla. Si una función falla en una de ellas, no sale, por ingeniosa que sea.',
    values=[('Bonito','Diseño con criterio: un color dominante, peso antes que tamaño, movimiento que significa algo. Ese cuidado que se nota sin que nadie te lo diga.'),
            ('Útil','Cada app responde a una pregunta real que la gente se hace a diario, y la responde en la primera pantalla. Nada de paneles por el gusto de tenerlos.'),
-           ('Humano','Sin analítica de terceros, sin publicidad, sin trucos. Tampoco cuentas, salvo donde la app es una comunidad: Garum es la única. Todo lo demás vive en tu iPhone y en tu propio iCloud, y nosotros nunca lo vemos. Textos escritos para personas, en dos idiomas.'),
+           ('Humano','Sin publicidad, sin rastreo, sin trucos. Tampoco cuentas, salvo donde la app es una comunidad: Garum es la única. Lo que metes en una app se queda en tu iPhone y en tu propio iCloud, salvo que la app necesite un servidor para hacer su trabajo (llevar una sala, enviar un aviso, ordenar un CV). Algunas apps comunican las compras a RevenueCat, solo para analítica de compras. La sección de privacidad de cada app dice con exactitud qué sale de tu teléfono. Textos escritos para personas, en dos idiomas.'),
            ('Posible','Nativo de principio a fin: SwiftUI, widgets, Live Activities, Siri y Apple Health cuando aportan algo. Un equipo pequeño puede construir cosas que parecen de Apple.')],
    work_eyebrow='Trabaja con nosotros', work_h2='El mismo oficio, <span>para tu proyecto.</span>',
    work_p='Aceptamos unos pocos proyectos de clientes al año: los que nos permiten trabajar con el mismo nivel que exigimos a nuestras propias apps. Si necesitas algo bien hecho, hablemos.',
@@ -453,6 +453,52 @@ APPS=[
           privacy='Roomy analiza tu biblioteca solo en tu iPhone. Tus fotos, vídeos y metadatos nunca se suben. Sin cuenta, sin anuncios y sin seguimiento. Las compras pasan por Apple; lo único que Roomy comparte es la analítica de compras (RevenueCat, desde la versión 0.0.3), nunca tus fotos.',
           captions=['Inicio: espacio libre y el desorden que ha encontrado Roomy','Izquierda para borrar, derecha para quedarte','Fotos parecidas agrupadas, con la mejor marcada']),
      privacy_path={'en': 'roomy/privacy/', 'es': '../roomy/privacy/', 'fr': '../roomy/privacy/'}),
+ # Readably (0.1.0, rechazada el 20/10/2026 por 4.3(a), aún sin publicar en la Store): sin appstore hasta que `lookup` devuelva 1.
+ # Capturas: las de la ficha de ASC (tools/build_store_shots.py). Sin precios; el texto sale de la ficha.
+ app('readably','Readably','readably.png','Izotz Cristobal Mota','readably',
+     [],
+     dict(one="Reads articles, PDFs and text out loud with natural voices that run on your iPhone: private, offline after one download, no account.",
+          tags=['Reading','Text to speech','Offline'],
+          lede="<strong>Readably</strong> reads what you paste or open out loud, and keeps the sentence and the word being spoken highlighted so your eyes and your ears move together. The natural voices (the open-source Kokoro model, in English, Spanish and French) run on the iPhone itself: download them once and they keep working offline, with no meter and no minutes to count. Apple's built-in voices are ready from the first launch. PDFs are cleaned as they are imported: page numbers and repeated headers are skipped and words split across lines are joined, so it sounds like a person reading.",
+          meta=['iOS 17+','iPhone','Free · Pro, one-time purchase','Works offline'],
+          features=[('01 / LISTEN','Voices that live on your iPhone',"Listening is unlimited and your text never leaves the phone. The natural voices are a one-time download from inside the app; Apple's built-in voices work from the start, for every language your iPhone has a voice for."),
+                    ('02 / FOLLOW','Tap a sentence, start there','A calm reading view marks the sentence and the spoken word. Jump a sentence back or forward, change the speed from 0.5× to 3× while it plays, and keep listening with the screen locked.'),
+                    ('03 / PRO','The tools around the text','Readably Pro is one purchase, not a subscription, with a free 30-day trial: read from a link, scan text with the camera, open EPUB books, save a document as an M4A file and teach it how to say names. Everything else is free.')],
+          privacy="Readably has no account and no advertising SDK, and it sends no text, document or audio anywhere: every voice makes its sound on the iPhone. The one-time voice download comes from Hugging Face, which sees your internet address and nothing of yours. Reading a web link (Pro) asks that website for the page, the way a browser would. Readably also includes RevenueCat, used for purchase analytics only. Its privacy section spells out each of these.",
+          captions=[]),
+     dict(one="Lee en voz alta artículos, PDF y texto con voces naturales que funcionan en tu iPhone: privado, sin conexión tras una descarga y sin cuenta.",
+          tags=['Lectura','Texto a voz','Sin conexión'],
+          lede="<strong>Readably</strong> lee en voz alta lo que pegas o abres, y mantiene resaltadas la frase y la palabra que suenan para que los ojos y el oído vayan juntos. Las voces naturales (el modelo de código abierto Kokoro, en inglés, castellano y francés) funcionan en el propio iPhone: se descargan una vez y siguen funcionando sin conexión, sin contador y sin minutos que vigilar. Las voces integradas de Apple están listas desde el primer arranque. Los PDF se limpian al importarlos: se saltan los números de página y las cabeceras repetidas, y se unen las palabras partidas entre líneas, para que suene como una persona leyendo.",
+          meta=['iOS 17+','iPhone','Gratis · Pro, compra única','Funciona sin conexión'],
+          features=[('01 / ESCUCHAR','Voces que viven en tu iPhone',"Escuchar es ilimitado y tu texto nunca sale del teléfono. Las voces naturales se descargan una vez desde la propia app; las voces integradas de Apple funcionan desde el principio, para todos los idiomas con voz en tu iPhone."),
+                    ('02 / SEGUIR','Toca una frase y empieza ahí','Una vista de lectura tranquila marca la frase y la palabra que suena. Salta una frase atrás o adelante, cambia la velocidad de 0,5× a 3× mientras suena y sigue escuchando con la pantalla bloqueada.'),
+                    ('03 / PRO','Las herramientas que rodean al texto','Readably Pro es una sola compra, no una suscripción, con 30 días de prueba gratis: leer desde un enlace, escanear texto con la cámara, abrir libros EPUB, guardar un documento como archivo M4A y enseñarle cómo se dicen los nombres. Todo lo demás es gratis.')],
+          privacy="Readably no tiene cuenta ni SDK de publicidad, y no envía texto, documentos ni audio a ningún sitio: cada voz hace su sonido en el iPhone. La descarga única de las voces viene de Hugging Face, que ve tu dirección de internet y nada tuyo. Leer un enlace web (Pro) pide esa página a ese sitio, como haría un navegador. Readably incluye además RevenueCat, solo para analítica de compras. Su sección de privacidad detalla cada punto.",
+          captions=[]),
+     # The French policy has no Readably section yet: its page links to the English one.
+     privacy_path={'en': 'privacy.html#readably', 'es': 'privacy.html#readably', 'fr': '../privacy.html#readably'}),
+ # Overbit (0.1.2, rechazada el 20/10/2026 por 4.3(a), aún sin publicar en la Store): sin appstore hasta que `lookup` devuelva 1.
+ app('overbit','Overbit','overbit.png','Izotz Cristobal Mota','overbit',
+     [],
+     dict(one="One notification when Bitcoin's RSI crosses into oversold or overbought, then nothing until it crosses again.",
+          tags=['Finance','Alerts','9 languages'],
+          lede="<strong>Overbit</strong> watches one number, Bitcoin's RSI, and tells you when a closed candle crosses into oversold or overbought. One alert per crossing, and quiet while RSI stays in the zone. The price is not taken from an exchange: our server reads public on-chain trading pools (wrapped Bitcoin against the USDC stablecoin) and, if the pools disagree, alerts on timeframes of 15 minutes or less pause until they agree again. Overbit does not trade, hold anything for you or give financial advice.",
+          meta=['iOS 17+','iPhone','Free · Pro, one-time purchase','9 languages'],
+          features=[('01 / WATCH','One screen, one number','The live Bitcoin price, a chart of the selected timeframe and an RSI panel under it, with the 30 and 70 bands shaded and past crossings marked. Press and drag to read any candle.'),
+                    ('02 / ALERT','One alert per crossing','A notification when a candle closes past the line, delivered by push while the app is closed. The next one comes only after RSI leaves the zone and crosses back in. A history lists every alert sent.'),
+                    ('03 / PRO','Every timeframe, your levels','Out of the box Overbit watches one timeframe at RSI 14 with levels 30 and 70. Overbit Pro, a one-time purchase, opens all 15 timeframes from 5 minutes to 1 month and your own RSI length and levels.')],
+          privacy="Overbit has no account. To send alerts it registers a random install identifier (and, with alerts on, your push token and the timeframes you watch) with a Seize server in Frankfurt; Delete my data in Settings removes that record. Overbit also includes RevenueCat, used for purchase analytics only. Its privacy section spells out each of these.",
+          captions=[]),
+     dict(one="Un aviso cuando el RSI de Bitcoin cruza a sobreventa o sobrecompra, y nada más hasta que vuelve a cruzar.",
+          tags=['Finanzas','Avisos','9 idiomas'],
+          lede="<strong>Overbit</strong> vigila un solo número, el RSI de Bitcoin, y te avisa cuando una vela cerrada cruza a sobreventa o sobrecompra. Un aviso por cruce, y silencio mientras el RSI sigue en la zona. El precio no sale de un exchange: nuestro servidor lee fondos de liquidez públicos on-chain (Bitcoin envuelto frente a la stablecoin USDC) y, si los fondos discrepan, los avisos de marcos de 15 minutos o menos se pausan hasta que vuelvan a coincidir. Overbit no opera, no guarda nada por ti y no da consejos financieros.",
+          meta=['iOS 17+','iPhone','Gratis · Pro, compra única','9 idiomas'],
+          features=[('01 / VIGILAR','Una pantalla, un número','El precio de Bitcoin en vivo, un gráfico del marco elegido y debajo un panel de RSI con las bandas de 30 y 70 sombreadas y los cruces pasados marcados. Pulsa y arrastra para leer cualquier vela.'),
+                    ('02 / AVISAR','Un aviso por cruce','Una notificación cuando una vela cierra más allá de la línea, entregada por push con la app cerrada. El siguiente llega solo cuando el RSI sale de la zona y vuelve a entrar. Un historial lista cada aviso enviado.'),
+                    ('03 / PRO','Todos los marcos, tus niveles','De serie, Overbit vigila un marco con RSI 14 y niveles 30 y 70. Overbit Pro, una compra única, abre los 15 marcos de 5 minutos a 1 mes y tu propia longitud y niveles de RSI.')],
+          privacy="Overbit no tiene cuenta. Para enviar avisos registra un identificador de instalación aleatorio (y, con los avisos activados, tu token push y los marcos que vigilas) en un servidor de Seize en Fráncfort; Borrar mis datos, en Ajustes, elimina ese registro. Overbit incluye además RevenueCat, solo para analítica de compras. Su sección de privacidad detalla cada punto.",
+          captions=[]),
+     ),
  # Yaybo (0.1.0, aún sin publicar en la Store): sin appstore hasta que `lookup` devuelva 1. Política y condiciones propias en /yaybo/ (inglés y castellano; COPPA). Sin capturas hasta que existan las de la Store.
  app('yaybo','Yaybo','yaybo.png','Izotz Cristobal Mota','yaybo',
      [],
@@ -652,13 +698,18 @@ REDIRECTS=[
     ('criba/terms/index.html', 'https://seizeapps.com/garum/terms/'),
     ('apps/criba.html', 'https://seizeapps.com/apps/garum.html'),
     ('es/apps/criba.html', 'https://seizeapps.com/es/apps/garum.html'),
+    # La ficha de Cycle se llama cycle-timers; /apps/cycle.html es lo que se escribe a mano (20/10/2026).
+    ('apps/cycle.html', 'https://seizeapps.com/apps/cycle-timers.html', 'Cycle Timers'),
+    ('es/apps/cycle.html', 'https://seizeapps.com/es/apps/cycle-timers.html', 'Cycle Timers'),
+    ('fr/apps/cycle.html', 'https://seizeapps.com/fr/apps/cycle-timers.html', 'Cycle Timers'),
 ]
 
-def redirect_page(url):
+def redirect_page(url, title='Garum'):
     return ('<!doctype html>\n<html><head><meta charset="utf-8">\n'
-            f'<title>Garum</title>\n<link rel="canonical" href="{url}">\n'
+            f'<title>{title}</title>\n<link rel="canonical" href="{url}">\n'
             f'<meta http-equiv="refresh" content="0; url={url}">\n<meta name="robots" content="noindex">\n'
-            f'</head><body><p>Criba se llama ahora Garum · Criba is now Garum: <a href="{url}">{url}</a></p></body></html>\n')
+            + (f'</head><body><p>Criba se llama ahora Garum · Criba is now Garum: <a href="{url}">{url}</a></p></body></html>\n' if title=='Garum'
+               else f'</head><body><p><a href="{url}">{title}</a></p></body></html>\n'))
 
 # The app count and the app list in the copy come from APPS, so adding an
 # app never leaves a «six apps» behind (it did, 20/09/2026).
@@ -923,6 +974,6 @@ if __name__=='__main__':
     # Criba pasó a llamarse Garum (28/09/2026). Sus URL viejas siguen vivas (van dentro de builds ya
     # subidas y de fichas de la Store): GitHub Pages no redirige en el servidor, así que cada una es una
     # página mínima con meta refresh y canonical a la nueva.
-    for old, new in REDIRECTS:
-        write(old, redirect_page(new))
+    for old, new, *title in REDIRECTS:
+        write(old, redirect_page(new, *title))
     print('ok', len(APPS), 'apps ×', len(LANGS), 'languages · Garum legal and share pages ·', len(REDIRECTS), 'redirecciones')

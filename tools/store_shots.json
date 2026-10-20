@@ -1368,6 +1368,229 @@
    ]
   }
  },
+ "readably": {
+  "source": "readably-0.1.0",
+  "langs": {
+   "en": [
+    {
+     "base": "assets/store/readably/en/01-follow",
+     "w": 400,
+     "h": 869,
+     "title": "Hear it. Follow every word.",
+     "subtitle": "The sentence and the word being read stay highlighted, in a calm reading view."
+    },
+    {
+     "base": "assets/store/readably/en/02-lockscreen",
+     "w": 400,
+     "h": 869,
+     "title": "Lock your phone. It keeps reading.",
+     "subtitle": "The sentence, your progress and the time left, right on the Lock Screen."
+    },
+    {
+     "base": "assets/store/readably/en/03-library",
+     "w": 400,
+     "h": 869,
+     "title": "Paste or import. Then listen.",
+     "subtitle": "Articles, PDFs and text files in one library, each one keeping your place."
+    },
+    {
+     "base": "assets/store/readably/en/04-pdf",
+     "w": 400,
+     "h": 869,
+     "title": "PDFs, read the way you would.",
+     "subtitle": "Page numbers and repeated headers are skipped, and split words are joined."
+    },
+    {
+     "base": "assets/store/readably/en/05-offline",
+     "w": 400,
+     "h": 869,
+     "title": "Download once. Listen offline.",
+     "subtitle": "The on-device voices run on your iPhone: no account, and nothing leaves it."
+    },
+    {
+     "base": "assets/store/readably/en/06-night",
+     "w": 400,
+     "h": 869,
+     "title": "Easy on the eyes, day or night.",
+     "subtitle": "Light or dark, and four text sizes you choose."
+    },
+    {
+     "base": "assets/store/readably/en/07-pro",
+     "w": 400,
+     "h": 869,
+     "title": "Read from a link. Save it as audio.",
+     "subtitle": "Scan a page, open EPUB books and teach Readably how to say names."
+    }
+   ],
+   "es": [
+    {
+     "base": "assets/store/readably/es/01-follow",
+     "w": 400,
+     "h": 869,
+     "title": "Escúchalo y sigue cada palabra.",
+     "subtitle": "La frase y la palabra que suenan se quedan resaltadas, en una vista de lectura tranquila."
+    },
+    {
+     "base": "assets/store/readably/es/02-lockscreen",
+     "w": 400,
+     "h": 869,
+     "title": "Bloquea tu iPhone. Sigue leyendo.",
+     "subtitle": "La frase, tu avance y el tiempo que falta, en la pantalla de bloqueo."
+    },
+    {
+     "base": "assets/store/readably/es/03-library",
+     "w": 400,
+     "h": 869,
+     "title": "Pega o importa. Y escucha.",
+     "subtitle": "Artículos, PDFs y archivos de texto en una biblioteca, cada uno con tu lugar guardado."
+    },
+    {
+     "base": "assets/store/readably/es/04-pdf",
+     "w": 400,
+     "h": 869,
+     "title": "PDF leídos como los leerías tú.",
+     "subtitle": "Se saltan los números de página y los encabezados repetidos, y se unen las palabras partidas."
+    },
+    {
+     "base": "assets/store/readably/es/05-offline",
+     "w": 400,
+     "h": 869,
+     "title": "Descarga una vez. Escucha sin conexión.",
+     "subtitle": "Las voces del dispositivo funcionan en tu iPhone: sin cuenta, y nada sale de él."
+    },
+    {
+     "base": "assets/store/readably/es/06-night",
+     "w": 400,
+     "h": 869,
+     "title": "Cómoda a la vista, de día y de noche.",
+     "subtitle": "Claro u oscuro, y cuatro tamaños de texto a tu gusto."
+    },
+    {
+     "base": "assets/store/readably/es/07-pro",
+     "w": 400,
+     "h": 869,
+     "title": "Lee desde un enlace. Guárdalo como audio.",
+     "subtitle": "Escanea una página, abre libros EPUB y enséñale a Readably cómo decir los nombres."
+    }
+   ]
+  }
+ },
+ "overbit": {
+  "source": "overbit-0.1.2",
+  "langs": {
+   "en": [
+    {
+     "base": "assets/store/overbit/en/01-on-chain",
+     "w": 400,
+     "h": 869,
+     "title": "Bitcoin, live on-chain.",
+     "subtitle": "Straight from on-chain trading pools, with RSI right under the chart. More timeframes with Overbit Pro."
+    },
+    {
+     "base": "assets/store/overbit/en/02-one-alert",
+     "w": 400,
+     "h": 869,
+     "title": "One alert. No noise.",
+     "subtitle": "A notification when a candle closes past 30 or 70. Then quiet. More timeframes with Overbit Pro."
+    },
+    {
+     "base": "assets/store/overbit/en/03-timeframes",
+     "w": 400,
+     "h": 869,
+     "title": "5 minutes to 1 month.",
+     "subtitle": "With Overbit Pro, switch timeframes in a tap and read RSI on each one."
+    },
+    {
+     "base": "assets/store/overbit/en/04-your-levels",
+     "w": 400,
+     "h": 869,
+     "title": "Your timeframes, your levels.",
+     "subtitle": "Overbit Pro: all 15 timeframes and your own RSI length, oversold and overbought lines."
+    },
+    {
+     "base": "assets/store/overbit/en/05-pro",
+     "w": 400,
+     "h": 869,
+     "title": "Go further with Pro.",
+     "subtitle": "Overbit Pro adds every timeframe, custom RSI length and levels, and a feedback box."
+    }
+   ],
+   "es": [
+    {
+     "base": "assets/store/overbit/es/01-on-chain",
+     "w": 400,
+     "h": 869,
+     "title": "Bitcoin en vivo, on-chain.",
+     "subtitle": "Directo de fondos de liquidez on-chain, con el RSI justo debajo del gráfico. Más marcos con Overbit Pro."
+    },
+    {
+     "base": "assets/store/overbit/es/02-one-alert",
+     "w": 400,
+     "h": 869,
+     "title": "Un aviso. Sin ruido.",
+     "subtitle": "Un aviso cuando una vela cierra más allá de 30 o 70. Después, silencio. Más marcos con Overbit Pro."
+    },
+    {
+     "base": "assets/store/overbit/es/03-timeframes",
+     "w": 400,
+     "h": 869,
+     "title": "De 5 minutos a 1 mes.",
+     "subtitle": "Con Overbit Pro, cambia de marco con un toque y lee el RSI de cada uno."
+    },
+    {
+     "base": "assets/store/overbit/es/04-your-levels",
+     "w": 400,
+     "h": 869,
+     "title": "Tus marcos, tus niveles.",
+     "subtitle": "Overbit Pro: los 15 marcos de tiempo y tu propia longitud de RSI y líneas de sobreventa y sobrecompra."
+    },
+    {
+     "base": "assets/store/overbit/es/05-pro",
+     "w": 400,
+     "h": 869,
+     "title": "Llega más lejos con Pro.",
+     "subtitle": "Overbit Pro añade todos los marcos, longitud y niveles de RSI propios y un buzón de comentarios."
+    }
+   ],
+   "fr": [
+    {
+     "base": "assets/store/overbit/fr/01-on-chain",
+     "w": 400,
+     "h": 869,
+     "title": "Bitcoin en direct on-chain.",
+     "subtitle": "Direct des pools on-chain, avec le RSI juste sous le graphique. Plus de durées avec Overbit Pro."
+    },
+    {
+     "base": "assets/store/overbit/fr/02-one-alert",
+     "w": 400,
+     "h": 869,
+     "title": "Une alerte. Zéro bruit.",
+     "subtitle": "Une alerte quand une bougie clôture au-delà de 30 ou 70. Puis, silence. Plus de durées avec Overbit Pro."
+    },
+    {
+     "base": "assets/store/overbit/fr/03-timeframes",
+     "w": 400,
+     "h": 869,
+     "title": "De 5 minutes à 1 mois.",
+     "subtitle": "Avec Overbit Pro, change d’unité de temps d’un toucher et lis le RSI de chacune."
+    },
+    {
+     "base": "assets/store/overbit/fr/04-your-levels",
+     "w": 400,
+     "h": 869,
+     "title": "Tes unités, tes niveaux.",
+     "subtitle": "Overbit Pro : les 15 unités de temps, ta propre longueur de RSI et tes lignes de survente et de surachat."
+    },
+    {
+     "base": "assets/store/overbit/fr/05-pro",
+     "w": 400,
+     "h": 869,
+     "title": "Va plus loin avec Pro.",
+     "subtitle": "Overbit Pro ajoute toutes les durées, ta longueur et tes niveaux de RSI, et les commentaires."
+    }
+   ]
+  }
+ },
  "sacapuntas": {
   "source": "sacapuntas-0.7.0",
   "langs": {
