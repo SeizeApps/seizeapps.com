@@ -1,4 +1,4 @@
-"""Readably: config for tools/gen_legal_apps.py. Facts: Readably 0.1.0 (12) at SeizeRepo 5ee88ea7e, local-first.
+"""Readably: config for tools/gen_legal_apps.py. Pages: /readably/ (home, index.html, built by legal_apps/readably_layout.py), privacy, terms, support. Facts: Readably 0.1.0 (12) at SeizeRepo 5ee88ea7e, local-first.
 Every voice runs on the iPhone; the whole cloud stack (relay, plans, account, Fish Audio / OpenRouter voices) is
 parked behind ReadablyApp.cloudEnabled = false and is NOT described here. Network use is exactly: a user-started
 voice download from Hugging Face, the Pro "Read from a link" fetch, StoreKit, RevenueCat."""
@@ -6,7 +6,7 @@ from .common import terms, rights
 
 # Spruce green from Palette.swift (#1F6B63 light / #7CC7BA dark) on the app's paper (#F5F0E6) and night (#14161A).
 APP = dict(
-    slug='readably', name='Readably', icon='readably.png',
+    slug='readably', name='Readably', icon='readably.png', renderer='readably_layout',
     appStoreUrl='https://apps.apple.com/app/id6821341514',
     email='hello@seizeapps.com', publisher='Izotz Cristobal Mota (Seize Apps)',
     updated_en='October 22, 2026',
@@ -127,6 +127,8 @@ SUPPORT = r'''
 '''
 
 APP['pages'] = {
+    ('en', 'index'): dict(title='Readably - Text to Speech, on your iPhone',
+                          desc='Natural voices that run on your iPhone. Private, offline after one download, no account. Paste text or open a PDF and just listen.', body=''),
     ('en', 'privacy'): dict(title='Readably · Privacy Policy',
                             desc='Readably privacy: what you read stays on your iPhone. On-device voices, no account, no ads, no tracking.', body=PRIVACY),
     ('en', 'terms'): dict(title='Readably · Terms of Use', desc='Terms of use for Readably.', body=TERMS),
