@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cycle Timers · Cleaning and chores, last done and next due</title>
+<meta name="description" content="Cycle Timers keeps track of cleaning and household chores as countdown rings: when you last did each one, and when it is due again.">
+<link rel="canonical" href="https://seizeapps.com/cycle/">
+<meta name="theme-color" content="#F4F6F5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#101112" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="../assets/icons/cycle-timers.png">
+<link rel="apple-touch-icon" href="../assets/icons/cycle-timers.png">
+<style>
+:root{--bg:#F4F6F5;--card:#FFFFFF;--soft:#EBF5F2;--fg:#1C1C1E;--muted:#5C5C61;--line:#DDE3E1;--track:#D3DEDB;--accent:#0E7C6B;--onaccent:#FFFFFF;color-scheme:light dark}
+@media (prefers-color-scheme:dark){:root{--bg:#101112;--card:#1C1D1F;--soft:#15302B;--fg:#F2F2F7;--muted:#AEAEB2;--line:#303234;--track:#2E3B38;--accent:#3CC9AE;--onaccent:#0A1F1B}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-bottom:96px}
+body.cy{margin:0;background:var(--bg);color:var(--fg);font:17px/1.55 -apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif}
+.cy-shell{max-width:640px;margin:0 auto;padding:28px 16px 24px}
+.cy-top{text-align:center;padding:12px 0 22px}
+.cy-ring{position:relative;width:132px;height:132px;margin:0 auto 14px}
+.cy-ring svg{position:absolute;inset:0;width:100%;height:100%}
+.cy-ring .cy-track{fill:none;stroke:var(--track);stroke-width:8}
+.cy-ring .cy-arc{fill:none;stroke:var(--accent);stroke-width:8;stroke-linecap:round}
+.cy-ring img{position:absolute;left:32px;top:32px;width:68px;height:68px;border-radius:16px}
+.cy-kicker{margin:0 0 4px;font-size:15px;font-weight:600;letter-spacing:.02em}
+.cy-top h1{font-size:30px;line-height:1.15;font-weight:700;letter-spacing:-.01em;margin:0 0 10px}
+.cy-stamp,.cy-sub{margin:0 auto;color:var(--muted);font-size:15px;max-width:30em}
+.cy-cta{margin:18px 0 0}
+.cy-store{display:inline-block;padding:12px 22px;border-radius:999px;background:var(--accent);color:var(--onaccent);font-weight:600;text-decoration:none}
+.cy-stamp::before{content:"";display:inline-block;width:.8em;height:.8em;border:2px solid var(--accent);border-radius:50%;margin-right:.55em;vertical-align:-.05em}
+.cy-short{background:var(--soft);border:1px solid var(--line);border-radius:20px;padding:16px 20px;margin:0 0 6px}
+.cy-glance{margin:0 0 8px;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.cy-short ul{margin:0;padding-left:20px}
+.cy-short li{margin:0 0 6px}
+.cy-short li:last-child{margin:0}
+.cy-main{counter-reset:cysec}
+.cy-sec{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px 20px 8px;margin:14px 0}
+.cy-sec h2{display:flex;align-items:center;gap:12px;font-size:19px;line-height:1.25;font-weight:650;margin:0 0 10px}
+.cy-sec h2::before{counter-increment:cysec;content:counter(cysec);flex:none;display:grid;place-items:center;width:30px;height:30px;border:2px solid var(--accent);border-radius:50%;font-size:14px;font-weight:600}
+.cy-sec p,.cy-sec li{margin:0 0 12px}
+.cy-sec ul{padding-left:22px}
+.cy-contact{background:var(--soft)}
+.cy-contact h2::before{content:"";counter-increment:none;width:30px;height:30px;border-radius:50%;border-color:var(--accent);background:radial-gradient(circle,var(--accent) 0 28%,transparent 31%)}
+.cy-contact .contact{font-size:20px;font-weight:600}
+.cy-group{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:26px 8px 4px}
+.cy-q{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:16px 20px 6px;margin:10px 0}
+.cy-q h3{display:flex;align-items:flex-start;gap:10px;font-size:17px;line-height:1.3;font-weight:650;margin:0 0 8px}
+.cy-q h3::before{content:"";flex:none;width:12px;height:12px;margin-top:.3em;border:2px solid var(--accent);border-radius:50%}
+.cy-q p{margin:0 0 12px}
+a{color:var(--accent);text-underline-offset:3px}
+.cy-tabs{position:sticky;bottom:14px;z-index:2;display:flex;gap:4px;width:max-content;max-width:100%;margin:26px auto 22px;padding:5px;background:var(--card);border:1px solid var(--line);border-radius:999px;box-shadow:0 6px 24px rgba(0,0,0,.14)}
+.cy-tabs a{display:block;min-width:92px;text-align:center;padding:9px 18px;border-radius:999px;color:var(--fg);text-decoration:none;font-size:15px;font-weight:600}
+.cy-tabs a[aria-current=page]{background:var(--accent);color:var(--onaccent)}
+.cy-tabs a:focus-visible,a:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.cy-end{text-align:center;color:var(--muted);font-size:14px;padding:0 8px}
+.cy-end p{margin:0 0 8px}
+.cy-end a{color:var(--muted)}
+@media (max-width:420px){.cy-top h1{font-size:26px}.cy-tabs a{min-width:0;padding:9px 14px}}
+</style>
+</head>
+<body class="cy">
+<div class="cy-shell">
+<main class="cy-main">
+<header class="cy-top">
+<div class="cy-ring" aria-hidden="true"><svg viewBox="0 0 120 120" focusable="false"><circle class="cy-track" cx="60" cy="60" r="52"/><circle class="cy-arc" cx="60" cy="60" r="52" pathLength="100" stroke-dasharray="25 100" transform="rotate(-90 60 60)"/></svg><img src="../assets/icons/cycle-timers.png" alt="" width="68" height="68"></div>
+<p class="cy-kicker">For iPhone and iPad</p>
+<h1>Cycle Timers</h1>
+<p class="cy-sub">Keep track of cleaning and household chores: when you last did each one, and when it's due again.</p>
+<p class="cy-cta"><a class="cy-store" href="https://apps.apple.com/app/id6796827400">Get Cycle Timers on the App Store</a></p>
+</header>
+<aside class="cy-short" aria-labelledby="cy-glance"><p class="cy-glance" id="cy-glance">In the next update</p><ul><li>Version 0.0.23, not yet on the App Store, adds starter packs (Cleaning, Household chores, Home maintenance, Pets, Plants, Food &amp; expiry, Personal), a history of every completion with optional notes and a calendar, places for each task, skip, snooze and pause, and fixed-day schedules such as every Monday or the 1st of the month.</li></ul></aside>
+<section class="cy-sec" aria-labelledby="cy-s1"><h2 id="cy-s1">Every chore on a ring</h2>
+<p>Each task is a ring that drains from green to yellow to orange and turns red when it's overdue. One glance shows what's fine, what's coming and what needs doing today.</p></section>
+<section class="cy-sec" aria-labelledby="cy-s2"><h2 id="cy-s2">Last done, next due</h2>
+<p>A task counts from the day you last did it. One tap marks it done and starts its next cycle. Did it yesterday? Backdate it. Tapped by mistake? Undo it with one tap.</p></section>
+<section class="cy-sec" aria-labelledby="cy-s3"><h2 id="cy-s3">Cleaning, and everything else that repeats</h2>
+<p>Start from household templates (Kitchen, Cleaning, Pets, Bathroom, Home): vacuuming, clean sheets, the bathroom, the cat litter, watering the plants, the air filter, the smoke alarm, leftovers in the fridge. Or make your own in seconds: name, icon, how often.</p></section>
+<section class="cy-sec" aria-labelledby="cy-s4"><h2 id="cy-s4">Widgets you can tap</h2>
+<p>Interactive Home Screen widgets show your tasks; tap a ring to mark it done without opening the app, and choose exactly which tasks each widget shows. One local notification arrives when something comes due, with a Mark Done button on it, and Siri can mark a task done for you.</p></section>
+<section class="cy-sec" aria-labelledby="cy-s5"><h2 id="cy-s5">Free to start, Pro once</h2>
+<p>Free: up to 4 tasks and the Small Home Screen widget. Cycle Pro is an optional one-time in-app purchase, not a subscription: unlimited tasks, Medium and Large widgets (plus Extra Large on iPad), Lock Screen widgets and Cycle Wrapped, your year in Cycle. The price is shown in the App Store in your currency.</p></section>
+<section class="cy-sec cy-contact" aria-labelledby="cy-s6"><h2 id="cy-s6">Contact</h2>
+<p class="contact"><a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a></p>
+<p>No account and no tracking: your tasks stay on your device. Read the <a href="privacy.html">Privacy Policy</a>, the <a href="terms.html">Terms of Use</a> and <a href="support.html">Support</a>.</p></section>
+</main>
+<nav class="cy-tabs" aria-label="Cycle Timers"><a href="./" aria-current=page>Home</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="support.html">Support</a></nav>
+<footer class="cy-end">
+<p>Questions about Cycle Timers or these pages? Write to <a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a>.</p>
+<p><a href="./">Cycle Timers</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Use</a> · <a href="support.html">Support</a> · <a href="https://apps.apple.com/app/id6796827400">Cycle Timers on the App Store</a></p>
+<p>© 2026 Izotz Cristobal Mota</p>
+</footer>
+</div>
+</body>
+</html>

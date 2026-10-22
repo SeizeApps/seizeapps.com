@@ -1,4 +1,6 @@
-"""Cycle Timers: config for tools/gen_legal_apps.py. Facts verified against the app's code at HEAD 252e1c78d
+"""Cycle Timers: config for tools/gen_legal_apps.py. Pages: /cycle/ (HOME, index.html), privacy, terms, support.
+HOME describes the version on sale (0.0.22, from its live App Store description and main's code) and names
+0.0.23's additions as the next update: rewrite that panel and the cards when 0.0.23 goes on sale. Facts verified against the app's code at HEAD 252e1c78d
 (0.0.23 build 30): App Group storage, no iCloud/CloudKit, RevenueCat in observer mode, PrivacyInfo = Device ID +
 Purchase History, feedback by mailto, Cycle Pro = com.seizeapps.cycle.pro.lifetime, freeTimerCap = 4."""
 
@@ -132,7 +134,36 @@ SUPPORT = r'''
 <p>Delete a task from the app (you can also delete or edit single entries of its history), or delete Cycle to remove everything it stores on that device. There is no account to delete, and no "erase everything" button. To ask RevenueCat, our purchase processor, to delete its purchase record, write to @mail@.</p>
 '''
 
+HOME = r'''
+<h1>Cycle Timers</h1>
+<p class="updated">Keep track of cleaning and household chores: when you last did each one, and when it's due again.</p>
+<ul class="summary" data-label="In the next update">
+<li>Version 0.0.23, not yet on the App Store, adds starter packs (Cleaning, Household chores, Home maintenance, Pets, Plants, Food &amp; expiry, Personal), a history of every completion with optional notes and a calendar, places for each task, skip, snooze and pause, and fixed-day schedules such as every Monday or the 1st of the month.</li>
+</ul>
+
+<h2>Every chore on a ring</h2>
+<p>Each task is a ring that drains from green to yellow to orange and turns red when it's overdue. One glance shows what's fine, what's coming and what needs doing today.</p>
+
+<h2>Last done, next due</h2>
+<p>A task counts from the day you last did it. One tap marks it done and starts its next cycle. Did it yesterday? Backdate it. Tapped by mistake? Undo it with one tap.</p>
+
+<h2>Cleaning, and everything else that repeats</h2>
+<p>Start from household templates (Kitchen, Cleaning, Pets, Bathroom, Home): vacuuming, clean sheets, the bathroom, the cat litter, watering the plants, the air filter, the smoke alarm, leftovers in the fridge. Or make your own in seconds: name, icon, how often.</p>
+
+<h2>Widgets you can tap</h2>
+<p>Interactive Home Screen widgets show your tasks; tap a ring to mark it done without opening the app, and choose exactly which tasks each widget shows. One local notification arrives when something comes due, with a Mark Done button on it, and Siri can mark a task done for you.</p>
+
+<h2>Free to start, Pro once</h2>
+<p>Free: up to 4 tasks and the Small Home Screen widget. Cycle Pro is an optional one-time in-app purchase, not a subscription: unlimited tasks, Medium and Large widgets (plus Extra Large on iPad), Lock Screen widgets and Cycle Wrapped, your year in Cycle. The price is shown in the App Store in your currency.</p>
+
+<h2>Contact</h2>
+<p class="contact">@mail@</p>
+<p>No account and no tracking: your tasks stay on your device. Read the <a href="@privacy@">Privacy Policy</a>, the <a href="@terms@">Terms of Use</a> and <a href="@support@">Support</a>.</p>
+'''
+
 APP['pages'] = {
+    ('en', 'index'): dict(title='Cycle Timers · Cleaning and chores, last done and next due',
+                          desc='Cycle Timers keeps track of cleaning and household chores as countdown rings: when you last did each one, and when it is due again.', body=HOME),
     ('en', 'privacy'): dict(title='Cycle Timers · Privacy Policy',
                             desc='Cycle Timers privacy: your tasks stay on your device. No account, no ads, no tracking.', body=PRIVACY),
     ('en', 'terms'): dict(title='Cycle Timers · Terms of Use', desc='Terms of use for Cycle Timers.', body=TERMS),
