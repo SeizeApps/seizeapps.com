@@ -21,6 +21,9 @@ Tempo #007AFF -> #006BE0 (dark #1083FF), Atino #FFB547 -> #A36100, Roomy #C9E64A
 GamingHub #0077FF -> #006AE2, Overbit #6FC1DD -> #247B99. Cycle, Readably, and the dark modes of Atino, Roomy,
 GamingHub and Overbit use the declared accent unchanged.
 
+`live`: True once the app is on sale (same moment as `appstore=` in gen_site.py's APPS: today Cycle Timers and Tempo).
+Until then the page links to nothing on apps.apple.com, because that URL answers 404.
+
 Run alone (`python3 tools/gen_legal_apps.py`) or through `python3 tools/gen_site.py`.
 """
 import colorsys, importlib, os, sys
@@ -150,6 +153,9 @@ def page(app, th, lang, key, title, desc, body, depth, alts):
     for l2, k2 in alts.items():
         if l2 != lang:
             nav += f'<a href="{base}{k2}.html" hreflang="{l2}" lang="{l2}">{"English" if l2 == "en" else "Español"}</a>'
+    live = app.get('live', False)  # the App Store URL 404s until the app is on sale: no dead link on a legal page
+    brand_href = app['appStoreUrl'] if live else f'{base}{nav_pages[0][0]}.html'
+    store_link = f' · <a href="{app["appStoreUrl"]}">{u["store"].format(name=app["name"])}</a>' if live else ''
     foot_links = ' · '.join(f'<a href="{base}{s}.html">{label}</a>' for s, label in u['foot'])
     alt_links = ''.join(f'<link rel="alternate" hreflang="{l2}" href="{HOST}{slug}/{k2}.html">\n' for l2, k2 in alts.items())
     css = CSS % dict(l_mark=th['light']['mark'], l_accent=th['light']['accent'], l_bg=th['light']['bg'], l_fg=th['light']['fg'],
@@ -172,7 +178,7 @@ def page(app, th, lang, key, title, desc, body, depth, alts):
 </head>
 <body>
 <header><div class="wrap">
-<a class="brand" href="{app['appStoreUrl']}"><img src="{icon}" alt="" width="32" height="32">{app['name']}</a>
+<a class="brand" href="{brand_href}"><img src="{icon}" alt="" width="32" height="32">{app['name']}</a>
 <nav aria-label="{app['name']}">{nav}</nav>
 </div></header>
 <main><div class="wrap">
@@ -180,7 +186,7 @@ def page(app, th, lang, key, title, desc, body, depth, alts):
 </div></main>
 <footer><div class="wrap">
 <p>{u['by'].format(name=app['name'], publisher=app.get('publisher_' + lang, app['publisher']), mail=mail)}</p>
-<p>{foot_links} · <a href="{app['appStoreUrl']}">{u['store'].format(name=app['name'])}</a></p>
+<p>{foot_links}{store_link}</p>
 </div></footer>
 </body>
 </html>

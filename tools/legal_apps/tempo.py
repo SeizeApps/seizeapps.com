@@ -9,6 +9,7 @@ from .common import terms, rights, CHANGES, CONTACT
 APP = dict(
     slug='tempo', name='Tempo', icon='tempo.png',
     appStoreUrl='https://apps.apple.com/app/id6761499275',
+    live=True,
     email='hello@seizeapps.com', publisher='Izotz Cristobal Mota (Seize Apps)',
     updated_en='October 22, 2026',
     theme=dict(

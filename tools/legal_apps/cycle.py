@@ -5,6 +5,7 @@ Purchase History, feedback by mailto, Cycle Pro = com.seizeapps.cycle.pro.lifeti
 APP = dict(
     slug='cycle', name='Cycle Timers', icon='cycle-timers.png',
     appStoreUrl='https://apps.apple.com/app/id6796827400',
+    live=True,
     email='hello@seizeapps.com', publisher='Izotz Cristobal Mota',
     updated_en='October 22, 2026',
     # Teal, from the app's AccentColor (#0E7C6B light / #3CC9AE dark). Both pass 4.5:1 as text, so no adjustment.
