@@ -1,13 +1,13 @@
 """GamingHub: config for tools/gen_legal_apps.py. Facts: GamingHub 0.5.2 (41) at SeizeRepo 5ee88ea7e. Release ships
-five games (The Mind, Impostor, Codigo Secreto, Wavelength, Times Up); Streak, Coartada and Rewind are withheld, so
-Rewind's iTunes/Apple Music flow is not described here. Online play runs on Supabase (anonymous auth, rooms,
+five games (Unison, Impostor, Vault, Spot On, Fishbowl); the other games are withheld, so
+no flow of theirs is described here. Online play runs on Supabase (anonymous auth, rooms,
 Edge Functions, Realtime); the project's region is not in the repo and is not stated. Camera is the only permission."""
 from .common import terms, rights, revenuecat
 
 # Blue from AccentColor (#0077FF) and the app's dark-UI blue (#5DD4FF, SeizeTheme.accentCyan). #0077FF is 4.1:1
 # on white, so light-mode text uses a slightly darker blue of the same hue (found by the generator).
 APP = dict(
-    slug='gaminghub', name='GamingHub', icon='gaminghub.png',
+    slug='gaminghub', name='GamingHub', icon='gaminghub.png', renderer='gaminghub_layout',
     appStoreUrl='https://apps.apple.com/app/id6761752010',
     email='hello@seizeapps.com', publisher='Izotz Cristobal Mota (Seize Apps)',
     updated_en='October 22, 2026',
@@ -43,7 +43,7 @@ PRIVACY = r'''
 <p>GamingHub shows no advertising, does not ask for tracking permission and does not track you across apps or websites. Its only third-party software is the Supabase client library and RevenueCat's library. GamingHub makes no calls to any AI service.</p>
 
 <h2>Purchases</h2>
-<p>GamingHub is free to download; The Mind is free, and the other games are unlocked with optional one-time purchases (each game, a bundle or a lifetime unlock; none is a subscription). Apple processes the payment; GamingHub never sees your payment details, checks your purchases with Apple's StoreKit on your device and can restore them from Apple. The free trial of a paid game (a limited number of rooms) is counted on your device from room codes, so reinstalling the app resets it.</p>
+<p>GamingHub is free to download; Unison is free, and the other games are unlocked with optional one-time purchases (each game, a bundle or a lifetime unlock; none is a subscription). Apple processes the payment; GamingHub never sees your payment details, checks your purchases with Apple's StoreKit on your device and can restore them from Apple. The free trial of a paid game (a limited number of rooms) is counted on your device from room codes, so reinstalling the app resets it.</p>
 
 __RC__
 
@@ -72,7 +72,7 @@ PRIVACY = PRIVACY.replace('__RC__', revenuecat(
 
 TERMS = terms('GamingHub: Party Games', 'GamingHub', 'Izotz Cristobal Mota (Seize Apps)', [
     ('Games and purchases',
-     '<p>GamingHub is free to download, and The Mind is free to play. The other games can be played for free in a limited number of rooms (three per game, counted on your device) or in any room whose host owns that game; to host one, or to play beyond the trial, you unlock it with an optional in-app purchase: a single game, a bundle of the paid games, or a lifetime unlock of every game, current and future. These are one-time purchases, not subscriptions, billed by Apple at the price the App Store shows before you confirm, and Family Sharing is on. Restore Purchases is always available in the unlock sheet. Purchases are processed by Apple, and refunds are handled by Apple under the App Store\'s policies: we can\'t issue refunds directly. Games listed as coming soon are not for sale.</p>'),
+     '<p>GamingHub is free to download, and Unison is free to play. The other games can be played for free in a limited number of rooms (three per game, counted on your device) or in any room whose host owns that game; to host one, or to play beyond the trial, you unlock it with an optional in-app purchase: a single game, a bundle of the paid games, or a lifetime unlock of every game, current and future. These are one-time purchases, not subscriptions, billed by Apple at the price the App Store shows before you confirm, and Family Sharing is on. Restore Purchases is always available in the unlock sheet. Purchases are processed by Apple, and refunds are handled by Apple under the App Store\'s policies: we can\'t issue refunds directly. Games listed as coming soon are not for sale.</p>'),
     ('Online play and other players',
      '<p>Online games need an internet connection and are shared with the other people in your room: your display name, avatar and what you type are visible to them for as long as the room exists, up to 12 hours of inactivity. Choose a name you are happy to share and don\'t type anything unlawful, abusive or that belongs to someone else. The host of a room can remove a player, and you can report a player or a problem from the app. We may remove content or players, or block access to online play, if these terms are broken.</p>'),
     ('Your data',
@@ -89,15 +89,15 @@ SUPPORT = r'''
 
 <h2>Contact</h2>
 <p class="contact">@mail@</p>
-<p>The Suggest a Feature and Report a Bug rows in Settings open an email addressed to us; the bug report fills in your GamingHub version, iOS version and device model. To report a player or a problem during a game, use the report option in the room: it opens an email with the room code, the player\'s name and a reason you can edit.</p>
+<p>The Suggest a Feature and Report a Bug rows in Settings open an email addressed to us; the bug report fills in your GamingHub version, iOS version and device model. To report a player or a problem during a game, use the report option in the room: it opens an email with the room code, the player's name and a reason you can edit.</p>
 
 <h2>Common questions</h2>
 
-<h3>I can\'t join a room.</h3>
-<p>Check the room code (or scan the QR code: GamingHub asks for camera access only for that) and your connection. A room expires after 12 hours without activity, and a player who was removed by the host can\'t rejoin that room.</p>
+<h3>I can't join a room.</h3>
+<p>Check the room code (or scan the QR code: GamingHub asks for camera access only for that) and your connection. A room expires after 12 hours without activity, and a player who was removed by the host can't rejoin that room.</p>
 
 <h3>Which games are free?</h3>
-<p>The Mind is free. The other games can be tried in three rooms each (or in any room whose host owns the game); after that you unlock them with a one-time purchase: one game, the bundle, or lifetime. There are no subscriptions and no ads.</p>
+<p>Unison is free. The other games can be tried in three rooms each (or in any room whose host owns the game); after that you unlock them with a one-time purchase: one game, the bundle, or lifetime. There are no subscriptions and no ads.</p>
 
 <h3>How do I restore my purchases on a new device?</h3>
 <p>Sign in with the same Apple Account, open any unlock sheet and tap Restore Purchases.</p>
@@ -109,13 +109,15 @@ SUPPORT = r'''
 <p>The free trial is counted on your device, so reinstalling resets it. Your purchases are not affected: restore them from the unlock sheet.</p>
 
 <h3>Can I change my name?</h3>
-<p>Yes, in Settings. Names that don\'t pass the name filter are replaced.</p>
+<p>Yes, in Settings. Names that don't pass the name filter are replaced.</p>
 
 <h3>Where is my data? How do I delete it?</h3>
 <p>GamingHub has no account. Your settings stay on your device, and a room and its secret data are deleted when it empties and in any case after 12 hours. See the <a href="@privacy@">Privacy Policy</a>, or write to us.</p>
 '''
 
 APP['pages'] = {
+    ('en', 'index'): dict(title='GamingHub: Party Games \u00b7 Game night, one phone each',
+                          desc='Create a room, share the code and every friend plays from their own phone. GamingHub: Party Games, coming soon to the App Store for iPhone.', body=''),
     ('en', 'privacy'): dict(title='GamingHub · Privacy Policy',
                             desc='GamingHub privacy: no account, no ads, no tracking. Rooms are deleted when they empty and after 12 hours.', body=PRIVACY),
     ('en', 'terms'): dict(title='GamingHub · Terms of Use', desc='Terms of use for GamingHub.', body=TERMS),
