@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GamingHub · Privacy Policy</title>
+<meta name="description" content="GamingHub privacy: no account, no ads, no tracking. Rooms are deleted when they empty and after 12 hours.">
+<link rel="canonical" href="https://seizeapps.com/gaminghub/privacy.html">
+<meta name="theme-color" content="#0077FF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0E0D0C" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="../assets/icons/gaminghub.png">
+<link rel="apple-touch-icon" href="../assets/icons/gaminghub.png">
+<style>
+:root{--mark:#0077FF;--accent:#006AE2;--bg:#FFFFFF;--fg:#1A1814;--muted:#5B574E;--line:#E8E4DC;--soft:#EBF4FF;color-scheme:light dark}
+@media (prefers-color-scheme:dark){:root{--mark:#5DD4FF;--accent:#5DD4FF;--bg:#0E0D0C;--fg:#F5F2EC;--muted:#B0AA9E;--line:#2B2823;--soft:#19292E}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.6 -apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px}
+header{border-bottom:1px solid var(--line)}
+header .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 16px;padding-top:14px;padding-bottom:14px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px;color:var(--fg);text-decoration:none}
+.brand img{width:32px;height:32px;border-radius:8px}
+nav a{color:var(--muted);text-decoration:none;margin-left:16px;font-size:15px}
+nav a:first-child{margin-left:0}
+nav a[aria-current=page]{color:var(--accent);font-weight:600}
+main{padding:32px 0 48px}
+h1{font-size:32px;line-height:1.2;margin:0 0 4px}
+h2{font-size:20px;margin:32px 0 8px}
+h3{font-size:17px;margin:20px 0 4px}
+p,li{margin:0 0 12px}
+ul{padding-left:22px}
+a{color:var(--accent)}
+.updated{color:var(--muted);font-size:15px;margin-bottom:24px}
+.summary{background:var(--soft);border-left:4px solid var(--mark);border-radius:8px;padding:14px 16px;margin:0 0 8px}
+.contact{font-size:20px;font-weight:600}
+footer{border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+footer .wrap{padding-top:20px;padding-bottom:32px}
+footer a{color:var(--muted)}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<a class="brand" href="privacy.html"><img src="../assets/icons/gaminghub.png" alt="" width="32" height="32">GamingHub</a>
+<nav aria-label="GamingHub"><a href="privacy.html" aria-current=page>Privacy</a><a href="terms.html">Terms</a><a href="support.html">Support</a></nav>
+</div></header>
+<main><div class="wrap">
+<h1>Privacy Policy</h1>
+<p class="updated">Last updated: October 22, 2026</p>
+<p class="summary"><strong>The short version:</strong> GamingHub has no account, no email, no password, no advertising and no tracking. To run a room it sends the display name and avatar you choose, an anonymous ID created for your device and what you do in the game to our server, where the other players in that room can see it; rooms are deleted when they empty and in any case after 12 hours. Purchase bookkeeping goes to RevenueCat. Secret game data (your role, word or cards) goes only to your own device.</p>
+
+<h2>Who is responsible</h2>
+<p>GamingHub ("GamingHub: Party Games") is published on the App Store by <strong>Izotz Cristobal Mota</strong> (Seize Apps), Basque Country, Spain, who is the data controller for the app ("we", "us"). Contact for anything about your data: <a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a>.</p>
+
+<h2>What stays on your device</h2>
+<p>GamingHub keeps these on your device only: the display name you chose (a new install is given a random first name you can change), your settings (haptics, sounds, reduced animation, colour-blind mode, language), the room you were last in (so you can return to it; it is treated as expired after 12 hours), which rooms you have already played in the free trial of each paid game, and which games you own. It uses no App Group, no files and no Keychain of its own, and does not use iCloud or CloudKit, so nothing syncs between devices. Like any app's data, it can be included in your device backup if you have backups turned on; those backups are between you and Apple.</p>
+
+<h2>What reaches our server when you play online</h2>
+<p>Online play runs on Supabase (Supabase Inc.), our processor. When you open the app it signs your device in anonymously, which gives it a random ID; there is no sign-in screen and we do not know who you are. To create or join a room, the app then sends our server your display name, your avatar, that anonymous ID, the room code and your language, and then your moves. Everything that is shared in a room is stored in it and visible to the other players in that room: the list of players with their names, avatars and whether they are connected, whether the host owns the game, who was removed by the host, and the content of the game, including any short text you type, such as a clue. Secret game data (your role, your word, your cards) is stored separately and only your own device can read it. The server itself changes game state; the app can only read it.</p>
+<p>A room holds its data for at most 12 hours of inactivity: every room carries an expiry that is renewed on each move, and an expired room is deleted automatically every 15 minutes together with its secret data. When the last player leaves, the room and its secrets are deleted immediately. We keep no game history. Because your display name sits next to your anonymous ID in the room for that time, we do not claim the name cannot be tied to that ID while the room exists. The anonymous sign-in record itself (the random ID) is kept by Supabase; it holds no name or email, and we do not delete these records automatically. Supabase's platform may keep standard request logs, such as internet addresses, under its own terms: its policy is at <a href="https://supabase.com/privacy" rel="noopener">supabase.com/privacy</a>, and how long it keeps them is not something we can see.</p>
+
+<h2>Names, other players' content and moderation</h2>
+<p>There is no chat. Display names are filtered on your device and again on our server, and a room's host can remove a player (a removed player cannot rejoin that room). You can report a player or a problem from the app: this opens an email to us, which includes the room code, the player's name and a reason you can edit, and it leaves your device only if you send it.</p>
+
+<h2>Camera and the only permission</h2>
+<p>The only permission GamingHub asks for is the camera, used by the scanner that reads a room's QR code so you can join instantly. It reads a room code; no photo or video is saved or sent. GamingHub asks for no microphone, photos, location, contacts or tracking permission, and sends no notifications. Sharing a room invite uses the iOS share sheet with the game name and room code, and where it goes is your choice.</p>
+
+<h2>No ads, no tracking, no AI</h2>
+<p>GamingHub shows no advertising, does not ask for tracking permission and does not track you across apps or websites. Its only third-party software is the Supabase client library and RevenueCat's library. GamingHub makes no calls to any AI service.</p>
+
+<h2>Purchases</h2>
+<p>GamingHub is free to download; The Mind is free, and the other games are unlocked with optional one-time purchases (each game, a bundle or a lifetime unlock; none is a subscription). Apple processes the payment; GamingHub never sees your payment details, checks your purchases with Apple's StoreKit on your device and can restore them from Apple. The free trial of a paid game (a limited number of rooms) is counted on your device from room codes, so reinstalling the app resets it.</p>
+
+<h2>Purchase analytics (RevenueCat)</h2>
+<p>GamingHub includes the software library of RevenueCat, Inc. (United States), used for purchase bookkeeping only: Apple's StoreKit still handles every purchase and GamingHub still decides on your device whether Pro is active. Whenever GamingHub is open, the library creates a random anonymous ID for your install and sends RevenueCat that ID, your device's vendor identifier (a number Apple gives the apps of one developer on one device; it is not the advertising identifier) and the App Store purchases you make in GamingHub (product, price, dates and Apple's transaction data). When a store sheet opens GamingHub also tells it which game or bundle it was about, and how a purchase or restore went (sheet shown, buy tapped, bought, cancelled, pending, failed, restore started, succeeded or failed). It asks RevenueCat once per install to read your existing purchase history from Apple and labels the install as a TestFlight or App Store build. The library runs only in release builds on a real device. The library also adds the technical details such a library sends with its requests (for example the app and iOS version, device model, language and App Store country), and, like any server, RevenueCat sees the internet address of each request. We use this to keep a record of purchases and to count them. GamingHub never gives RevenueCat your display name, room codes, the anonymous sign-in ID or what you play, and we do not enable any advertising integration: it is not used to track you.</p>
+<p>RevenueCat is our processor. What it collects through its library, where and for how long it keeps it, and how it protects it are set out in its own privacy policy at <a href="https://www.revenuecat.com/privacy" rel="noopener">revenuecat.com/privacy</a>; we cannot see inside its systems and we do not promise a retention period for it. Deleting GamingHub does not delete what RevenueCat already holds: write to <a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a> and we will ask it to delete the record.</p>
+
+<h2>Deleting your data and how long it stays</h2>
+<p>You can change your name in Settings, leave a room (your secret data is deleted at once, and the room when it is empty) and ask the host to remove another player. Rooms disappear on their own after 12 hours without activity. Deleting the app removes its settings, name and trial count from your device. There is no account to delete. To ask RevenueCat to delete its purchase record, or to ask us to remove an anonymous sign-in record, write to <a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a>.</p>
+
+<h2>Children</h2>
+<p>GamingHub is a party game for groups; it is not directed at children and is not in the App Store's Kids Category. It does not ask anyone for a name or email address, but players do type display names and short game text that other players in the room can see.</p>
+
+<h2>Your rights</h2>
+<p>Under the GDPR you can ask for access to, correction or deletion of personal data, object to its use, or ask for a copy. GamingHub has no account. Rooms are deleted automatically, and the only other data about you that we hold is the anonymous sign-in record, what RevenueCat holds for us and any email you sent: write to us to access, correct or delete them. To exercise any right, write to <a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a>. The legal basis for running a room is the performance of the game you asked for, and for the purchase records the performance of the purchase and our legitimate interest in keeping track of sales. You can also complain to the Spanish Data Protection Agency (<a href="https://www.aepd.es" rel="noopener">aepd.es</a>) or to the authority where you live.</p>
+
+<h2>Changes</h2>
+<p>If this policy changes, the new version will be published on this page with a new date. If a later version of GamingHub adds games that use other services, this page will be updated before they ship.</p>
+
+<h2>Contact</h2>
+<p><a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a></p>
+</div></main>
+<footer><div class="wrap">
+<p>GamingHub by Izotz Cristobal Mota (Seize Apps) · Basque Country, Spain · <a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a></p>
+<p><a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Use</a> · <a href="support.html">Support</a></p>
+</div></footer>
+</body>
+</html>

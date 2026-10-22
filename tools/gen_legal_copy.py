@@ -17,3 +17,8 @@ LEGAL={
  },
  'fr': LEGAL_FR,
 }
+
+# Seven apps have their own privacy, terms and support pages (tools/gen_legal_apps.py, 22/10/2026): their sections
+# here are short pointers, and the shared paragraphs that listed them are corrected. See legal_apps/studio.py.
+from legal_apps.studio import patch_legal
+patch_legal(LEGAL)
