@@ -55,13 +55,13 @@ footer a{color:var(--muted)}
 <h2>Common questions</h2>
 
 <h3>Tempo didn't start or stop a session by itself.</h3>
-<p>Automatic tracking relies on location events from iOS. Check Settings › Privacy &amp; Security › Location Services › Tempo: choose Always and keep Precise Location on, and make sure Background App Refresh is allowed. iOS can delay region events, and force-quitting the app can stop them. Manual tracking always works without location, and you can correct any session afterwards.</p>
+<p>Automatic tracking relies on location events from iOS and needs "Always" access. Check Settings › Privacy &amp; Security › Location Services › Tempo: choose Always and keep Precise Location on, and make sure Background App Refresh is allowed. Tempo waits about two minutes inside a zone to start and about three outside to end, so a short pass doesn't count. iOS can delay region events, and force-quitting the app can stop them. Manual tracking always works without location, and you can correct any session afterwards.</p>
 
 <h3>How do I correct a session?</h3>
 <p>Open the session in Tempo and edit it. Corrections are kept with the session on your iPhone.</p>
 
-<h3>Why does a home zone only ask me a question?</h3>
-<p>For a home zone, Tempo never starts or stops a session on its own. It asks one "Start Tempo?" question a day while you are there, and one "You left" question when you go.</p>
+<h3>Does Tempo track me at home too?</h3>
+<p>Yes, if you drew a home zone: it works like any other zone, with no questions asked. Tempo starts a session after about two minutes inside it and ends it after about three minutes outside, and returning home later the same day does not start a second session. If you don't want that, delete the zone or turn automatic tracking off; you can always correct a session afterwards.</p>
 
 <h3>How do I restore Tempo Pro on a new device?</h3>
 <p>Sign in with the same Apple Account, open the Tempo Pro screen and tap Restore Purchases.</p>
@@ -73,7 +73,7 @@ footer a{color:var(--muted)}
 <p>Your work history, zones and settings stay on your iPhone and are never sent to us; Tempo does not sync through iCloud. Settings › Data &amp; privacy › Export all data saves a JSON file to a place you choose. See the <a href="privacy.html">Privacy Policy</a>.</p>
 
 <h3>How do I delete my data?</h3>
-<p>Settings › Data &amp; privacy › Erase all local data removes your sessions, zones, notifications and widget data from the device, or delete the app. There is no account and nothing on a server to delete.</p>
+<p>Settings › Data &amp; privacy › Erase all local data removes your sessions, zones, notifications and widget data from the device, or delete the app. There is no account and nothing of your records on a server of ours. To ask RevenueCat, our purchase processor, to delete its purchase record, write to <a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a>.</p>
 </div></main>
 <footer><div class="wrap">
 <p>Tempo by Izotz Cristobal Mota (Seize Apps) · Basque Country, Spain · <a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a></p>
