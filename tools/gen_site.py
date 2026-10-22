@@ -785,7 +785,7 @@ def build_index(lang):
     <ul class="app-grid app-grid-{key}" role="list" aria-labelledby="apps-{key}">{cards(apps)}
     </ul>''' for key,label,apps in (('live', t['live_title'], [a for a in HOME_APPS if a.get('appstore')]),
                                        ('soon', t['soon'], [a for a in HOME_APPS if not a.get('appstore')])) if apps)
-    strip=''.join(f'<li><img src="{root}assets/icons/{a["icon"]}" alt="" width="56" height="56" decoding="async"><span>{a["name"]}</span></li>' for a in APPS)
+    strip=''.join(f'<li><img src="{root}assets/icons/{a["icon"]}" alt="" width="56" height="56" decoding="async"><span>{a["name"]}</span></li>' for a in HOME_APPS)
     stage=''.join(f'<div class="device device-{pos}"><div class="phone">{shot(root, f, lazy=False, priority=(pos=="front"))}</div></div>' for pos,f in HERO_SHOTS)
     values=''.join(f'<li class="value reveal" style="--i:{i}"><span class="num">0{i+1}</span><h3>{h}</h3><p>{p}</p></li>' for i,(h,p) in enumerate(t['values']))
     work=''.join(f'<li class="feature reveal" style="--i:{i}"><span class="num">0{i+1}</span><h3>{h}</h3><p>{p}</p></li>' for i,(h,p) in enumerate(t['work_items']))
