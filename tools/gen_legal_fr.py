@@ -254,7 +254,7 @@ TERMS_FR='''
 
 LEGAL_FR={
   'privacy': dict(title='Politique de confidentialité — Seize Apps',
-                  desc='Comment les apps Seize traitent tes données : pas de comptes, pas de mesure d’audience, tout sur ton appareil et dans ton propre iCloud. Détail par app : Tempo, Drip, Anchor, Kover, Tandem, Meso, Grain, Logicle, GamingHub et Atino.',
+                  desc='Comment les apps Seize traitent tes données : pas de comptes, pas de mesure d’audience, tout sur ton appareil et dans ton propre iCloud. Détail par app : Drip, Anchor, Kover, Tandem, Meso, Grain, Logicle, Heed et BeatRide.',
                   body=PRIVACY_FR),
   'terms':   dict(title='Conditions d’utilisation — Seize Apps',
                   desc='Conditions d’utilisation des apps publiées par Seize Apps.',

@@ -8,8 +8,7 @@ from .common import terms, rights, revenuecat
 # Lime #C9E64A (single forced-dark theme in the app). 1.4:1 on white, so light-mode text uses a darker olive of
 # the same hue (found by the generator); the declared lime stays on borders and in dark mode.
 APP = dict(
-    slug='roomy', name='Roomy', icon='roomy.png',
-    appStoreUrl='https://apps.apple.com/app/id6817891679',
+    slug='roomy', name='Roomy', renderer='roomy_layout',
     email='hello@seizeapps.com', publisher='Izotz Cristobal Mota (Seize Apps)',
     updated_en='October 22, 2026',
     dir_copies=('privacy',),
@@ -99,10 +98,10 @@ SUPPORT = r'''
 <p>No. Roomy works on your iPhone only and has no server. See the <a href="@privacy@">Privacy Policy</a>.</p>
 
 <h3>Can I recover something I deleted?</h3>
-<p>Swiping left only moves an item to Roomy\'s Trash. After you confirm, deleted items stay in Photos › Recently Deleted for 30 days, and you can recover them there.</p>
+<p>Swiping left only moves an item to Roomy's Trash. After you confirm, deleted items stay in Photos › Recently Deleted for 30 days, and you can recover them there.</p>
 
 <h3>Roomy only shows some of my photos.</h3>
-<p>You gave Roomy access to selected photos only. Use "Choose more photos" in Roomy, or allow full access in the iPhone\'s Settings › Privacy &amp; Security › Photos › Roomy.</p>
+<p>You gave Roomy access to selected photos only. Use "Choose more photos" in Roomy, or allow full access in the iPhone's Settings › Privacy &amp; Security › Photos › Roomy.</p>
 
 <h3>What does the free version include?</h3>
 <p>50 swipes a day, with the Trash and the deletion of a single large video always free. Roomy Pro adds unlimited swipes, one-tap Delete in Duplicates and Similar, and video compression.</p>
@@ -111,18 +110,22 @@ SUPPORT = r'''
 <p>Sign in with the same Apple Account, open the purchase screen or Settings and tap Restore Purchases.</p>
 
 <h3>How do I cancel my subscription or get a refund?</h3>
-<p>Subscriptions are managed by Apple: open <a href="https://apps.apple.com/account/subscriptions" rel="noopener">your Apple Account\'s subscriptions</a>. Request a refund at <a href="https://reportaproblem.apple.com" rel="noopener">reportaproblem.apple.com</a>. The purchase screen also offers a Contact Support email if its plans don\'t load.</p>
+<p>Subscriptions are managed by Apple: open <a href="https://apps.apple.com/account/subscriptions" rel="noopener">your Apple Account's subscriptions</a>. Request a refund at <a href="https://reportaproblem.apple.com" rel="noopener">reportaproblem.apple.com</a>. The purchase screen also offers a Contact Support email if its plans don't load.</p>
 
-<h3>The daily reminder doesn\'t show up.</h3>
-<p>Turn it on in Roomy\'s Settings, allow notifications for Roomy in the iPhone\'s Settings › Notifications, and check that no Focus mode is silencing it.</p>
+<h3>The daily reminder doesn't show up.</h3>
+<p>Turn it on in Roomy's Settings, allow notifications for Roomy in the iPhone's Settings › Notifications, and check that no Focus mode is silencing it.</p>
 
 <h3>How do I start over?</h3>
 <p>Settings › Reset review progress clears which items you kept or skipped. Your Trash and your library are untouched.</p>
 '''
 
+# Every body starts with the marker roomy_layout.page() reads to learn how deep the file sits (root or roomy/privacy/).
+M = '<!--@terms@-->\n'
 APP['pages'] = {
+    ('en', 'index'): dict(title='Roomy: Swipe Photo Cleaner',
+                          desc='Roomy turns cleaning your camera roll into a quick, satisfying swipe: left to delete, right to keep. Your photos never leave your iPhone. Coming soon to the App Store.', body=M),
     ('en', 'privacy'): dict(title='Roomy · Privacy Policy',
-                            desc='Roomy privacy: photos stay on your iPhone. No accounts, no ads, no tracking. Purchase bookkeeping through RevenueCat.', body=PRIVACY),
-    ('en', 'terms'): dict(title='Roomy · Terms of Use', desc='Terms of use for Roomy.', body=TERMS),
-    ('en', 'support'): dict(title='Roomy · Support', desc='Help and contact for Roomy.', body=SUPPORT),
+                            desc='Roomy privacy: photos stay on your iPhone. No accounts, no ads, no tracking. Purchase bookkeeping through RevenueCat.', body=M + PRIVACY),
+    ('en', 'terms'): dict(title='Roomy · Terms of Use', desc='Terms of use for Roomy.', body=M + TERMS),
+    ('en', 'support'): dict(title='Roomy · Support', desc='Help and contact for Roomy.', body=M + SUPPORT),
 }

@@ -2,89 +2,195 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#0B1416">
 <title>Atino · Terms of Use</title>
 <meta name="description" content="Terms of use for Atino.">
 <link rel="canonical" href="https://seizeapps.com/atino/terms.html">
-<meta name="theme-color" content="#FFB547" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0B1416" media="(prefers-color-scheme: dark)">
-<link rel="icon" href="../assets/icons/atino.png">
-<link rel="apple-touch-icon" href="../assets/icons/atino.png">
-<style>
-:root{--mark:#FFB547;--accent:#A36100;--bg:#FFFDF8;--fg:#1B2426;--muted:#56625F;--line:#E8E2D4;--soft:#FFF4DE;color-scheme:light dark}
-@media (prefers-color-scheme:dark){:root{--mark:#FFB547;--accent:#FFB547;--bg:#0B1416;--fg:#EAF0EE;--muted:#A2B0AD;--line:#22343A;--soft:#1E2417}}
+<link rel="icon" type="image/png" href="./media/icon-32.png">
+<link rel="apple-touch-icon" href="./media/icon-180.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Atino">
+<meta property="og:title" content="Atino · Terms of Use">
+<meta property="og:description" content="Terms of use for Atino.">
+<meta property="og:url" content="https://seizeapps.com/atino/terms.html">
+<meta property="og:image" content="https://seizeapps.com/atino/media/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<style>:root{--bg:#FFFDF8;--lift:#FAF5EA;--cream:#F8F1E4;--card:#FFFFFF;--ink:#1B2426;--muted:#56625F;--line:#E8E2D4;--amber-text:#8A5200;--teal-text:#0E6B62;--focus:#8A5200;--art-ink:#F4F1EA;--art-lead:#D3DDDA;--art-soft:#C5D2CF;--art-eyebrow:#FFC870;--art-teal:#5CD6C9;--canvas:#0B1416;--chip:#1B2D31;--chip-text:#A9B8B6;--amber:#FFB547;--on-amber:#1F1404;--coral:#FF7A59;--sun-a:#FF8F6B;--sun-b:#FFC070;--peak:#FFD562;--sc:.84;--pc:.72;color-scheme:light dark}
+@media (prefers-color-scheme:dark){:root{--bg:#0B1416;--lift:#101C1F;--cream:#101C1F;--card:#132124;--ink:#EAF0EE;--muted:#A2B0AD;--line:#22343A;--amber-text:#FFC870;--teal-text:#5CD6C9;--focus:#FFC870}}
+
+:root{--display:ui-rounded,"SF Pro Rounded","Avenir Next Rounded","Avenir Next",system-ui,sans-serif;
+--body:"Avenir Next",ui-sans-serif,system-ui,"Segoe UI",sans-serif;
+--read:"Iowan Old Style","Charter","Palatino Linotype",Georgia,serif;
+--spring:cubic-bezier(.34,1.4,.5,1)}
 *{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.6 -apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif}
-.wrap{max-width:720px;margin:0 auto;padding:0 20px}
-header{border-bottom:1px solid var(--line)}
-header .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 16px;padding-top:14px;padding-bottom:14px}
-.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px;color:var(--fg);text-decoration:none}
-.brand img{width:32px;height:32px;border-radius:8px}
-nav a{color:var(--muted);text-decoration:none;margin-left:16px;font-size:15px}
-nav a:first-child{margin-left:0}
-nav a[aria-current=page]{color:var(--accent);font-weight:600}
-main{padding:32px 0 48px}
-h1{font-size:32px;line-height:1.2;margin:0 0 4px}
-h2{font-size:20px;margin:32px 0 8px}
-h3{font-size:17px;margin:20px 0 4px}
-p,li{margin:0 0 12px}
-ul{padding-left:22px}
-a{color:var(--accent)}
-.updated{color:var(--muted);font-size:15px;margin-bottom:24px}
-.summary{background:var(--soft);border-left:4px solid var(--mark);border-radius:8px;padding:14px 16px;margin:0 0 8px}
-.contact{font-size:20px;font-weight:600}
-footer{border-top:1px solid var(--line);color:var(--muted);font-size:14px}
-footer .wrap{padding-top:20px;padding-bottom:32px}
-footer a{color:var(--muted)}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:6px}
+.at-art :focus-visible{outline-color:var(--art-eyebrow)}
+.at-skip{position:absolute;left:12px;top:-80px;z-index:60;background:var(--amber);color:var(--on-amber);padding:11px 18px;border-radius:12px;font-weight:700;text-decoration:none}
+.at-skip:focus{top:12px}
+.at-wrap{width:min(1200px,100% - 48px);margin-inline:auto}
+@media (max-width:560px){.at-wrap{width:calc(100% - 40px)}}
+
+/* the app's dark world: every block that carries a plate, in both site themes */
+.at-art{--ink:var(--art-ink);--muted:var(--art-soft);--eyebrow:var(--art-eyebrow);--card:rgba(11,20,22,.82);--line:rgba(255,255,255,.16);
+  color:var(--art-ink);background:var(--canvas);color-scheme:dark;position:relative;isolation:isolate}
+.at-eyebrow{font-family:var(--display);font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--eyebrow,var(--amber-text));margin:0 0 14px}
+.at-h2{font-family:var(--display);font-weight:700;font-size:clamp(32px,4.4vw,56px);line-height:1.04;letter-spacing:-.025em;margin:0 0 20px;text-wrap:balance}
+.at-lead{font-size:clamp(17px,1.5vw,20px);line-height:1.55;color:var(--muted);margin:0 0 16px;max-width:34em}
+.at-sun{background:linear-gradient(92deg,var(--sun-a) 0%,var(--sun-b) 100%);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+@media (forced-colors:active){.at-sun{background:none;-webkit-text-fill-color:currentColor;color:currentColor}}
+
+/* header */
+.at-head{padding:22px 0;position:relative;z-index:10}
+.at-head--abs{position:absolute;inset:0 0 auto 0}
+.at-head__in{display:flex;align-items:center;justify-content:space-between;gap:14px}
+.at-brand{display:inline-flex;align-items:center;gap:12px;text-decoration:none;font-family:var(--display);font-weight:700;font-size:21px;letter-spacing:-.01em;color:var(--art-ink)}
+.at-brand img{width:38px;height:38px;border-radius:10px;box-shadow:0 6px 18px rgba(0,119,255,.28),0 0 0 1px rgba(255,255,255,.14)}
+.at-nav{display:flex;align-items:center;gap:4px;font-family:var(--display);font-weight:600;font-size:15px}
+.at-nav a{padding:9px 13px;border-radius:99px;text-decoration:none;color:var(--art-soft);transition:background .25s,color .25s}
+.at-nav a:hover{background:rgba(255,255,255,.1);color:var(--art-ink)}
+.at-nav a[aria-current="page"]{color:var(--art-ink);background:rgba(255,255,255,.12)}
+.at-soon{display:inline-flex;align-items:center;gap:8px;margin-left:8px;padding:9px 14px;border-radius:99px;border:1px solid rgba(255,255,255,.28);background:rgba(11,20,22,var(--pc));color:var(--art-ink);font-size:13.5px;font-weight:700;white-space:nowrap}
+.at-soon i{width:8px;height:8px;border-radius:50%;background:radial-gradient(circle,#FFE2A8,#FFB547 60%,#FF7A59);box-shadow:0 0 0 3px rgba(255,181,71,.22)}
+@media (max-width:640px){.at-nav a.at-hide{display:none}.at-brand{font-size:19px}.at-brand img{width:34px;height:34px}.at-nav a{padding:8px 9px;font-size:14px}.at-soon{margin-left:2px;padding:8px 11px;font-size:13px}}
+@media (max-width:560px){.at-nav a.at-hide{display:inline-block}.at-soon{display:none}.at-nav{gap:0}.at-nav a{padding:8px 8px;font-size:13.5px}.at-head__in{gap:8px}.at-brand{font-size:18px;gap:8px}}
+@media (max-width:340px){.at-brand{font-size:0;gap:0}.at-nav a{padding:8px 6px;font-size:13px}}
+
+/* page art: a plate inside a max-width window that fades into the canvas, so it is never stretched past its 1024 px source */
+.at-stage{position:absolute;inset:0;z-index:-2;margin-inline:auto;max-width:1280px;overflow:hidden;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 11%,#000 89%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 11%,#000 89%,transparent 100%)}
+.at-stage img{width:100%;height:100%;object-fit:cover}
+.at-scrim{position:absolute;inset:0;z-index:-1}
+
+/* device frame; everything scales from --w */
+.at-dev{--w:290px;width:var(--w);padding:calc(var(--w)*.03);border-radius:calc(var(--w)*.17);position:relative;margin:0;
+  background:linear-gradient(145deg,#4a5557 0%,#1d2628 38%,#0c1213 70%,#364143 100%);
+  box-shadow:0 0 0 calc(var(--w)*.004) rgba(255,255,255,.1) inset,0 calc(var(--w)*.1) calc(var(--w)*.2) rgba(0,0,0,.5),0 calc(var(--w)*.02) calc(var(--w)*.05) rgba(0,0,0,.4)}
+.at-dev::before{content:"";position:absolute;inset:calc(var(--w)*.012);border-radius:calc(var(--w)*.158);background:#04080a;z-index:0}
+.at-dev img{position:relative;z-index:1;width:100%;height:auto;border-radius:calc(var(--w)*.14);background:#0B1416}
+.at-dev::after{content:"";position:absolute;z-index:2;top:calc(var(--w)*.058);left:50%;width:calc(var(--w)*.255);height:calc(var(--w)*.074);transform:translateX(-50%);border-radius:99px;background:#020405}
+.at-stack{container-type:inline-size;position:relative;width:100%}
+.at-stack .at-dev{position:absolute}
+.at-cap{display:block;margin:14px auto 0;width:max-content;max-width:100%;padding:8px 16px;border-radius:99px;background:rgba(11,20,22,var(--pc));color:var(--art-soft);font-family:var(--display);font-size:14px;font-weight:600;text-align:center}
+
+/* buttons */
+.at-btn{display:inline-flex;align-items:center;gap:10px;padding:14px 24px;border-radius:99px;font-family:var(--display);font-weight:700;font-size:16px;text-decoration:none;
+  background:var(--amber);color:var(--on-amber);box-shadow:0 10px 26px -8px rgba(255,150,40,.6);transition:transform .35s var(--spring),box-shadow .3s}
+.at-btn:hover{transform:translateY(-2px) scale(1.02)}
+.at-btn--ghost{background:transparent;color:var(--ink);box-shadow:none;border:1.5px solid var(--ink)}
+
+/* footer */
+.at-foot{border-top:1px solid var(--line);padding:56px 0 48px;color:var(--muted);font-size:15px;background:var(--bg)}
+.at-foot__top{display:flex;flex-wrap:wrap;gap:28px 48px;justify-content:space-between;align-items:flex-start}
+.at-foot__id{display:flex;gap:14px;align-items:center;color:var(--ink);font-family:var(--display)}
+.at-foot__id img{width:48px;height:48px;border-radius:12px;box-shadow:0 8px 22px rgba(0,119,255,.25)}
+.at-foot__id strong{display:block;font-size:19px;letter-spacing:-.01em}
+.at-foot__id span{font-size:14.5px;color:var(--muted);font-family:var(--body)}
+.at-foot ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:4px 26px;font-family:var(--display);font-weight:600}
+.at-foot ul a{color:var(--ink);text-decoration:none;padding:8px 0;display:inline-block;border-bottom:1px solid transparent}
+.at-foot ul a:hover{border-bottom-color:var(--amber-text)}
+.at-foot small{display:block;margin-top:36px;padding-top:24px;border-top:1px solid var(--line);font-size:14px;line-height:1.6}
+.at-foot a.mail{color:var(--amber-text);font-weight:700}
+
+.at-lhero{overflow:hidden;padding-bottom:clamp(40px,6vw,72px)}
+.at-lhero .at-scrim{background:linear-gradient(90deg,rgba(11,20,22,var(--sc)) 0%,rgba(11,20,22,var(--sc)) 60%,rgba(11,20,22,.4) 100%)}
+.at-lhero__in{padding-top:clamp(40px,7vw,88px)}
+.at-lhero h1{font-family:var(--display);font-weight:800;font-size:clamp(38px,5.4vw,72px);line-height:1;letter-spacing:-.03em;margin:0 0 16px;text-wrap:balance}
+.at-upd{margin:0;color:var(--art-lead);font-size:17px;max-width:40em}
+.at-lang{margin:14px 0 0;font-family:var(--display);font-weight:700;font-size:15px}
+.at-lang a{color:var(--art-eyebrow);text-underline-offset:4px}
+.at-tabs{display:inline-flex;flex-wrap:wrap;gap:3px;padding:4px;border-radius:16px;background:rgba(11,20,22,var(--pc));border:1px solid rgba(255,255,255,.16);margin:28px 0 0;
+  font-family:var(--display);font-weight:600;font-size:14.5px}
+.at-tabs a{padding:10px 16px;border-radius:12px;color:var(--art-soft);text-decoration:none}
+.at-tabs a:hover{color:var(--art-ink);background:rgba(255,255,255,.1)}
+.at-tabs a[aria-current="page"]{background:var(--art-ink);color:var(--canvas)}
+.at-lay{display:grid;grid-template-columns:240px minmax(0,1fr);gap:clamp(32px,6vw,96px);padding:72px 0 96px;align-items:start}
+.at-lay--solo{grid-template-columns:minmax(0,1fr)}
+.at-toc{position:sticky;top:28px;font-family:var(--display);font-size:15px}
+.at-toc ol{list-style:none;margin:0;padding:0;border-left:1.5px solid var(--line)}
+.at-toc li a{display:block;padding:8px 0 8px 18px;margin-left:-1.5px;border-left:1.5px solid transparent;color:var(--muted);text-decoration:none;font-weight:600;line-height:1.3}
+.at-toc li a:hover{color:var(--ink);border-left-color:var(--amber-text)}
+.at-tocm{display:none;border:1.5px solid var(--muted);border-radius:16px;background:var(--card);margin:0 0 30px;font-family:var(--display)}
+.at-tocm summary{padding:14px 18px;font-weight:700;cursor:pointer;font-size:16px;color:var(--ink)}
+.at-tocm ol{margin:0;padding:0 18px 12px;list-style:none}
+.at-tocm a{display:block;padding:10px 0;color:var(--muted);text-decoration:none;border-top:1px solid var(--line);font-weight:600;font-size:15.5px}
+.at-doc{font-family:var(--read);font-size:18px;line-height:1.65;max-width:68ch;min-width:0}
+.at-doc h2{font-family:var(--display);font-weight:700;font-size:clamp(25px,2.5vw,31px);letter-spacing:-.02em;line-height:1.15;margin:2.4em 0 .6em;display:flex;gap:16px;align-items:baseline;scroll-margin-top:24px}
+.at-doc>h2:first-child,.at-doc>.at-tocm+h2{margin-top:0}
+.at-doc h2 span{font-size:.55em;letter-spacing:.06em;font-weight:800;color:var(--amber-text);min-width:1.6em}
+.at-doc h3{font-family:var(--display);font-weight:700;font-size:20px;letter-spacing:-.01em;line-height:1.3;margin:2em 0 .5em}
+.at-doc p{margin:0 0 1.1em}
+.at-doc a{color:var(--amber-text);text-underline-offset:3px;text-decoration-thickness:1.5px}
+.at-doc ul{margin:0 0 1.2em;padding:0 0 0 1.2em}
+.at-doc li{margin:0 0 .7em;padding-left:.2em}
+.at-doc li::marker{color:var(--amber-text)}
+.at-doc h2.at-sum+ul{list-style:none;padding:30px 28px 26px;border-radius:24px;background:linear-gradient(var(--amber),var(--amber)) top/100% 4px no-repeat,var(--card);color:var(--ink);border:1px solid var(--line);
+  box-shadow:0 18px 40px -26px rgba(7,28,30,.35)}
+.at-doc h2.at-sum+ul li{padding-left:0;font-size:17.5px}
+.at-doc h2.at-sum+ul li:last-child{margin-bottom:0}
+.at-doc .contact{font-family:var(--display);font-size:clamp(22px,2.4vw,28px);font-weight:700;letter-spacing:-.01em}
+.at-more{margin-top:2em;padding-top:1.6em;border-top:1px solid var(--line);font-family:var(--display);font-weight:700}
+.at-sibs{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:2.8em 0 0;font-family:var(--display)}
+.at-doc a.at-sib{text-decoration:none;color:var(--ink)}
+.at-sib{display:block;padding:20px 22px;border-radius:20px;background:var(--card);border:1px solid var(--line);color:var(--ink);text-decoration:none;transition:transform .35s var(--spring),border-color .25s}
+.at-sib:hover{transform:translateY(-3px);border-color:var(--amber-text)}
+.at-sib strong{display:block;font-size:18px;letter-spacing:-.01em;margin-bottom:4px}
+.at-sib span{font-family:var(--body);font-size:15px;line-height:1.4;color:var(--muted)}
+@media (max-width:860px){.at-lay{grid-template-columns:1fr;padding-top:36px}.at-toc{display:none}.at-tocm{display:block}
+  .at-doc h2{display:block}.at-doc h2 span{display:block;margin-bottom:4px}.at-doc h2.at-sum+ul{padding:20px 20px 20px 22px}.at-sibs{grid-template-columns:1fr}}
+@media (max-width:560px){.at-doc{font-size:17.5px}.at-tabs{width:100%}.at-tabs a{flex:1 1 auto;text-align:center;padding:10px 10px}}
 </style>
 </head>
 <body>
-<header><div class="wrap">
-<a class="brand" href="privacy.html"><img src="../assets/icons/atino.png" alt="" width="32" height="32">Atino</a>
-<nav aria-label="Atino"><a href="privacy.html">Privacy</a><a href="terms.html" aria-current=page>Terms</a><a href="support.html">Support</a></nav>
-</div></header>
-<main><div class="wrap">
-<h1>Terms of Use</h1>
-
-<p class="updated">Effective 22 October 2026</p>
-
-<h2>1. Agreement</h2>
+<a class="at-skip" href="#main">Skip to content</a>
+<div class="at-art at-lhero"><div class="at-stage"><img src="./media/plate-why-it-fits.jpg" width="1024" height="1536" alt="" fetchpriority="high" style="object-position:center 40%"></div><div class="at-scrim"></div>
+<header class="at-head"><div class="at-wrap at-head__in"><a class="at-brand" href="./" aria-label="Atino, home"><img src="./media/icon-64.png" width="38" height="38" alt="">Atino</a><nav class="at-nav" aria-label="Atino"><a href="./privacy.html">Privacy</a><a href="./terms.html" aria-current="page">Terms</a><a href="./support.html" class=at-hide>Support</a><span class="at-soon"><i aria-hidden="true"></i>Coming soon</span></nav></div></header>
+<div class="at-wrap at-lhero__in"><h1>Terms of Use</h1><p class="at-upd">Effective 22 October 2026</p>
+<nav class="at-tabs" aria-label="Atino pages"><a href="./privacy.html">Privacy</a><a href="./terms.html" aria-current="page">Terms</a><a href="./support.html">Support</a><a href="./privacidad.html" lang="es" hreflang="es">Español</a></nav></div></div>
+<div class="at-wrap at-lay"><aside class="at-toc" aria-label="On this page"><p class="at-eyebrow">On this page</p><ol><li><a href="#s1">Agreement</a></li><li><a href="#s2">License</a></li><li><a href="#s3">Free use and Atino Pro</a></li><li><a href="#s4">Your CV and your consent</a></li><li><a href="#s5">Jobs and match results</a></li><li><a href="#s6">Fair use and limits</a></li><li><a href="#s7">Age</a></li><li><a href="#s8">Warranty and liability</a></li><li><a href="#s9">Changes</a></li><li><a href="#s10">Governing law</a></li><li><a href="#s11">Contact</a></li></ol></aside>
+<main id="main" class="at-doc"><details class="at-tocm"><summary>Contents</summary><ol><li><a href="#s1">Agreement</a></li><li><a href="#s2">License</a></li><li><a href="#s3">Free use and Atino Pro</a></li><li><a href="#s4">Your CV and your consent</a></li><li><a href="#s5">Jobs and match results</a></li><li><a href="#s6">Fair use and limits</a></li><li><a href="#s7">Age</a></li><li><a href="#s8">Warranty and liability</a></li><li><a href="#s9">Changes</a></li><li><a href="#s10">Governing law</a></li><li><a href="#s11">Contact</a></li></ol></details>
+<h2 id="s1"><span>1</span>Agreement</h2>
 <p>These terms govern your use of Atino: Jobs Ranked for You ("Atino"), published on the App Store by Izotz Cristobal Mota, trading as Seize Apps, Basque Country, Spain ("we", "us"). By downloading or using Atino you agree to these terms and to Apple's standard <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" rel="noopener">Licensed Application End User License Agreement</a>, which applies to anything these terms don't cover.</p>
 
-<h2>2. License</h2>
+<h2 id="s2"><span>2</span>License</h2>
 <p>We grant you a personal, non-exclusive, non-transferable license to use Atino on Apple devices that you own or control, as permitted by the App Store terms. The app, its design and its code remain ours.</p>
 
-<h2>3. Free use and Atino Pro</h2>
+<h2 id="s3"><span>3</span>Free use and Atino Pro</h2>
 <p>Atino is free to download. The free tier gives you one search per local day, the top 10 results and the location and workplace filters. Atino Pro is an optional auto-renewing subscription, weekly or monthly, that unlocks all results, every filter, more searches under a fair-use limit (currently 60 a day), saved searches, the daily alert and fit breakdowns. There is no free trial and no lifetime option, and Family Sharing is not enabled. The price is shown by the App Store before you confirm.</p><p>Subscriptions are charged to your Apple Account at confirmation and renew automatically unless you cancel at least 24 hours before the end of the current period. Manage or cancel them in your Apple Account's subscription settings; Restore Purchases and Manage Subscription are in Atino's Pro sheet and Settings. One subscription can be used on a limited number of your devices at the same time. Purchases are processed by Apple, and refunds are handled by Apple under the App Store's policies: we can't issue refunds directly.</p>
 
-<h2>4. Your CV and your consent</h2>
-<p>Atino ranks jobs against a CV that you choose. Before the first search it asks for your consent to send the redacted text of your CV to the ranking services named in the <a href="privacy.html">Privacy Policy</a>; without it, searches don't run. Atino removes your name and contact details on your iPhone first, but redaction is automatic and can miss something, so read the text in Settings › Your CV › "What leaves this iPhone" and edit it before you allow it. You are responsible for the CV you load and for having the right to use it. You can withdraw your consent at any time in Settings › Privacy.</p>
+<h2 id="s4"><span>4</span>Your CV and your consent</h2>
+<p>Atino ranks jobs against a CV that you choose. Before the first search it asks for your consent to send the redacted text of your CV to the ranking services named in the <a href="./privacy.html">Privacy Policy</a>; without it, searches don't run. Atino removes your name and contact details on your iPhone first, but redaction is automatic and can miss something, so read the text in Settings › Your CV › "What leaves this iPhone" and edit it before you allow it. You are responsible for the CV you load and for having the right to use it. You can withdraw your consent at any time in Settings › Privacy.</p>
 
-<h2>5. Jobs and match results</h2>
+<h2 id="s5"><span>5</span>Jobs and match results</h2>
 <p>The jobs come from public company career pages and open data sources, and Apply opens the employer's own page. Atino is independent of the employers and of the job boards it draws from, and a job can change or disappear at any time. The match percentage and the explanations are automatic estimates, not a promise that a job fits, that you will be shortlisted or that you will be hired, and Atino doesn't apply for jobs on your behalf. Ranking needs an internet connection.</p>
 
-<h2>6. Fair use and limits</h2>
+<h2 id="s6"><span>6</span>Fair use and limits</h2>
 <p>Searches and other requests are limited per install and per subscription so that the service stays affordable for everyone, and limits can be reached. Don't try to get around them, reverse-engineer Atino, resell it or misuse it, and don't use it in any way that breaks the law or Apple's terms.</p>
 
-<h2>7. Age</h2>
+<h2 id="s7"><span>7</span>Age</h2>
 <p>Atino is not meant for people under 16.</p>
 
-<h2>8. Warranty and liability</h2>
+<h2 id="s8"><span>8</span>Warranty and liability</h2>
 <p>Atino is provided "as is", without warranties of any kind. To the maximum extent permitted by law, we are not liable for indirect or consequential damages arising from your use of Atino, and our total liability is limited to the amount you paid for Atino in the twelve months before the claim. Nothing in these terms limits rights that consumer law grants you and that cannot be waived.</p>
 
-<h2>9. Changes</h2>
+<h2 id="s9"><span>9</span>Changes</h2>
 <p>We may update these terms as Atino evolves; the current version always lives at this address with its effective date above. Continued use after a change means you accept the updated terms.</p>
 
-<h2>10. Governing law</h2>
+<h2 id="s10"><span>10</span>Governing law</h2>
 <p>These terms are governed by the laws of Spain. Consumers in the EU also keep the protections of their country of residence.</p>
 
-<h2>Contact</h2>
+<h2 id="s11">Contact</h2>
 <p><a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a></p>
-</div></main>
-<footer><div class="wrap">
-<p>Atino by Izotz Cristobal Mota, trading as Seize Apps · Basque Country, Spain · <a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a></p>
-<p><a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Use</a> · <a href="support.html">Support</a></p>
-</div></footer>
+<nav class="at-sibs" aria-label="More in these pages"><a class="at-sib" href="./privacy.html"><strong>Privacy</strong><span>How Atino handles your CV and your data.</span></a><a class="at-sib" href="./support.html"><strong>Support</strong><span>Contact, and answers to common questions.</span></a><a class="at-sib" href="./privacidad.html" lang=es><strong>Privacidad</strong><span>Cómo trata Atino tu CV y tus datos.</span></a></nav>
+<p class="at-more"><a href="./">&larr; Back to Atino</a></p></main></div>
+<footer class="at-foot"><div class="at-wrap"><div class="at-foot__top"><div class="at-foot__id"><img src="./media/icon-180.png" width="48" height="48" alt="" loading="lazy"><div><strong>Atino</strong><span>Your CV against Europe&rsquo;s jobs.</span></div></div><nav aria-label="Atino pages"><ul><li><a href="./privacy.html">Privacy</a></li><li><a href="./terms.html">Terms</a></li><li><a href="./support.html">Support</a></li><li><a href="./privacidad.html" lang="es" hreflang="es">Pol&iacute;tica de privacidad</a></li><li><a class="mail" href="mailto:hello@seizeapps.com">hello@seizeapps.com</a></li></ul></nav></div><small>&copy; 2026 Izotz Cristobal Mota. Atino is coming soon to the App Store for iPhone. It is independent and not affiliated with the employers it lists. The jobs and names shown in the screenshots are sample data.</small></div></footer>
 </body>
 </html>

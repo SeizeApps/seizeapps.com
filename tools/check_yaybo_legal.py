@@ -103,17 +103,15 @@ for k, phrases in must.items():
         if ph not in pages[k]:
             fails.append(f'{k}: missing "{ph}"')
 
-# The studio-wide policy's Yaybo section and the places that used to say "Readably only" (EN, ES, FR).
-for path, ids in (('privacy.html', ('Yaybo keeps the notes', 'Yaybo is another', 'never for a child a grown-up has set to "never listen"')),
-                  ('es/privacy.html', ('Yaybo guarda las notas', 'Yaybo es otra', 'no escuchar nunca')),
-                  ('fr/privacy.html', ('Yaybo conserve les notes', 'Yaybo est une exception', 'ne jamais écouter'))):
+# Yaybo is not part of the studio-wide policy any more (22/10/2026): its own policy is the only one. The studio
+# policy must not describe it, and must still send old privacy.html#yaybo links on to Yaybo's own page.
+for path, own in (('privacy.html', 'yaybo/privacy/'), ('es/privacy.html', '../yaybo/privacidad/'), ('fr/privacy.html', '../yaybo/privacy/')):
+    raw = open(os.path.join(ROOT, path), encoding='utf-8').read()
     t = squash(text_of(os.path.join(ROOT, path)))
-    for ph in ids:
-        if ph not in t:
-            fails.append(f'{path}: the studio policy lacks "{ph}"')
-    for bad in ('(Readably only)', '(solo Readably)'):
-        if bad in t:
-            fails.append(f'{path}: stale "{bad}" now that Yaybo keeps notes on our server')
+    if 'Yaybo' in t:
+        fails.append(f'{path}: the studio policy still mentions Yaybo')
+    if f'"yaybo":"{own}"' not in raw:
+        fails.append(f'{path}: privacy.html#yaybo no longer hops to {own}')
 
 if 'Purchase analytics (RevenueCat)' in en:
     want = squash(doc11_paragraph())

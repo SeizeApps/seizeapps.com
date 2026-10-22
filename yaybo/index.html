@@ -1,0 +1,402 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark"><meta name="theme-color" content="#06505E"><title>Yaybo: a daily learning plan for your family</title><meta name="description" content="A daily learning plan for ages 4 to 9: phonics, reading, spelling, math, money, time and handwriting. About ten minutes a day, a plain-English report each week, no ads, no account, no tracking."><link rel="canonical" href="https://seizeapps.com/yaybo/"><meta property="og:type" content="website"><meta property="og:title" content="Yaybo: a daily learning plan for your family"><meta property="og:description" content="A daily learning plan for ages 4 to 9: phonics, reading, spelling, math, money, time and handwriting. About ten minutes a day, a plain-English report each week, no ads, no account, no tracking."><meta property="og:url" content="https://seizeapps.com/yaybo/"><meta property="og:image" content="https://seizeapps.com/yaybo/media/axolotl-smile.jpg"><link rel="icon" type="image/png" sizes="32x32" href="media/favicon-32.png"><link rel="apple-touch-icon" href="media/apple-touch-icon.png"><style>:root{color-scheme:light dark;--page:#FFF8EE;--sunk:#F4EEE4;--surface:#FFFFFF;--ink:#1E2640;--ink2:#5A6378;--link:#007285;--line:#E9E2D6;--lip:#E2DACB;--tint:#DDF6F9;--btn:#007285;--btnlip:#005666;--btnfg:#FFFFFF;--focus:#007285;--band:#14202B;--bandink:#F3F6F8;--bandink2:#AEBAC5;--bandlink:#4FD1E0;--chipbg:#FFFFFF;--restline:#8A5A00;--shadow:rgba(30,38,64,.20);--ring:rgba(0,0,0,0);--plate-f:none;--phone-f:none;--cream:#FFF8EE;--white:#FFFFFF;--navy:#1E2640;--sun:#FFC107;--sunlip:#D99A00;--teal:#06505E;--tealtop:#0A6475;--cyan:#9BEAF4;--tealink:#E6F7F9;--chip:#DDF6F9;--navypanel:#1E2640;--navyink:#E3E7F0;--foot:#0E1B24;--foot2:#C5D0D9;--scrimc:#033440;--lband:#06505E;--lbandtop:#04404D;--sundot:#FFC21A;--iconink:#1E2640;
+--ffd:ui-rounded,"SF Pro Rounded","Arial Rounded MT Bold","Avenir Next",system-ui,sans-serif;
+--ffb:ui-rounded,"SF Pro Rounded","Avenir Next","Segoe UI",system-ui,sans-serif}
+@media (prefers-color-scheme:dark){:root{--page:#14202B;--sunk:#1A2833;--surface:#1E2C38;--ink:#F3F6F8;--ink2:#9AA6B2;--link:#4FD1E0;--line:#2C3E4D;--lip:#0F1822;--tint:#1B3A44;--btn:#4FD1E0;--btnlip:#2A8E9C;--btnfg:#10202A;--focus:#4FD1E0;--band:#0D1720;--bandink2:#9AA6B2;--chipbg:#1E2C38;--restline:#FFD45C;--shadow:rgba(0,0,0,.42);--ring:#2A3A48;--plate-f:brightness(.84) saturate(.95);--phone-f:brightness(.94);}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--page);color:var(--ink);font:400 18px/1.6 var(--ffb);overflow-x:hidden}
+.yb-sec{overflow-x:clip}
+img{max-width:100%;height:auto}
+a{color:var(--link);text-underline-offset:3px}
+p{margin:0 0 1em}
+h1,h2,h3{font-family:var(--ffd);margin:0;letter-spacing:-.01em;line-height:1.1;font-weight:800}
+:focus-visible{outline:3px solid var(--focus);outline-offset:3px;border-radius:6px}
+.yb-dark :focus-visible{outline-color:var(--bandlink)}
+.yb-onhero :focus-visible,.yb-foot :focus-visible{outline-color:var(--white)}
+.yb-skip{position:absolute;left:12px;top:-80px;background:var(--surface);color:var(--ink);padding:12px 18px;border-radius:12px;z-index:60;font-weight:700}
+.yb-skip:focus{top:12px}
+.yb-wrap{width:min(1180px,100% - 48px);margin-inline:auto}
+/* header */
+.yb-top{position:relative;z-index:10;padding:22px 0}
+.yb-top.abs{position:absolute;inset:0 0 auto 0}
+.yb-top .yb-wrap{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.yb-brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--white);font:800 24px/1 var(--ffd)}
+.yb-brand img{width:44px;height:44px;border-radius:12px;box-shadow:0 2px 0 rgba(0,40,50,.4),0 8px 20px rgba(0,40,50,.35)}
+.yb-nav{display:flex;gap:4px;flex-wrap:nowrap}
+.yb-nav a{color:var(--white);text-decoration:none;font-weight:700;font-size:16px;padding:10px 14px;border-radius:999px;white-space:nowrap}
+.yb-nav a:hover{background:rgba(255,255,255,.18)}
+.yb-nav a[aria-current]{background:rgba(255,255,255,.22)}
+/* buttons and badge */
+.yb-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;font:800 18px/1.1 var(--ffd);text-decoration:none;padding:15px 26px;border-radius:20px;
+cursor:pointer;border:0;transition:transform .2s cubic-bezier(.3,1.7,.5,1),box-shadow .2s;position:relative}
+.yb-btn-sun{background:var(--sun);color:var(--navy);box-shadow:0 5px 0 var(--sunlip),0 14px 26px rgba(0,30,40,.3)}
+.yb-btn-teal{background:var(--btn);color:var(--btnfg);box-shadow:0 5px 0 var(--btnlip),0 14px 26px var(--shadow)}
+.yb-btn:hover{transform:translateY(-2px)}
+.yb-btn:active{transform:translateY(4px);box-shadow:0 1px 0 rgba(0,0,0,.25)}
+.yb-btn:focus-visible{outline:3px solid var(--bandlink);outline-offset:4px}
+.yb-onhero .yb-btn:focus-visible,.yb-story .yb-btn:focus-visible,.yb-dark .yb-btn:focus-visible{outline:3px solid #9BEAF4;outline-offset:4px}
+.yb-badge{display:inline-flex;align-items:center;gap:12px;background:var(--cream);color:var(--navy);padding:11px 22px 11px 16px;border-radius:20px;margin:0;
+box-shadow:0 4px 0 #E2DACB,0 12px 24px rgba(0,30,40,.3);text-align:left}
+.yb-badge svg{width:26px;height:26px;flex:none}
+.yb-badge small{display:block;font:700 13.5px/1.1 var(--ffb);letter-spacing:.01em;margin-bottom:3px}
+.yb-badge b{display:block;font:800 17px/1.1 var(--ffd)}
+/* hero */
+.yb-hero{position:relative;color:var(--white);overflow:hidden;isolation:isolate;padding:150px 0 150px;min-height:820px}
+.yb-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-3;transform:scale(1.45);transform-origin:100% 55%;filter:var(--plate-f)}
+.yb-hero .yb-scrim{position:absolute;inset:0;z-index:-2;background:linear-gradient(90deg,rgba(3,52,64,0.95) 0%,rgba(3,52,64,0.9) 46%,rgba(3,52,64,0.52) 60%,rgba(3,52,64,0.2) 100%),linear-gradient(180deg,rgba(3,52,64,0.62) 0%,rgba(3,52,64,0) 30%),linear-gradient(180deg,rgba(3,52,64,0) 74%,rgba(3,52,64,0.55) 100%)}
+.yb-hero-grid{display:grid;grid-template-columns:minmax(0,1.02fr) minmax(0,.98fr);gap:24px;align-items:center}
+.yb-eyebrow{display:inline-block;font:800 15px/1 var(--ffd);color:var(--white);background:rgba(3,52,64,.55);border:2px solid rgba(255,255,255,.5);padding:9px 14px;border-radius:999px;margin:0 0 22px}
+.yb-hero h1{font-size:clamp(40px,4.9vw,72px);line-height:1.04;margin-bottom:22px;text-wrap:balance}
+.yb-hero h1 em{font-style:normal;color:var(--sun)}
+.yb-lede{font-size:clamp(19px,1.6vw,22px);line-height:1.5;color:var(--white);max-width:33em}
+.yb-cta{display:flex;flex-wrap:wrap;gap:18px 20px;align-items:center;margin:30px 0 20px}
+.yb-fine{font-size:15.5px;color:var(--white);margin:0}
+.yb-hero-art{container-type:inline-size;position:relative;width:100%;max-width:620px;margin-inline:auto;aspect-ratio:1/1.2}
+.yb-hero-art .yb-float{position:absolute}
+.yb-hero-art .c{left:25cqw;top:2cqw;width:50cqw;z-index:3;animation:yb-bob 7s ease-in-out infinite}
+.yb-hero-art .l{left:-3cqw;top:20cqw;width:40cqw;z-index:2;transform:rotate(-9deg)}
+.yb-hero-art .r{right:-3cqw;top:20cqw;width:40cqw;z-index:2;transform:rotate(9deg)}
+.yb-hero-art .l .yb-ph,.yb-hero-art .r .yb-ph{animation:yb-bob 8s ease-in-out -3s infinite}
+.yb-hero-art .y{right:-6cqw;bottom:-4cqw;width:32cqw;height:auto;z-index:4;filter:drop-shadow(0 12px 18px rgba(0,30,40,.4));animation:yb-wiggle 5s ease-in-out infinite;transform-origin:50% 90%}
+@keyframes yb-bob{50%{translate:0 -10px}}
+@keyframes yb-wiggle{0%,100%{rotate:-2deg}50%{rotate:3deg}}
+.yb-bubbles span{position:absolute;border-radius:50%;background:radial-gradient(circle at 30% 30%,rgba(255,255,255,.7),rgba(255,255,255,.12) 60%);border:1.5px solid rgba(255,255,255,.35);animation:yb-rise linear infinite;z-index:-1;bottom:-40px}
+@keyframes yb-rise{to{transform:translateY(-1000px)}}
+.yb-wave{display:block;width:100%;height:auto;position:absolute;left:0;right:0;pointer-events:none}
+.yb-wave.b{bottom:-1px}.yb-wave.t{top:-1px;transform:scaleY(-1)}
+.yb-wave path{fill:var(--page)}
+/* device frames */
+.yb-ph{container-type:inline-size;width:var(--w,260px);flex:none}
+.yb-ph-body{position:relative;padding:3.1cqw;border-radius:15.5cqw;background:linear-gradient(145deg,#38425A,#161D2C 55%,#232C42);
+box-shadow:inset 0 0 0 .6cqw #4A5572,0 0 0 1px var(--ring),0 3cqw 7cqw var(--shadow),0 .8cqw 2cqw rgba(20,30,50,.18)}
+.yb-ph-body img{display:block;width:100%;height:auto;border-radius:12.5cqw;background:var(--cream);filter:var(--phone-f)}
+.yb-ph-body::after{content:"";position:absolute;top:6.2cqw;left:50%;width:26cqw;height:7.6cqw;margin-left:-13cqw;border-radius:9cqw;background:#0F1520}
+.yb-ph-body::before{content:"";position:absolute;right:-1cqw;top:26cqw;width:1.2cqw;height:16cqw;border-radius:1cqw;background:#2E3850}
+.yb-pad{container-type:inline-size;width:var(--w,100%)}
+.yb-pad-body{padding:2.4cqw;border-radius:4.6cqw;background:linear-gradient(145deg,#38425A,#161D2C 55%,#232C42);box-shadow:inset 0 0 0 .4cqw #4A5572,0 0 0 1px var(--ring),0 3cqw 7cqw var(--shadow)}
+.yb-pad-body img{display:block;width:100%;height:auto;border-radius:2.6cqw;filter:var(--phone-f)}
+.yb-cap{font:800 17px/1.25 var(--ffd);margin:22px 0 0;display:flex;align-items:center;gap:12px;color:var(--ink)}
+.yb-cap b{flex:none;display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--btn);color:var(--btnfg);box-shadow:0 3px 0 var(--btnlip);font-size:17px}
+.yb-sub{font-size:16.5px;color:var(--ink2);margin:6px 0 0}
+/* sections */
+.yb-sec{position:relative;padding:96px 0;isolation:isolate}
+.yb-sec.sunk{background:var(--sunk)}
+.yb-sec h2{font-size:clamp(32px,3.8vw,52px);margin-bottom:20px;text-wrap:balance}
+.yb-kicker{font:800 15px/1.2 var(--ffd);color:var(--link);margin:0 0 16px;display:flex;align-items:center;gap:10px}
+.yb-kicker i{width:30px;height:5px;border-radius:5px;background:var(--link);display:block;flex:none}
+.yb-sec p.big{font-size:20px;line-height:1.55;color:var(--ink2)}
+.yb-two{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:64px;align-items:center}
+.yb-two.skills{grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr)}
+.yb-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;align-items:start;margin:0;padding:0}
+.yb-steps li{list-style:none}
+.yb-steps li:nth-child(2){margin-top:56px}
+.yb-steps .yb-ph{--w:100%}
+.yb-facts{margin:26px 0 0;padding:0;display:grid;gap:12px}
+.yb-facts li{list-style:none;display:flex;gap:12px;align-items:flex-start;font-size:18px}
+.yb-facts li::before{content:"";flex:none;width:22px;height:22px;margin-top:3px;border-radius:50%;background:var(--btn) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 12.5l4 4 8-9' fill='none' stroke='%23fff' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/70% no-repeat}
+.yb-chips{display:flex;flex-wrap:wrap;gap:10px;margin:26px 0 0;padding:0}
+.yb-chips li{list-style:none;display:inline-flex;align-items:center;gap:9px;font:800 16px/1.15 var(--ffd);padding:11px 15px 11px 12px;border-radius:14px;background:var(--chipbg);border:2px solid var(--line);box-shadow:0 3px 0 var(--lip);color:var(--ink)}
+.yb-chips li i{width:14px;height:14px;border-radius:50%;flex:none}
+/* skills: the plate is a banner, the phones climb out of it */
+.yb-stage{position:relative;width:100%;max-width:660px;margin-inline:auto}
+.yb-stage-plate{display:block;width:100%;aspect-ratio:2.35/1;object-fit:cover;object-position:50% 22%;border-radius:36px;box-shadow:0 6px 0 var(--lip),0 24px 50px var(--shadow);filter:var(--plate-f)}
+.yb-fan{position:relative;container-type:inline-size;width:100%;aspect-ratio:1.5/1;margin-top:-17%}
+.yb-fan .yb-ph{position:absolute;--w:35cqw}
+.yb-fan .a{left:6cqw;top:7cqw;transform:rotate(-8deg);z-index:1}
+.yb-fan .b{left:32.5cqw;top:0;z-index:3;--w:36cqw}
+.yb-fan .c{right:6cqw;top:7cqw;transform:rotate(8deg);z-index:2}
+/* story cards: solid copy panel + illustrated plate */
+.yb-story{position:relative;max-width:1180px;margin:0 auto;border-radius:44px;overflow:hidden;color:var(--white);isolation:isolate;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);min-height:520px;box-shadow:0 6px 0 rgba(0,0,0,.18),0 30px 60px var(--shadow)}
+.yb-story.flip{grid-template-columns:minmax(0,1.05fr) minmax(0,1fr)}
+.yb-story .copy{position:relative;z-index:1;padding:clamp(34px,5vw,72px);display:flex;flex-direction:column;justify-content:center}
+.yb-story .art{position:relative;min-height:320px}
+.yb-story .art img.plate{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:var(--plate-f)}
+.yb-story.flip .art{order:-1}
+.yb-story.teal{background:var(--teal)}
+.yb-story.teal .copy{background:linear-gradient(180deg,var(--tealtop),var(--teal))}
+.yb-story.navy{background:var(--navypanel)}
+.yb-story h2{color:var(--white);margin-bottom:16px;font-size:clamp(32px,3.6vw,50px)}
+.yb-story .yb-kicker{color:var(--cyan)}.yb-story .yb-kicker i{background:var(--cyan)}
+.yb-story.navy .yb-kicker{color:var(--sun)}.yb-story.navy .yb-kicker i{background:var(--sun)}
+.yb-story p.lede{font-size:19.5px;line-height:1.55;color:var(--tealink);margin:0 0 20px}
+.yb-story.navy p.lede{color:var(--navyink)}
+.yb-story .yb-btn{align-self:flex-start;margin-top:8px}
+.yb-bub{position:absolute;left:46%;top:13%;z-index:2;background:var(--white);color:var(--navy);border-radius:26px 26px 26px 8px;padding:12px 26px 14px;font:800 clamp(24px,2.6vw,36px)/1.1 var(--ffd);box-shadow:0 14px 28px -12px rgba(0,40,50,.6)}
+.yb-bub::after{content:"";position:absolute;left:18px;bottom:-12px;width:24px;height:24px;background:var(--white);clip-path:polygon(0 0,100% 0,0 100%);transform:skewX(-8deg)}
+.yb-no{display:flex;flex-wrap:wrap;gap:10px;margin:4px 0 6px;padding:0}
+.yb-no li{list-style:none;display:inline-flex;align-items:center;gap:9px;font:800 16px/1.1 var(--ffd);padding:10px 15px 10px 12px;border-radius:14px;background:var(--chip);color:var(--navy)}
+.yb-no li svg{width:18px;height:18px;flex:none}
+.yb-pair{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:28px;max-width:1180px;margin:40px auto 0}
+.yb-tile{background:var(--surface);border:2px solid var(--line);border-radius:32px;padding:34px 36px 32px;box-shadow:0 6px 0 var(--lip),0 24px 48px var(--shadow)}
+.yb-tile h3{font-size:26px;margin-bottom:10px}
+.yb-tile p{color:var(--ink2);font-size:17.5px;margin:0}
+.yb-streak{display:grid;grid-template-columns:minmax(0,1fr) 150px;gap:28px;align-items:end}
+.yb-week{display:grid;grid-template-columns:repeat(7,1fr);gap:7px;margin:22px 0 14px;padding:22px 14px 16px;border-radius:22px;background:var(--sunk)}
+.yb-week span{display:grid;gap:7px;justify-items:center;font:800 13.5px/1 var(--ffd);color:var(--ink2)}
+.yb-week i{display:block;width:min(100%,40px);aspect-ratio:1;border-radius:50%}
+.yb-week i.on{background:var(--sundot);box-shadow:inset 0 -4px 0 rgba(217,154,0,.65)}
+.yb-week i.off{background:var(--surface);box-shadow:inset 0 0 0 2px var(--lip)}
+.yb-week i.rest{border:2.5px dashed var(--restline)}
+.yb-legend{display:flex;flex-wrap:wrap;gap:6px 20px;margin:0 0 20px;padding:0;font-size:14.5px;color:var(--ink2)}
+.yb-legend li{list-style:none;display:flex;align-items:center;gap:8px}
+.yb-legend i{display:block;width:14px;height:14px;border-radius:50%}
+.yb-legend i.on{background:var(--sundot)}.yb-legend i.rest{border:2px dashed var(--restline)}
+.yb-streak .yb-ph{--w:100%}
+.yb-guides{display:flex;flex-direction:column}
+.yb-meet{display:grid;grid-template-rows:1fr 1fr;flex:1;gap:14px;margin:18px 0 0;padding:0}
+.yb-meet figure{margin:0;display:flex;align-items:center;gap:16px;background:var(--sunk);border-radius:22px;padding:12px 18px 12px 12px}
+.yb-meet .m{width:min(124px,28%);aspect-ratio:1;border-radius:18px;background:var(--cream);display:grid;place-items:end center;overflow:hidden;flex:none}
+.yb-meet .m img{width:100%;height:100%;object-fit:contain}
+.yb-meet .m.tad{background:var(--white)}
+.yb-meet figcaption{font-size:16.5px;line-height:1.35;color:var(--ink2)}
+.yb-meet figcaption b{display:block;color:var(--ink);font:800 20px/1.2 var(--ffd);margin-bottom:2px}
+/* progress */
+.yb-road{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:56px;align-items:center;max-width:1180px;margin:64px auto 0}
+.yb-device{position:relative;container-type:inline-size;width:100%;max-width:640px;margin-inline:auto;padding-bottom:12cqw}
+.yb-device .yb-pad{--w:100%}
+.yb-device .p1{position:absolute;right:-2cqw;bottom:0;--w:25cqw;z-index:3;transform:rotate(4deg)}
+.yb-device .p2{position:absolute;left:-3cqw;bottom:-4cqw;--w:22cqw;z-index:3;transform:rotate(-5deg)}
+.yb-friends{display:flex;gap:10px;margin:20px 0 0;padding:0;flex-wrap:wrap}
+.yb-friends li{list-style:none;width:64px;height:64px;border-radius:50%;background:var(--tint);border:3px solid var(--line);box-shadow:0 4px 0 var(--lip);display:grid;place-items:center;overflow:hidden}
+.yb-friends img{width:76%;height:auto}
+.yb-cards{display:flex;justify-content:flex-start;margin:34px 0 0;padding:0 0 0 10px}
+.yb-cards li{list-style:none;width:23%;min-width:92px;aspect-ratio:3/2;background:#fff;padding:2.4%;border-radius:10px;box-shadow:0 14px 26px rgba(30,38,64,.30);margin-left:-3%}
+.yb-cards li:nth-child(1){transform:rotate(-7deg) translateY(8px);margin-left:0}
+.yb-cards li:nth-child(2){transform:rotate(3deg) translateY(-6px);z-index:2}
+.yb-cards li:nth-child(3){transform:rotate(-2deg) translateY(6px);z-index:3}
+.yb-cards li:nth-child(4){transform:rotate(7deg)}
+.yb-cards img{width:100%;height:100%;object-fit:cover;border-radius:5px;display:block}
+/* grown-ups: one deliberate dark moment */
+.yb-band{background:var(--band);color:var(--bandink);padding:112px 0 100px}
+.yb-band h2{color:var(--bandink)}
+.yb-band .yb-kicker{color:var(--bandlink)}.yb-band .yb-kicker i{background:var(--bandlink)}
+.yb-band .head{max-width:760px;margin:0 auto 64px;text-align:center}
+.yb-band .head .yb-kicker{justify-content:center}
+.yb-band p.big{color:var(--bandink2)}
+.yb-fours{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin:0;padding:0;text-align:left}
+.yb-fours li{list-style:none}
+.yb-fours .yb-ph{--w:100%}
+.yb-fours h3{font-size:20px;margin:24px 0 6px;color:var(--bandink)}
+.yb-fours p{font-size:16.5px;color:var(--bandink2);margin:0;line-height:1.5}
+.yb-swipe{display:none;align-items:center;justify-content:center;gap:8px;margin:2px 0 0;font:700 15px/1.3 var(--ffd);color:var(--ink2)}
+.yb-swipe svg{width:18px;height:18px;flex:none;animation:yb-nudge 1.8s ease-in-out 3}
+.yb-band .yb-swipe{color:var(--bandink2)}
+@keyframes yb-nudge{0%,100%{transform:translateX(0)}50%{transform:translateX(5px)}}
+.yb-gate{display:flex;align-items:center;justify-content:center;gap:14px;margin:60px auto 0;max-width:760px;padding:16px 22px;border-radius:20px;border:2px solid var(--bandink2);color:var(--bandink);font:700 17px/1.4 var(--ffd);text-align:left}
+.yb-gate svg{width:26px;height:26px;flex:none;stroke:var(--bandlink);fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+/* trust */
+.yb-tgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;max-width:1180px;margin:40px auto 0;padding:0}
+.yb-tgrid li{list-style:none;background:var(--surface);color:var(--ink);border:2px solid var(--line);box-shadow:0 5px 0 var(--lip),0 24px 40px var(--shadow);border-radius:24px;padding:26px 22px 24px}
+.yb-tgrid h3{font-size:20px;margin:16px 0 8px;line-height:1.2}
+.yb-tgrid p{font-size:16.5px;line-height:1.5;margin:0;color:var(--ink2)}
+.yb-ico{width:46px;height:46px;border-radius:14px;background:var(--sun);display:grid;place-items:center;box-shadow:0 3px 0 var(--sunlip)}
+.yb-ico svg{width:26px;height:26px;stroke:var(--iconink);fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+/* spec strip + closing */
+.yb-specs{max-width:1180px;margin:0 auto;padding:44px 0 0;border-top:2px solid var(--line);display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+.yb-specs dt{font:800 14px/1.2 var(--ffd);color:var(--ink2);margin:0 0 6px}
+.yb-specs dd{margin:0;font:700 17.5px/1.4 var(--ffd);color:var(--ink)}
+.yb-specs dd small{display:block;font:400 15.5px/1.5 var(--ffb);color:var(--ink2);margin-top:4px}
+.yb-close{max-width:1180px;margin:0 auto;border-radius:44px;background:linear-gradient(135deg,var(--tealtop),var(--teal) 60%);color:var(--white);display:grid;grid-template-columns:minmax(0,240px) minmax(0,1fr);gap:40px;align-items:center;padding:48px clamp(28px,5vw,72px);box-shadow:0 6px 0 rgba(0,0,0,.18),0 30px 60px var(--shadow)}
+.yb-close img{width:100%;height:auto;filter:drop-shadow(0 12px 18px rgba(0,30,40,.35))}
+.yb-close h2{color:var(--white);font-size:clamp(30px,3.4vw,46px);margin-bottom:10px}
+.yb-close p{color:var(--tealink);font-size:19px;margin:0 0 22px}
+.yb-close p.yb-badge{color:var(--navy);margin:0;font-size:inherit}
+/* footer */
+.yb-foot{position:relative;margin-top:96px}
+.yb-foot-art{position:relative;height:230px;overflow:hidden;isolation:isolate}
+.yb-foot-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 62%;z-index:-1;filter:var(--plate-f)}
+.yb-foot-panel{background:var(--foot);color:var(--white);padding:46px 0 44px}
+.yb-foot-grid{display:flex;justify-content:space-between;gap:30px 36px;flex-wrap:wrap;align-items:flex-start}
+.yb-foot .yb-brand{font-size:28px}
+.yb-foot .yb-brand img{width:56px;height:56px;border-radius:15px}
+.yb-foot p{color:var(--foot2);margin:0}
+.yb-foot a{color:var(--white);font-weight:700}
+.yb-flinks{display:flex;flex-wrap:wrap;gap:8px 26px;font:700 18px/1.4 var(--ffd)}
+.yb-foot .yb-legal-note{margin-top:34px;padding-top:24px;border-top:2px solid #2A3E4B;font-size:14px;line-height:1.6;color:var(--foot2)}
+/* inner pages */
+.yb-lband{background:linear-gradient(100deg,var(--lbandtop),var(--lband));color:var(--white);position:relative;overflow:hidden;padding-bottom:92px}
+.yb-lband .yb-top{padding-bottom:10px}
+.yb-crumb{font:700 16px/1.3 var(--ffd);margin:30px 0 0;color:var(--white);display:flex;flex-wrap:wrap;gap:8px 12px;align-items:center}
+.yb-crumb a{color:var(--white)}
+.yb-lband h1{font-size:clamp(38px,5vw,60px);margin-top:18px;color:var(--white)}
+.yb-lband p.sub{font-size:20px;max-width:34em;margin:14px 0 0;color:var(--white)}
+.yb-lband .yb-mascot{position:absolute;right:max(4%,calc(50% - 560px));bottom:-8px;width:130px;height:auto;filter:drop-shadow(0 10px 16px rgba(0,30,40,.4))}
+.yb-lband.tall .yb-mascot{width:210px}
+.yb-lgrid{display:grid;grid-template-columns:250px minmax(0,1fr);gap:48px;margin-top:-56px;padding-bottom:40px;align-items:start;position:relative;z-index:2}
+.yb-toc{min-width:0;position:sticky;top:24px;background:var(--surface);border:2px solid var(--line);border-radius:24px;padding:22px 22px 20px;box-shadow:0 5px 0 var(--lip)}
+.yb-toc h2{font-size:17px;margin:0 0 12px;color:var(--ink)}
+.yb-toc ol{margin:0;padding:0;list-style:none;display:grid;gap:2px;font-size:15.5px;line-height:1.3;counter-reset:t}
+.yb-toc li{counter-increment:t}
+.yb-toc ol a{display:flex;gap:10px;padding:7px 10px;margin:0 -10px;border-radius:10px;text-decoration:none;color:var(--ink);font-weight:600}
+.yb-toc.num ol a::before{content:counter(t,decimal-leading-zero);font:800 12.5px/1.6 var(--ffd);color:var(--ink2);flex:none;min-width:1.7em}
+.yb-toc ol a:hover{background:var(--tint)}
+.yb-toc .tools{margin-top:14px;padding-top:16px;border-top:2px solid var(--line);display:grid;gap:12px;justify-items:start}
+.yb-toc .tools a{font-weight:800;font-size:15.5px}
+.yb-toc .yb-btn{min-height:46px;font-size:16px;padding:11px 20px;border-radius:16px;color:var(--btnfg);text-decoration:none}
+.yb-doc{background:var(--surface);border:2px solid var(--line);border-radius:32px;padding:56px clamp(24px,5vw,72px) 60px;box-shadow:0 6px 0 var(--lip),0 30px 60px var(--shadow);min-width:0}
+.yb-doc>*{max-width:70ch}
+.yb-doc h1{font-size:clamp(32px,3.6vw,46px);margin-bottom:10px}
+.yb-doc .eyebrow{font:800 15px/1 var(--ffd);color:var(--link);margin:0 0 14px}
+.yb-doc .effective{display:inline-block;background:var(--tint);color:var(--ink);font:700 15px/1.3 var(--ffd);padding:8px 14px;border-radius:999px;margin-bottom:24px}
+.yb-doc h2{font-size:clamp(24px,2.4vw,31px);margin:2.1em 0 .6em;padding-top:1.1em;border-top:2px solid var(--line);scroll-margin-top:24px}
+.yb-doc.num{counter-reset:s}
+.yb-doc.num h2{counter-increment:s}
+.yb-doc.num h2::before{content:counter(s,decimal-leading-zero);display:block;font:800 14px/1 var(--ffd);color:var(--link);margin-bottom:10px;letter-spacing:.02em}
+.yb-doc .effective+p,.yb-doc h1+p{font-size:20px;line-height:1.55}
+.yb-doc p,.yb-doc li{font-size:18px;line-height:1.7}
+.yb-doc ul{padding-left:0;margin:0 0 1.2em;display:grid;gap:10px}
+.yb-doc li{list-style:none;position:relative;padding-left:30px}
+.yb-doc li::before{content:"";position:absolute;left:4px;top:.62em;width:12px;height:12px;border-radius:50%;background:var(--btn)}
+.yb-doc strong{font-weight:700}
+.yb-doc a{overflow-wrap:anywhere}
+.yb-other{max-width:1180px;margin:0 auto;padding:0 0 10px;font:700 16px/1.4 var(--ffd);color:var(--ink2)}
+.yb-sup{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:-56px;padding-bottom:40px;position:relative;z-index:2}
+.yb-sup>section{background:var(--surface);border:2px solid var(--line);border-radius:28px;padding:34px 34px 30px;box-shadow:0 6px 0 var(--lip),0 24px 48px var(--shadow)}
+.yb-sup>section.wide{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px 40px;align-items:center}
+.yb-sup h2{font-size:25px;margin-bottom:12px}
+.yb-sup p{font-size:17.5px;color:var(--ink2);margin:0 0 12px}
+.yb-sup p:last-child{margin-bottom:0}
+.yb-sup strong{color:var(--ink)}
+.yb-sup .path{display:inline-block;background:var(--tint);color:var(--ink);font:800 16px/1.3 var(--ffd);padding:8px 14px;border-radius:12px}
+@media(max-width:1000px){
+.yb-two,.yb-two.skills,.yb-road{grid-template-columns:1fr;gap:44px}
+.yb-sec{padding:84px 0}
+.yb-fours{grid-template-columns:repeat(2,1fr)}
+.yb-tgrid{grid-template-columns:repeat(2,1fr)}
+.yb-specs{grid-template-columns:repeat(2,1fr)}
+.yb-story,.yb-story.flip{grid-template-columns:1fr;min-height:0}
+.yb-story .art,.yb-story.flip .art{order:-1;min-height:300px}
+.yb-pair{grid-template-columns:1fr}
+.yb-streak{grid-template-columns:1fr}.yb-streak .yb-ph{display:none}
+.yb-lgrid{grid-template-columns:minmax(0,1fr);gap:24px;margin-top:-44px}
+.yb-toc{position:static}
+}
+@media(max-width:900px){
+.yb-hero{padding:112px 0 96px;min-height:0}
+.yb-hero-grid{grid-template-columns:1fr;gap:30px}
+.yb-hero .yb-scrim{background:linear-gradient(180deg,rgba(3,52,64,0.92) 0%,rgba(3,52,64,0.9) 55%,rgba(3,52,64,0.66) 100%),linear-gradient(180deg,rgba(3,52,64,0.62) 0%,rgba(3,52,64,0) 15%)}
+.yb-hero-art{max-width:420px}
+.yb-bg{transform:none}
+}
+@media(max-width:640px){
+body{font-size:17px}
+.yb-wrap{width:min(1180px,100% - 36px)}
+.yb-top{padding:16px 0}
+.yb-brand{font-size:21px}.yb-brand img{width:38px;height:38px}
+.yb-top .yb-wrap{flex-wrap:wrap;row-gap:6px}
+.yb-nav{width:100%;justify-content:space-between;gap:0}
+.yb-nav a{padding:10px 8px;font-size:14.5px}
+.yb-hero{padding-top:148px}
+@media(max-width:380px){.yb-nav{flex-wrap:wrap;justify-content:center}.yb-nav a{padding:8px 6px;font-size:14px}}
+.yb-hero h1{font-size:clamp(36px,10.4vw,44px)}
+.yb-hero-art{aspect-ratio:1/1.18;max-width:340px}
+.yb-hero-art .l,.yb-hero-art .r{display:none}
+.yb-hero-art .c{left:11cqw;top:0;width:62cqw}
+.yb-hero-art .y{right:-2cqw;bottom:2cqw;width:40cqw}
+.yb-cta{flex-direction:column;align-items:stretch;gap:14px}
+.yb-cta .yb-btn,.yb-cta .yb-badge{width:100%;min-height:48px}
+.yb-cta .yb-badge{justify-content:center}
+.yb-bubbles{display:none}
+.yb-steps,.yb-fours{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:18px;gap:18px;padding:6px 18px 14px;margin:0 -18px}
+.yb-steps li,.yb-fours li{flex:0 0 60%;scroll-snap-align:start;margin-top:0!important}
+.yb-swipe{display:flex}
+.yb-sec{padding:56px 0}.yb-band{padding:72px 0 64px}.yb-band .head{margin-bottom:36px}.yb-fours h3{margin-top:16px}
+.yb-hero{padding-bottom:84px}.yb-road{margin-top:40px}
+.yb-tgrid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:18px;gap:14px;padding:6px 18px 14px;margin:32px -18px 0}
+.yb-tgrid li{flex:0 0 76%;scroll-snap-align:start}
+.yb-cards{display:none}
+.yb-tile.guides{display:none}
+.yb-specs{grid-template-columns:1fr 1fr;gap:18px 16px}.yb-specs dd{font-size:16px}.yb-specs dd small{font-size:14.5px}
+.yb-pair{margin-top:24px}
+.yb-stage-plate{border-radius:26px;aspect-ratio:2/1}
+.yb-story{border-radius:30px}
+.yb-story .art,.yb-story.flip .art{min-height:176px}
+.yb-story .copy{padding:30px 22px 34px}
+.yb-bub{left:auto;right:10%;top:12%}
+.yb-tile{padding:26px 22px 24px;border-radius:26px}
+.yb-week{gap:4px;padding:18px 8px 14px}
+.yb-close{grid-template-columns:1fr;gap:18px;text-align:center;border-radius:30px;padding:28px 20px}
+.yb-close img{max-width:104px;margin:0 auto}
+.yb-close .yb-badge{justify-content:center;width:100%}
+.yb-foot{margin-top:56px}.yb-foot-art{height:120px}.yb-foot-panel{padding:34px 0 32px}
+.yb-gate{margin-top:40px}
+.yb-lband{padding-bottom:70px}.yb-lband .yb-mascot,.yb-lband.tall .yb-mascot{width:96px;right:12px}
+.yb-doc{padding:34px 20px 40px;border-radius:26px}
+.yb-toc{padding:16px 16px 14px}
+.yb-toc ol{display:flex;overflow-x:auto;gap:8px;padding:2px 2px 10px;scroll-snap-type:x proximity}
+.yb-toc ol a{border:2px solid var(--line);white-space:nowrap;padding:8px 14px;margin:0;border-radius:999px;font-size:15px;scroll-snap-align:start}
+.yb-toc.num ol a::before{display:none}
+.yb-toc .tools{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;margin-top:6px;padding-top:12px}
+.yb-sup{grid-template-columns:1fr}.yb-sup>section.wide{grid-template-columns:1fr}
+.yb-sup>section{padding:26px 22px 24px}
+.yb-cards li{min-width:0}
+}</style></head><body><a class="yb-skip" href="#main">Skip to content</a><main id="main"><section class="yb-hero yb-onhero" aria-labelledby="h1">
+<img class="yb-bg" src="media/axolotl-reef.jpg" width="1152" height="768" alt="" fetchpriority="high">
+<div class="yb-scrim"></div><div class="yb-bubbles" aria-hidden="true"><span style="left:56%;width:18px;height:18px;animation-duration:16s;animation-delay:-2s"></span><span style="left:63%;width:30px;height:30px;animation-duration:22s;animation-delay:-9s"></span><span style="left:71%;width:14px;height:14px;animation-duration:14s;animation-delay:-5s"></span><span style="left:78%;width:24px;height:24px;animation-duration:19s;animation-delay:-12s"></span><span style="left:86%;width:16px;height:16px;animation-duration:17s;animation-delay:-3s"></span><span style="left:93%;width:34px;height:34px;animation-duration:24s;animation-delay:-15s"></span><span style="left:50%;width:20px;height:20px;animation-duration:20s;animation-delay:-7s"></span></div>
+<header class="yb-top abs"><div class="yb-wrap"><a class="yb-brand" href="./"><img src="media/icon-512.png" width="44" height="44" alt="">Yaybo</a><nav class="yb-nav" aria-label="Main"><a class="opt" href="#adventure">A day</a><a class="opt" href="#skills">Skills</a><a class="opt" href="#grown-ups">For grown-ups</a><a href="privacy/">Privacy</a><a href="support/">Support</a></nav></div></header>
+<div class="yb-wrap yb-hero-grid"><div class="yb-hero-copy">
+<p class="yb-eyebrow">A learning app for ages 4 to 9</p>
+<h1 id="h1">About ten minutes a day. Three stops. <em>Then it ends.</em></h1>
+<p class="yb-lede">A daily learning plan for your family: phonics, reading, spelling, math, money, time and handwriting, Pre-K to 3rd grade, built on the grade-level expectations most U.S. states share. Yaybo the axolotl cheers every right answer.</p>
+<div class="yb-cta"><p class="yb-badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.2 1.2-6.5L2.5 9.5l6.6-.9z" fill="#FFC107" stroke="#D99A00" stroke-width="1.4" stroke-linejoin="round"/></svg><span><small>Not on sale yet</small><b>Coming soon to the App Store</b></span></p>
+<a class="yb-btn yb-btn-sun" href="#adventure">See how a day works</a></div>
+<p class="yb-fine">For iPhone and iPad &middot; iOS 26 or later &middot; United States and Canada</p></div>
+<div class="yb-hero-art">
+<div class="yb-float l"><div class="yb-ph " style="--w:100%"><div class="yb-ph-body"><img src="media/island-rich.jpg" width="570" height="1240" alt="Yaybo's island, full of friends, with a rainbow, a pond and a bottom bar of Garden, Friends, Fridge, Story Nook and Closet"></div></div></div>
+<div class="yb-float r"><div class="yb-ph " style="--w:100%"><div class="yb-ph-body"><img src="media/trail-map.jpg" width="570" height="1240" alt="The road trip trail across the U.S.: a winding path of checked stops with trees alongside"></div></div></div>
+<div class="yb-float c"><div class="yb-ph " style="--w:100%"><div class="yb-ph-body"><img src="media/home-fresh.jpg" width="570" height="1240" alt="Yaybo's home screen: a greeting, Today's Adventure with a Start Adventure button, and tiles for Road trip, My Island and Quests" fetchpriority="high"></div></div></div>
+<img class="yb-float y" src="media/yaybo-wave.png" width="643" height="569" alt="Yaybo the axolotl, waving">
+</div></div><svg class="yb-wave b" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0 50 C 180 100 360 0 600 40 C 840 80 1020 10 1200 44 C 1320 66 1390 60 1440 48 L1440 90 L0 90 Z"/></svg></section><section class="yb-sec" id="adventure" aria-labelledby="h-adv"><div class="yb-wrap yb-two">
+<div><p class="yb-kicker"><i></i>How a day works</p><h2 id="h-adv">One Adventure a day, with a clear end</h2>
+<p class="big">Your child gets one short Adventure a day: three short lessons that pick up where they left off. Three stops and about ten minutes, then a clear end.</p>
+<ul class="yb-facts"><li>You set it up in about six minutes.</li><li>Instructions are spoken aloud, so early learners do not need to read.</li><li>You get a plain-English report each week.</li></ul></div>
+<ol class="yb-steps" tabindex="0" aria-label="A day in Yaybo, in three steps">
+<li><div class="yb-ph " style="--w:100%"><div class="yb-ph-body"><img src="media/adventure-choice.jpg" width="570" height="1240" alt="Choose a Stop: Small letters, Reading and Writing, or Big and small, Thinking" loading="lazy" decoding="async"></div></div><p class="yb-cap"><b>1</b>Choose a Stop</p></li>
+<li><div class="yb-ph " style="--w:100%"><div class="yb-ph-body"><img src="media/lesson-letter.jpg" width="570" height="1240" alt="A lesson asking What letter is this? with a big Z, answer tiles and Tad the turtle as the voice" loading="lazy" decoding="async"></div></div><p class="yb-cap"><b>2</b>Play a short lesson</p></li>
+<li><div class="yb-ph " style="--w:100%"><div class="yb-ph-body"><img src="media/celebrate-adventure.jpg" width="570" height="1240" alt="Adventure complete! Three Stops, all done. What a trip!" loading="lazy" decoding="async"></div></div><p class="yb-cap"><b>3</b>A clear end</p></li>
+</ol><p class="yb-swipe" aria-hidden="true"><span>Swipe to see more</span><svg viewBox="0 0 24 24"><path d="M5 12h13m-5-5.5 5.5 5.5-5.5 5.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></p></div></section><section class="yb-sec" id="skills" aria-labelledby="h-skills" style="padding-top:40px"><div class="yb-wrap yb-two skills">
+<div><p class="yb-kicker"><i></i>What your child practices</p><h2 id="h-skills">Real school skills, step by step</h2>
+<p class="big">Skills carry standards codes that line up with school: Common Core, plus Texas TEKS in Texas and Florida B.E.S.T. in Florida.</p>
+<ul class="yb-chips"><li><i style="background:#2D7FF9"></i>Math, Pre-K to 3rd grade</li><li><i style="background:#F23D7A"></i>Phonics and reading</li><li><i style="background:#F23D7A"></i>Spelling, 1st to 3rd grade</li><li><i style="background:#FFC107"></i>Money and time</li><li><i style="background:#FF8A1F"></i>Handwriting</li></ul>
+<p class="yb-sub" style="margin-top:24px">Type this week's spelling list and your child practices it in the Adventure. Trace letters, numbers and your child's name with a finger or Apple Pencil, in print, slanted print or cursive.</p></div>
+<div class="yb-stage"><img class="yb-stage-plate" src="media/story-time.jpg" width="1152" height="768" alt="" loading="lazy" decoding="async">
+<div class="yb-fan"><div class="yb-ph a"><div class="yb-ph-body"><img src="media/lesson-math.jpg" width="570" height="1240" alt="A math word problem with flower stickers and a number pad" loading="lazy" decoding="async"></div></div><div class="yb-ph b"><div class="yb-ph-body"><img src="media/lesson-trace.jpg" width="570" height="1240" alt="Trace B: a handwriting guide with a dotted capital B" loading="lazy" decoding="async"></div></div><div class="yb-ph c"><div class="yb-ph-body"><img src="media/lesson-blend.jpg" width="570" height="1240" alt="Blend the letters b, o, x, then find the picture" loading="lazy" decoding="async"></div></div></div></div>
+</div></section><section class="yb-sec" id="yay" aria-labelledby="h-yay" style="padding-top:40px"><div class="yb-wrap">
+<div class="yb-story teal"><div class="copy"><p class="yb-kicker"><i></i>Gentle, never loud</p><h2 id="h-yay">Every right answer gets a Yay</h2>
+<p class="lede">Yaybo the axolotl cheers every right answer and helps gently after a miss. Tad the turtle brings stories and silly skits.</p>
+<ul class="yb-no"><li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.6" fill="none" stroke="#1E2640" stroke-width="2.6"/><path d="M6 18L18 6" stroke="#1E2640" stroke-width="2.6" stroke-linecap="round"/></svg>No buzzers</li><li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.6" fill="none" stroke="#1E2640" stroke-width="2.6"/><path d="M6 18L18 6" stroke="#1E2640" stroke-width="2.6" stroke-linecap="round"/></svg>No lost hearts</li><li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.6" fill="none" stroke="#1E2640" stroke-width="2.6"/><path d="M6 18L18 6" stroke="#1E2640" stroke-width="2.6" stroke-linecap="round"/></svg>No leaderboards</li></ul></div>
+<div class="art"><img class="plate" src="media/axolotl-smile.jpg" width="1152" height="768" alt="" loading="lazy" decoding="async"><div class="yb-bub" aria-hidden="true">Yay!</div></div></div>
+<div class="yb-pair"><div class="yb-tile"><div class="yb-streak"><div><h3>A forgiving Sunny Streak</h3>
+<p>Rest days you choose. The stars, friends, clothes and postcards your child has earned are never taken away.</p>
+<div class="yb-week" role="img" aria-label="An example week of the Sunny Streak: five sunny days and one rest day you chose"><span><i class="on"></i>M</span><span><i class="on"></i>T</span><span><i class="on"></i>W</span><span><i class="rest"></i>T</span><span><i class="on"></i>F</span><span><i class="on"></i>S</span><span><i class="off"></i>S</span></div>
+<ul class="yb-legend" aria-hidden="true"><li><i class="on"></i>A sunny day</li><li><i class="rest"></i>A rest day you chose</li></ul></div>
+<div class="yb-ph " style="--w:100%"><div class="yb-ph-body"><img src="media/streak-seven.jpg" width="570" height="1240" alt="A milestone screen of the Sunny Streak: 7 sunny days, with Yaybo happy" loading="lazy" decoding="async"></div></div></div></div>
+<div class="yb-tile guides yb-guides"><h3>Meet Yaybo and Tad</h3><div class="yb-meet">
+<figure><div class="m"><img src="media/yaybo-idle.png" width="655" height="561" alt="" loading="lazy"></div><figcaption><b>Yaybo</b>the axolotl, cheering every right answer</figcaption></figure>
+<figure><div class="m tad"><img src="media/tad.png" width="480" height="480" alt="" loading="lazy"></div><figcaption><b>Tad</b>the turtle, with stories and silly skits</figcaption></figure></div></div></div>
+</div></section><section class="yb-sec sunk" id="progress" aria-labelledby="h-prog"><div class="yb-wrap">
+<div class="yb-story navy flip"><div class="copy"><p class="yb-kicker"><i></i>Progress you can see</p><h2 id="h-prog">An island that grows, and a road trip across the U.S.</h2>
+<p class="lede">Mastered skills fill an island with new friends. A road trip across the U.S. collects a postcard and a fun fact from each state.</p></div>
+<div class="art"><img class="plate" src="media/yellow-van.jpg" width="1152" height="768" alt="" loading="lazy" decoding="async"></div></div>
+<div class="yb-road"><div class="yb-device"><div class="yb-pad"><div class="yb-pad-body"><img src="media/ipad-island.jpg" width="900" height="625" alt="Yaybo's island on iPad, in landscape: critters, a rainbow, a pond and tents" loading="lazy" decoding="async"></div></div>
+<div class="yb-ph p1"><div class="yb-ph-body"><img src="media/postcard-vermont.jpg" width="570" height="1240" alt="Postcard from Vermont: Vermont makes more maple syrup than any other state" loading="lazy" decoding="async"></div></div><div class="yb-ph p2"><div class="yb-ph-body"><img src="media/trail-chest.jpg" width="570" height="1240" alt="Hooray! Yaybo found a flower pot on the trail" loading="lazy" decoding="async"></div></div></div>
+<div><h3 style="font-size:26px;margin-bottom:10px">Friends for the island, postcards for the road</h3><p class="yb-sub" style="margin:0">Works on iPhone and iPad.</p>
+<ul class="yb-friends" aria-label="Some of the island friends"><li><img src="media/critter-bee.png" width="240" height="240" alt="" loading="lazy"></li><li><img src="media/critter-fox.png" width="240" height="240" alt="" loading="lazy"></li><li><img src="media/critter-otter.png" width="240" height="240" alt="" loading="lazy"></li><li><img src="media/critter-penguin.png" width="240" height="240" alt="" loading="lazy"></li><li><img src="media/critter-koala.png" width="240" height="240" alt="" loading="lazy"></li></ul><ul class="yb-cards" aria-label="Postcards from the road trip"><li><img src="media/pc-california.jpg" width="560" height="373" alt="Postcard art: tall redwood trees" loading="lazy"></li><li><img src="media/pc-hawaii.jpg" width="560" height="373" alt="Postcard art: a turtle swimming near a volcano" loading="lazy"></li><li><img src="media/pc-vermont.jpg" width="560" height="373" alt="Postcard art: a maple syrup stand under an autumn tree" loading="lazy"></li><li><img src="media/pc-new-mexico.jpg" width="560" height="373" alt="Postcard art: hot-air balloons over a mesa" loading="lazy"></li></ul></div></div>
+</div></section><section class="yb-band yb-dark" id="grown-ups" aria-labelledby="h-grown"><div class="yb-wrap">
+<div class="head"><p class="yb-kicker"><i></i>For grown-ups</p><h2 id="h-grown">A weekly report in plain English</h2>
+<p class="big">What is mastered, what is tricky, and one thing to try together. Optional Read-aloud lets your child read a word or a page out loud.</p></div>
+<ul class="yb-fours" tabindex="0" aria-label="What grown-ups get in the Parent Zone"><li><div class="yb-ph " style="--w:100%"><div class="yb-ph-body"><picture><source media="(prefers-color-scheme: dark)" srcset="media/parent-report-dark.jpg"><img src="media/parent-report.jpg" width="570" height="1240" alt="The weekly report in the Parent Zone: first wins, the week in numbers and an activity to try together" loading="lazy" decoding="async"></picture></div></div><h3>The weekly report</h3><p>What is mastered, what is tricky, and a simple activity to do together.</p></li><li><div class="yb-ph " style="--w:100%"><div class="yb-ph-body"><img src="media/parent-explainers.jpg" width="570" height="1240" alt="How they teach it: short explainers such as Number bonds, Ten frames and Making ten" loading="lazy" decoding="async"></div></div><h3>How they teach it</h3><p>Short explainers for how school teaches each skill.</p></li><li><div class="yb-ph " style="--w:100%"><div class="yb-ph-body"><img src="media/parent-highfive.jpg" width="570" height="1240" alt="Pick a sticker and say something: a high-five for your child" loading="lazy" decoding="async"></div></div><h3>High-fives</h3><p>Send your child a sticker and a note.</p></li><li><div class="yb-ph " style="--w:100%"><div class="yb-ph-body"><img src="media/parent-children.jpg" width="570" height="1240" alt="The Children list with an Add a child button and a note about up to four children on one subscription" loading="lazy" decoding="async"></div></div><h3>Up to four children</h3><p>On one subscription, with Family Sharing.</p></li></ul><p class="yb-swipe" aria-hidden="true"><span>Swipe to see more</span><svg viewBox="0 0 24 24"><path d="M5 12h13m-5-5.5 5.5 5.5-5.5 5.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></p>
+<p class="yb-gate"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2.5"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span>Everything for adults sits behind a parental gate, with an optional PIN.</span></p></div></section><section class="yb-sec" id="privacy" aria-labelledby="h-trust"><div class="yb-wrap">
+<div class="yb-story teal flip"><div class="copy"><p class="yb-kicker"><i></i>Privacy</p><h2 id="h-trust">No ads. No account. No tracking.</h2>
+<p class="lede">Your child's name and answers stay on your devices, and in your own iCloud if Sync is on. Nothing else to buy.</p>
+<a class="yb-btn yb-btn-sun" href="privacy/">Read the privacy policy</a></div><div class="art"><img class="plate" src="media/sunset-pond.jpg" width="1152" height="768" alt="" loading="lazy" decoding="async"></div></div>
+<ul class="yb-tgrid" tabindex="0" aria-label="How Yaybo protects your family"><li><span class="yb-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="3" width="12" height="18" rx="3"/><path d="M10 18h4"/></svg></span><h3>It stays on your devices</h3><p>Your child's name and answers stay on your devices, and in your own iCloud if Sync is on.</p></li><li><span class="yb-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2.5"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></span><h3>A parental gate</h3><p>Everything for adults sits behind it, with an optional PIN.</p></li><li><span class="yb-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/></svg></span><h3>Read-aloud is optional</h3><p>Your device listens only while a button is held and never records, stores or sends the sound.</p></li><li><span class="yb-ico"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="3"/><path d="M3 10.5h18"/></svg></span><h3>Apple handles payments</h3><p>If a grown-up buys or restores a subscription, the purchase-analytics partner sees the purchase and your device's technical details, never anything about your child.</p></li></ul><p class="yb-swipe" aria-hidden="true"><span>Swipe to see more</span><svg viewBox="0 0 24 24"><path d="M5 12h13m-5-5.5 5.5 5.5-5.5 5.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></p>
+<div style="max-width:1180px;margin:72px auto 0"><dl class="yb-specs">
+<div><dt>Ages</dt><dd>4 to 9, Pre-K to 3rd grade</dd></div><div><dt>Devices</dt><dd>iPhone and iPad, iOS 26 or later</dd></div>
+<div><dt>Available in</dt><dd>The United States and Canada</dd></div>
+<div><dt>Yaybo Plus</dt><dd>A subscription<small>One plan covers up to four children and works with Family Sharing. Plans and the trial are shown in the app and on the App Store.</small></dd></div></dl></div>
+<div style="margin-top:72px"><div class="yb-close"><img src="media/yaybo-wave.png" width="643" height="569" alt="Yaybo the axolotl, waving" loading="lazy">
+<div><h2>Yaybo is coming soon.</h2><p>A daily plan your family can finish in about ten minutes, with a clear end.</p>
+<p class="yb-badge"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.6l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.2 1.2-6.5L2.5 9.5l6.6-.9z" fill="#FFC107" stroke="#D99A00" stroke-width="1.4" stroke-linejoin="round"/></svg><span><small>Not on sale yet</small><b>Coming soon to the App Store</b></span></p></div></div></div>
+</div></section></main><footer class="yb-foot"><div class="yb-foot-art"><img class="" src="media/turtles-moon.jpg" width="1152" height="768" alt="" loading="lazy" decoding="async"><svg class="yb-wave t" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0 50 C 180 100 360 0 600 40 C 840 80 1020 10 1200 44 C 1320 66 1390 60 1440 48 L1440 90 L0 90 Z"/></svg></div><div class="yb-foot-panel"><div class="yb-wrap"><div class="yb-foot-grid"><div><a class="yb-brand" href="./"><img src="media/icon-512.png" width="56" height="56" alt="">Yaybo</a><p style="margin:16px 0 0;max-width:26em">A learning app for children, used with a grown-up.</p></div><div><nav class="yb-flinks" aria-label="Footer"><a href="privacy/">Privacy</a><a href="terms/">Terms</a><a href="support/">Support</a><a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a></nav><p style="margin:16px 0 0;font-size:15.5px">For iPhone and iPad · iOS 26 or later · United States and Canada</p></div></div><p class="yb-legal-note">Common Core State Standards: &copy; Copyright 2010. National Governors Association Center for Best Practices and Council of Chief State School Officers. All rights reserved. TEKS belong to the Texas Education Agency and B.E.S.T. to the Florida Department of Education. Yaybo is not endorsed by, or affiliated with, the NGA Center, CCSSO, TEA or FLDOE.</p></div></div></footer></body></html>
