@@ -10,11 +10,12 @@ matters. Change those first, then this file.
 Paths follow Atino's convention (English at the root of the app's folder, castellano beside it):
   /yaybo/privacy/      /yaybo/privacidad/     privacy policy with the COPPA section
   /yaybo/terms/        /yaybo/condiciones/    terms of use (the paywall's own Terms link is Apple's standard EULA)
-Built with gen_site's chrome; run `python3 tools/gen_site.py`, which calls build_yaybo().
+Yaybo's pages are isolated from the studio's chrome: tools/yaybo_site.py owns the design, the home and support pages and the audit;
+this file keeps the legal text. Run `python3 tools/gen_site.py` (it calls build_yaybo()) or
+`python3 -c "import sys; sys.path.insert(0,'tools'); from gen_legal_yaybo import build_yaybo; build_yaybo()"`.
 The CONFIRM notes are facts only Izotz can supply; they stay in the generated HTML as comments.
 """
 import os
-from gen_site import head, header, footer, write, legal_main
 
 # What the page says depends on one fact about the build that ships; the page must describe THAT build (Guideline 2.3.1,
 # the COPPA notice must be accurate). It is Izotz's decision, so it is a switch, not an edit:
@@ -467,15 +468,5 @@ PAGES = [
 
 
 def build_yaybo():
-    for kind, texts in (('privacy', PRIVACY), ('terms', TERMS)):
-        slugs = {lang: slug for lang, k, slug, _, _ in PAGES if k == kind}
-        alts = {L: f'https://seizeapps.com/yaybo/{s}/' for L, s in slugs.items()}
-        for lang, k, slug, title, desc in PAGES:
-            if k != kind:
-                continue
-            root = '../../'
-            canonical = f'yaybo/{slug}/'
-            switch = {L: f'{root}yaybo/{s}/' for L, s in slugs.items()}
-            html = (head(lang, title, desc, root, canonical, alts=alts) + header(lang, root, canonical, switch=switch)
-                    + legal_main(lang, fill(texts[lang], lang)) + footer(lang, root))
-            write(f'yaybo/{slug}/index.html', html)
+    import yaybo_site
+    yaybo_site.build_pages(PRIVACY, TERMS, PAGES, fill)
