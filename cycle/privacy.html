@@ -6,90 +6,96 @@
 <title>Cycle Timers · Privacy Policy</title>
 <meta name="description" content="Cycle Timers privacy: your tasks stay on your device. No account, no ads, no tracking.">
 <link rel="canonical" href="https://seizeapps.com/cycle/privacy.html">
-<meta name="theme-color" content="#0E7C6B" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#141215" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F4F6F5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#101112" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="../assets/icons/cycle-timers.png">
 <link rel="apple-touch-icon" href="../assets/icons/cycle-timers.png">
 <style>
-:root{--mark:#0E7C6B;--accent:#0E7C6B;--bg:#FFFFFF;--fg:#1C1B1F;--muted:#5F5A63;--line:#ECE6EA;--soft:#EFF8F6;color-scheme:light dark}
-@media (prefers-color-scheme:dark){:root{--mark:#3CC9AE;--accent:#3CC9AE;--bg:#141215;--fg:#F3EFF2;--muted:#B4ACB2;--line:#2E2A2E;--soft:#14201D}}
+:root{--bg:#F4F6F5;--card:#FFFFFF;--soft:#EBF5F2;--fg:#1C1C1E;--muted:#5C5C61;--line:#DDE3E1;--track:#D3DEDB;--accent:#0E7C6B;--onaccent:#FFFFFF;color-scheme:light dark}
+@media (prefers-color-scheme:dark){:root{--bg:#101112;--card:#1C1D1F;--soft:#15302B;--fg:#F2F2F7;--muted:#AEAEB2;--line:#303234;--track:#2E3B38;--accent:#3CC9AE;--onaccent:#0A1F1B}}
 *{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.6 -apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif}
-.wrap{max-width:720px;margin:0 auto;padding:0 20px}
-header{border-bottom:1px solid var(--line)}
-header .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 16px;padding-top:14px;padding-bottom:14px}
-.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px;color:var(--fg);text-decoration:none}
-.brand img{width:32px;height:32px;border-radius:8px}
-nav a{color:var(--muted);text-decoration:none;margin-left:16px;font-size:15px}
-nav a:first-child{margin-left:0}
-nav a[aria-current=page]{color:var(--accent);font-weight:600}
-main{padding:32px 0 48px}
-h1{font-size:32px;line-height:1.2;margin:0 0 4px}
-h2{font-size:20px;margin:32px 0 8px}
-h3{font-size:17px;margin:20px 0 4px}
-p,li{margin:0 0 12px}
-ul{padding-left:22px}
-a{color:var(--accent)}
-.updated{color:var(--muted);font-size:15px;margin-bottom:24px}
-.summary{background:var(--soft);border-left:4px solid var(--mark);border-radius:8px;padding:14px 16px;margin:0 0 8px}
-.contact{font-size:20px;font-weight:600}
-footer{border-top:1px solid var(--line);color:var(--muted);font-size:14px}
-footer .wrap{padding-top:20px;padding-bottom:32px}
-footer a{color:var(--muted)}
+html{-webkit-text-size-adjust:100%;scroll-padding-bottom:96px}
+body.cy{margin:0;background:var(--bg);color:var(--fg);font:17px/1.55 -apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",Helvetica,Arial,sans-serif}
+.cy-shell{max-width:640px;margin:0 auto;padding:28px 16px 24px}
+.cy-top{text-align:center;padding:12px 0 22px}
+.cy-ring{position:relative;width:132px;height:132px;margin:0 auto 14px}
+.cy-ring svg{position:absolute;inset:0;width:100%;height:100%}
+.cy-ring .cy-track{fill:none;stroke:var(--track);stroke-width:8}
+.cy-ring .cy-arc{fill:none;stroke:var(--accent);stroke-width:8;stroke-linecap:round}
+.cy-ring img{position:absolute;left:32px;top:32px;width:68px;height:68px;border-radius:16px}
+.cy-kicker{margin:0 0 4px;font-size:15px;font-weight:600;letter-spacing:.02em}
+.cy-top h1{font-size:30px;line-height:1.15;font-weight:700;letter-spacing:-.01em;margin:0 0 10px}
+.cy-stamp,.cy-sub{margin:0 auto;color:var(--muted);font-size:15px;max-width:30em}
+.cy-stamp::before{content:"";display:inline-block;width:.8em;height:.8em;border:2px solid var(--accent);border-radius:50%;margin-right:.55em;vertical-align:-.05em}
+.cy-short{background:var(--soft);border:1px solid var(--line);border-radius:20px;padding:16px 20px;margin:0 0 6px}
+.cy-short p{margin:0}
+.cy-main{counter-reset:cysec}
+.cy-sec{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px 20px 8px;margin:14px 0}
+.cy-sec h2{display:flex;align-items:center;gap:12px;font-size:19px;line-height:1.25;font-weight:650;margin:0 0 10px}
+.cy-sec h2::before{counter-increment:cysec;content:counter(cysec);flex:none;display:grid;place-items:center;width:30px;height:30px;border:2px solid var(--accent);border-radius:50%;font-size:14px;font-weight:600}
+.cy-sec p,.cy-sec li{margin:0 0 12px}
+.cy-sec ul{padding-left:22px}
+.cy-contact{background:var(--soft)}
+.cy-contact h2::before{content:"";counter-increment:none;width:30px;height:30px;border-radius:50%;border-color:var(--accent);background:radial-gradient(circle,var(--accent) 0 28%,transparent 31%)}
+.cy-contact .contact{font-size:20px;font-weight:600}
+.cy-group{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:26px 8px 4px}
+.cy-q{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:16px 20px 6px;margin:10px 0}
+.cy-q h3{display:flex;align-items:flex-start;gap:10px;font-size:17px;line-height:1.3;font-weight:650;margin:0 0 8px}
+.cy-q h3::before{content:"";flex:none;width:12px;height:12px;margin-top:.3em;border:2px solid var(--accent);border-radius:50%}
+.cy-q p{margin:0 0 12px}
+a{color:var(--accent);text-underline-offset:3px}
+.cy-tabs{position:sticky;bottom:14px;z-index:2;display:flex;gap:4px;width:max-content;max-width:100%;margin:26px auto 22px;padding:5px;background:var(--card);border:1px solid var(--line);border-radius:999px;box-shadow:0 6px 24px rgba(0,0,0,.14)}
+.cy-tabs a{display:block;min-width:92px;text-align:center;padding:9px 18px;border-radius:999px;color:var(--fg);text-decoration:none;font-size:15px;font-weight:600}
+.cy-tabs a[aria-current=page]{background:var(--accent);color:var(--onaccent)}
+.cy-tabs a:focus-visible,a:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+.cy-end{text-align:center;color:var(--muted);font-size:14px;padding:0 8px}
+.cy-end p{margin:0 0 8px}
+.cy-end a{color:var(--muted)}
+@media (max-width:420px){.cy-top h1{font-size:26px}.cy-tabs a{min-width:0;padding:9px 14px}}
 </style>
 </head>
-<body>
-<header><div class="wrap">
-<a class="brand" href="https://apps.apple.com/app/id6796827400"><img src="../assets/icons/cycle-timers.png" alt="" width="32" height="32">Cycle Timers</a>
-<nav aria-label="Cycle Timers"><a href="privacy.html" aria-current=page>Privacy</a><a href="terms.html">Terms</a><a href="support.html">Support</a></nav>
-</div></header>
-<main><div class="wrap">
+<body class="cy">
+<div class="cy-shell">
+<main class="cy-main">
+<header class="cy-top">
+<div class="cy-ring" aria-hidden="true"><svg viewBox="0 0 120 120" focusable="false"><circle class="cy-track" cx="60" cy="60" r="52"/><circle class="cy-arc" cx="60" cy="60" r="52" pathLength="100" stroke-dasharray="33 100" transform="rotate(-90 60 60)"/></svg><img src="../assets/icons/cycle-timers.png" alt="" width="68" height="68"></div>
+<p class="cy-kicker"><a href="https://apps.apple.com/app/id6796827400">Cycle Timers</a></p>
 <h1>Privacy Policy</h1>
-<p class="updated">Last updated: October 22, 2026</p>
-<p class="summary"><strong>The short version:</strong> Cycle Timers keeps your tasks on your iPhone or iPad. There is no account, no advertising and no tracking, and your tasks, history and notes are never sent to us. The one thing that leaves your device is purchase bookkeeping: RevenueCat, our processor, receives an anonymous ID, your device's vendor identifier and your Cycle Timers App Store purchases. From version 0.0.23, if you write to us, you do it from your own mail app (see Writing to us for earlier versions).</p>
-
-<h2>Who is responsible</h2>
-<p>Cycle Timers ("Cycle") is published on the App Store by <strong>Izotz Cristobal Mota</strong>, Basque Country, Spain, who is the data controller for the app ("we", "us"). Contact for anything about your data: <a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a>.</p>
-
-<h2>Your tasks stay on your device</h2>
-<p>Your tasks (name, icon, place and schedule), their completion history and any notes you add, and your settings are stored on your device, in a private App Group container shared only with Cycle's own Home Screen and Lock Screen widgets, so a widget can show your tasks and mark one done. Cycle does not use iCloud or CloudKit, so nothing syncs between devices, and it has no server of its own that receives your tasks: we cannot see them. Cycle makes no calls to any AI service. Completion history older than three years is removed automatically on the device. Deleting Cycle deletes this data. Like any app's data, it can be included in your device backup (iCloud Backup or a computer backup) if you have backups turned on; those backups are between you and Apple.</p>
-
-<h2>No account, no ads, no tracking</h2>
-<p>Cycle has no account system, contains no advertising or analytics SDK, and does not track you across apps or websites. Its only third-party library is RevenueCat's, used for purchase bookkeeping as described below. From version 0.0.23, how you use the Cycle Pro screen (when it opens, which button you tap) is written only to your device's own system log and is never sent anywhere.</p>
-
-<h2>Purchases</h2>
-<p>Cycle is free to start. Cycle Pro is an optional one-time in-app purchase (not a subscription) processed entirely by Apple through the App Store. Cycle checks your purchase with Apple's StoreKit on the device, and Restore Purchase asks Apple again. If you bought Cycle when it was a paid app (before version 0.0.20), Apple's record of that download unlocks Pro too. We never receive your name, email or payment details from a purchase.</p>
-
-<h2>Purchase bookkeeping (RevenueCat)</h2>
+<p class="cy-stamp">Last updated: October 22, 2026</p>
+</header>
+<aside class="cy-short"><p><strong>The short version:</strong> Cycle Timers keeps your tasks on your iPhone or iPad. There is no account, no advertising and no tracking, and your tasks, history and notes are never sent to us. The one thing that leaves your device is purchase bookkeeping: RevenueCat, our processor, receives an anonymous ID, your device's vendor identifier and your Cycle Timers App Store purchases. From version 0.0.23, if you write to us, you do it from your own mail app (see Writing to us for earlier versions).</p></aside>
+<section class="cy-sec" aria-labelledby="cy-s1"><h2 id="cy-s1">Who is responsible</h2>
+<p>Cycle Timers ("Cycle") is published on the App Store by <strong>Izotz Cristobal Mota</strong>, Basque Country, Spain, who is the data controller for the app ("we", "us"). Contact for anything about your data: <a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a>.</p></section>
+<section class="cy-sec" aria-labelledby="cy-s2"><h2 id="cy-s2">Your tasks stay on your device</h2>
+<p>Your tasks (name, icon, place and schedule), their completion history and any notes you add, and your settings are stored on your device, in a private App Group container shared only with Cycle's own Home Screen and Lock Screen widgets, so a widget can show your tasks and mark one done. Cycle does not use iCloud or CloudKit, so nothing syncs between devices, and it has no server of its own that receives your tasks: we cannot see them. Cycle makes no calls to any AI service. Completion history older than three years is removed automatically on the device. Deleting Cycle deletes this data. Like any app's data, it can be included in your device backup (iCloud Backup or a computer backup) if you have backups turned on; those backups are between you and Apple.</p></section>
+<section class="cy-sec" aria-labelledby="cy-s3"><h2 id="cy-s3">No account, no ads, no tracking</h2>
+<p>Cycle has no account system, contains no advertising or analytics SDK, and does not track you across apps or websites. Its only third-party library is RevenueCat's, used for purchase bookkeeping as described below. From version 0.0.23, how you use the Cycle Pro screen (when it opens, which button you tap) is written only to your device's own system log and is never sent anywhere.</p></section>
+<section class="cy-sec" aria-labelledby="cy-s4"><h2 id="cy-s4">Purchases</h2>
+<p>Cycle is free to start. Cycle Pro is an optional one-time in-app purchase (not a subscription) processed entirely by Apple through the App Store. Cycle checks your purchase with Apple's StoreKit on the device, and Restore Purchase asks Apple again. If you bought Cycle when it was a paid app (before version 0.0.20), Apple's record of that download unlocks Pro too. We never receive your name, email or payment details from a purchase.</p></section>
+<section class="cy-sec" aria-labelledby="cy-s5"><h2 id="cy-s5">Purchase bookkeeping (RevenueCat)</h2>
 <p>Cycle includes RevenueCat's library in "observer" mode: Apple's StoreKit still handles every purchase, and Cycle decides on the device whether Pro is active. When Cycle runs, the library creates a random anonymous ID for your install and sends RevenueCat, Inc. (United States) that ID, your device's vendor identifier (a number Apple gives the apps of one developer on one device; it is not the advertising identifier) and your App Store purchases of Cycle (product, price, dates and Apple's transaction data), together with the technical details the library sends with each request, such as app and iOS version, device model, language and App Store country. Like any server, RevenueCat also sees the internet address of each request. We use this only to keep a record of purchases and count them. Cycle never gives RevenueCat your tasks, history, notes, name or email, and we do not enable any advertising integration: it is not used to track you. Up to version 0.0.22, Cycle also told RevenueCat that the Cycle Pro screen opened (and which limit led you there: the timer limit, a widget size or Settings) and whether you tapped Buy, cancelled, were waiting for approval or restored; from version 0.0.23 that stays on your device.</p>
-<p>RevenueCat is our processor and is based in the United States. What exactly it collects through its library, where and for how long it keeps it, and how it protects it are set out in its own privacy policy at <a href="https://www.revenuecat.com/privacy" rel="noopener">revenuecat.com/privacy</a>; we cannot see inside its systems and do not promise a retention period for it. Deleting Cycle does not delete what it already holds: write to <a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a> and we will ask it to delete the record.</p>
-
-<h2>Writing to us</h2>
+<p>RevenueCat is our processor and is based in the United States. What exactly it collects through its library, where and for how long it keeps it, and how it protects it are set out in its own privacy policy at <a href="https://www.revenuecat.com/privacy" rel="noopener">revenuecat.com/privacy</a>; we cannot see inside its systems and do not promise a retention period for it. Deleting Cycle does not delete what it already holds: write to <a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a> and we will ask it to delete the record.</p></section>
+<section class="cy-sec" aria-labelledby="cy-s6"><h2 id="cy-s6">Writing to us</h2>
 <p>Send Feedback, and Message the developer in Cycle Pro, open a draft in your own mail app addressed to hello@seizeapps.com. The draft includes what you write and, at the end, your Cycle version and build, iOS version, device model and language, so you can read or remove them before sending. Nothing is sent unless you send it from your mail app. We use your email only to read and answer it.</p>
-<p><strong>Versions up to 0.0.22.</strong> In these versions Message the developer did not open your mail app: after you tapped Send, it sent the text you wrote, the category you picked (idea, problem, love or other), the email address if you chose to leave one, your Cycle version and build, iOS version, device model and language, whether Cycle Pro was active, and a random identifier made for the install (used only to limit spam) to a Seize server (Supabase, our processor) in the EU, in Frankfurt. It is kept for 12 months and then deleted automatically. The text of the message, with the category and whether you have Pro, was also copied to a private Telegram chat that only the developer reads, and is deleted there after one month; the email address and the identifier were never sent there. Write to <a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a> to have a message deleted sooner, and tell us the text or email address you used so we can find it.</p>
-
-<h2>Notifications and app badge</h2>
-<p>If you allow notifications, Cycle schedules local reminders on your device when a task comes due. The optional app badge with the overdue count is also worked out on the device. Nothing about them is sent to a server.</p>
-
-<h2>Photos, Siri and Shortcuts</h2>
-<p>If you save your Cycle Wrapped card, Cycle asks for add-only access to Photos: it can add the image but cannot read your library. Sharing uses the iOS share sheet, and what you share and with whom is your choice. If you use Siri or Shortcuts to mark a task done, Cycle shares your task names with the system so they can be spoken or chosen in Shortcuts; Apple handles the request under its own privacy policy, and Cycle only acts on the task on your device. Cycle asks for no other permission: no camera, microphone, contacts, calendar or location.</p>
-
-<h2>Children</h2>
-<p>Cycle is a household-chores timer and is not directed at children. It does not ask anyone, including children, for personal information such as a name or email address.</p>
-
-<h2>Your rights</h2>
-<p>Under the GDPR you can ask for access to, correction or deletion of personal data, object to its use, or ask for a copy. Cycle keeps your tasks only on your device, so they leave with the app when you delete it. For what RevenueCat holds for us, or for an email you sent, write to <a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a>. The legal basis for the purchase records is the performance of the purchase and our legitimate interest in keeping track of sales. You can also complain to the Spanish Data Protection Agency (<a href="https://www.aepd.es" rel="noopener">aepd.es</a>).</p>
-
-<h2>Changes</h2>
-<p>If this policy changes, the new version will be published on this page with a new date.</p>
-
-<h2>Contact</h2>
-<p><a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a></p>
-</div></main>
-<footer><div class="wrap">
+<p><strong>Versions up to 0.0.22.</strong> In these versions Message the developer did not open your mail app: after you tapped Send, it sent the text you wrote, the category you picked (idea, problem, love or other), the email address if you chose to leave one, your Cycle version and build, iOS version, device model and language, whether Cycle Pro was active, and a random identifier made for the install (used only to limit spam) to a Seize server (Supabase, our processor) in the EU, in Frankfurt. It is kept for 12 months and then deleted automatically. The text of the message, with the category and whether you have Pro, was also copied to a private Telegram chat that only the developer reads, and is deleted there after one month; the email address and the identifier were never sent there. Write to <a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a> to have a message deleted sooner, and tell us the text or email address you used so we can find it.</p></section>
+<section class="cy-sec" aria-labelledby="cy-s7"><h2 id="cy-s7">Notifications and app badge</h2>
+<p>If you allow notifications, Cycle schedules local reminders on your device when a task comes due. The optional app badge with the overdue count is also worked out on the device. Nothing about them is sent to a server.</p></section>
+<section class="cy-sec" aria-labelledby="cy-s8"><h2 id="cy-s8">Photos, Siri and Shortcuts</h2>
+<p>If you save your Cycle Wrapped card, Cycle asks for add-only access to Photos: it can add the image but cannot read your library. Sharing uses the iOS share sheet, and what you share and with whom is your choice. If you use Siri or Shortcuts to mark a task done, Cycle shares your task names with the system so they can be spoken or chosen in Shortcuts; Apple handles the request under its own privacy policy, and Cycle only acts on the task on your device. Cycle asks for no other permission: no camera, microphone, contacts, calendar or location.</p></section>
+<section class="cy-sec" aria-labelledby="cy-s9"><h2 id="cy-s9">Children</h2>
+<p>Cycle is a household-chores timer and is not directed at children. It does not ask anyone, including children, for personal information such as a name or email address.</p></section>
+<section class="cy-sec" aria-labelledby="cy-s10"><h2 id="cy-s10">Your rights</h2>
+<p>Under the GDPR you can ask for access to, correction or deletion of personal data, object to its use, or ask for a copy. Cycle keeps your tasks only on your device, so they leave with the app when you delete it. For what RevenueCat holds for us, or for an email you sent, write to <a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a>. The legal basis for the purchase records is the performance of the purchase and our legitimate interest in keeping track of sales. You can also complain to the Spanish Data Protection Agency (<a href="https://www.aepd.es" rel="noopener">aepd.es</a>).</p></section>
+<section class="cy-sec" aria-labelledby="cy-s11"><h2 id="cy-s11">Changes</h2>
+<p>If this policy changes, the new version will be published on this page with a new date.</p></section>
+<section class="cy-sec cy-contact" aria-labelledby="cy-s12"><h2 id="cy-s12">Contact</h2>
+<p><a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a></p></section>
+</main>
+<nav class="cy-tabs" aria-label="Cycle Timers"><a href="privacy.html" aria-current=page>Privacy</a><a href="terms.html">Terms</a><a href="support.html">Support</a></nav>
+<footer class="cy-end">
 <p>Cycle Timers by Izotz Cristobal Mota · Basque Country, Spain · <a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a></p>
 <p><a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Use</a> · <a href="support.html">Support</a> · <a href="https://apps.apple.com/app/id6796827400">Cycle Timers on the App Store</a></p>
-</div></footer>
+</footer>
+</div>
 </body>
 </html>
