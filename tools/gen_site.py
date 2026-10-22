@@ -711,8 +711,8 @@ REDIRECTS=[
     ('criba/terms/index.html', 'https://seizeapps.com/garum/terms/'),
     ('apps/criba.html', 'https://seizeapps.com/apps/garum.html'),
     ('es/apps/criba.html', 'https://seizeapps.com/es/apps/garum.html'),
-    # Cycle Timers has no app page any more (22/10/2026): its old ones go to its own support page.
-    *((f'{l}apps/{n}.html', 'https://seizeapps.com/cycle/support.html', 'Cycle Timers — Support')
+    # Cycle Timers has no app page here any more (22/10/2026): its old ones go to its own home page, /cycle/.
+    *((f'{l}apps/{n}.html', 'https://seizeapps.com/cycle/', 'Cycle Timers')
       for l in ('', 'es/', 'fr/') for n in ('cycle', 'cycle-timers')),
 ]
 

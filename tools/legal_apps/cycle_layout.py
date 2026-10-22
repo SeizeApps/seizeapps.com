@@ -36,6 +36,8 @@ body.cy{margin:0;background:var(--bg);color:var(--fg);font:17px/1.55 -apple-syst
 .cy-kicker{margin:0 0 4px;font-size:15px;font-weight:600;letter-spacing:.02em}
 .cy-top h1{font-size:30px;line-height:1.15;font-weight:700;letter-spacing:-.01em;margin:0 0 10px}
 .cy-stamp,.cy-sub{margin:0 auto;color:var(--muted);font-size:15px;max-width:30em}
+.cy-cta{margin:18px 0 0}
+.cy-store{display:inline-block;padding:12px 22px;border-radius:999px;background:var(--accent);color:var(--onaccent);font-weight:600;text-decoration:none}
 .cy-stamp::before{content:"";display:inline-block;width:.8em;height:.8em;border:2px solid var(--accent);border-radius:50%%;margin-right:.55em;vertical-align:-.05em}
 .cy-short{background:var(--soft);border:1px solid var(--line);border-radius:20px;padding:16px 20px;margin:0 0 6px}
 .cy-glance{margin:0 0 8px;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
@@ -104,18 +106,25 @@ def _split(body):
     take = lambda pat: (lambda m: (m.group(1).strip(), body.replace(m.group(0), '', 1)) if m else ('', body))(re.search(pat, body, re.S))
     h1, body = take(r'<h1>(.*?)</h1>')
     upd, body = take(r'<p class="updated">(.*?)</p>')
-    summ, body = take(r'<ul class="summary">(.*?)</ul>')
+    m = re.search(r'<ul class="summary"(?: data-label="([^"]*)")?>(.*?)</ul>', body, re.S)
+    summ = (m.group(1) or 'At a glance', m.group(2).strip()) if m else None
+    if m: body = body.replace(m.group(0), '', 1)
     parts = re.split(r'<h2>(.*?)</h2>', body)
     return h1, upd, summ, list(zip(parts[1::2], parts[2::2]))
+
+
+# The four pages, in pill order. The home page is index.html, linked as ./ so the address stays /cycle/.
+ORDER = [('index', 'Home', './'), ('privacy', 'Privacy', 'privacy.html'), ('terms', 'Terms', 'terms.html'),
+         ('support', 'Support', 'support.html')]
 
 
 def page(app, lang, key, title, desc, body, host, alts):
     root = '../'; slug = app['slug']
     icon = f'{root}assets/icons/{app["icon"]}'
     h1, upd, summ, secs = _split(body)
-    order = ['privacy', 'terms', 'support']
-    fill = (order.index(key) + 1) * 100 // len(order)
-    pills = ''.join(f'<a href="{k}.html"{" aria-current=page" if k == key else ""}>{k.capitalize()}</a>' for k in order)
+    keys = [k for k, _, _ in ORDER]
+    fill = (keys.index(key) + 1) * 100 // len(keys)
+    pills = ''.join(f'<a href="{h}"{" aria-current=page" if k == key else ""}>{l}</a>' for k, l, h in ORDER)
     stamp = (f'<p class="cy-stamp">{upd}</p>' if re.match(r'(Last updated|Effective)', upd) else f'<p class="cy-sub">{upd}</p>')
     out = []
     for i, (h, chunk) in enumerate(secs, 1):
@@ -127,13 +136,17 @@ def page(app, lang, key, title, desc, body, host, alts):
         else:
             cls = 'cy-sec cy-contact' if h == 'Contact' else 'cy-sec'
             out.append(f'<section class="{cls}" aria-labelledby="cy-s{i}"><h2 id="cy-s{i}">{h}</h2>\n{chunk}</section>')
-    short = (f'<aside class="cy-short" aria-labelledby="cy-glance"><p class="cy-glance" id="cy-glance">At a glance</p>'
-             f'<ul>{summ}</ul></aside>\n') if summ else ''
+    short = (f'<aside class="cy-short" aria-labelledby="cy-glance"><p class="cy-glance" id="cy-glance">{summ[0]}</p>'
+             f'<ul>{summ[1]}</ul></aside>\n') if summ else ''
     mail = f'<a href="mailto:{app["email"]}">{app["email"]}</a>'
     ask = f'Questions about {app["name"]} or these pages? Write to {mail}.'
-    foot = ' · '.join(f'<a href="{k}.html">{l}</a>' for k, l in (('privacy', 'Privacy Policy'), ('terms', 'Terms of Use'), ('support', 'Support')))
+    foot = ' · '.join(f'<a href="{h}">{l}</a>' for h, l in (('./', app['name']), ('privacy.html', 'Privacy Policy'), ('terms.html', 'Terms of Use'), ('support.html', 'Support')))
     store = f' · <a href="{app["appStoreUrl"]}">{app["name"]} on the App Store</a>' if app.get('live') else ''
-    kicker = f'<a href="{app["appStoreUrl"]}">{app["name"]}</a>' if app.get('live') else f'<a href="privacy.html">{app["name"]}</a>'
+    kicker = ('For iPhone and iPad' if key == 'index' else
+              f'<a href="{app["appStoreUrl"]}">{app["name"]}</a>' if app.get('live') else f'<a href="./">{app["name"]}</a>')
+    cta = (f'<p class="cy-cta"><a class="cy-store" href="{app["appStoreUrl"]}">Get {app["name"]} on the App Store</a></p>'
+           if key == 'index' and app.get('live') else '')
+    canonical = f'{host}{slug}/' if key == 'index' else f'{host}{slug}/{key}.html'
     return f'''<!doctype html>
 <html lang="{lang}">
 <head>
@@ -141,7 +154,7 @@ def page(app, lang, key, title, desc, body, host, alts):
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title}</title>
 <meta name="description" content="{desc}">
-<link rel="canonical" href="{host}{slug}/{key}.html">
+<link rel="canonical" href="{canonical}">
 <meta name="theme-color" content="{LIGHT['bg']}" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="{DARK['bg']}" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="{icon}">
@@ -156,6 +169,7 @@ def page(app, lang, key, title, desc, body, host, alts):
 <p class="cy-kicker">{kicker}</p>
 <h1>{h1}</h1>
 {stamp}
+{cta}
 </header>
 {short}{chr(10).join(out)}
 </main>
