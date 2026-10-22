@@ -115,6 +115,8 @@ def app(slug, name, icon, lead, privacy_id, shots, en, es, appstore=None, privac
                 shots=shots, appstore=appstore, privacy_path=privacy_path, copy={'en':en,'es':es}, store_country=store_country)
 
 APPS=[
+ # Cycle Timers stands on its own (22/10/2026): hidden here, and its only pages are cycle/privacy|terms|support
+ # (tools/gen_legal_apps.py, own layout). Its old app pages redirect to cycle/support.html (REDIRECTS).
  app('cycle-timers','Cycle Timers','cycle-timers.png','Izotz Cristobal Mota','cycle-timers',
      ['cycle-01-home.jpg','cycle-02-edit.jpg'],
      dict(one='Recurring household timers you read at a glance — from the Home Screen widget, without opening the app.',
@@ -134,7 +136,8 @@ APPS=[
                     ('02 / TOCAR','Hecho significa reiniciado','Un toque marca la tarea como hecha y empieza el siguiente ciclo, directamente desde el widget si quieres.'),
                     ('03 / GUARDAR','Tuyo, no nuestro','Sin cuenta y sin rastreo. Tus temporizadores se quedan en tu dispositivo, donde debe estar una herramienta de casa.')],
           privacy='Cycle Timers no tiene cuenta ni anuncios. Los temporizadores viven en tu dispositivo, en un contenedor privado compartido solo con los widgets de la propia app; los recordatorios se programan en local. Lo que sale del dispositivo es la analítica de compras (RevenueCat) y, si decides escribirnos desde Cycle Pro, tu mensaje; nunca tus temporizadores.',
-          captions=['Seis anillos, un vistazo','Un temporizador es un nombre, un icono y un ciclo']), appstore='6796827400'),
+          captions=['Seis anillos, un vistazo','Un temporizador es un nombre, un icono y un ciclo']), appstore='6796827400',
+     hidden=True),
  app('tempo','Tempo','tempo.png','Izotz Cristobal Mota','tempo',
      ['tempo-01-welcome.jpg','tempo-02-today.jpg','tempo-03-calendar.jpg'],
      dict(one='A workday companion that remembers your hours for you — arrive, work, leave — and keeps the record yours to correct.',
@@ -537,11 +540,8 @@ for _a in APPS:
         _es='privacidad' if _f=='atino' else 'privacy'
         _a['privacy_path']={'en': f'{_f}/privacy.html', 'es': f'../{_f}/{_es}.html', 'fr': f'../{_f}/privacy.html'}
 APPS=[a for a in APPS if not a['hidden']]
-# Apps that keep their own page and legal pages but have no card on the home pages (Cycle Timers, 22/10/2026). The
-# grid, the count word («Six apps, six jobs»), «N apps · M on the App Store» and the app list in the description
-# are all worked out from this list; everything else (app page, «More from Seize», marquee) still uses APPS.
-OFF_HOME={'cycle-timers'}
-HOME_APPS=[a for a in APPS if a['slug'] not in OFF_HOME]
+# The grid, the count word («Six apps, six jobs»), «N apps · M on the App Store» and the app list in the description.
+HOME_APPS=APPS
 
 # ---------------------------------------------------------------- chrome
 def prefix(lang): return '' if lang=='en' else lang+'/'
@@ -711,10 +711,9 @@ REDIRECTS=[
     ('criba/terms/index.html', 'https://seizeapps.com/garum/terms/'),
     ('apps/criba.html', 'https://seizeapps.com/apps/garum.html'),
     ('es/apps/criba.html', 'https://seizeapps.com/es/apps/garum.html'),
-    # La ficha de Cycle se llama cycle-timers; /apps/cycle.html es lo que se escribe a mano (20/10/2026).
-    ('apps/cycle.html', 'https://seizeapps.com/apps/cycle-timers.html', 'Cycle Timers'),
-    ('es/apps/cycle.html', 'https://seizeapps.com/es/apps/cycle-timers.html', 'Cycle Timers'),
-    ('fr/apps/cycle.html', 'https://seizeapps.com/fr/apps/cycle-timers.html', 'Cycle Timers'),
+    # Cycle Timers has no app page any more (22/10/2026): its old ones go to its own support page.
+    *((f'{l}apps/{n}.html', 'https://seizeapps.com/cycle/support.html', 'Cycle Timers — Support')
+      for l in ('', 'es/', 'fr/') for n in ('cycle', 'cycle-timers')),
 ]
 
 def redirect_page(url, title='Garum'):

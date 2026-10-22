@@ -28,7 +28,10 @@ body.cy{margin:0;background:var(--bg);color:var(--fg);font:17px/1.55 -apple-syst
 .cy-stamp,.cy-sub{margin:0 auto;color:var(--muted);font-size:15px;max-width:30em}
 .cy-stamp::before{content:"";display:inline-block;width:.8em;height:.8em;border:2px solid var(--accent);border-radius:50%;margin-right:.55em;vertical-align:-.05em}
 .cy-short{background:var(--soft);border:1px solid var(--line);border-radius:20px;padding:16px 20px;margin:0 0 6px}
-.cy-short p{margin:0}
+.cy-glance{margin:0 0 8px;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.cy-short ul{margin:0;padding-left:20px}
+.cy-short li{margin:0 0 6px}
+.cy-short li:last-child{margin:0}
 .cy-main{counter-reset:cysec}
 .cy-sec{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px 20px 8px;margin:14px 0}
 .cy-sec h2{display:flex;align-items:center;gap:12px;font-size:19px;line-height:1.25;font-weight:650;margin:0 0 10px}
@@ -63,7 +66,10 @@ a{color:var(--accent);text-underline-offset:3px}
 <h1>Privacy Policy</h1>
 <p class="cy-stamp">Last updated: October 22, 2026</p>
 </header>
-<aside class="cy-short"><p><strong>The short version:</strong> Cycle Timers keeps your tasks on your iPhone or iPad. There is no account, no advertising and no tracking, and your tasks, history and notes are never sent to us. The one thing that leaves your device is purchase bookkeeping: RevenueCat, our processor, receives an anonymous ID, your device's vendor identifier and your Cycle Timers App Store purchases. From version 0.0.23, if you write to us, you do it from your own mail app (see Writing to us for earlier versions).</p></aside>
+<aside class="cy-short" aria-labelledby="cy-glance"><p class="cy-glance" id="cy-glance">At a glance</p><ul><li>Your tasks, their history and your notes stay on your iPhone or iPad. They are never sent to us.</li>
+<li>No account, no advertising, no tracking.</li>
+<li>One thing leaves your device: purchase bookkeeping. RevenueCat, our processor, receives an anonymous ID, your device's vendor identifier and your Cycle Timers App Store purchases.</li>
+<li>From version 0.0.23, writing to us happens in your own mail app (see Writing to us for earlier versions).</li></ul></aside>
 <section class="cy-sec" aria-labelledby="cy-s1"><h2 id="cy-s1">Who is responsible</h2>
 <p>Cycle Timers ("Cycle") is published on the App Store by <strong>Izotz Cristobal Mota</strong>, Basque Country, Spain, who is the data controller for the app ("we", "us"). Contact for anything about your data: <a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a>.</p></section>
 <section class="cy-sec" aria-labelledby="cy-s2"><h2 id="cy-s2">Your tasks stay on your device</h2>
@@ -93,8 +99,9 @@ a{color:var(--accent);text-underline-offset:3px}
 </main>
 <nav class="cy-tabs" aria-label="Cycle Timers"><a href="privacy.html" aria-current=page>Privacy</a><a href="terms.html">Terms</a><a href="support.html">Support</a></nav>
 <footer class="cy-end">
-<p>Cycle Timers by Izotz Cristobal Mota · Basque Country, Spain · <a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a></p>
+<p>Questions about Cycle Timers or these pages? Write to <a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a>.</p>
 <p><a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Use</a> · <a href="support.html">Support</a> · <a href="https://apps.apple.com/app/id6796827400">Cycle Timers on the App Store</a></p>
+<p>© 2026 Izotz Cristobal Mota</p>
 </footer>
 </div>
 </body>
