@@ -8,11 +8,11 @@ TERMS_EN='\n  <p class="eyebrow">Legal</p>\n  <h1>Terms of Use</h1>\n  <p class=
 
 LEGAL={
  'en': {
-   'privacy': dict(title='Privacy Policy — Seize Apps', desc='How Seize apps handle your data: no accounts, no analytics, everything on your device and in your own iCloud. Per-app details for Tempo, Drip, Anchor, Kover, Tandem, Meso, Grain, Logicle, GamingHub and Atino.', body=PRIVACY_EN),
+   'privacy': dict(title='Privacy Policy — Seize Apps', desc='How Seize apps handle your data: no accounts, no analytics, everything on your device and in your own iCloud. Per-app details for Drip, Anchor, Kover, Tandem, Meso, Grain, Logicle, Heed and BeatRide.', body=PRIVACY_EN),
    'terms': dict(title='Terms of Use — Seize Apps', desc='Terms of use for apps published by Seize Apps.', body=TERMS_EN),
  },
  'es': {
-   'privacy': dict(title='Política de privacidad — Seize Apps', desc='Cómo tratan tus datos las apps de Seize: sin cuentas, sin analítica, todo en tu dispositivo y en tu propio iCloud. Detalle por app: Tempo, Drip, Anchor, Kover, Tandem, Meso, Grain, Logicle, GamingHub y Atino.', body=PRIVACY_ES),
+   'privacy': dict(title='Política de privacidad — Seize Apps', desc='Cómo tratan tus datos las apps de Seize: sin cuentas, sin analítica, todo en tu dispositivo y en tu propio iCloud. Detalle por app: Drip, Anchor, Kover, Tandem, Meso, Grain, Logicle, Heed y BeatRide.', body=PRIVACY_ES),
    'terms': dict(title='Condiciones de uso — Seize Apps', desc='Condiciones de uso de las apps publicadas por Seize Apps.', body=TERMS_ES),
  },
  'fr': LEGAL_FR,
