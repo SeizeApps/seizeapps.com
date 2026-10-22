@@ -4,8 +4,9 @@ at 5ee88ea7e, which has no RevenueCat and prompts for home zones). 1.0.3: local 
 .none), App Group for the widget, no networking code of its own, RevenueCat (SeizePurchaseAnalytics, analytics only,
 StoreKit 2 pays; its privacy manifest declares Device ID, Product Interaction and Purchase History, published in the
 App Store label 06/10/2026), fully automatic tracking for every zone (no prompts), significant-change and visit
-monitoring under Always, Core Location + MapKit, StoreKit 2 subscriptions and a lifetime unlock. Contact is hello@
-(the in-app Privacy and Terms screens say izotz@; hello@ is what Settings and the startup screen mail to).
+monitoring under Always, Core Location + MapKit, StoreKit 2 subscriptions and a lifetime unlock. Contact is izotz@seizeapps.com:
+the build on sale (1.0.3, release/tempo-main @ ed010b291) mails izotz@ from Settings, the startup screen and its
+Privacy and Terms screens (main's 1.0.2 source says hello@, but that is not what users have).
 Tempo 1.0.4 (branch next/all-apps) adds a Pro feedback box that writes to a server: this page must change before it ships."""
 from .common import terms, rights, revenuecat, CHANGES, CONTACT
 
@@ -15,7 +16,7 @@ APP = dict(
     slug='tempo', name='Tempo', icon='tempo.png',
     appStoreUrl='https://apps.apple.com/app/id6761499275',
     live=True,
-    email='hello@seizeapps.com', publisher='Izotz Cristobal Mota (Seize Apps)',
+    email='izotz@seizeapps.com', publisher='Izotz Cristobal Mota (Seize Apps)',
     updated_en='October 22, 2026',
     theme=dict(
         light=dict(mark='#007AFF', bg='#FFFFFF', fg='#0B1426', muted='#525F78', line='#E1E7F0'),
