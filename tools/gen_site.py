@@ -144,7 +144,7 @@ APPS=[
           features=[('01 / ARRIVE','Hands-free hours','Draw a work zone once and Tempo does the rest with the location evidence iOS already keeps. Separate visits add up to one accurate workday.'),
                     ('02 / SEE','Today, clearly','Time worked, your daily target, arrival and leave — one screen, and a month view that shows on-time, light and overtime days at a glance.'),
                     ('03 / OWN','Your record, editable','Review, correct, split, merge or export. If a boundary was uncertain, Tempo asks instead of guessing.')],
-          privacy='Tempo keeps your work sessions, zones and targets on your device. Location is used only to detect the work zone you drew, on the phone, and is never sent anywhere. No account and no ads; the only thing it shares is purchase analytics (RevenueCat), never your work or location.',
+          privacy='Tempo keeps your work sessions, zones and targets on your device, with no account, no ads, no analytics and no third-party library. Location is used on the phone to detect the zones you drew; only the places you search for and the coordinates of your first home and work zones go to Apple\'s maps service.',
           captions=['Your workday, remembered','Today: time worked against your target','A month of days, coloured by how they went']),
      dict(one='Un compañero de jornada que recuerda tus horas por ti —llegar, trabajar, salir— y deja el registro en tus manos para corregirlo.',
           tags=['Trabajo','Horas','Calendario'],
@@ -153,7 +153,7 @@ APPS=[
           features=[('01 / LLEGAR','Horas sin tocar nada','Dibuja una zona de trabajo una vez y Tempo hace el resto con la ubicación que iOS ya guarda. Varias visitas suman una jornada exacta.'),
                     ('02 / VER','Hoy, claro','Tiempo trabajado, tu objetivo diario, llegada y salida en una pantalla, y una vista mensual que enseña de un vistazo los días en hora, cortos y con horas de más.'),
                     ('03 / TUYO','Tu registro, editable','Revisa, corrige, parte, fusiona o exporta. Si un límite no estaba claro, Tempo pregunta en vez de adivinar.')],
-          privacy='Tempo guarda tus sesiones, zonas y objetivos en tu dispositivo. La ubicación se usa solo para detectar la zona de trabajo que dibujaste, en el propio teléfono, y nunca se envía a ningún sitio. Sin cuenta ni anuncios; lo único que comparte es analítica de compras (RevenueCat), nunca tu trabajo ni tu ubicación.',
+          privacy='Tempo guarda tus sesiones, zonas y objetivos en tu dispositivo, sin cuenta, sin anuncios, sin analítica y sin bibliotecas de terceros. La ubicación se usa en el teléfono para detectar las zonas que dibujaste; solo los sitios que buscas y las coordenadas de tu primera zona de casa y de trabajo van al servicio de mapas de Apple.',
           captions=['Tu jornada, recordada','Hoy: tiempo trabajado frente a tu objetivo','Un mes de días, coloreados según cómo fueron']), appstore='6761499275'),
  app('drip','Drip','drip.png','Sendoa Sola','drip',
      ['drip-01-dashboard.jpg','drip-03-services.jpg','drip-05-categories.jpg','drip-06-recap.jpg'],
@@ -419,7 +419,7 @@ APPS=[
           features=[('01 / IMPORT','Your CV stays yours','Import a PDF; scans work too. Atino removes your name, email, phone, address, date of birth and ID number on the phone, then shows you the exact text it would send. You can edit it, and nothing is sent until you allow it.'),
                     ('02 / RANK','Best fit first','Choose where you want to work and how, then search. Jobs come back ranked, each with a fit percent and a breakdown of the work, skills, level and requirements. One search a day and your top 10 are free.'),
                     ('03 / WATCH','Pro keeps watching','Atino Pro adds every match, all the filters, saved searches and as many searches as you need within fair use, plus one alert a day, at the time you pick, when a saved search has something new.')],
-          privacy='Your CV, results and saved searches stay on your iPhone. With your permission, the redacted CV text goes through the Seize relay to Command Code and TypeSafe AI (Jev) to rank jobs; they may keep it under their own terms. No account, no advertising, no tracking; your subscription is reported to RevenueCat for purchase analytics. Atino has its own privacy policy.',
+          privacy='Your CV, results and saved searches stay on your iPhone. With your permission, the redacted CV text goes through the Seize relay to Command Code and TypeSafe AI (Jev) to rank jobs; they may keep it under their own terms. No account, no advertising, no tracking; once you have consented, your subscription is reported to RevenueCat for purchase analytics. Atino has its own privacy policy.',
           captions=['Matches: current jobs ranked by fit','A job: why it fits, and where to apply','Filters: where and how you want to work']),
      dict(one='Importa tu CV y mira las ofertas de empleo de toda Europa ordenadas por lo bien que encajan, con un motivo breve en cada una. Tu nombre y tus datos de contacto se quitan antes, en tu iPhone.',
           tags=['Empleo','Europa','CV'],
@@ -428,7 +428,7 @@ APPS=[
           features=[('01 / IMPORTAR','Tu CV sigue siendo tuyo','Importa un PDF; los escaneados también valen. Atino quita en el teléfono tu nombre, correo, teléfono, dirección, fecha de nacimiento y documento de identidad, y te enseña el texto exacto que enviaría. Puedes editarlo, y no se envía nada hasta que lo permitas.'),
                     ('02 / ORDENAR','Primero, lo que mejor encaja','Elige dónde quieres trabajar y cómo, y busca. Las ofertas vuelven ordenadas, cada una con su porcentaje de encaje y un desglose de trabajo, habilidades, nivel y requisitos. Una búsqueda al día y tus 10 mejores resultados son gratis.'),
                     ('03 / VIGILAR','Pro sigue buscando por ti','Atino Pro suma todos los resultados, todos los filtros, búsquedas guardadas y todas las búsquedas que necesites dentro de un uso razonable, además de un aviso al día, a la hora que elijas, cuando una búsqueda guardada tiene algo nuevo.')],
-          privacy='Tu CV, tus resultados y tus búsquedas guardadas se quedan en tu iPhone. Con tu permiso, el texto redactado del CV pasa por la pasarela de Seize hasta Command Code y TypeSafe AI (Jev) para ordenar las ofertas; pueden conservarlo según sus propias condiciones. Sin cuenta, sin publicidad, sin seguimiento; tu suscripción se comunica a RevenueCat para analítica de compras. Atino tiene su propia política de privacidad.',
+          privacy='Tu CV, tus resultados y tus búsquedas guardadas se quedan en tu iPhone. Con tu permiso, el texto redactado del CV pasa por la pasarela de Seize hasta Command Code y TypeSafe AI (Jev) para ordenar las ofertas; pueden conservarlo según sus propias condiciones. Sin cuenta, sin publicidad, sin seguimiento; una vez que has dado tu permiso, tu suscripción se comunica a RevenueCat para analítica de compras. Atino tiene su propia política de privacidad.',
           captions=['Resultados: ofertas vigentes ordenadas por encaje','Una oferta: por qué encaja y dónde solicitarla','Filtros: dónde y cómo quieres trabajar']),
      privacy_path={'en': 'atino/privacy/', 'es': '../atino/privacidad/', 'fr': '../atino/privacy/'}),
  # Roomy (0.0.2, aún sin publicar en la Store): sin appstore hasta que `lookup` devuelva 1 (sin id de ASC en SIGNING.yml). Privacidad: /roomy/privacy/ (solo inglés).
@@ -528,6 +528,14 @@ UI['fr']=UI_FR
 for a in APPS: a['copy']['fr']=APPS_FR[a['slug']]
 # Las ocultas (ver `hidden` en app()) salen de la lista con la que se construye todo el sitio.
 HIDDEN=[a for a in APPS if a['hidden']]
+# Seven apps have their own stand-alone privacy, terms and support pages (22/10/2026, tools/gen_legal_apps.py).
+# Their app page and the privacy.html section both point there; ids in privacy.html stay (shipped builds link them).
+LEGAL_FOLDER={'cycle-timers':'cycle','tempo':'tempo','readably':'readably','atino':'atino','roomy':'roomy','gaminghub':'gaminghub','overbit':'overbit'}
+for _a in APPS:
+    _f=LEGAL_FOLDER.get(_a['slug'])
+    if _f:
+        _es='privacidad' if _f=='atino' else 'privacy'
+        _a['privacy_path']={'en': f'{_f}/privacy.html', 'es': f'../{_f}/{_es}.html', 'fr': f'../{_f}/privacy.html'}
 APPS=[a for a in APPS if not a['hidden']]
 
 # ---------------------------------------------------------------- chrome
@@ -956,18 +964,13 @@ if __name__=='__main__':
     # Sacapuntas (Kids, 01/10/2026): su propia política, en castellano, con versión para niños.
     from gen_legal_sacapuntas import build_sacapuntas
     build_sacapuntas()
-    # Atino (05/10/2026): su propia política, en inglés y castellano.
-    from gen_legal_atino import build_atino
-    build_atino()
-    # Roomy (05/10/2026): su página de privacidad, en inglés como la app.
-    from gen_legal_roomy import build_roomy
-    build_roomy()
     # Yaybo (11/10/2026): su política (con la sección COPPA) y sus condiciones, en inglés y castellano.
     from gen_legal_yaybo import build_yaybo
     build_yaybo()
-    # Cycle Timers (22/10/2026): its own privacy, terms and support pages, stand-alone (no studio chrome).
-    from gen_legal_cycle import build_cycle
-    build_cycle()
+    # Cycle Timers, Tempo, Readably, Atino, Roomy, GamingHub, Overbit (22/10/2026): each app's own stand-alone
+    # privacy, terms and support pages (no studio chrome); config per app in tools/legal_apps/.
+    from gen_legal_apps import build_apps
+    build_apps()
     # Chinese (16/10/2026): only the legal pages, for the apps that speak Chinese (Drip, Kover, Grain).
     from gen_legal_zh import build_zh
     build_zh()

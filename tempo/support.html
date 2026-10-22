@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tempo · Support</title>
+<meta name="description" content="Help and contact for Tempo.">
+<link rel="canonical" href="https://seizeapps.com/tempo/support.html">
+<meta name="theme-color" content="#007AFF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#060E1F" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="../assets/icons/tempo.png">
+<link rel="apple-touch-icon" href="../assets/icons/tempo.png">
+<style>
+:root{--mark:#007AFF;--accent:#006BE0;--bg:#FFFFFF;--fg:#0B1426;--muted:#525F78;--line:#E1E7F0;--soft:#EBF4FF;color-scheme:light dark}
+@media (prefers-color-scheme:dark){:root{--mark:#007AFF;--accent:#1083FF;--bg:#060E1F;--fg:#EAF0FA;--muted:#A4B2CA;--line:#1B2A45;--soft:#051D3E}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.6 -apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px}
+header{border-bottom:1px solid var(--line)}
+header .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 16px;padding-top:14px;padding-bottom:14px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:18px;color:var(--fg);text-decoration:none}
+.brand img{width:32px;height:32px;border-radius:8px}
+nav a{color:var(--muted);text-decoration:none;margin-left:16px;font-size:15px}
+nav a:first-child{margin-left:0}
+nav a[aria-current=page]{color:var(--accent);font-weight:600}
+main{padding:32px 0 48px}
+h1{font-size:32px;line-height:1.2;margin:0 0 4px}
+h2{font-size:20px;margin:32px 0 8px}
+h3{font-size:17px;margin:20px 0 4px}
+p,li{margin:0 0 12px}
+ul{padding-left:22px}
+a{color:var(--accent)}
+.updated{color:var(--muted);font-size:15px;margin-bottom:24px}
+.summary{background:var(--soft);border-left:4px solid var(--mark);border-radius:8px;padding:14px 16px;margin:0 0 8px}
+.contact{font-size:20px;font-weight:600}
+footer{border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+footer .wrap{padding-top:20px;padding-bottom:32px}
+footer a{color:var(--muted)}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<a class="brand" href="https://apps.apple.com/app/id6761499275"><img src="../assets/icons/tempo.png" alt="" width="32" height="32">Tempo</a>
+<nav aria-label="Tempo"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="support.html" aria-current=page>Support</a></nav>
+</div></header>
+<main><div class="wrap">
+<h1>Support</h1>
+<p class="updated">Tempo: your working hours, tracked for you.</p>
+
+<h2>Contact</h2>
+<p class="contact"><a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a></p>
+<p>The quickest way is the Report a Bug row at the bottom of Settings in the app: it opens an email with your Tempo version, iOS version and device model already filled in, so we can help faster.</p>
+
+<h2>Common questions</h2>
+
+<h3>Tempo didn't start or stop a session by itself.</h3>
+<p>Automatic tracking relies on location events from iOS. Check Settings › Privacy &amp; Security › Location Services › Tempo: choose Always and keep Precise Location on, and make sure Background App Refresh is allowed. iOS can delay region events, and force-quitting the app can stop them. Manual tracking always works without location, and you can correct any session afterwards.</p>
+
+<h3>How do I correct a session?</h3>
+<p>Open the session in Tempo and edit it. Corrections are kept with the session on your iPhone.</p>
+
+<h3>Why does a home zone only ask me a question?</h3>
+<p>For a home zone, Tempo never starts or stops a session on its own. It asks one "Start Tempo?" question a day while you are there, and one "You left" question when you go.</p>
+
+<h3>How do I restore Tempo Pro on a new device?</h3>
+<p>Sign in with the same Apple Account, open the Tempo Pro screen and tap Restore Purchases.</p>
+
+<h3>How do I cancel my subscription or get a refund?</h3>
+<p>Subscriptions are managed by Apple: open <a href="https://apps.apple.com/account/subscriptions" rel="noopener">your Apple Account's subscriptions</a>. Request a refund at <a href="https://reportaproblem.apple.com" rel="noopener">reportaproblem.apple.com</a>.</p>
+
+<h3>Where is my data? Can I export it?</h3>
+<p>Your work history, zones and settings stay on your iPhone and are never sent to us; Tempo does not sync through iCloud. Settings › Data &amp; privacy › Export all data saves a JSON file to a place you choose. See the <a href="privacy.html">Privacy Policy</a>.</p>
+
+<h3>How do I delete my data?</h3>
+<p>Settings › Data &amp; privacy › Erase all local data removes your sessions, zones, notifications and widget data from the device, or delete the app. There is no account and nothing on a server to delete.</p>
+</div></main>
+<footer><div class="wrap">
+<p>Tempo by Izotz Cristobal Mota (Seize Apps) · Basque Country, Spain · <a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a></p>
+<p><a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Use</a> · <a href="support.html">Support</a> · <a href="https://apps.apple.com/app/id6761499275">Tempo on the App Store</a></p>
+</div></footer>
+</body>
+</html>
