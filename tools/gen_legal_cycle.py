@@ -1,7 +1,7 @@
 """Cycle Timers' own pages: /cycle/privacy, /cycle/terms and /cycle/support (English).
 
 Stand-alone on purpose (22/10/2026): no studio chrome, no links to other apps, no shared site.css.
-Its own small stylesheet in Cycle's raspberry (#B0235F light / #FF7AAE dark), light and dark.
+Its own small stylesheet in Cycle's green/teal (#0E7C6B light / #3CC9AE dark; 22/10/2026, replaced the raspberry). Contrast: accent 5.1:1 on white, 4.72:1 on the summary tint, 9.0:1 and 8.1:1 in dark, light and dark.
 Facts checked against SeizeRepo PR #122 (feat/cycle-jp-cleaning @ 31946ce16): App Group storage
 (UserDefaults + completion-log.jsonl), no iCloud/CloudKit entitlement, RevenueCat in observer mode
 (purchasesAreCompletedBy: .myApp), PrivacyInfo.xcprivacy = Device ID + Purchase History, feedback by
@@ -18,8 +18,8 @@ UPDATED = 'October 22, 2026'
 MAIL = f'<a href="mailto:{EMAIL}">{EMAIL}</a>'
 
 CSS = '''
-:root{--accent:#B0235F;--bg:#FFFFFF;--fg:#1C1B1F;--muted:#5F5A63;--line:#ECE6EA;--soft:#FBF3F7;color-scheme:light dark}
-@media (prefers-color-scheme:dark){:root{--accent:#FF7AAE;--bg:#141215;--fg:#F3EFF2;--muted:#B4ACB2;--line:#2E2A2E;--soft:#1F1A1D}}
+:root{--accent:#0E7C6B;--bg:#FFFFFF;--fg:#1C1B1F;--muted:#5F5A63;--line:#ECE6EA;--soft:#EFF8F6;color-scheme:light dark}
+@media (prefers-color-scheme:dark){:root{--accent:#3CC9AE;--bg:#141215;--fg:#F3EFF2;--muted:#B4ACB2;--line:#2E2A2E;--soft:#14201D}}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.6 -apple-system,BlinkMacSystemFont,"Helvetica Neue",Helvetica,Arial,sans-serif}
@@ -59,7 +59,7 @@ def page(slug, title, desc, body):
 <title>{title}</title>
 <meta name="description" content="{desc}">
 <link rel="canonical" href="{BASE}{slug}.html">
-<meta name="theme-color" content="#B0235F" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0E7C6B" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#141215" media="(prefers-color-scheme: dark)">
 <link rel="icon" href="../assets/icons/cycle-timers.png">
 <link rel="apple-touch-icon" href="../assets/icons/cycle-timers.png">
