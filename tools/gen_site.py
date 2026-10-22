@@ -537,6 +537,11 @@ for _a in APPS:
         _es='privacidad' if _f=='atino' else 'privacy'
         _a['privacy_path']={'en': f'{_f}/privacy.html', 'es': f'../{_f}/{_es}.html', 'fr': f'../{_f}/privacy.html'}
 APPS=[a for a in APPS if not a['hidden']]
+# Apps that keep their own page and legal pages but have no card on the home pages (Cycle Timers, 22/10/2026). The
+# grid, the count word («Six apps, six jobs»), «N apps · M on the App Store» and the app list in the description
+# are all worked out from this list; everything else (app page, «More from Seize», marquee) still uses APPS.
+OFF_HOME={'cycle-timers'}
+HOME_APPS=[a for a in APPS if a['slug'] not in OFF_HOME]
 
 # ---------------------------------------------------------------- chrome
 def prefix(lang): return '' if lang=='en' else lang+'/'
@@ -725,15 +730,15 @@ NUMBERS={'en':['zero','one','two','three','four','five','six','seven','eight','n
          'es':['cero','una','dos','tres','cuatro','cinco','seis','siete','ocho','nueve','diez','once','doce','trece','catorce','quince','dieciséis','diecisiete','dieciocho','diecinueve','veinte'],
          'fr':['zéro','une','deux','trois','quatre','cinq','six','sept','huit','neuf','dix','onze','douze','treize','quatorze','quinze','seize','dix-sept','dix-huit','dix-neuf','vingt']}
 def fill_counts():
-    n=len(APPS)
+    n=len(HOME_APPS)
     for lang in LANGS:
-        names=[a['name'] for a in APPS]
+        names=[a['name'] for a in HOME_APPS]
         joiner={'en':' and ','es':' y ','fr':' et '}[lang]
         apps=', '.join(names[:-1])+joiner+names[-1]
         word=NUMBERS[lang][n]
         UI[lang]['site_desc']=UI[lang]['site_desc'].format(apps=apps)
         UI[lang]['apps_h2']=UI[lang]['apps_h2'].format(Count=word.capitalize(), count=word)
-        UI[lang]['hero_proof']=UI[lang]['hero_proof'].format(n=n, live=sum(1 for a in APPS if a.get('appstore')))
+        UI[lang]['hero_proof']=UI[lang]['hero_proof'].format(n=n, live=sum(1 for a in HOME_APPS if a.get('appstore')))
 fill_counts()
 
 APPLE_GLYPH='<svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M16.37 12.72c-.02-2.3 1.88-3.41 1.97-3.46-1.07-1.57-2.74-1.79-3.34-1.81-1.42-.14-2.77.84-3.49.84-.72 0-1.83-.82-3.01-.8-1.55.02-2.98.9-3.77 2.29-1.61 2.79-.41 6.92 1.16 9.18.77 1.11 1.68 2.35 2.87 2.31 1.15-.05 1.59-.75 2.98-.75 1.39 0 1.78.75 3 .72 1.24-.02 2.03-1.13 2.79-2.24.88-1.29 1.24-2.53 1.26-2.6-.03-.01-2.41-.93-2.42-3.68zM14.07 5.94c.63-.77 1.06-1.83.94-2.9-.91.04-2.02.61-2.67 1.37-.58.67-1.1 1.76-.96 2.8 1.02.08 2.05-.52 2.69-1.27z"/></svg>'
@@ -778,8 +783,8 @@ def build_index(lang):
     groups=''.join(f'''
     <p class="group-label" id="apps-{key}">{label}</p>
     <ul class="app-grid app-grid-{key}" role="list" aria-labelledby="apps-{key}">{cards(apps)}
-    </ul>''' for key,label,apps in (('live', t['live_title'], [a for a in APPS if a.get('appstore')]),
-                                       ('soon', t['soon'], [a for a in APPS if not a.get('appstore')])) if apps)
+    </ul>''' for key,label,apps in (('live', t['live_title'], [a for a in HOME_APPS if a.get('appstore')]),
+                                       ('soon', t['soon'], [a for a in HOME_APPS if not a.get('appstore')])) if apps)
     strip=''.join(f'<li><img src="{root}assets/icons/{a["icon"]}" alt="" width="56" height="56" decoding="async"><span>{a["name"]}</span></li>' for a in APPS)
     stage=''.join(f'<div class="device device-{pos}"><div class="phone">{shot(root, f, lazy=False, priority=(pos=="front"))}</div></div>' for pos,f in HERO_SHOTS)
     values=''.join(f'<li class="value reveal" style="--i:{i}"><span class="num">0{i+1}</span><h3>{h}</h3><p>{p}</p></li>' for i,(h,p) in enumerate(t['values']))
