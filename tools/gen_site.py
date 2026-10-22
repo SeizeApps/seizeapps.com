@@ -965,6 +965,9 @@ if __name__=='__main__':
     # Yaybo (11/10/2026): su política (con la sección COPPA) y sus condiciones, en inglés y castellano.
     from gen_legal_yaybo import build_yaybo
     build_yaybo()
+    # Cycle Timers (22/10/2026): its own privacy, terms and support pages, stand-alone (no studio chrome).
+    from gen_legal_cycle import build_cycle
+    build_cycle()
     # Chinese (16/10/2026): only the legal pages, for the apps that speak Chinese (Drip, Kover, Grain).
     from gen_legal_zh import build_zh
     build_zh()
