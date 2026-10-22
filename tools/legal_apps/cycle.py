@@ -16,7 +16,12 @@ APP = dict(
 PRIVACY = r'''
 <h1>Privacy Policy</h1>
 <p class="updated">Last updated: @updated@</p>
-<p class="summary"><strong>The short version:</strong> Cycle Timers keeps your tasks on your iPhone or iPad. There is no account, no advertising and no tracking, and your tasks, history and notes are never sent to us. The one thing that leaves your device is purchase bookkeeping: RevenueCat, our processor, receives an anonymous ID, your device's vendor identifier and your Cycle Timers App Store purchases. From version 0.0.23, if you write to us, you do it from your own mail app (see Writing to us for earlier versions).</p>
+<ul class="summary">
+<li>Your tasks, their history and your notes stay on your iPhone or iPad. They are never sent to us.</li>
+<li>No account, no advertising, no tracking.</li>
+<li>One thing leaves your device: purchase bookkeeping. RevenueCat, our processor, receives an anonymous ID, your device's vendor identifier and your Cycle Timers App Store purchases.</li>
+<li>From version 0.0.23, writing to us happens in your own mail app (see Writing to us for earlier versions).</li>
+</ul>
 
 <h2>Who is responsible</h2>
 <p>Cycle Timers ("Cycle") is published on the App Store by <strong>Izotz Cristobal Mota</strong>, Basque Country, Spain, who is the data controller for the app ("we", "us"). Contact for anything about your data: @mail@.</p>

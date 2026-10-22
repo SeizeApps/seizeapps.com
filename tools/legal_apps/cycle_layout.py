@@ -6,7 +6,7 @@ Support), the sections are numbered cards on a grouped background (the first-par
 switcher is a pill bar pinned to the bottom of the screen, and the "last updated" line reads as a last-done stamp.
 
 The text of each page lives in tools/legal_apps/cycle.py and is not touched here: page() only re-wraps it
-(h1 / .updated / .summary go to the top, each <h2> becomes a card, each FAQ <h3> a question card).
+(h1 / .updated / the .summary list go to the top, each <h2> becomes a card, each FAQ <h3> a question card).
 
 Colours: accent #0E7C6B (light) / #3CC9AE (dark), nothing else in hue. audit(css) measures every foreground /
 background pair the stylesheet uses, from the stylesheet itself, in both modes; gen_legal_apps.py refuses to write
@@ -38,7 +38,10 @@ body.cy{margin:0;background:var(--bg);color:var(--fg);font:17px/1.55 -apple-syst
 .cy-stamp,.cy-sub{margin:0 auto;color:var(--muted);font-size:15px;max-width:30em}
 .cy-stamp::before{content:"";display:inline-block;width:.8em;height:.8em;border:2px solid var(--accent);border-radius:50%%;margin-right:.55em;vertical-align:-.05em}
 .cy-short{background:var(--soft);border:1px solid var(--line);border-radius:20px;padding:16px 20px;margin:0 0 6px}
-.cy-short p{margin:0}
+.cy-glance{margin:0 0 8px;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.cy-short ul{margin:0;padding-left:20px}
+.cy-short li{margin:0 0 6px}
+.cy-short li:last-child{margin:0}
 .cy-main{counter-reset:cysec}
 .cy-sec{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px 20px 8px;margin:14px 0}
 .cy-sec h2{display:flex;align-items:center;gap:12px;font-size:19px;line-height:1.25;font-weight:650;margin:0 0 10px}
@@ -101,7 +104,7 @@ def _split(body):
     take = lambda pat: (lambda m: (m.group(1).strip(), body.replace(m.group(0), '', 1)) if m else ('', body))(re.search(pat, body, re.S))
     h1, body = take(r'<h1>(.*?)</h1>')
     upd, body = take(r'<p class="updated">(.*?)</p>')
-    summ, body = take(r'<p class="summary">(.*?)</p>')
+    summ, body = take(r'<ul class="summary">(.*?)</ul>')
     parts = re.split(r'<h2>(.*?)</h2>', body)
     return h1, upd, summ, list(zip(parts[1::2], parts[2::2]))
 
@@ -124,9 +127,10 @@ def page(app, lang, key, title, desc, body, host, alts):
         else:
             cls = 'cy-sec cy-contact' if h == 'Contact' else 'cy-sec'
             out.append(f'<section class="{cls}" aria-labelledby="cy-s{i}"><h2 id="cy-s{i}">{h}</h2>\n{chunk}</section>')
-    short = f'<aside class="cy-short">{"<p>" + summ + "</p>"}</aside>\n' if summ else ''
+    short = (f'<aside class="cy-short" aria-labelledby="cy-glance"><p class="cy-glance" id="cy-glance">At a glance</p>'
+             f'<ul>{summ}</ul></aside>\n') if summ else ''
     mail = f'<a href="mailto:{app["email"]}">{app["email"]}</a>'
-    by = f'{app["name"]} by {app["publisher"]} · Basque Country, Spain · {mail}'
+    ask = f'Questions about {app["name"]} or these pages? Write to {mail}.'
     foot = ' · '.join(f'<a href="{k}.html">{l}</a>' for k, l in (('privacy', 'Privacy Policy'), ('terms', 'Terms of Use'), ('support', 'Support')))
     store = f' · <a href="{app["appStoreUrl"]}">{app["name"]} on the App Store</a>' if app.get('live') else ''
     kicker = f'<a href="{app["appStoreUrl"]}">{app["name"]}</a>' if app.get('live') else f'<a href="privacy.html">{app["name"]}</a>'
@@ -157,8 +161,9 @@ def page(app, lang, key, title, desc, body, host, alts):
 </main>
 <nav class="cy-tabs" aria-label="{app['name']}">{pills}</nav>
 <footer class="cy-end">
-<p>{by}</p>
+<p>{ask}</p>
 <p>{foot}{store}</p>
+<p>© 2026 {app["publisher"]}</p>
 </footer>
 </div>
 </body>
