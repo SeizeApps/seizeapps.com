@@ -17,6 +17,7 @@ APP = dict(
         dark=dict(mark='#6FC1DD', bg='#0B1114', fg='#E8EFF2', muted='#A0B0B8', line='#1F2D33'),
     ),
     pages={},
+    renderer='overbit_layout',
 )
 
 PRIVACY = r'''
@@ -99,8 +100,8 @@ SUPPORT = r'''
 
 <h2>Common questions</h2>
 
-<h3>My alerts don\'t arrive.</h3>
-<p>Check that alerts are on in Overbit\'s Settings and that notifications are allowed for Overbit in the iPhone\'s Settings › Notifications. Alerts also depend on your connection and on iOS background activity, and they can arrive late or be skipped, especially on short timeframes when the price pools disagree. You are alerted when a candle closes with RSI across your levels, not when the price merely touches them.</p>
+<h3>My alerts don't arrive.</h3>
+<p>Check that alerts are on in Overbit's Settings and that notifications are allowed for Overbit in the iPhone's Settings › Notifications. Alerts also depend on your connection and on iOS background activity, and they can arrive late or be skipped, especially on short timeframes when the price pools disagree. You are alerted when a candle closes with RSI across your levels, not when the price merely touches them.</p>
 
 <h3>The price differs from my exchange.</h3>
 <p>Overbit reads on-chain pools, not an exchange, so the price can lag or differ a little. See the notes in Settings.</p>
@@ -115,10 +116,11 @@ SUPPORT = r'''
 <p>Purchases are handled by Apple. Request a refund at <a href="https://reportaproblem.apple.com" rel="noopener">reportaproblem.apple.com</a>.</p>
 
 <h3>How do I delete my data?</h3>
-<p>Settings › Your data › Delete my data removes your install\'s record, timeframes, alert log and feedback from our server and turns alerts off. Delete the app to remove what is stored on the iPhone. To ask RevenueCat to delete its purchase record, write to us. See the <a href="@privacy@">Privacy Policy</a>.</p>
+<p>Settings › Your data › Delete my data removes your install's record, timeframes, alert log and feedback from our server and turns alerts off. Delete the app to remove what is stored on the iPhone. To ask RevenueCat to delete its purchase record, write to us. See the <a href="@privacy@">Privacy Policy</a>.</p>
 '''
 
 APP['pages'] = {
+    ('en', 'index'): dict(title='Overbit: Bitcoin RSI alerts', desc="Overbit tells you when Bitcoin's RSI crosses into oversold or overbought. One notification when a candle closes past the line, and nothing while RSI stays in the zone.", body=''),
     ('en', 'privacy'): dict(title='Overbit · Privacy Policy',
                             desc='Overbit privacy: no account, no ads, no tracking. One random-ID record per install for alerts, which you can delete in the app.', body=PRIVACY),
     ('en', 'terms'): dict(title='Overbit · Terms of Use', desc='Terms of use for Overbit.', body=TERMS),
