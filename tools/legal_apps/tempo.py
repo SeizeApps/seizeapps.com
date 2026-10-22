@@ -13,7 +13,7 @@ from .common import terms, rights, revenuecat, CHANGES, CONTACT
 # Accent #007AFF (AccentColor.colorset, no dark variant). 4.0:1 on white, so light-mode text uses a darker blue
 # of the same hue; the dark canvas is the app's #060E1F.
 APP = dict(
-    slug='tempo', name='Tempo', icon='tempo.png',
+    slug='tempo', name='Tempo', icon='tempo.png', renderer='tempo_layout',
     appStoreUrl='https://apps.apple.com/app/id6761499275',
     live=True,
     email='izotz@seizeapps.com', publisher='Izotz Cristobal Mota (Seize Apps)',
@@ -134,6 +134,8 @@ SUPPORT = r'''
 '''
 
 APP['pages'] = {
+    ('en', 'index'): dict(title='Tempo Work: your workday, remembered',
+                          desc='Tempo records your real arrival and departure, keeps your daily target and remaining time in one place, and leaves you in control. No account, no ads. For iPhone.', body=''),
     ('en', 'privacy'): dict(title='Tempo · Privacy Policy',
                             desc='Tempo privacy: your work history and zones stay on your iPhone. No account, no ads, no tracking. Purchase bookkeeping through RevenueCat.', body=PRIVACY),
     ('en', 'terms'): dict(title='Tempo · Terms of Use', desc='Terms of use for Tempo.', body=TERMS),
