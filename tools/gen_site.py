@@ -345,7 +345,7 @@ APPS=[
                     ('03 / JUGAR','Gratis para probar, tuyo para quedártelo','Sintonía es gratis para todos. Los demás juegos son compras únicas, y toda tu mesa juega gratis siempre que el anfitrión tenga el juego; si no, cada jugador tiene tres partidas gratis de cada uno. Las compras se comparten con tu familia.')],
           privacy='GamingHub no tiene cuenta, ni correo, ni contraseña. Para llevar una sala envía a nuestro servidor (Supabase) un nombre que eliges, un avatar, un identificador anónimo y el estado de la partida, que ven los demás jugadores de la sala; las salas se borran al vaciarse y se purgan a las 12 horas. Sin anuncios y sin seguimiento; solo analítica de compras, con RevenueCat (sin nombres ni nada de una sala).',
           captions=['Inicio: crea una sala, entra con un código o escanea un QR','Impostor: rompe el sello para leer tu invitación','Sintonía: jugad las cartas en orden y en silencio'])),
- # Logicle (0.4.0 en revisión, 17/10/2026; capturas de la ficha de la Store): sin appstore hasta que esté a la venta. Nunca un número de puzles
+ # Logicle (0.4.0 a la venta desde el 22/10/2026; capturas de la ficha de la Store). Nunca un número de puzles
  # (son «sin fin»), ni precios; app de puzles, no de sudokus.
  app('logicle','Logicle','logicle.png','Sendoa Sola','logicle',
      ['logicle-01-today.jpg','logicle-02-sudoku.jpg','logicle-03-shunt.jpg'],
@@ -366,7 +366,7 @@ APPS=[
                     ('02 / JUGAR','Hechos para jugarlos, no para pelearte con ellos','Sudoku como le gusta a quien juega bien: casilla y número, o coge un número y toca dónde va, con pistas que enseñan la idea antes que la respuesta. Cada tipo se explica en unas pantallas animadas la primera vez que lo juegas, en iPhone o en iPad.'),
                     ('03 / TUYO','Gratis para jugar, tuyo para siempre','Los diarios y los primeros de cada nivel son gratis. Desbloquea un tipo, o todos a la vez, también los que vendrán: una compra, para siempre, compartida con tu familia. Estadísticas desde tu racha y tu calendario hasta cada tipo y cada nivel, temas de color, claro y oscuro, y tu progreso en todos tus dispositivos con iCloud.')],
           privacy='Tus partidas, tiempos y rachas se quedan en tu dispositivo y se sincronizan con tu propio iCloud (puedes apagarlo). Si usas Game Center, Apple recibe tus tiempos de los diarios, tu racha y tus totales, y tus logros. Los puzles se hacen en el dispositivo: sin cuenta, sin anuncios, sin analítica y sin seguimiento.',
-          captions=['Hoy: los diarios de cada tipo, y tu semana','Sudoku: casilla, número y pistas que enseñan','Shunt: desliza los bloques y saca la llave'])),
+          captions=['Hoy: los diarios de cada tipo, y tu semana','Sudoku: casilla, número y pistas que enseñan','Shunt: desliza los bloques y saca la llave']), appstore='6823020519'),
  # BeatRide (0.0.13, TestFlight interno, sin Deezer desde el 17/10/2026; aún sin publicar en la Store): sin appstore hasta que esté a la venta.
  app('beatride','BeatRide','beatride.png','Sendoa Sola','beatride',
      ['beatride-01-home.jpg','beatride-02-class.jpg','beatride-03-ride.jpg'],
