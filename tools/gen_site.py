@@ -109,14 +109,13 @@ def app(slug, name, icon, lead, privacy_id, shots, en, es, appstore=None, privac
     # `privacy_path`: {'en': ..., 'es': ...} relativo a la raíz, para una app con
     # política propia (Garum), relativo a la portada de cada idioma (la de es está en /es/).
     # `hidden`: la app se queda entera aquí (textos, capturas, id) pero no sale en la web: ni tarjeta,
-    # ni marquesina, ni «More from Seize», ni cuenta, ni página propia. Su sección de la política de
-    # privacidad sí se queda (la app la enlaza). Para volver a mostrarla, quitar `hidden=True`.
+    # ni marquesina, ni «More from Seize», ni cuenta, ni página propia. Las apps de Izotz (STANDALONE) salen
+    # además de privacy.html (legal_apps/studio.py). Para volver a mostrarla, quitar `hidden=True`.
     return dict(hidden=hidden, slug=slug, name=name, icon=icon, lead=lead, privacy_id=privacy_id,
                 shots=shots, appstore=appstore, privacy_path=privacy_path, copy={'en':en,'es':es}, store_country=store_country)
 
 APPS=[
- # Cycle Timers stands on its own (22/10/2026): hidden here, and its only pages are cycle/privacy|terms|support
- # (tools/gen_legal_apps.py, own layout). Its old app pages redirect to cycle/support.html (REDIRECTS).
+ # Izotz's apps (STANDALONE below) are hidden: each has its own site at /<folder>/.
  app('cycle-timers','Cycle Timers','cycle-timers.png','Izotz Cristobal Mota','cycle-timers',
      ['cycle-01-home.jpg','cycle-02-edit.jpg'],
      dict(one='Recurring household timers you read at a glance — from the Home Screen widget, without opening the app.',
@@ -157,7 +156,8 @@ APPS=[
                     ('02 / VER','Hoy, claro','Tiempo trabajado, tu objetivo diario, llegada y salida en una pantalla, y una vista mensual que enseña de un vistazo los días en hora, cortos y con horas de más.'),
                     ('03 / TUYO','Tu registro, editable','Revisa, corrige, parte, fusiona o exporta. Si un límite no estaba claro, Tempo pregunta en vez de adivinar.')],
           privacy='Tempo guarda tus sesiones, zonas y objetivos en tu dispositivo, sin cuenta ni anuncios. La ubicación se usa en el teléfono para detectar las zonas que dibujaste; solo los sitios que buscas y las coordenadas de tu primera zona de casa y de trabajo van al servicio de mapas de Apple. Lo único más que sale del teléfono es analítica de compras (RevenueCat), nunca tu trabajo ni tu ubicación.',
-          captions=['Tu jornada, recordada','Hoy: tiempo trabajado frente a tu objetivo','Un mes de días, coloreados según cómo fueron']), appstore='6761499275'),
+          captions=['Tu jornada, recordada','Hoy: tiempo trabajado frente a tu objetivo','Un mes de días, coloreados según cómo fueron']), appstore='6761499275',
+     hidden=True),
  app('drip','Drip','drip.png','Sendoa Sola','drip',
      ['drip-01-dashboard.jpg','drip-03-services.jpg','drip-05-categories.jpg','drip-06-recap.jpg'],
      dict(one='See exactly where your money drips: every subscription, bill and membership shown as what it really costs a year.',
@@ -347,7 +347,8 @@ APPS=[
                     ('02 / SECRETO','Cada móvil guarda su secreto','Tu rol, tu palabra y tus cartas se envían solo a tu dispositivo. La sala ve la partida; nadie ve tu mano.'),
                     ('03 / JUGAR','Gratis para probar, tuyo para quedártelo','Sintonía es gratis para todos. Los demás juegos son compras únicas, y toda tu mesa juega gratis siempre que el anfitrión tenga el juego; si no, cada jugador tiene tres partidas gratis de cada uno. Las compras se comparten con tu familia.')],
           privacy='GamingHub no tiene cuenta, ni correo, ni contraseña. Para llevar una sala envía a nuestro servidor (Supabase) un nombre que eliges, un avatar, un identificador anónimo y el estado de la partida, que ven los demás jugadores de la sala; las salas se borran al vaciarse y se purgan a las 12 horas. Sin anuncios y sin seguimiento; solo analítica de compras, con RevenueCat (sin nombres ni nada de una sala).',
-          captions=['Inicio: crea una sala, entra con un código o escanea un QR','Impostor: rompe el sello para leer tu invitación','Sintonía: jugad las cartas en orden y en silencio'])),
+          captions=['Inicio: crea una sala, entra con un código o escanea un QR','Impostor: rompe el sello para leer tu invitación','Sintonía: jugad las cartas en orden y en silencio']),
+     hidden=True),
  # Logicle (0.4.0 a la venta desde el 22/10/2026; capturas de la ficha de la Store). Nunca un número de puzles
  # (son «sin fin»), ni precios; app de puzles, no de sudokus.
  app('logicle','Logicle','logicle.png','Sendoa Sola','logicle',
@@ -433,7 +434,8 @@ APPS=[
                     ('03 / VIGILAR','Pro sigue buscando por ti','Atino Pro suma todos los resultados, todos los filtros, búsquedas guardadas y todas las búsquedas que necesites dentro de un uso razonable, además de un aviso al día, a la hora que elijas, cuando una búsqueda guardada tiene algo nuevo.')],
           privacy='Tu CV, tus resultados y tus búsquedas guardadas se quedan en tu iPhone. Con tu permiso, el texto redactado del CV pasa por la pasarela de Seize hasta Command Code y TypeSafe AI (Jev) para ordenar las ofertas; pueden conservarlo según sus propias condiciones. Sin cuenta, sin publicidad, sin seguimiento; una vez que has dado tu permiso, tu suscripción se comunica a RevenueCat para analítica de compras. Atino tiene su propia política de privacidad.',
           captions=['Resultados: ofertas vigentes ordenadas por encaje','Una oferta: por qué encaja y dónde solicitarla','Filtros: dónde y cómo quieres trabajar']),
-     privacy_path={'en': 'atino/privacy/', 'es': '../atino/privacidad/', 'fr': '../atino/privacy/'}),
+     privacy_path={'en': 'atino/privacy/', 'es': '../atino/privacidad/', 'fr': '../atino/privacy/'},
+     hidden=True),
  # Roomy (0.0.2, aún sin publicar en la Store): sin appstore hasta que `lookup` devuelva 1 (sin id de ASC en SIGNING.yml). Privacidad: /roomy/privacy/ (solo inglés).
  app('roomy','Roomy','roomy.png','Izotz Cristobal Mota','roomy',
      ['roomy-01-home.jpg','roomy-02-swipe.jpg','roomy-03-similar.jpg'],
@@ -455,7 +457,8 @@ APPS=[
                     ('03 / LIBERAR','Mira lo que has recuperado','Roomy Pro suma gestos ilimitados, borrado de duplicados y parecidas con un toque y compresión de vídeo que ahorra hasta un 80 % del espacio. Sigue el espacio liberado y mantén una racha diaria.')],
           privacy='Roomy analiza tu biblioteca solo en tu iPhone. Tus fotos, vídeos y metadatos nunca se suben. Sin cuenta, sin anuncios y sin seguimiento. Las compras pasan por Apple; lo único que Roomy comparte es la analítica de compras (RevenueCat, desde la versión 0.0.3), nunca tus fotos.',
           captions=['Inicio: espacio libre y el desorden que ha encontrado Roomy','Izquierda para borrar, derecha para quedarte','Fotos parecidas agrupadas, con la mejor marcada']),
-     privacy_path={'en': 'roomy/privacy/', 'es': '../roomy/privacy/', 'fr': '../roomy/privacy/'}),
+     privacy_path={'en': 'roomy/privacy/', 'es': '../roomy/privacy/', 'fr': '../roomy/privacy/'},
+     hidden=True),
  # Readably (0.1.0, rechazada el 20/10/2026 por 4.3(a), aún sin publicar en la Store): sin appstore hasta que `lookup` devuelva 1.
  # Capturas: las de la ficha de ASC (tools/build_store_shots.py). Sin precios; el texto sale de la ficha.
  app('readably','Readably','readably.png','Izotz Cristobal Mota','readably',
@@ -479,7 +482,8 @@ APPS=[
           privacy="Readably no tiene cuenta ni SDK de publicidad, y no envía texto, documentos ni audio a ningún sitio: cada voz hace su sonido en el iPhone. La descarga única de las voces viene de Hugging Face, que ve tu dirección de internet y nada tuyo. Leer un enlace web (Pro) pide esa página a ese sitio, como haría un navegador. Readably incluye además RevenueCat, solo para analítica de compras. Su sección de privacidad detalla cada punto.",
           captions=[]),
      # The French policy has no Readably section yet: its page links to the English one.
-     privacy_path={'en': 'privacy.html#readably', 'es': 'privacy.html#readably', 'fr': '../privacy.html#readably'}),
+     privacy_path={'en': 'privacy.html#readably', 'es': 'privacy.html#readably', 'fr': '../privacy.html#readably'},
+     hidden=True),
  # Overbit (0.1.2, rechazada el 20/10/2026 por 4.3(a), aún sin publicar en la Store): sin appstore hasta que `lookup` devuelva 1.
  app('overbit','Overbit','overbit.png','Izotz Cristobal Mota','overbit',
      [],
@@ -501,7 +505,7 @@ APPS=[
                     ('03 / PRO','Todos los marcos, tus niveles','De serie, Overbit vigila un marco con RSI 14 y niveles 30 y 70. Overbit Pro, una compra única, abre los 15 marcos de 5 minutos a 1 mes y tu propia longitud y niveles de RSI.')],
           privacy="Overbit no tiene cuenta. Para enviar avisos registra un identificador de instalación aleatorio (y, con los avisos activados, tu token push y los marcos que vigilas) en un servidor de Seize en Fráncfort; Borrar mis datos, en Ajustes, elimina ese registro. Overbit incluye además RevenueCat, solo para analítica de compras. Su sección de privacidad detalla cada punto.",
           captions=[]),
-     ),
+     hidden=True),
  # Yaybo (0.1.0, aún sin publicar en la Store): sin appstore hasta que `lookup` devuelva 1. Política y condiciones propias en /yaybo/ (inglés y castellano; COPPA). Sin capturas hasta que existan las de la Store.
  app('yaybo','Yaybo','yaybo.png','Izotz Cristobal Mota','yaybo',
      [],
@@ -523,7 +527,8 @@ APPS=[
                     ('03 / ADULTOS','Una Zona de padres tras una puerta','Mira lo que ha practicado tu hijo o hija, déjale un choca esos cinco con tu propia voz, comparte el informe semanal con otra persona adulta y gestiona el plan, todo tras una puerta para adultos que un niño no debería superar.')],
           privacy='Lo que le cuentas a Yaybo sobre tu hijo o hija se queda en tus dispositivos y, si la sincronización con iCloud está activada, en tu propio iCloud: nosotros nunca lo recibimos. Sin cuentas, sin anuncios, sin seguimiento, y Yaybo nunca graba, guarda ni envía la voz de tu hijo o hija. La lectura en voz alta es opcional: una persona adulta la activa, el dispositivo escucha solo mientras tu hijo o hija mantiene pulsado un botón y el sonido se descarta al instante. Dos cosas pequeñas van a nuestro propio servidor, ninguna sobre tu hijo o hija: una nota que una persona adulta elige escribir y un token anónimo de Apple que nos dice qué anuncio, si lo hubo, te trajo. El texto de la nota se reenvía además a un chat privado de Telegram que solo lee el desarrollador, donde se borra automáticamente al cabo de un mes. Si una persona adulta compra o restaura una suscripción, un servicio de analítica de compras (RevenueCat) ve la compra y los datos técnicos de tu dispositivo, nunca nada sobre tu hijo o hija. Yaybo tiene su propia política de privacidad, con una sección para padres.',
           captions=[]),
-     privacy_path={'en': 'yaybo/privacy/', 'es': '../yaybo/privacidad/', 'fr': '../yaybo/privacy/'}),
+     privacy_path={'en': 'yaybo/privacy/', 'es': '../yaybo/privacidad/', 'fr': '../yaybo/privacy/'},
+     hidden=True),
 ]
 
 from gen_site_fr import UI_FR, APPS_FR
@@ -703,6 +708,12 @@ def write(path, html):
     full=os.path.join(SITE,path); os.makedirs(os.path.dirname(full), exist_ok=True)
     open(full,'w').write(html)
 
+# Izotz's apps stand on their own (22/10/2026): hidden here, each with its own site at /<folder>/ (home, privacy,
+# terms, support; tools/gen_legal_apps.py, one layout per app). (old app-page name, folder, title)
+STANDALONE=[('cycle','cycle','Cycle Timers'),('cycle-timers','cycle','Cycle Timers'),('tempo','tempo','Tempo'),
+            ('gaminghub','gaminghub','GamingHub'),('atino','atino','Atino'),('roomy','roomy','Roomy'),
+            ('readably','readably','Readably'),('overbit','overbit','Overbit'),('yaybo','yaybo','Yaybo')]
+
 # URL viejas → nuevas (absolutas). Ver el final del fichero.
 REDIRECTS=[
     ('criba/privacidad/index.html', 'https://seizeapps.com/garum/privacidad/'),
@@ -711,9 +722,9 @@ REDIRECTS=[
     ('criba/terms/index.html', 'https://seizeapps.com/garum/terms/'),
     ('apps/criba.html', 'https://seizeapps.com/apps/garum.html'),
     ('es/apps/criba.html', 'https://seizeapps.com/es/apps/garum.html'),
-    # Cycle Timers has no app page here any more (22/10/2026): its old ones go to its own home page, /cycle/.
-    *((f'{l}apps/{n}.html', 'https://seizeapps.com/cycle/', 'Cycle Timers')
-      for l in ('', 'es/', 'fr/') for n in ('cycle', 'cycle-timers')),
+    # Izotz's apps have no app page here any more (22/10/2026): each one's old pages go to its own home page.
+    *((f'{l}apps/{n}.html', f'https://seizeapps.com/{f}/', t)
+      for l in ('', 'es/', 'fr/') for n, f, t in STANDALONE),
 ]
 
 def redirect_page(url, title='Garum'):
@@ -762,7 +773,7 @@ def icon_vt(a):
     return f'style="view-transition-name:icon-{a["slug"]}"'
 
 # ---------------------------------------------------------------- index
-HERO_SHOTS=(('left','drip-01-dashboard.jpg'),('right','garum-01-map.jpg'),('front','tempo-01-welcome.jpg'))
+HERO_SHOTS=(('left','drip-01-dashboard.jpg'),('right','garum-01-map.jpg'),('front','kover-01-products.jpg'))
 SHIELD='<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focusable="false"><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" d="M12 3 4.5 6v5.5c0 4.6 3.1 8.3 7.5 9.5 4.4-1.2 7.5-4.9 7.5-9.5V6L12 3Z"/><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" d="m8.8 12.2 2.3 2.3 4.3-4.6"/></svg>'
 
 def build_index(lang):
