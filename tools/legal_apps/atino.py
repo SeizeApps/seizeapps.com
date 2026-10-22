@@ -15,7 +15,7 @@ APP = dict(
     email='hello@seizeapps.com', publisher='Izotz Cristobal Mota, trading as Seize Apps',
     publisher_es='Izotz Cristobal Mota, con el nombre comercial de Seize Apps',
     updated_en='22 October 2026', updated_es='22 de octubre de 2026',
-    dir_copies=('privacy', 'privacidad'),
+    dir_copies=('privacy', 'privacidad'), renderer='atino_layout',
     theme=dict(
         light=dict(mark='#FFB547', bg='#FFFDF8', fg='#1B2426', muted='#56625F', line='#E8E2D4', soft='#FFF4DE'),
         dark=dict(mark='#FFB547', bg='#0B1416', fg='#EAF0EE', muted='#A2B0AD', line='#22343A', soft='#1E2417'),
@@ -24,6 +24,7 @@ APP = dict(
 )
 
 PRIVACY_EN = r'''
+  <!--at-depth:@privacy@-->
   <h1>Atino privacy policy</h1>
   <p class="updated">Effective date: @updated@</p>
 
@@ -104,6 +105,7 @@ PRIVACY_EN = r'''
 '''
 
 PRIVACY_ES = r'''
+  <!--at-depth:@privacidad@-->
   <h1>Política de privacidad de Atino</h1>
   <p class="updated">Fecha de entrada en vigor: @updated@</p>
 
@@ -215,22 +217,24 @@ SUPPORT = r'''
 <p>Settings › Privacy › "Withdraw consent and delete my data". It deletes your CV and everything made from it from the iPhone, and cancels the daily alert. Write to us if you also want us to ask the relay, RevenueCat and the ranking services to delete what they hold.</p>
 
 <h3>My CV is not read correctly.</h3>
-<p>Atino reads PDF files. It uses the PDF\'s text and, if there is almost none (a scan), recognises the text on your iPhone in English, Spanish or Swedish. Use a PDF with selectable text where you can, and check the result in Settings › Your CV.</p>
+<p>Atino reads PDF files. It uses the PDF's text and, if there is almost none (a scan), recognises the text on your iPhone in English, Spanish or Swedish. Use a PDF with selectable text where you can, and check the result in Settings › Your CV.</p>
 
 <h3>What does the free version include?</h3>
 <p>One search per local day, the top 10 results, and the location and workplace filters. Atino Pro, a weekly or monthly subscription, adds all results, every filter, more searches, saved searches, the daily alert and fit breakdowns.</p>
 
 <h3>How do I restore, cancel or get a refund?</h3>
-<p>Restore Purchases and Manage Subscription are in the Pro sheet and in Settings. You can also manage <a href="https://apps.apple.com/account/subscriptions" rel="noopener">your Apple Account\'s subscriptions</a> directly. Request a refund at <a href="https://reportaproblem.apple.com" rel="noopener">reportaproblem.apple.com</a>.</p>
+<p>Restore Purchases and Manage Subscription are in the Pro sheet and in Settings. You can also manage your subscriptions in the iPhone's Settings › Apple Account › Subscriptions. Request a refund at <a href="https://reportaproblem.apple.com" rel="noopener">reportaproblem.apple.com</a>.</p>
 
-<h3>The daily alert doesn\'t arrive.</h3>
-<p>The alert is a Pro feature. Check that notifications are allowed for Atino in the iPhone\'s Settings, that Background App Refresh is on; iOS decides when background work runs, so an alert can arrive late.</p>
+<h3>The daily alert doesn't arrive.</h3>
+<p>The alert is a Pro feature. Check that notifications are allowed for Atino in the iPhone's Settings, that Background App Refresh is on; iOS decides when background work runs, so an alert can arrive late.</p>
 
-<h3>I can\'t search any more today.</h3>
+<h3>I can't search any more today.</h3>
 <p>The free version allows one search per local day, and Pro has a fair-use daily limit. The limit resets the next day.</p>
 '''
 
 APP['pages'] = {
+    ('en', 'index'): dict(title='Atino: Jobs Ranked for You',
+                          desc='Import your CV and Atino ranks current job ads across Europe by fit, with a short reason for each. Your name and contact details are removed on your iPhone first.', body=''),
     ('en', 'privacy'): dict(title='Atino privacy policy',
                             desc='Atino privacy: your CV stays on your iPhone, name and contact details are removed on the phone, and redacted text is sent only with your permission.', body=PRIVACY_EN),
     ('es', 'privacidad'): dict(title='Política de privacidad de Atino',
