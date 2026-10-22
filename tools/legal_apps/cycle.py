@@ -8,11 +8,8 @@ APP = dict(
     live=True,
     email='hello@seizeapps.com', publisher='Izotz Cristobal Mota',
     updated_en='October 22, 2026',
-    # Teal, from the app's AccentColor (#0E7C6B light / #3CC9AE dark). Both pass 4.5:1 as text, so no adjustment.
-    theme=dict(
-        light=dict(mark='#0E7C6B', bg='#FFFFFF', fg='#1C1B1F', muted='#5F5A63', line='#ECE6EA', soft='#EFF8F6'),
-        dark=dict(mark='#3CC9AE', bg='#141215', fg='#F3EFF2', muted='#B4ACB2', line='#2E2A2E', soft='#14201D'),
-    ),
+    # Own layout and stylesheet: legal_apps/cycle_layout.py (accent #0E7C6B light / #3CC9AE dark, from the app's AccentColor).
+    renderer='cycle_layout',
     pages={},
 )
 

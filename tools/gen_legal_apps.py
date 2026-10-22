@@ -18,8 +18,12 @@ lightness. build() refuses to write if any text/background pair is under 4.5:1; 
 
 Adjusted text colours as of 22/10/2026 (declared accent -> text/link colour, light mode unless noted):
 Tempo #007AFF -> #006BE0 (dark #1083FF), Atino #FFB547 -> #A36100, Roomy #C9E64A -> #687C11,
-GamingHub #0077FF -> #006AE2, Overbit #6FC1DD -> #247B99. Cycle, Readably, and the dark modes of Atino, Roomy,
+GamingHub #0077FF -> #006AE2, Overbit #6FC1DD -> #247B99. Readably, and the dark modes of Atino, Roomy,
 GamingHub and Overbit use the declared accent unchanged.
+
+Cycle does not use this template at all: its config says `renderer='cycle_layout'` and build_app() hands its pages to
+legal_apps/cycle_layout.py (own HTML, own `cy-` classes, own stylesheet). Its colours are measured from the generated
+CSS by cycle_layout.audit(), in build_apps() and in print_contrast().
 
 `live`: True once the app is on sale (same moment as `appstore=` in gen_site.py's APPS: today Cycle Timers and Tempo).
 Until then the page links to nothing on apps.apple.com, because that URL answers 404.
@@ -80,6 +84,7 @@ def pairs(t):
 def contrast_table(apps):
     rows, ok = [], True
     for a in apps:
+        if a.get('renderer'): continue
         th = resolve(a['theme'])
         for mode in ('light', 'dark'):
             t = th[mode]
@@ -95,6 +100,32 @@ def print_contrast(apps):
     for name, mode, mark, acc, bg, soft, rs in rows:
         note = '' if mark == acc else ' (adjusted)'
         print(f'| {name} | {mode} | {mark} | {acc}{note} | {bg} | {soft} | ' + ' | '.join(f'{r:.2f}' for _, r in rs) + ' |')
+    print('all pairs >= 4.5:1' if ok else 'FAIL: a pair is under 4.5:1')
+    for a in apps:
+        if a.get('renderer'): ok &= print_own_contrast(a)
+    return ok
+
+
+def renderer(app):
+    return importlib.import_module(f'legal_apps.{app["renderer"]}')
+
+
+def print_own_contrast(app):
+    """Apps with their own renderer: measure the CSS of the pages as written to disk (all three, both modes)."""
+    mod, ok = renderer(app), True
+    print(f'\n{app["name"]} (own layout, measured from {app["slug"]}/*.html)\n')
+    seen = {}  # the three pages share one stylesheet: print each distinct table once
+    for key in sorted(k for _, k in app['pages']):
+        path = os.path.join(SITE, app['slug'], f'{key}.html')
+        if not os.path.isfile(path):
+            print(f'MISSING {path}: run tools/gen_site.py'); return False
+        rows, good = mod.audit(open(path, encoding='utf-8').read()); ok &= good
+        seen.setdefault(tuple(rows), []).append(key)
+    print('| Pages | Mode | Pair | Foreground | Background | Ratio |')
+    print('|---|---|---|---|---|---|')
+    for rows, keys in seen.items():
+        for mode, label, fg, bg, r in rows:
+            print(f'| {", ".join(keys)} | {mode} | {label} | {fg} | {bg} | {r:.2f}{"" if r >= MIN else " FAIL"} |')
     print('all pairs >= 4.5:1' if ok else 'FAIL: a pair is under 4.5:1')
     return ok
 
@@ -207,7 +238,8 @@ def load(slug):
 
 
 def build_app(app):
-    th = resolve(app['theme'])
+    th = None if app.get('renderer') else resolve(app['theme'])
+    slug = app['slug']
     out = os.path.join(SITE, app['slug']); os.makedirs(out, exist_ok=True)
     alts = {}  # lang -> page key, for the privacy twins
     for (lang, key), p in app['pages'].items():
@@ -218,8 +250,13 @@ def build_app(app):
         depths = [1] + ([2] if key in app.get('dir_copies', ()) else [])
         for depth in depths:
             body = fill(app, p['body'].strip(), rel_base(depth), lang)
-            html = page(app, th, lang, key, p['title'], p['desc'], body, depth,
-                        alts if key in ('privacy', 'privacidad') else {})
+            pair_alts = alts if key in ('privacy', 'privacidad') else {}
+            if app.get('renderer'):
+                mod = renderer(app)
+                html = mod.page(app, lang, key, p['title'], p['desc'], body, HOST, pair_alts)
+                if not mod.audit(html)[1]: raise SystemExit(f'{slug}/{key}: a colour pair is under 4.5:1')
+            else:
+                html = page(app, th, lang, key, p['title'], p['desc'], body, depth, pair_alts)
             path = f'{app["slug"]}/{key}.html' if depth == 1 else f'{app["slug"]}/{key}/index.html'
             full = os.path.join(SITE, path); os.makedirs(os.path.dirname(full), exist_ok=True)
             with open(full, 'w', encoding='utf-8') as f: f.write(html)
