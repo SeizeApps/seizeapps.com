@@ -290,7 +290,6 @@ box-shadow:0 4px 0 #E2DACB,0 12px 24px rgba(0,30,40,.3);text-align:left}
 .yb-ph-body{position:relative;padding:3.1cqw;border-radius:15.5cqw;background:linear-gradient(145deg,#38425A,#161D2C 55%,#232C42);
 box-shadow:inset 0 0 0 .6cqw #4A5572,0 0 0 1px var(--ring),0 3cqw 7cqw var(--shadow),0 .8cqw 2cqw rgba(20,30,50,.18)}
 .yb-ph-body img{display:block;width:100%;height:auto;border-radius:12.5cqw;background:var(--cream);filter:var(--phone-f)}
-.yb-ph-body::after{content:"";position:absolute;top:6.2cqw;left:50%;width:26cqw;height:7.6cqw;margin-left:-13cqw;border-radius:9cqw;background:#0F1520}
 .yb-ph-body::before{content:"";position:absolute;right:-1cqw;top:26cqw;width:1.2cqw;height:16cqw;border-radius:1cqw;background:#2E3850}
 .yb-pad{container-type:inline-size;width:var(--w,100%)}
 .yb-pad-body{padding:2.4cqw;border-radius:4.6cqw;background:linear-gradient(145deg,#38425A,#161D2C 55%,#232C42);box-shadow:inset 0 0 0 .4cqw #4A5572,0 0 0 1px var(--ring),0 3cqw 7cqw var(--shadow)}
@@ -324,9 +323,8 @@ box-shadow:inset 0 0 0 .6cqw #4A5572,0 0 0 1px var(--ring),0 3cqw 7cqw var(--sha
 .yb-stage-plate{display:block;width:100%;aspect-ratio:2.35/1;object-fit:cover;object-position:50% 22%;border-radius:36px;box-shadow:0 6px 0 var(--lip),0 24px 50px var(--shadow);filter:var(--plate-f)}
 .yb-fan{position:relative;container-type:inline-size;width:100%;aspect-ratio:1.5/1;margin-top:-17%}
 .yb-fan .yb-ph{position:absolute;--w:35cqw}
-.yb-fan .a{left:6cqw;top:7cqw;transform:rotate(-8deg);z-index:1}
-.yb-fan .b{left:32.5cqw;top:0;z-index:3;--w:36cqw}
-.yb-fan .c{right:6cqw;top:7cqw;transform:rotate(8deg);z-index:2}
+.yb-fan .a{left:14cqw;top:3cqw;transform:rotate(-6deg);z-index:2;--w:37cqw}
+.yb-fan .c{right:14cqw;top:9cqw;transform:rotate(6deg);z-index:1;--w:37cqw}
 
 /* story cards: solid copy panel + illustrated plate */
 .yb-story{position:relative;max-width:1180px;margin:0 auto;border-radius:44px;overflow:hidden;color:var(--white);isolation:isolate;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);min-height:520px;box-shadow:0 6px 0 rgba(0,0,0,.18),0 30px 60px var(--shadow)}
@@ -354,6 +352,7 @@ box-shadow:inset 0 0 0 .6cqw #4A5572,0 0 0 1px var(--ring),0 3cqw 7cqw var(--sha
 .yb-tile h3{font-size:26px;margin-bottom:10px}
 .yb-tile p{color:var(--ink2);font-size:17.5px;margin:0}
 .yb-streak{display:grid;grid-template-columns:minmax(0,1fr) 150px;gap:28px;align-items:end}
+.yb-streak .yb-ph{--w:100%}
 .yb-week{display:grid;grid-template-columns:repeat(7,1fr);gap:7px;margin:22px 0 14px;padding:22px 14px 16px;border-radius:22px;background:var(--sunk)}
 .yb-week span{display:grid;gap:7px;justify-items:center;font:800 13.5px/1 var(--ffd);color:var(--ink2)}
 .yb-week i{display:block;width:min(100%,40px);aspect-ratio:1;border-radius:50%}
@@ -364,7 +363,6 @@ box-shadow:inset 0 0 0 .6cqw #4A5572,0 0 0 1px var(--ring),0 3cqw 7cqw var(--sha
 .yb-legend li{list-style:none;display:flex;align-items:center;gap:8px}
 .yb-legend i{display:block;width:14px;height:14px;border-radius:50%}
 .yb-legend i.on{background:var(--sundot)}.yb-legend i.rest{border:2px dashed var(--restline)}
-.yb-streak .yb-ph{--w:100%}
 .yb-guides{display:flex;flex-direction:column}
 .yb-meet{display:grid;grid-template-rows:1fr 1fr;flex:1;gap:14px;margin:18px 0 0;padding:0}
 .yb-meet figure{margin:0;display:flex;align-items:center;gap:16px;background:var(--sunk);border-radius:22px;padding:12px 18px 12px 12px}
@@ -378,8 +376,7 @@ box-shadow:inset 0 0 0 .6cqw #4A5572,0 0 0 1px var(--ring),0 3cqw 7cqw var(--sha
 .yb-road{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:56px;align-items:center;max-width:1180px;margin:64px auto 0}
 .yb-device{position:relative;container-type:inline-size;width:100%;max-width:640px;margin-inline:auto;padding-bottom:12cqw}
 .yb-device .yb-pad{--w:100%}
-.yb-device .p1{position:absolute;right:-2cqw;bottom:0;--w:25cqw;z-index:3;transform:rotate(4deg)}
-.yb-device .p2{position:absolute;left:-3cqw;bottom:-4cqw;--w:22cqw;z-index:3;transform:rotate(-5deg)}
+.yb-device .p1{position:absolute;right:-2cqw;bottom:0;--w:24cqw;z-index:3;transform:rotate(4deg)}
 .yb-friends{display:flex;gap:10px;margin:20px 0 0;padding:0;flex-wrap:wrap}
 .yb-friends li{list-style:none;width:64px;height:64px;border-radius:50%;background:var(--tint);border:3px solid var(--line);box-shadow:0 4px 0 var(--lip);display:grid;place-items:center;overflow:hidden}
 .yb-friends img{width:76%;height:auto}
@@ -393,21 +390,23 @@ box-shadow:inset 0 0 0 .6cqw #4A5572,0 0 0 1px var(--ring),0 3cqw 7cqw var(--sha
 
 /* grown-ups: one deliberate dark moment */
 .yb-band{background:var(--band);color:var(--bandink);padding:112px 0 100px}
-.yb-band h2{color:var(--bandink)}
+.yb-band h2{color:var(--bandink);font-size:clamp(32px,3.8vw,52px);margin-bottom:20px;text-wrap:balance}
 .yb-band .yb-kicker{color:var(--bandlink)}.yb-band .yb-kicker i{background:var(--bandlink)}
-.yb-band .head{max-width:760px;margin:0 auto 64px;text-align:center}
-.yb-band .head .yb-kicker{justify-content:center}
+.yb-grow{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:72px;align-items:center}
+.yb-grow-art{position:relative;display:grid;place-items:center;padding:10px 0}
+.yb-grow-art::before{content:"";position:absolute;inset:6% 4%;border-radius:44px;background:radial-gradient(circle at 50% 40%,rgba(79,209,224,.22),rgba(79,209,224,0) 70%)}
+.yb-grow-art .yb-ph{--w:min(100%,330px);position:relative}
 .yb-band p.big{color:var(--bandink2)}
-.yb-fours{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin:0;padding:0;text-align:left}
-.yb-fours li{list-style:none}
-.yb-fours .yb-ph{--w:100%}
-.yb-fours h3{font-size:20px;margin:24px 0 6px;color:var(--bandink)}
-.yb-fours p{font-size:16.5px;color:var(--bandink2);margin:0;line-height:1.5}
+.yb-pts{display:grid;gap:22px;margin:34px 0 0;padding:0}
+.yb-pts li{list-style:none;display:grid;grid-template-columns:46px minmax(0,1fr);gap:4px 18px;align-items:start}
+.yb-pts .yb-ico{grid-row:1/3}
+.yb-pts h3{font-size:20px;color:var(--bandink);align-self:end;margin:0}
+.yb-pts p{font-size:16.5px;color:var(--bandink2);margin:0;line-height:1.5}
 .yb-swipe{display:none;align-items:center;justify-content:center;gap:8px;margin:2px 0 0;font:700 15px/1.3 var(--ffd);color:var(--ink2)}
 .yb-swipe svg{width:18px;height:18px;flex:none;animation:yb-nudge 1.8s ease-in-out 3}
 .yb-band .yb-swipe{color:var(--bandink2)}
 @keyframes yb-nudge{0%,100%{transform:translateX(0)}50%{transform:translateX(5px)}}
-.yb-gate{display:flex;align-items:center;justify-content:center;gap:14px;margin:60px auto 0;max-width:760px;padding:16px 22px;border-radius:20px;border:2px solid var(--bandink2);color:var(--bandink);font:700 17px/1.4 var(--ffd);text-align:left}
+.yb-gate{display:flex;align-items:center;gap:14px;margin:38px 0 0;max-width:560px;padding:16px 22px;border-radius:20px;border:2px solid var(--bandink2);color:var(--bandink);font:700 17px/1.4 var(--ffd);text-align:left}
 .yb-gate svg{width:26px;height:26px;flex:none;stroke:var(--bandlink);fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
 
 /* trust */
@@ -491,7 +490,7 @@ box-shadow:inset 0 0 0 .6cqw #4A5572,0 0 0 1px var(--ring),0 3cqw 7cqw var(--sha
 @media(max-width:1000px){
  .yb-two,.yb-two.skills,.yb-road{grid-template-columns:1fr;gap:44px}
  .yb-sec{padding:84px 0}
- .yb-fours{grid-template-columns:repeat(2,1fr)}
+ .yb-grow{grid-template-columns:1fr;gap:48px}
  .yb-tgrid{grid-template-columns:repeat(2,1fr)}
  .yb-specs{grid-template-columns:repeat(2,1fr)}
  .yb-story,.yb-story.flip{grid-template-columns:1fr;min-height:0}
@@ -527,10 +526,10 @@ box-shadow:inset 0 0 0 .6cqw #4A5572,0 0 0 1px var(--ring),0 3cqw 7cqw var(--sha
  .yb-cta .yb-btn,.yb-cta .yb-badge{width:100%;min-height:48px}
  .yb-cta .yb-badge{justify-content:center}
  .yb-bubbles{display:none}
- .yb-steps,.yb-fours{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:18px;gap:18px;padding:6px 18px 14px;margin:0 -18px}
- .yb-steps li,.yb-fours li{flex:0 0 60%;scroll-snap-align:start;margin-top:0!important}
+ .yb-steps{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:18px;gap:18px;padding:6px 18px 14px;margin:0 -18px}
+ .yb-steps li{flex:0 0 60%;scroll-snap-align:start;margin-top:0!important}
  .yb-swipe{display:flex}
- .yb-sec{padding:56px 0}.yb-band{padding:72px 0 64px}.yb-band .head{margin-bottom:36px}.yb-fours h3{margin-top:16px}
+ .yb-sec{padding:56px 0}.yb-band{padding:72px 0 64px}.yb-grow{gap:36px}
  .yb-hero{padding-bottom:84px}.yb-road{margin-top:40px}
  .yb-tgrid{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:18px;gap:14px;padding:6px 18px 14px;margin:32px -18px 0}
  .yb-tgrid li{flex:0 0 76%;scroll-snap-align:start}
@@ -579,6 +578,10 @@ ICONS = {
     'phone': '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="3" width="12" height="18" rx="3"/><path d="M10 18h4"/></svg>',
     'lock': '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="11" width="14" height="9" rx="2.5"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>',
     'mic': '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21"/></svg>',
+    'report': '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="3"/><path d="M9 8h6M9 12h6M9 16h3"/></svg>',
+    'book': '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5C7 4.5 10 4.8 12 6.5c2-1.7 5-2 8-1v13c-3-1-6-.7-8 1-2-1.7-5-2-8-1z"/><path d="M12 6.5V19.5"/></svg>',
+    'heart': '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.4-7.5-10A4.3 4.3 0 0 1 12 7.6 4.3 4.3 0 0 1 19.5 10c0 5.6-7.5 10-7.5 10z"/></svg>',
+    'people': '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8.5" r="3"/><path d="M3.5 19c.4-3.2 2.6-5 5.5-5s5.1 1.8 5.5 5"/><circle cx="17" cy="9.5" r="2.4"/><path d="M16.5 14.2c2.4-.2 3.9 1.2 4.3 3.8"/></svg>',
     'card': '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="3"/><path d="M3 10.5h18"/></svg>',
 }
 WAVE = ('<svg class="yb-wave {c}" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path d="M0 50 C 180 100 360 0 600 40 '
@@ -588,10 +591,16 @@ WAVE = ('<svg class="yb-wave {c}" viewBox="0 0 1440 90" preserveAspectRatio="non
 def phone(root, name, alt, w=None, cls='', lazy=True, dark=None, prio=False):
     style = f' style="--w:{w}"' if w else ''
     load = ' fetchpriority="high"' if prio else (' loading="lazy" decoding="async"' if lazy else '')
-    img = f'<img src="{root}media/{name}" width="570" height="1240" alt="{esc(alt)}"{load}>'
+    img = f'<img src="{root}media/{name}" width="640" height="1387" alt="{esc(alt)}"{load}>'
     if dark:
         img = f'<picture><source media="(prefers-color-scheme: dark)" srcset="{root}media/{dark}">{img}</picture>'
     return f'<div class="yb-ph {cls}"{style}><div class="yb-ph-body">{img}</div></div>'
+
+
+def pad(root, name, alt, cls='', lazy=True):
+    load = ' loading="lazy" decoding="async"' if lazy else ''
+    return (f'<div class="yb-pad {cls}"><div class="yb-pad-body"><img src="{root}media/{name}" width="1400" height="973" '
+            f'alt="{esc(alt)}"{load}></div></div>')
 
 
 def plate(root, name, cls='plate', eager=False):
@@ -702,14 +711,14 @@ def home_page():
 <div class="yb-wrap yb-hero-grid"><div class="yb-hero-copy">
 <p class="yb-eyebrow">A learning app for ages 4 to 9</p>
 <h1 id="h1">About ten minutes a day. Three stops. <em>Then it ends.</em></h1>
-<p class="yb-lede">A daily learning plan for your family: phonics, reading, spelling, math, money, time and handwriting, Pre-K to 3rd grade, built on the grade-level expectations most U.S. states share. Yaybo the axolotl cheers every right answer.</p>
+<p class="yb-lede">Reading and math first, with phonics, spelling, money, time and handwriting alongside: a daily plan for your family, Pre-K to 3rd grade, built on the grade-level expectations most U.S. states share. Yaybo the axolotl cheers every right answer.</p>
 <div class="yb-cta"><p class="yb-badge">{STAR}<span><small>Not on sale yet</small><b>Coming soon to the App Store</b></span></p>
 <a class="yb-btn yb-btn-sun" href="#adventure">See how a day works</a></div>
 <p class="yb-fine">For iPhone and iPad &middot; iOS 26 or later &middot; United States and Canada</p></div>
 <div class="yb-hero-art">
-<div class="yb-float l">{p("island-rich.jpg", "Yaybo's island, full of friends, with a rainbow, a pond and a bottom bar of Garden, Friends, Fridge, Story Nook and Closet", w="100%", lazy=False)}</div>
-<div class="yb-float r">{p("trail-map.jpg", "The road trip trail across the U.S.: a winding path of checked stops with trees alongside", w="100%", lazy=False)}</div>
-<div class="yb-float c">{p("home-fresh.jpg", "Yaybo's home screen: a greeting, Today's Adventure with a Start Adventure button, and tiles for Road trip, My Island and Quests", w="100%", lazy=False, prio=True)}</div>
+<div class="yb-float l">{p("ui-island.webp", "Yaybo's island seen from above: a green island in a pond with a bee, flowers and a bottom bar of Garden, Friends, Fridge and Wardrobe", w="100%", lazy=False)}</div>
+<div class="yb-float r">{p("ui-book.webp", "Tad's book page: a picture of children and friends at the shore, the story text, and a Next page button", w="100%", lazy=False)}</div>
+<div class="yb-float c">{p("ui-home.webp", "Yaybo's home screen: Hi, Maya! with Yaybo the axolotl and Tad the turtle, Today's Adventure with a Start Adventure button, and tiles for Road trip and My Island", w="100%", lazy=False, prio=True)}</div>
 <img class="yb-float y" src="media/yaybo-wave.png" width="643" height="569" alt="Yaybo the axolotl, waving">
 </div></div>{WAVE.format(c="b")}</section>'''
 
@@ -718,21 +727,21 @@ def home_page():
 <p class="big">Your child gets one short Adventure a day: three short lessons that pick up where they left off. Three stops and about ten minutes, then a clear end.</p>
 <ul class="yb-facts"><li>You set it up in about six minutes.</li><li>Instructions are spoken aloud, so early learners do not need to read.</li><li>You get a plain-English report each week.</li></ul></div>
 <ol class="yb-steps" tabindex="0" aria-label="A day in Yaybo, in three steps">
-<li>{p("adventure-choice.jpg", "Choose a Stop: Small letters, Reading and Writing, or Big and small, Thinking", w="100%")}<p class="yb-cap"><b>1</b>Choose a Stop</p></li>
-<li>{p("lesson-letter.jpg", "A lesson asking What letter is this? with a big Z, answer tiles and Tad the turtle as the voice", w="100%")}<p class="yb-cap"><b>2</b>Play a short lesson</p></li>
-<li>{p("celebrate-adventure.jpg", "Adventure complete! Three Stops, all done. What a trip!", w="100%")}<p class="yb-cap"><b>3</b>A clear end</p></li>
+<li>{p("ui-road.webp", "Today's Adventure: a path of three stops, Small letters, Count to 5 and You pick, with a Let's go! button", w="100%")}<p class="yb-cap"><b>1</b>See today's stops</p></li>
+<li>{p("ui-counting.webp", "A counting lesson: Tap 2 apples, with five apples to tap, a Check button and Yaybo's voice", w="100%")}<p class="yb-cap"><b>2</b>Play a short lesson</p></li>
+<li>{p("ui-celebration.webp", "Stop complete! Yay! Three stars, a handful of leaves and a Continue button, with Yaybo cheering under a sun", w="100%")}<p class="yb-cap"><b>3</b>A clear end</p></li>
 </ol><p class="yb-swipe" aria-hidden="true"><span>Swipe to see more</span><svg viewBox="0 0 24 24"><path d="M5 12h13m-5-5.5 5.5 5.5-5.5 5.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></p></div></section>'''
 
     chips = ''.join(f'<li><i style="background:{c}"></i>{t}</li>' for c, t in (
         ('#2D7FF9', 'Math, Pre-K to 3rd grade'), ('#F23D7A', 'Phonics and reading'), ('#F23D7A', 'Spelling, 1st to 3rd grade'),
         ('#FFC107', 'Money and time'), ('#FF8A1F', 'Handwriting')))
     skills = f'''<section class="yb-sec" id="skills" aria-labelledby="h-skills" style="padding-top:40px"><div class="yb-wrap yb-two skills">
-<div><p class="yb-kicker"><i></i>What your child practices</p><h2 id="h-skills">Real school skills, step by step</h2>
-<p class="big">Skills carry standards codes that line up with school: Common Core, plus Texas TEKS in Texas and Florida B.E.S.T. in Florida.</p>
+<div><p class="yb-kicker"><i></i>Reading and math, Pre-K to 3rd grade</p><h2 id="h-skills">Real school skills, step by step</h2>
+<p class="big">Counting and number sense, stories read page by page, letters and sounds. Skills carry standards codes that line up with school in the United States and Canada: Common Core, plus Texas TEKS in Texas and Florida B.E.S.T. in Florida.</p>
 <ul class="yb-chips">{chips}</ul>
 <p class="yb-sub" style="margin-top:24px">Type this week's spelling list and your child practices it in the Adventure. Trace letters, numbers and your child's name with a finger or Apple Pencil, in print, slanted print or cursive.</p></div>
 <div class="yb-stage">{plate(r, "story-time.jpg", "yb-stage-plate")}
-<div class="yb-fan">{p("lesson-math.jpg", "A math word problem with flower stickers and a number pad", cls="a")}{p("lesson-trace.jpg", "Trace B: a handwriting guide with a dotted capital B", cls="b")}{p("lesson-blend.jpg", "Blend the letters b, o, x, then find the picture", cls="c")}</div></div>
+<div class="yb-fan">{p("ui-counting.webp", "A counting lesson: Tap 2 apples, with five apples to tap and a Check button", cls="a")}{p("ui-book.webp", "Read the page: Tad's book with a picture of friends at the shore and the story in large type", cls="c")}</div></div>
 </div></section>'''
 
     nos = ''.join(f'<li>{NO}{t}</li>' for t in ('No buzzers', 'No lost hearts', 'No leaderboards'))
@@ -746,7 +755,7 @@ def home_page():
 <p>Rest days you choose. The stars, friends, clothes and postcards your child has earned are never taken away.</p>
 <div class="yb-week" role="img" aria-label="An example week of the Sunny Streak: five sunny days and one rest day you chose">{week}</div>
 <ul class="yb-legend" aria-hidden="true"><li><i class="on"></i>A sunny day</li><li><i class="rest"></i>A rest day you chose</li></ul></div>
-{p("streak-seven.jpg", "A milestone screen of the Sunny Streak: 7 sunny days, with Yaybo happy", w="100%")}</div></div>
+{p("ui-celebration.webp", "Stop complete! Yay! Three stars, a handful of leaves and a Continue button, with Yaybo cheering under a sun", w="100%")}</div></div>
 <div class="yb-tile guides yb-guides"><h3>Meet Yaybo and Tad</h3><div class="yb-meet">
 <figure><div class="m"><img src="media/yaybo-idle.png" width="655" height="561" alt="" loading="lazy"></div><figcaption><b>Yaybo</b>the axolotl, cheering every right answer</figcaption></figure>
 <figure><div class="m tad"><img src="media/tad.png" width="480" height="480" alt="" loading="lazy"></div><figcaption><b>Tad</b>the turtle, with stories and silly skits</figcaption></figure></div></div></div>
@@ -760,25 +769,24 @@ def home_page():
 <div class="yb-story navy flip"><div class="copy"><p class="yb-kicker"><i></i>Progress you can see</p><h2 id="h-prog">An island that grows, and a road trip across the U.S.</h2>
 <p class="lede">Mastered skills fill an island with new friends. A road trip across the U.S. collects a postcard and a fun fact from each state.</p></div>
 <div class="art">{plate(r, "yellow-van.jpg")}</div></div>
-<div class="yb-road"><div class="yb-device"><div class="yb-pad"><div class="yb-pad-body"><img src="media/ipad-island.jpg" width="900" height="625" alt="Yaybo's island on iPad, in landscape: critters, a rainbow, a pond and tents" loading="lazy" decoding="async"></div></div>
-{p("postcard-vermont.jpg", "Postcard from Vermont: Vermont makes more maple syrup than any other state", cls="p1")}{p("trail-chest.jpg", "Hooray! Yaybo found a flower pot on the trail", cls="p2")}</div>
+<div class="yb-road"><div class="yb-device"><div class="yb-pad"><div class="yb-pad-body"><img src="media/pad-home.webp" width="1400" height="973" alt="Yaybo's home on iPad, in landscape: Yaybo and Tad by the pond, Today's Adventure with a Start Adventure button, and tiles for Road trip, My Island, Quests, Wardrobe and Chest" loading="lazy" decoding="async"></div></div>
+{p("ui-island.webp", "Yaybo's island from above: a green island in a pond with a bee, flowers and a bottom bar of Garden, Friends, Fridge and Wardrobe", cls="p1")}</div>
 <div><h3 style="font-size:26px;margin-bottom:10px">Friends for the island, postcards for the road</h3><p class="yb-sub" style="margin:0">Works on iPhone and iPad.</p>
 <ul class="yb-friends" aria-label="Some of the island friends">{friends}</ul><ul class="yb-cards" aria-label="Postcards from the road trip">{cards}</ul></div></div>
 </div></section>'''
 
-    fours = ''.join(f'<li>{ph}<h3>{h}</h3><p>{t}</p></li>' for ph, h, t in (
-        (p("parent-report.jpg", "The weekly report in the Parent Zone: first wins, the week in numbers and an activity to try together", w="100%", dark="parent-report-dark.jpg"),
-         'The weekly report', 'What is mastered, what is tricky, and a simple activity to do together.'),
-        (p("parent-explainers.jpg", "How they teach it: short explainers such as Number bonds, Ten frames and Making ten", w="100%"),
-         'How they teach it', 'Short explainers for how school teaches each skill.'),
-        (p("parent-highfive.jpg", "Pick a sticker and say something: a high-five for your child", w="100%"), 'High-fives', 'Send your child a sticker and a note.'),
-        (p("parent-children.jpg", "The Children list with an Add a child button and a note about up to four children on one subscription", w="100%"),
-         'Up to four children', 'On one subscription, with Family Sharing.')))
-    grown = f'''<section class="yb-band yb-dark" id="grown-ups" aria-labelledby="h-grown"><div class="yb-wrap">
-<div class="head"><p class="yb-kicker"><i></i>For grown-ups</p><h2 id="h-grown">A weekly report in plain English</h2>
-<p class="big">What is mastered, what is tricky, and one thing to try together. Optional Read-aloud lets your child read a word or a page out loud.</p></div>
-<ul class="yb-fours" tabindex="0" aria-label="What grown-ups get in the Parent Zone">{fours}</ul><p class="yb-swipe" aria-hidden="true"><span>Swipe to see more</span><svg viewBox="0 0 24 24"><path d="M5 12h13m-5-5.5 5.5 5.5-5.5 5.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></p>
-<p class="yb-gate">{ICONS["lock"]}<span>Everything for adults sits behind a parental gate, with an optional PIN.</span></p></div></section>'''
+    pts = ''.join(f'<li><span class="yb-ico">{ICONS[i]}</span><h3>{h}</h3><p>{t}</p></li>' for i, h, t in (
+        ('report', 'The weekly report', 'What is mastered, what is tricky, and a simple activity to do together.'),
+        ('book', 'How they teach it', 'Short explainers for how school teaches each skill.'),
+        ('heart', 'High-fives', 'Send your child a sticker and a note.'),
+        ('people', 'Up to four children', 'On one subscription, with Family Sharing.')))
+    grown = f'''<section class="yb-band yb-dark" id="grown-ups" aria-labelledby="h-grown"><div class="yb-wrap yb-grow">
+<div><p class="yb-kicker"><i></i>For grown-ups</p><h2 id="h-grown">A weekly report in plain English</h2>
+<p class="big">What is mastered, what is tricky, and one thing to try together. Optional Read-aloud lets your child read a word or a page out loud.</p>
+<ul class="yb-pts" aria-label="What grown-ups get in the Parent Zone">{pts}</ul>
+<p class="yb-gate">{ICONS["lock"]}<span>Everything for adults sits behind a parental gate, with an optional PIN.</span></p></div>
+<div class="yb-grow-art">{p("ui-report.webp", "The weekly report in the Parent Zone: Maya's week with four checked days, 11 stops finished, 18 minutes and 4 days, then an At a glance list of what she is working on, what to try again and what comes next", w="100%")}</div>
+</div></section>'''
 
     tcards = ''.join(f'<li><span class="yb-ico">{ICONS[i]}</span><h3>{h}</h3><p>{t}</p></li>' for i, h, t in (
         ('phone', 'It stays on your devices', "Your child's name and answers stay on your devices, and in your own iCloud if Sync is on."),
