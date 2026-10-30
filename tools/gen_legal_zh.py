@@ -1,8 +1,8 @@
 """Simplified Chinese legal pages (/zh/privacy.html, /zh/terms.html), 16/10/2026.
 
-Only the apps that speak Chinese (Drip, Kover, Grain) are covered; the rest of the site has no Chinese tree, so
+Only the apps that speak Chinese (Drip, Kover, Grain, Tiller) are covered; the rest of the site has no Chinese tree, so
 these two pages link back to the English home and the English policy, which prevails. Translated from
-gen_legal_copy.py: when a Drip, Kover or Grain section (or the purchases paragraph, or the terms) changes there,
+gen_legal_copy.py: when a Drip, Kover, Grain or Tiller section (or the purchases paragraph, or the terms) changes there,
 change it here too. Built with gen_site's chrome; run `python3 tools/gen_site.py`, which calls build_zh().
 """
 import gen_site as g
@@ -15,29 +15,31 @@ g.UI['zh'] = dict(g.UI['en'], skip='跳到正文', nav_apps='应用', nav_phil='
 g.OG_LOCALE['zh'] = 'zh_CN'
 
 PRIVACY_TITLE = '隐私政策 — Seize Apps'
-PRIVACY_DESC = 'Seize 应用如何处理你的数据：没有账户，不做数据分析，内容只存放在你的设备和你自己的 iCloud 中。适用于 Drip、Kover 和 Grain。'
+PRIVACY_DESC = 'Seize 应用如何处理你的数据：没有账户，不做数据分析，内容只存放在你的设备和你自己的 iCloud 中。适用于 Drip、Kover、Grain 和 Tiller。'
 TERMS_TITLE = '使用条款 — Seize Apps'
 TERMS_DESC = 'Seize Apps 发布的应用的使用条款。'
 
 PRIVACY = '''
   <p class="eyebrow">法律信息</p>
   <h1>隐私政策</h1>
-  <p class="effective">自 2026 年 10 月 15 日起生效</p>
+  <p class="effective">自 2026 年 10 月 30 日起生效</p>
   <nav class="toc" aria-label="应用">
-    <a href="#drip">Drip</a><a href="#kover">Kover</a><a href="#grain">Grain</a>
+    <a href="#drip">Drip</a><a href="#kover">Kover</a><a href="#grain">Grain</a><a href="#tiller">Tiller</a>
   </nav>
 
-  <p><strong>关于本页：</strong>这是 Seize Apps 隐私政策的中文版，只包含提供中文界面的应用：<a href="#drip">Drip</a>、<a href="#kover">Kover</a> 和 <a href="#grain">Grain</a>。其他应用请见<a href="../privacy.html">英文版完整政策</a>。中文版为译文，如与英文版有不一致之处，以英文版为准。</p>
+  <p><strong>关于本页：</strong>这是 Seize Apps 隐私政策的中文版，只包含提供中文界面的应用：<a href="#drip">Drip</a>、<a href="#kover">Kover</a>、<a href="#grain">Grain</a> 和 <a href="#tiller">Tiller</a>。其他应用请见<a href="../privacy.html">英文版完整政策</a>。中文版为译文，如与英文版有不一致之处，以英文版为准。</p>
 
-  <p><strong>简要说明：</strong>Drip、Kover 和 Grain 设计为不需要你的数据也能正常使用。这三款应用没有用户账户，不使用广告 SDK，我们也不出售或分享任何数据。当你在 Drip、Kover 或 Grain 中购买内容时，Apple 会告知我们这笔购买，其中不包含你的姓名或电子邮件（见<a href="#purchases">购买</a>）。你在应用中输入的内容只存放在你的设备和你自己的 iCloud 中，除非下文对该应用另有说明。</p>
+  <p><strong>简要说明：</strong>Drip、Kover、Grain 和 Tiller 设计为不需要你的数据也能正常使用。这四款应用没有用户账户，不使用广告 SDK，我们也不出售或分享任何数据。当你在 Drip、Kover、Grain 或 Tiller 中购买内容时，Apple 会告知我们这笔购买，其中不包含你的姓名或电子邮件（见<a href="#purchases">购买</a>）。你在应用中输入的内容只存放在你的设备和你自己的 iCloud 中，除非下文对该应用另有说明。</p>
+
+  <p><strong>Tiller 另有一点：</strong>它会向 Seize 的服务器（Supabase）发送我们自己的匿名使用统计（应用的哪些部分被使用，从不包括你的体重、饮食、热量和营养素目标或你的目标，只带一个为本次安装生成的随机数字，不含任何关于你身份的信息），除非你关闭它们，请阅读<a href="#tiller">下文的说明</a>。</p>
 
   <h2>我们是谁</h2>
-  <p>Seize Apps 是由 <strong>Izotz Cristobal Mota</strong> 和 <strong>Sendoa Sola</strong> 在西班牙巴斯克地区经营的独立应用工作室（以下称“我们”）。本页涵盖的三款应用 Drip、Kover 和 Grain 通过 Apple App Store 和 TestFlight 分发，由 <strong>Sendoa Sola</strong> 在 App Store 上发布，他是这三款应用的数据控制者。各应用的说明与一般说明不同时，以该应用的说明为准。</p>
+  <p>Seize Apps 是由 <strong>Izotz Cristobal Mota</strong> 和 <strong>Sendoa Sola</strong> 在西班牙巴斯克地区经营的独立应用工作室（以下称“我们”）。本页涵盖的四款应用 Drip、Kover、Grain 和 Tiller 通过 Apple App Store 和 TestFlight 分发，由 <strong>Sendoa Sola</strong> 发布，他是这四款应用的数据控制者。各应用的说明与一般说明不同时，以该应用的说明为准。</p>
 
   <h2>我们收集什么</h2>
-  <p><strong>默认情况下，什么都不收集。</strong>这些应用不需要账户，不包含广告或跟踪 SDK，也不会把你创建的内容传给我们。我们看不到你的订阅和支出、小票、饮食记录，也看不到你在 Seize 应用中创建的任何其他内容。</p>
+  <p><strong>默认情况下，什么都不收集。</strong>这些应用不需要账户，不包含广告或跟踪 SDK，也不会把你创建的内容传给我们。我们看不到你的订阅和支出、小票、饮食记录，也看不到你在 Seize 应用中创建的任何其他内容。Tiller 还会向我们发送我们自己的匿名使用统计，除非你关闭它们（见<a href="#tiller">Tiller</a>）。</p>
   <p>购买完全由 Apple 处理。应用通过你设备上的 Apple StoreKit 核实“Pro”一次性解锁，只记住它是否有效；我们看不到是谁购买的。我们会从 Apple 的 App Store Connect 收到汇总的匿名销售和崩溃统计（例如各国的下载量），其中不含任何个人标识。</p>
-  <p id="purchases"><strong>购买。</strong>当你在 Drip、Kover 或 Grain 中购买内容（打赏、“Pro” 或解锁）、开始试用或兑换代码时，Apple 会通知我们，之后的续订和退款也会通知：哪件商品、什么时间、哪个国家或地区的 App Store、价格和币种，以及若干交易编号和 Apple 为每个账户、每款应用分别生成的一个假名标识。其中不包含你的姓名、电子邮件或 Apple ID。我们把这些信息保存在我们自己的服务器上，只用于记账以及处理退款或与购买有关的问题。我们不与任何人分享这些信息，也不用于广告或分析。我们保存六年，这是法律对会计记录要求的期限（法律依据：履行我们的法定会计义务，以及我们处理问题和退款的正当利益）。</p>
+  <p id="purchases"><strong>购买。</strong>当你在 Drip、Kover、Grain 或 Tiller 中购买内容（打赏、“Pro” 或解锁）、开始试用或兑换代码时，Apple 会通知我们，之后的续订和退款也会通知：哪件商品、什么时间、哪个国家或地区的 App Store、价格和币种，以及若干交易编号和 Apple 为每个账户、每款应用分别生成的一个假名标识。其中不包含你的姓名、电子邮件或 Apple ID。我们把这些信息保存在我们自己的服务器上，只用于记账以及处理退款或与购买有关的问题。我们不与任何人分享这些信息，也不用于广告或分析。我们保存六年，这是法律对会计记录要求的期限（法律依据：履行我们的法定会计义务，以及我们处理问题和退款的正当利益）。</p>
 
   <h2>你的数据存放在哪里</h2>
   <ul>
@@ -71,6 +73,18 @@ PRIVACY = '''
   <p><strong>Apple 健康。</strong>默认关闭。如果你在设置中开启，每条记录会作为食物（能量、蛋白质、碳水化合物和脂肪）写入“健康”，你在 Grain 中修改或删除时，“健康”中的记录也会随之修改或删除。Grain 从不读取“健康”中的任何内容，也从不上传健康数据；权限和这一偏好只保存在该设备上。</p>
   <p><strong>iCloud 同步</strong>默认开启，你的饮食记录、目标和食物会通过你个人的 iCloud 账户在你的设备之间同步，适用 Apple 的条款；我们无法访问。在设置中关闭后，数据只保存在本设备上。Grain 不发送任何通知。</p>
   <p><em>由 Sendoa Sola 在 App Store 上发布。</em></p>
+  </section>
+
+  <section id="tiller">
+  <h3>Tiller</h3>
+  <p>Tiller 是一款运动营养应用：它根据你的个人信息、目标和训练计算热量和宏量营养素目标，并每周根据你的饮食和体重记录重新调整。Tiller 没有账户系统，没有自己的服务器，没有广告，也不做跟踪，没有任何接收你数据的第三方代码。它唯一发送给我们的，是下文说明的匿名使用统计；这是我们自己的统计，你可以关闭。</p>
+  <p><strong>你输入的内容。</strong>你的个人资料（性别、出生年份、身高、体重、体脂率（如果你填写）、活动水平、训练课、目标和速度、每天餐数、一项计划中的赛事，以及肌酸开关）、你手动输入的称重记录和你应用的目标，保存在你的设备上，并通过你个人的 iCloud 账户（iCloud 键值存储）同步，适用 Apple 的条款；我们无法访问。这些内容都不会发送给 Seize。</p>
+  <p><strong>Apple 健康。</strong>只有在你允许后，Tiller 才会从“健康”读取其他应用记录的食物能量和宏量营养素、体重、体脂率、瘦体重、身高、出生日期和生理性别。这些数据只在设备上用于计算和调整你的目标；它们从不离开设备，也从不写入 iCloud。如果你允许，Tiller 还会把你在应用中输入的称重记录写入“健康”。Tiller 从不上传健康数据。</p>
+  <p><strong>Grain。</strong>如果你安装了同样来自 Seize 的 Grain，Tiller 会读取 Grain 留在设备上的每日摘要（每天的能量、宏量营养素，以及有记录的餐数）。摘要只留在设备上，Tiller 不会打开 Grain 自己的数据。</p>
+  <p><strong>购买。</strong>Tiller 提供可选的一次性“Tiller Pro”解锁，开启应用的额外功能，并提供 30 天免费试用。购买由 Apple 处理，Apple 在你的设备上核实你的购买资格；我们从不接触你的付款信息。Apple 就每笔购买告诉我们的内容见<a href="#purchases">购买</a>。</p>
+  <p><strong>使用统计。</strong>为了决定改进什么，Tiller 会统计它的使用情况（Seize Analytics，我们自己的代码，不是第三方 SDK）。它会在“今天”页面用一条提示和一个“好”按钮告诉你一次；此后，除非你在设置中关闭“帮助改进 Tiller”，它会发送：每个标签页在屏幕上停留多久（不计后台时间）；你看到了哪些购买页面；你何时应用目标；你接受还是推迟每周回顾；以及你输入的每次称重、你计划的每项赛事，以及你何时打开或关闭肌酸开关。从不发送你的体重、你吃的食物、你的热量和营养素目标或你的目标。随统计一起发送的有应用版本、语言、地区设置、设备类型，以及应用来自 App Store、TestFlight 还是开发版本。统计带有一个为本次安装生成的随机数字（不是你的姓名、你的 Apple 账户，也不是设备标识），我们也不保存你的 IP 地址。统计发送到我们在 Supabase（我们的数据处理者）的服务器，位于欧盟的法兰克福，最多保存 30 天；我们在自己的系统中最多保留 13 个月。我们只用它们来决定改进什么：它们不与你的身份关联，也不用于跟踪你或投放广告。关闭该设置会删除这台设备已发送的内容。</p>
+  <p>Tiller 不是医疗器械，不能代替营养师或医生。有关 Tiller 和你的数据的问题：<a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a>。</p>
+  <p><em>开发中；由 Sendoa Sola 发布。</em></p>
   </section>
 
   <h2>通知</h2>
