@@ -40,6 +40,7 @@ SOURCES = {
     'meso':       ('Meso',       'meso-0.3.3',       'meso.yaml',       ('en', 'es', 'fr')),
     'grain':      ('Grain',      'grain-0.1.2',      'grain.yaml',      ('en', 'es', 'fr')),
     'garum':      ('Criba',      'criba-0.1.1',      'criba.yaml',      ('en', 'es', 'fr')),
+    'tiller':     ('Tiller',     'tiller-0.0.10',    'tiller.yaml',     ('en', 'es', 'fr')),
     'logicle':    ('Logicle',    'logicle-0.4.0',    'logicle.yaml',    ('en', 'es', 'fr')),
     # Readably y Overbit (20/10/2026): las capturas que hay en la ficha de ASC (iPhone 6,7"), bajadas con `asc screenshots list`
     # a un SEIZE_REPO de paso. Readably no tiene capturas en francés (ASC solo en-US y es-MX): sus páginas en fr usan las inglesas

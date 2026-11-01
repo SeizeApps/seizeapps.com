@@ -1147,6 +1147,185 @@
    ]
   }
  },
+ "tiller": {
+  "source": "tiller-0.0.10",
+  "langs": {
+   "en": [
+    {
+     "base": "assets/store/tiller/en/01-today",
+     "w": 400,
+     "h": 869,
+     "title": "Targets that learn what you burn.",
+     "subtitle": "Today's calories and macros, with your training already counted in."
+    },
+    {
+     "base": "assets/store/tiller/en/02-expenditure",
+     "w": 400,
+     "h": 869,
+     "title": "What you really burn, not a formula.",
+     "subtitle": "What you eat against your weight trend, and a weekly check-in with the reason."
+    },
+    {
+     "base": "assets/store/tiller/en/03-sources",
+     "w": 400,
+     "h": 869,
+     "title": "Every figure, with its source.",
+     "subtitle": "The study, the year and its level of evidence: A, B or C."
+    },
+    {
+     "base": "assets/store/tiller/en/04-calendar",
+     "w": 400,
+     "h": 869,
+     "title": "Your days, at a glance.",
+     "subtitle": "Food, training, weigh-ins and races. It shows, it doesn't judge."
+    },
+    {
+     "base": "assets/store/tiller/en/05-day",
+     "w": 400,
+     "h": 869,
+     "title": "The whole day, in one place.",
+     "subtitle": "Meals from Grain against that day's target, your Meso session and its fuel."
+    },
+    {
+     "base": "assets/store/tiller/en/06-pace",
+     "w": 400,
+     "h": 869,
+     "title": "Your trend, day by day.",
+     "subtitle": "Smoothed from your scale, and whether you're on the pace you chose."
+    },
+    {
+     "base": "assets/store/tiller/en/07-fuel",
+     "w": 400,
+     "h": 869,
+     "title": "Fuel for every session.",
+     "subtitle": "Before, during and after, with the supplements that have real evidence."
+    },
+    {
+     "base": "assets/store/tiller/en/08-pro",
+     "w": 400,
+     "h": 869,
+     "title": "Sports nutrition. The long history.",
+     "subtitle": "What Tiller Pro adds, colour themes included."
+    }
+   ],
+   "es": [
+    {
+     "base": "assets/store/tiller/es/01-today",
+     "w": 400,
+     "h": 869,
+     "title": "Metas que aprenden lo que gastas.",
+     "subtitle": "Las calorías y los macros de hoy, con tu entreno ya sumado."
+    },
+    {
+     "base": "assets/store/tiller/es/02-expenditure",
+     "w": 400,
+     "h": 869,
+     "title": "Tu gasto real, no una fórmula.",
+     "subtitle": "Lo que comes frente a la tendencia de tu peso, y una revisión cada semana con el porqué."
+    },
+    {
+     "base": "assets/store/tiller/es/03-sources",
+     "w": 400,
+     "h": 869,
+     "title": "Cada cifra, con su fuente.",
+     "subtitle": "El estudio, el año y su nivel de evidencia: A, B o C."
+    },
+    {
+     "base": "assets/store/tiller/es/04-calendar",
+     "w": 400,
+     "h": 869,
+     "title": "Tus días, de un vistazo.",
+     "subtitle": "Comida, entrenos, pesadas y carreras. Enseña, no juzga."
+    },
+    {
+     "base": "assets/store/tiller/es/05-day",
+     "w": 400,
+     "h": 869,
+     "title": "El día entero, en un sitio.",
+     "subtitle": "Las comidas de Grain frente a la meta de ese día, tu sesión de Meso y su combustible."
+    },
+    {
+     "base": "assets/store/tiller/es/06-pace",
+     "w": 400,
+     "h": 869,
+     "title": "Tu tendencia, día a día.",
+     "subtitle": "Suavizada a partir de tu báscula, y si vas al ritmo que elegiste."
+    },
+    {
+     "base": "assets/store/tiller/es/07-fuel",
+     "w": 400,
+     "h": 869,
+     "title": "Combustible para cada sesión.",
+     "subtitle": "Antes, durante y después, con los suplementos que tienen evidencia real."
+    },
+    {
+     "base": "assets/store/tiller/es/08-pro",
+     "w": 400,
+     "h": 869,
+     "title": "Nutrición deportiva. El historial largo.",
+     "subtitle": "Lo que añade Tiller Pro, temas de color incluidos."
+    }
+   ],
+   "fr": [
+    {
+     "base": "assets/store/tiller/fr/01-today",
+     "w": 400,
+     "h": 869,
+     "title": "Des objectifs qui lisent ta dépense.",
+     "subtitle": "Les calories et les macros du jour, ton entraînement déjà compris."
+    },
+    {
+     "base": "assets/store/tiller/fr/02-expenditure",
+     "w": 400,
+     "h": 869,
+     "title": "Ta vraie dépense, pas une formule.",
+     "subtitle": "Ce que tu manges face à la tendance de ton poids, et un bilan chaque semaine avec le pourquoi."
+    },
+    {
+     "base": "assets/store/tiller/fr/03-sources",
+     "w": 400,
+     "h": 869,
+     "title": "Chaque chiffre, avec sa source.",
+     "subtitle": "L’étude, l’année et son niveau de preuve : A, B ou C."
+    },
+    {
+     "base": "assets/store/tiller/fr/04-calendar",
+     "w": 400,
+     "h": 869,
+     "title": "Tes journées, en un coup d’œil.",
+     "subtitle": "Repas, entraînements, pesées et courses. Il montre, il ne juge pas."
+    },
+    {
+     "base": "assets/store/tiller/fr/05-day",
+     "w": 400,
+     "h": 869,
+     "title": "Toute la journée, au même endroit.",
+     "subtitle": "Les repas de Grain face à l’objectif du jour, ta séance Meso et son carburant."
+    },
+    {
+     "base": "assets/store/tiller/fr/06-pace",
+     "w": 400,
+     "h": 869,
+     "title": "Ta tendance, jour après jour.",
+     "subtitle": "Lissée à partir de ta balance, et si tu tiens le rythme choisi."
+    },
+    {
+     "base": "assets/store/tiller/fr/07-fuel",
+     "w": 400,
+     "h": 869,
+     "title": "Du carburant pour chaque séance.",
+     "subtitle": "Avant, pendant et après, avec les compléments à l’efficacité prouvée."
+    },
+    {
+     "base": "assets/store/tiller/fr/08-pro",
+     "w": 400,
+     "h": 869,
+     "title": "Nutrition sportive. L’historique long.",
+     "subtitle": "Ce qu’ajoute Tiller Pro, thèmes de couleur compris."
+    }
+   ]
+  }
+ },
  "logicle": {
   "source": "logicle-0.4.0",
   "langs": {
