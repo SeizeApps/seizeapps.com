@@ -229,7 +229,7 @@ APPS=[
           features=[('01 / SPLIT','Proportional by default','Enter both incomes once. Every expense is split by that ratio — or 50/50, or paid in full by one of you, or, with Tandem Pro, any share you agree on — and the ratio is frozen with the expense, so a raise next year never reopens last year\'s months.'),
                     ('02 / SETTLE','One number a month','Who paid what, who owes whom, and the transfer that squares it. Mark it settled; undo it if you were too quick.'),
                     ('03 / SEE','Where it goes','Recurring expenses that log themselves. Tandem Pro adds reports by category and month, reminders to log and to settle, widgets, a CSV export and colour themes — a one-time purchase, with a free 30-day trial.')],
-          privacy='Tandem keeps names, incomes and expenses on your device and in your own iCloud account. Nothing is shared with anyone — not with us, and not with a server.',
+          privacy='Tandem keeps names, incomes and expenses on your device and in your own iCloud account; none of them is shared with anyone, not even with us. Anonymous usage statistics of our own, never a name or an amount, which you can turn off in Settings.',
           captions=['This month: shared, paid, to settle','Fixed and variable, by month','Settle up: the math, in the open','Reports: who paid, month by month (Pro)']),
      dict(one='Reparto justo de gastos en pareja: cada uno paga en proporción a lo que gana, y el mes se cierra con un solo número.',
           tags=['Pareja','Gastos','ES · EN · FR'],
@@ -238,7 +238,7 @@ APPS=[
           features=[('01 / REPARTIR','Proporcional por defecto','Mete los dos ingresos una vez. Cada gasto se reparte con esa proporción —o a medias, o lo paga uno entero, o, con Tandem Pro, la parte que acordéis— y la proporción se congela con el gasto, así una subida de sueldo el año que viene no reabre los meses del anterior.'),
                     ('02 / LIQUIDAR','Un número al mes','Quién pagó qué, quién debe a quién y la transferencia que lo cuadra. Márcalo como liquidado; deshazlo si te precipitaste.'),
                     ('03 / VER','A dónde va','Gastos recurrentes que se apuntan solos. Tandem Pro añade informes por categoría y por mes, recordatorios para apuntar y para liquidar, widgets, exportar a CSV y temas de color: una compra única, con 30 días de prueba gratis.')],
-          privacy='Tandem guarda los nombres, los ingresos y los gastos en tu dispositivo y en tu propia cuenta de iCloud. No se comparte nada con nadie: ni con nosotros ni con un servidor.',
+          privacy='Tandem guarda los nombres, los ingresos y los gastos en tu dispositivo y en tu propia cuenta de iCloud; nada de eso se comparte con nadie, tampoco con nosotros. Estadísticas de uso anónimas y propias, nunca un nombre ni un importe, que puedes apagar en Ajustes.',
           captions=['Este mes: compartido, pagado, por liquidar','Fijos y variables, por mes','Liquidar: las cuentas, a la vista','Informes: quién pagó, mes a mes (Pro)']), appstore='6812734713',
      # Retirada de la venta del 15 al 19/10/2026 (oculta entonces); de nuevo a la venta en los 175 países desde el 19/10.
      ),

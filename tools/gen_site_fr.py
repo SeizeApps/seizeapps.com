@@ -103,7 +103,7 @@ APPS_FR = {
    features=[('01 / RÉPARTIR','Proportionnel par défaut','Saisis les deux revenus une fois. Chaque dépense est répartie selon cette proportion — ou à 50/50, ou payée en entier par l’un de vous, ou, avec Tandem Pro, selon la part dont vous convenez — et la proportion est figée avec la dépense : une augmentation l’an prochain ne rouvre jamais les mois de l’année d’avant.'),
              ('02 / RÉGLER','Un chiffre par mois','Qui a payé quoi, qui doit quoi à qui, et le virement qui remet tout d’équerre. Marque le mois comme réglé. Trop rapide ? Tu peux annuler.'),
              ('03 / VOIR','Où part l’argent','Des dépenses récurrentes qui se notent toutes seules. Tandem Pro ajoute des rapports par catégorie et par mois, des rappels pour noter et pour régler, des widgets, l’export CSV et des thèmes de couleur : un achat unique, avec un essai gratuit de 30 jours.')],
-   privacy='Tandem garde les noms, les revenus et les dépenses sur ton appareil et dans ton propre compte iCloud. Rien n’est partagé avec personne : ni avec nous, ni avec un serveur.',
+   privacy='Tandem garde les noms, les revenus et les dépenses sur ton appareil et dans ton propre compte iCloud ; rien de tout cela n’est partagé avec personne, pas même avec nous. Des statistiques d’utilisation anonymes et maison, jamais un nom ni un montant, que tu peux désactiver dans Réglages.',
    captions=['Ce mois-ci : commun, payé, à régler','Fixes et variables, par mois','Régler les comptes : le calcul, sous les yeux','Rapports : qui a payé, mois par mois (Pro)']),
  'meso': dict(
    one='Le tableur de ton coach, version salle de sport : des blocs de semaines, la charge et les reps de chaque série, l’effort en répétitions en réserve.',
