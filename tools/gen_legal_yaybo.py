@@ -134,7 +134,7 @@ PRIVACY = {
 'en': '''
   <p class="eyebrow">Yaybo · Legal</p>
   <h1>Yaybo privacy policy</h1>
-  <p class="effective">Last updated: October 16, 2026</p>
+  <p class="effective">Last updated: November 3, 2026</p>
   <p>Yaybo is a learning app for children ages 4 to 9 (Pre-K to 3rd grade), used with a grown-up. This page is written for parents and guardians. It says what Yaybo keeps, where it keeps it, what leaves your devices, who can see it and how you delete it. Yaybo is offered in the United States and Canada.</p>
 
   <h2>The short version</h2>
@@ -199,7 +199,7 @@ PRIVACY = {
   <h2>Where our ads came from</h2>
   <p>Apple gives every app a small anonymous token, through its AdServices framework, that says whether the install came from an Apple Ads ad. It needs no permission prompt and carries no advertising identifier. The first time Yaybo opens, it posts that token, and nothing else, to Seize's own server (once more after "Delete all data", which starts the attribution afresh). That happens as the app opens, before anything a grown-up does, because the token is only useful early; the token carries nothing about your child, and nothing a child entered is involved.</p>
   <p>Our server passes the token on to Apple's attribution service, which answers which campaign, ad group, keyword and ad the install came from, and the country or region and date of the click. If no ad brought the install, we store nothing. If one did, we store that answer, together with a one-way hash of the token to drop a duplicate, and never the token itself. We do not receive who you are, and we do not share the token or the answer.</p>
-  <p>For each subscription Yaybo finds active on the device (a purchase, the free trial or a restore), the app also sends the App Store's purchase reference (the original transaction number), never for one shared through Family Sharing, and Apple tells our server when a subscription starts, renews or ends (the event, the product, the price and that reference; never a name, an email address or an Apple Account), so we can tell which keywords paid for themselves. We keep this for 12 months. It is not used to track you across other companies' apps or websites, and nothing from your child's side of the app is involved.</p>
+  <p>For each subscription Yaybo finds active on the device (a purchase, the free trial or a restore), the app also sends the App Store's purchase reference (the original transaction number), never for one shared through Family Sharing, so we can tell which keywords paid for themselves. We keep this for 12 months. It is not used to track you across other companies' apps or websites, and nothing from your child's side of the app is involved. Apple sends subscription status notifications (a start, a renewal, a cancellation or a refund) to RevenueCat, the subscription-analytics provider described under "Purchase analytics (RevenueCat)"; nothing in them identifies your child.</p>
 
   @@RC_SECTION@@
 
@@ -247,7 +247,7 @@ PRIVACY = {
 'es': '''
   <p class="eyebrow">Yaybo · Legal</p>
   <h1>Política de privacidad de Yaybo</h1>
-  <p class="effective">Última actualización: 16 de octubre de 2026</p>
+  <p class="effective">Última actualización: 3 de noviembre de 2026</p>
   <p><em>Yaybo se publica en la App Store de Estados Unidos y de Canadá y su política principal está en inglés. Esta es una traducción de cortesía: si hay alguna diferencia, vale la versión en inglés.</em></p>
   <p>Yaybo es una app para aprender, pensada para niños de 4 a 9 años (de Pre-K a 3.º de primaria de EE. UU.) y para usar con una persona adulta. Esta página está escrita para madres, padres y tutores: dice qué guarda Yaybo, dónde lo guarda, qué sale de tus dispositivos, quién puede verlo y cómo se borra. Yaybo se ofrece en Estados Unidos y en Canadá.</p>
 
@@ -311,7 +311,7 @@ PRIVACY = {
   <h2>De dónde venían nuestros anuncios</h2>
   <p>Apple da a cada app un pequeño token anónimo, mediante su framework AdServices, que dice si la instalación vino de un anuncio de Apple Ads. No necesita ningún aviso de permiso y no lleva ningún identificador publicitario. La primera vez que Yaybo se abre, envía ese token, y nada más, al servidor propio de Seize (una vez más tras «Eliminar todos los datos», que reinicia la atribución). Ocurre al abrirse la app, antes de cualquier cosa que haga una persona adulta, porque el token solo sirve al principio; el token no lleva nada sobre tu hijo o hija, y no interviene nada que un niño haya introducido.</p>
   <p>Nuestro servidor pasa el token al servicio de atribución de Apple, que responde de qué campaña, grupo de anuncios, palabra clave y anuncio venía la instalación, y el país o región y la fecha del clic. Si ningún anuncio trajo la instalación, no guardamos nada. Si lo hubo, guardamos esa respuesta, junto con un hash irreversible del token para descartar un duplicado, y nunca el token en sí. No recibimos quién eres, y no compartimos ni el token ni la respuesta.</p>
-  <p>Por cada suscripción que Yaybo encuentre activa en el dispositivo (una compra, la prueba gratuita o una restauración), la app envía además la referencia de compra de la App Store (el número de transacción original), nunca en una compartida mediante Compartir en familia, y Apple avisa a nuestro servidor cuando una suscripción empieza, se renueva o termina (el evento, el producto, el precio y esa referencia; nunca un nombre, un correo ni una cuenta de Apple), para que podamos saber qué palabras clave se pagaron solas. Lo conservamos 12 meses. No se usa para seguirte por las apps o webs de otras empresas, y no interviene nada del lado de tu hijo o hija en la app.</p>
+  <p>Por cada suscripción que Yaybo encuentre activa en el dispositivo (una compra, la prueba gratuita o una restauración), la app envía además la referencia de compra de la App Store (el número de transacción original), nunca en una compartida mediante Compartir en familia, para que podamos saber qué palabras clave se pagaron solas. Lo conservamos 12 meses. No se usa para seguirte por las apps o webs de otras empresas, y no interviene nada del lado de tu hijo o hija en la app. Apple envía las notificaciones del estado de las suscripciones (un inicio, una renovación, una cancelación o un reembolso) a RevenueCat, el proveedor de analítica de suscripciones descrito en «Analítica de compras (RevenueCat)»; nada en ellas identifica a tu hijo o hija.</p>
 
   @@RC_SECTION@@
 
