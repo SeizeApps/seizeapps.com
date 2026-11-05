@@ -1547,6 +1547,143 @@
    ]
   }
  },
+ "mueca": {
+  "source": "mueca-0.0.5",
+  "langs": {
+   "en": [
+    {
+     "base": "assets/store/mueca/en/01-library",
+     "w": 400,
+     "h": 869,
+     "title": "Stickers that move, from any video.",
+     "subtitle": "Record your screen or pick a video, and keep every sticker in your library."
+    },
+    {
+     "base": "assets/store/mueca/en/02-frame",
+     "w": 400,
+     "h": 869,
+     "title": "Frame it. The background goes.",
+     "subtitle": "Corners, sides and pinch to zoom; then choose the loop, up to 10 seconds."
+    },
+    {
+     "base": "assets/store/mueca/en/03-name",
+     "w": 400,
+     "h": 869,
+     "title": "A name and its emojis.",
+     "subtitle": "The name finds it in Mueca; the emojis are how WhatsApp suggests it."
+    },
+    {
+     "base": "assets/store/mueca/en/04-packs",
+     "w": 400,
+     "h": 869,
+     "title": "Your packs, straight to WhatsApp.",
+     "subtitle": "3 to 30 stickers, in the order you choose. There they move too."
+    },
+    {
+     "base": "assets/store/mueca/en/05-edit-share",
+     "w": 400,
+     "h": 869,
+     "title": "Edit it any time, send it anywhere.",
+     "subtitle": "Recrop it later, use it in Messages or share it as a GIF."
+    },
+    {
+     "base": "assets/store/mueca/en/06-themes",
+     "w": 400,
+     "h": 869,
+     "title": "Your library, in your colours.",
+     "subtitle": "Mint, Sky and Ink, each in light and dark, and three app icons."
+    }
+   ],
+   "es": [
+    {
+     "base": "assets/store/mueca/es/01-library",
+     "w": 400,
+     "h": 869,
+     "title": "Stickers animados, de cualquier vídeo.",
+     "subtitle": "Graba la pantalla o elige un vídeo, y guarda cada sticker en tu biblioteca."
+    },
+    {
+     "base": "assets/store/mueca/es/02-frame",
+     "w": 400,
+     "h": 869,
+     "title": "Encuádralo. El fondo se va.",
+     "subtitle": "Esquinas, lados y pellizco para acercar; luego eliges el bucle, hasta 10 segundos."
+    },
+    {
+     "base": "assets/store/mueca/es/03-name",
+     "w": 400,
+     "h": 869,
+     "title": "Un nombre y sus emojis.",
+     "subtitle": "El nombre lo encuentra en Mueca; los emojis, cómo te lo sugiere WhatsApp."
+    },
+    {
+     "base": "assets/store/mueca/es/04-packs",
+     "w": 400,
+     "h": 869,
+     "title": "Tus packs, directos a WhatsApp.",
+     "subtitle": "De 3 a 30 stickers, en el orden que elijas. Allí también se mueven."
+    },
+    {
+     "base": "assets/store/mueca/es/05-edit-share",
+     "w": 400,
+     "h": 869,
+     "title": "Edítalo cuando quieras, mándalo donde sea.",
+     "subtitle": "Recórtalo de nuevo, úsalo en Mensajes o compártelo como GIF."
+    },
+    {
+     "base": "assets/store/mueca/es/06-themes",
+     "w": 400,
+     "h": 869,
+     "title": "Tu biblioteca, a tu color.",
+     "subtitle": "Menta, Cielo y Tinta, cada uno en claro y oscuro, y tres iconos de la app."
+    }
+   ],
+   "fr": [
+    {
+     "base": "assets/store/mueca/fr/01-library",
+     "w": 400,
+     "h": 869,
+     "title": "Des stickers animés, tirés de tes vidéos.",
+     "subtitle": "Enregistre ton écran ou choisis une vidéo, et garde chaque sticker dans ta bibliothèque."
+    },
+    {
+     "base": "assets/store/mueca/fr/02-frame",
+     "w": 400,
+     "h": 869,
+     "title": "Cadre-le. Le fond s’en va.",
+     "subtitle": "Coins, côtés et pincement pour zoomer ; puis tu choisis la boucle, jusqu’à 10 secondes."
+    },
+    {
+     "base": "assets/store/mueca/fr/03-name",
+     "w": 400,
+     "h": 869,
+     "title": "Un nom et ses emojis.",
+     "subtitle": "Le nom le retrouve dans Mueca ; les emojis, c’est ainsi que WhatsApp le propose."
+    },
+    {
+     "base": "assets/store/mueca/fr/04-packs",
+     "w": 400,
+     "h": 869,
+     "title": "Tes packs, direct dans WhatsApp.",
+     "subtitle": "De 3 à 30 stickers, dans l’ordre que tu choisis. Là-bas aussi, ils bougent."
+    },
+    {
+     "base": "assets/store/mueca/fr/05-edit-share",
+     "w": 400,
+     "h": 869,
+     "title": "Retouche-le, envoie-le partout.",
+     "subtitle": "Recadre-le plus tard, utilise-le dans Messages ou partage-le en GIF."
+    },
+    {
+     "base": "assets/store/mueca/fr/06-themes",
+     "w": 400,
+     "h": 869,
+     "title": "Ta bibliothèque, à ta couleur.",
+     "subtitle": "Menthe, Ciel et Encre, chacun en clair et en sombre, et trois icônes d’app."
+    }
+   ]
+  }
+ },
  "readably": {
   "source": "readably-0.1.0",
   "langs": {
