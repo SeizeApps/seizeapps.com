@@ -16,7 +16,7 @@ UI_FR = dict(
    hero_cta='Voir les apps', hero_cta2='Travailler avec nous',
    apps_eyebrow='Apps', apps_h2='{Count} apps, <span>{count} tâches.</span>',
    apps_p='Le rythme de la maison, la journée de travail, l’argent qui part chaque mois, le rétablissement, les garanties, les comptes d’un couple, le bloc d’entraînement, les macros de ce que tu manges et les adresses qui valent le détour. Des problèmes différents, une seule façon de construire : un écran qui se comprend d’un coup d’œil, seulement les données nécessaires, et des textes en plusieurs langues, le français compris pour la plupart d’entre elles.',
-   learn_more='En savoir plus', izotz_title='D’Izotz · chacune avec son propre site', visit_site='Voir le site de l’app',
+   learn_more='En savoir plus', izotz_title='Plus d’apps · chacune avec son propre site', visit_site='Voir le site de l’app',
    phil_eyebrow='Philosophie', phil_h2='Beau. Utile. <span>Humain. Possible.</span>',
    phil_p='Quatre mots à l’aune desquels nous jugeons chaque écran. Si une fonction échoue à l’un d’eux, elle ne sort pas, aussi ingénieuse soit-elle.',
    values=[('Beau','Un design avec un parti pris : une couleur dominante, le poids avant la taille, des animations qui veulent dire quelque chose. Ce soin qu’on remarque sans que personne ait besoin de le signaler.'),
