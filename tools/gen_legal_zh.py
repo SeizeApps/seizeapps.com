@@ -1,8 +1,8 @@
 """Simplified Chinese legal pages (/zh/privacy.html, /zh/terms.html), 16/10/2026.
 
-Only the apps that speak Chinese (Drip, Kover, Grain, Tiller) are covered; the rest of the site has no Chinese tree, so
+Only the apps that speak Chinese (Drip, Kover, Grain, Tiller, Mueca) are covered; the rest of the site has no Chinese tree, so
 these two pages link back to the English home and the English policy, which prevails. Translated from
-gen_legal_copy.py: when a Drip, Kover, Grain or Tiller section (or the purchases paragraph, or the terms) changes there,
+gen_legal_copy.py: when a Drip, Kover, Grain, Tiller or Mueca section (or the purchases paragraph, or the terms) changes there,
 change it here too. Built with gen_site's chrome; run `python3 tools/gen_site.py`, which calls build_zh().
 """
 import gen_site as g
@@ -15,31 +15,31 @@ g.UI['zh'] = dict(g.UI['en'], skip='跳到正文', nav_apps='应用', nav_phil='
 g.OG_LOCALE['zh'] = 'zh_CN'
 
 PRIVACY_TITLE = '隐私政策 — Seize Apps'
-PRIVACY_DESC = 'Seize 应用如何处理你的数据：没有账户，没有广告，内容只存放在你的设备和你自己的 iCloud 中。适用于 Drip、Kover、Grain 和 Tiller。'
+PRIVACY_DESC = 'Seize 应用如何处理你的数据：没有账户，没有广告，内容只存放在你的设备和你自己的 iCloud 中。适用于 Drip、Kover、Grain、Tiller 和 Mueca。'
 TERMS_TITLE = '使用条款 — Seize Apps'
 TERMS_DESC = 'Seize Apps 发布的应用的使用条款。'
 
 PRIVACY = '''
   <p class="eyebrow">法律信息</p>
   <h1>隐私政策</h1>
-  <p class="effective">自 2026 年 11 月 1 日起生效</p>
+  <p class="effective">自 2026 年 11 月 5 日起生效</p>
   <nav class="toc" aria-label="应用">
-    <a href="#drip">Drip</a><a href="#kover">Kover</a><a href="#grain">Grain</a><a href="#tiller">Tiller</a>
+    <a href="#drip">Drip</a><a href="#kover">Kover</a><a href="#grain">Grain</a><a href="#tiller">Tiller</a><a href="#mueca">Mueca</a>
   </nav>
 
-  <p><strong>关于本页：</strong>这是 Seize Apps 隐私政策的中文版，只包含提供中文界面的应用：<a href="#drip">Drip</a>、<a href="#kover">Kover</a>、<a href="#grain">Grain</a> 和 <a href="#tiller">Tiller</a>。其他应用请见<a href="../privacy.html">英文版完整政策</a>。中文版为译文，如与英文版有不一致之处，以英文版为准。</p>
+  <p><strong>关于本页：</strong>这是 Seize Apps 隐私政策的中文版，只包含提供中文界面的应用：<a href="#drip">Drip</a>、<a href="#kover">Kover</a>、<a href="#grain">Grain</a>、<a href="#tiller">Tiller</a> 和 <a href="#mueca">Mueca</a>。其他应用请见<a href="../privacy.html">英文版完整政策</a>。中文版为译文，如与英文版有不一致之处，以英文版为准。</p>
 
-  <p><strong>简要说明：</strong>Drip、Kover、Grain 和 Tiller 设计为不需要你的数据也能正常使用。这四款应用没有用户账户，不使用广告 SDK，我们也不出售或分享任何数据。当你在 Drip、Kover、Grain 或 Tiller 中购买内容时，Apple 会告知我们这笔购买，其中不包含你的姓名或电子邮件（见<a href="#purchases">购买</a>）。你在应用中输入的内容只存放在你的设备和你自己的 iCloud 中，除非下文对该应用另有说明。</p>
+  <p><strong>简要说明：</strong>Drip、Kover、Grain、Tiller 和 Mueca 设计为不需要你的数据也能正常使用。这五款应用没有用户账户，不使用广告 SDK，我们也不出售或分享任何数据。当你在 Drip、Kover、Grain、Tiller 或 Mueca 中购买内容时，Apple 会告知我们这笔购买，其中不包含你的姓名或电子邮件（见<a href="#purchases">购买</a>）。你在应用中输入的内容只存放在你的设备和你自己的 iCloud 中，除非下文对该应用另有说明。</p>
 
   <p><strong>Tiller 另有一点：</strong>它会向 Seize 的服务器（Supabase）发送我们自己的匿名使用统计（应用的哪些部分被使用，从不包括你的体重、饮食、热量和营养素目标或你的目标，只带一个为本次安装生成的随机数字，不含任何关于你身份的信息），除非你关闭它们，请阅读<a href="#tiller">下文的说明</a>。</p>
 
   <h2>我们是谁</h2>
-  <p>Seize Apps 是由 <strong>Izotz Cristobal Mota</strong> 和 <strong>Sendoa Sola</strong> 在西班牙巴斯克地区经营的独立应用工作室（以下称“我们”）。本页涵盖的四款应用 Drip、Kover、Grain 和 Tiller 通过 Apple App Store 和 TestFlight 分发，由 <strong>Sendoa Sola</strong> 发布，他是这四款应用的数据控制者。各应用的说明与一般说明不同时，以该应用的说明为准。</p>
+  <p>Seize Apps 是由 <strong>Izotz Cristobal Mota</strong> 和 <strong>Sendoa Sola</strong> 在西班牙巴斯克地区经营的独立应用工作室（以下称“我们”）。本页涵盖的五款应用 Drip、Kover、Grain、Tiller 和 Mueca 通过 Apple App Store 和 TestFlight 分发，由 <strong>Sendoa Sola</strong> 发布，他是这五款应用的数据控制者。各应用的说明与一般说明不同时，以该应用的说明为准。</p>
 
   <h2>我们收集什么</h2>
-  <p><strong>默认情况下，什么都不收集。</strong>这些应用不需要账户，不包含广告或跟踪 SDK，也不会把你创建的内容传给我们。我们看不到你的订阅和支出、小票、饮食记录，也看不到你在 Seize 应用中创建的任何其他内容。Drip、Kover、Grain 和 Tiller 还会向我们发送我们自己的匿名使用统计，除非你关闭它们；每个应用的部分写明了从哪个版本开始、具体发送什么（见<a href="#drip">Drip</a>、<a href="#kover">Kover</a>、<a href="#grain">Grain</a> 和 <a href="#tiller">Tiller</a>）。</p>
+  <p><strong>默认情况下，什么都不收集。</strong>这些应用不需要账户，不包含广告或跟踪 SDK，也不会把你创建的内容传给我们。我们看不到你的订阅和支出、小票、饮食记录，也看不到你在 Seize 应用中创建的任何其他内容。Drip、Kover、Grain、Tiller 和 Mueca 还会向我们发送我们自己的匿名使用统计，除非你关闭它们；每个应用的部分写明了从哪个版本开始、具体发送什么（见<a href="#drip">Drip</a>、<a href="#kover">Kover</a>、<a href="#grain">Grain</a>、<a href="#tiller">Tiller</a> 和 <a href="#mueca">Mueca</a>）。</p>
   <p>购买完全由 Apple 处理。应用通过你设备上的 Apple StoreKit 核实“Pro”一次性解锁，只记住它是否有效；我们看不到是谁购买的。我们会从 Apple 的 App Store Connect 收到汇总的匿名销售和崩溃统计（例如各国的下载量），其中不含任何个人标识。</p>
-  <p id="purchases"><strong>购买。</strong>当你在 Drip、Kover、Grain 或 Tiller 中购买内容（打赏、“Pro” 或解锁）、开始试用或兑换代码时，Apple 会通知我们，之后的续订和退款也会通知：哪件商品、什么时间、哪个国家或地区的 App Store、价格和币种，以及若干交易编号和 Apple 为每个账户、每款应用分别生成的一个假名标识。其中不包含你的姓名、电子邮件或 Apple ID。我们把这些信息保存在我们自己的服务器上，只用于记账以及处理退款或与购买有关的问题。我们不与任何人分享这些信息，也不用于广告或分析。我们保存六年，这是法律对会计记录要求的期限（法律依据：履行我们的法定会计义务，以及我们处理问题和退款的正当利益）。</p>
+  <p id="purchases"><strong>购买。</strong>当你在 Drip、Kover、Grain、Tiller 或 Mueca 中购买内容（打赏、“Pro” 或解锁）、开始试用或兑换代码时，Apple 会通知我们，之后的续订和退款也会通知：哪件商品、什么时间、哪个国家或地区的 App Store、价格和币种，以及若干交易编号和 Apple 为每个账户、每款应用分别生成的一个假名标识。其中不包含你的姓名、电子邮件或 Apple ID。我们把这些信息保存在我们自己的服务器上，只用于记账以及处理退款或与购买有关的问题。我们不与任何人分享这些信息，也不用于广告或分析。我们保存六年，这是法律对会计记录要求的期限（法律依据：履行我们的法定会计义务，以及我们处理问题和退款的正当利益）。</p>
 
   <h2>你的数据存放在哪里</h2>
   <ul>
@@ -90,6 +90,18 @@ PRIVACY = '''
   <p><strong>购买。</strong>Tiller 提供可选的一次性“Tiller Pro”解锁，开启应用的额外功能，并提供 30 天免费试用。购买由 Apple 处理，Apple 在你的设备上核实你的购买资格，包括通过家人共享获得的；我们从不接触你的付款信息。Apple 就每笔购买告诉我们的内容见<a href="#purchases">购买</a>。</p>
   <p><strong>使用统计。</strong>为了决定改进什么，Tiller 会统计它的使用情况（Seize Analytics，我们自己的代码，不是第三方 SDK）。它会在“今天”页面用一条提示和一个“好”按钮告诉你一次；此后，除非你在设置中关闭“帮助改进 Tiller”，它会发送：每个标签页在屏幕上停留多久（不计后台时间）；你看到了哪些购买页面；你何时应用目标；你接受还是推迟每周回顾；以及你输入的每次称重、你计划的每项赛事，以及你何时打开或关闭肌酸开关。从不发送你的体重、你吃的食物、你的热量和营养素目标或你的目标。随统计一起发送的有应用版本、语言、地区设置、设备类型，以及应用来自 App Store、TestFlight 还是开发版本。统计带有一个为本次安装生成的随机数字（不是你的姓名、你的 Apple 账户，也不是设备标识），我们也不保存你的 IP 地址。统计发送到我们在 Supabase（我们的数据处理者）的服务器，位于欧盟的法兰克福，最多保存 30 天；我们在自己的系统中最多保留 13 个月。我们只用它们来决定改进什么：它们不与你的身份关联，也不用于跟踪你或投放广告。关闭该设置会删除这台设备已发送的内容。</p>
   <p>Tiller 不是医疗器械，不能代替营养师或医生。有关 Tiller 和你的数据的问题：<a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a>。</p>
+  <p><em>开发中；由 Sendoa Sola 发布。</em></p>
+  </section>
+
+  <section id="mueca">
+  <h3>Mueca</h3>
+  <p>Mueca 把一段视频变成会动的贴纸，并保存在贴纸库里；你可以把它们组成贴纸包添加到 WhatsApp、在“信息”中使用，或以 GIF 分享。Mueca 没有账户系统，没有存放你贴纸的自有服务器，没有广告，也不做跟踪，没有任何接收你数据的第三方代码。它唯一发送给我们的，是下文说明的匿名使用统计；这是我们自己的统计，你可以关闭。</p>
+  <p><strong>你的视频。</strong>Mueca 只能看到你在系统照片选择器中选中的那段视频（它不会请求访问你的照片图库）。它在设备上用 Apple 在 iPhone 本机运行的工具抠出贴纸，并且不保存视频：只保存你存下的贴纸。你选中的任何内容都不会上传到任何地方。</p>
+  <p><strong>你的贴纸。</strong>你的贴纸、它们的名称和表情，以及你的贴纸包保存在你的设备上；除非你在设置中关闭 iCloud 同步，它们会通过你个人的 iCloud 账户（CloudKit 私有数据库）同步，适用 Apple 的条款；我们无法访问。这些内容都不会发送给 Seize。</p>
+  <p><strong>WhatsApp、“信息”和分享。</strong>当你点按“添加到 WhatsApp”时，Mueca 会通过系统剪贴板把这个贴纸包（它的名称、贴纸以及贴纸的表情和名称）交给 WhatsApp，此后适用 WhatsApp 自己的隐私政策。Mueca 在“信息”中的应用显示的是 Mueca 保存在设备上的一份贴纸副本，存放在只与这个“信息”应用共享的私有 App Group 容器中；你在对话中发送的内容通过 Apple 的“信息”传送。你以 GIF 分享的贴纸，只会去往你在分享菜单中选择的地方。</p>
+  <p><strong>购买。</strong>Mueca 提供可选的一次性“Mueca Pro”解锁，开启应用的额外功能，并提供 30 天免费试用。购买由 Apple 处理，Apple 在你的设备上核实你的购买资格，包括通过家人共享获得的；我们从不接触你的付款信息。Apple 就每笔购买告诉我们的内容见<a href="#purchases">购买</a>。</p>
+  <p><strong>使用统计。</strong>为了决定改进什么，Mueca 会统计它的使用情况（Seize Analytics，我们自己的代码，不是第三方 SDK）。它会在“贴纸库”页面用一条提示和一个“好”按钮告诉你一次；此后，除非你在设置中关闭“帮助改进 Mueca”，它会发送：每个页面打开多久（不计后台时间）；你看到了哪些购买页面；你何时制作贴纸、它的背景是如何去除的、边缘设置，以及它的循环有几秒；以及你何时把贴纸包添加到 WhatsApp、里面有多少张贴纸。从不发送你的视频、你的贴纸、贴纸的名称或表情，也不发送你的贴纸包名称。随统计一起发送的有应用版本、语言、地区设置、设备类型，以及应用来自 App Store、TestFlight 还是开发版本。统计带有一个为本次安装生成的随机数字（不是你的姓名、你的 Apple 账户，也不是设备标识），我们也不保存你的 IP 地址。统计发送到我们在 Supabase（我们的数据处理者）的服务器，位于欧盟的法兰克福，最多保存 30 天；我们在自己的系统中最多保留 13 个月。我们只用它们来决定改进什么：它们不与你的身份关联，也不用于跟踪你或投放广告。关闭该设置会删除这台设备已发送的内容。</p>
+  <p>请用属于你的、或你有权使用的内容制作贴纸：别人创作的内容属于别人。有关 Mueca 和你的数据的问题：<a href="mailto:hello@seizeapps.com">hello@seizeapps.com</a>。</p>
   <p><em>开发中；由 Sendoa Sola 发布。</em></p>
   </section>
 
