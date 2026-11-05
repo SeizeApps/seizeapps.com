@@ -34,7 +34,7 @@ UI={
    hero_cta='Explore our apps', hero_cta2='Work with us',
    apps_eyebrow='Apps', apps_h2='{Count} apps, <span>{count} jobs.</span>',
    apps_p='Household rhythms, the working day, recurring money, recovery, warranties, the bills a couple shares, the training block, the macros you eat and the places worth the trip. Different problems, one way of building: a screen you understand at a glance, only the data the job needs, Spanish and English from day one.',
-   learn_more='Learn more', izotz_title='More apps · each with its own site', visit_site='Visit the app’s site',
+   learn_more='Learn more', more_title='More apps · each with its own site', visit_site='Visit the app’s site',
    phil_eyebrow='Philosophy', phil_h2='Beautiful. Useful. <span>Human. Possible.</span>',
    phil_p='Four words we hold every screen against. If a feature fails one of them, it doesn\'t ship — however clever it is.',
    values=[('Beautiful','Design with an opinion: one dominant colour, weight before size, motion that means something. The kind of care you notice without being told.'),
@@ -72,7 +72,7 @@ UI={
    hero_cta='Ver las apps', hero_cta2='Trabaja con nosotros',
    apps_eyebrow='Apps', apps_h2='{Count} apps, <span>{count} tareas.</span>',
    apps_p='Los ritmos de casa, la jornada de trabajo, el dinero que se va cada mes, la recuperación, las garantías, las cuentas de una pareja, el bloque de entrenamiento, los macros de lo que comes y los sitios que merecen la pena. Problemas distintos, una sola forma de construir: una pantalla que se entiende de un vistazo, solo los datos que hacen falta, castellano e inglés desde el primer día.',
-   learn_more='Ver más', izotz_title='Más apps · cada una con su propia web', visit_site='Ir a la web de la app',
+   learn_more='Ver más', more_title='Más apps · cada una con su propia web', visit_site='Ir a la web de la app',
    phil_eyebrow='Filosofía', phil_h2='Bonito. Útil. <span>Humano. Posible.</span>',
    phil_p='Cuatro palabras contra las que medimos cada pantalla. Si una función falla en una de ellas, no sale, por ingeniosa que sea.',
    values=[('Bonito','Diseño con criterio: un color dominante, peso antes que tamaño, movimiento que significa algo. Ese cuidado que se nota sin que nadie te lo diga.'),
@@ -817,10 +817,10 @@ def build_index(lang):
     <ul class="app-grid app-grid-{key}" role="list" aria-labelledby="apps-{key}">{cards(apps)}
     </ul>''' for key,label,apps in (('live', t['live_title'], [a for a in HOME_APPS if a.get('appstore')]),
                                        ('soon', t['soon'], [a for a in HOME_APPS if not a.get('appstore')])) if apps)
-    # Izotz's apps are not in the home count or the marquee, but the home points at each one's own site.
-    more=[a in HIDDEN if a['slug'] in {n for n,_,_ in STANDALONE}]
+    # These apps are not in the home count or the marquee, but the home points at each one's own site.
+    more=[a for a in HIDDEN if a['slug'] in {n for n,_,_ in STANDALONE}]
     groups+=f'''
-    <p class="group-label" id="apps-more">{t['izotz_title']}</p>
+    <p class="group-label" id="apps-more">{t['more_title']}</p>
     <ul class="app-grid app-grid-more" role="list" aria-labelledby="apps-more">{cards(more, own_site=True)}
     </ul>''' if more else ''
     strip=''.join(f'<li><img src="{root}assets/icons/{a["icon"]}" alt="" width="56" height="56" decoding="async"><span>{a["name"]}</span></li>' for a in HOME_APPS)
