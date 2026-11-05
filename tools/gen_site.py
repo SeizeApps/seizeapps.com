@@ -34,7 +34,7 @@ UI={
    hero_cta='Explore our apps', hero_cta2='Work with us',
    apps_eyebrow='Apps', apps_h2='{Count} apps, <span>{count} jobs.</span>',
    apps_p='Household rhythms, the working day, recurring money, recovery, warranties, the bills a couple shares, the training block, the macros you eat and the places worth the trip. Different problems, one way of building: a screen you understand at a glance, only the data the job needs, Spanish and English from day one.',
-   learn_more='Learn more',
+   learn_more='Learn more', izotz_title='From Izotz · each with its own site', visit_site='Visit the app’s site',
    phil_eyebrow='Philosophy', phil_h2='Beautiful. Useful. <span>Human. Possible.</span>',
    phil_p='Four words we hold every screen against. If a feature fails one of them, it doesn\'t ship — however clever it is.',
    values=[('Beautiful','Design with an opinion: one dominant colour, weight before size, motion that means something. The kind of care you notice without being told.'),
@@ -72,7 +72,7 @@ UI={
    hero_cta='Ver las apps', hero_cta2='Trabaja con nosotros',
    apps_eyebrow='Apps', apps_h2='{Count} apps, <span>{count} tareas.</span>',
    apps_p='Los ritmos de casa, la jornada de trabajo, el dinero que se va cada mes, la recuperación, las garantías, las cuentas de una pareja, el bloque de entrenamiento, los macros de lo que comes y los sitios que merecen la pena. Problemas distintos, una sola forma de construir: una pantalla que se entiende de un vistazo, solo los datos que hacen falta, castellano e inglés desde el primer día.',
-   learn_more='Ver más',
+   learn_more='Ver más', izotz_title='De Izotz · cada una con su propia web', visit_site='Ir a la web de la app',
    phil_eyebrow='Filosofía', phil_h2='Bonito. Útil. <span>Humano. Posible.</span>',
    phil_p='Cuatro palabras contra las que medimos cada pantalla. Si una función falla en una de ellas, no sale, por ingeniosa que sea.',
    values=[('Bonito','Diseño con criterio: un color dominante, peso antes que tamaño, movimiento que significa algo. Ese cuidado que se nota sin que nadie te lo diga.'),
@@ -798,15 +798,17 @@ SHIELD='<svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true" focus
 
 def build_index(lang):
     t=UI[lang]; root=up(lang,0); home=root+prefix(lang)
-    def cards(apps):
+    def cards(apps, own_site=False):
+        # own_site: Izotz's apps, whose pages live on their own site at /<folder>/ (STANDALONE), not under apps/.
+        folder={n:f for n,f,_ in STANDALONE}
         return ''.join(f'''
         <li class="app-card-wrap reveal" style="--i:{k%3}">
-          <a class="app-card" href="{home}apps/{a['slug']}.html">
+          <a class="app-card" href="{root + folder[a['slug']] + '/' if own_site else home + 'apps/' + a['slug'] + '.html'}">
             <img class="app-icon" src="{root}assets/icons/{a['icon']}" alt="" width="64" height="64" loading="lazy" decoding="async" {icon_vt(a)}>
             <h3>{a['name']}</h3>
             <p class="one-liner">{a['copy'][lang]['one']}</p>
             <div class="tags">{''.join(f'<span>{x}</span>' for x in a['copy'][lang]['tags'])}</div>
-            <span class="card-more">{t['learn_more']} <span aria-hidden="true">→</span></span>
+            <span class="card-more">{t['visit_site'] if own_site else t['learn_more']} <span aria-hidden="true">→</span></span>
           </a>{store_status(a, t) if a.get('appstore') else ''}
         </li>''' for k,a in enumerate(apps))
     # Live apps first, then the ones without an App Store id under «Coming soon»: the group says it, so their cards carry no pill.
@@ -815,6 +817,12 @@ def build_index(lang):
     <ul class="app-grid app-grid-{key}" role="list" aria-labelledby="apps-{key}">{cards(apps)}
     </ul>''' for key,label,apps in (('live', t['live_title'], [a for a in HOME_APPS if a.get('appstore')]),
                                        ('soon', t['soon'], [a for a in HOME_APPS if not a.get('appstore')])) if apps)
+    # Izotz's apps are not in the home count or the marquee, but the home points at each one's own site.
+    izotz=[a for a in HIDDEN if a['slug'] in {n for n,_,_ in STANDALONE}]
+    groups+=f'''
+    <p class="group-label" id="apps-izotz">{t['izotz_title']}</p>
+    <ul class="app-grid app-grid-izotz" role="list" aria-labelledby="apps-izotz">{cards(izotz, own_site=True)}
+    </ul>''' if izotz else ''
     strip=''.join(f'<li><img src="{root}assets/icons/{a["icon"]}" alt="" width="56" height="56" decoding="async"><span>{a["name"]}</span></li>' for a in HOME_APPS)
     stage=''.join(f'<div class="device device-{pos}"><div class="phone">{shot(root, f, lazy=False, priority=(pos=="front"))}</div></div>' for pos,f in HERO_SHOTS)
     values=''.join(f'<li class="value reveal" style="--i:{i}"><span class="num">0{i+1}</span><h3>{h}</h3><p>{p}</p></li>' for i,(h,p) in enumerate(t['values']))
