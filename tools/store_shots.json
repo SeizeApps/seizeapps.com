@@ -1327,222 +1327,222 @@
   }
  },
  "logicle": {
-  "source": "logicle-0.4.0",
+  "source": "logicle-0.5.2",
   "langs": {
    "en": [
     {
-     "base": "assets/store/logicle/en/01-today",
+     "base": "assets/store/logicle/en/01-manor",
      "w": 400,
      "h": 869,
-     "title": "A fresh puzzle every day.",
-     "subtitle": "Eleven kinds of puzzle in three levels, the same for everyone in the world."
+     "title": "Who killed them?",
+     "subtitle": "Rebuild the scene, place every suspect, find the killer."
     },
     {
-     "base": "assets/store/logicle/en/02-manor",
+     "base": "assets/store/logicle/en/02-sudoku",
      "w": 400,
      "h": 869,
-     "title": "Who ate the cake?",
-     "subtitle": "Manor: place every guest in the house from the clues, then name who ate the cake."
+     "title": "One solution. No guessing.",
+     "subtitle": "Every digit can be worked out. Logic always gets you there."
     },
     {
-     "base": "assets/store/logicle/en/03-sudoku",
+     "base": "assets/store/logicle/en/03-today",
      "w": 400,
      "h": 869,
-     "title": "Sudoku, the calm way.",
-     "subtitle": "Tap a cell, then a digit: the keypad dims what can't go there."
+     "title": "Today’s challenge, the same for everyone",
+     "subtitle": "Then see how you did against everyone else."
     },
     {
-     "base": "assets/store/logicle/en/04-hints",
+     "base": "assets/store/logicle/en/04-tessera",
      "w": 400,
      "h": 869,
-     "title": "Hints that teach.",
-     "subtitle": "First the idea and where to look, then the answer, only if you ask."
+     "title": "They only fit one way",
+     "subtitle": "Turn them, flip them… until the last one slips in."
     },
     {
-     "base": "assets/store/logicle/en/05-tessera",
+     "base": "assets/store/logicle/en/05-catalog",
      "w": 400,
      "h": 869,
-     "title": "Every piece has its place.",
-     "subtitle": "Tessera: fill the board with the pieces left. Turn them, flip them, one way fits."
+     "title": "Eleven ways to think",
+     "subtitle": "Every day, pick what your mind is in the mood for."
     },
     {
-     "base": "assets/store/logicle/en/06-shunt",
+     "base": "assets/store/logicle/en/06-season",
+     "w": 400,
+     "h": 869,
+     "title": "Seasons to collect.",
+     "subtitle": "Every season, something new to keep on your profile."
+    },
+    {
+     "base": "assets/store/logicle/en/07-shunt",
      "w": 400,
      "h": 869,
      "title": "Get the key out.",
-     "subtitle": "Shunt: slide the blocks aside. Every puzzle shows the fewest moves it takes."
+     "subtitle": "The challenge: do it in the fewest moves."
     },
     {
-     "base": "assets/store/logicle/en/07-thread",
+     "base": "assets/store/logicle/en/08-thread",
      "w": 400,
      "h": 869,
      "title": "Join every pair.",
-     "subtitle": "Thread: lines between dots of the same colour, never crossing, filling the board."
+     "subtitle": "Until the board is full and no line crosses."
     },
     {
-     "base": "assets/store/logicle/en/08-crown",
+     "base": "assets/store/logicle/en/09-crown",
      "w": 400,
      "h": 869,
-     "title": "One crown in each.",
-     "subtitle": "Crown: one per row, column and colour, and no two touching."
+     "title": "One crown per region.",
+     "subtitle": "A small board with plenty to think about."
     },
     {
-     "base": "assets/store/logicle/en/09-pixel",
+     "base": "assets/store/logicle/en/10-pixel",
      "w": 400,
      "h": 869,
-     "title": "A picture in the numbers.",
-     "subtitle": "Pixel: paint what each row and column asks for, and see what appears."
-    },
-    {
-     "base": "assets/store/logicle/en/10-stats",
-     "w": 400,
-     "h": 869,
-     "title": "See how you improve.",
-     "subtitle": "From the big picture down to each type and level: streak, times, where you get faster."
+     "title": "A picture hidden in the numbers.",
+     "subtitle": "Your reward: watching the picture appear."
     }
    ],
    "es": [
     {
-     "base": "assets/store/logicle/es/01-today",
+     "base": "assets/store/logicle/es/01-manor",
      "w": 400,
      "h": 869,
-     "title": "Un puzle nuevo cada día.",
-     "subtitle": "Once tipos de puzle en tres niveles, los mismos para todo el mundo."
+     "title": "¿Quién lo mató?",
+     "subtitle": "Reconstruye la escena, coloca a los sospechosos y descubre al asesino."
     },
     {
-     "base": "assets/store/logicle/es/02-manor",
+     "base": "assets/store/logicle/es/02-sudoku",
      "w": 400,
      "h": 869,
-     "title": "¿Quién se comió la tarta?",
-     "subtitle": "Manor: coloca a cada invitado en la casa con las pistas y descubre quién se comió la tarta."
+     "title": "Una sola solución. Sin adivinar.",
+     "subtitle": "Todo se deduce. Con lógica, llegas siempre."
     },
     {
-     "base": "assets/store/logicle/es/03-sudoku",
+     "base": "assets/store/logicle/es/03-today",
      "w": 400,
      "h": 869,
-     "title": "Sudoku, con calma.",
-     "subtitle": "Toca una casilla y luego un número: el teclado atenúa lo que no cabe."
+     "title": "El mismo reto, hoy, para todo el mundo",
+     "subtitle": "Y luego mira cómo te ha ido frente a los demás."
     },
     {
-     "base": "assets/store/logicle/es/04-hints",
+     "base": "assets/store/logicle/es/04-tessera",
      "w": 400,
      "h": 869,
-     "title": "Pistas que enseñan.",
-     "subtitle": "Primero la idea y dónde mirar; la respuesta, solo si la pides."
+     "title": "Solo encajan de una forma",
+     "subtitle": "Gíralas, voltéalas… hasta que entra la última."
     },
     {
-     "base": "assets/store/logicle/es/05-tessera",
+     "base": "assets/store/logicle/es/05-catalog",
      "w": 400,
      "h": 869,
-     "title": "Cada pieza tiene su sitio.",
-     "subtitle": "Tessera: llena el tablero con las piezas que quedan. Gíralas, voltéalas: solo encajan de una forma."
+     "title": "Once maneras de pensar",
+     "subtitle": "Cada día eliges cómo te apetece pensar."
     },
     {
-     "base": "assets/store/logicle/es/06-shunt",
+     "base": "assets/store/logicle/es/06-season",
+     "w": 400,
+     "h": 869,
+     "title": "Temporadas para coleccionar.",
+     "subtitle": "Cada temporada, algo nuevo que guardar en tu perfil."
+    },
+    {
+     "base": "assets/store/logicle/es/07-shunt",
      "w": 400,
      "h": 869,
      "title": "Saca la llave.",
-     "subtitle": "Shunt: aparta los bloques. Cada puzle te dice el mínimo de movimientos."
+     "subtitle": "El reto: lograrlo con el mínimo de movimientos."
     },
     {
-     "base": "assets/store/logicle/es/07-thread",
+     "base": "assets/store/logicle/es/08-thread",
      "w": 400,
      "h": 869,
      "title": "Une cada pareja.",
-     "subtitle": "Thread: líneas entre puntos del mismo color, sin cruzarse, hasta llenar el tablero."
+     "subtitle": "Hasta que el tablero se llena sin un cruce."
     },
     {
-     "base": "assets/store/logicle/es/08-crown",
+     "base": "assets/store/logicle/es/09-crown",
      "w": 400,
      "h": 869,
      "title": "Una corona en cada una.",
-     "subtitle": "Crown: una por fila, columna y color, sin que dos se toquen."
+     "subtitle": "Un tablero pequeño que da mucho que pensar."
     },
     {
-     "base": "assets/store/logicle/es/09-pixel",
+     "base": "assets/store/logicle/es/10-pixel",
      "w": 400,
      "h": 869,
      "title": "Un dibujo en los números.",
-     "subtitle": "Pixel: pinta lo que pide cada fila y columna, y mira qué aparece."
-    },
-    {
-     "base": "assets/store/logicle/es/10-stats",
-     "w": 400,
-     "h": 869,
-     "title": "Mira cuánto mejoras.",
-     "subtitle": "De lo general a cada tipo y nivel: racha, tiempos y dónde vas más rápido."
+     "subtitle": "Tu premio: ver cómo aparece el dibujo."
     }
    ],
    "fr": [
     {
-     "base": "assets/store/logicle/fr/01-today",
+     "base": "assets/store/logicle/fr/01-manor",
      "w": 400,
      "h": 869,
-     "title": "Un casse-tête nouveau chaque jour.",
-     "subtitle": "Onze types de casse-tête en trois niveaux, les mêmes pour tout le monde."
+     "title": "Qui l’a tuée ?",
+     "subtitle": "Reconstitue la scène, place les suspects et trouve l’assassin."
     },
     {
-     "base": "assets/store/logicle/fr/02-manor",
+     "base": "assets/store/logicle/fr/02-sudoku",
      "w": 400,
      "h": 869,
-     "title": "Qui a mangé le gâteau ?",
-     "subtitle": "Manor : placez chaque invité dans la maison grâce aux indices, puis trouvez qui a mangé le gâteau."
+     "title": "Une seule solution. Sans deviner.",
+     "subtitle": "Tout se déduit. La logique suffit, toujours."
     },
     {
-     "base": "assets/store/logicle/fr/03-sudoku",
+     "base": "assets/store/logicle/fr/03-today",
      "w": 400,
      "h": 869,
-     "title": "Le sudoku, en toute sérénité.",
-     "subtitle": "Touchez une case, puis un chiffre : le clavier estompe ce qui ne va pas."
+     "title": "Le défi du jour, le même pour tous",
+     "subtitle": "Puis compare ton résultat à celui des autres."
     },
     {
-     "base": "assets/store/logicle/fr/04-hints",
+     "base": "assets/store/logicle/fr/04-tessera",
      "w": 400,
      "h": 869,
-     "title": "Des indices qui apprennent.",
-     "subtitle": "D’abord l’idée et où regarder ; la réponse, seulement si vous la demandez."
+     "title": "Elles ne s’emboîtent que d’une façon",
+     "subtitle": "Tourne-les, retourne-les… jusqu’à ce que la dernière entre."
     },
     {
-     "base": "assets/store/logicle/fr/05-tessera",
+     "base": "assets/store/logicle/fr/05-catalog",
      "w": 400,
      "h": 869,
-     "title": "Chaque pièce a sa place.",
-     "subtitle": "Tessera : remplissez le plateau avec les pièces restantes. Une seule façon de tout caser."
+     "title": "Onze façons de réfléchir",
+     "subtitle": "Chaque jour, choisis ta façon de réfléchir."
     },
     {
-     "base": "assets/store/logicle/fr/06-shunt",
+     "base": "assets/store/logicle/fr/06-season",
      "w": 400,
      "h": 869,
-     "title": "Faites sortir la clé.",
-     "subtitle": "Shunt : écartez les blocs. Chaque casse-tête indique le moins de coups possible."
+     "title": "Des saisons à collectionner.",
+     "subtitle": "Chaque saison, de quoi enrichir ton profil."
     },
     {
-     "base": "assets/store/logicle/fr/07-thread",
+     "base": "assets/store/logicle/fr/07-shunt",
      "w": 400,
      "h": 869,
-     "title": "Reliez chaque paire.",
-     "subtitle": "Thread : des lignes entre points de même couleur, sans se croiser, jusqu’à remplir le plateau."
+     "title": "Fais sortir la clé.",
+     "subtitle": "Le défi : y arriver en un minimum de coups."
     },
     {
-     "base": "assets/store/logicle/fr/08-crown",
+     "base": "assets/store/logicle/fr/08-thread",
+     "w": 400,
+     "h": 869,
+     "title": "Relie chaque paire.",
+     "subtitle": "Jusqu’à remplir la grille, sans aucun croisement."
+    },
+    {
+     "base": "assets/store/logicle/fr/09-crown",
      "w": 400,
      "h": 869,
      "title": "Une couronne par région.",
-     "subtitle": "Crown : une par ligne, colonne et couleur, sans que deux se touchent."
+     "subtitle": "Une petite grille qui donne à réfléchir."
     },
     {
-     "base": "assets/store/logicle/fr/09-pixel",
+     "base": "assets/store/logicle/fr/10-pixel",
      "w": 400,
      "h": 869,
-     "title": "Un dessin dans les nombres.",
-     "subtitle": "Pixel : coloriez ce que demande chaque ligne et colonne, et voyez ce qui apparaît."
-    },
-    {
-     "base": "assets/store/logicle/fr/10-stats",
-     "w": 400,
-     "h": 869,
-     "title": "Voyez vos progrès.",
-     "subtitle": "Du général à chaque type et niveau : série, temps, et là où vous allez plus vite."
+     "title": "Un dessin caché dans les nombres.",
+     "subtitle": "Ta récompense : voir le dessin apparaître."
     }
    ]
   }
