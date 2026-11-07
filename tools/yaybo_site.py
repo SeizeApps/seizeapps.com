@@ -705,8 +705,9 @@ def support_section():
 <p class="yb-kicker"><i></i>Support</p><h2 id="h-support">Help and support</h2>
 <p class="big">Questions about Yaybo, a subscription or your family&rsquo;s data? Write to us and we will answer.</p>
 <div class="yb-sup yb-sup-home">
-<section class="wide"><div><h3>Write to us</h3><p>Email <a href="mailto:{MAIL}">{MAIL}</a>. To help us find the problem, tell us your iPhone or iPad model, your iOS version, the Yaybo version (Parent Zone &rsaquo; Settings) and what happened. Please leave your child&rsquo;s name, age and answers out of the email.</p>
-<p>In the app: Parent Zone &rsaquo; Settings &rsaquo; Help has &ldquo;Email the Yaybo team&rdquo; and &ldquo;Something not working?&rdquo;, behind the grown-up gate.</p></div>
+<section class="wide"><div><h3>The quickest way: a note from the app</h3><p>In Yaybo, open the Parent Zone &rsaquo; Settings &rsaquo; Help and tap &ldquo;Send a note from the app&rdquo; (behind the grown-up gate). Type your message and send it: no email needed. It comes straight to us with the app version, iOS version and device model, so you don&rsquo;t have to look them up. Please leave your child&rsquo;s name and answers out of it.</p></div></section>
+<section class="wide"><div><h3>Or write to us</h3><p>Email <a href="mailto:{MAIL}">{MAIL}</a>. To help us find the problem, tell us your iPhone or iPad model, your iOS version, the Yaybo version (Parent Zone &rsaquo; Settings) and what happened. Please leave your child&rsquo;s name, age and answers out of the email.</p>
+<p>In the app, &ldquo;Email the Yaybo team&rdquo; and &ldquo;Something not working?&rdquo; in the same Help section open Mail for you.</p></div>
 <a class="yb-btn yb-btn-teal" href="mailto:{MAIL}">Write to us</a></section>
 <section><h3>Manage or cancel your subscription</h3><p>Manage or cancel anytime in <span class="path">Settings &rsaquo; [your name] &rsaquo; Subscriptions</span> on your device. Cancelling stops the next renewal; you keep access until the end of the period you already paid for. Deleting the app does not cancel it.</p></section>
 <section><h3>Restore a purchase</h3><p>Tap &ldquo;Restore&rdquo; on the plans screen in the Parent Zone to bring back a subscription you already own, on a new device or after reinstalling.</p></section>
@@ -837,7 +838,8 @@ SUPPORT = {
     'en': dict(
         title='Yaybo support', desc='Contact Yaybo, manage or cancel a subscription, restore a purchase, or delete what Yaybo keeps.',
         h1='Yaybo support', sub='Questions about Yaybo, a subscription or your family’s data? Start here.',
-        write=('Write to us', f'<p>Write to <a href="mailto:{MAIL}">{MAIL}</a>. Please leave your child’s name and details out of the email.</p>', 'Write to us'),
+        note=('The quickest way: a note from the app', '<p>In Yaybo, open the Parent Zone › Settings › Help and tap “Send a note from the app” (behind the grown-up gate). Type your message and send it: no email needed. It comes straight to us with the app version, iOS version and device model. Please leave your child’s name and answers out of it.</p>'),
+        write=('Or write to us', f'<p>Write to <a href="mailto:{MAIL}">{MAIL}</a>. Please leave your child’s name and details out of the email.</p>', 'Write to us'),
         manage=('Manage or cancel your subscription',
                 '<p>Manage or cancel anytime in <span class="path">Settings › [your name] › Subscriptions</span> on your device.</p>'
                 '<p>A subscription renews automatically unless you cancel at least 24 hours before the end of the current period. Cancelling stops the next renewal; you keep access until the end of the period you already paid for. Deleting the app does not cancel it.</p>'
@@ -850,7 +852,8 @@ SUPPORT = {
     'es': dict(
         title='Soporte de Yaybo', desc='Contacta con Yaybo, gestiona o cancela una suscripción, restaura una compra o borra lo que guarda Yaybo.',
         h1='Soporte de Yaybo', sub='¿Dudas sobre Yaybo, una suscripción o los datos de tu familia? Empieza aquí.',
-        write=('Escríbenos', f'<p>Escribe a <a href="mailto:{MAIL}">{MAIL}</a>. Por favor, no pongas en el correo el nombre ni los datos de tu hijo o hija.</p>', 'Escríbenos'),
+        note=('Lo más rápido: una nota desde la app', '<p>En Yaybo, abre la Zona para padres › Ajustes › Ayuda y pulsa «Envía una nota desde la app» (tras la puerta para adultos). Escribe tu mensaje y envíalo: no hace falta correo. Nos llega directamente con la versión de la app, la de iOS y el modelo del dispositivo. Por favor, no pongas el nombre ni las respuestas de tu hijo o hija.</p>'),
+        write=('O escríbenos', f'<p>Escribe a <a href="mailto:{MAIL}">{MAIL}</a>. Por favor, no pongas en el correo el nombre ni los datos de tu hijo o hija.</p>', 'Escríbenos'),
         manage=('Gestionar o cancelar la suscripción',
                 '<p>Gestiónala o cancélala cuando quieras en <span class="path">Ajustes › [tu nombre] › Suscripciones</span> de tu dispositivo.</p>'
                 '<p>La suscripción se renueva automáticamente salvo que la canceles al menos 24 horas antes de que termine el periodo en curso. Cancelar detiene la siguiente renovación; conservas el acceso hasta el final del periodo ya pagado. Borrar la app no la cancela.</p>'
@@ -877,7 +880,8 @@ def support_page(lang):
     s = STR[lang]
     root = root_of(d)
     other = 'es' if lang == 'en' else 'en'
-    cards = (f'<section class="wide"><div><h2>{S["write"][0]}</h2>{S["write"][1]}</div>'
+    cards = (f'<section class="wide"><div><h2>{S["note"][0]}</h2>{S["note"][1]}</div></section>'
+             f'<section class="wide"><div><h2>{S["write"][0]}</h2>{S["write"][1]}</div>'
              f'<a class="yb-btn yb-btn-teal" href="mailto:{MAIL}">{S["write"][2]}</a></section>'
              f'<section><h2>{S["manage"][0]}</h2>{S["manage"][1]}</section>'
              f'<section><h2>{S["restore"][0]}</h2>{S["restore"][1]}</section>'
