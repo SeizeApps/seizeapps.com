@@ -481,7 +481,8 @@ box-shadow:inset 0 0 0 .6cqw #4A5572,0 0 0 1px var(--ring),0 3cqw 7cqw var(--sha
 .yb-sup{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:-56px;padding-bottom:40px;position:relative;z-index:2}
 .yb-sup>section{background:var(--surface);border:2px solid var(--line);border-radius:28px;padding:34px 34px 30px;box-shadow:0 6px 0 var(--lip),0 24px 48px var(--shadow)}
 .yb-sup>section.wide{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px 40px;align-items:center}
-.yb-sup h2{font-size:25px;margin-bottom:12px}
+.yb-sup h2,.yb-sup h3{font-size:25px;margin-bottom:12px}
+.yb-sup-home{margin-top:32px;padding-bottom:0}
 .yb-sup p{font-size:17.5px;color:var(--ink2);margin:0 0 12px}
 .yb-sup p:last-child{margin-bottom:0}
 .yb-sup strong{color:var(--ink)}
@@ -699,6 +700,21 @@ def page_shell(lang, here_dir, key, title, desc, body, home=False, alts=None, di
 # ---------------------------------------------------------------------------------------------------------------------
 # Home
 # ---------------------------------------------------------------------------------------------------------------------
+def support_section():
+    return f'''<section class="yb-sec sunk" id="support" aria-labelledby="h-support"><div class="yb-wrap">
+<p class="yb-kicker"><i></i>Support</p><h2 id="h-support">Help and support</h2>
+<p class="big">Questions about Yaybo, a subscription or your family&rsquo;s data? Write to us and we will answer.</p>
+<div class="yb-sup yb-sup-home">
+<section class="wide"><div><h3>Write to us</h3><p>Email <a href="mailto:{MAIL}">{MAIL}</a>. To help us find the problem, tell us your iPhone or iPad model, your iOS version, the Yaybo version (Parent Zone &rsaquo; Settings) and what happened. Please leave your child&rsquo;s name, age and answers out of the email.</p>
+<p>In the app: Parent Zone &rsaquo; Settings &rsaquo; Help has &ldquo;Email the Yaybo team&rdquo; and &ldquo;Something not working?&rdquo;, behind the grown-up gate.</p></div>
+<a class="yb-btn yb-btn-teal" href="mailto:{MAIL}">Write to us</a></section>
+<section><h3>Manage or cancel your subscription</h3><p>Manage or cancel anytime in <span class="path">Settings &rsaquo; [your name] &rsaquo; Subscriptions</span> on your device. Cancelling stops the next renewal; you keep access until the end of the period you already paid for. Deleting the app does not cancel it.</p></section>
+<section><h3>Restore a purchase</h3><p>Tap &ldquo;Restore&rdquo; on the plans screen in the Parent Zone to bring back a subscription you already own, on a new device or after reinstalling.</p></section>
+<section class="wide"><div><h3>Read the details</h3><p>How Yaybo handles your family&rsquo;s information, the terms of the Yaybo Plus subscription, and the full support page.</p></div>
+<p class="yb-sup-links"><a href="privacy/">Privacy policy</a> &middot; <a href="terms/">Terms of use</a> &middot; <a href="support/">Support page</a></p></section>
+</div></div></section>'''
+
+
 def home_page():
     r = ''
     p = lambda *a, **k: phone(r, *a, **k)
@@ -710,9 +726,9 @@ def home_page():
 {header('en', '', 'home', home=True)}
 <div class="yb-wrap yb-hero-grid"><div class="yb-hero-copy">
 <p class="yb-eyebrow">A learning app for ages 4 to 9</p>
-<h1 id="h1">About ten minutes a day. Three stops. <em>Then it ends.</em></h1>
+<h1 id="h1">One short Adventure a day. <em>Then it ends.</em></h1>
 <p class="yb-lede">Reading and math first, with phonics, spelling, money, time and handwriting alongside: a daily plan for your family, Pre-K to 3rd grade, built on the grade-level expectations most U.S. states share. Yaybo the axolotl cheers every right answer.</p>
-<div class="yb-cta"><p class="yb-badge">{STAR}<span><small>Not on sale yet</small><b>Coming soon to the App Store</b></span></p>
+<div class="yb-cta"><p class="yb-badge">{STAR}<span><small>For families</small><b>Kids ages 4 to 9, with a grown-up</b></span></p>
 <a class="yb-btn yb-btn-sun" href="#adventure">See how a day works</a></div>
 <p class="yb-fine">For iPhone and iPad &middot; iOS 26 or later &middot; United States and Canada</p></div>
 <div class="yb-hero-art">
@@ -724,10 +740,10 @@ def home_page():
 
     adventure = f'''<section class="yb-sec" id="adventure" aria-labelledby="h-adv"><div class="yb-wrap yb-two">
 <div><p class="yb-kicker"><i></i>How a day works</p><h2 id="h-adv">One Adventure a day, with a clear end</h2>
-<p class="big">Your child gets one short Adventure a day: three short lessons that pick up where they left off. Three stops and about ten minutes, then a clear end.</p>
+<p class="big">Your child gets one short Adventure a day: short lessons that pick up where they left off. It takes about ten minutes by default, a grown-up can set 5 to 20 in the Parent Zone, and then there is a clear end.</p>
 <ul class="yb-facts"><li>You set it up in about six minutes.</li><li>Instructions are spoken aloud, so early learners do not need to read.</li><li>You get a plain-English report each week.</li></ul></div>
 <ol class="yb-steps" tabindex="0" aria-label="A day in Yaybo, in three steps">
-<li>{p("ui-road.webp", "Today's Adventure: a path of three stops, Small letters, Count to 5 and You pick, with a Let's go! button", w="100%")}<p class="yb-cap"><b>1</b>See today's stops</p></li>
+<li>{p("ui-road.webp", "Today's Adventure: a path of stops, Small letters, Count to 5 and You pick, with a Let's go! button", w="100%")}<p class="yb-cap"><b>1</b>See today's stops</p></li>
 <li>{p("ui-counting.webp", "A counting lesson: Tap 2 apples, with five apples to tap, a Check button and Yaybo's voice", w="100%")}<p class="yb-cap"><b>2</b>Play a short lesson</p></li>
 <li>{p("ui-celebration.webp", "Stop complete! Yay! Three stars, a handful of leaves and a Continue button, with Yaybo cheering under a sun", w="100%")}<p class="yb-cap"><b>3</b>A clear end</p></li>
 </ol><p class="yb-swipe" aria-hidden="true"><span>Swipe to see more</span><svg viewBox="0 0 24 24"><path d="M5 12h13m-5-5.5 5.5 5.5-5.5 5.5" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></p></div></section>'''
@@ -791,7 +807,7 @@ def home_page():
     tcards = ''.join(f'<li><span class="yb-ico">{ICONS[i]}</span><h3>{h}</h3><p>{t}</p></li>' for i, h, t in (
         ('phone', 'It stays on your devices', "Your child's name and answers stay on your devices, and in your own iCloud if Sync is on."),
         ('lock', 'A parental gate', 'Everything for adults sits behind it, with an optional PIN.'),
-        ('mic', 'Read-aloud is optional', 'Your device listens only while a button is held and never records, stores or sends the sound.'),
+        ('mic', 'Read-aloud is optional', 'Off until a grown-up turns it on. Your device listens only after your child taps or holds the talk button, and never records, stores or sends the sound.'),
         ('card', 'Apple handles payments', "If a grown-up buys or restores a subscription, the purchase-analytics partner sees the purchase and your device's technical details, never anything about your child.")))
     trust = f'''<section class="yb-sec" id="privacy" aria-labelledby="h-trust"><div class="yb-wrap">
 <div class="yb-story teal flip"><div class="copy"><p class="yb-kicker"><i></i>Privacy</p><h2 id="h-trust">No ads. No account. No tracking.</h2>
@@ -803,13 +819,13 @@ def home_page():
 <div><dt>Available in</dt><dd>The United States and Canada</dd></div>
 <div><dt>Yaybo Plus</dt><dd>A subscription<small>One plan covers up to four children and works with Family Sharing. Plans and the trial are shown in the app and on the App Store.</small></dd></div></dl></div>
 <div style="margin-top:72px"><div class="yb-close"><img src="media/yaybo-wave.png" width="643" height="569" alt="Yaybo the axolotl, waving" loading="lazy">
-<div><h2>Yaybo is coming soon.</h2><p>A daily plan your family can finish in about ten minutes, with a clear end.</p>
-<p class="yb-badge">{STAR}<span><small>Not on sale yet</small><b>Coming soon to the App Store</b></span></p></div></div></div>
+<div><h2>A daily plan your family can finish.</h2><p>One short Adventure a day, about ten minutes by default, with a clear end.</p>
+<a class="yb-btn yb-btn-sun" href="#support">Help and support</a></div></div></div>
 </div></section>'''
 
-    body = f'<main id="main">{hero}{adventure}{skills}{yay}{progress}{grown}{trust}</main>' + footer('en', '', home=True)
+    body = f'<main id="main">{hero}{adventure}{skills}{yay}{progress}{grown}{trust}{support_section()}</main>' + footer('en', '', home=True)
     title = 'Yaybo: a daily learning plan for your family'
-    desc = ('A daily learning plan for ages 4 to 9: phonics, reading, spelling, math, money, time and handwriting. About ten minutes a day, '
+    desc = ('A daily learning plan for ages 4 to 9: phonics, reading, spelling, math, money, time and handwriting. About ten minutes a day by default, '
             'a plain-English report each week, no ads, no account, no tracking.')
     return page_shell('en', '', 'home', title, desc, body, home=True)
 
@@ -997,6 +1013,28 @@ def unused_media(pages):
     return sorted(p.name for p in (YB / 'media').iterdir() if p.is_file() and p.name not in used)
 
 
+def redirect_page():
+    """apps/yaybo.html: the support URL in App Store Connect. It forwards to /yaybo/ at once, and says where it goes (and how to
+    reach us) for anyone whose browser stays on it."""
+    return f'''<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>Yaybo support</title>
+<link rel="canonical" href="{SITE}">
+<meta http-equiv="refresh" content="0; url={SITE}">
+<meta name="robots" content="noindex">
+<style>body{{margin:0;padding:40px 24px;font:18px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;background:{LIGHT['page']};color:{LIGHT['ink']}}}
+main{{max-width:34em;margin:0 auto}}h1{{font-size:32px;line-height:1.2;margin:0 0 12px}}p{{margin:0 0 14px;color:{LIGHT['ink2']}}}
+a{{color:{LIGHT['link']};font-weight:600}}ul{{padding-left:1.2em;margin:0 0 14px}}li{{margin-bottom:6px}}
+@media (prefers-color-scheme:dark){{body{{background:{DARK['page']};color:{DARK['ink']}}}p{{color:{DARK['ink2']}}}a{{color:{DARK['link']}}}}}</style></head>
+<body><main><h1>Yaybo</h1>
+<p>A daily learning app for children ages 4 to 9, used with a grown-up. You are being taken to the Yaybo page; if nothing happens, use these links.</p>
+<ul><li><a href="{SITE}">Yaybo home</a></li><li><a href="{SITE}support/">Support: subscriptions, restoring a purchase, your family&rsquo;s data</a></li>
+<li><a href="{SITE}privacy/">Privacy policy</a></li><li><a href="{SITE}terms/">Terms of use</a></li></ul>
+<p>Questions? Write to <a href="mailto:{MAIL}">{MAIL}</a>.</p></main></body></html>
+'''
+
+
 def build_pages(PRIVACY, TERMS, PAGES, fill, write=True, verbose=True):
     pages = {'yaybo/index.html': home_page(), 'yaybo/support/index.html': support_page('en'), 'yaybo/soporte/index.html': support_page('es')}
     texts = {'privacy': PRIVACY, 'terms': TERMS}
@@ -1026,6 +1064,7 @@ def build_pages(PRIVACY, TERMS, PAGES, fill, write=True, verbose=True):
             out = ROOT / path
             out.parent.mkdir(parents=True, exist_ok=True)
             out.write_text(html, encoding='utf-8')
+        (ROOT / 'apps' / 'yaybo.html').write_text(redirect_page(), encoding='utf-8')
         un = unused_media(pages)
         if un and verbose:
             print('yaybo: media files not referenced by any page:', ', '.join(un))

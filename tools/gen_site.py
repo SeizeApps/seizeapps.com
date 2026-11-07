@@ -1045,5 +1045,7 @@ if __name__=='__main__':
     # subidas y de fichas de la Store): GitHub Pages no redirige en el servidor, así que cada una es una
     # página mínima con meta refresh y canonical a la nueva.
     for old, new, *title in REDIRECTS:
+        if old == 'apps/yaybo.html':   # App Store support URL: yaybo_site.redirect_page() writes it with a visible body
+            continue
         write(old, redirect_page(new, *title))
     print('ok', len(APPS), 'apps ×', len(LANGS), 'languages · Garum legal and share pages ·', len(REDIRECTS), 'redirecciones')
